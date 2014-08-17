@@ -1,7 +1,7 @@
 
-r-portable 
+r-portable (branch: other-user-test)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/other-user-test)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/other-user-test)
 
 ISO images that contain everything necessary to build R packages.
 
@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (385.4 MB, MD5 hash: `210c9bba871e98065455171f5294a3f6`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (much smaller)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/other-user-test/R.iso) (386.6 MB, MD5 hash: `1856c6653a0ee673da227d942e14248f`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/other-user-test/R.iso.gz) (much smaller)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
