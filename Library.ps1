@@ -59,7 +59,6 @@ Function Unpack {
     Progress "Extracting Rtools"
     .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe > .\Rtools-current.log
     mv ".\Image\{app}" .\Image\Rtools
-    rm .\Image\install_script.iss
     # Don't seem to need those to build packages -- only to build R
     rm ".\Image\{code_rhome}" -Recurse
     rm ".\Image\{code_rhome64}" -Recurse
