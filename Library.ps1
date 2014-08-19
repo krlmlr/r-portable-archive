@@ -96,6 +96,14 @@ Function CreateImage {
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
+        Progress "Setting R_LIBS_USER."
+        $env:R_LIBS_USER = "C:\RLibrary"
+        md $env:R_LIBS_USER
+        Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
+
+        Progress "Installing knitr."
+        Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" knitr } > .\R-packages.log
+
         Progress "Knitting."
         Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
