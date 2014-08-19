@@ -34,7 +34,7 @@ cat(R.Version()$version.string)
 ### Package versions
 
 ```{r echo = FALSE, results = "asis"}
-pkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE)[c("Package", "Version", "Priority")]
+pkgs <- as.data.frame(installed.packages(.Library), stringsAsFactors = FALSE)[c("Package", "Version", "Priority")]
 pkgs <- plyr::arrange(pkgs, Priority, Package)
 pkgs$Priority[is.na(pkgs$Priority)] <- "other"
 pkgs$Priority <- factor(pkgs$Priority, levels = c("base", "recommended", "other"))
