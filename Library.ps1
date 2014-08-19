@@ -51,16 +51,6 @@ Function Unpack {
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 
-    # R site library
-    Progress "Creating site library"
-    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
-    md .\Image\R\site-library
-    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
-
-    # Additional R packages
-    Progress "Installing additional packages"
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
-
     # Rtools
     Progress "Extracting Rtools"
     .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe > .\Rtools-current.log
