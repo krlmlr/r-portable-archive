@@ -50,21 +50,21 @@ Function Unpack {
     .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe > .\R-devel-win.log
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
-    rm -Recurse -Force .\Image\library\boot
-    rm -Recurse -Force .\Image\library\class
-    rm -Recurse -Force .\Image\library\cluster
-    rm -Recurse -Force .\Image\library\codetools
-    rm -Recurse -Force .\Image\library\foreign
-    rm -Recurse -Force .\Image\library\KernSmooth
-    rm -Recurse -Force .\Image\library\lattice
-    rm -Recurse -Force .\Image\library\MASS
-    rm -Recurse -Force .\Image\library\Matrix
-    rm -Recurse -Force .\Image\library\mgcv
-    rm -Recurse -Force .\Image\library\nlme
-    rm -Recurse -Force .\Image\library\nnet
-    rm -Recurse -Force .\Image\library\rpart
-    rm -Recurse -Force .\Image\library\spatial
-    rm -Recurse -Force .\Image\library\survival
+    rm -Recurse -Force .\Image\R\library\boot
+    rm -Recurse -Force .\Image\R\library\class
+    rm -Recurse -Force .\Image\R\library\cluster
+    rm -Recurse -Force .\Image\R\library\codetools
+    rm -Recurse -Force .\Image\R\library\foreign
+    rm -Recurse -Force .\Image\R\library\KernSmooth
+    rm -Recurse -Force .\Image\R\library\lattice
+    rm -Recurse -Force .\Image\R\library\MASS
+    rm -Recurse -Force .\Image\R\library\Matrix
+    rm -Recurse -Force .\Image\R\library\mgcv
+    rm -Recurse -Force .\Image\R\library\nlme
+    rm -Recurse -Force .\Image\R\library\nnet
+    rm -Recurse -Force .\Image\R\library\rpart
+    rm -Recurse -Force .\Image\R\library\spatial
+    rm -Recurse -Force .\Image\R\library\survival
 
     # Rtools
     Progress "Extracting Rtools"
