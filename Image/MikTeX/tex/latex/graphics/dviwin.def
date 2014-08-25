@@ -15,7 +15,7 @@
 %% Either version 1.3 or, at your option, any later version.
 %%
 \ProvidesFile{dviwin.def}
-        [1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)]
+        [2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)]
 \@namedef{Gin@rule@*}#1{{bmp}{}{#1}}
 \def\Ginclude@bmp#1{%
   \raise\Gin@req@height\hbox{%

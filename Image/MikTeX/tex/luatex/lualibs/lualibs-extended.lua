@@ -7,7 +7,7 @@
 --  lualibs.dtx  (with options: `extended')
 --  This is a generated file.
 --  
---  Copyright (C) 2009--2013 by PRAGMA ADE / ConTeXt Development Team
+--  Copyright (C) 2009--2014 by PRAGMA ADE / ConTeXt Development Team
 --  
 --  See ConTeXt's mreadme.pdf for the license.
 --  
@@ -27,8 +27,8 @@ lualibs = lualibs or { }
 
 local lualibs_extended_module = {
   name          = "lualibs-extended",
-  version       = 2.00,
-  date          = "2013/07/23",
+  version       = 2.2,
+  date          = "2014-07-26",
   description   = "ConTeXt Lua libraries -- extended collection.",
   author        = "Hans Hagen, PRAGMA-ADE, Hasselt NL & Elie Roux & Philipp Gesang",
   copyright     = "PRAGMA ADE / ConTeXt Development Team",
@@ -87,7 +87,6 @@ local fake_trackers = function (name)
   }
 end
 
-
 local backup_store = { }
 
 local fake_context = function ( )
@@ -95,17 +94,13 @@ local fake_context = function ( )
   if trackers then backup_store.trackers = trackers end
   logs     = fake_logs"logs"
   trackers = fake_trackers"trackers"
-
-  backup_store.argv = table.fastcopy(arg)
 end
 
 local unfake_context = function ( )
   if backup_store then
     local bl, bt = backup_store.logs, backup_store.trackers
-    local argv   = backup_store.argv
     if bl   then logs     = bl   end
     if bt   then trackers = bt   end
-    if argv then arg      = argv end
   end
 end
 
@@ -139,11 +134,6 @@ if loaded == false then
   loadmodule("lualibs-util-deb.lua")--- extra debugging
   loadmodule("lualibs-util-tpl.lua")--- templating
   loadmodule("lualibs-util-sta.lua")--- stacker (for writing pdf)
-  -------------------------------------!data-* -- Context specific
-  ----------("lualibs-util-lib.lua")---!swiglib; there is a luatex-swiglib
-  loadmodule("lualibs-util-env.lua")--- environment arguments
-  ----------("lualibs-mult-ini.lua")---
-  ----------("lualibs-core-con.lua")---
 end
 
 unfake_context() --- TODO check if this works at runtime

@@ -15,7 +15,7 @@
 %% Either version 1.3 or, at your option, any later version.
 %%
 \ProvidesFile{dvipsone.def}
-        [1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)]
+        [2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)]
 \def\c@lor@arg#1{%
   \dimen@#1\p@
   \ifdim\dimen@<\z@\dimen@\maxdimen\fi

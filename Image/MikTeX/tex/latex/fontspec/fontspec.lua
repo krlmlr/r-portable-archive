@@ -8,7 +8,7 @@
 --  
 --    _________________________________________
 --    The fontspec package for XeLaTeX/LuaLaTeX
---    (C) 2004--2013    Will Robertson and Khaled Hosny
+--    (C) 2004--2014    Will Robertson and Khaled Hosny
 --  
 --    License information appended.
 --  
@@ -79,21 +79,23 @@ function fontspec.mathfontdimen(fnt, str)
     end
 end
 --  
---  Copyright 2004--2013 Will Robertson <wspr81@gmail.com>
+--  Copyright 2004--2014 Will Robertson <wspr81@gmail.com>
 --  Copyright 2009--2013   Khaled Hosny <khaledhosny@eglug.org>
 --  
 --  Distributable under the LaTeX Project Public License,
 --  version 1.3c or higher (your choice). The latest version of
 --  this license is at: http://www.latex-project.org/lppl.txt
 --  
---  This work is "author-maintained" by Will Robertson.
+--  This work is "maintained" by Will Robertson.
 --  
 --  This work consists of this file fontspec.dtx
 --            and the derived files fontspec.sty,
 --                                  fontspec.lua,
 --                                  fontspec.cfg,
---                                  fontspec-xetex.tex,
---                                  fontspec-luatex.tex,
+--                                  fontspec-xetex.sty,
+--                                  fontspec-luatex.sty,
+--                                  fontspec-patches.sty,
+--                                  fontspec-example.tex,
 --                              and fontspec.pdf.
 --  
 -- 

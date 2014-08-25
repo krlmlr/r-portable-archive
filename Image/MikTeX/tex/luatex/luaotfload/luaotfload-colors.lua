@@ -1,9 +1,9 @@
 if not modules then modules = { } end modules ['luaotfload-colors'] = {
-    version   = "2.3a",
-    comment   = "companion to luaotfload.lua (font color)",
+    version   = "2.5",
+    comment   = "companion to luaotfload-main.lua (font color)",
     author    = "Khaled Hosny, Elie Roux, Philipp Gesang",
     copyright = "Luaotfload Development Team",
-    license   = "GNU GPL v2"
+    license   = "GNU GPL v2.0"
 }
 
 --[[doc--
@@ -19,20 +19,17 @@ explanation: http://tug.org/pipermail/luatex/2013-May/004305.html
 
 --doc]]--
 
-
-local color_callback = config.luaotfload.color_callback
-if not color_callback then
-    --- maybe this would be better as a method: "early" | "late"
-    color_callback = "pre_linebreak_filter"
---  color_callback = "pre_output_filter" --- old behavior, breaks expansion
-end
-
+local log                   = luaotfload.log
+local logreport             = log.report
 
 local newnode               = node.new
 local nodetype              = node.id
 local traverse_nodes        = node.traverse
 local insert_node_before    = node.insert_before
 local insert_node_after     = node.insert_after
+
+local texset                = tex.set
+local texget                = tex.get
 
 local stringformat          = string.format
 local stringgsub            = string.gsub
@@ -86,8 +83,9 @@ local sanitize_color_expression = function (digits)
     digits = tostring(digits)
     local sanitized = lpegmatch(valid_digits, digits)
     if not sanitized then
-        luaotfload.warning(
-            "%q is not a valid rgb[a] color expression", digits)
+        logreport("both", 0, "color",
+                  "%q is not a valid rgb[a] color expression",
+                  digits)
         return nil
     end
     return sanitized
@@ -126,19 +124,12 @@ registerotffeature {
 --- something is carried around in ``res``
 --- for later use by color_handler() --- but what?
 
-local res --- <- state of what?
+local res = nil
 
 --- float -> unit
 local function pageresources(alpha)
-    local res2
-    if not res then
-       res = "/TransGs1<</ca 1/CA 1>>"
-    end
-    res2 = stringformat("/TransGs%s<</ca %s/CA %s>>",
-                        alpha, alpha, alpha)
-    res  = stringformat("%s%s",
-                        res,
-                        stringfind(res, res2) and "" or res2)
+    res = res or {}
+    res[alpha] = true
 end
 
 --- we store results of below color handler as tuples of
@@ -280,17 +271,29 @@ end
 
 --- node -> node
 local color_handler = function (head)
-    -- check if our page resources existed in the previous run
-    -- and remove it to avoid duplicating it later
-    if res then
-        local r = "/ExtGState<<" .. res .. ">>"
-        tex.pdfpageresources = stringgsub(tex.pdfpageresources, r, "")
-    end
     local new_head = node_colorize(head, nil, nil)
     -- now append our page resources
-    if res and stringfind(res, "%S") then -- test for non-empty string
-        local r = "/ExtGState<<" .. res .. ">>"
-        tex.pdfpageresources = tex.pdfpageresources..r
+    if res then
+        res["1"]  = true
+        local tpr = texget("pdfpageresources")
+        local t   = ""
+        for k in pairs(res) do
+            local str = stringformat("/TransGs%s<</ca %s/CA %s>>", k, k, k)
+            if not stringfind(tpr,str) then
+                t = t .. str
+            end
+        end
+        print""
+        if t ~= "" then
+            print(">>", tpr, "<<")
+            if not stringfind(tpr,"/ExtGState<<.*>>") then
+                tpr = tpr.."/ExtGState<<>>"
+            end
+            tpr = stringgsub(tpr,"/ExtGState<<","%1"..t)
+            texset("global", "pdfpageresources", tpr)
+            print(">>", tpr, "<<")
+        end
+        res = nil -- reset res
     end
     return new_head
 end
@@ -299,6 +302,11 @@ local color_callback_activated = 0
 
 --- unit -> unit
 add_color_callback = function ( )
+    local color_callback = config.luaotfload.run.color_callback
+    if not color_callback then
+        color_callback = "pre_linebreak_filter"
+    end
+
     if color_callback_activated == 0 then
         luatexbase.add_to_callback(color_callback,
                                    color_handler,

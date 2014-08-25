@@ -7,7 +7,7 @@
 %% xkeyval.dtx  (with options: `xkvtex')
 %% 
 %% ---------------------------------------
-%% Copyright (C) 2004-2012 Hendri Adriaens
+%% Copyright (C) 2004-2014 Hendri Adriaens
 %% ---------------------------------------
 %%
 %% This work may be distributed and/or modified under the
@@ -24,14 +24,14 @@
 %%
 %% This work consists of the file xkeyval.dtx and derived files
 %% keyval.tex, xkvtxhdr.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
-%% xkvltxp.sty, pst-xkey.tex, pst-xkey.sty, xkveca.cls, xkvecb.cls,
-%% xkvesa.sty, xkvesb.sty, xkvesc.sty, xkvex1.tex, xkvex2.tex,
-%% xkvex3.tex and xkvex4.tex.
+%% xkvltxp.sty, xkvutils.tex, pst-xkey.tex, pst-xkey.sty, xkveca.cls,
+%% xkvecb.cls, xkvesa.sty, xkvesb.sty, xkvesc.sty, xkvex1.tex,
+%% xkvex2.tex, xkvex3.tex and xkvex4.tex.
 %%
 %% The following files constitute the xkeyval bundle and must be
 %% distributed as a whole: readme, xkeyval.pdf, keyval.tex,
 %% pst-xkey.sty, pst-xkey.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
-%% xkvltxp.sty, xkvtxhdr.tex, pst-xkey.dtx and xkeyval.dtx.
+%% xkvltxp.sty, xkvtxhdr.tex, xkvutils.tex, pst-xkey.dtx and xkeyval.dtx.
 %%
 \csname XKeyValLoaded\endcsname
 \let\XKeyValLoaded\endinput
@@ -46,8 +46,7 @@
 \catcode`\=12\relax
 \catcode`\,12\relax
 \catcode`\:12\relax
-\newtoks\XKV@toks
-\newtoks\XKV@tempa@toks
+\input xkvutils
 \newcount\XKV@depth
 \newif\ifXKV@st
 \newif\ifXKV@sg
@@ -58,235 +57,12 @@
 \newif\ifXKV@preset
 \let\XKV@rm\@empty
 \ifx\ProvidesFile\@undefined
-  \message{2012/10/14 v2.6b key=value parser (HA)}
+  \message{2014/05/25 v2.7 key=value parser (HA)}
   \input xkvtxhdr
 \else
-  \ProvidesFile{xkeyval.tex}[2012/10/14 v2.6b key=value parser (HA)]
+  \ProvidesFile{xkeyval.tex}[2014/05/25 v2.7 key=value parser (HA)]
   \@addtofilelist{xkeyval.tex}
 \fi
-\long\def\@firstoftwo#1#2{#1}
-\long\def\@secondoftwo#1#2{#2}
-\long\def\XKV@afterfi#1\fi{\fi#1}
-\long\def\XKV@afterelsefi#1\else#2\fi{\fi#1}
-\ifx\ifcsname\@undefined\XKV@afterelsefi
-  \def\XKV@ifundefined#1{%
-    \begingroup\expandafter\expandafter\expandafter\endgroup
-      \expandafter\ifx\csname#1\endcsname\relax
-      \expandafter\@firstoftwo
-    \else
-      \expandafter\@secondoftwo
-    \fi
-  }
-\else
-  \def\XKV@ifundefined#1{%
-    \ifcsname#1\endcsname
-      \expandafter\@secondoftwo
-    \else
-      \expandafter\@firstoftwo
-    \fi
-  }
-\fi
-\XKV@ifundefined{ver@keyval.sty}{
-  \input keyval
-  \expandafter\def\csname ver@keyval.sty\endcsname{1999/03/16}
-}{}
-\long\def\@ifnextcharacter#1#2#3{%
-  \@ifnextchar\bgroup
-  {\@ifnextchar{#1}{#2}{#3}}%
-  {\@ifncharacter{#1}{#2}{#3}}%
-}
-\long\def\@ifncharacter#1#2#3#4{%
-  \if\string#1\string#4%
-    \expandafter\@firstoftwo
-  \else
-    \expandafter\@secondoftwo
-  \fi
-  {#2}{#3}#4%
-}
-\long\def\XKV@for@n#1#2#3{%
-  \XKV@tempa@toks{#1}\edef#2{\the\XKV@tempa@toks}%
-  \ifx#2\@empty
-    \XKV@for@break
-  \else
-    \expandafter\XKV@f@r
-  \fi
-  #2{#3}#1,\@nil,%
-}
-\long\def\XKV@f@r#1#2#3,{%
-  \XKV@tempa@toks{#3}\edef#1{\the\XKV@tempa@toks}%
-  \ifx#1\@nnil
-    \expandafter\@gobbletwo
-  \else
-    #2\expandafter\XKV@f@r
-  \fi
-  #1{#2}%
-}
-\long\def\XKV@for@break #1\@nil,{\fi}
-\long\def\XKV@for@o#1{\expandafter\XKV@for@n\expandafter{#1}}
-\long\def\XKV@for@en#1#2#3{\XKV@f@r#2{#3}#1,\@nil,}
-\long\def\XKV@for@eo#1#2#3{%
-  \def#2{\XKV@f@r#2{#3}}\expandafter#2#1,\@nil,%
-}
-\long\def\XKV@whilist#1#2#3\fi#4{%
-  #3\expandafter\XKV@wh@list#1,\@nil,\@nil\@@#2#3\fi{#4}{}\fi
-}
-\long\def\XKV@wh@list#1,#2\@@#3#4\fi#5#6{%
-  \def#3{#1}%
-  \ifx#3\@nnil
-    \def#3{#6}\expandafter\XKV@wh@l@st
-  \else
-    #4%
-      #5\expandafter\expandafter\expandafter\XKV@wh@list
-    \else
-      \def#3{#6}\expandafter\expandafter\expandafter\XKV@wh@l@st
-    \fi
-  \fi
-  #2\@@#3#4\fi{#5}{#1}%
-}
-\long\def\XKV@wh@l@st#1\@@#2#3\fi#4#5{}
-\def\XKV@addtomacro@n#1#2{%
-  \XKV@tempa@toks\expandafter{#1#2}%
-  \edef#1{\the\XKV@tempa@toks}%
-}
-\def\XKV@addtomacro@o#1#2{%
-  \expandafter\XKV@addtomacro@n\expandafter#1\expandafter{#2}%
-}
-\def\XKV@addtolist@n#1#2{%
-  \ifx#1\@empty
-    \XKV@addtomacro@n#1{#2}%
-  \else
-    \XKV@addtomacro@n#1{,#2}%
-  \fi
-}
-\def\XKV@addtolist@o#1#2{%
-  \ifx#1\@empty
-    \XKV@addtomacro@o#1#2%
-  \else
-    \XKV@addtomacro@o#1{\expandafter,#2}%
-  \fi
-}
-\def\XKV@addtolist@x#1#2{\edef#1{#1\ifx#1\@empty\else,\fi#2}}
-\def\@selective@sanitize{\@testopt\@s@lective@sanitize\@M}
-\def\@s@lective@sanitize[#1]#2#3{%
-  \begingroup
-    \count@#1\relax\advance\count@\@ne
-    \XKV@toks\expandafter{#3}%
-    \def#3{#2}\@onelevel@sanitize#3%
-    \edef#3{{#3}{\the\XKV@toks}}%
-    \expandafter\@s@l@ctive@sanitize\expandafter#3#3%
-    \expandafter\XKV@tempa@toks\expandafter{#3}%
-  \expandafter\endgroup\expandafter\toks@\expandafter{\the\XKV@tempa@toks}%
-  \edef#3{\the\toks@}%
-}
-\def\@s@l@ctive@sanitize#1#2#3{%
-  \def\@i{\futurelet\@@tok\@ii}%
-  \def\@ii{%
-    \expandafter\@iii\meaning\@@tok\relax
-    \ifx\@@tok\@s@l@ctive@sanitize
-      \let\@@cmd\@gobble
-    \else
-      \ifx\@@tok\@sptoken
-        \XKV@toks\expandafter{#1}\edef#1{\the\XKV@toks\space}%
-        \def\@@cmd{\afterassignment\@i\let\@@tok= }%
-      \else
-        \let\@@cmd\@iv
-      \fi
-    \fi
-    \@@cmd
-  }%
-  \def\@iii##1##2\relax{\if##1\@backslashchar\let\@@tok\relax\fi}%
-  \def\@iv##1{%
-    \toks@\expandafter{#1}\XKV@toks{##1}%
-    \ifx\@@tok\bgroup
-      \advance\count@\m@ne
-      \ifnum\count@>\z@
-        \begingroup
-          \def#1{\expandafter\@s@l@ctive@sanitize
-            \csname\string#1\endcsname{#2}}%
-          \expandafter#1\expandafter{\the\XKV@toks}%
-          \XKV@toks\expandafter\expandafter\expandafter
-            {\csname\string#1\endcsname}%
-          \edef#1{\noexpand\XKV@toks{\the\XKV@toks}}%
-        \expandafter\endgroup#1%
-      \fi
-      \edef#1{\the\toks@{\the\XKV@toks}}%
-      \advance\count@\@ne
-      \let\@@cmd\@i
-    \else
-      \edef#1{\expandafter\string\the\XKV@toks}%
-      \expandafter\in@\expandafter{#1}{#2}%
-      \edef#1{\the\toks@\ifin@#1\else
-              \ifx\@@tok\@sptoken\space\else\the\XKV@toks\fi\fi}%
-      \edef\@@cmd{\noexpand\@i\ifx\@@tok\@sptoken\the\XKV@toks\fi}%
-    \fi
-    \@@cmd
-  }%
-  \let#1\@empty\@i#3\@s@l@ctive@sanitize
-}
-\def\XKV@checksanitizea#1#2{%
-  \XKV@ch@cksanitize{#1}#2=%
-  \ifin@\else\XKV@ch@cksanitize{#1}#2,\fi
-  \ifin@\@selective@sanitize[0]{,=}#2\fi
-}
-\def\XKV@checksanitizeb#1#2{%
-  \XKV@ch@cksanitize{#1}#2,%
-  \ifin@\@selective@sanitize[0],#2\fi
-}
-\def\XKV@ch@cksanitize#1#2#3{%
-  \XKV@tempa@toks{#1}\edef#2{\the\XKV@tempa@toks}%
-  \@onelevel@sanitize#2%
-  \@expandtwoargs\in@#3{#2}%
-  \ifin@
-    \def#2##1#3##2\@nil{%
-      \XKV@tempa@toks{##2}\edef#2{\the\XKV@tempa@toks}%
-      \ifx#2\@empty\else\in@false\fi
-    }%
-    #2#1#3\@nil
-  \fi
-  \XKV@tempa@toks{#1}\edef#2{\the\XKV@tempa@toks}%
-}
-\def\XKV@sp@deflist#1#2{%
-  \let#1\@empty
-  \XKV@for@n{#2}\XKV@resa{%
-    \expandafter\KV@@sp@def\expandafter\XKV@resa\expandafter{\XKV@resa}%
-    \XKV@addtomacro@o#1{\expandafter,\XKV@resa}%
-  }%
-  \ifx#1\@empty\else
-    \def\XKV@resa,##1\@nil{\def#1{##1}}%
-    \expandafter\XKV@resa#1\@nil
-  \fi
-}
-\def\XKV@merge#1#2#3{%
-  \XKV@checksanitizea{#2}\XKV@tempa
-  \XKV@for@o\XKV@tempa\XKV@tempa{%
-    \XKV@pltrue
-    #3\XKV@tempa\XKV@tempb
-    \let\XKV@tempc#1%
-    \let#1\@empty
-    \XKV@for@o\XKV@tempc\XKV@tempc{%
-      #3\XKV@tempc\XKV@tempd
-      \ifx\XKV@tempb\XKV@tempd
-        \XKV@plfalse
-        \XKV@addtolist@o#1\XKV@tempa
-      \else
-        \XKV@addtolist@o#1\XKV@tempc
-      \fi
-    }%
-    \ifXKV@pl\XKV@addtolist@o#1\XKV@tempa\fi
-  }%
-  \ifXKV@st\global\let#1#1\fi
-}
-\def\XKV@delete#1#2#3{%
-  \XKV@checksanitizeb{#2}\XKV@tempa
-  \let\XKV@tempb#1%
-  \let#1\@empty
-  \XKV@for@o\XKV@tempb\XKV@tempb{%
-    #3\XKV@tempb\XKV@tempc
-    \@expandtwoargs\in@{,\XKV@tempc,}{,\XKV@tempa,}%
-    \ifin@\else\XKV@addtolist@o#1\XKV@tempb\fi
-  }%
-  \ifXKV@st\global\let#1#1\fi
-}
 \def\XKV@warn#1{\message{xkeyval warning: #1}}
 \def\XKV@err#1{\errmessage{xkeyval error: #1}}
 \def\KV@errx{\XKV@err}
@@ -359,7 +135,7 @@
   \XKV@@ifcmd#1#2{\@nil}\@nil#3%
 }
 \def\XKV@getkeyname#1#2{\expandafter\XKV@g@tkeyname#1=\@nil#2}
-\def\XKV@g@tkeyname#1=#2\@nil#3{%
+\long\def\XKV@g@tkeyname#1=#2\@nil#3{%
   \XKV@ifcmd{#1}\savevalue#3{\XKV@rkvtrue\XKV@sgfalse}{%
     \XKV@ifcmd{#1}\gsavevalue#3%
       {\XKV@rkvtrue\XKV@sgtrue}{\XKV@rkvfalse\XKV@sgfalse}%
@@ -375,7 +151,7 @@
 \def\define@key{\XKV@testoptb\XKV@define@key}
 \def\XKV@define@key#1{%
   \@ifnextchar[{\XKV@d@fine@k@y{#1}}{%
-    \expandafter\def\csname\XKV@header#1\endcsname####1%
+    \long\expandafter\def\csname\XKV@header#1\endcsname####1%
   }%
 }
 \def\XKV@d@fine@k@y#1[#2]{%
@@ -658,7 +434,7 @@
   }%
 }
 \def\setkeys{\XKV@testopta{\XKV@testoptc\XKV@setkeys}}
-\def\XKV@setkeys[#1]#2{%
+\long\def\XKV@setkeys[#1]#2{%
   \XKV@checksanitizea{#2}\XKV@resb
   \let\XKV@naa\@empty
   \XKV@for@o\XKV@resb\XKV@tempa{%
@@ -684,13 +460,13 @@
   }%
   \XKV@presetfalse
 }
-\def\XKV@s@tkeys#1#2{%
+\long\def\XKV@s@tkeys#1#2{%
   \XKV@sp@deflist\XKV@na{#2}%
   \XKV@for@n{#1}\CurrentOption{%
     \expandafter\XKV@s@tk@ys\CurrentOption==\@nil
   }%
 }
-\def\XKV@s@tk@ys#1=#2=#3\@nil{%
+\long\def\XKV@s@tk@ys#1=#2=#3\@nil{%
   \XKV@g@tkeyname#1=\@nil\XKV@tkey
   \expandafter\KV@@sp@def\expandafter\XKV@tkey\expandafter{\XKV@tkey}%
   \ifx\XKV@tkey\@empty
@@ -780,18 +556,18 @@
     }%
   \fi
 }
-\def\XKV@replacepointers#1{%
+\long\def\XKV@replacepointers#1{%
   \let\XKV@tempa\@empty
   \let\XKV@resa\@empty
   \XKV@r@placepointers#1\usevalue\@nil
 }
-\def\XKV@r@placepointers#1\usevalue#2{%
+\long\def\XKV@r@placepointers#1\usevalue#2{%
   \XKV@addtomacro@n\XKV@tempa{#1}%
   \def\XKV@tempb{#2}%
   \ifx\XKV@tempb\@nnil\else\XKV@afterfi
     \XKV@ifundefined{XKV@\XKV@header#2@value}{%
       \XKV@err{no value recorded for key `#2'; ignored}%
-      \XKV@r@placepointers
+      \XKV@r@placepointers\@empty
     }{%
       \@expandtwoargs\in@{,#2,}{,\XKV@resa,}%
       \ifin@\XKV@afterelsefi
@@ -799,6 +575,7 @@
       \else\XKV@afterfi
         \XKV@addtolist@x\XKV@resa{#2}%
         \expandafter\expandafter\expandafter\XKV@r@placepointers
+        \expandafter\expandafter\expandafter\@empty
           \csname XKV@\XKV@header#2@value\endcsname
       \fi
     }%

@@ -88,6 +88,38 @@ local function sortedkeys(tab)
     end
 end
 
+local function sortedhashonly(tab)
+    if tab then
+        local srt, s = { }, 0
+        for key,_ in next, tab do
+            if type(key) == "string" then
+                s = s + 1
+                srt[s] = key
+            end
+        end
+        sort(srt)
+        return srt
+    else
+        return { }
+    end
+end
+
+local function sortedindexonly(tab)
+    if tab then
+        local srt, s = { }, 0
+        for key,_ in next, tab do
+            if type(key) == "number" then
+                s = s + 1
+                srt[s] = key
+            end
+        end
+        sort(srt)
+        return srt
+    else
+        return { }
+    end
+end
+
 local function sortedhashkeys(tab,cmp) -- fast one
     if tab then
         local srt, s = { }, 0
@@ -114,8 +146,10 @@ function table.allkeys(t)
     return sortedkeys(keys)
 end
 
-table.sortedkeys     = sortedkeys
-table.sortedhashkeys = sortedhashkeys
+table.sortedkeys      = sortedkeys
+table.sortedhashonly  = sortedhashonly
+table.sortedindexonly = sortedindexonly
+table.sortedhashkeys  = sortedhashkeys
 
 local function nothing() end
 
@@ -129,12 +163,15 @@ local function sortedhash(t,cmp)
             s = sortedkeys(t) -- the robust one
         end
         local n = 0
-        local function kv(s)
-            n = n + 1
-            local k = s[n]
-            return k, t[k]
+        local m = #s
+        local function kv() -- (s)
+            if n < m then
+                n = n + 1
+                local k = s[n]
+                return k, t[k]
+            end
         end
-        return kv, s
+        return kv -- , s
     else
         return nothing
     end
@@ -363,7 +400,7 @@ local function simple_table(t)
                 if tv == "number" then
                     nt = nt + 1
                     if hexify then
-                        tt[nt] = format("0x%04X",v)
+                        tt[nt] = format("0x%X",v)
                     else
                         tt[nt] = tostring(v) -- tostring not needed
                     end
@@ -414,7 +451,7 @@ local function do_serialize(root,name,depth,level,indexed)
             local tn = type(name)
             if tn == "number" then
                 if hexify then
-                    handle(format("%s[0x%04X]={",depth,name))
+                    handle(format("%s[0x%X]={",depth,name))
                 else
                     handle(format("%s[%s]={",depth,name))
                 end
@@ -465,7 +502,7 @@ local function do_serialize(root,name,depth,level,indexed)
             if compact and first and tk == "number" and k >= first and k <= last then
                 if tv == "number" then
                     if hexify then
-                        handle(format("%s 0x%04X,",depth,v))
+                        handle(format("%s 0x%X,",depth,v))
                     else
                         handle(format("%s %s,",depth,v)) -- %.99g
                     end
@@ -506,25 +543,25 @@ local function do_serialize(root,name,depth,level,indexed)
             elseif tv == "number" then
                 if tk == "number" then
                     if hexify then
-                        handle(format("%s [0x%04X]=0x%04X,",depth,k,v))
+                        handle(format("%s [0x%X]=0x%X,",depth,k,v))
                     else
                         handle(format("%s [%s]=%s,",depth,k,v)) -- %.99g
                     end
                 elseif tk == "boolean" then
                     if hexify then
-                        handle(format("%s [%s]=0x%04X,",depth,k and "true" or "false",v))
+                        handle(format("%s [%s]=0x%X,",depth,k and "true" or "false",v))
                     else
                         handle(format("%s [%s]=%s,",depth,k and "true" or "false",v)) -- %.99g
                     end
                 elseif noquotes and not reserved[k] and lpegmatch(propername,k) then
                     if hexify then
-                        handle(format("%s %s=0x%04X,",depth,k,v))
+                        handle(format("%s %s=0x%X,",depth,k,v))
                     else
                         handle(format("%s %s=%s,",depth,k,v)) -- %.99g
                     end
                 else
                     if hexify then
-                        handle(format("%s [%q]=0x%04X,",depth,k,v))
+                        handle(format("%s [%q]=0x%X,",depth,k,v))
                     else
                         handle(format("%s [%q]=%s,",depth,k,v)) -- %.99g
                     end
@@ -533,7 +570,7 @@ local function do_serialize(root,name,depth,level,indexed)
                 if reduce and tonumber(v) then
                     if tk == "number" then
                         if hexify then
-                            handle(format("%s [0x%04X]=%s,",depth,k,v))
+                            handle(format("%s [0x%X]=%s,",depth,k,v))
                         else
                             handle(format("%s [%s]=%s,",depth,k,v))
                         end
@@ -547,7 +584,7 @@ local function do_serialize(root,name,depth,level,indexed)
                 else
                     if tk == "number" then
                         if hexify then
-                            handle(format("%s [0x%04X]=%q,",depth,k,v))
+                            handle(format("%s [0x%X]=%q,",depth,k,v))
                         else
                             handle(format("%s [%s]=%q,",depth,k,v))
                         end
@@ -563,7 +600,7 @@ local function do_serialize(root,name,depth,level,indexed)
                 if not next(v) then
                     if tk == "number" then
                         if hexify then
-                            handle(format("%s [0x%04X]={},",depth,k))
+                            handle(format("%s [0x%X]={},",depth,k))
                         else
                             handle(format("%s [%s]={},",depth,k))
                         end
@@ -579,7 +616,7 @@ local function do_serialize(root,name,depth,level,indexed)
                     if st then
                         if tk == "number" then
                             if hexify then
-                                handle(format("%s [0x%04X]={ %s },",depth,k,concat(st,", ")))
+                                handle(format("%s [0x%X]={ %s },",depth,k,concat(st,", ")))
                             else
                                 handle(format("%s [%s]={ %s },",depth,k,concat(st,", ")))
                             end
@@ -599,7 +636,7 @@ local function do_serialize(root,name,depth,level,indexed)
             elseif tv == "boolean" then
                 if tk == "number" then
                     if hexify then
-                        handle(format("%s [0x%04X]=%s,",depth,k,v and "true" or "false"))
+                        handle(format("%s [0x%X]=%s,",depth,k,v and "true" or "false"))
                     else
                         handle(format("%s [%s]=%s,",depth,k,v and "true" or "false"))
                     end
@@ -616,7 +653,7 @@ local function do_serialize(root,name,depth,level,indexed)
                  -- local f = getinfo(v).what == "C" and dump(function(...) return v(...) end) or dump(v) -- maybe strip
                     if tk == "number" then
                         if hexify then
-                            handle(format("%s [0x%04X]=load(%q),",depth,k,f))
+                            handle(format("%s [0x%X]=load(%q),",depth,k,f))
                         else
                             handle(format("%s [%s]=load(%q),",depth,k,f))
                         end
@@ -631,7 +668,7 @@ local function do_serialize(root,name,depth,level,indexed)
             else
                 if tk == "number" then
                     if hexify then
-                        handle(format("%s [0x%04X]=%q,",depth,k,tostring(v)))
+                        handle(format("%s [0x%X]=%q,",depth,k,tostring(v)))
                     else
                         handle(format("%s [%s]=%q,",depth,k,tostring(v)))
                     end
@@ -690,7 +727,7 @@ local function serialize(_handle,root,name,specification) -- handle wins
         end
     elseif tname == "number" then
         if hexify then
-            handle(format("[0x%04X]={",name))
+            handle(format("[0x%X]={",name))
         else
             handle("[" .. name .. "]={")
         end
@@ -885,16 +922,27 @@ end
 table.identical = identical
 table.are_equal = are_equal
 
--- maybe also make a combined one
-
-function table.compact(t) -- remove empty tables, assumes subtables
-    if t then
-        for k, v in next, t do
-            if not next(v) then -- no type checking
-                t[k] = nil
+local function sparse(old,nest,keeptables)
+    local new  = { }
+    for k, v in next, old do
+        if not (v == "" or v == false) then
+            if nest and type(v) == "table" then
+                v = sparse(v,nest)
+                if keeptables or next(v) then
+                    new[k] = v
+                end
+            else
+                new[k] = v
             end
         end
     end
+    return new
+end
+
+table.sparse = sparse
+
+function table.compact(t)
+    return sparse(t,true,true)
 end
 
 function table.contains(t, v)
@@ -1003,7 +1051,9 @@ function table.print(t,...)
     end
 end
 
-setinspector(function(v) if type(v) == "table" then serialize(print,v,"table") return true end end)
+if setinspector then
+    setinspector(function(v) if type(v) == "table" then serialize(print,v,"table") return true end end)
+end
 
 -- -- -- obsolete but we keep them for a while and might comment them later -- -- --
 
@@ -1053,4 +1103,71 @@ end
 function table.sorted(t,...)
     sort(t,...)
     return t -- still sorts in-place
+end
+
+--
+
+function table.values(t,s) -- optional sort flag
+    if t then
+        local values, keys, v = { }, { }, 0
+        for key, value in next, t do
+            if not keys[value] then
+                v = v + 1
+                values[v] = value
+                keys[k] = key
+            end
+        end
+        if s then
+            sort(values)
+        end
+        return values
+    else
+        return { }
+    end
+end
+
+-- maybe this will move to util-tab.lua
+
+-- for k, v in table.filtered(t,pattern)          do ... end
+-- for k, v in table.filtered(t,pattern,true)     do ... end
+-- for k, v in table.filtered(t,pattern,true,cmp) do ... end
+
+function table.filtered(t,pattern,sort,cmp)
+    if t and type(pattern) == "string" then
+        if sort then
+            local s
+            if cmp then
+                -- it would be nice if the sort function would accept a third argument (or nicer, an optional first)
+                s = sortedhashkeys(t,function(a,b) return cmp(t,a,b) end)
+            else
+                s = sortedkeys(t) -- the robust one
+            end
+            local n = 0
+            local m = #s
+            local function kv(s)
+                while n < m do
+                    n = n + 1
+                    local k = s[n]
+                    if find(k,pattern) then
+                        return k, t[k]
+                    end
+                end
+            end
+            return kv, s
+        else
+            local n = next(t)
+            local function iterator()
+                while n do
+                    local k = n
+                    n = next(t,k)
+                    if find(k,pattern) then
+                        return k, t[k]
+                    end
+                end
+            end
+            return iterator, t
+        end
+    else
+        return nothing
+    end
 end

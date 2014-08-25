@@ -7,7 +7,7 @@
 %% bidi.dtx  (with options: `table,wrapfig-xetex-bidi.def')
 %% 
 %%   __________________________________________________
-%%   Copyright © 2009–2013  Vafa Khalighi <persian-tex@tug.org>
+%%   Copyright © 2009–2014  Vafa Khalighi <persian-tex@tug.org>
 %% 
 %%   It may be distributed and/or modified under the LaTeX Project Public License,
 %%   version 1.3c or higher (your choice). The latest version of
@@ -17,7 +17,7 @@
 %%   by Vafa Khalighi.
 %% 
 %% 
-%% \CheckSum{42007}
+%% \CheckSum{42052}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -34,7 +34,7 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 %%
-\ProvidesFile{wrapfig-xetex-bidi.def}[2010/07/25 v0.2 bidi adaptations for wrapfig package for XeTeX engine]
+\ProvidesFile{wrapfig-xetex-bidi.def}[2014/04/23 v0.3 bidi adaptations for wrapfig package for XeTeX engine]
 \let\WF@@everypar\bidi@n@everypar
 \def\WF@putfigmaybe{%
 \ifinner
@@ -42,7 +42,7 @@
   \let\pagetotal\maxdimen % kludge flag for "not top of page"
 \else % outer page
   \@tempdima\pagedepth % save page depth
-   {\advance\parskip\if@RTL\baselineskip\else\@tempdima\fi\vskip-\parskip}% back up to baseline
+   {\advance\parskip\@tempdima\if@RTL\advance\parskip\baselineskip\fi\vskip-\parskip}% back up to baseline
    \penalty\interlinepenalty % update pg. parameters
    \@tempdimb\pagegoal \advance\@tempdimb-\pagetotal % room left on page
    \ifdim\@tempdimb<\z@ % \WF@info{Page overfull already;}%

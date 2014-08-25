@@ -2,10 +2,10 @@
 -----------------------------------------------------------------------
 --         FILE:  luaotfload-auxiliary.lua
 --  DESCRIPTION:  part of luaotfload
--- REQUIREMENTS:  luaotfload 2.3
+-- REQUIREMENTS:  luaotfload 2.5
 --       AUTHOR:  Khaled Hosny, Élie Roux, Philipp Gesang
---      VERSION:  2.3a
---      CREATED:  2013-05-01 14:40:50+0200
+--      VERSION:  2.5
+--     MODIFIED:  2014-01-02 21:24:25+0100
 -----------------------------------------------------------------------
 --
 
@@ -15,28 +15,26 @@
 luaotfload                  = luaotfload or {}
 luaotfload.aux              = luaotfload.aux or { }
 
-config                      = config or { }
-config.luaotfload           = config.luaotfload or { }
+local aux                   = luaotfload.aux
+local log                   = luaotfload.log
+local report                = log.report
+local fonthashes            = fonts.hashes
+local identifiers           = fonthashes.identifiers
+local fontnames             = fonts.names
 
-local aux           = luaotfload.aux
-local log           = luaotfload.log
-local warning       = luaotfload.log
-local fonthashes    = fonts.hashes
-local identifiers   = fonthashes.identifiers
+local fontid                = font.id
+local texsprint             = tex.sprint
 
-local fontid        = font.id
-local texsprint     = tex.sprint
-
-local dofile        = dofile
-local getmetatable  = getmetatable
-local setmetatable  = setmetatable
-local utf8          = unicode.utf8
-local stringlower   = string.lower
-local stringformat  = string.format
-local stringgsub    = string.gsub
-local stringbyte    = string.byte
-local stringfind    = string.find
-local tablecopy     = table.copy
+local dofile                = dofile
+local getmetatable          = getmetatable
+local setmetatable          = setmetatable
+local utf8                  = unicode.utf8
+local stringlower           = string.lower
+local stringformat          = string.format
+local stringgsub            = string.gsub
+local stringbyte            = string.byte
+local stringfind            = string.find
+local tablecopy             = table.copy
 
 -----------------------------------------------------------------------
 ---                          font patches
@@ -57,8 +55,8 @@ local start_rewrite_fontname = function ()
       rewrite_fontname,
       "luaotfload.rewrite_fontname")
     rewriting = true
-    logs.names_report ("log", 0, "aux",
-                       "start rewriting tfmdata.name field")
+    report ("log", 1, "aux",
+            "start rewriting tfmdata.name field")
   end
 end
 
@@ -69,97 +67,13 @@ local stop_rewrite_fontname = function ()
     luatexbase.remove_fromt_callback
       ("luaotfload.patch_font", "luaotfload.rewrite_fontname")
     rewriting = false
-    logs.names_report ("log", 0, "aux",
-                       "stop rewriting tfmdata.name field")
+    report ("log", 1, "aux",
+            "stop rewriting tfmdata.name field")
   end
 end
 
 aux.stop_rewrite_fontname = stop_rewrite_fontname
 
---- as of 2.3 the compatibility hacks for TL 2013 are made optional
-
-if config.luaotfload.compatibility == true then
-
---[[doc--
-
-The font object (tfmdata) structure has changed since version 1.x, so
-in case other packages haven’t been updated we put fallbacks in place
-where they’d expect them. Specifically we have in mind:
-
-  · fontspec
-  · unicode-math
-  · microtype (most likely fixed till TL2013)
-
---doc]]--
-
---- fontobj -> fontobj
-local add_fontdata_fallbacks = function (fontdata)
-  if type(fontdata) == "table" then
-    local fontparameters = fontdata.parameters
-    local metadata
-    if not fontdata.shared then --- that would be a tfm
-      --- we can’t really catch everything that
-      --- goes wrong; for some reason, fontspec.lua
-      --- just assumes it always gets an otf object,
-      --- so its capheight callback, which does not
-      --- bother to do any checks, will access
-      --- fontdata.shared no matter what ...
-      fontdata.units = fontdata.units_per_em
-
-    else --- otf
-      metadata         = fontdata.shared.rawdata.metadata
-      fontdata.name    = metadata.origname or fontdata.name
-      fontdata.units   = fontdata.units_per_em
-      fontdata.size    = fontdata.size or fontparameters.size
-      local resources  = fontdata.resources
-      --- for legacy fontspec.lua and unicode-math.lua
-      fontdata.shared.otfdata = {
-        pfminfo   = { os2_capheight = metadata.pfminfo.os2_capheight },
-        metadata  = { ascent = metadata.ascent },
-      }
-      --- for microtype and fontspec
-      --local fake_features = { }
-      local fake_features = table.copy(resources.features)
-      setmetatable(fake_features, { __index = function (tab, idx)
-          warning("some package (probably fontspec) is outdated")
-          warning(
-            "attempt to index " ..
-            "tfmdata.shared.otfdata.luatex.features (%s)",
-            idx)
-          --os.exit(1)
-          return tab[idx]
-        end,
-      })
-      fontdata.shared.otfdata.luatex = {
-        unicodes = resources.unicodes,
-        features = fake_features,
-      }
-    end
-  end
-  return fontdata
-end
-
-luatexbase.add_to_callback(
-  "luaotfload.patch_font",
-  add_fontdata_fallbacks,
-  "luaotfload.fontdata_fallbacks")
-
---[[doc--
-
-Additionally, the font registry is expected at fonts.identifiers
-(fontspec) or fonts.ids (microtype), but in the meantime it has been
-migrated to fonts.hashes.identifiers.  We’ll make luaotfload satisfy
-those assumptions. (Maybe it’d be more appropriate to use
-font.getfont() since Hans made it a harmless wrapper [1].)
-
-[1] http://www.ntg.nl/pipermail/ntg-context/2013/072166.html
-
---doc]]--
-
-fonts.identifiers = fonts.hashes.identifiers
-fonts.ids         = fonts.hashes.identifiers
-
-end
 
 --[[doc--
 This sets two dimensions apparently relied upon by the unicode-math
@@ -234,7 +148,7 @@ local set_capheight = function (fontdata)
     local shared     = fontdata.shared
     local parameters = fontdata.parameters
     local capheight
-    if shared then
+    if shared and shared.rawdata.metadata.pfminfo then
       local units_per_em   = parameters.units
       local size           = parameters.size
       local os2_capheight  = shared.rawdata.metadata.pfminfo.os2_capheight
@@ -368,35 +282,124 @@ aux.name_of_slot      = name_of_slot
   resides. The file is huge (>3.7 MB as of 2013) and not part of the
   isolated font loader. Nevertheless, we include a partial version
   generated by the mkcharacters script that contains only the
-  “direction” and “mirror” fields of each character defined.
+  a subset of the fields of each character defined.
+
+  Currently, these are (compare the mkcharacters script!)
+
+    · "direction"
+    · "mirror"
+    · "category"
+    · "textclass"
+
+  The directional information is required for packages like Simurgh [0]
+  to work correctly. In an early stage [1] it was necessary to load
+  further files from Context directly, including the full blown version
+  of char-def.  Since we have no use for most of the so imported
+  functionality, the required parts have been isolated and are now
+  instated along with luaotfload-characters.lua. We can extend the set
+  of imported features easily should it not be enough.
+
+  [0] https://github.com/persian-tex/simurgh
+  [1] http://tex.stackexchange.com/a/132301/14066
 
 --doc]]--
 
-characters      = characters or { } --- should be created in basics-gen
-characters.data = { }
-local chardef   = "luaotfload-characters"
+characters         = characters or { } --- should be created in basics-gen
+characters.data    = nil
+local chardef      = "luaotfload-characters"
 
 do
-  local chardata
-  local index = function (t, k)
-    if chardata == nil then
-      log("Loading character metadata from %s.", chardef)
-      chardata = dofile(kpse.find_file(chardef, "lua"))
-      if chardata == nil then
-        warning("Could not load %s; continuing with empty character table.",
-                chardef)
-        chardata = { }
-      end
+  local setmetatableindex = function (t, f)
+    local mt = getmetatable (t)
+    if mt then
+      mt.__index = f
+    else
+      setmetatable (t, { __index = f })
     end
-    return chardata[k]
   end
 
-  local mt = getmetatable(characters.data)
-  if mt then
-    mt.__index = index
-  else
-    setmetatable(characters.data, { __index = index })
+  --- there are some special tables for each field that provide access
+  --- to fields of the character table by means of a metatable
+
+  local mkcharspecial = function (characters, tablename, field)
+
+    local chardata = characters.data
+
+    if chardata then
+      local newspecial        = { }
+      characters [tablename]  = newspecial --> e.g. “characters.data.mirrors”
+
+      local idx = function (t, char)
+        local c = chardata [char]
+        if c then
+          local m = c [field] --> e.g. “mirror”
+          if m then
+            t [char] = m
+            return m
+          end
+        end
+        newspecial [char] = false
+        return char
+      end
+
+      setmetatableindex (newspecial, idx)
+    end
+
   end
+
+  local mkcategories = function (characters) -- different from the others
+
+    local chardata = characters.data
+
+    setmetatable (characters, { __index = function (t, char)
+      if char then
+        local c = chardata [char]
+        c = c.category or char
+        t [char] = c
+        return c
+      end
+    end})
+
+  end
+
+  local load_failed = false
+  local chardata --> characters.data; loaded on demand
+
+  local load_chardef = function ()
+
+    report ("both", 1, "aux", "Loading character metadata from %s.", chardef)
+    chardata = dofile (kpse.find_file (chardef, "lua"))
+
+    if chardata == nil then
+      warning ("Could not load %s; continuing \z
+                with empty character table.",
+                chardef)
+      chardata    = { }
+      load_failed = true
+    end
+
+    characters      = { } --- nuke metatable
+    characters.data = chardata
+
+    --- institute some of the functionality from char-ini.lua
+
+    mkcharspecial (characters, "mirrors",     "mirror")
+    mkcharspecial (characters, "directions",  "direction")
+    mkcharspecial (characters, "textclasses", "textclass")
+    mkcategories  (characters)
+
+  end
+
+  local charindex = function (t, k)
+    if chardata == nil and load_failed ~= true then
+      load_chardef ()
+    end
+
+    return characters [k]
+  end
+
+  setmetatableindex (characters, charindex)
+
 end
 
 -----------------------------------------------------------------------
@@ -422,19 +425,19 @@ local provides_script = function (font_id, asked_script)
         --- where method: "gpos" | "gsub"
         for feature, data in next, featuredata do
           if data[asked_script] then
-            log(stringformat(
-              "font no %d (%s) defines feature %s for script %s",
-              font_id, fontname, feature, asked_script))
+            report ("log", 1, "aux",
+                    "font no %d (%s) defines feature %s for script %s",
+                    font_id, fontname, feature, asked_script)
             return true
           end
         end
       end
-      log(stringformat(
-        "font no %d (%s) defines no feature for script %s",
-        font_id, fontname, asked_script))
+      report ("log", 0, "aux",
+              "font no %d (%s) defines no feature for script %s",
+              font_id, fontname, asked_script)
     end
   end
-  log(stringformat("no font with id %d", font_id))
+  report ("log", 0, "aux", "no font with id %d", font_id)
   return false
 end
 
@@ -461,20 +464,22 @@ local provides_language = function (font_id, asked_script, asked_language)
         for feature, data in next, featuredata do
           local scriptdata = data[asked_script]
           if scriptdata and scriptdata[asked_language] then
-            log(stringformat("font no %d (%s) defines feature %s "
-                          .. "for script %s with language %s",
-                             font_id, fontname, feature,
-                             asked_script, asked_language))
+            report ("log", 1, "aux",
+                    "font no %d (%s) defines feature %s "
+                    .. "for script %s with language %s",
+                    font_id, fontname, feature,
+                    asked_script, asked_language)
             return true
           end
         end
       end
-      log(stringformat(
-        "font no %d (%s) defines no feature for script %s with language %s",
-        font_id, fontname, asked_script, asked_language))
+      report ("log", 0, "aux",
+              "font no %d (%s) defines no feature "
+              .. "for script %s with language %s",
+              font_id, fontname, asked_script, asked_language)
     end
   end
-  log(stringformat("no font with id %d", font_id))
+  report ("log", 0, "aux", "no font with id %d", font_id)
   return false
 end
 
@@ -532,20 +537,21 @@ local provides_feature = function (font_id,        asked_script,
         if feature then
           local scriptdata = feature[asked_script]
           if scriptdata and scriptdata[asked_language] then
-            log(stringformat("font no %d (%s) defines feature %s "
-                          .. "for script %s with language %s",
-                             font_id, fontname, asked_feature,
-                             asked_script, asked_language))
+            report ("log", 1, "aux",
+                    "font no %d (%s) defines feature %s "
+                    .. "for script %s with language %s",
+                    font_id, fontname, asked_feature,
+                    asked_script, asked_language)
             return true
           end
         end
       end
-      log(stringformat(
-        "font no %d (%s) does not define feature %s for script %s with language %s",
-        font_id, fontname, asked_feature, asked_script, asked_language))
+      report ("log", 0, "aux",
+              "font no %d (%s) does not define feature %s for script %s with language %s",
+              font_id, fontname, asked_feature, asked_script, asked_language)
     end
   end
-  log(stringformat("no font with id %d", font_id))
+  report ("log", 0, "aux", "no font with id %d", font_id)
   return false
 end
 
@@ -585,8 +591,10 @@ aux.sprint_math_dimension = sprint_math_dimension
 ---                    extra database functions
 -----------------------------------------------------------------------
 
-local namesresolve      = fonts.names.resolve
-local namesscan_dir     = fonts.names.scan_dir
+local namesresolve      = fontnames.resolve
+local namesscan_dir     = fontnames.scan_dir
+
+--[====[-- TODO -> port this to new db model
 
 --- local directories -------------------------------------------------
 
@@ -595,7 +603,7 @@ local namesscan_dir     = fonts.names.scan_dir
 
 --- string -> (int * int)
 local scan_external_dir = function (dir)
-  local old_names, new_names = names.data
+  local old_names, new_names = names.data()
   if not old_names then
     old_names = load_names()
   end
@@ -611,6 +619,12 @@ local scan_external_dir = function (dir)
 end
 
 aux.scan_external_dir = scan_external_dir
+
+--]====]--
+
+aux.scan_external_dir = function ()
+  print "ERROR: scan_external_dir() is not implemented"
+end
 
 --- db queries --------------------------------------------------------
 
@@ -649,6 +663,42 @@ resolve_fontlist = function (names, n)
 end
 
 aux.resolve_fontlist = resolve_fontlist
+
+--- index access ------------------------------------------------------
+
+--- Based on a discussion on the Luatex mailing list:
+--- http://tug.org/pipermail/luatex/2014-June/004881.html
+
+--[[doc--
+
+  aux.read_font_index -- Read the names index from the canonical
+  location and return its contents. This does not affect the behavior
+  of Luaotfload: The returned table is independent of what the font
+  resolvers use internally. Access is raw: each call to the function
+  will result in the entire table being re-read from disk.
+
+--doc]]--
+
+local load_names        = fontnames.load
+local access_font_index = fontnames.access_font_index
+
+local read_font_index = function ()
+  return load_names (true) or { }
+end
+
+--[[doc--
+
+  aux.font_index -- Access Luaotfload’s internal database. If the
+  database hasn’t been loaded yet this will cause it to be loaded, with
+  all the possible side-effects like for instance creating the index
+  file if it doesn’t exist, reading all font files, &c.
+
+--doc]]--
+
+local font_index = function () return access_font_index () end
+
+aux.read_font_index = read_font_index
+aux.font_index      = font_index
 
 --- loaded fonts ------------------------------------------------------
 

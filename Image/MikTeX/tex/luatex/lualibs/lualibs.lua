@@ -7,7 +7,7 @@
 --  lualibs.dtx  (with options: `lualibs')
 --  This is a generated file.
 --  
---  Copyright (C) 2009--2013 by PRAGMA ADE / ConTeXt Development Team
+--  Copyright (C) 2009--2014 by PRAGMA ADE / ConTeXt Development Team
 --  
 --  See ConTeXt's mreadme.pdf for the license.
 --  
@@ -22,8 +22,8 @@ lualibs = lualibs or { }
 
 lualibs.module_info = {
   name          = "lualibs",
-  version       = 2.00,
-  date          = "2013/07/23",
+  version       = 2.2,
+  date          = "2014-07-26",
   description   = "ConTeXt Lua standard libraries.",
   author        = "Hans Hagen, PRAGMA-ADE, Hasselt NL & Elie Roux & Philipp Gesang",
   copyright     = "PRAGMA ADE / ConTeXt Development Team",
@@ -34,9 +34,23 @@ lualibs.module_info = {
 config           = config or { }
 config.lualibs   = config.lualibs or { }
 
-lualibs.prefer_merged   = config.lualibs.prefer_merged or true
-lualibs.load_extended   = config.lualibs.load_extended or true
-config.lualibs.verbose  = config.lualibs.verbose       or false
+if config.lualibs.prefer_merged ~= nil then
+  lualibs.prefer_merged = config.lualibs.prefer_merged
+else
+  lualibs.prefer_merged = true
+end
+
+if config.lualibs.load_extended ~= nil then
+  lualibs.load_extended = config.lualibs.load_extended
+else
+  lualibs.load_extended = true
+end
+
+if config.lualibs.verbose ~= nil then
+  config.lualibs.verbose = config.lualibs.verbose
+else
+  config.lualibs.verbose = false
+end
 
 
 local dofile          = dofile

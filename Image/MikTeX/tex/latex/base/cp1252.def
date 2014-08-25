@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009
+%% Copyright 1993-2014
 %% The LaTeX3 Project and any individual authors listed elsewhere
 %% in this file.
 %% 
@@ -55,8 +55,7 @@
 
 
   \ProvidesFile{cp1252.def}
-   [2008/03/30 v1.1d Input encoding file]
-\makeatletter
+   [2014/04/30 v1.2b Input encoding file]
 \ProvideTextCommandDefault{\textdegree}{\ensuremath{{^\circ}}}
 \ProvideTextCommandDefault{\textonehalf}{\ensuremath{\frac12}}
 \ProvideTextCommandDefault{\textonequarter}{\ensuremath{\frac14}}
@@ -200,7 +199,6 @@
 \DeclareInputText{254}{\th}
 \DeclareInputText{239}{\"\i}
 \DeclareInputText{255}{\"y}
-\makeatother
 \endinput
 %%
 %% End of file `cp1252.def'.

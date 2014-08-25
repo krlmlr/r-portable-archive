@@ -7,7 +7,7 @@
 %% xkeyval.dtx  (with options: `xkvkeyval')
 %% 
 %% ---------------------------------------
-%% Copyright (C) 2004-2012 Hendri Adriaens
+%% Copyright (C) 2004-2014 Hendri Adriaens
 %% ---------------------------------------
 %%
 %% This work may be distributed and/or modified under the
@@ -24,36 +24,36 @@
 %%
 %% This work consists of the file xkeyval.dtx and derived files
 %% keyval.tex, xkvtxhdr.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
-%% xkvltxp.sty, pst-xkey.tex, pst-xkey.sty, xkveca.cls, xkvecb.cls,
-%% xkvesa.sty, xkvesb.sty, xkvesc.sty, xkvex1.tex, xkvex2.tex,
-%% xkvex3.tex and xkvex4.tex.
+%% xkvltxp.sty, xkvutils.tex, pst-xkey.tex, pst-xkey.sty, xkveca.cls,
+%% xkvecb.cls, xkvesa.sty, xkvesb.sty, xkvesc.sty, xkvex1.tex,
+%% xkvex2.tex, xkvex3.tex and xkvex4.tex.
 %%
 %% The following files constitute the xkeyval bundle and must be
 %% distributed as a whole: readme, xkeyval.pdf, keyval.tex,
 %% pst-xkey.sty, pst-xkey.tex, xkeyval.sty, xkeyval.tex, xkvview.sty,
-%% xkvltxp.sty, xkvtxhdr.tex, pst-xkey.dtx and xkeyval.dtx.
+%% xkvltxp.sty, xkvtxhdr.tex, xkvutils.tex, pst-xkey.dtx and xkeyval.dtx.
 %%
 %%
 %% Based on keyval.sty.
 %%
 \def\XKV@tempa#1{%
-\def\KV@@sp@def##1##2{%
+\long\def\KV@@sp@def##1##2{%
   \futurelet\XKV@resa\KV@@sp@d##2\@nil\@nil#1\@nil\relax##1}%
-\def\KV@@sp@d{%
+\long\def\KV@@sp@d{%
   \ifx\XKV@resa\@sptoken
     \expandafter\KV@@sp@b
   \else
     \expandafter\KV@@sp@b\expandafter#1%
   \fi}%
-\def\KV@@sp@b#1##1 \@nil{\KV@@sp@c##1}%
+\long\def\KV@@sp@b#1##1 \@nil{\KV@@sp@c##1}%
   }
 \XKV@tempa{ }
-\def\KV@@sp@c#1\@nil#2\relax#3{\XKV@toks{#1}\edef#3{\the\XKV@toks}}
-\def\KV@do#1,{%
+\long\def\KV@@sp@c#1\@nil#2\relax#3{\XKV@toks{#1}\edef#3{\the\XKV@toks}}
+\long\def\KV@do#1,{%
  \ifx\relax#1\@empty\else
   \KV@split#1==\relax
   \expandafter\KV@do\fi}
-\def\KV@split#1=#2=#3\relax{%
+\long\def\KV@split#1=#2=#3\relax{%
   \KV@@sp@def\XKV@tempa{#1}%
   \ifx\XKV@tempa\@empty\else
     \expandafter\let\expandafter\XKV@tempc
@@ -78,9 +78,9 @@
     \XKV@tempb\relax
   \fi}
 \def\KV@def#1#2[#3]{%
-  \@namedef{KV@#1@#2@default\expandafter}\expandafter
+  \long\@namedef{KV@#1@#2@default\expandafter}\expandafter
     {\csname KV@#1@#2\endcsname{#3}}%
-  \@namedef{KV@#1@#2}##1}
+  \long\@namedef{KV@#1@#2}##1}
 \endinput
 %%
 %% End of file `keyval.tex'.

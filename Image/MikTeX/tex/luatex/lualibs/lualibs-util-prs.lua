@@ -40,8 +40,8 @@ local newline     = lpegpatterns.newline
 local anything    = lpegpatterns.anything
 local endofstring = lpegpatterns.endofstring
 
-local nobrace     = 1 - ( lbrace  + rbrace )
-local noparent    = 1 - ( lparent + rparent)
+local nobrace     = 1 - (lbrace  + rbrace )
+local noparent    = 1 - (lparent + rparent)
 
 -- we could use a Cf Cg construct
 
@@ -179,15 +179,49 @@ function parsers.settings_to_array(str,strict)
     elseif not str or str == "" then
         return { }
     elseif strict then
-        if find(str,"{") then
+        if find(str,"{",1,true) then
             return lpegmatch(pattern,str)
         else
             return { str }
         end
-    else
+    elseif find(str,",",1,true) then
         return lpegmatch(pattern,str)
+    else
+        return { str }
     end
 end
+
+-- this one also strips end spaces before separators
+--
+-- "{123} , 456  " -> "123" "456"
+
+local separator = space^0 * comma * space^0
+local value     = P(lbrace * C((nobrace + nestedbraces)^0) * rbrace)
+                + C((nestedbraces + (1-(space^0*(comma+P(-1)))))^0)
+local withvalue = Carg(1) * value / function(f,s) return f(s) end
+local pattern_a = spaces * Ct(value*(separator*value)^0)
+local pattern_b = spaces * withvalue * (separator*withvalue)^0
+
+function parsers.stripped_settings_to_array(str)
+    if not str or str == "" then
+        return { }
+    else
+        return lpegmatch(pattern_a,str)
+    end
+end
+
+function parsers.process_stripped_settings(str,action)
+    if not str or str == "" then
+        return { }
+    else
+        return lpegmatch(pattern_b,str,1,action)
+    end
+end
+
+-- parsers.process_stripped_settings("{123} , 456  ",function(s) print("["..s.."]") end)
+-- parsers.process_stripped_settings("123 , 456  ",function(s) print("["..s.."]") end)
+
+--
 
 local function set(t,v)
     t[#t+1] = v
@@ -259,6 +293,16 @@ function parsers.simple_hash_to_string(h, separator)
         end
     end
     return concat(t,separator or ",")
+end
+
+-- for mtx-context etc: aaaa bbbb cccc=dddd eeee=ffff
+
+local str      = C((1-whitespace-equal)^1)
+local setting  = Cf( Carg(1) * (whitespace^0 * Cg(str * whitespace^0 * (equal * whitespace^0 * str + Cc(""))))^1,rawset)
+local splitter = setting^1
+
+function utilities.parsers.options_to_hash(str,target)
+    return str and lpegmatch(splitter,str,1,target or { }) or { }
 end
 
 -- for chem (currently one level)
@@ -441,8 +485,8 @@ function parsers.rfc4180splitter(specification)
                       * Cs((dquotechar + (1 - quotechar))^0)
                       * quotechar
     local non_escaped = C((1 - quotechar - newline - separator)^1)
-    local field       = escaped + non_escaped
-    local record      = Ct((field * separator^-1)^1)
+    local field       = escaped + non_escaped + Cc("")
+    local record      = Ct(field * (separator * field)^1)
     local headerline  = record * Cp()
     local wholeblob   = Ct((newline^-1 * record)^0)
     return function(data,getheader)
@@ -498,8 +542,8 @@ end
 
 --
 
-local pattern_math = Cs((P("%")/"\\percent " +  P("^")           * Cc("{") * lpegpatterns.integer * Cc("}") + P(1))^0)
-local pattern_text = Cs((P("%")/"\\percent " + (P("^")/"\\high") * Cc("{") * lpegpatterns.integer * Cc("}") + P(1))^0)
+local pattern_math = Cs((P("%")/"\\percent " +  P("^")           * Cc("{") * lpegpatterns.integer * Cc("}") + anything)^0)
+local pattern_text = Cs((P("%")/"\\percent " + (P("^")/"\\high") * Cc("{") * lpegpatterns.integer * Cc("}") + anything)^0)
 
 patterns.unittotex = pattern
 
@@ -507,7 +551,7 @@ function parsers.unittotex(str,textmode)
     return lpegmatch(textmode and pattern_text or pattern_math,str)
 end
 
-local pattern = Cs((P("^") / "<sup>" * lpegpatterns.integer * Cc("</sup>") + P(1))^0)
+local pattern = Cs((P("^") / "<sup>" * lpegpatterns.integer * Cc("</sup>") + anything)^0)
 
 function parsers.unittoxml(str)
     return lpegmatch(pattern,str)
@@ -569,7 +613,7 @@ local function fetch(t,name)
     return t[name] or { }
 end
 
-function process(result,more)
+local function process(result,more)
     for k, v in next, more do
         result[k] = v
     end
@@ -604,3 +648,27 @@ function utilities.parsers.runtime(time)
     local seconds = mod(time,60)
     return days, hours, minutes, seconds
 end
+
+--
+
+local spacing = whitespace^0
+local apply   = P("->")
+local method  = C((1-apply)^1)
+local token   = lbrace * C((1-rbrace)^1) * rbrace + C(anything^1)
+
+local pattern = spacing * (method * spacing * apply + Carg(1)) * spacing * token
+
+function utilities.parsers.splitmethod(str,default)
+    if str then
+        return lpegmatch(pattern,str,1,default or false)
+    else
+        return default or false, ""
+    end
+end
+
+-- print(utilities.parsers.splitmethod(" foo -> {bar} "))
+-- print(utilities.parsers.splitmethod("foo->{bar}"))
+-- print(utilities.parsers.splitmethod("foo->bar"))
+-- print(utilities.parsers.splitmethod("foo"))
+-- print(utilities.parsers.splitmethod("{foo}"))
+-- print(utilities.parsers.splitmethod())

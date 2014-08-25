@@ -24,40 +24,44 @@ local md5sumhexa   = md5.sumhexa
 local ioloaddata   = io.loaddata
 local iosavedata   = io.savedata
 local iopopen      = io.popen
+local iowrite      = io.write
+local lfsisdir     = lfs.isdir
 
 -----------------------------------------------------------------------
 -- settings
 -----------------------------------------------------------------------
 
-local filelist = "luaotfload-status.lua" --- result
+local verbose  = false
+local filelist = "./build/luaotfload-status.lua" --- result
 
 local names = {
   --- only the runtime files and scripts
-  "luaotfload-auxiliary.lua",
-  "luaotfload-basics-gen.lua",
-  "luaotfload-basics-nod.lua",
-  "luaotfload-characters.lua",
-  "luaotfload-colors.lua",
-  "luaotfload-database.lua",
-  "luaotfload-extralibs.lua",
-  "luaotfload-features.lua",
-  "luaotfload-fonts-cbk.lua",
-  "luaotfload-fonts-def.lua",
-  "luaotfload-fonts-enc.lua",
-  "luaotfload-fonts-ext.lua",
-  "luaotfload-fonts-lua.lua",
-  "luaotfload-fonts-tfm.lua",
-  "luaotfload-glyphlist.lua",
-  "luaotfload-letterspace.lua",
-  "luaotfload-loaders.lua",
-  "luaotfload.lua",
-  "luaotfload-merged.lua",
-  "luaotfload-override.lua",
-  "luaotfload-tool.lua",
-  "luaotfload-typo-krn.lua",
-  "mkcharacters",
-  "mkglyphlist",
-  "mkstatus",
+  { "src",      "luaotfload-auxiliary.lua",   },
+  { "src",      "luaotfload-basics-gen.lua",  },
+  { "src",      "luaotfload-basics-nod.lua",  },
+  { "build",    "luaotfload-characters.lua",  },
+  { "src",      "luaotfload-colors.lua",      },
+  { "src",      "luaotfload-database.lua",    },
+  { "src",      "luaotfload-diagnostics.lua", },
+  { "src",      "luaotfload-features.lua",    },
+  { "src",      "luaotfload-fonts-cbk.lua",   },
+  { "src",      "luaotfload-fonts-def.lua",   },
+  { "src",      "luaotfload-fonts-enc.lua",   },
+  { "src",      "luaotfload-fonts-ext.lua",   },
+  { "src",      "luaotfload-fonts-lua.lua",   },
+  { "src",      "luaotfload-fonts-tfm.lua",   },
+  { "build",    "luaotfload-glyphlist.lua",   },
+  { "src",      "luaotfload-letterspace.lua", },
+  { "src",      "luaotfload-loaders.lua",     },
+  { "src",      "luaotfload-log.lua",         },
+  { "src",      "luaotfload-main.lua",        },
+  { "src",      "luaotfload-fontloader.lua",  },
+  { "src",      "luaotfload-override.lua",    },
+  { "src",      "luaotfload-parsers.lua",     },
+  { "src",      "luaotfload-tool.lua",        },
+  { "scripts",  "mkcharacters",               },
+  { "scripts",  "mkglyphlist",                },
+  { "scripts",  "mkstatus",                   },
 }
 
 -----------------------------------------------------------------------
@@ -121,10 +125,31 @@ hash_all = function (list, acc)
     return hash_all (table.fastcopy (names), { })
   end
 
-  local fname = list[#list]
+  local finfo = list[#list]
   list[#list] = nil
-  if fname then
-    local sum = hash_file (fname)
+  if finfo then
+    local fpath, fname
+    if type (finfo) == "table" then
+      local d, f = finfo [1], finfo [2]
+      if lfs.isdir (d) then
+        fpath = file.join (d, f)
+      else
+        fpath = f
+      end
+      fname = f
+    else
+      fpath = finfo
+    end
+    if verbose then
+      iowrite "· md5("
+      iowrite (fpath)
+    end
+    local sum = hash_file (fpath)
+    if verbose then
+      iowrite ") = \""
+      iowrite (sum)
+      iowrite "\"\n"
+    end
     acc[#acc+1] = { fname, sum }
     return hash_all (list, acc)
   end
@@ -132,6 +157,7 @@ hash_all = function (list, acc)
 end
 
 local main = function ()
+  if arg [1] == "-v" then verbose = true end
   local hashes      = hash_all ()
   local notes       = git_info ()
   local serialized  = table.serialize ({ notes = notes,
@@ -145,3 +171,4 @@ end
 
 return main ()
 
+--- vim:ft=lua:ts=2:et:sw=2

@@ -12,7 +12,7 @@ local concat = table.concat
 local floor = math.floor
 local type = type
 
-if string.find(os.getenv("PATH"),";") then
+if string.find(os.getenv("PATH"),";",1,true) then
     io.fileseparator, io.pathseparator = "\\", ";"
 else
     io.fileseparator, io.pathseparator = "/" , ":"
@@ -60,7 +60,7 @@ io.readall = readall
 function io.loaddata(filename,textmode) -- return nil if empty
     local f = io.open(filename,(textmode and 'r') or 'rb')
     if f then
---       local data = f:read('*all')
+     -- local data = f:read('*all')
         local data = readall(f)
         f:close()
         if #data > 0 then

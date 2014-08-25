@@ -8,4 +8,4 @@ sources, etc., together with binary distributions for a variety of
 platforms. Note: biber is formally named biblatex-biber, to
 distinguish it from an earlier (now apparently moribund) project
 called biber.
-</TPM:Description><TPM:RunFiles size="21708264">texmf\miktex\bin\biber.exe texmf\tpm\packages\miktex-biber-bin.tpm</TPM:RunFiles><TPM:DocFiles size="470472">texmf\doc\support\biber\biber.pdf texmf\doc\support\biber\utf8-macro-map.html</TPM:DocFiles><TPM:TimePackaged>1383339991</TPM:TimePackaged><TPM:MD5>e97a90b4852bb5a971cf6b950ae9da84</TPM:MD5><TPM:Copyright owner="François Charette and Philip Kime" year="2009-2011"/><TPM:License type="artistic"/></rdf:Description></rdf:RDF>
+</TPM:Description><TPM:RunFiles size="20086403">texmf\miktex\bin\biber.exe texmf\tpm\packages\miktex-biber-bin.tpm</TPM:RunFiles><TPM:DocFiles size="460551">texmf\doc\support\biber\biber.pdf texmf\doc\support\biber\utf8-macro-map.html</TPM:DocFiles><TPM:TimePackaged>1408478401</TPM:TimePackaged><TPM:MD5>9097056149dab3301a378d89dab1e1cb</TPM:MD5><TPM:Copyright owner="François Charette and Philip Kime" year="2009-2011"/><TPM:License type="artistic"/></rdf:Description></rdf:RDF>

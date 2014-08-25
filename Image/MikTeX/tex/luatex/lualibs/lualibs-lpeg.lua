@@ -6,6 +6,10 @@ if not modules then modules = { } end modules ['l-lpeg'] = {
     license   = "see context related readme files"
 }
 
+-- lpeg 12 vs lpeg 10: slower compilation, similar parsing speed (i need to check
+-- if i can use new features like capture / 2 and .B (at first sight the xml
+-- parser is some 5% slower)
+
 -- a new lpeg fails on a #(1-P(":")) test and really needs a + P(-1)
 
 -- move utf    -> l-unicode
@@ -15,14 +19,15 @@ lpeg = require("lpeg")
 
 -- The latest lpeg doesn't have print any more, and even the new ones are not
 -- available by default (only when debug mode is enabled), which is a pitty as
--- as it helps bailign down bottlenecks. Performance seems comparable, although
+-- as it helps nailign down bottlenecks. Performance seems comparable: some 10%
+-- slower pattern compilation, same parsing speed, although,
 --
 -- local p = lpeg.C(lpeg.P(1)^0 * lpeg.P(-1))
--- local a = string.rep("123",10)
+-- local a = string.rep("123",100)
 -- lpeg.match(p,a)
 --
--- is nearly 20% slower and also still suboptimal (i.e. a match that runs from
--- begin to end, one of the cases where string matchers win).
+-- seems slower and is also still suboptimal (i.e. a match that runs from begin
+-- to end, one of the cases where string matchers win).
 
 if not lpeg.print then function lpeg.print(...) print(lpeg.pcode(...)) end end
 
@@ -74,14 +79,15 @@ local lpegtype, lpegmatch, lpegprint = lpeg.type, lpeg.match, lpeg.print
 
 -- let's start with an inspector:
 
-setinspector(function(v) if lpegtype(v) then lpegprint(v) return true end end)
+if setinspector then
+    setinspector(function(v) if lpegtype(v) then lpegprint(v) return true end end)
+end
 
 -- Beware, we predefine a bunch of patterns here and one reason for doing so
 -- is that we get consistent behaviour in some of the visualizers.
 
 lpeg.patterns  = lpeg.patterns or { } -- so that we can share
 local patterns = lpeg.patterns
-
 
 local anything         = P(1)
 local endofstring      = P(-1)
@@ -101,7 +107,8 @@ local uppercase        = R("AZ")
 local underscore       = P("_")
 local hexdigit         = digit + lowercase + uppercase
 local cr, lf, crlf     = P("\r"), P("\n"), P("\r\n")
-local newline          = crlf + S("\r\n") -- cr + lf
+----- newline          = crlf + S("\r\n") -- cr + lf
+local newline          = P("\r") * (P("\n") + P(true)) + P("\n")
 local escaped          = P("\\") * anything
 local squote           = P("'")
 local dquote           = P('"')
@@ -109,22 +116,34 @@ local space            = P(" ")
 local period           = P(".")
 local comma            = P(",")
 
-local utfbom_32_be     = P('\000\000\254\255')
-local utfbom_32_le     = P('\255\254\000\000')
-local utfbom_16_be     = P('\255\254')
-local utfbom_16_le     = P('\254\255')
-local utfbom_8         = P('\239\187\191')
+local utfbom_32_be     = P('\000\000\254\255') -- 00 00 FE FF
+local utfbom_32_le     = P('\255\254\000\000') -- FF FE 00 00
+local utfbom_16_be     = P('\254\255')         -- FE FF
+local utfbom_16_le     = P('\255\254')         -- FF FE
+local utfbom_8         = P('\239\187\191')     -- EF BB BF
 local utfbom           = utfbom_32_be + utfbom_32_le
                        + utfbom_16_be + utfbom_16_le
                        + utfbom_8
 local utftype          = utfbom_32_be * Cc("utf-32-be") + utfbom_32_le  * Cc("utf-32-le")
                        + utfbom_16_be * Cc("utf-16-be") + utfbom_16_le  * Cc("utf-16-le")
                        + utfbom_8     * Cc("utf-8")     + alwaysmatched * Cc("utf-8") -- assume utf8
+local utfstricttype    = utfbom_32_be * Cc("utf-32-be") + utfbom_32_le  * Cc("utf-32-le")
+                       + utfbom_16_be * Cc("utf-16-be") + utfbom_16_le  * Cc("utf-16-le")
+                       + utfbom_8     * Cc("utf-8")
 local utfoffset        = utfbom_32_be * Cc(4) + utfbom_32_le * Cc(4)
                        + utfbom_16_be * Cc(2) + utfbom_16_le * Cc(2)
                        + utfbom_8     * Cc(3) + Cc(0)
 
 local utf8next         = R("\128\191")
+
+patterns.utfbom_32_be  = utfbom_32_be
+patterns.utfbom_32_le  = utfbom_32_le
+patterns.utfbom_16_be  = utfbom_16_be
+patterns.utfbom_16_le  = utfbom_16_le
+patterns.utfbom_8      = utfbom_8
+
+patterns.utf_16_be_nl  = P("\000\r\000\n") + P("\000\r") + P("\000\n") -- P("\000\r") * (P("\000\n") + P(true)) + P("\000\n")
+patterns.utf_16_le_nl  = P("\r\000\n\000") + P("\r\000") + P("\n\000") -- P("\r\000") * (P("\n\000") + P(true)) + P("\n\000")
 
 patterns.utf8one       = R("\000\127")
 patterns.utf8two       = R("\194\223") * utf8next
@@ -132,6 +151,7 @@ patterns.utf8three     = R("\224\239") * utf8next * utf8next
 patterns.utf8four      = R("\240\244") * utf8next * utf8next * utf8next
 patterns.utfbom        = utfbom
 patterns.utftype       = utftype
+patterns.utfstricttype = utfstricttype
 patterns.utfoffset     = utfoffset
 
 local utf8char         = patterns.utf8one + patterns.utf8two + patterns.utf8three + patterns.utf8four
@@ -157,12 +177,14 @@ patterns.whitespace    = whitespace
 patterns.nonspacer     = nonspacer
 patterns.nonwhitespace = nonwhitespace
 
-local stripper         = spacer^0 * C((spacer^0     * nonspacer^1)^0) -- from example by roberto
+local stripper         = spacer    ^0 * C((spacer    ^0 * nonspacer    ^1)^0)     -- from example by roberto
+local fullstripper     = whitespace^0 * C((whitespace^0 * nonwhitespace^1)^0)
 
 ----- collapser        = Cs(spacer^0/"" * ((spacer^1 * endofstring / "") + (spacer^1/" ") + P(1))^0)
 local collapser        = Cs(spacer^0/"" * nonspacer^0 * ((spacer^0/" " * nonspacer^1)^0))
 
 patterns.stripper      = stripper
+patterns.fullstripper  = fullstripper
 patterns.collapser     = collapser
 
 patterns.lowercase     = lowercase
@@ -203,9 +225,12 @@ patterns.integer       = sign^-1 * digit^1
 patterns.unsigned      = digit^0 * period * digit^1
 patterns.float         = sign^-1 * patterns.unsigned
 patterns.cunsigned     = digit^0 * comma * digit^1
+patterns.cpunsigned    = digit^0 * (period + comma) * digit^1
 patterns.cfloat        = sign^-1 * patterns.cunsigned
+patterns.cpfloat       = sign^-1 * patterns.cpunsigned
 patterns.number        = patterns.float + patterns.integer
 patterns.cnumber       = patterns.cfloat + patterns.integer
+patterns.cpnumber      = patterns.cpfloat + patterns.integer
 patterns.oct           = zero * octdigit^1
 patterns.octal         = patterns.oct
 patterns.HEX           = zero * P("X") * (digit+uppercase)^1
@@ -454,7 +479,10 @@ function lpeg.replacer(one,two,makefunction,isutf) -- in principle we should sor
     end
 end
 
-function lpeg.finder(lst,makefunction) -- beware: slower than find with 'patternless finds'
+-- local pattern1 = P(1-P(pattern))^0 * P(pattern)   : test for not nil
+-- local pattern2 = (P(pattern) * Cc(true) + P(1))^0 : test for true (could be faster, but not much)
+
+function lpeg.finder(lst,makefunction,isutf) -- beware: slower than find with 'patternless finds'
     local pattern
     if type(lst) == "table" then
         pattern = P(false)
@@ -470,7 +498,11 @@ function lpeg.finder(lst,makefunction) -- beware: slower than find with 'pattern
     else
         pattern = P(lst)
     end
-    pattern = (1-pattern)^0 * pattern
+    if isutf then
+        pattern = ((utf8char or 1)-pattern)^0 * pattern
+    else
+        pattern = (1-pattern)^0 * pattern
+    end
     if makefunction then
         return function(str)
             return lpegmatch(pattern,str)
@@ -783,21 +815,76 @@ end
 
 -- experiment:
 
-local function make(t)
-    local p
+-- local function make(t)
+--     local p
+--     local keys = sortedkeys(t)
+--     for i=1,#keys do
+--         local k = keys[i]
+--         local v = t[k]
+--         if not p then
+--             if next(v) then
+--                 p = P(k) * make(v)
+--             else
+--                 p = P(k)
+--             end
+--         else
+--             if next(v) then
+--                 p = p + P(k) * make(v)
+--             else
+--                 p = p + P(k)
+--             end
+--         end
+--     end
+--     return p
+-- end
+
+-- local function make(t)
+--     local p = P(false)
+--     local keys = sortedkeys(t)
+--     for i=1,#keys do
+--         local k = keys[i]
+--         local v = t[k]
+--         if next(v) then
+--             p = p + P(k) * make(v)
+--         else
+--             p = p + P(k)
+--         end
+--     end
+--     return p
+-- end
+
+-- function lpeg.utfchartabletopattern(list) -- goes to util-lpg
+--     local tree = { }
+--     for i=1,#list do
+--         local t = tree
+--         for c in gmatch(list[i],".") do
+--             local tc = t[c]
+--             if not tc then
+--                 tc = { }
+--                 t[c] = tc
+--             end
+--             t = tc
+--         end
+--     end
+--     return make(tree)
+-- end
+
+local function make(t,hash)
+    local p = P(false)
     local keys = sortedkeys(t)
     for i=1,#keys do
         local k = keys[i]
         local v = t[k]
-        if not p then
+        local h = hash[v]
+        if h then
             if next(v) then
-                p = P(k) * make(v)
+                p = p + P(k) * (make(v,hash) + P(true))
             else
-                p = P(k)
+                p = p + P(k) * P(true)
             end
         else
             if next(v) then
-                p = p + P(k) * make(v)
+                p = p + P(k) * make(v,hash)
             else
                 p = p + P(k)
             end
@@ -808,16 +895,38 @@ end
 
 function lpeg.utfchartabletopattern(list) -- goes to util-lpg
     local tree = { }
-    for i=1,#list do
-        local t = tree
-        for c in gmatch(list[i],".") do
-            if not t[c] then
-                t[c] = { }
+    local hash = { }
+    local n = #list
+    if n == 0 then
+        -- we could always use this branch
+        for s in next, list do
+            local t = tree
+            for c in gmatch(s,".") do
+                local tc = t[c]
+                if not tc then
+                    tc = { }
+                    t[c] = tc
+                end
+                t = tc
             end
-            t = t[c]
+            hash[t] = s
+        end
+    else
+        for i=1,n do
+            local t = tree
+            local s = list[i]
+            for c in gmatch(s,".") do
+                local tc = t[c]
+                if not tc then
+                    tc = { }
+                    t[c] = tc
+                end
+                t = tc
+            end
+            hash[t] = s
         end
     end
-    return make(tree)
+    return make(tree,hash)
 end
 
 -- inspect ( lpeg.utfchartabletopattern {

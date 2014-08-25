@@ -27,9 +27,9 @@
 \catcode`\@=11\relax
 %
 \expandafter\ifx\csname @latexerr\endcsname\relax%	do we have LaTeX?
-  \def\typeout#1{\immediate\write\@unused{#1}}
+  \def\typeout#1{\immediate\write\@unused{#1}}%
   \alloc@7\write\chardef\sixt@@n\@unused
-  \typeout{we are running tex and have to define some LaTeX commands ...} 
+  \typeout{we are running tex and have to define some LaTeX commands ...}%
   \long\def\@ifundefined#1#2#3{\expandafter\ifx\csname
     #1\endcsname\relax#2\else#3\fi}
   \def\@namedef#1{\expandafter\def\csname #1\endcsname}
@@ -81,7 +81,6 @@
 %  \in@{,#2,}{,#3,}%
 \begingroup\edef\x{\endgroup\noexpand\in@{,#2,}}\x{,#3,}%
 %\expandafter\in@\expandafter{\expandafter,#2,}{,#3,}% --- hv 2012-04-27
-%\typeout{=====>foo<=====}%
   \ifin@
     \ifXKV@pl
       \XKV@addtomacro@n\XKV@tempa\@firstoftwo
@@ -110,8 +109,8 @@
 \input pgffor.code.tex
 \let\pgfforeach\foreach
 %
-\def\fileversion{2.49b}
-\def\filedate{2013/12/21}
+\def\fileversion{2.56}
+\def\filedate{2014/07/31}
 \catcode`\@=11\relax
 \pst@addfams{pstricks}
 %
@@ -522,23 +521,31 @@
   \ifx\ps@next\@empty\let\pst@num\z@%
   \else\expandafter\pst@@checknum\ps@next..\@nil%
   \fi%
-  \ifnum\pst@num=\z@
+  \ifcase\pst@num%  0
     \@pstrickserr{Bad number: `#1'. 0 substituted.}\@ehpa%
     \def#2{0 }%
-  \else%
+  \or%              1
     \edef#2{\ifnum\pst@num=\tw@-\fi\the\pst@cntg.%
       \expandafter\@gobble\the\pst@cnth\space}%
+  \or%              2
+    \edef#2{\ifnum\pst@num=\tw@-\fi\the\pst@cntg.%
+      \expandafter\@gobble\the\pst@cnth\space}%
+  \or%              3
+    \edef#2{\pst@tempA\space}%
   \fi}
 \def\pst@@checknum{%
   \@ifnextchar-%
   {\let\pst@num\tw@\expandafter\pst@@@checknum\@gobble}%
-  {\let\pst@num\@ne\pst@@@checknum}%
+  {\@ifnextchar !%
+    {\def\pst@num{3}\pst@@@@@checknum}
+    {\let\pst@num\@ne\pst@@@checknum}}%
 }
-%
 \def\pst@@@checknum#1.#2.#3\@nil{%
 \afterassignment\pst@@@@checknum\pst@cntg=0#1\relax\@nil%
 \afterassignment\pst@@@@checknum\pst@cnth=1#2\relax\@nil}
 \def\pst@@@@checknum#1\relax\@nil{\ifx\@nil#1\@nil\else\let\pst@num\z@\fi}
+%
+\def\pst@@@@@checknum#1#2.#3\@nil{\def\pst@tempA{#2}}% PostScript Notation with !<code>
 %
 \def\pst@getnumii#1 #2 #3\@nil{%
   \pst@checknum{#1}\pst@tempg%
@@ -781,7 +788,7 @@
   }%
   \def\psput@##1{\pst@@getcoor{##1}\leavevmode\psput@cartesian}%
 }
-\NormalCoor% set to normal read of coors, angles and lengths
+%\NormalCoor% set to normal read of coors, angles and lengths
 %
 \def\degrees{\@ifnextchar[{\@degrees}{\def\pst@angleunit{}}}
 \def\@degrees[#1]{%
@@ -824,6 +831,8 @@
   }%
   \def\psput@##1{\pst@@getcoor{##1}\leavevmode\psput@special}%
 }
+\SpecialCoor% set to special read of coors, angles and lengths
+%
 \begingroup
 \catcode`\|=13
 \catcode`\;=13
@@ -966,7 +975,7 @@
   \edef\pst@coor{\pst@number\pst@dimb \pst@angle \tx@PtoC }%
 }
 %
-\def\raw@coor{\@ifnextchar!\raw@@coor\raw@@@coor}
+\def\raw@coor{\@ifnextchar !\raw@@coor\raw@@@coor}
 \def\raw@@coor!#1;#2\@nil{%		PostScript code without using \tx@ScreenCoor 
   \edef\pst@coor{#1 }}
 \def\raw@@@coor#1;#2\@nil{%		PostScript code 
@@ -1006,7 +1015,7 @@
 \def\Node@coor{\node@coor}
 %
 \def\special@angle#1#2)#3\@nil{%
-  \ifx!#1\relax
+  \ifx !#1\relax
     \edef\pst@angle{#2\space \pst@angleunit}%
   \else\ifx(#1\relax
     \pst@@getcoor{#2}%
@@ -1018,7 +1027,7 @@
 %
 \def\special@length#1#2\@nil#3{%
   \psDEBUG[special@length]{ #1|#2|#3 }%
-  \ifx!#1\relax
+  \ifx !#1\relax
     \edef\pst@SpecialLength{ #2 \pst@number\psunit mul }%
     \Pst@SpecialLengthtrue%
     \psDEBUG[special@length]{ Special length: \pst@SpecialLength}%
@@ -1204,8 +1213,17 @@
       /Multiply \or
       /HardLight \or
       /Darken \or
-      /Ligten \or
-      /Difference
+      /Lighten \or
+      /Difference\or
+      /ColorDodge\or
+      /ColorBurn\or
+      /SoftLight\or
+      /Hue\or
+      /Saturation\or
+      /Luminosity\or
+      /Overlay\or
+      /Exclusion\or
+      /Color
     \else
       /Normal 
     \fi
@@ -1214,7 +1232,15 @@
 %--------------------------------- hv 2007-09-09 begin ---------------------
 % transparency needs a run through latex -> dvips -> ps2pdf14(!) 
 %
-\define@key[psset]{pstricks}{fillcolor}[white]{\pst@getcolor{#1}\psfillcolor}
+\def\e@fill@inverse{oefill}
+\define@key[psset]{pstricks}{fillcolor}[white]{%
+  \ifx\psk@fillstylename\e@fill@inverse
+    \pst@getcolor{#1}\psk@oefillcolor
+    \pst@getcolor{white}\psfillcolor
+  \else \pst@getcolor{white}\psk@oefillcolor
+        \pst@getcolor{#1}\psfillcolor
+  \fi}
+
 \psset[pstricks]{fillcolor=white}
 \define@key[psset]{pstricks}{strokeopacity}[1]{\pst@checknum{#1}\psk@strokeopacityalpha }% for lines
 \psset[pstricks]{strokeopacity=1}
@@ -1243,6 +1269,7 @@
 \def\psfs@none{}
 \def\psfs@solid{\pst@fill{\pst@usecolor\psfillcolor \tx@setTransparency fill }}
 \def\psfs@eofill{\pst@fill{\pst@usecolor\psfillcolor \tx@setTransparency eofill}}
+\def\psfs@oefill{\pst@fill{\pst@usecolor\psk@oefillcolor  \tx@setTransparency fill } \psfs@eofill }
 \def\psfs@shape{\pst@fill{\pst@usecolor\psfillcolor \tx@setBlendmode fill }}
 \def\psfs@spiral{\pst@fill{\pst@fsOrigin \pst@usecolor\psfillcolor clip newpath
     0 .1 500 { dup dup sqrt 4 div 0 360 arc fill \pst@fsAngle rotate } for }}
@@ -1337,6 +1364,7 @@
 \@namedef{psfs@truchet*}{\psfs@solid \psfs@truchet}
 %
 \define@key[psset]{pstricks}{fillstyle}[none]{%
+  \def\psk@fillstylename{#1}%  needed for inverse eofill
   \edef\pst@tempg{#1}\def\pst@temph{none}%
   \ifx\pst@tempg\pst@temph
      \let\psk@fillstyle\relax
@@ -1940,10 +1968,13 @@
   \def\cuse@par##1{{\use@par##1}}%
   \the\pst@customdefs%
   \setbox\pst@hbox=\hbox{#1}%
-  \psk@fillstyle%
-  \pst@stroke%
-  \end@SpecialObj%
+  \psk@fillstyle
+  \pst@stroke
+  \end@SpecialObj
+  \let\pst@ifcustom\iffalse
 }
+%
+\let\pst@ifcustom\iffalse
 %
 \def\begin@CustomObj{%
   \begingroup%
@@ -2192,6 +2223,28 @@
   \ifx\pslinestyle\psls@@symbol\def\pslinestyle{none}\fi%
   \end@ClosedObj}
 %
+\def\pscspline{\pst@object{pscspline}}%  Christoph Bersch
+\def\pscspline@i{%
+  \pst@getarrows{%
+    \begin@OpenObj
+    \pst@getcoors[\pscspline@ii
+  }%
+}
+\def\tx@Spline{Spline }
+\def\pscspline@ii{%
+  \addto@pscode{
+    \ifPst@noCurrentPoint\else\pst@cp\fi
+    \tx@setlinejoin
+    \ifshowpoints true \else false \fi
+    \ifx\pslinestyle\psls@@symbol 
+      \psls@symbol OpenSymbolSpline
+    \else
+      \tx@Spline
+    \fi
+  }%      
+  \end@OpenObj
+}
+%
 \define@key[psset]{pstricks}{dotsize}[2pt 2]{%
   \pst@expandafter\pst@getdimnum{#1} 0 {} {}\@nil%
   \edef\psk@@dotsize{\pst@number\pst@dimg}%
@@ -2244,6 +2297,7 @@
   \addto@pscode{
     \psk@dotsize
     \@nameuse{psds@\psk@dotstyle}
+    \tx@setStrokeTransparency
     \pst@coor Dot}%
   \end@SpecialObj}
 %
@@ -2257,8 +2311,9 @@
 \def\psdots@iii{%
   \psk@dotsize
   \@nameuse{psds@\psk@dotstyle}
+  \tx@setStrokeTransparency
   newpath
-  n { transform floor .5 add exch floor .5 add exch itransform Dot } repeat }
+  n { transform floor .5 add exch floor .5 add exch itransform Dot  } repeat }
 %
 % DG: dead code (to suppress until \psset[pstricks]{dotstyle) ? - Aug. 4, 1997
 \def\tx@SQ{SQ }
@@ -3163,7 +3218,12 @@ pop
       \ifx D\pst@tempg 2 % Down
       \else
         \ifx L\pst@tempg 3 % Left
-        \else 0 % Up
+        \else 
+          \ifx l\pst@tempg 4 % |_
+          \else
+            \ifx r\pst@tempg 5 % _|
+            \else 0 \fi     % Up
+          \fi
         \fi
       \fi
     \fi}%
@@ -3189,10 +3249,19 @@ pop
       \psline@iii
       pop
       0.5
-      \pst@number\pst@dimc \pst@number\pst@dimd
-      \ifodd\psk@trimode exch \fi
+      \pst@number\pst@dimc % Width
+      \pst@number\pst@dimd % Height
+      \ifcase\psk@trimode  
+             \or  %% 0
+        exch \or  %% 1
+             \or  %% 2
+        exch \or  %% 3
+             \or  %% 4
+             \or  %% 5
+      \fi
       \psk@trimode -90 mul
-      \pst@number\pst@dima \pst@number\pst@dimb
+      \pst@number\pst@dima % x coor for text
+      \pst@number\pst@dimb % y coor for text
       \tx@Triangle}%
     \def\pst@linetype{2}%
     \end@ClosedObj
@@ -3203,10 +3272,10 @@ pop
   \pst@dimh=\pslinewidth
   \advance\pst@dimh\psframesep
   \pst@dimg=\ht\pst@hbox
-  \advance\pst@dimg-\dp\pst@hbox
-  \divide\pst@dimg 2
-  \edef\pst@tempa{\number\pst@dimg sp}% For use by nodes.
-  \ifodd\psk@trimode
+  \advance\pst@dimg-\dp\pst@hbox         % totalheight
+  \divide\pst@dimg 2                     % 0.5 totalheight
+  \edef\pst@tempa{\number\pst@dimg sp}%  % For use by nodes.
+  \ifodd\psk@trimode                     % 
     \pst@dimb\pst@dimg
   \else
     \pst@dima=\wd\pst@hbox
@@ -3412,6 +3481,7 @@ pop
     \pst@@getcoor{#2}%
     \def\pst@linetype{1}%
     \addto@pscode{%
+      \ifx\psk@rot\@empty \else \psk@rot\space rotate \fi
       \pst@tempa \pst@tempb
       \pst@coor
       \pst@tempc moveto
@@ -3445,46 +3515,49 @@ pop
 \def\psellipticarc@iv(#1)(#2)#3#4{%
 %  \addbefore@par{correctAngle=false}
   \begin@OpenObj%
-  \pst@getcoor{#1}\pst@tempa%	origin
-  \pst@getcoor{#2}\pst@tempb%	a b
-  \pst@getangle{#3}\pst@tempc%	start angle
-  \pst@getangle{#4}\pst@tempd% 	end angle
-  \addto@pscode{ \psellipticarc@definearg \psellipticarc@draw
+  \pst@getcoor{#1}\pst@tempa    %	origin
+  \pst@getcoor{#2}\pst@tempb	%	a b
+  \pst@getangle{#3}\pst@tempc	%	start angle
+  \pst@getangle{#4}\pst@tempd	% 	end angle
+  \addto@pscode{ 
+    \psellipticarc@definearg \psellipticarc@draw
     \ifPst@variableLW \pst@flattenpath \fi 
   }%
   \ifshowpoints
-  \addto@pscode{
-  gsave
-  xOrig yOrig T % set origin to ellipse origin
-  rx ry scale   % now we draw a circle :-)
-  1 \pst@tempc  % start angle
-  \ifPst@correctAngle
-     cvi 90 mod 0 eq { \pst@tempc } 
-       { rx abs ry abs sub cvi 0 eq { \pst@tempc }{ rx ry
-         \tx@UserCoor exch \pst@tempc tan mul exch atan 
-          \pst@tempc 180 div 0.5 add floor 
-          180 mul sub } ifelse } ifelse
-    \fi
-  PtoC moveto 
-  0 0 lineto 
-  1 \pst@tempd % end angle
-  \ifPst@correctAngle
-     cvi 90 mod 0 eq { \pst@tempd } 
-       { rx ry \tx@UserCoor exch \pst@tempd tan mul exch atan 
-          \pst@tempd 180 div .5 add floor 180 mul sub } ifelse 
-  \fi
-  PtoC lineto
-%  \ifcase\psarc@type arc \or arcn \fi
-  CLW 2 div SLW 
-  [ 1 1 \tx@UserCoor ] 0 setdash 
-  stroke
-  grestore 
+    \addto@pscode{
+      gsave
+      xOrig yOrig T % set origin to ellipse origin
+      \ifx\psk@rot\@empty \else \psk@rot\space rotate \fi
+      rx ry scale   % now we draw a circle :-)
+      1 \pst@tempc  % start angle
+      \ifPst@correctAngle
+       cvi 90 mod 0 eq { \pst@tempc } 
+         { rx abs ry abs sub cvi 0 eq { \pst@tempc }{ rx ry
+           \tx@UserCoor exch \pst@tempc tan mul exch atan 
+            \pst@tempc 180 div 0.5 add floor 
+            180 mul sub } ifelse } ifelse
+      \fi
+      PtoC moveto 
+      0 0 lineto 
+      1 \pst@tempd % end angle
+      \ifPst@correctAngle
+       cvi 90 mod 0 eq { \pst@tempd } 
+         { rx ry \tx@UserCoor exch \pst@tempd tan mul exch atan 
+            \pst@tempd 180 div .5 add floor 180 mul sub } ifelse 
+      \fi
+      PtoC lineto
+   %  \ifcase\psarc@type arc \or arcn \fi
+      CLW 2 div SLW 
+      [ 1 1 \tx@UserCoor ] 0 setdash 
+      stroke
+      grestore 
     }
-    \showpointsfalse%
+  \showpointsfalse%
   \fi
   \end@OpenObj%
 }
 \def\psellipticarc@definearg{%
+%  \ifx\psk@rot\@empty \else \psk@rot\space rotate \fi
   \pst@tempa /yOrig ED /xOrig ED  % Origin
   \pst@tempb                      % radii. Now adjust:
   \ifdim\psk@dimen\p@=\z@\else
@@ -3541,10 +3614,17 @@ pop
   \fi
   /mtrx CM def
   xOrig yOrig T
+  \ifx\psk@rot\@empty \else \psk@rot\space rotate \fi
   rx ry scale
-%  \if@star 0 0 moveto \fi	% for filling
+  \pst@ifcustom\else
+    0 0 moveto 
+    exch dup dup               % end start start start
+    cos exch sin moveto        % end start
+    exch                       % start end 
+  \fi
+%%  \if@star 0 0 moveto \fi	% for filling
   \if@psarcn arcn \else arc \fi
-%  \if@star 0 0 moveto \fi
+%%  \if@star 0 0 moveto \fi
   mtrx setmatrix%
 }
 \def\psellipticarc@showpoints{%
@@ -3588,9 +3668,10 @@ pop
     \pssetlength\pst@dimc{#2}%
     \def\pst@linetype{4}%
     \addto@pscode{
-      \pst@coor 
-      \ifPst@SpecialLength \pst@SpecialLength \else \pst@number\pst@dimc \fi
+      \pst@coor 2 copy moveto
+      \ifPst@SpecialLength \pst@SpecialLength \else \pst@number\pst@dimc \fi      
       \psk@dimen CLW mul sub
+      dup 0 rmoveto
       0 360 arc
       \ifPst@variableLW \pst@flattenpath \fi
       closepath
@@ -3641,25 +3722,32 @@ pop
 %
 \def\psRing{\def\pst@par{}\pst@object{psRing}}%% hv 20130405
 \def\psRing@i{\@ifnextchar({\psRing@ii}{\psRing@ii(0,0)}}
-\def\psRing@ii(#1)#2#3{%   origin, inner radius, outer radius
-  \begin@ClosedObj
+\def\psRing@ii(#1){%
   \pst@@getcoor{#1}%
-  \pssetlength\pst@dimc{#2}%
-  \pssetlength\pst@dimd{#3}%
+  \@ifnextchar[{\psRing@iii}{\psRing@iii[0,360]}}
+\def\psRing@iii[#1,#2]#3#4{%   origin, inner radius, outer radius
+  \begin@ClosedObj
+  \pssetlength\pst@dimc{#3}%
+  \pssetlength\pst@dimd{#4}%
+  \pst@getangle{#1}\pst@tempa
+  \pst@getangle{#2}\pst@tempb
   \def\pst@linetype{4}%
   \addto@pscode{
-    \pst@coor translate newpath
+    \pst@coor translate 
     \pst@number\pst@dimc \psk@dimen CLW mul sub /InnerRadius ED
     \pst@number\pst@dimd \psk@dimen CLW mul sub /OuterRadius ED
-    0 0 InnerRadius 0 360 arc OuterRadius 0 moveto
-    0 0 OuterRadius 0 0.0001 arcn 
+    InnerRadius 0 moveto newpath
+    0 0 InnerRadius \pst@tempa\space \pst@tempb\space arc 
+    OuterRadius \pst@tempb\space PtoC 
+    \pst@tempb\space \pst@tempa\space sub abs 360 eq { moveto }{ lineto } ifelse % whole circle or not??
+    0 0 OuterRadius \pst@tempb\space \pst@tempa\space arcn 
     closepath
   }%
   \showpointsfalse
   \end@ClosedObj
   \ignorespaces}
 %
-\def\pswedge{\pst@object{pswedge}}
+\def\pswedge{\def\pst@par{}\pst@object{pswedge}}
 \def\pswedge@i{\@ifnextchar({\pswedge@ii}{\pswedge@ii(0,0)}}
 \def\pswedge@ii(#1)#2#3#4{%
   \begin@ClosedObj%
@@ -3669,6 +3757,7 @@ pop
   \pst@@getcoor{#1}%
   \def\pst@linetype{1}%
   \addto@pscode{
+    \ifx\psk@rot\@empty 0 \else \psk@rot \fi rotate
     \pst@coor
     2 copy
     moveto
@@ -3681,9 +3770,9 @@ pop
   \showpointsfalse%
   \end@ClosedObj%
 }
-\def\tx@Ellipse{
-  \ifx\psk@rot\@empty 0 \else \psk@rot \fi 
-  Ellipse }
+\def\tx@ellipse#1{ \ifx\psk@rot\@empty 0 \else \psk@rot \fi #1  Ellipse }
+\def\tx@Ellipse{ \ifx\psk@rot\@empty 0 \else \psk@rot \fi Ellipse }
+%
 \def\psellipse{\def\pst@par{}\pst@object{psellipse}}
 \def\psellipse@i(#1){\@ifnextchar({\psellipse@ii(#1)}{\psellipse@ii(0,0)(#1)}}
 \def\psellipse@ii(#1)(#2){%
@@ -3698,12 +3787,38 @@ pop
       dup 4 -1 roll sub neg 3 1 roll sub
     \fi
     \pst@tempa 
-    \tx@Ellipse
+    \tx@ellipse{true}
     \ifPst@variableLW \pst@flattenpath \fi
     closepath
   }%
   \def\pst@linetype{2}%
   \end@ClosedObj%
+}
+\def\psellipseAB{\def\pst@par{}\pst@object{psellipseAB}}
+\def\psellipseAB@i(#1)(#2)#3{%
+  \begin@ClosedObj
+  \pst@getcoor{#1}\pst@tempa
+  \pst@getcoor{#2}\pst@tempb
+  \addto@pscode{
+    0 360
+    #3 \pst@number\psxunit mul
+    \pst@tempa /yA ED /xA ED
+    \pst@tempb /yB ED /xB ED
+    xA xB sub dup mul
+    yA yB sub dup mul add sqrt 2 div
+    \ifdim\psk@dimen\p@=\z@\else
+      \psk@dimen CLW mul
+      dup 4 -1 roll sub neg 3 1 roll sub
+    \fi
+    xA xB add 2 div yA yB add 2 div
+    translate 0 0
+    xB xA sub yA yB sub atan 
+    Ellipse  % on stack is rotate coordinates
+    \ifPst@variableLW \pst@flattenpath \fi
+    closepath
+  }%
+  \def\pst@linetype{2}%
+  \end@ClosedObj
 }
 \def\multips{\@ifnextchar({\def\pst@par{}\multips@ii}{\multips@i}}
 \def\multips@i#1{\def\pst@par{rot=#1}\multips@ii}
@@ -4144,6 +4259,7 @@ pop
 %
 % -----------  hv 20120219 -------------------
 \newpsstyle{gridstyle}{subgriddiv=0,gridcolor=lightgray,griddots=10,gridlabels=8pt}
+\newpsstyle{gridstyleA}{subgriddiv=5,gridcolor=red!30,subgridcolor=green!20!black!10,gridlabels=0pt}
 %\define@boolkey[psset]{pstricks}[]{showgrid}[true]{}
 \newif\ifshowgrid
 \newdimen\sh@wgridXunit

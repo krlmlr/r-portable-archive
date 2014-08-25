@@ -7,7 +7,7 @@
 %% bidi.dtx  (with options: `table,bidipoem.sty')
 %% 
 %%   __________________________________________________
-%%   Copyright © 2009–2013  Vafa Khalighi <persian-tex@tug.org>
+%%   Copyright © 2009–2014  Vafa Khalighi <persian-tex@tug.org>
 %% 
 %%   It may be distributed and/or modified under the LaTeX Project Public License,
 %%   version 1.3c or higher (your choice). The latest version of
@@ -17,7 +17,7 @@
 %%   by Vafa Khalighi.
 %% 
 %% 
-%% \CheckSum{42007}
+%% \CheckSum{42052}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -36,7 +36,13 @@
 %%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{bidipoem}%
-[2013/11/12 v0.5 Environments for typesetting Persian traditional and modern poems]
+[2014/02/05 v0.7 Environments for typesetting Persian traditional and modern poems]
+{\catcode`\^^M=\active % these lines must end with %
+  \gdef\traditionalpoem@obeylines{\catcode`\^^M\active \let^^M\traditionalpoem@par}%
+  \global\let^^M\traditionalpoem@par} % this is in case ^^M appears in a \write
+{\catcode`\^^M=\active % these lines must end with %
+  \gdef\modernpoem@obeylines{\catcode`\^^M\active \let^^M\modernpoem@par}%
+  \global\let^^M\modernpoem@par} % this is in case ^^M appears in a \write
 \def\poemcolsepskip{.1\versewidth plus .1\versewidth minus .05\versewidth}
 \def\poemmarginskip{1em plus 1fil minus 1em}
 \def\poemextrabaselineskip{0\baselineskip}
@@ -102,7 +108,7 @@
 \crcr\egroup
 \vskip-\baselineskip
 }
-\def\oldpoem@cr{%
+\def\traditionalpoem@cr{%
   \cr\poem@line
 }
 \newbox\verse@i
@@ -125,8 +131,7 @@
   \poem@verse\verse@ii
   \fi
   \poem@lineend
-  \nopagebreak
-  \endgraf
+  \par
   \vskip\poemextrabaselineskip
 \fi
 \poem@lineparsebegin
@@ -151,8 +156,8 @@
 \widowpenalty=10000% No break between verses of the same line.
 \clubpenalty=10000% Same as above.  Not really needed.
 \def\newblock{\hfil\poemblocksep\hfil\null}%
-\def\par{\oldpoem@cr}% Redefine \par for possible \obeylines
-\def\\{\global\poem@startedtrue\oldpoem@cr}%
+\def\traditionalpoem@par{\traditionalpoem@cr}% Redefine \par for possible \obeylines
+\def\\{\global\poem@startedtrue\traditionalpoem@cr}%
 \global\poem@startedfalse
 \csname poem@obeylines\endcsname
 \let\poem@obeylines\relax
@@ -172,6 +177,14 @@
 \par
 \vskip\baselineskip
 \poemskip
+  \if@noparlist \else
+    \ifdim\lastskip >\z@
+      \@tempskipa\lastskip \vskip -\lastskip
+      \advance\@tempskipa\parskip \advance\@tempskipa -\@outerparskip
+      \vskip\@tempskipa
+    \fi
+    \@endparenv
+  \fi
 \ifdim\new@poem@width<\poem@width
 \global\let\poem@needrun\relax
 \fi
@@ -220,7 +233,7 @@
    \@footnotemark\bidipoem@p@xRTLftntext[#1]}
 
 \newenvironment{traditionalpoem}{\@traditionalpoem}{\@endtraditionalpoem}
-\expandafter\def\csname traditionalpoem*\endcsname{\let\poem@obeylines=\obeylines\traditionalpoem}
+\expandafter\def\csname traditionalpoem*\endcsname{\let\poem@obeylines=\traditionalpoem@obeylines\traditionalpoem}
 \expandafter\def\csname endtraditionalpoem*\endcsname{\endtraditionalpoem}
 \def\poem@finish{%
 \poem@write@aux{max@poem@no}{\number\c@poem@no}%
@@ -248,7 +261,7 @@
 \def\]{\@tabminus\ignorespaces}%
 \def\newblock{\poemblocksep}%
 \let\newpoem@tabcr\@tabcr
-\def\par{% Redefine \par for possible \obeylines
+\def\modernpoem@par{% Redefine \par for possible \obeylines
   \ifpoem@started\else
     \ifdim\wd\@curline>\z@\global\poem@startedtrue\else
       \@stopfield
@@ -274,9 +287,17 @@
 \end{tabbing}%
 \endgroup
 \par
+  \if@noparlist \else
+    \ifdim\lastskip >\z@
+      \@tempskipa\lastskip \vskip -\lastskip
+      \advance\@tempskipa\parskip \advance\@tempskipa -\@outerparskip
+      \vskip\@tempskipa
+    \fi
+    \@endparenv
+  \fi
 }
 \newenvironment{modernpoem}{\@modernpoem}{\@endmodernpoem}
-\expandafter\def\csname modernpoem*\endcsname{\let\poem@obeylines=\obeylines\modernpoem}
+\expandafter\def\csname modernpoem*\endcsname{\let\poem@obeylines=\modernpoem@obeylines\modernpoem}
 \expandafter\def\csname endmodernpoem*\endcsname{\endmodernpoem}
 \gdef\@startfield{%
 \global\setbox\@curfield\hbox\bgroup%

@@ -1,5 +1,5 @@
 return {
- [0x0000]={
+ [0x0]={
   category="cc",
   direction="bn",
  },
@@ -162,12 +162,14 @@ return {
  {
   category="ps",
   direction="on",
-  mirror=0x0029,
+  mirror=0x29,
+  textclass="open",
  },
  {
   category="pe",
   direction="on",
-  mirror=0x0028,
+  mirror=0x28,
+  textclass="close",
  },
  {
   category="po",
@@ -244,7 +246,8 @@ return {
  {
   category="sm",
   direction="on",
-  mirror=0x003E,
+  mirror=0x3E,
+  textclass="open",
  },
  {
   category="sm",
@@ -253,7 +256,8 @@ return {
  {
   category="sm",
   direction="on",
-  mirror=0x003C,
+  mirror=0x3C,
+  textclass="close",
  },
  {
   category="po",
@@ -370,7 +374,8 @@ return {
  {
   category="ps",
   direction="on",
-  mirror=0x005D,
+  mirror=0x5D,
+  textclass="open",
  },
  {
   category="po",
@@ -379,7 +384,8 @@ return {
  {
   category="pe",
   direction="on",
-  mirror=0x005B,
+  mirror=0x5B,
+  textclass="close",
  },
  {
   category="sk",
@@ -500,7 +506,8 @@ return {
  {
   category="ps",
   direction="on",
-  mirror=0x007D,
+  mirror=0x7D,
+  textclass="open",
  },
  {
   category="sm",
@@ -509,7 +516,8 @@ return {
  {
   category="pe",
   direction="on",
-  mirror=0x007B,
+  mirror=0x7B,
+  textclass="close",
  },
  {
   category="sm",
@@ -694,7 +702,8 @@ return {
  {
   category="pi",
   direction="on",
-  mirror=0x00BB,
+  mirror=0xBB,
+  textclass="open",
  },
  {
   category="sm",
@@ -759,7 +768,8 @@ return {
  {
   category="pf",
   direction="on",
-  mirror=0x00AB,
+  mirror=0xAB,
+  textclass="close",
  },
  {
   category="no",
@@ -3561,9919 +3571,10067 @@ return {
   category="ll",
   direction="l",
  },
- [0x037A]={
+ [0x37A]={
   category="lm",
   direction="l",
  },
- [0x037B]={
+ [0x37B]={
   category="ll",
   direction="l",
  },
- [0x037C]={
+ [0x37C]={
   category="ll",
   direction="l",
  },
- [0x037D]={
+ [0x37D]={
   category="ll",
   direction="l",
  },
- [0x037E]={
+ [0x37E]={
   category="po",
   direction="on",
  },
- [0x0384]={
-  category="sk",
-  direction="on",
- },
- [0x0385]={
-  category="sk",
-  direction="on",
- },
- [0x0386]={
+ [0x37F]={
   category="lu",
   direction="l",
  },
- [0x0387]={
+ [0x384]={
+  category="sk",
+  direction="on",
+ },
+ [0x385]={
+  category="sk",
+  direction="on",
+ },
+ [0x386]={
+  category="lu",
+  direction="l",
+ },
+ [0x387]={
   category="po",
   direction="on",
  },
- [0x0388]={
+ [0x388]={
   category="lu",
   direction="l",
  },
- [0x0389]={
+ [0x389]={
   category="lu",
   direction="l",
  },
- [0x038A]={
+ [0x38A]={
   category="lu",
   direction="l",
  },
- [0x038C]={
+ [0x38C]={
   category="lu",
   direction="l",
  },
- [0x038E]={
+ [0x38E]={
   category="lu",
   direction="l",
  },
- [0x038F]={
+ [0x38F]={
   category="lu",
   direction="l",
  },
- [0x0390]={
+ [0x390]={
   category="ll",
   direction="l",
  },
- [0x0391]={
+ [0x391]={
   category="lu",
   direction="l",
  },
- [0x0392]={
+ [0x392]={
   category="lu",
   direction="l",
  },
- [0x0393]={
+ [0x393]={
   category="lu",
   direction="l",
  },
- [0x0394]={
+ [0x394]={
   category="lu",
   direction="l",
  },
- [0x0395]={
+ [0x395]={
   category="lu",
   direction="l",
  },
- [0x0396]={
+ [0x396]={
   category="lu",
   direction="l",
  },
- [0x0397]={
+ [0x397]={
   category="lu",
   direction="l",
  },
- [0x0398]={
+ [0x398]={
   category="lu",
   direction="l",
  },
- [0x0399]={
+ [0x399]={
   category="lu",
   direction="l",
  },
- [0x039A]={
+ [0x39A]={
   category="lu",
   direction="l",
  },
- [0x039B]={
+ [0x39B]={
   category="lu",
   direction="l",
  },
- [0x039C]={
+ [0x39C]={
   category="lu",
   direction="l",
  },
- [0x039D]={
+ [0x39D]={
   category="lu",
   direction="l",
  },
- [0x039E]={
+ [0x39E]={
   category="lu",
   direction="l",
  },
- [0x039F]={
+ [0x39F]={
   category="lu",
   direction="l",
  },
- [0x03A0]={
+ [0x3A0]={
   category="lu",
   direction="l",
  },
- [0x03A1]={
+ [0x3A1]={
   category="lu",
   direction="l",
  },
- [0x03A3]={
+ [0x3A3]={
   category="lu",
   direction="l",
  },
- [0x03A4]={
+ [0x3A4]={
   category="lu",
   direction="l",
  },
- [0x03A5]={
+ [0x3A5]={
   category="lu",
   direction="l",
  },
- [0x03A6]={
+ [0x3A6]={
   category="lu",
   direction="l",
  },
- [0x03A7]={
+ [0x3A7]={
   category="lu",
   direction="l",
  },
- [0x03A8]={
+ [0x3A8]={
   category="lu",
   direction="l",
  },
- [0x03A9]={
+ [0x3A9]={
   category="lu",
   direction="l",
  },
- [0x03AA]={
+ [0x3AA]={
   category="lu",
   direction="l",
  },
- [0x03AB]={
+ [0x3AB]={
   category="lu",
   direction="l",
  },
- [0x03AC]={
+ [0x3AC]={
   category="ll",
   direction="l",
  },
- [0x03AD]={
+ [0x3AD]={
   category="ll",
   direction="l",
  },
- [0x03AE]={
+ [0x3AE]={
   category="ll",
   direction="l",
  },
- [0x03AF]={
+ [0x3AF]={
   category="ll",
   direction="l",
  },
- [0x03B0]={
+ [0x3B0]={
   category="ll",
   direction="l",
  },
- [0x03B1]={
+ [0x3B1]={
   category="ll",
   direction="l",
  },
- [0x03B2]={
+ [0x3B2]={
   category="ll",
   direction="l",
  },
- [0x03B3]={
+ [0x3B3]={
   category="ll",
   direction="l",
  },
- [0x03B4]={
+ [0x3B4]={
   category="ll",
   direction="l",
  },
- [0x03B5]={
+ [0x3B5]={
   category="ll",
   direction="l",
  },
- [0x03B6]={
+ [0x3B6]={
   category="ll",
   direction="l",
  },
- [0x03B7]={
+ [0x3B7]={
   category="ll",
   direction="l",
  },
- [0x03B8]={
+ [0x3B8]={
   category="ll",
   direction="l",
  },
- [0x03B9]={
+ [0x3B9]={
   category="ll",
   direction="l",
  },
- [0x03BA]={
+ [0x3BA]={
   category="ll",
   direction="l",
  },
- [0x03BB]={
+ [0x3BB]={
   category="ll",
   direction="l",
  },
- [0x03BC]={
+ [0x3BC]={
   category="ll",
   direction="l",
  },
- [0x03BD]={
+ [0x3BD]={
   category="ll",
   direction="l",
  },
- [0x03BE]={
+ [0x3BE]={
   category="ll",
   direction="l",
  },
- [0x03BF]={
+ [0x3BF]={
   category="ll",
   direction="l",
  },
- [0x03C0]={
+ [0x3C0]={
   category="ll",
   direction="l",
  },
- [0x03C1]={
+ [0x3C1]={
   category="ll",
   direction="l",
  },
- [0x03C2]={
+ [0x3C2]={
   category="ll",
   direction="l",
  },
- [0x03C3]={
+ [0x3C3]={
   category="ll",
   direction="l",
  },
- [0x03C4]={
+ [0x3C4]={
   category="ll",
   direction="l",
  },
- [0x03C5]={
+ [0x3C5]={
   category="ll",
   direction="l",
  },
- [0x03C6]={
+ [0x3C6]={
   category="ll",
   direction="l",
  },
- [0x03C7]={
+ [0x3C7]={
   category="ll",
   direction="l",
  },
- [0x03C8]={
+ [0x3C8]={
   category="ll",
   direction="l",
  },
- [0x03C9]={
+ [0x3C9]={
   category="ll",
   direction="l",
  },
- [0x03CA]={
+ [0x3CA]={
   category="ll",
   direction="l",
  },
- [0x03CB]={
+ [0x3CB]={
   category="ll",
   direction="l",
  },
- [0x03CC]={
+ [0x3CC]={
   category="ll",
   direction="l",
  },
- [0x03CD]={
+ [0x3CD]={
   category="ll",
   direction="l",
  },
- [0x03CE]={
+ [0x3CE]={
   category="ll",
   direction="l",
  },
- [0x03CF]={
+ [0x3CF]={
   category="lu",
   direction="l",
  },
- [0x03D0]={
+ [0x3D0]={
   category="ll",
   direction="l",
  },
- [0x03D1]={
+ [0x3D1]={
   category="ll",
   direction="l",
  },
- [0x03D2]={
+ [0x3D2]={
   category="lu",
   direction="l",
  },
- [0x03D3]={
+ [0x3D3]={
   category="lu",
   direction="l",
  },
- [0x03D4]={
+ [0x3D4]={
   category="lu",
   direction="l",
  },
- [0x03D5]={
+ [0x3D5]={
   category="ll",
   direction="l",
  },
- [0x03D6]={
+ [0x3D6]={
   category="ll",
   direction="l",
  },
- [0x03D7]={
+ [0x3D7]={
   category="ll",
   direction="l",
  },
- [0x03D8]={
+ [0x3D8]={
   category="lu",
   direction="l",
  },
- [0x03D9]={
+ [0x3D9]={
   category="ll",
   direction="l",
  },
- [0x03DA]={
+ [0x3DA]={
   category="lu",
   direction="l",
  },
- [0x03DB]={
+ [0x3DB]={
   category="ll",
   direction="l",
  },
- [0x03DC]={
+ [0x3DC]={
   category="lu",
   direction="l",
  },
- [0x03DD]={
+ [0x3DD]={
   category="ll",
   direction="l",
  },
- [0x03DE]={
+ [0x3DE]={
   category="lu",
   direction="l",
  },
- [0x03DF]={
+ [0x3DF]={
   category="ll",
   direction="l",
  },
- [0x03E0]={
+ [0x3E0]={
   category="lu",
   direction="l",
  },
- [0x03E1]={
+ [0x3E1]={
   category="ll",
   direction="l",
  },
- [0x03E2]={
+ [0x3E2]={
   category="lu",
   direction="l",
  },
- [0x03E3]={
+ [0x3E3]={
   category="ll",
   direction="l",
  },
- [0x03E4]={
+ [0x3E4]={
   category="lu",
   direction="l",
  },
- [0x03E5]={
+ [0x3E5]={
   category="ll",
   direction="l",
  },
- [0x03E6]={
+ [0x3E6]={
   category="lu",
   direction="l",
  },
- [0x03E7]={
+ [0x3E7]={
   category="ll",
   direction="l",
  },
- [0x03E8]={
+ [0x3E8]={
   category="lu",
   direction="l",
  },
- [0x03E9]={
+ [0x3E9]={
   category="ll",
   direction="l",
  },
- [0x03EA]={
+ [0x3EA]={
   category="lu",
   direction="l",
  },
- [0x03EB]={
+ [0x3EB]={
   category="ll",
   direction="l",
  },
- [0x03EC]={
+ [0x3EC]={
   category="lu",
   direction="l",
  },
- [0x03ED]={
+ [0x3ED]={
   category="ll",
   direction="l",
  },
- [0x03EE]={
+ [0x3EE]={
   category="lu",
   direction="l",
  },
- [0x03EF]={
+ [0x3EF]={
   category="ll",
   direction="l",
  },
- [0x03F0]={
+ [0x3F0]={
   category="ll",
   direction="l",
  },
- [0x03F1]={
+ [0x3F1]={
   category="ll",
   direction="l",
  },
- [0x03F2]={
+ [0x3F2]={
   category="ll",
   direction="l",
  },
- [0x03F3]={
+ [0x3F3]={
   category="ll",
   direction="l",
  },
- [0x03F4]={
+ [0x3F4]={
   category="lu",
   direction="l",
  },
- [0x03F5]={
+ [0x3F5]={
   category="ll",
   direction="l",
  },
- [0x03F6]={
+ [0x3F6]={
   category="sm",
   direction="on",
  },
- [0x03F7]={
+ [0x3F7]={
   category="lu",
   direction="l",
  },
- [0x03F8]={
+ [0x3F8]={
   category="ll",
   direction="l",
  },
- [0x03F9]={
+ [0x3F9]={
   category="lu",
   direction="l",
  },
- [0x03FA]={
+ [0x3FA]={
   category="lu",
   direction="l",
  },
- [0x03FB]={
+ [0x3FB]={
   category="ll",
   direction="l",
  },
- [0x03FC]={
+ [0x3FC]={
   category="ll",
   direction="l",
  },
- [0x03FD]={
+ [0x3FD]={
   category="lu",
   direction="l",
  },
- [0x03FE]={
+ [0x3FE]={
   category="lu",
   direction="l",
  },
- [0x03FF]={
+ [0x3FF]={
   category="lu",
   direction="l",
  },
- [0x0400]={
+ [0x400]={
   category="lu",
   direction="l",
  },
- [0x0401]={
+ [0x401]={
   category="lu",
   direction="l",
  },
- [0x0402]={
+ [0x402]={
   category="lu",
   direction="l",
  },
- [0x0403]={
+ [0x403]={
   category="lu",
   direction="l",
  },
- [0x0404]={
+ [0x404]={
   category="lu",
   direction="l",
  },
- [0x0405]={
+ [0x405]={
   category="lu",
   direction="l",
  },
- [0x0406]={
+ [0x406]={
   category="lu",
   direction="l",
  },
- [0x0407]={
+ [0x407]={
   category="lu",
   direction="l",
  },
- [0x0408]={
+ [0x408]={
   category="lu",
   direction="l",
  },
- [0x0409]={
+ [0x409]={
   category="lu",
   direction="l",
  },
- [0x040A]={
+ [0x40A]={
   category="lu",
   direction="l",
  },
- [0x040B]={
+ [0x40B]={
   category="lu",
   direction="l",
  },
- [0x040C]={
+ [0x40C]={
   category="lu",
   direction="l",
  },
- [0x040D]={
+ [0x40D]={
   category="lu",
   direction="l",
  },
- [0x040E]={
+ [0x40E]={
   category="lu",
   direction="l",
  },
- [0x040F]={
+ [0x40F]={
   category="lu",
   direction="l",
  },
- [0x0410]={
+ [0x410]={
   category="lu",
   direction="l",
  },
- [0x0411]={
+ [0x411]={
   category="lu",
   direction="l",
  },
- [0x0412]={
+ [0x412]={
   category="lu",
   direction="l",
  },
- [0x0413]={
+ [0x413]={
   category="lu",
   direction="l",
  },
- [0x0414]={
+ [0x414]={
   category="lu",
   direction="l",
  },
- [0x0415]={
+ [0x415]={
   category="lu",
   direction="l",
  },
- [0x0416]={
+ [0x416]={
   category="lu",
   direction="l",
  },
- [0x0417]={
+ [0x417]={
   category="lu",
   direction="l",
  },
- [0x0418]={
+ [0x418]={
   category="lu",
   direction="l",
  },
- [0x0419]={
+ [0x419]={
   category="lu",
   direction="l",
  },
- [0x041A]={
+ [0x41A]={
   category="lu",
   direction="l",
  },
- [0x041B]={
+ [0x41B]={
   category="lu",
   direction="l",
  },
- [0x041C]={
+ [0x41C]={
   category="lu",
   direction="l",
  },
- [0x041D]={
+ [0x41D]={
   category="lu",
   direction="l",
  },
- [0x041E]={
+ [0x41E]={
   category="lu",
   direction="l",
  },
- [0x041F]={
+ [0x41F]={
   category="lu",
   direction="l",
  },
- [0x0420]={
+ [0x420]={
   category="lu",
   direction="l",
  },
- [0x0421]={
+ [0x421]={
   category="lu",
   direction="l",
  },
- [0x0422]={
+ [0x422]={
   category="lu",
   direction="l",
  },
- [0x0423]={
+ [0x423]={
   category="lu",
   direction="l",
  },
- [0x0424]={
+ [0x424]={
   category="lu",
   direction="l",
  },
- [0x0425]={
+ [0x425]={
   category="lu",
   direction="l",
  },
- [0x0426]={
+ [0x426]={
   category="lu",
   direction="l",
  },
- [0x0427]={
+ [0x427]={
   category="lu",
   direction="l",
  },
- [0x0428]={
+ [0x428]={
   category="lu",
   direction="l",
  },
- [0x0429]={
+ [0x429]={
   category="lu",
   direction="l",
  },
- [0x042A]={
+ [0x42A]={
   category="lu",
   direction="l",
  },
- [0x042B]={
+ [0x42B]={
   category="lu",
   direction="l",
  },
- [0x042C]={
+ [0x42C]={
   category="lu",
   direction="l",
  },
- [0x042D]={
+ [0x42D]={
   category="lu",
   direction="l",
  },
- [0x042E]={
+ [0x42E]={
   category="lu",
   direction="l",
  },
- [0x042F]={
+ [0x42F]={
   category="lu",
   direction="l",
  },
- [0x0430]={
+ [0x430]={
   category="ll",
   direction="l",
  },
- [0x0431]={
+ [0x431]={
   category="ll",
   direction="l",
  },
- [0x0432]={
+ [0x432]={
   category="ll",
   direction="l",
  },
- [0x0433]={
+ [0x433]={
   category="ll",
   direction="l",
  },
- [0x0434]={
+ [0x434]={
   category="ll",
   direction="l",
  },
- [0x0435]={
+ [0x435]={
   category="ll",
   direction="l",
  },
- [0x0436]={
+ [0x436]={
   category="ll",
   direction="l",
  },
- [0x0437]={
+ [0x437]={
   category="ll",
   direction="l",
  },
- [0x0438]={
+ [0x438]={
   category="ll",
   direction="l",
  },
- [0x0439]={
+ [0x439]={
   category="ll",
   direction="l",
  },
- [0x043A]={
+ [0x43A]={
   category="ll",
   direction="l",
  },
- [0x043B]={
+ [0x43B]={
   category="ll",
   direction="l",
  },
- [0x043C]={
+ [0x43C]={
   category="ll",
   direction="l",
  },
- [0x043D]={
+ [0x43D]={
   category="ll",
   direction="l",
  },
- [0x043E]={
+ [0x43E]={
   category="ll",
   direction="l",
  },
- [0x043F]={
+ [0x43F]={
   category="ll",
   direction="l",
  },
- [0x0440]={
+ [0x440]={
   category="ll",
   direction="l",
  },
- [0x0441]={
+ [0x441]={
   category="ll",
   direction="l",
  },
- [0x0442]={
+ [0x442]={
   category="ll",
   direction="l",
  },
- [0x0443]={
+ [0x443]={
   category="ll",
   direction="l",
  },
- [0x0444]={
+ [0x444]={
   category="ll",
   direction="l",
  },
- [0x0445]={
+ [0x445]={
   category="ll",
   direction="l",
  },
- [0x0446]={
+ [0x446]={
   category="ll",
   direction="l",
  },
- [0x0447]={
+ [0x447]={
   category="ll",
   direction="l",
  },
- [0x0448]={
+ [0x448]={
   category="ll",
   direction="l",
  },
- [0x0449]={
+ [0x449]={
   category="ll",
   direction="l",
  },
- [0x044A]={
+ [0x44A]={
   category="ll",
   direction="l",
  },
- [0x044B]={
+ [0x44B]={
   category="ll",
   direction="l",
  },
- [0x044C]={
+ [0x44C]={
   category="ll",
   direction="l",
  },
- [0x044D]={
+ [0x44D]={
   category="ll",
   direction="l",
  },
- [0x044E]={
+ [0x44E]={
   category="ll",
   direction="l",
  },
- [0x044F]={
+ [0x44F]={
   category="ll",
   direction="l",
  },
- [0x0450]={
+ [0x450]={
   category="ll",
   direction="l",
  },
- [0x0451]={
+ [0x451]={
   category="ll",
   direction="l",
  },
- [0x0452]={
+ [0x452]={
   category="ll",
   direction="l",
  },
- [0x0453]={
+ [0x453]={
   category="ll",
   direction="l",
  },
- [0x0454]={
+ [0x454]={
   category="ll",
   direction="l",
  },
- [0x0455]={
+ [0x455]={
   category="ll",
   direction="l",
  },
- [0x0456]={
+ [0x456]={
   category="ll",
   direction="l",
  },
- [0x0457]={
+ [0x457]={
   category="ll",
   direction="l",
  },
- [0x0458]={
+ [0x458]={
   category="ll",
   direction="l",
  },
- [0x0459]={
+ [0x459]={
   category="ll",
   direction="l",
  },
- [0x045A]={
+ [0x45A]={
   category="ll",
   direction="l",
  },
- [0x045B]={
+ [0x45B]={
   category="ll",
   direction="l",
  },
- [0x045C]={
+ [0x45C]={
   category="ll",
   direction="l",
  },
- [0x045D]={
+ [0x45D]={
   category="ll",
   direction="l",
  },
- [0x045E]={
+ [0x45E]={
   category="ll",
   direction="l",
  },
- [0x045F]={
+ [0x45F]={
   category="ll",
   direction="l",
  },
- [0x0460]={
+ [0x460]={
   category="lu",
   direction="l",
  },
- [0x0461]={
+ [0x461]={
   category="ll",
   direction="l",
  },
- [0x0462]={
+ [0x462]={
   category="lu",
   direction="l",
  },
- [0x0463]={
+ [0x463]={
   category="ll",
   direction="l",
  },
- [0x0464]={
+ [0x464]={
   category="lu",
   direction="l",
  },
- [0x0465]={
+ [0x465]={
   category="ll",
   direction="l",
  },
- [0x0466]={
+ [0x466]={
   category="lu",
   direction="l",
  },
- [0x0467]={
+ [0x467]={
   category="ll",
   direction="l",
  },
- [0x0468]={
+ [0x468]={
   category="lu",
   direction="l",
  },
- [0x0469]={
+ [0x469]={
   category="ll",
   direction="l",
  },
- [0x046A]={
+ [0x46A]={
   category="lu",
   direction="l",
  },
- [0x046B]={
+ [0x46B]={
   category="ll",
   direction="l",
  },
- [0x046C]={
+ [0x46C]={
   category="lu",
   direction="l",
  },
- [0x046D]={
+ [0x46D]={
   category="ll",
   direction="l",
  },
- [0x046E]={
+ [0x46E]={
   category="lu",
   direction="l",
  },
- [0x046F]={
+ [0x46F]={
   category="ll",
   direction="l",
  },
- [0x0470]={
+ [0x470]={
   category="lu",
   direction="l",
  },
- [0x0471]={
+ [0x471]={
   category="ll",
   direction="l",
  },
- [0x0472]={
+ [0x472]={
   category="lu",
   direction="l",
  },
- [0x0473]={
+ [0x473]={
   category="ll",
   direction="l",
  },
- [0x0474]={
+ [0x474]={
   category="lu",
   direction="l",
  },
- [0x0475]={
+ [0x475]={
   category="ll",
   direction="l",
  },
- [0x0476]={
+ [0x476]={
   category="lu",
   direction="l",
  },
- [0x0477]={
+ [0x477]={
   category="ll",
   direction="l",
  },
- [0x0478]={
+ [0x478]={
   category="lu",
   direction="l",
  },
- [0x0479]={
+ [0x479]={
   category="ll",
   direction="l",
  },
- [0x047A]={
+ [0x47A]={
   category="lu",
   direction="l",
  },
- [0x047B]={
+ [0x47B]={
   category="ll",
   direction="l",
  },
- [0x047C]={
+ [0x47C]={
   category="lu",
   direction="l",
  },
- [0x047D]={
+ [0x47D]={
   category="ll",
   direction="l",
  },
- [0x047E]={
+ [0x47E]={
   category="lu",
   direction="l",
  },
- [0x047F]={
+ [0x47F]={
   category="ll",
   direction="l",
  },
- [0x0480]={
+ [0x480]={
   category="lu",
   direction="l",
  },
- [0x0481]={
+ [0x481]={
   category="ll",
   direction="l",
  },
- [0x0482]={
+ [0x482]={
   category="so",
   direction="l",
  },
- [0x0483]={
+ [0x483]={
   category="mn",
   direction="nsm",
  },
- [0x0484]={
+ [0x484]={
   category="mn",
   direction="nsm",
  },
- [0x0485]={
+ [0x485]={
   category="mn",
   direction="nsm",
  },
- [0x0486]={
+ [0x486]={
   category="mn",
   direction="nsm",
  },
- [0x0487]={
+ [0x487]={
   category="mn",
   direction="nsm",
  },
- [0x0488]={
+ [0x488]={
   category="me",
   direction="nsm",
  },
- [0x0489]={
+ [0x489]={
   category="me",
   direction="nsm",
  },
- [0x048A]={
+ [0x48A]={
   category="lu",
   direction="l",
  },
- [0x048B]={
+ [0x48B]={
   category="ll",
   direction="l",
  },
- [0x048C]={
+ [0x48C]={
   category="lu",
   direction="l",
  },
- [0x048D]={
+ [0x48D]={
   category="ll",
   direction="l",
  },
- [0x048E]={
+ [0x48E]={
   category="lu",
   direction="l",
  },
- [0x048F]={
+ [0x48F]={
   category="ll",
   direction="l",
  },
- [0x0490]={
+ [0x490]={
   category="lu",
   direction="l",
  },
- [0x0491]={
+ [0x491]={
   category="ll",
   direction="l",
  },
- [0x0492]={
+ [0x492]={
   category="lu",
   direction="l",
  },
- [0x0493]={
+ [0x493]={
   category="ll",
   direction="l",
  },
- [0x0494]={
+ [0x494]={
   category="lu",
   direction="l",
  },
- [0x0495]={
+ [0x495]={
   category="ll",
   direction="l",
  },
- [0x0496]={
+ [0x496]={
   category="lu",
   direction="l",
  },
- [0x0497]={
+ [0x497]={
   category="ll",
   direction="l",
  },
- [0x0498]={
+ [0x498]={
   category="lu",
   direction="l",
  },
- [0x0499]={
+ [0x499]={
   category="ll",
   direction="l",
  },
- [0x049A]={
+ [0x49A]={
   category="lu",
   direction="l",
  },
- [0x049B]={
+ [0x49B]={
   category="ll",
   direction="l",
  },
- [0x049C]={
+ [0x49C]={
   category="lu",
   direction="l",
  },
- [0x049D]={
+ [0x49D]={
   category="ll",
   direction="l",
  },
- [0x049E]={
+ [0x49E]={
   category="lu",
   direction="l",
  },
- [0x049F]={
+ [0x49F]={
   category="ll",
   direction="l",
  },
- [0x04A0]={
+ [0x4A0]={
   category="lu",
   direction="l",
  },
- [0x04A1]={
+ [0x4A1]={
   category="ll",
   direction="l",
  },
- [0x04A2]={
+ [0x4A2]={
   category="lu",
   direction="l",
  },
- [0x04A3]={
+ [0x4A3]={
   category="ll",
   direction="l",
  },
- [0x04A4]={
+ [0x4A4]={
   category="lu",
   direction="l",
  },
- [0x04A5]={
+ [0x4A5]={
   category="ll",
   direction="l",
  },
- [0x04A6]={
+ [0x4A6]={
   category="lu",
   direction="l",
  },
- [0x04A7]={
+ [0x4A7]={
   category="ll",
   direction="l",
  },
- [0x04A8]={
+ [0x4A8]={
   category="lu",
   direction="l",
  },
- [0x04A9]={
+ [0x4A9]={
   category="ll",
   direction="l",
  },
- [0x04AA]={
+ [0x4AA]={
   category="lu",
   direction="l",
  },
- [0x04AB]={
+ [0x4AB]={
   category="ll",
   direction="l",
  },
- [0x04AC]={
+ [0x4AC]={
   category="lu",
   direction="l",
  },
- [0x04AD]={
+ [0x4AD]={
   category="ll",
   direction="l",
  },
- [0x04AE]={
+ [0x4AE]={
   category="lu",
   direction="l",
  },
- [0x04AF]={
+ [0x4AF]={
   category="ll",
   direction="l",
  },
- [0x04B0]={
+ [0x4B0]={
   category="lu",
   direction="l",
  },
- [0x04B1]={
+ [0x4B1]={
   category="ll",
   direction="l",
  },
- [0x04B2]={
+ [0x4B2]={
   category="lu",
   direction="l",
  },
- [0x04B3]={
+ [0x4B3]={
   category="ll",
   direction="l",
  },
- [0x04B4]={
+ [0x4B4]={
   category="lu",
   direction="l",
  },
- [0x04B5]={
+ [0x4B5]={
   category="ll",
   direction="l",
  },
- [0x04B6]={
+ [0x4B6]={
   category="lu",
   direction="l",
  },
- [0x04B7]={
+ [0x4B7]={
   category="ll",
   direction="l",
  },
- [0x04B8]={
+ [0x4B8]={
   category="lu",
   direction="l",
  },
- [0x04B9]={
+ [0x4B9]={
   category="ll",
   direction="l",
  },
- [0x04BA]={
+ [0x4BA]={
   category="lu",
   direction="l",
  },
- [0x04BB]={
+ [0x4BB]={
   category="ll",
   direction="l",
  },
- [0x04BC]={
+ [0x4BC]={
   category="lu",
   direction="l",
  },
- [0x04BD]={
+ [0x4BD]={
   category="ll",
   direction="l",
  },
- [0x04BE]={
+ [0x4BE]={
   category="lu",
   direction="l",
  },
- [0x04BF]={
+ [0x4BF]={
   category="ll",
   direction="l",
  },
- [0x04C0]={
+ [0x4C0]={
   category="lu",
   direction="l",
  },
- [0x04C1]={
+ [0x4C1]={
   category="lu",
   direction="l",
  },
- [0x04C2]={
+ [0x4C2]={
   category="ll",
   direction="l",
  },
- [0x04C3]={
+ [0x4C3]={
   category="lu",
   direction="l",
  },
- [0x04C4]={
+ [0x4C4]={
   category="ll",
   direction="l",
  },
- [0x04C5]={
+ [0x4C5]={
   category="lu",
   direction="l",
  },
- [0x04C6]={
+ [0x4C6]={
   category="ll",
   direction="l",
  },
- [0x04C7]={
+ [0x4C7]={
   category="lu",
   direction="l",
  },
- [0x04C8]={
+ [0x4C8]={
   category="ll",
   direction="l",
  },
- [0x04C9]={
+ [0x4C9]={
   category="lu",
   direction="l",
  },
- [0x04CA]={
+ [0x4CA]={
   category="ll",
   direction="l",
  },
- [0x04CB]={
+ [0x4CB]={
   category="lu",
   direction="l",
  },
- [0x04CC]={
+ [0x4CC]={
   category="ll",
   direction="l",
  },
- [0x04CD]={
+ [0x4CD]={
   category="lu",
   direction="l",
  },
- [0x04CE]={
+ [0x4CE]={
   category="ll",
   direction="l",
  },
- [0x04CF]={
+ [0x4CF]={
   category="ll",
   direction="l",
  },
- [0x04D0]={
+ [0x4D0]={
   category="lu",
   direction="l",
  },
- [0x04D1]={
+ [0x4D1]={
   category="ll",
   direction="l",
  },
- [0x04D2]={
+ [0x4D2]={
   category="lu",
   direction="l",
  },
- [0x04D3]={
+ [0x4D3]={
   category="ll",
   direction="l",
  },
- [0x04D4]={
+ [0x4D4]={
   category="lu",
   direction="l",
  },
- [0x04D5]={
+ [0x4D5]={
   category="ll",
   direction="l",
  },
- [0x04D6]={
+ [0x4D6]={
   category="lu",
   direction="l",
  },
- [0x04D7]={
+ [0x4D7]={
   category="ll",
   direction="l",
  },
- [0x04D8]={
+ [0x4D8]={
   category="lu",
   direction="l",
  },
- [0x04D9]={
+ [0x4D9]={
   category="ll",
   direction="l",
  },
- [0x04DA]={
+ [0x4DA]={
   category="lu",
   direction="l",
  },
- [0x04DB]={
+ [0x4DB]={
   category="ll",
   direction="l",
  },
- [0x04DC]={
+ [0x4DC]={
   category="lu",
   direction="l",
  },
- [0x04DD]={
+ [0x4DD]={
   category="ll",
   direction="l",
  },
- [0x04DE]={
+ [0x4DE]={
   category="lu",
   direction="l",
  },
- [0x04DF]={
+ [0x4DF]={
   category="ll",
   direction="l",
  },
- [0x04E0]={
+ [0x4E0]={
   category="lu",
   direction="l",
  },
- [0x04E1]={
+ [0x4E1]={
   category="ll",
   direction="l",
  },
- [0x04E2]={
+ [0x4E2]={
   category="lu",
   direction="l",
  },
- [0x04E3]={
+ [0x4E3]={
   category="ll",
   direction="l",
  },
- [0x04E4]={
+ [0x4E4]={
   category="lu",
   direction="l",
  },
- [0x04E5]={
+ [0x4E5]={
   category="ll",
   direction="l",
  },
- [0x04E6]={
+ [0x4E6]={
   category="lu",
   direction="l",
  },
- [0x04E7]={
+ [0x4E7]={
   category="ll",
   direction="l",
  },
- [0x04E8]={
+ [0x4E8]={
   category="lu",
   direction="l",
  },
- [0x04E9]={
+ [0x4E9]={
   category="ll",
   direction="l",
  },
- [0x04EA]={
+ [0x4EA]={
   category="lu",
   direction="l",
  },
- [0x04EB]={
+ [0x4EB]={
   category="ll",
   direction="l",
  },
- [0x04EC]={
+ [0x4EC]={
   category="lu",
   direction="l",
  },
- [0x04ED]={
+ [0x4ED]={
   category="ll",
   direction="l",
  },
- [0x04EE]={
+ [0x4EE]={
   category="lu",
   direction="l",
  },
- [0x04EF]={
+ [0x4EF]={
   category="ll",
   direction="l",
  },
- [0x04F0]={
+ [0x4F0]={
   category="lu",
   direction="l",
  },
- [0x04F1]={
+ [0x4F1]={
   category="ll",
   direction="l",
  },
- [0x04F2]={
+ [0x4F2]={
   category="lu",
   direction="l",
  },
- [0x04F3]={
+ [0x4F3]={
   category="ll",
   direction="l",
  },
- [0x04F4]={
+ [0x4F4]={
   category="lu",
   direction="l",
  },
- [0x04F5]={
+ [0x4F5]={
   category="ll",
   direction="l",
  },
- [0x04F6]={
+ [0x4F6]={
   category="lu",
   direction="l",
  },
- [0x04F7]={
+ [0x4F7]={
   category="ll",
   direction="l",
  },
- [0x04F8]={
+ [0x4F8]={
   category="lu",
   direction="l",
  },
- [0x04F9]={
+ [0x4F9]={
   category="ll",
   direction="l",
  },
- [0x04FA]={
+ [0x4FA]={
   category="lu",
   direction="l",
  },
- [0x04FB]={
+ [0x4FB]={
   category="ll",
   direction="l",
  },
- [0x04FC]={
+ [0x4FC]={
   category="lu",
   direction="l",
  },
- [0x04FD]={
+ [0x4FD]={
   category="ll",
   direction="l",
  },
- [0x04FE]={
+ [0x4FE]={
   category="lu",
   direction="l",
  },
- [0x04FF]={
+ [0x4FF]={
   category="ll",
   direction="l",
  },
- [0x0500]={
+ [0x500]={
   category="lu",
   direction="l",
  },
- [0x0501]={
+ [0x501]={
   category="ll",
   direction="l",
  },
- [0x0502]={
+ [0x502]={
   category="lu",
   direction="l",
  },
- [0x0503]={
+ [0x503]={
   category="ll",
   direction="l",
  },
- [0x0504]={
+ [0x504]={
   category="lu",
   direction="l",
  },
- [0x0505]={
+ [0x505]={
   category="ll",
   direction="l",
  },
- [0x0506]={
+ [0x506]={
   category="lu",
   direction="l",
  },
- [0x0507]={
+ [0x507]={
   category="ll",
   direction="l",
  },
- [0x0508]={
+ [0x508]={
   category="lu",
   direction="l",
  },
- [0x0509]={
+ [0x509]={
   category="ll",
   direction="l",
  },
- [0x050A]={
+ [0x50A]={
   category="lu",
   direction="l",
  },
- [0x050B]={
+ [0x50B]={
   category="ll",
   direction="l",
  },
- [0x050C]={
+ [0x50C]={
   category="lu",
   direction="l",
  },
- [0x050D]={
+ [0x50D]={
   category="ll",
   direction="l",
  },
- [0x050E]={
+ [0x50E]={
   category="lu",
   direction="l",
  },
- [0x050F]={
+ [0x50F]={
   category="ll",
   direction="l",
  },
- [0x0510]={
+ [0x510]={
   category="lu",
   direction="l",
  },
- [0x0511]={
+ [0x511]={
   category="ll",
   direction="l",
  },
- [0x0512]={
+ [0x512]={
   category="lu",
   direction="l",
  },
- [0x0513]={
+ [0x513]={
   category="ll",
   direction="l",
  },
- [0x0514]={
+ [0x514]={
   category="lu",
   direction="l",
  },
- [0x0515]={
+ [0x515]={
   category="ll",
   direction="l",
  },
- [0x0516]={
+ [0x516]={
   category="lu",
   direction="l",
  },
- [0x0517]={
+ [0x517]={
   category="ll",
   direction="l",
  },
- [0x0518]={
+ [0x518]={
   category="lu",
   direction="l",
  },
- [0x0519]={
+ [0x519]={
   category="ll",
   direction="l",
  },
- [0x051A]={
+ [0x51A]={
   category="lu",
   direction="l",
  },
- [0x051B]={
+ [0x51B]={
   category="ll",
   direction="l",
  },
- [0x051C]={
+ [0x51C]={
   category="lu",
   direction="l",
  },
- [0x051D]={
+ [0x51D]={
   category="ll",
   direction="l",
  },
- [0x051E]={
+ [0x51E]={
   category="lu",
   direction="l",
  },
- [0x051F]={
+ [0x51F]={
   category="ll",
   direction="l",
  },
- [0x0520]={
+ [0x520]={
   category="lu",
   direction="l",
  },
- [0x0521]={
+ [0x521]={
   category="ll",
   direction="l",
  },
- [0x0522]={
+ [0x522]={
   category="lu",
   direction="l",
  },
- [0x0523]={
+ [0x523]={
   category="ll",
   direction="l",
  },
- [0x0524]={
+ [0x524]={
   category="lu",
   direction="l",
  },
- [0x0525]={
+ [0x525]={
   category="ll",
   direction="l",
  },
- [0x0526]={
+ [0x526]={
   category="lu",
   direction="l",
  },
- [0x0527]={
+ [0x527]={
   category="ll",
   direction="l",
  },
- [0x0531]={
+ [0x528]={
   category="lu",
   direction="l",
  },
- [0x0532]={
+ [0x529]={
+  category="ll",
+  direction="l",
+ },
+ [0x52A]={
+  category="lu",
+  direction="l",
+ },
+ [0x52B]={
+  category="ll",
+  direction="l",
+ },
+ [0x52C]={
+  category="lu",
+  direction="l",
+ },
+ [0x52D]={
+  category="ll",
+  direction="l",
+ },
+ [0x52E]={
+  category="lu",
+  direction="l",
+ },
+ [0x52F]={
+  category="ll",
+  direction="l",
+ },
+ [0x531]={
+  category="lu",
+  direction="l",
+ },
+ [0x532]={
   category="lu",
   direction="l",
  },
- [0x0533]={
+ [0x533]={
   category="lu",
   direction="l",
  },
- [0x0534]={
+ [0x534]={
   category="lu",
   direction="l",
  },
- [0x0535]={
+ [0x535]={
   category="lu",
   direction="l",
  },
- [0x0536]={
+ [0x536]={
   category="lu",
   direction="l",
  },
- [0x0537]={
+ [0x537]={
   category="lu",
   direction="l",
  },
- [0x0538]={
+ [0x538]={
   category="lu",
   direction="l",
  },
- [0x0539]={
+ [0x539]={
   category="lu",
   direction="l",
  },
- [0x053A]={
+ [0x53A]={
   category="lu",
   direction="l",
  },
- [0x053B]={
+ [0x53B]={
   category="lu",
   direction="l",
  },
- [0x053C]={
+ [0x53C]={
   category="lu",
   direction="l",
  },
- [0x053D]={
+ [0x53D]={
   category="lu",
   direction="l",
  },
- [0x053E]={
+ [0x53E]={
   category="lu",
   direction="l",
  },
- [0x053F]={
+ [0x53F]={
   category="lu",
   direction="l",
  },
- [0x0540]={
+ [0x540]={
   category="lu",
   direction="l",
  },
- [0x0541]={
+ [0x541]={
   category="lu",
   direction="l",
  },
- [0x0542]={
+ [0x542]={
   category="lu",
   direction="l",
  },
- [0x0543]={
+ [0x543]={
   category="lu",
   direction="l",
  },
- [0x0544]={
+ [0x544]={
   category="lu",
   direction="l",
  },
- [0x0545]={
+ [0x545]={
   category="lu",
   direction="l",
  },
- [0x0546]={
+ [0x546]={
   category="lu",
   direction="l",
  },
- [0x0547]={
+ [0x547]={
   category="lu",
   direction="l",
  },
- [0x0548]={
+ [0x548]={
   category="lu",
   direction="l",
  },
- [0x0549]={
+ [0x549]={
   category="lu",
   direction="l",
  },
- [0x054A]={
+ [0x54A]={
   category="lu",
   direction="l",
  },
- [0x054B]={
+ [0x54B]={
   category="lu",
   direction="l",
  },
- [0x054C]={
+ [0x54C]={
   category="lu",
   direction="l",
  },
- [0x054D]={
+ [0x54D]={
   category="lu",
   direction="l",
  },
- [0x054E]={
+ [0x54E]={
   category="lu",
   direction="l",
  },
- [0x054F]={
+ [0x54F]={
   category="lu",
   direction="l",
  },
- [0x0550]={
+ [0x550]={
   category="lu",
   direction="l",
  },
- [0x0551]={
+ [0x551]={
   category="lu",
   direction="l",
  },
- [0x0552]={
+ [0x552]={
   category="lu",
   direction="l",
  },
- [0x0553]={
+ [0x553]={
   category="lu",
   direction="l",
  },
- [0x0554]={
+ [0x554]={
   category="lu",
   direction="l",
  },
- [0x0555]={
+ [0x555]={
   category="lu",
   direction="l",
  },
- [0x0556]={
+ [0x556]={
   category="lu",
   direction="l",
  },
- [0x0559]={
+ [0x559]={
   category="lm",
   direction="l",
  },
- [0x055A]={
+ [0x55A]={
   category="po",
   direction="l",
  },
- [0x055B]={
+ [0x55B]={
   category="po",
   direction="l",
  },
- [0x055C]={
+ [0x55C]={
   category="po",
   direction="l",
  },
- [0x055D]={
+ [0x55D]={
   category="po",
   direction="l",
  },
- [0x055E]={
+ [0x55E]={
   category="po",
   direction="l",
  },
- [0x055F]={
+ [0x55F]={
   category="po",
   direction="l",
  },
- [0x0561]={
+ [0x561]={
   category="ll",
   direction="l",
  },
- [0x0562]={
+ [0x562]={
   category="ll",
   direction="l",
  },
- [0x0563]={
+ [0x563]={
   category="ll",
   direction="l",
  },
- [0x0564]={
+ [0x564]={
   category="ll",
   direction="l",
  },
- [0x0565]={
+ [0x565]={
   category="ll",
   direction="l",
  },
- [0x0566]={
+ [0x566]={
   category="ll",
   direction="l",
  },
- [0x0567]={
+ [0x567]={
   category="ll",
   direction="l",
  },
- [0x0568]={
+ [0x568]={
   category="ll",
   direction="l",
  },
- [0x0569]={
+ [0x569]={
   category="ll",
   direction="l",
  },
- [0x056A]={
+ [0x56A]={
   category="ll",
   direction="l",
  },
- [0x056B]={
+ [0x56B]={
   category="ll",
   direction="l",
  },
- [0x056C]={
+ [0x56C]={
   category="ll",
   direction="l",
  },
- [0x056D]={
+ [0x56D]={
   category="ll",
   direction="l",
  },
- [0x056E]={
+ [0x56E]={
   category="ll",
   direction="l",
  },
- [0x056F]={
+ [0x56F]={
   category="ll",
   direction="l",
  },
- [0x0570]={
+ [0x570]={
   category="ll",
   direction="l",
  },
- [0x0571]={
+ [0x571]={
   category="ll",
   direction="l",
  },
- [0x0572]={
+ [0x572]={
   category="ll",
   direction="l",
  },
- [0x0573]={
+ [0x573]={
   category="ll",
   direction="l",
  },
- [0x0574]={
+ [0x574]={
   category="ll",
   direction="l",
  },
- [0x0575]={
+ [0x575]={
   category="ll",
   direction="l",
  },
- [0x0576]={
+ [0x576]={
   category="ll",
   direction="l",
  },
- [0x0577]={
+ [0x577]={
   category="ll",
   direction="l",
  },
- [0x0578]={
+ [0x578]={
   category="ll",
   direction="l",
  },
- [0x0579]={
+ [0x579]={
   category="ll",
   direction="l",
  },
- [0x057A]={
+ [0x57A]={
   category="ll",
   direction="l",
  },
- [0x057B]={
+ [0x57B]={
   category="ll",
   direction="l",
  },
- [0x057C]={
+ [0x57C]={
   category="ll",
   direction="l",
  },
- [0x057D]={
+ [0x57D]={
   category="ll",
   direction="l",
  },
- [0x057E]={
+ [0x57E]={
   category="ll",
   direction="l",
  },
- [0x057F]={
+ [0x57F]={
   category="ll",
   direction="l",
  },
- [0x0580]={
+ [0x580]={
   category="ll",
   direction="l",
  },
- [0x0581]={
+ [0x581]={
   category="ll",
   direction="l",
  },
- [0x0582]={
+ [0x582]={
   category="ll",
   direction="l",
  },
- [0x0583]={
+ [0x583]={
   category="ll",
   direction="l",
  },
- [0x0584]={
+ [0x584]={
   category="ll",
   direction="l",
  },
- [0x0585]={
+ [0x585]={
   category="ll",
   direction="l",
  },
- [0x0586]={
+ [0x586]={
   category="ll",
   direction="l",
  },
- [0x0587]={
+ [0x587]={
   category="ll",
   direction="l",
  },
- [0x0589]={
+ [0x589]={
   category="po",
   direction="l",
  },
- [0x058A]={
+ [0x58A]={
   category="pd",
   direction="on",
  },
- [0x058F]={
+ [0x58D]={
+  category="so",
+  direction="on",
+ },
+ [0x58E]={
+  category="so",
+  direction="on",
+ },
+ [0x58F]={
   category="sc",
   direction="et",
  },
- [0x0591]={
+ [0x591]={
   category="mn",
   direction="nsm",
  },
- [0x0592]={
+ [0x592]={
   category="mn",
   direction="nsm",
  },
- [0x0593]={
+ [0x593]={
   category="mn",
   direction="nsm",
  },
- [0x0594]={
+ [0x594]={
   category="mn",
   direction="nsm",
  },
- [0x0595]={
+ [0x595]={
   category="mn",
   direction="nsm",
  },
- [0x0596]={
+ [0x596]={
   category="mn",
   direction="nsm",
  },
- [0x0597]={
+ [0x597]={
   category="mn",
   direction="nsm",
  },
- [0x0598]={
+ [0x598]={
   category="mn",
   direction="nsm",
  },
- [0x0599]={
+ [0x599]={
   category="mn",
   direction="nsm",
  },
- [0x059A]={
+ [0x59A]={
   category="mn",
   direction="nsm",
  },
- [0x059B]={
+ [0x59B]={
   category="mn",
   direction="nsm",
  },
- [0x059C]={
+ [0x59C]={
   category="mn",
   direction="nsm",
  },
- [0x059D]={
+ [0x59D]={
   category="mn",
   direction="nsm",
  },
- [0x059E]={
+ [0x59E]={
   category="mn",
   direction="nsm",
  },
- [0x059F]={
+ [0x59F]={
   category="mn",
   direction="nsm",
  },
- [0x05A0]={
+ [0x5A0]={
   category="mn",
   direction="nsm",
  },
- [0x05A1]={
+ [0x5A1]={
   category="mn",
   direction="nsm",
  },
- [0x05A2]={
+ [0x5A2]={
   category="mn",
   direction="nsm",
  },
- [0x05A3]={
+ [0x5A3]={
   category="mn",
   direction="nsm",
  },
- [0x05A4]={
+ [0x5A4]={
   category="mn",
   direction="nsm",
  },
- [0x05A5]={
+ [0x5A5]={
   category="mn",
   direction="nsm",
  },
- [0x05A6]={
+ [0x5A6]={
   category="mn",
   direction="nsm",
  },
- [0x05A7]={
+ [0x5A7]={
   category="mn",
   direction="nsm",
  },
- [0x05A8]={
+ [0x5A8]={
   category="mn",
   direction="nsm",
  },
- [0x05A9]={
+ [0x5A9]={
   category="mn",
   direction="nsm",
  },
- [0x05AA]={
+ [0x5AA]={
   category="mn",
   direction="nsm",
  },
- [0x05AB]={
+ [0x5AB]={
   category="mn",
   direction="nsm",
  },
- [0x05AC]={
+ [0x5AC]={
   category="mn",
   direction="nsm",
  },
- [0x05AD]={
+ [0x5AD]={
   category="mn",
   direction="nsm",
  },
- [0x05AE]={
+ [0x5AE]={
   category="mn",
   direction="nsm",
  },
- [0x05AF]={
+ [0x5AF]={
   category="mn",
   direction="nsm",
  },
- [0x05B0]={
+ [0x5B0]={
   category="mn",
   direction="nsm",
  },
- [0x05B1]={
+ [0x5B1]={
   category="mn",
   direction="nsm",
  },
- [0x05B2]={
+ [0x5B2]={
   category="mn",
   direction="nsm",
  },
- [0x05B3]={
+ [0x5B3]={
   category="mn",
   direction="nsm",
  },
- [0x05B4]={
+ [0x5B4]={
   category="mn",
   direction="nsm",
  },
- [0x05B5]={
+ [0x5B5]={
   category="mn",
   direction="nsm",
  },
- [0x05B6]={
+ [0x5B6]={
   category="mn",
   direction="nsm",
  },
- [0x05B7]={
+ [0x5B7]={
   category="mn",
   direction="nsm",
  },
- [0x05B8]={
+ [0x5B8]={
   category="mn",
   direction="nsm",
  },
- [0x05B9]={
+ [0x5B9]={
   category="mn",
   direction="nsm",
  },
- [0x05BA]={
+ [0x5BA]={
   category="mn",
   direction="nsm",
  },
- [0x05BB]={
+ [0x5BB]={
   category="mn",
   direction="nsm",
  },
- [0x05BC]={
+ [0x5BC]={
   category="mn",
   direction="nsm",
  },
- [0x05BD]={
+ [0x5BD]={
   category="mn",
   direction="nsm",
  },
- [0x05BE]={
+ [0x5BE]={
   category="po",
   direction="r",
  },
- [0x05BF]={
+ [0x5BF]={
   category="mn",
   direction="nsm",
  },
- [0x05C0]={
+ [0x5C0]={
   category="po",
   direction="r",
  },
- [0x05C1]={
+ [0x5C1]={
   category="mn",
   direction="nsm",
  },
- [0x05C2]={
+ [0x5C2]={
   category="mn",
   direction="nsm",
  },
- [0x05C3]={
+ [0x5C3]={
   category="po",
   direction="r",
  },
- [0x05C4]={
+ [0x5C4]={
   category="mn",
   direction="nsm",
  },
- [0x05C5]={
+ [0x5C5]={
   category="mn",
   direction="nsm",
  },
- [0x05C6]={
+ [0x5C6]={
   category="po",
   direction="r",
  },
- [0x05C7]={
+ [0x5C7]={
   category="mn",
   direction="nsm",
  },
- [0x05D0]={
+ [0x5D0]={
   category="lo",
   direction="r",
  },
- [0x05D1]={
+ [0x5D1]={
   category="lo",
   direction="r",
  },
- [0x05D2]={
+ [0x5D2]={
   category="lo",
   direction="r",
  },
- [0x05D3]={
+ [0x5D3]={
   category="lo",
   direction="r",
  },
- [0x05D4]={
+ [0x5D4]={
   category="lo",
   direction="r",
  },
- [0x05D5]={
+ [0x5D5]={
   category="lo",
   direction="r",
  },
- [0x05D6]={
+ [0x5D6]={
   category="lo",
   direction="r",
  },
- [0x05D7]={
+ [0x5D7]={
   category="lo",
   direction="r",
  },
- [0x05D8]={
+ [0x5D8]={
   category="lo",
   direction="r",
  },
- [0x05D9]={
+ [0x5D9]={
   category="lo",
   direction="r",
  },
- [0x05DA]={
+ [0x5DA]={
   category="lo",
   direction="r",
  },
- [0x05DB]={
+ [0x5DB]={
   category="lo",
   direction="r",
  },
- [0x05DC]={
+ [0x5DC]={
   category="lo",
   direction="r",
  },
- [0x05DD]={
+ [0x5DD]={
   category="lo",
   direction="r",
  },
- [0x05DE]={
+ [0x5DE]={
   category="lo",
   direction="r",
  },
- [0x05DF]={
+ [0x5DF]={
   category="lo",
   direction="r",
  },
- [0x05E0]={
+ [0x5E0]={
   category="lo",
   direction="r",
  },
- [0x05E1]={
+ [0x5E1]={
   category="lo",
   direction="r",
  },
- [0x05E2]={
+ [0x5E2]={
   category="lo",
   direction="r",
  },
- [0x05E3]={
+ [0x5E3]={
   category="lo",
   direction="r",
  },
- [0x05E4]={
+ [0x5E4]={
   category="lo",
   direction="r",
  },
- [0x05E5]={
+ [0x5E5]={
   category="lo",
   direction="r",
  },
- [0x05E6]={
+ [0x5E6]={
   category="lo",
   direction="r",
  },
- [0x05E7]={
+ [0x5E7]={
   category="lo",
   direction="r",
  },
- [0x05E8]={
+ [0x5E8]={
   category="lo",
   direction="r",
  },
- [0x05E9]={
+ [0x5E9]={
   category="lo",
   direction="r",
  },
- [0x05EA]={
+ [0x5EA]={
   category="lo",
   direction="r",
  },
- [0x05F0]={
+ [0x5F0]={
   category="lo",
   direction="r",
  },
- [0x05F1]={
+ [0x5F1]={
   category="lo",
   direction="r",
  },
- [0x05F2]={
+ [0x5F2]={
   category="lo",
   direction="r",
  },
- [0x05F3]={
+ [0x5F3]={
   category="po",
   direction="r",
  },
- [0x05F4]={
+ [0x5F4]={
   category="po",
   direction="r",
  },
- [0x0600]={
+ [0x600]={
   category="cf",
   direction="an",
  },
- [0x0601]={
+ [0x601]={
   category="cf",
   direction="an",
  },
- [0x0602]={
+ [0x602]={
   category="cf",
   direction="an",
  },
- [0x0603]={
+ [0x603]={
   category="cf",
   direction="an",
  },
- [0x0604]={
+ [0x604]={
   category="cf",
   direction="an",
  },
- [0x0606]={
+ [0x605]={
+  category="cf",
+  direction="an",
+ },
+ [0x606]={
   category="sm",
   direction="on",
  },
- [0x0607]={
+ [0x607]={
   category="sm",
   direction="on",
  },
- [0x0608]={
+ [0x608]={
   category="sm",
   direction="al",
  },
- [0x0609]={
+ [0x609]={
   category="po",
   direction="et",
  },
- [0x060A]={
+ [0x60A]={
   category="po",
   direction="et",
  },
- [0x060B]={
+ [0x60B]={
   category="sc",
   direction="al",
  },
- [0x060C]={
+ [0x60C]={
   category="po",
   direction="cs",
  },
- [0x060D]={
+ [0x60D]={
   category="po",
   direction="al",
  },
- [0x060E]={
+ [0x60E]={
   category="so",
   direction="on",
  },
- [0x060F]={
+ [0x60F]={
   category="so",
   direction="on",
  },
- [0x0610]={
+ [0x610]={
   category="mn",
   direction="nsm",
  },
- [0x0611]={
+ [0x611]={
   category="mn",
   direction="nsm",
  },
- [0x0612]={
+ [0x612]={
   category="mn",
   direction="nsm",
  },
- [0x0613]={
+ [0x613]={
   category="mn",
   direction="nsm",
  },
- [0x0614]={
+ [0x614]={
   category="mn",
   direction="nsm",
  },
- [0x0615]={
+ [0x615]={
   category="mn",
   direction="nsm",
  },
- [0x0616]={
+ [0x616]={
   category="mn",
   direction="nsm",
  },
- [0x0617]={
+ [0x617]={
   category="mn",
   direction="nsm",
  },
- [0x0618]={
+ [0x618]={
   category="mn",
   direction="nsm",
  },
- [0x0619]={
+ [0x619]={
   category="mn",
   direction="nsm",
  },
- [0x061A]={
+ [0x61A]={
   category="mn",
   direction="nsm",
  },
- [0x061B]={
+ [0x61B]={
   category="po",
   direction="al",
  },
- [0x061E]={
+ [0x61C]={
+  category="cf",
+  direction="al",
+ },
+ [0x61E]={
   category="po",
   direction="al",
  },
- [0x061F]={
+ [0x61F]={
   category="po",
   direction="al",
  },
- [0x0620]={
+ [0x620]={
   category="lo",
   direction="al",
  },
- [0x0621]={
+ [0x621]={
   category="lo",
   direction="al",
  },
- [0x0622]={
+ [0x622]={
   category="lo",
   direction="al",
  },
- [0x0623]={
+ [0x623]={
   category="lo",
   direction="al",
  },
- [0x0624]={
+ [0x624]={
   category="lo",
   direction="al",
  },
- [0x0625]={
+ [0x625]={
   category="lo",
   direction="al",
  },
- [0x0626]={
+ [0x626]={
   category="lo",
   direction="al",
  },
- [0x0627]={
+ [0x627]={
   category="lo",
   direction="al",
  },
- [0x0628]={
+ [0x628]={
   category="lo",
   direction="al",
  },
- [0x0629]={
+ [0x629]={
   category="lo",
   direction="al",
  },
- [0x062A]={
+ [0x62A]={
   category="lo",
   direction="al",
  },
- [0x062B]={
+ [0x62B]={
   category="lo",
   direction="al",
  },
- [0x062C]={
+ [0x62C]={
   category="lo",
   direction="al",
  },
- [0x062D]={
+ [0x62D]={
   category="lo",
   direction="al",
  },
- [0x062E]={
+ [0x62E]={
   category="lo",
   direction="al",
  },
- [0x062F]={
+ [0x62F]={
   category="lo",
   direction="al",
  },
- [0x0630]={
+ [0x630]={
   category="lo",
   direction="al",
  },
- [0x0631]={
+ [0x631]={
   category="lo",
   direction="al",
  },
- [0x0632]={
+ [0x632]={
   category="lo",
   direction="al",
  },
- [0x0633]={
+ [0x633]={
   category="lo",
   direction="al",
  },
- [0x0634]={
+ [0x634]={
   category="lo",
   direction="al",
  },
- [0x0635]={
+ [0x635]={
   category="lo",
   direction="al",
  },
- [0x0636]={
+ [0x636]={
   category="lo",
   direction="al",
  },
- [0x0637]={
+ [0x637]={
   category="lo",
   direction="al",
  },
- [0x0638]={
+ [0x638]={
   category="lo",
   direction="al",
  },
- [0x0639]={
+ [0x639]={
   category="lo",
   direction="al",
  },
- [0x063A]={
+ [0x63A]={
   category="lo",
   direction="al",
  },
- [0x063B]={
+ [0x63B]={
   category="lo",
   direction="al",
  },
- [0x063C]={
+ [0x63C]={
   category="lo",
   direction="al",
  },
- [0x063D]={
+ [0x63D]={
   category="lo",
   direction="al",
  },
- [0x063E]={
+ [0x63E]={
   category="lo",
   direction="al",
  },
- [0x063F]={
+ [0x63F]={
   category="lo",
   direction="al",
  },
- [0x0640]={
+ [0x640]={
   category="lm",
   direction="al",
  },
- [0x0641]={
+ [0x641]={
   category="lo",
   direction="al",
  },
- [0x0642]={
+ [0x642]={
   category="lo",
   direction="al",
  },
- [0x0643]={
+ [0x643]={
   category="lo",
   direction="al",
  },
- [0x0644]={
+ [0x644]={
   category="lo",
   direction="al",
  },
- [0x0645]={
+ [0x645]={
   category="lo",
   direction="al",
  },
- [0x0646]={
+ [0x646]={
   category="lo",
   direction="al",
  },
- [0x0647]={
+ [0x647]={
   category="lo",
   direction="al",
  },
- [0x0648]={
+ [0x648]={
   category="lo",
   direction="al",
  },
- [0x0649]={
+ [0x649]={
   category="lo",
   direction="al",
  },
- [0x064A]={
+ [0x64A]={
   category="lo",
   direction="al",
  },
- [0x064B]={
+ [0x64B]={
   category="mn",
   direction="nsm",
  },
- [0x064C]={
+ [0x64C]={
   category="mn",
   direction="nsm",
  },
- [0x064D]={
+ [0x64D]={
   category="mn",
   direction="nsm",
  },
- [0x064E]={
+ [0x64E]={
   category="mn",
   direction="nsm",
  },
- [0x064F]={
+ [0x64F]={
   category="mn",
   direction="nsm",
  },
- [0x0650]={
+ [0x650]={
   category="mn",
   direction="nsm",
  },
- [0x0651]={
+ [0x651]={
   category="mn",
   direction="nsm",
  },
- [0x0652]={
+ [0x652]={
   category="mn",
   direction="nsm",
  },
- [0x0653]={
+ [0x653]={
   category="mn",
   direction="nsm",
  },
- [0x0654]={
+ [0x654]={
   category="mn",
   direction="nsm",
  },
- [0x0655]={
+ [0x655]={
   category="mn",
   direction="nsm",
  },
- [0x0656]={
+ [0x656]={
   category="mn",
   direction="nsm",
  },
- [0x0657]={
+ [0x657]={
   category="mn",
   direction="nsm",
  },
- [0x0658]={
+ [0x658]={
   category="mn",
   direction="nsm",
  },
- [0x0659]={
+ [0x659]={
   category="mn",
   direction="nsm",
  },
- [0x065A]={
+ [0x65A]={
   category="mn",
   direction="nsm",
  },
- [0x065B]={
+ [0x65B]={
   category="mn",
   direction="nsm",
  },
- [0x065C]={
+ [0x65C]={
   category="mn",
   direction="nsm",
  },
- [0x065D]={
+ [0x65D]={
   category="mn",
   direction="nsm",
  },
- [0x065E]={
+ [0x65E]={
   category="mn",
   direction="nsm",
  },
- [0x065F]={
+ [0x65F]={
   category="mn",
   direction="nsm",
  },
- [0x0660]={
+ [0x660]={
   category="nd",
   direction="an",
  },
- [0x0661]={
+ [0x661]={
   category="nd",
   direction="an",
  },
- [0x0662]={
+ [0x662]={
   category="nd",
   direction="an",
  },
- [0x0663]={
+ [0x663]={
   category="nd",
   direction="an",
  },
- [0x0664]={
+ [0x664]={
   category="nd",
   direction="an",
  },
- [0x0665]={
+ [0x665]={
   category="nd",
   direction="an",
  },
- [0x0666]={
+ [0x666]={
   category="nd",
   direction="an",
  },
- [0x0667]={
+ [0x667]={
   category="nd",
   direction="an",
  },
- [0x0668]={
+ [0x668]={
   category="nd",
   direction="an",
  },
- [0x0669]={
+ [0x669]={
   category="nd",
   direction="an",
  },
- [0x066A]={
+ [0x66A]={
   category="po",
   direction="et",
  },
- [0x066B]={
+ [0x66B]={
   category="po",
   direction="an",
  },
- [0x066C]={
+ [0x66C]={
   category="po",
   direction="an",
  },
- [0x066D]={
+ [0x66D]={
   category="po",
   direction="al",
  },
- [0x066E]={
+ [0x66E]={
   category="lo",
   direction="al",
  },
- [0x066F]={
+ [0x66F]={
   category="lo",
   direction="al",
  },
- [0x0670]={
+ [0x670]={
   category="mn",
   direction="nsm",
  },
- [0x0671]={
+ [0x671]={
   category="lo",
   direction="al",
  },
- [0x0672]={
+ [0x672]={
   category="lo",
   direction="al",
  },
- [0x0673]={
+ [0x673]={
   category="lo",
   direction="al",
  },
- [0x0674]={
+ [0x674]={
   category="lo",
   direction="al",
  },
- [0x0675]={
+ [0x675]={
   category="lo",
   direction="al",
  },
- [0x0676]={
+ [0x676]={
   category="lo",
   direction="al",
  },
- [0x0677]={
+ [0x677]={
   category="lo",
   direction="al",
  },
- [0x0678]={
+ [0x678]={
   category="lo",
   direction="al",
  },
- [0x0679]={
+ [0x679]={
   category="lo",
   direction="al",
  },
- [0x067A]={
+ [0x67A]={
   category="lo",
   direction="al",
  },
- [0x067B]={
+ [0x67B]={
   category="lo",
   direction="al",
  },
- [0x067C]={
+ [0x67C]={
   category="lo",
   direction="al",
  },
- [0x067D]={
+ [0x67D]={
   category="lo",
   direction="al",
  },
- [0x067E]={
+ [0x67E]={
   category="lo",
   direction="al",
  },
- [0x067F]={
+ [0x67F]={
   category="lo",
   direction="al",
  },
- [0x0680]={
+ [0x680]={
   category="lo",
   direction="al",
  },
- [0x0681]={
+ [0x681]={
   category="lo",
   direction="al",
  },
- [0x0682]={
+ [0x682]={
   category="lo",
   direction="al",
  },
- [0x0683]={
+ [0x683]={
   category="lo",
   direction="al",
  },
- [0x0684]={
+ [0x684]={
   category="lo",
   direction="al",
  },
- [0x0685]={
+ [0x685]={
   category="lo",
   direction="al",
  },
- [0x0686]={
+ [0x686]={
   category="lo",
   direction="al",
  },
- [0x0687]={
+ [0x687]={
   category="lo",
   direction="al",
  },
- [0x0688]={
+ [0x688]={
   category="lo",
   direction="al",
  },
- [0x0689]={
+ [0x689]={
   category="lo",
   direction="al",
  },
- [0x068A]={
+ [0x68A]={
   category="lo",
   direction="al",
  },
- [0x068B]={
+ [0x68B]={
   category="lo",
   direction="al",
  },
- [0x068C]={
+ [0x68C]={
   category="lo",
   direction="al",
  },
- [0x068D]={
+ [0x68D]={
   category="lo",
   direction="al",
  },
- [0x068E]={
+ [0x68E]={
   category="lo",
   direction="al",
  },
- [0x068F]={
+ [0x68F]={
   category="lo",
   direction="al",
  },
- [0x0690]={
+ [0x690]={
   category="lo",
   direction="al",
  },
- [0x0691]={
+ [0x691]={
   category="lo",
   direction="al",
  },
- [0x0692]={
+ [0x692]={
   category="lo",
   direction="al",
  },
- [0x0693]={
+ [0x693]={
   category="lo",
   direction="al",
  },
- [0x0694]={
+ [0x694]={
   category="lo",
   direction="al",
  },
- [0x0695]={
+ [0x695]={
   category="lo",
   direction="al",
  },
- [0x0696]={
+ [0x696]={
   category="lo",
   direction="al",
  },
- [0x0697]={
+ [0x697]={
   category="lo",
   direction="al",
  },
- [0x0698]={
+ [0x698]={
   category="lo",
   direction="al",
  },
- [0x0699]={
+ [0x699]={
   category="lo",
   direction="al",
  },
- [0x069A]={
+ [0x69A]={
   category="lo",
   direction="al",
  },
- [0x069B]={
+ [0x69B]={
   category="lo",
   direction="al",
  },
- [0x069C]={
+ [0x69C]={
   category="lo",
   direction="al",
  },
- [0x069D]={
+ [0x69D]={
   category="lo",
   direction="al",
  },
- [0x069E]={
+ [0x69E]={
   category="lo",
   direction="al",
  },
- [0x069F]={
+ [0x69F]={
   category="lo",
   direction="al",
  },
- [0x06A0]={
+ [0x6A0]={
   category="lo",
   direction="al",
  },
- [0x06A1]={
+ [0x6A1]={
   category="lo",
   direction="al",
  },
- [0x06A2]={
+ [0x6A2]={
   category="lo",
   direction="al",
  },
- [0x06A3]={
+ [0x6A3]={
   category="lo",
   direction="al",
  },
- [0x06A4]={
+ [0x6A4]={
   category="lo",
   direction="al",
  },
- [0x06A5]={
+ [0x6A5]={
   category="lo",
   direction="al",
  },
- [0x06A6]={
+ [0x6A6]={
   category="lo",
   direction="al",
  },
- [0x06A7]={
+ [0x6A7]={
   category="lo",
   direction="al",
  },
- [0x06A8]={
+ [0x6A8]={
   category="lo",
   direction="al",
  },
- [0x06A9]={
+ [0x6A9]={
   category="lo",
   direction="al",
  },
- [0x06AA]={
+ [0x6AA]={
   category="lo",
   direction="al",
  },
- [0x06AB]={
+ [0x6AB]={
   category="lo",
   direction="al",
  },
- [0x06AC]={
+ [0x6AC]={
   category="lo",
   direction="al",
  },
- [0x06AD]={
+ [0x6AD]={
   category="lo",
   direction="al",
  },
- [0x06AE]={
+ [0x6AE]={
   category="lo",
   direction="al",
  },
- [0x06AF]={
+ [0x6AF]={
   category="lo",
   direction="al",
  },
- [0x06B0]={
+ [0x6B0]={
   category="lo",
   direction="al",
  },
- [0x06B1]={
+ [0x6B1]={
   category="lo",
   direction="al",
  },
- [0x06B2]={
+ [0x6B2]={
   category="lo",
   direction="al",
  },
- [0x06B3]={
+ [0x6B3]={
   category="lo",
   direction="al",
  },
- [0x06B4]={
+ [0x6B4]={
   category="lo",
   direction="al",
  },
- [0x06B5]={
+ [0x6B5]={
   category="lo",
   direction="al",
  },
- [0x06B6]={
+ [0x6B6]={
   category="lo",
   direction="al",
  },
- [0x06B7]={
+ [0x6B7]={
   category="lo",
   direction="al",
  },
- [0x06B8]={
+ [0x6B8]={
   category="lo",
   direction="al",
  },
- [0x06B9]={
+ [0x6B9]={
   category="lo",
   direction="al",
  },
- [0x06BA]={
+ [0x6BA]={
   category="lo",
   direction="al",
  },
- [0x06BB]={
+ [0x6BB]={
   category="lo",
   direction="al",
  },
- [0x06BC]={
+ [0x6BC]={
   category="lo",
   direction="al",
  },
- [0x06BD]={
+ [0x6BD]={
   category="lo",
   direction="al",
  },
- [0x06BE]={
+ [0x6BE]={
   category="lo",
   direction="al",
  },
- [0x06BF]={
+ [0x6BF]={
   category="lo",
   direction="al",
  },
- [0x06C0]={
+ [0x6C0]={
   category="lo",
   direction="al",
  },
- [0x06C1]={
+ [0x6C1]={
   category="lo",
   direction="al",
  },
- [0x06C2]={
+ [0x6C2]={
   category="lo",
   direction="al",
  },
- [0x06C3]={
+ [0x6C3]={
   category="lo",
   direction="al",
  },
- [0x06C4]={
+ [0x6C4]={
   category="lo",
   direction="al",
  },
- [0x06C5]={
+ [0x6C5]={
   category="lo",
   direction="al",
  },
- [0x06C6]={
+ [0x6C6]={
   category="lo",
   direction="al",
  },
- [0x06C7]={
+ [0x6C7]={
   category="lo",
   direction="al",
  },
- [0x06C8]={
+ [0x6C8]={
   category="lo",
   direction="al",
  },
- [0x06C9]={
+ [0x6C9]={
   category="lo",
   direction="al",
  },
- [0x06CA]={
+ [0x6CA]={
   category="lo",
   direction="al",
  },
- [0x06CB]={
+ [0x6CB]={
   category="lo",
   direction="al",
  },
- [0x06CC]={
+ [0x6CC]={
   category="lo",
   direction="al",
  },
- [0x06CD]={
+ [0x6CD]={
   category="lo",
   direction="al",
  },
- [0x06CE]={
+ [0x6CE]={
   category="lo",
   direction="al",
  },
- [0x06CF]={
+ [0x6CF]={
   category="lo",
   direction="al",
  },
- [0x06D0]={
+ [0x6D0]={
   category="lo",
   direction="al",
  },
- [0x06D1]={
+ [0x6D1]={
   category="lo",
   direction="al",
  },
- [0x06D2]={
+ [0x6D2]={
   category="lo",
   direction="al",
  },
- [0x06D3]={
+ [0x6D3]={
   category="lo",
   direction="al",
  },
- [0x06D4]={
+ [0x6D4]={
   category="po",
   direction="al",
  },
- [0x06D5]={
+ [0x6D5]={
   category="lo",
   direction="al",
  },
- [0x06D6]={
+ [0x6D6]={
   category="mn",
   direction="nsm",
  },
- [0x06D7]={
+ [0x6D7]={
   category="mn",
   direction="nsm",
  },
- [0x06D8]={
+ [0x6D8]={
   category="mn",
   direction="nsm",
  },
- [0x06D9]={
+ [0x6D9]={
   category="mn",
   direction="nsm",
  },
- [0x06DA]={
+ [0x6DA]={
   category="mn",
   direction="nsm",
  },
- [0x06DB]={
+ [0x6DB]={
   category="mn",
   direction="nsm",
  },
- [0x06DC]={
+ [0x6DC]={
   category="mn",
   direction="nsm",
  },
- [0x06DD]={
+ [0x6DD]={
   category="cf",
   direction="an",
  },
- [0x06DE]={
+ [0x6DE]={
   category="me",
   direction="on",
  },
- [0x06DF]={
+ [0x6DF]={
   category="mn",
   direction="nsm",
  },
- [0x06E0]={
+ [0x6E0]={
   category="mn",
   direction="nsm",
  },
- [0x06E1]={
+ [0x6E1]={
   category="mn",
   direction="nsm",
  },
- [0x06E2]={
+ [0x6E2]={
   category="mn",
   direction="nsm",
  },
- [0x06E3]={
+ [0x6E3]={
   category="mn",
   direction="nsm",
  },
- [0x06E4]={
+ [0x6E4]={
   category="mn",
   direction="nsm",
  },
- [0x06E5]={
+ [0x6E5]={
   category="lm",
   direction="al",
  },
- [0x06E6]={
+ [0x6E6]={
   category="lm",
   direction="al",
  },
- [0x06E7]={
+ [0x6E7]={
   category="mn",
   direction="nsm",
  },
- [0x06E8]={
+ [0x6E8]={
   category="mn",
   direction="nsm",
  },
- [0x06E9]={
+ [0x6E9]={
   category="so",
   direction="on",
  },
- [0x06EA]={
+ [0x6EA]={
   category="mn",
   direction="nsm",
  },
- [0x06EB]={
+ [0x6EB]={
   category="mn",
   direction="nsm",
  },
- [0x06EC]={
+ [0x6EC]={
   category="mn",
   direction="nsm",
  },
- [0x06ED]={
+ [0x6ED]={
   category="mn",
   direction="nsm",
  },
- [0x06EE]={
+ [0x6EE]={
   category="lo",
   direction="al",
  },
- [0x06EF]={
+ [0x6EF]={
   category="lo",
   direction="al",
  },
- [0x06F0]={
+ [0x6F0]={
   category="nd",
   direction="en",
  },
- [0x06F1]={
+ [0x6F1]={
   category="nd",
   direction="en",
  },
- [0x06F2]={
+ [0x6F2]={
   category="nd",
   direction="en",
  },
- [0x06F3]={
+ [0x6F3]={
   category="nd",
   direction="en",
  },
- [0x06F4]={
+ [0x6F4]={
   category="nd",
   direction="en",
  },
- [0x06F5]={
+ [0x6F5]={
   category="nd",
   direction="en",
  },
- [0x06F6]={
+ [0x6F6]={
   category="nd",
   direction="en",
  },
- [0x06F7]={
+ [0x6F7]={
   category="nd",
   direction="en",
  },
- [0x06F8]={
+ [0x6F8]={
   category="nd",
   direction="en",
  },
- [0x06F9]={
+ [0x6F9]={
   category="nd",
   direction="en",
  },
- [0x06FA]={
+ [0x6FA]={
   category="lo",
   direction="al",
  },
- [0x06FB]={
+ [0x6FB]={
   category="lo",
   direction="al",
  },
- [0x06FC]={
+ [0x6FC]={
   category="lo",
   direction="al",
  },
- [0x06FD]={
+ [0x6FD]={
   category="so",
   direction="al",
  },
- [0x06FE]={
+ [0x6FE]={
   category="so",
   direction="al",
  },
- [0x06FF]={
+ [0x6FF]={
   category="lo",
   direction="al",
  },
- [0x0700]={
+ [0x700]={
   category="po",
   direction="al",
  },
- [0x0701]={
+ [0x701]={
   category="po",
   direction="al",
  },
- [0x0702]={
+ [0x702]={
   category="po",
   direction="al",
  },
- [0x0703]={
+ [0x703]={
   category="po",
   direction="al",
  },
- [0x0704]={
+ [0x704]={
   category="po",
   direction="al",
  },
- [0x0705]={
+ [0x705]={
   category="po",
   direction="al",
  },
- [0x0706]={
+ [0x706]={
   category="po",
   direction="al",
  },
- [0x0707]={
+ [0x707]={
   category="po",
   direction="al",
  },
- [0x0708]={
+ [0x708]={
   category="po",
   direction="al",
  },
- [0x0709]={
+ [0x709]={
   category="po",
   direction="al",
  },
- [0x070A]={
+ [0x70A]={
   category="po",
   direction="al",
  },
- [0x070B]={
+ [0x70B]={
   category="po",
   direction="al",
  },
- [0x070C]={
+ [0x70C]={
   category="po",
   direction="al",
  },
- [0x070D]={
+ [0x70D]={
   category="po",
   direction="al",
  },
- [0x070F]={
+ [0x70F]={
   category="cf",
   direction="al",
  },
- [0x0710]={
+ [0x710]={
   category="lo",
   direction="al",
  },
- [0x0711]={
+ [0x711]={
   category="mn",
   direction="nsm",
  },
- [0x0712]={
+ [0x712]={
   category="lo",
   direction="al",
  },
- [0x0713]={
+ [0x713]={
   category="lo",
   direction="al",
  },
- [0x0714]={
+ [0x714]={
   category="lo",
   direction="al",
  },
- [0x0715]={
+ [0x715]={
   category="lo",
   direction="al",
  },
- [0x0716]={
+ [0x716]={
   category="lo",
   direction="al",
  },
- [0x0717]={
+ [0x717]={
   category="lo",
   direction="al",
  },
- [0x0718]={
+ [0x718]={
   category="lo",
   direction="al",
  },
- [0x0719]={
+ [0x719]={
   category="lo",
   direction="al",
  },
- [0x071A]={
+ [0x71A]={
   category="lo",
   direction="al",
  },
- [0x071B]={
+ [0x71B]={
   category="lo",
   direction="al",
  },
- [0x071C]={
+ [0x71C]={
   category="lo",
   direction="al",
  },
- [0x071D]={
+ [0x71D]={
   category="lo",
   direction="al",
  },
- [0x071E]={
+ [0x71E]={
   category="lo",
   direction="al",
  },
- [0x071F]={
+ [0x71F]={
   category="lo",
   direction="al",
  },
- [0x0720]={
+ [0x720]={
   category="lo",
   direction="al",
  },
- [0x0721]={
+ [0x721]={
   category="lo",
   direction="al",
  },
- [0x0722]={
+ [0x722]={
   category="lo",
   direction="al",
  },
- [0x0723]={
+ [0x723]={
   category="lo",
   direction="al",
  },
- [0x0724]={
+ [0x724]={
   category="lo",
   direction="al",
  },
- [0x0725]={
+ [0x725]={
   category="lo",
   direction="al",
  },
- [0x0726]={
+ [0x726]={
   category="lo",
   direction="al",
  },
- [0x0727]={
+ [0x727]={
   category="lo",
   direction="al",
  },
- [0x0728]={
+ [0x728]={
   category="lo",
   direction="al",
  },
- [0x0729]={
+ [0x729]={
   category="lo",
   direction="al",
  },
- [0x072A]={
+ [0x72A]={
   category="lo",
   direction="al",
  },
- [0x072B]={
+ [0x72B]={
   category="lo",
   direction="al",
  },
- [0x072C]={
+ [0x72C]={
   category="lo",
   direction="al",
  },
- [0x072D]={
+ [0x72D]={
   category="lo",
   direction="al",
  },
- [0x072E]={
+ [0x72E]={
   category="lo",
   direction="al",
  },
- [0x072F]={
+ [0x72F]={
   category="lo",
   direction="al",
  },
- [0x0730]={
+ [0x730]={
   category="mn",
   direction="nsm",
  },
- [0x0731]={
+ [0x731]={
   category="mn",
   direction="nsm",
  },
- [0x0732]={
+ [0x732]={
   category="mn",
   direction="nsm",
  },
- [0x0733]={
+ [0x733]={
   category="mn",
   direction="nsm",
  },
- [0x0734]={
+ [0x734]={
   category="mn",
   direction="nsm",
  },
- [0x0735]={
+ [0x735]={
   category="mn",
   direction="nsm",
  },
- [0x0736]={
+ [0x736]={
   category="mn",
   direction="nsm",
  },
- [0x0737]={
+ [0x737]={
   category="mn",
   direction="nsm",
  },
- [0x0738]={
+ [0x738]={
   category="mn",
   direction="nsm",
  },
- [0x0739]={
+ [0x739]={
   category="mn",
   direction="nsm",
  },
- [0x073A]={
+ [0x73A]={
   category="mn",
   direction="nsm",
  },
- [0x073B]={
+ [0x73B]={
   category="mn",
   direction="nsm",
  },
- [0x073C]={
+ [0x73C]={
   category="mn",
   direction="nsm",
  },
- [0x073D]={
+ [0x73D]={
   category="mn",
   direction="nsm",
  },
- [0x073E]={
+ [0x73E]={
   category="mn",
   direction="nsm",
  },
- [0x073F]={
+ [0x73F]={
   category="mn",
   direction="nsm",
  },
- [0x0740]={
+ [0x740]={
   category="mn",
   direction="nsm",
  },
- [0x0741]={
+ [0x741]={
   category="mn",
   direction="nsm",
  },
- [0x0742]={
+ [0x742]={
   category="mn",
   direction="nsm",
  },
- [0x0743]={
+ [0x743]={
   category="mn",
   direction="nsm",
  },
- [0x0744]={
+ [0x744]={
   category="mn",
   direction="nsm",
  },
- [0x0745]={
+ [0x745]={
   category="mn",
   direction="nsm",
  },
- [0x0746]={
+ [0x746]={
   category="mn",
   direction="nsm",
  },
- [0x0747]={
+ [0x747]={
   category="mn",
   direction="nsm",
  },
- [0x0748]={
+ [0x748]={
   category="mn",
   direction="nsm",
  },
- [0x0749]={
+ [0x749]={
   category="mn",
   direction="nsm",
  },
- [0x074A]={
+ [0x74A]={
   category="mn",
   direction="nsm",
  },
- [0x074D]={
+ [0x74D]={
   category="lo",
   direction="al",
  },
- [0x074E]={
+ [0x74E]={
   category="lo",
   direction="al",
  },
- [0x074F]={
+ [0x74F]={
   category="lo",
   direction="al",
  },
- [0x0750]={
+ [0x750]={
   category="lo",
   direction="al",
  },
- [0x0751]={
+ [0x751]={
   category="lo",
   direction="al",
  },
- [0x0752]={
+ [0x752]={
   category="lo",
   direction="al",
  },
- [0x0753]={
+ [0x753]={
   category="lo",
   direction="al",
  },
- [0x0754]={
+ [0x754]={
   category="lo",
   direction="al",
  },
- [0x0755]={
+ [0x755]={
   category="lo",
   direction="al",
  },
- [0x0756]={
+ [0x756]={
   category="lo",
   direction="al",
  },
- [0x0757]={
+ [0x757]={
   category="lo",
   direction="al",
  },
- [0x0758]={
+ [0x758]={
   category="lo",
   direction="al",
  },
- [0x0759]={
+ [0x759]={
   category="lo",
   direction="al",
  },
- [0x075A]={
+ [0x75A]={
   category="lo",
   direction="al",
  },
- [0x075B]={
+ [0x75B]={
   category="lo",
   direction="al",
  },
- [0x075C]={
+ [0x75C]={
   category="lo",
   direction="al",
  },
- [0x075D]={
+ [0x75D]={
   category="lo",
   direction="al",
  },
- [0x075E]={
+ [0x75E]={
   category="lo",
   direction="al",
  },
- [0x075F]={
+ [0x75F]={
   category="lo",
   direction="al",
  },
- [0x0760]={
+ [0x760]={
   category="lo",
   direction="al",
  },
- [0x0761]={
+ [0x761]={
   category="lo",
   direction="al",
  },
- [0x0762]={
+ [0x762]={
   category="lo",
   direction="al",
  },
- [0x0763]={
+ [0x763]={
   category="lo",
   direction="al",
  },
- [0x0764]={
+ [0x764]={
   category="lo",
   direction="al",
  },
- [0x0765]={
+ [0x765]={
   category="lo",
   direction="al",
  },
- [0x0766]={
+ [0x766]={
   category="lo",
   direction="al",
  },
- [0x0767]={
+ [0x767]={
   category="lo",
   direction="al",
  },
- [0x0768]={
+ [0x768]={
   category="lo",
   direction="al",
  },
- [0x0769]={
+ [0x769]={
   category="lo",
   direction="al",
  },
- [0x076A]={
+ [0x76A]={
   category="lo",
   direction="al",
  },
- [0x076B]={
+ [0x76B]={
   category="lo",
   direction="al",
  },
- [0x076C]={
+ [0x76C]={
   category="lo",
   direction="al",
  },
- [0x076D]={
+ [0x76D]={
   category="lo",
   direction="al",
  },
- [0x076E]={
+ [0x76E]={
   category="lo",
   direction="al",
  },
- [0x076F]={
+ [0x76F]={
   category="lo",
   direction="al",
  },
- [0x0770]={
+ [0x770]={
   category="lo",
   direction="al",
  },
- [0x0771]={
+ [0x771]={
   category="lo",
   direction="al",
  },
- [0x0772]={
+ [0x772]={
   category="lo",
   direction="al",
  },
- [0x0773]={
+ [0x773]={
   category="lo",
   direction="al",
  },
- [0x0774]={
+ [0x774]={
   category="lo",
   direction="al",
  },
- [0x0775]={
+ [0x775]={
   category="lo",
   direction="al",
  },
- [0x0776]={
+ [0x776]={
   category="lo",
   direction="al",
  },
- [0x0777]={
+ [0x777]={
   category="lo",
   direction="al",
  },
- [0x0778]={
+ [0x778]={
   category="lo",
   direction="al",
  },
- [0x0779]={
+ [0x779]={
   category="lo",
   direction="al",
  },
- [0x077A]={
+ [0x77A]={
   category="lo",
   direction="al",
  },
- [0x077B]={
+ [0x77B]={
   category="lo",
   direction="al",
  },
- [0x077C]={
+ [0x77C]={
   category="lo",
   direction="al",
  },
- [0x077D]={
+ [0x77D]={
   category="lo",
   direction="al",
  },
- [0x077E]={
+ [0x77E]={
   category="lo",
   direction="al",
  },
- [0x077F]={
+ [0x77F]={
   category="lo",
   direction="al",
  },
- [0x0780]={
+ [0x780]={
   category="lo",
   direction="al",
  },
- [0x0781]={
+ [0x781]={
   category="lo",
   direction="al",
  },
- [0x0782]={
+ [0x782]={
   category="lo",
   direction="al",
  },
- [0x0783]={
+ [0x783]={
   category="lo",
   direction="al",
  },
- [0x0784]={
+ [0x784]={
   category="lo",
   direction="al",
  },
- [0x0785]={
+ [0x785]={
   category="lo",
   direction="al",
  },
- [0x0786]={
+ [0x786]={
   category="lo",
   direction="al",
  },
- [0x0787]={
+ [0x787]={
   category="lo",
   direction="al",
  },
- [0x0788]={
+ [0x788]={
   category="lo",
   direction="al",
  },
- [0x0789]={
+ [0x789]={
   category="lo",
   direction="al",
  },
- [0x078A]={
+ [0x78A]={
   category="lo",
   direction="al",
  },
- [0x078B]={
+ [0x78B]={
   category="lo",
   direction="al",
  },
- [0x078C]={
+ [0x78C]={
   category="lo",
   direction="al",
  },
- [0x078D]={
+ [0x78D]={
   category="lo",
   direction="al",
  },
- [0x078E]={
+ [0x78E]={
   category="lo",
   direction="al",
  },
- [0x078F]={
+ [0x78F]={
   category="lo",
   direction="al",
  },
- [0x0790]={
+ [0x790]={
   category="lo",
   direction="al",
  },
- [0x0791]={
+ [0x791]={
   category="lo",
   direction="al",
  },
- [0x0792]={
+ [0x792]={
   category="lo",
   direction="al",
  },
- [0x0793]={
+ [0x793]={
   category="lo",
   direction="al",
  },
- [0x0794]={
+ [0x794]={
   category="lo",
   direction="al",
  },
- [0x0795]={
+ [0x795]={
   category="lo",
   direction="al",
  },
- [0x0796]={
+ [0x796]={
   category="lo",
   direction="al",
  },
- [0x0797]={
+ [0x797]={
   category="lo",
   direction="al",
  },
- [0x0798]={
+ [0x798]={
   category="lo",
   direction="al",
  },
- [0x0799]={
+ [0x799]={
   category="lo",
   direction="al",
  },
- [0x079A]={
+ [0x79A]={
   category="lo",
   direction="al",
  },
- [0x079B]={
+ [0x79B]={
   category="lo",
   direction="al",
  },
- [0x079C]={
+ [0x79C]={
   category="lo",
   direction="al",
  },
- [0x079D]={
+ [0x79D]={
   category="lo",
   direction="al",
  },
- [0x079E]={
+ [0x79E]={
   category="lo",
   direction="al",
  },
- [0x079F]={
+ [0x79F]={
   category="lo",
   direction="al",
  },
- [0x07A0]={
+ [0x7A0]={
   category="lo",
   direction="al",
  },
- [0x07A1]={
+ [0x7A1]={
   category="lo",
   direction="al",
  },
- [0x07A2]={
+ [0x7A2]={
   category="lo",
   direction="al",
  },
- [0x07A3]={
+ [0x7A3]={
   category="lo",
   direction="al",
  },
- [0x07A4]={
+ [0x7A4]={
   category="lo",
   direction="al",
  },
- [0x07A5]={
+ [0x7A5]={
   category="lo",
   direction="al",
  },
- [0x07A6]={
+ [0x7A6]={
   category="mn",
   direction="nsm",
  },
- [0x07A7]={
+ [0x7A7]={
   category="mn",
   direction="nsm",
  },
- [0x07A8]={
+ [0x7A8]={
   category="mn",
   direction="nsm",
  },
- [0x07A9]={
+ [0x7A9]={
   category="mn",
   direction="nsm",
  },
- [0x07AA]={
+ [0x7AA]={
   category="mn",
   direction="nsm",
  },
- [0x07AB]={
+ [0x7AB]={
   category="mn",
   direction="nsm",
  },
- [0x07AC]={
+ [0x7AC]={
   category="mn",
   direction="nsm",
  },
- [0x07AD]={
+ [0x7AD]={
   category="mn",
   direction="nsm",
  },
- [0x07AE]={
+ [0x7AE]={
   category="mn",
   direction="nsm",
  },
- [0x07AF]={
+ [0x7AF]={
   category="mn",
   direction="nsm",
  },
- [0x07B0]={
+ [0x7B0]={
   category="mn",
   direction="nsm",
  },
- [0x07B1]={
+ [0x7B1]={
   category="lo",
   direction="al",
  },
- [0x07C0]={
+ [0x7C0]={
   category="nd",
   direction="r",
  },
- [0x07C1]={
+ [0x7C1]={
   category="nd",
   direction="r",
  },
- [0x07C2]={
+ [0x7C2]={
   category="nd",
   direction="r",
  },
- [0x07C3]={
+ [0x7C3]={
   category="nd",
   direction="r",
  },
- [0x07C4]={
+ [0x7C4]={
   category="nd",
   direction="r",
  },
- [0x07C5]={
+ [0x7C5]={
   category="nd",
   direction="r",
  },
- [0x07C6]={
+ [0x7C6]={
   category="nd",
   direction="r",
  },
- [0x07C7]={
+ [0x7C7]={
   category="nd",
   direction="r",
  },
- [0x07C8]={
+ [0x7C8]={
   category="nd",
   direction="r",
  },
- [0x07C9]={
+ [0x7C9]={
   category="nd",
   direction="r",
  },
- [0x07CA]={
+ [0x7CA]={
   category="lo",
   direction="r",
  },
- [0x07CB]={
+ [0x7CB]={
   category="lo",
   direction="r",
  },
- [0x07CC]={
+ [0x7CC]={
   category="lo",
   direction="r",
  },
- [0x07CD]={
+ [0x7CD]={
   category="lo",
   direction="r",
  },
- [0x07CE]={
+ [0x7CE]={
   category="lo",
   direction="r",
  },
- [0x07CF]={
+ [0x7CF]={
   category="lo",
   direction="r",
  },
- [0x07D0]={
+ [0x7D0]={
   category="lo",
   direction="r",
  },
- [0x07D1]={
+ [0x7D1]={
   category="lo",
   direction="r",
  },
- [0x07D2]={
+ [0x7D2]={
   category="lo",
   direction="r",
  },
- [0x07D3]={
+ [0x7D3]={
   category="lo",
   direction="r",
  },
- [0x07D4]={
+ [0x7D4]={
   category="lo",
   direction="r",
  },
- [0x07D5]={
+ [0x7D5]={
   category="lo",
   direction="r",
  },
- [0x07D6]={
+ [0x7D6]={
   category="lo",
   direction="r",
  },
- [0x07D7]={
+ [0x7D7]={
   category="lo",
   direction="r",
  },
- [0x07D8]={
+ [0x7D8]={
   category="lo",
   direction="r",
  },
- [0x07D9]={
+ [0x7D9]={
   category="lo",
   direction="r",
  },
- [0x07DA]={
+ [0x7DA]={
   category="lo",
   direction="r",
  },
- [0x07DB]={
+ [0x7DB]={
   category="lo",
   direction="r",
  },
- [0x07DC]={
+ [0x7DC]={
   category="lo",
   direction="r",
  },
- [0x07DD]={
+ [0x7DD]={
   category="lo",
   direction="r",
  },
- [0x07DE]={
+ [0x7DE]={
   category="lo",
   direction="r",
  },
- [0x07DF]={
+ [0x7DF]={
   category="lo",
   direction="r",
  },
- [0x07E0]={
+ [0x7E0]={
   category="lo",
   direction="r",
  },
- [0x07E1]={
+ [0x7E1]={
   category="lo",
   direction="r",
  },
- [0x07E2]={
+ [0x7E2]={
   category="lo",
   direction="r",
  },
- [0x07E3]={
+ [0x7E3]={
   category="lo",
   direction="r",
  },
- [0x07E4]={
+ [0x7E4]={
   category="lo",
   direction="r",
  },
- [0x07E5]={
+ [0x7E5]={
   category="lo",
   direction="r",
  },
- [0x07E6]={
+ [0x7E6]={
   category="lo",
   direction="r",
  },
- [0x07E7]={
+ [0x7E7]={
   category="lo",
   direction="r",
  },
- [0x07E8]={
+ [0x7E8]={
   category="lo",
   direction="r",
  },
- [0x07E9]={
+ [0x7E9]={
   category="lo",
   direction="r",
  },
- [0x07EA]={
+ [0x7EA]={
   category="lo",
   direction="r",
  },
- [0x07EB]={
+ [0x7EB]={
   category="mn",
   direction="nsm",
  },
- [0x07EC]={
+ [0x7EC]={
   category="mn",
   direction="nsm",
  },
- [0x07ED]={
+ [0x7ED]={
   category="mn",
   direction="nsm",
  },
- [0x07EE]={
+ [0x7EE]={
   category="mn",
   direction="nsm",
  },
- [0x07EF]={
+ [0x7EF]={
   category="mn",
   direction="nsm",
  },
- [0x07F0]={
+ [0x7F0]={
   category="mn",
   direction="nsm",
  },
- [0x07F1]={
+ [0x7F1]={
   category="mn",
   direction="nsm",
  },
- [0x07F2]={
+ [0x7F2]={
   category="mn",
   direction="nsm",
  },
- [0x07F3]={
+ [0x7F3]={
   category="mn",
   direction="nsm",
  },
- [0x07F4]={
+ [0x7F4]={
   category="lm",
   direction="r",
  },
- [0x07F5]={
+ [0x7F5]={
   category="lm",
   direction="r",
  },
- [0x07F6]={
+ [0x7F6]={
   category="so",
   direction="on",
  },
- [0x07F7]={
+ [0x7F7]={
   category="po",
   direction="on",
  },
- [0x07F8]={
+ [0x7F8]={
   category="po",
   direction="on",
  },
- [0x07F9]={
+ [0x7F9]={
   category="po",
   direction="on",
  },
- [0x07FA]={
+ [0x7FA]={
   category="lm",
   direction="r",
  },
- [0x0800]={
+ [0x800]={
   category="lo",
   direction="r",
  },
- [0x0801]={
+ [0x801]={
   category="lo",
   direction="r",
  },
- [0x0802]={
+ [0x802]={
   category="lo",
   direction="r",
  },
- [0x0803]={
+ [0x803]={
   category="lo",
   direction="r",
  },
- [0x0804]={
+ [0x804]={
   category="lo",
   direction="r",
  },
- [0x0805]={
+ [0x805]={
   category="lo",
   direction="r",
  },
- [0x0806]={
+ [0x806]={
   category="lo",
   direction="r",
  },
- [0x0807]={
+ [0x807]={
   category="lo",
   direction="r",
  },
- [0x0808]={
+ [0x808]={
   category="lo",
   direction="r",
  },
- [0x0809]={
+ [0x809]={
   category="lo",
   direction="r",
  },
- [0x080A]={
+ [0x80A]={
   category="lo",
   direction="r",
  },
- [0x080B]={
+ [0x80B]={
   category="lo",
   direction="r",
  },
- [0x080C]={
+ [0x80C]={
   category="lo",
   direction="r",
  },
- [0x080D]={
+ [0x80D]={
   category="lo",
   direction="r",
  },
- [0x080E]={
+ [0x80E]={
   category="lo",
   direction="r",
  },
- [0x080F]={
+ [0x80F]={
   category="lo",
   direction="r",
  },
- [0x0810]={
+ [0x810]={
   category="lo",
   direction="r",
  },
- [0x0811]={
+ [0x811]={
   category="lo",
   direction="r",
  },
- [0x0812]={
+ [0x812]={
   category="lo",
   direction="r",
  },
- [0x0813]={
+ [0x813]={
   category="lo",
   direction="r",
  },
- [0x0814]={
+ [0x814]={
   category="lo",
   direction="r",
  },
- [0x0815]={
+ [0x815]={
   category="lo",
   direction="r",
  },
- [0x0816]={
+ [0x816]={
   category="mn",
   direction="nsm",
  },
- [0x0817]={
+ [0x817]={
   category="mn",
   direction="nsm",
  },
- [0x0818]={
+ [0x818]={
   category="mn",
   direction="nsm",
  },
- [0x0819]={
+ [0x819]={
   category="mn",
   direction="nsm",
  },
- [0x081A]={
+ [0x81A]={
   category="lm",
   direction="r",
  },
- [0x081B]={
+ [0x81B]={
   category="mn",
   direction="nsm",
  },
- [0x081C]={
+ [0x81C]={
   category="mn",
   direction="nsm",
  },
- [0x081D]={
+ [0x81D]={
   category="mn",
   direction="nsm",
  },
- [0x081E]={
+ [0x81E]={
   category="mn",
   direction="nsm",
  },
- [0x081F]={
+ [0x81F]={
   category="mn",
   direction="nsm",
  },
- [0x0820]={
+ [0x820]={
   category="mn",
   direction="nsm",
  },
- [0x0821]={
+ [0x821]={
   category="mn",
   direction="nsm",
  },
- [0x0822]={
+ [0x822]={
   category="mn",
   direction="nsm",
  },
- [0x0823]={
+ [0x823]={
   category="mn",
   direction="nsm",
  },
- [0x0824]={
+ [0x824]={
   category="lm",
   direction="r",
  },
- [0x0825]={
+ [0x825]={
   category="mn",
   direction="nsm",
  },
- [0x0826]={
+ [0x826]={
   category="mn",
   direction="nsm",
  },
- [0x0827]={
+ [0x827]={
   category="mn",
   direction="nsm",
  },
- [0x0828]={
+ [0x828]={
   category="lm",
   direction="r",
  },
- [0x0829]={
+ [0x829]={
   category="mn",
   direction="nsm",
  },
- [0x082A]={
+ [0x82A]={
   category="mn",
   direction="nsm",
  },
- [0x082B]={
+ [0x82B]={
   category="mn",
   direction="nsm",
  },
- [0x082C]={
+ [0x82C]={
   category="mn",
   direction="nsm",
  },
- [0x082D]={
+ [0x82D]={
   category="mn",
   direction="nsm",
  },
- [0x0830]={
+ [0x830]={
   category="po",
   direction="r",
  },
- [0x0831]={
+ [0x831]={
   category="po",
   direction="r",
  },
- [0x0832]={
+ [0x832]={
   category="po",
   direction="r",
  },
- [0x0833]={
+ [0x833]={
   category="po",
   direction="r",
  },
- [0x0834]={
+ [0x834]={
   category="po",
   direction="r",
  },
- [0x0835]={
+ [0x835]={
   category="po",
   direction="r",
  },
- [0x0836]={
+ [0x836]={
   category="po",
   direction="r",
  },
- [0x0837]={
+ [0x837]={
   category="po",
   direction="r",
  },
- [0x0838]={
+ [0x838]={
   category="po",
   direction="r",
  },
- [0x0839]={
+ [0x839]={
   category="po",
   direction="r",
  },
- [0x083A]={
+ [0x83A]={
   category="po",
   direction="r",
  },
- [0x083B]={
+ [0x83B]={
   category="po",
   direction="r",
  },
- [0x083C]={
+ [0x83C]={
   category="po",
   direction="r",
  },
- [0x083D]={
+ [0x83D]={
   category="po",
   direction="r",
  },
- [0x083E]={
+ [0x83E]={
   category="po",
   direction="r",
  },
- [0x0840]={
+ [0x840]={
   category="lo",
   direction="r",
  },
- [0x0841]={
+ [0x841]={
   category="lo",
   direction="r",
  },
- [0x0842]={
+ [0x842]={
   category="lo",
   direction="r",
  },
- [0x0843]={
+ [0x843]={
   category="lo",
   direction="r",
  },
- [0x0844]={
+ [0x844]={
   category="lo",
   direction="r",
  },
- [0x0845]={
+ [0x845]={
   category="lo",
   direction="r",
  },
- [0x0846]={
+ [0x846]={
   category="lo",
   direction="r",
  },
- [0x0847]={
+ [0x847]={
   category="lo",
   direction="r",
  },
- [0x0848]={
+ [0x848]={
   category="lo",
   direction="r",
  },
- [0x0849]={
+ [0x849]={
   category="lo",
   direction="r",
  },
- [0x084A]={
+ [0x84A]={
   category="lo",
   direction="r",
  },
- [0x084B]={
+ [0x84B]={
   category="lo",
   direction="r",
  },
- [0x084C]={
+ [0x84C]={
   category="lo",
   direction="r",
  },
- [0x084D]={
+ [0x84D]={
   category="lo",
   direction="r",
  },
- [0x084E]={
+ [0x84E]={
   category="lo",
   direction="r",
  },
- [0x084F]={
+ [0x84F]={
   category="lo",
   direction="r",
  },
- [0x0850]={
+ [0x850]={
   category="lo",
   direction="r",
  },
- [0x0851]={
+ [0x851]={
   category="lo",
   direction="r",
  },
- [0x0852]={
+ [0x852]={
   category="lo",
   direction="r",
  },
- [0x0853]={
+ [0x853]={
   category="lo",
   direction="r",
  },
- [0x0854]={
+ [0x854]={
   category="lo",
   direction="r",
  },
- [0x0855]={
+ [0x855]={
   category="lo",
   direction="r",
  },
- [0x0856]={
+ [0x856]={
   category="lo",
   direction="r",
  },
- [0x0857]={
+ [0x857]={
   category="lo",
   direction="r",
  },
- [0x0858]={
+ [0x858]={
   category="lo",
   direction="r",
  },
- [0x0859]={
+ [0x859]={
   category="mn",
   direction="nsm",
  },
- [0x085A]={
+ [0x85A]={
   category="mn",
   direction="nsm",
  },
- [0x085B]={
+ [0x85B]={
   category="mn",
   direction="nsm",
  },
- [0x085E]={
+ [0x85E]={
   category="po",
   direction="r",
  },
- [0x08A0]={
+ [0x8A0]={
   category="lo",
   direction="al",
  },
- [0x08A2]={
+ [0x8A1]={
   category="lo",
   direction="al",
  },
- [0x08A3]={
+ [0x8A2]={
   category="lo",
   direction="al",
  },
- [0x08A4]={
+ [0x8A3]={
   category="lo",
   direction="al",
  },
- [0x08A5]={
+ [0x8A4]={
   category="lo",
   direction="al",
  },
- [0x08A6]={
+ [0x8A5]={
   category="lo",
   direction="al",
  },
- [0x08A7]={
+ [0x8A6]={
   category="lo",
   direction="al",
  },
- [0x08A8]={
+ [0x8A7]={
   category="lo",
   direction="al",
  },
- [0x08A9]={
+ [0x8A8]={
   category="lo",
   direction="al",
  },
- [0x08AA]={
+ [0x8A9]={
   category="lo",
   direction="al",
  },
- [0x08AB]={
+ [0x8AA]={
   category="lo",
   direction="al",
  },
- [0x08AC]={
+ [0x8AB]={
   category="lo",
   direction="al",
  },
- [0x08E4]={
+ [0x8AC]={
+  category="lo",
+  direction="al",
+ },
+ [0x8AD]={
+  category="lo",
+  direction="al",
+ },
+ [0x8AE]={
+  category="lo",
+  direction="al",
+ },
+ [0x8AF]={
+  category="lo",
+  direction="al",
+ },
+ [0x8B0]={
+  category="lo",
+  direction="al",
+ },
+ [0x8B1]={
+  category="lo",
+  direction="al",
+ },
+ [0x8B2]={
+  category="lo",
+  direction="al",
+ },
+ [0x8E4]={
   category="mn",
   direction="nsm",
  },
- [0x08E5]={
+ [0x8E5]={
   category="mn",
   direction="nsm",
  },
- [0x08E6]={
+ [0x8E6]={
   category="mn",
   direction="nsm",
  },
- [0x08E7]={
+ [0x8E7]={
   category="mn",
   direction="nsm",
  },
- [0x08E8]={
+ [0x8E8]={
   category="mn",
   direction="nsm",
  },
- [0x08E9]={
+ [0x8E9]={
   category="mn",
   direction="nsm",
  },
- [0x08EA]={
+ [0x8EA]={
   category="mn",
   direction="nsm",
  },
- [0x08EB]={
+ [0x8EB]={
   category="mn",
   direction="nsm",
  },
- [0x08EC]={
+ [0x8EC]={
   category="mn",
   direction="nsm",
  },
- [0x08ED]={
+ [0x8ED]={
   category="mn",
   direction="nsm",
  },
- [0x08EE]={
+ [0x8EE]={
   category="mn",
   direction="nsm",
  },
- [0x08EF]={
+ [0x8EF]={
   category="mn",
   direction="nsm",
  },
- [0x08F0]={
+ [0x8F0]={
   category="mn",
   direction="nsm",
  },
- [0x08F1]={
+ [0x8F1]={
   category="mn",
   direction="nsm",
  },
- [0x08F2]={
+ [0x8F2]={
   category="mn",
   direction="nsm",
  },
- [0x08F3]={
+ [0x8F3]={
   category="mn",
   direction="nsm",
  },
- [0x08F4]={
+ [0x8F4]={
   category="mn",
   direction="nsm",
  },
- [0x08F5]={
+ [0x8F5]={
   category="mn",
   direction="nsm",
  },
- [0x08F6]={
+ [0x8F6]={
   category="mn",
   direction="nsm",
  },
- [0x08F7]={
+ [0x8F7]={
   category="mn",
   direction="nsm",
  },
- [0x08F8]={
+ [0x8F8]={
   category="mn",
   direction="nsm",
  },
- [0x08F9]={
+ [0x8F9]={
   category="mn",
   direction="nsm",
  },
- [0x08FA]={
+ [0x8FA]={
   category="mn",
   direction="nsm",
  },
- [0x08FB]={
+ [0x8FB]={
   category="mn",
   direction="nsm",
  },
- [0x08FC]={
+ [0x8FC]={
   category="mn",
   direction="nsm",
  },
- [0x08FD]={
+ [0x8FD]={
   category="mn",
   direction="nsm",
  },
- [0x08FE]={
+ [0x8FE]={
   category="mn",
   direction="nsm",
  },
- [0x0900]={
+ [0x8FF]={
   category="mn",
   direction="nsm",
  },
- [0x0901]={
+ [0x900]={
   category="mn",
   direction="nsm",
  },
- [0x0902]={
+ [0x901]={
   category="mn",
   direction="nsm",
  },
- [0x0903]={
+ [0x902]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x903]={
   category="mc",
   direction="l",
  },
- [0x0904]={
+ [0x904]={
   category="lo",
   direction="l",
  },
- [0x0905]={
+ [0x905]={
   category="lo",
   direction="l",
  },
- [0x0906]={
+ [0x906]={
   category="lo",
   direction="l",
  },
- [0x0907]={
+ [0x907]={
   category="lo",
   direction="l",
  },
- [0x0908]={
+ [0x908]={
   category="lo",
   direction="l",
  },
- [0x0909]={
+ [0x909]={
   category="lo",
   direction="l",
  },
- [0x090A]={
+ [0x90A]={
   category="lo",
   direction="l",
  },
- [0x090B]={
+ [0x90B]={
   category="lo",
   direction="l",
  },
- [0x090C]={
+ [0x90C]={
   category="lo",
   direction="l",
  },
- [0x090D]={
+ [0x90D]={
   category="lo",
   direction="l",
  },
- [0x090E]={
+ [0x90E]={
   category="lo",
   direction="l",
  },
- [0x090F]={
+ [0x90F]={
   category="lo",
   direction="l",
  },
- [0x0910]={
+ [0x910]={
   category="lo",
   direction="l",
  },
- [0x0911]={
+ [0x911]={
   category="lo",
   direction="l",
  },
- [0x0912]={
+ [0x912]={
   category="lo",
   direction="l",
  },
- [0x0913]={
+ [0x913]={
   category="lo",
   direction="l",
  },
- [0x0914]={
+ [0x914]={
   category="lo",
   direction="l",
  },
- [0x0915]={
+ [0x915]={
   category="lo",
   direction="l",
  },
- [0x0916]={
+ [0x916]={
   category="lo",
   direction="l",
  },
- [0x0917]={
+ [0x917]={
   category="lo",
   direction="l",
  },
- [0x0918]={
+ [0x918]={
   category="lo",
   direction="l",
  },
- [0x0919]={
+ [0x919]={
   category="lo",
   direction="l",
  },
- [0x091A]={
+ [0x91A]={
   category="lo",
   direction="l",
  },
- [0x091B]={
+ [0x91B]={
   category="lo",
   direction="l",
  },
- [0x091C]={
+ [0x91C]={
   category="lo",
   direction="l",
  },
- [0x091D]={
+ [0x91D]={
   category="lo",
   direction="l",
  },
- [0x091E]={
+ [0x91E]={
   category="lo",
   direction="l",
  },
- [0x091F]={
+ [0x91F]={
   category="lo",
   direction="l",
  },
- [0x0920]={
+ [0x920]={
   category="lo",
   direction="l",
  },
- [0x0921]={
+ [0x921]={
   category="lo",
   direction="l",
  },
- [0x0922]={
+ [0x922]={
   category="lo",
   direction="l",
  },
- [0x0923]={
+ [0x923]={
   category="lo",
   direction="l",
  },
- [0x0924]={
+ [0x924]={
   category="lo",
   direction="l",
  },
- [0x0925]={
+ [0x925]={
   category="lo",
   direction="l",
  },
- [0x0926]={
+ [0x926]={
   category="lo",
   direction="l",
  },
- [0x0927]={
+ [0x927]={
   category="lo",
   direction="l",
  },
- [0x0928]={
+ [0x928]={
   category="lo",
   direction="l",
  },
- [0x0929]={
+ [0x929]={
   category="lo",
   direction="l",
  },
- [0x092A]={
+ [0x92A]={
   category="lo",
   direction="l",
  },
- [0x092B]={
+ [0x92B]={
   category="lo",
   direction="l",
  },
- [0x092C]={
+ [0x92C]={
   category="lo",
   direction="l",
  },
- [0x092D]={
+ [0x92D]={
   category="lo",
   direction="l",
  },
- [0x092E]={
+ [0x92E]={
   category="lo",
   direction="l",
  },
- [0x092F]={
+ [0x92F]={
   category="lo",
   direction="l",
  },
- [0x0930]={
+ [0x930]={
   category="lo",
   direction="l",
  },
- [0x0931]={
+ [0x931]={
   category="lo",
   direction="l",
  },
- [0x0932]={
+ [0x932]={
   category="lo",
   direction="l",
  },
- [0x0933]={
+ [0x933]={
   category="lo",
   direction="l",
  },
- [0x0934]={
+ [0x934]={
   category="lo",
   direction="l",
  },
- [0x0935]={
+ [0x935]={
   category="lo",
   direction="l",
  },
- [0x0936]={
+ [0x936]={
   category="lo",
   direction="l",
  },
- [0x0937]={
+ [0x937]={
   category="lo",
   direction="l",
  },
- [0x0938]={
+ [0x938]={
   category="lo",
   direction="l",
  },
- [0x0939]={
+ [0x939]={
   category="lo",
   direction="l",
  },
- [0x093A]={
+ [0x93A]={
   category="mn",
   direction="nsm",
  },
- [0x093B]={
+ [0x93B]={
   category="mc",
   direction="l",
  },
- [0x093C]={
+ [0x93C]={
   category="mn",
   direction="nsm",
  },
- [0x093D]={
+ [0x93D]={
   category="lo",
   direction="l",
  },
- [0x093E]={
+ [0x93E]={
   category="mc",
   direction="l",
  },
- [0x093F]={
+ [0x93F]={
   category="mc",
   direction="l",
  },
- [0x0940]={
+ [0x940]={
   category="mc",
   direction="l",
  },
- [0x0941]={
+ [0x941]={
   category="mn",
   direction="nsm",
  },
- [0x0942]={
+ [0x942]={
   category="mn",
   direction="nsm",
  },
- [0x0943]={
+ [0x943]={
   category="mn",
   direction="nsm",
  },
- [0x0944]={
+ [0x944]={
   category="mn",
   direction="nsm",
  },
- [0x0945]={
+ [0x945]={
   category="mn",
   direction="nsm",
  },
- [0x0946]={
+ [0x946]={
   category="mn",
   direction="nsm",
  },
- [0x0947]={
+ [0x947]={
   category="mn",
   direction="nsm",
  },
- [0x0948]={
+ [0x948]={
   category="mn",
   direction="nsm",
  },
- [0x0949]={
+ [0x949]={
   category="mc",
   direction="l",
  },
- [0x094A]={
+ [0x94A]={
   category="mc",
   direction="l",
  },
- [0x094B]={
+ [0x94B]={
   category="mc",
   direction="l",
  },
- [0x094C]={
+ [0x94C]={
   category="mc",
   direction="l",
  },
- [0x094D]={
+ [0x94D]={
   category="mn",
   direction="nsm",
  },
- [0x094E]={
+ [0x94E]={
   category="mc",
   direction="l",
  },
- [0x094F]={
+ [0x94F]={
   category="mc",
   direction="l",
  },
- [0x0950]={
+ [0x950]={
   category="lo",
   direction="l",
  },
- [0x0951]={
+ [0x951]={
   category="mn",
   direction="nsm",
  },
- [0x0952]={
+ [0x952]={
   category="mn",
   direction="nsm",
  },
- [0x0953]={
+ [0x953]={
   category="mn",
   direction="nsm",
  },
- [0x0954]={
+ [0x954]={
   category="mn",
   direction="nsm",
  },
- [0x0955]={
+ [0x955]={
   category="mn",
   direction="nsm",
  },
- [0x0956]={
+ [0x956]={
   category="mn",
   direction="nsm",
  },
- [0x0957]={
+ [0x957]={
   category="mn",
   direction="nsm",
  },
- [0x0958]={
+ [0x958]={
   category="lo",
   direction="l",
  },
- [0x0959]={
+ [0x959]={
   category="lo",
   direction="l",
  },
- [0x095A]={
+ [0x95A]={
   category="lo",
   direction="l",
  },
- [0x095B]={
+ [0x95B]={
   category="lo",
   direction="l",
  },
- [0x095C]={
+ [0x95C]={
   category="lo",
   direction="l",
  },
- [0x095D]={
+ [0x95D]={
   category="lo",
   direction="l",
  },
- [0x095E]={
+ [0x95E]={
   category="lo",
   direction="l",
  },
- [0x095F]={
+ [0x95F]={
   category="lo",
   direction="l",
  },
- [0x0960]={
+ [0x960]={
   category="lo",
   direction="l",
  },
- [0x0961]={
+ [0x961]={
   category="lo",
   direction="l",
  },
- [0x0962]={
+ [0x962]={
   category="mn",
   direction="nsm",
  },
- [0x0963]={
+ [0x963]={
   category="mn",
   direction="nsm",
  },
- [0x0964]={
+ [0x964]={
   category="po",
   direction="l",
  },
- [0x0965]={
+ [0x965]={
   category="po",
   direction="l",
  },
- [0x0966]={
+ [0x966]={
   category="nd",
   direction="l",
  },
- [0x0967]={
+ [0x967]={
   category="nd",
   direction="l",
  },
- [0x0968]={
+ [0x968]={
   category="nd",
   direction="l",
  },
- [0x0969]={
+ [0x969]={
   category="nd",
   direction="l",
  },
- [0x096A]={
+ [0x96A]={
   category="nd",
   direction="l",
  },
- [0x096B]={
+ [0x96B]={
   category="nd",
   direction="l",
  },
- [0x096C]={
+ [0x96C]={
   category="nd",
   direction="l",
  },
- [0x096D]={
+ [0x96D]={
   category="nd",
   direction="l",
  },
- [0x096E]={
+ [0x96E]={
   category="nd",
   direction="l",
  },
- [0x096F]={
+ [0x96F]={
   category="nd",
   direction="l",
  },
- [0x0970]={
+ [0x970]={
   category="po",
   direction="l",
  },
- [0x0971]={
+ [0x971]={
   category="lm",
   direction="l",
  },
- [0x0972]={
+ [0x972]={
   category="lo",
   direction="l",
  },
- [0x0973]={
+ [0x973]={
   category="lo",
   direction="l",
  },
- [0x0974]={
+ [0x974]={
   category="lo",
   direction="l",
  },
- [0x0975]={
+ [0x975]={
   category="lo",
   direction="l",
  },
- [0x0976]={
+ [0x976]={
   category="lo",
   direction="l",
  },
- [0x0977]={
+ [0x977]={
   category="lo",
   direction="l",
  },
- [0x0979]={
+ [0x978]={
   category="lo",
   direction="l",
  },
- [0x097A]={
+ [0x979]={
   category="lo",
   direction="l",
  },
- [0x097B]={
+ [0x97A]={
   category="lo",
   direction="l",
  },
- [0x097C]={
+ [0x97B]={
   category="lo",
   direction="l",
  },
- [0x097D]={
+ [0x97C]={
   category="lo",
   direction="l",
  },
- [0x097E]={
+ [0x97D]={
   category="lo",
   direction="l",
  },
- [0x097F]={
+ [0x97E]={
   category="lo",
   direction="l",
  },
- [0x0981]={
+ [0x97F]={
+  category="lo",
+  direction="l",
+ },
+ [0x980]={
+  category="lo",
+  direction="l",
+ },
+ [0x981]={
   category="mn",
   direction="nsm",
  },
- [0x0982]={
+ [0x982]={
   category="mc",
   direction="l",
  },
- [0x0983]={
+ [0x983]={
   category="mc",
   direction="l",
  },
- [0x0985]={
+ [0x985]={
   category="lo",
   direction="l",
  },
- [0x0986]={
+ [0x986]={
   category="lo",
   direction="l",
  },
- [0x0987]={
+ [0x987]={
   category="lo",
   direction="l",
  },
- [0x0988]={
+ [0x988]={
   category="lo",
   direction="l",
  },
- [0x0989]={
+ [0x989]={
   category="lo",
   direction="l",
  },
- [0x098A]={
+ [0x98A]={
   category="lo",
   direction="l",
  },
- [0x098B]={
+ [0x98B]={
   category="lo",
   direction="l",
  },
- [0x098C]={
+ [0x98C]={
   category="lo",
   direction="l",
  },
- [0x098F]={
+ [0x98F]={
   category="lo",
   direction="l",
  },
- [0x0990]={
+ [0x990]={
   category="lo",
   direction="l",
  },
- [0x0993]={
+ [0x993]={
   category="lo",
   direction="l",
  },
- [0x0994]={
+ [0x994]={
   category="lo",
   direction="l",
  },
- [0x0995]={
+ [0x995]={
   category="lo",
   direction="l",
  },
- [0x0996]={
+ [0x996]={
   category="lo",
   direction="l",
  },
- [0x0997]={
+ [0x997]={
   category="lo",
   direction="l",
  },
- [0x0998]={
+ [0x998]={
   category="lo",
   direction="l",
  },
- [0x0999]={
+ [0x999]={
   category="lo",
   direction="l",
  },
- [0x099A]={
+ [0x99A]={
   category="lo",
   direction="l",
  },
- [0x099B]={
+ [0x99B]={
   category="lo",
   direction="l",
  },
- [0x099C]={
+ [0x99C]={
   category="lo",
   direction="l",
  },
- [0x099D]={
+ [0x99D]={
   category="lo",
   direction="l",
  },
- [0x099E]={
+ [0x99E]={
   category="lo",
   direction="l",
  },
- [0x099F]={
+ [0x99F]={
   category="lo",
   direction="l",
  },
- [0x09A0]={
+ [0x9A0]={
   category="lo",
   direction="l",
  },
- [0x09A1]={
+ [0x9A1]={
   category="lo",
   direction="l",
  },
- [0x09A2]={
+ [0x9A2]={
   category="lo",
   direction="l",
  },
- [0x09A3]={
+ [0x9A3]={
   category="lo",
   direction="l",
  },
- [0x09A4]={
+ [0x9A4]={
   category="lo",
   direction="l",
  },
- [0x09A5]={
+ [0x9A5]={
   category="lo",
   direction="l",
  },
- [0x09A6]={
+ [0x9A6]={
   category="lo",
   direction="l",
  },
- [0x09A7]={
+ [0x9A7]={
   category="lo",
   direction="l",
  },
- [0x09A8]={
+ [0x9A8]={
   category="lo",
   direction="l",
  },
- [0x09AA]={
+ [0x9AA]={
   category="lo",
   direction="l",
  },
- [0x09AB]={
+ [0x9AB]={
   category="lo",
   direction="l",
  },
- [0x09AC]={
+ [0x9AC]={
   category="lo",
   direction="l",
  },
- [0x09AD]={
+ [0x9AD]={
   category="lo",
   direction="l",
  },
- [0x09AE]={
+ [0x9AE]={
   category="lo",
   direction="l",
  },
- [0x09AF]={
+ [0x9AF]={
   category="lo",
   direction="l",
  },
- [0x09B0]={
+ [0x9B0]={
   category="lo",
   direction="l",
  },
- [0x09B2]={
+ [0x9B2]={
   category="lo",
   direction="l",
  },
- [0x09B6]={
+ [0x9B6]={
   category="lo",
   direction="l",
  },
- [0x09B7]={
+ [0x9B7]={
   category="lo",
   direction="l",
  },
- [0x09B8]={
+ [0x9B8]={
   category="lo",
   direction="l",
  },
- [0x09B9]={
+ [0x9B9]={
   category="lo",
   direction="l",
  },
- [0x09BC]={
+ [0x9BC]={
   category="mn",
   direction="nsm",
  },
- [0x09BD]={
+ [0x9BD]={
   category="lo",
   direction="l",
  },
- [0x09BE]={
+ [0x9BE]={
   category="mc",
   direction="l",
  },
- [0x09BF]={
+ [0x9BF]={
   category="mc",
   direction="l",
  },
- [0x09C0]={
+ [0x9C0]={
   category="mc",
   direction="l",
  },
- [0x09C1]={
+ [0x9C1]={
   category="mn",
   direction="nsm",
  },
- [0x09C2]={
+ [0x9C2]={
   category="mn",
   direction="nsm",
  },
- [0x09C3]={
+ [0x9C3]={
   category="mn",
   direction="nsm",
  },
- [0x09C4]={
+ [0x9C4]={
   category="mn",
   direction="nsm",
  },
- [0x09C7]={
+ [0x9C7]={
   category="mc",
   direction="l",
  },
- [0x09C8]={
+ [0x9C8]={
   category="mc",
   direction="l",
  },
- [0x09CB]={
+ [0x9CB]={
   category="mc",
   direction="l",
  },
- [0x09CC]={
+ [0x9CC]={
   category="mc",
   direction="l",
  },
- [0x09CD]={
+ [0x9CD]={
   category="mn",
   direction="nsm",
  },
- [0x09CE]={
+ [0x9CE]={
   category="lo",
   direction="l",
  },
- [0x09D7]={
+ [0x9D7]={
   category="mc",
   direction="l",
  },
- [0x09DC]={
+ [0x9DC]={
   category="lo",
   direction="l",
  },
- [0x09DD]={
+ [0x9DD]={
   category="lo",
   direction="l",
  },
- [0x09DF]={
+ [0x9DF]={
   category="lo",
   direction="l",
  },
- [0x09E0]={
+ [0x9E0]={
   category="lo",
   direction="l",
  },
- [0x09E1]={
+ [0x9E1]={
   category="lo",
   direction="l",
  },
- [0x09E2]={
+ [0x9E2]={
   category="mn",
   direction="nsm",
  },
- [0x09E3]={
+ [0x9E3]={
   category="mn",
   direction="nsm",
  },
- [0x09E6]={
+ [0x9E6]={
   category="nd",
   direction="l",
  },
- [0x09E7]={
+ [0x9E7]={
   category="nd",
   direction="l",
  },
- [0x09E8]={
+ [0x9E8]={
   category="nd",
   direction="l",
  },
- [0x09E9]={
+ [0x9E9]={
   category="nd",
   direction="l",
  },
- [0x09EA]={
+ [0x9EA]={
   category="nd",
   direction="l",
  },
- [0x09EB]={
+ [0x9EB]={
   category="nd",
   direction="l",
  },
- [0x09EC]={
+ [0x9EC]={
   category="nd",
   direction="l",
  },
- [0x09ED]={
+ [0x9ED]={
   category="nd",
   direction="l",
  },
- [0x09EE]={
+ [0x9EE]={
   category="nd",
   direction="l",
  },
- [0x09EF]={
+ [0x9EF]={
   category="nd",
   direction="l",
  },
- [0x09F0]={
+ [0x9F0]={
   category="lo",
   direction="l",
  },
- [0x09F1]={
+ [0x9F1]={
   category="lo",
   direction="l",
  },
- [0x09F2]={
+ [0x9F2]={
   category="sc",
   direction="et",
  },
- [0x09F3]={
+ [0x9F3]={
   category="sc",
   direction="et",
  },
- [0x09F4]={
+ [0x9F4]={
   category="no",
   direction="l",
  },
- [0x09F5]={
+ [0x9F5]={
   category="no",
   direction="l",
  },
- [0x09F6]={
+ [0x9F6]={
   category="no",
   direction="l",
  },
- [0x09F7]={
+ [0x9F7]={
   category="no",
   direction="l",
  },
- [0x09F8]={
+ [0x9F8]={
   category="no",
   direction="l",
  },
- [0x09F9]={
+ [0x9F9]={
   category="no",
   direction="l",
  },
- [0x09FA]={
+ [0x9FA]={
   category="so",
   direction="l",
  },
- [0x09FB]={
+ [0x9FB]={
   category="sc",
   direction="et",
  },
- [0x0A01]={
+ [0xA01]={
   category="mn",
   direction="nsm",
  },
- [0x0A02]={
+ [0xA02]={
   category="mn",
   direction="nsm",
  },
- [0x0A03]={
+ [0xA03]={
   category="mc",
   direction="l",
  },
- [0x0A05]={
+ [0xA05]={
   category="lo",
   direction="l",
  },
- [0x0A06]={
+ [0xA06]={
   category="lo",
   direction="l",
  },
- [0x0A07]={
+ [0xA07]={
   category="lo",
   direction="l",
  },
- [0x0A08]={
+ [0xA08]={
   category="lo",
   direction="l",
  },
- [0x0A09]={
+ [0xA09]={
   category="lo",
   direction="l",
  },
- [0x0A0A]={
+ [0xA0A]={
   category="lo",
   direction="l",
  },
- [0x0A0F]={
+ [0xA0F]={
   category="lo",
   direction="l",
  },
- [0x0A10]={
+ [0xA10]={
   category="lo",
   direction="l",
  },
- [0x0A13]={
+ [0xA13]={
   category="lo",
   direction="l",
  },
- [0x0A14]={
+ [0xA14]={
   category="lo",
   direction="l",
  },
- [0x0A15]={
+ [0xA15]={
   category="lo",
   direction="l",
  },
- [0x0A16]={
+ [0xA16]={
   category="lo",
   direction="l",
  },
- [0x0A17]={
+ [0xA17]={
   category="lo",
   direction="l",
  },
- [0x0A18]={
+ [0xA18]={
   category="lo",
   direction="l",
  },
- [0x0A19]={
+ [0xA19]={
   category="lo",
   direction="l",
  },
- [0x0A1A]={
+ [0xA1A]={
   category="lo",
   direction="l",
  },
- [0x0A1B]={
+ [0xA1B]={
   category="lo",
   direction="l",
  },
- [0x0A1C]={
+ [0xA1C]={
   category="lo",
   direction="l",
  },
- [0x0A1D]={
+ [0xA1D]={
   category="lo",
   direction="l",
  },
- [0x0A1E]={
+ [0xA1E]={
   category="lo",
   direction="l",
  },
- [0x0A1F]={
+ [0xA1F]={
   category="lo",
   direction="l",
  },
- [0x0A20]={
+ [0xA20]={
   category="lo",
   direction="l",
  },
- [0x0A21]={
+ [0xA21]={
   category="lo",
   direction="l",
  },
- [0x0A22]={
+ [0xA22]={
   category="lo",
   direction="l",
  },
- [0x0A23]={
+ [0xA23]={
   category="lo",
   direction="l",
  },
- [0x0A24]={
+ [0xA24]={
   category="lo",
   direction="l",
  },
- [0x0A25]={
+ [0xA25]={
   category="lo",
   direction="l",
  },
- [0x0A26]={
+ [0xA26]={
   category="lo",
   direction="l",
  },
- [0x0A27]={
+ [0xA27]={
   category="lo",
   direction="l",
  },
- [0x0A28]={
+ [0xA28]={
   category="lo",
   direction="l",
  },
- [0x0A2A]={
+ [0xA2A]={
   category="lo",
   direction="l",
  },
- [0x0A2B]={
+ [0xA2B]={
   category="lo",
   direction="l",
  },
- [0x0A2C]={
+ [0xA2C]={
   category="lo",
   direction="l",
  },
- [0x0A2D]={
+ [0xA2D]={
   category="lo",
   direction="l",
  },
- [0x0A2E]={
+ [0xA2E]={
   category="lo",
   direction="l",
  },
- [0x0A2F]={
+ [0xA2F]={
   category="lo",
   direction="l",
  },
- [0x0A30]={
+ [0xA30]={
   category="lo",
   direction="l",
  },
- [0x0A32]={
+ [0xA32]={
   category="lo",
   direction="l",
  },
- [0x0A33]={
+ [0xA33]={
   category="lo",
   direction="l",
  },
- [0x0A35]={
+ [0xA35]={
   category="lo",
   direction="l",
  },
- [0x0A36]={
+ [0xA36]={
   category="lo",
   direction="l",
  },
- [0x0A38]={
+ [0xA38]={
   category="lo",
   direction="l",
  },
- [0x0A39]={
+ [0xA39]={
   category="lo",
   direction="l",
  },
- [0x0A3C]={
+ [0xA3C]={
   category="mn",
   direction="nsm",
  },
- [0x0A3E]={
+ [0xA3E]={
   category="mc",
   direction="l",
  },
- [0x0A3F]={
+ [0xA3F]={
   category="mc",
   direction="l",
  },
- [0x0A40]={
+ [0xA40]={
   category="mc",
   direction="l",
  },
- [0x0A41]={
+ [0xA41]={
   category="mn",
   direction="nsm",
  },
- [0x0A42]={
+ [0xA42]={
   category="mn",
   direction="nsm",
  },
- [0x0A47]={
+ [0xA47]={
   category="mn",
   direction="nsm",
  },
- [0x0A48]={
+ [0xA48]={
   category="mn",
   direction="nsm",
  },
- [0x0A4B]={
+ [0xA4B]={
   category="mn",
   direction="nsm",
  },
- [0x0A4C]={
+ [0xA4C]={
   category="mn",
   direction="nsm",
  },
- [0x0A4D]={
+ [0xA4D]={
   category="mn",
   direction="nsm",
  },
- [0x0A51]={
+ [0xA51]={
   category="mn",
   direction="nsm",
  },
- [0x0A59]={
+ [0xA59]={
   category="lo",
   direction="l",
  },
- [0x0A5A]={
+ [0xA5A]={
   category="lo",
   direction="l",
  },
- [0x0A5B]={
+ [0xA5B]={
   category="lo",
   direction="l",
  },
- [0x0A5C]={
+ [0xA5C]={
   category="lo",
   direction="l",
  },
- [0x0A5E]={
+ [0xA5E]={
   category="lo",
   direction="l",
  },
- [0x0A66]={
+ [0xA66]={
   category="nd",
   direction="l",
  },
- [0x0A67]={
+ [0xA67]={
   category="nd",
   direction="l",
  },
- [0x0A68]={
+ [0xA68]={
   category="nd",
   direction="l",
  },
- [0x0A69]={
+ [0xA69]={
   category="nd",
   direction="l",
  },
- [0x0A6A]={
+ [0xA6A]={
   category="nd",
   direction="l",
  },
- [0x0A6B]={
+ [0xA6B]={
   category="nd",
   direction="l",
  },
- [0x0A6C]={
+ [0xA6C]={
   category="nd",
   direction="l",
  },
- [0x0A6D]={
+ [0xA6D]={
   category="nd",
   direction="l",
  },
- [0x0A6E]={
+ [0xA6E]={
   category="nd",
   direction="l",
  },
- [0x0A6F]={
+ [0xA6F]={
   category="nd",
   direction="l",
  },
- [0x0A70]={
+ [0xA70]={
   category="mn",
   direction="nsm",
  },
- [0x0A71]={
+ [0xA71]={
   category="mn",
   direction="nsm",
  },
- [0x0A72]={
+ [0xA72]={
   category="lo",
   direction="l",
  },
- [0x0A73]={
+ [0xA73]={
   category="lo",
   direction="l",
  },
- [0x0A74]={
+ [0xA74]={
   category="lo",
   direction="l",
  },
- [0x0A75]={
+ [0xA75]={
   category="mn",
   direction="nsm",
  },
- [0x0A81]={
+ [0xA81]={
   category="mn",
   direction="nsm",
  },
- [0x0A82]={
+ [0xA82]={
   category="mn",
   direction="nsm",
  },
- [0x0A83]={
+ [0xA83]={
   category="mc",
   direction="l",
  },
- [0x0A85]={
+ [0xA85]={
   category="lo",
   direction="l",
  },
- [0x0A86]={
+ [0xA86]={
   category="lo",
   direction="l",
  },
- [0x0A87]={
+ [0xA87]={
   category="lo",
   direction="l",
  },
- [0x0A88]={
+ [0xA88]={
   category="lo",
   direction="l",
  },
- [0x0A89]={
+ [0xA89]={
   category="lo",
   direction="l",
  },
- [0x0A8A]={
+ [0xA8A]={
   category="lo",
   direction="l",
  },
- [0x0A8B]={
+ [0xA8B]={
   category="lo",
   direction="l",
  },
- [0x0A8C]={
+ [0xA8C]={
   category="lo",
   direction="l",
  },
- [0x0A8D]={
+ [0xA8D]={
   category="lo",
   direction="l",
  },
- [0x0A8F]={
+ [0xA8F]={
   category="lo",
   direction="l",
  },
- [0x0A90]={
+ [0xA90]={
   category="lo",
   direction="l",
  },
- [0x0A91]={
+ [0xA91]={
   category="lo",
   direction="l",
  },
- [0x0A93]={
+ [0xA93]={
   category="lo",
   direction="l",
  },
- [0x0A94]={
+ [0xA94]={
   category="lo",
   direction="l",
  },
- [0x0A95]={
+ [0xA95]={
   category="lo",
   direction="l",
  },
- [0x0A96]={
+ [0xA96]={
   category="lo",
   direction="l",
  },
- [0x0A97]={
+ [0xA97]={
   category="lo",
   direction="l",
  },
- [0x0A98]={
+ [0xA98]={
   category="lo",
   direction="l",
  },
- [0x0A99]={
+ [0xA99]={
   category="lo",
   direction="l",
  },
- [0x0A9A]={
+ [0xA9A]={
   category="lo",
   direction="l",
  },
- [0x0A9B]={
+ [0xA9B]={
   category="lo",
   direction="l",
  },
- [0x0A9C]={
+ [0xA9C]={
   category="lo",
   direction="l",
  },
- [0x0A9D]={
+ [0xA9D]={
   category="lo",
   direction="l",
  },
- [0x0A9E]={
+ [0xA9E]={
   category="lo",
   direction="l",
  },
- [0x0A9F]={
+ [0xA9F]={
   category="lo",
   direction="l",
  },
- [0x0AA0]={
+ [0xAA0]={
   category="lo",
   direction="l",
  },
- [0x0AA1]={
+ [0xAA1]={
   category="lo",
   direction="l",
  },
- [0x0AA2]={
+ [0xAA2]={
   category="lo",
   direction="l",
  },
- [0x0AA3]={
+ [0xAA3]={
   category="lo",
   direction="l",
  },
- [0x0AA4]={
+ [0xAA4]={
   category="lo",
   direction="l",
  },
- [0x0AA5]={
+ [0xAA5]={
   category="lo",
   direction="l",
  },
- [0x0AA6]={
+ [0xAA6]={
   category="lo",
   direction="l",
  },
- [0x0AA7]={
+ [0xAA7]={
   category="lo",
   direction="l",
  },
- [0x0AA8]={
+ [0xAA8]={
   category="lo",
   direction="l",
  },
- [0x0AAA]={
+ [0xAAA]={
   category="lo",
   direction="l",
  },
- [0x0AAB]={
+ [0xAAB]={
   category="lo",
   direction="l",
  },
- [0x0AAC]={
+ [0xAAC]={
   category="lo",
   direction="l",
  },
- [0x0AAD]={
+ [0xAAD]={
   category="lo",
   direction="l",
  },
- [0x0AAE]={
+ [0xAAE]={
   category="lo",
   direction="l",
  },
- [0x0AAF]={
+ [0xAAF]={
   category="lo",
   direction="l",
  },
- [0x0AB0]={
+ [0xAB0]={
   category="lo",
   direction="l",
  },
- [0x0AB2]={
+ [0xAB2]={
   category="lo",
   direction="l",
  },
- [0x0AB3]={
+ [0xAB3]={
   category="lo",
   direction="l",
  },
- [0x0AB5]={
+ [0xAB5]={
   category="lo",
   direction="l",
  },
- [0x0AB6]={
+ [0xAB6]={
   category="lo",
   direction="l",
  },
- [0x0AB7]={
+ [0xAB7]={
   category="lo",
   direction="l",
  },
- [0x0AB8]={
+ [0xAB8]={
   category="lo",
   direction="l",
  },
- [0x0AB9]={
+ [0xAB9]={
   category="lo",
   direction="l",
  },
- [0x0ABC]={
+ [0xABC]={
   category="mn",
   direction="nsm",
  },
- [0x0ABD]={
+ [0xABD]={
   category="lo",
   direction="l",
  },
- [0x0ABE]={
+ [0xABE]={
   category="mc",
   direction="l",
  },
- [0x0ABF]={
+ [0xABF]={
   category="mc",
   direction="l",
  },
- [0x0AC0]={
+ [0xAC0]={
   category="mc",
   direction="l",
  },
- [0x0AC1]={
+ [0xAC1]={
   category="mn",
   direction="nsm",
  },
- [0x0AC2]={
+ [0xAC2]={
   category="mn",
   direction="nsm",
  },
- [0x0AC3]={
+ [0xAC3]={
   category="mn",
   direction="nsm",
  },
- [0x0AC4]={
+ [0xAC4]={
   category="mn",
   direction="nsm",
  },
- [0x0AC5]={
+ [0xAC5]={
   category="mn",
   direction="nsm",
  },
- [0x0AC7]={
+ [0xAC7]={
   category="mn",
   direction="nsm",
  },
- [0x0AC8]={
+ [0xAC8]={
   category="mn",
   direction="nsm",
  },
- [0x0AC9]={
+ [0xAC9]={
   category="mc",
   direction="l",
  },
- [0x0ACB]={
+ [0xACB]={
   category="mc",
   direction="l",
  },
- [0x0ACC]={
+ [0xACC]={
   category="mc",
   direction="l",
  },
- [0x0ACD]={
+ [0xACD]={
   category="mn",
   direction="nsm",
  },
- [0x0AD0]={
+ [0xAD0]={
   category="lo",
   direction="l",
  },
- [0x0AE0]={
+ [0xAE0]={
   category="lo",
   direction="l",
  },
- [0x0AE1]={
+ [0xAE1]={
   category="lo",
   direction="l",
  },
- [0x0AE2]={
+ [0xAE2]={
   category="mn",
   direction="nsm",
  },
- [0x0AE3]={
+ [0xAE3]={
   category="mn",
   direction="nsm",
  },
- [0x0AE6]={
+ [0xAE6]={
   category="nd",
   direction="l",
  },
- [0x0AE7]={
+ [0xAE7]={
   category="nd",
   direction="l",
  },
- [0x0AE8]={
+ [0xAE8]={
   category="nd",
   direction="l",
  },
- [0x0AE9]={
+ [0xAE9]={
   category="nd",
   direction="l",
  },
- [0x0AEA]={
+ [0xAEA]={
   category="nd",
   direction="l",
  },
- [0x0AEB]={
+ [0xAEB]={
   category="nd",
   direction="l",
  },
- [0x0AEC]={
+ [0xAEC]={
   category="nd",
   direction="l",
  },
- [0x0AED]={
+ [0xAED]={
   category="nd",
   direction="l",
  },
- [0x0AEE]={
+ [0xAEE]={
   category="nd",
   direction="l",
  },
- [0x0AEF]={
+ [0xAEF]={
   category="nd",
   direction="l",
  },
- [0x0AF0]={
+ [0xAF0]={
   category="po",
   direction="l",
  },
- [0x0AF1]={
+ [0xAF1]={
   category="sc",
   direction="et",
  },
- [0x0B01]={
+ [0xB01]={
   category="mn",
   direction="nsm",
  },
- [0x0B02]={
+ [0xB02]={
   category="mc",
   direction="l",
  },
- [0x0B03]={
+ [0xB03]={
   category="mc",
   direction="l",
  },
- [0x0B05]={
+ [0xB05]={
   category="lo",
   direction="l",
  },
- [0x0B06]={
+ [0xB06]={
   category="lo",
   direction="l",
  },
- [0x0B07]={
+ [0xB07]={
   category="lo",
   direction="l",
  },
- [0x0B08]={
+ [0xB08]={
   category="lo",
   direction="l",
  },
- [0x0B09]={
+ [0xB09]={
   category="lo",
   direction="l",
  },
- [0x0B0A]={
+ [0xB0A]={
   category="lo",
   direction="l",
  },
- [0x0B0B]={
+ [0xB0B]={
   category="lo",
   direction="l",
  },
- [0x0B0C]={
+ [0xB0C]={
   category="lo",
   direction="l",
  },
- [0x0B0F]={
+ [0xB0F]={
   category="lo",
   direction="l",
  },
- [0x0B10]={
+ [0xB10]={
   category="lo",
   direction="l",
  },
- [0x0B13]={
+ [0xB13]={
   category="lo",
   direction="l",
  },
- [0x0B14]={
+ [0xB14]={
   category="lo",
   direction="l",
  },
- [0x0B15]={
+ [0xB15]={
   category="lo",
   direction="l",
  },
- [0x0B16]={
+ [0xB16]={
   category="lo",
   direction="l",
  },
- [0x0B17]={
+ [0xB17]={
   category="lo",
   direction="l",
  },
- [0x0B18]={
+ [0xB18]={
   category="lo",
   direction="l",
  },
- [0x0B19]={
+ [0xB19]={
   category="lo",
   direction="l",
  },
- [0x0B1A]={
+ [0xB1A]={
   category="lo",
   direction="l",
  },
- [0x0B1B]={
+ [0xB1B]={
   category="lo",
   direction="l",
  },
- [0x0B1C]={
+ [0xB1C]={
   category="lo",
   direction="l",
  },
- [0x0B1D]={
+ [0xB1D]={
   category="lo",
   direction="l",
  },
- [0x0B1E]={
+ [0xB1E]={
   category="lo",
   direction="l",
  },
- [0x0B1F]={
+ [0xB1F]={
   category="lo",
   direction="l",
  },
- [0x0B20]={
+ [0xB20]={
   category="lo",
   direction="l",
  },
- [0x0B21]={
+ [0xB21]={
   category="lo",
   direction="l",
  },
- [0x0B22]={
+ [0xB22]={
   category="lo",
   direction="l",
  },
- [0x0B23]={
+ [0xB23]={
   category="lo",
   direction="l",
  },
- [0x0B24]={
+ [0xB24]={
   category="lo",
   direction="l",
  },
- [0x0B25]={
+ [0xB25]={
   category="lo",
   direction="l",
  },
- [0x0B26]={
+ [0xB26]={
   category="lo",
   direction="l",
  },
- [0x0B27]={
+ [0xB27]={
   category="lo",
   direction="l",
  },
- [0x0B28]={
+ [0xB28]={
   category="lo",
   direction="l",
  },
- [0x0B2A]={
+ [0xB2A]={
   category="lo",
   direction="l",
  },
- [0x0B2B]={
+ [0xB2B]={
   category="lo",
   direction="l",
  },
- [0x0B2C]={
+ [0xB2C]={
   category="lo",
   direction="l",
  },
- [0x0B2D]={
+ [0xB2D]={
   category="lo",
   direction="l",
  },
- [0x0B2E]={
+ [0xB2E]={
   category="lo",
   direction="l",
  },
- [0x0B2F]={
+ [0xB2F]={
   category="lo",
   direction="l",
  },
- [0x0B30]={
+ [0xB30]={
   category="lo",
   direction="l",
  },
- [0x0B32]={
+ [0xB32]={
   category="lo",
   direction="l",
  },
- [0x0B33]={
+ [0xB33]={
   category="lo",
   direction="l",
  },
- [0x0B35]={
+ [0xB35]={
   category="lo",
   direction="l",
  },
- [0x0B36]={
+ [0xB36]={
   category="lo",
   direction="l",
  },
- [0x0B37]={
+ [0xB37]={
   category="lo",
   direction="l",
  },
- [0x0B38]={
+ [0xB38]={
   category="lo",
   direction="l",
  },
- [0x0B39]={
+ [0xB39]={
   category="lo",
   direction="l",
  },
- [0x0B3C]={
+ [0xB3C]={
   category="mn",
   direction="nsm",
  },
- [0x0B3D]={
+ [0xB3D]={
   category="lo",
   direction="l",
  },
- [0x0B3E]={
+ [0xB3E]={
   category="mc",
   direction="l",
  },
- [0x0B3F]={
+ [0xB3F]={
   category="mn",
   direction="nsm",
  },
- [0x0B40]={
+ [0xB40]={
   category="mc",
   direction="l",
  },
- [0x0B41]={
+ [0xB41]={
   category="mn",
   direction="nsm",
  },
- [0x0B42]={
+ [0xB42]={
   category="mn",
   direction="nsm",
  },
- [0x0B43]={
+ [0xB43]={
   category="mn",
   direction="nsm",
  },
- [0x0B44]={
+ [0xB44]={
   category="mn",
   direction="nsm",
  },
- [0x0B47]={
+ [0xB47]={
   category="mc",
   direction="l",
  },
- [0x0B48]={
+ [0xB48]={
   category="mc",
   direction="l",
  },
- [0x0B4B]={
+ [0xB4B]={
   category="mc",
   direction="l",
  },
- [0x0B4C]={
+ [0xB4C]={
   category="mc",
   direction="l",
  },
- [0x0B4D]={
+ [0xB4D]={
   category="mn",
   direction="nsm",
  },
- [0x0B56]={
+ [0xB56]={
   category="mn",
   direction="nsm",
  },
- [0x0B57]={
+ [0xB57]={
   category="mc",
   direction="l",
  },
- [0x0B5C]={
+ [0xB5C]={
   category="lo",
   direction="l",
  },
- [0x0B5D]={
+ [0xB5D]={
   category="lo",
   direction="l",
  },
- [0x0B5F]={
+ [0xB5F]={
   category="lo",
   direction="l",
  },
- [0x0B60]={
+ [0xB60]={
   category="lo",
   direction="l",
  },
- [0x0B61]={
+ [0xB61]={
   category="lo",
   direction="l",
  },
- [0x0B62]={
+ [0xB62]={
   category="mn",
   direction="nsm",
  },
- [0x0B63]={
+ [0xB63]={
   category="mn",
   direction="nsm",
  },
- [0x0B66]={
+ [0xB66]={
   category="nd",
   direction="l",
  },
- [0x0B67]={
+ [0xB67]={
   category="nd",
   direction="l",
  },
- [0x0B68]={
+ [0xB68]={
   category="nd",
   direction="l",
  },
- [0x0B69]={
+ [0xB69]={
   category="nd",
   direction="l",
  },
- [0x0B6A]={
+ [0xB6A]={
   category="nd",
   direction="l",
  },
- [0x0B6B]={
+ [0xB6B]={
   category="nd",
   direction="l",
  },
- [0x0B6C]={
+ [0xB6C]={
   category="nd",
   direction="l",
  },
- [0x0B6D]={
+ [0xB6D]={
   category="nd",
   direction="l",
  },
- [0x0B6E]={
+ [0xB6E]={
   category="nd",
   direction="l",
  },
- [0x0B6F]={
+ [0xB6F]={
   category="nd",
   direction="l",
  },
- [0x0B70]={
+ [0xB70]={
   category="so",
   direction="l",
  },
- [0x0B71]={
+ [0xB71]={
   category="lo",
   direction="l",
  },
- [0x0B72]={
+ [0xB72]={
   category="no",
   direction="l",
  },
- [0x0B73]={
+ [0xB73]={
   category="no",
   direction="l",
  },
- [0x0B74]={
+ [0xB74]={
   category="no",
   direction="l",
  },
- [0x0B75]={
+ [0xB75]={
   category="no",
   direction="l",
  },
- [0x0B76]={
+ [0xB76]={
   category="no",
   direction="l",
  },
- [0x0B77]={
+ [0xB77]={
   category="no",
   direction="l",
  },
- [0x0B82]={
+ [0xB82]={
   category="mn",
   direction="nsm",
  },
- [0x0B83]={
+ [0xB83]={
   category="lo",
   direction="l",
  },
- [0x0B85]={
+ [0xB85]={
   category="lo",
   direction="l",
  },
- [0x0B86]={
+ [0xB86]={
   category="lo",
   direction="l",
  },
- [0x0B87]={
+ [0xB87]={
   category="lo",
   direction="l",
  },
- [0x0B88]={
+ [0xB88]={
   category="lo",
   direction="l",
  },
- [0x0B89]={
+ [0xB89]={
   category="lo",
   direction="l",
  },
- [0x0B8A]={
+ [0xB8A]={
   category="lo",
   direction="l",
  },
- [0x0B8E]={
+ [0xB8E]={
   category="lo",
   direction="l",
  },
- [0x0B8F]={
+ [0xB8F]={
   category="lo",
   direction="l",
  },
- [0x0B90]={
+ [0xB90]={
   category="lo",
   direction="l",
  },
- [0x0B92]={
+ [0xB92]={
   category="lo",
   direction="l",
  },
- [0x0B93]={
+ [0xB93]={
   category="lo",
   direction="l",
  },
- [0x0B94]={
+ [0xB94]={
   category="lo",
   direction="l",
  },
- [0x0B95]={
+ [0xB95]={
   category="lo",
   direction="l",
  },
- [0x0B99]={
+ [0xB99]={
   category="lo",
   direction="l",
  },
- [0x0B9A]={
+ [0xB9A]={
   category="lo",
   direction="l",
  },
- [0x0B9C]={
+ [0xB9C]={
   category="lo",
   direction="l",
  },
- [0x0B9E]={
+ [0xB9E]={
   category="lo",
   direction="l",
  },
- [0x0B9F]={
+ [0xB9F]={
   category="lo",
   direction="l",
  },
- [0x0BA3]={
+ [0xBA3]={
   category="lo",
   direction="l",
  },
- [0x0BA4]={
+ [0xBA4]={
   category="lo",
   direction="l",
  },
- [0x0BA8]={
+ [0xBA8]={
   category="lo",
   direction="l",
  },
- [0x0BA9]={
+ [0xBA9]={
   category="lo",
   direction="l",
  },
- [0x0BAA]={
+ [0xBAA]={
   category="lo",
   direction="l",
  },
- [0x0BAE]={
+ [0xBAE]={
   category="lo",
   direction="l",
  },
- [0x0BAF]={
+ [0xBAF]={
   category="lo",
   direction="l",
  },
- [0x0BB0]={
+ [0xBB0]={
   category="lo",
   direction="l",
  },
- [0x0BB1]={
+ [0xBB1]={
   category="lo",
   direction="l",
  },
- [0x0BB2]={
+ [0xBB2]={
   category="lo",
   direction="l",
  },
- [0x0BB3]={
+ [0xBB3]={
   category="lo",
   direction="l",
  },
- [0x0BB4]={
+ [0xBB4]={
   category="lo",
   direction="l",
  },
- [0x0BB5]={
+ [0xBB5]={
   category="lo",
   direction="l",
  },
- [0x0BB6]={
+ [0xBB6]={
   category="lo",
   direction="l",
  },
- [0x0BB7]={
+ [0xBB7]={
   category="lo",
   direction="l",
  },
- [0x0BB8]={
+ [0xBB8]={
   category="lo",
   direction="l",
  },
- [0x0BB9]={
+ [0xBB9]={
   category="lo",
   direction="l",
  },
- [0x0BBE]={
+ [0xBBE]={
   category="mc",
   direction="l",
  },
- [0x0BBF]={
+ [0xBBF]={
   category="mc",
   direction="l",
  },
- [0x0BC0]={
+ [0xBC0]={
   category="mn",
   direction="nsm",
  },
- [0x0BC1]={
+ [0xBC1]={
   category="mc",
   direction="l",
  },
- [0x0BC2]={
+ [0xBC2]={
   category="mc",
   direction="l",
  },
- [0x0BC6]={
+ [0xBC6]={
   category="mc",
   direction="l",
  },
- [0x0BC7]={
+ [0xBC7]={
   category="mc",
   direction="l",
  },
- [0x0BC8]={
+ [0xBC8]={
   category="mc",
   direction="l",
  },
- [0x0BCA]={
+ [0xBCA]={
   category="mc",
   direction="l",
  },
- [0x0BCB]={
+ [0xBCB]={
   category="mc",
   direction="l",
  },
- [0x0BCC]={
+ [0xBCC]={
   category="mc",
   direction="l",
  },
- [0x0BCD]={
+ [0xBCD]={
   category="mn",
   direction="nsm",
  },
- [0x0BD0]={
+ [0xBD0]={
   category="lo",
   direction="l",
  },
- [0x0BD7]={
+ [0xBD7]={
   category="mc",
   direction="l",
  },
- [0x0BE6]={
+ [0xBE6]={
   category="nd",
   direction="l",
  },
- [0x0BE7]={
+ [0xBE7]={
   category="nd",
   direction="l",
  },
- [0x0BE8]={
+ [0xBE8]={
   category="nd",
   direction="l",
  },
- [0x0BE9]={
+ [0xBE9]={
   category="nd",
   direction="l",
  },
- [0x0BEA]={
+ [0xBEA]={
   category="nd",
   direction="l",
  },
- [0x0BEB]={
+ [0xBEB]={
   category="nd",
   direction="l",
  },
- [0x0BEC]={
+ [0xBEC]={
   category="nd",
   direction="l",
  },
- [0x0BED]={
+ [0xBED]={
   category="nd",
   direction="l",
  },
- [0x0BEE]={
+ [0xBEE]={
   category="nd",
   direction="l",
  },
- [0x0BEF]={
+ [0xBEF]={
   category="nd",
   direction="l",
  },
- [0x0BF0]={
+ [0xBF0]={
   category="no",
   direction="l",
  },
- [0x0BF1]={
+ [0xBF1]={
   category="no",
   direction="l",
  },
- [0x0BF2]={
+ [0xBF2]={
   category="no",
   direction="l",
  },
- [0x0BF3]={
-  category="so",
-  direction="on",
- },
- [0x0BF4]={
+ [0xBF3]={
   category="so",
   direction="on",
  },
- [0x0BF5]={
+ [0xBF4]={
   category="so",
   direction="on",
  },
- [0x0BF6]={
+ [0xBF5]={
   category="so",
   direction="on",
  },
- [0x0BF7]={
+ [0xBF6]={
   category="so",
   direction="on",
  },
- [0x0BF8]={
+ [0xBF7]={
   category="so",
   direction="on",
  },
- [0x0BF9]={
+ [0xBF8]={
+  category="so",
+  direction="on",
+ },
+ [0xBF9]={
   category="sc",
   direction="et",
  },
- [0x0BFA]={
+ [0xBFA]={
   category="so",
   direction="on",
  },
- [0x0C01]={
+ [0xC00]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xC01]={
   category="mc",
   direction="l",
  },
- [0x0C02]={
+ [0xC02]={
   category="mc",
   direction="l",
  },
- [0x0C03]={
+ [0xC03]={
   category="mc",
   direction="l",
  },
- [0x0C05]={
+ [0xC05]={
   category="lo",
   direction="l",
  },
- [0x0C06]={
+ [0xC06]={
   category="lo",
   direction="l",
  },
- [0x0C07]={
+ [0xC07]={
   category="lo",
   direction="l",
  },
- [0x0C08]={
+ [0xC08]={
   category="lo",
   direction="l",
  },
- [0x0C09]={
+ [0xC09]={
   category="lo",
   direction="l",
  },
- [0x0C0A]={
+ [0xC0A]={
   category="lo",
   direction="l",
  },
- [0x0C0B]={
+ [0xC0B]={
   category="lo",
   direction="l",
  },
- [0x0C0C]={
+ [0xC0C]={
   category="lo",
   direction="l",
  },
- [0x0C0E]={
+ [0xC0E]={
   category="lo",
   direction="l",
  },
- [0x0C0F]={
+ [0xC0F]={
   category="lo",
   direction="l",
  },
- [0x0C10]={
+ [0xC10]={
   category="lo",
   direction="l",
  },
- [0x0C12]={
+ [0xC12]={
   category="lo",
   direction="l",
  },
- [0x0C13]={
+ [0xC13]={
   category="lo",
   direction="l",
  },
- [0x0C14]={
+ [0xC14]={
   category="lo",
   direction="l",
  },
- [0x0C15]={
+ [0xC15]={
   category="lo",
   direction="l",
  },
- [0x0C16]={
+ [0xC16]={
   category="lo",
   direction="l",
  },
- [0x0C17]={
+ [0xC17]={
   category="lo",
   direction="l",
  },
- [0x0C18]={
+ [0xC18]={
   category="lo",
   direction="l",
  },
- [0x0C19]={
+ [0xC19]={
   category="lo",
   direction="l",
  },
- [0x0C1A]={
+ [0xC1A]={
   category="lo",
   direction="l",
  },
- [0x0C1B]={
+ [0xC1B]={
   category="lo",
   direction="l",
  },
- [0x0C1C]={
+ [0xC1C]={
   category="lo",
   direction="l",
  },
- [0x0C1D]={
+ [0xC1D]={
   category="lo",
   direction="l",
  },
- [0x0C1E]={
+ [0xC1E]={
   category="lo",
   direction="l",
  },
- [0x0C1F]={
+ [0xC1F]={
   category="lo",
   direction="l",
  },
- [0x0C20]={
+ [0xC20]={
   category="lo",
   direction="l",
  },
- [0x0C21]={
+ [0xC21]={
   category="lo",
   direction="l",
  },
- [0x0C22]={
+ [0xC22]={
   category="lo",
   direction="l",
  },
- [0x0C23]={
+ [0xC23]={
   category="lo",
   direction="l",
  },
- [0x0C24]={
+ [0xC24]={
   category="lo",
   direction="l",
  },
- [0x0C25]={
+ [0xC25]={
   category="lo",
   direction="l",
  },
- [0x0C26]={
+ [0xC26]={
   category="lo",
   direction="l",
  },
- [0x0C27]={
+ [0xC27]={
   category="lo",
   direction="l",
  },
- [0x0C28]={
+ [0xC28]={
   category="lo",
   direction="l",
  },
- [0x0C2A]={
+ [0xC2A]={
   category="lo",
   direction="l",
  },
- [0x0C2B]={
+ [0xC2B]={
   category="lo",
   direction="l",
  },
- [0x0C2C]={
+ [0xC2C]={
   category="lo",
   direction="l",
  },
- [0x0C2D]={
+ [0xC2D]={
   category="lo",
   direction="l",
  },
- [0x0C2E]={
+ [0xC2E]={
   category="lo",
   direction="l",
  },
- [0x0C2F]={
+ [0xC2F]={
   category="lo",
   direction="l",
  },
- [0x0C30]={
+ [0xC30]={
   category="lo",
   direction="l",
  },
- [0x0C31]={
+ [0xC31]={
   category="lo",
   direction="l",
  },
- [0x0C32]={
+ [0xC32]={
   category="lo",
   direction="l",
  },
- [0x0C33]={
+ [0xC33]={
   category="lo",
   direction="l",
  },
- [0x0C35]={
+ [0xC34]={
   category="lo",
   direction="l",
  },
- [0x0C36]={
+ [0xC35]={
   category="lo",
   direction="l",
  },
- [0x0C37]={
+ [0xC36]={
   category="lo",
   direction="l",
  },
- [0x0C38]={
+ [0xC37]={
   category="lo",
   direction="l",
  },
- [0x0C39]={
+ [0xC38]={
   category="lo",
   direction="l",
  },
- [0x0C3D]={
+ [0xC39]={
   category="lo",
   direction="l",
  },
- [0x0C3E]={
+ [0xC3D]={
+  category="lo",
+  direction="l",
+ },
+ [0xC3E]={
   category="mn",
   direction="nsm",
  },
- [0x0C3F]={
+ [0xC3F]={
   category="mn",
   direction="nsm",
  },
- [0x0C40]={
+ [0xC40]={
   category="mn",
   direction="nsm",
  },
- [0x0C41]={
+ [0xC41]={
   category="mc",
   direction="l",
  },
- [0x0C42]={
+ [0xC42]={
   category="mc",
   direction="l",
  },
- [0x0C43]={
+ [0xC43]={
   category="mc",
   direction="l",
  },
- [0x0C44]={
+ [0xC44]={
   category="mc",
   direction="l",
  },
- [0x0C46]={
+ [0xC46]={
   category="mn",
   direction="nsm",
  },
- [0x0C47]={
+ [0xC47]={
   category="mn",
   direction="nsm",
  },
- [0x0C48]={
+ [0xC48]={
   category="mn",
   direction="nsm",
  },
- [0x0C4A]={
+ [0xC4A]={
   category="mn",
   direction="nsm",
  },
- [0x0C4B]={
+ [0xC4B]={
   category="mn",
   direction="nsm",
  },
- [0x0C4C]={
+ [0xC4C]={
   category="mn",
   direction="nsm",
  },
- [0x0C4D]={
+ [0xC4D]={
   category="mn",
   direction="nsm",
  },
- [0x0C55]={
+ [0xC55]={
   category="mn",
   direction="nsm",
  },
- [0x0C56]={
+ [0xC56]={
   category="mn",
   direction="nsm",
  },
- [0x0C58]={
+ [0xC58]={
   category="lo",
   direction="l",
  },
- [0x0C59]={
+ [0xC59]={
   category="lo",
   direction="l",
  },
- [0x0C60]={
+ [0xC60]={
   category="lo",
   direction="l",
  },
- [0x0C61]={
+ [0xC61]={
   category="lo",
   direction="l",
  },
- [0x0C62]={
+ [0xC62]={
   category="mn",
   direction="nsm",
  },
- [0x0C63]={
+ [0xC63]={
   category="mn",
   direction="nsm",
  },
- [0x0C66]={
+ [0xC66]={
   category="nd",
   direction="l",
  },
- [0x0C67]={
+ [0xC67]={
   category="nd",
   direction="l",
  },
- [0x0C68]={
+ [0xC68]={
   category="nd",
   direction="l",
  },
- [0x0C69]={
+ [0xC69]={
   category="nd",
   direction="l",
  },
- [0x0C6A]={
+ [0xC6A]={
   category="nd",
   direction="l",
  },
- [0x0C6B]={
+ [0xC6B]={
   category="nd",
   direction="l",
  },
- [0x0C6C]={
+ [0xC6C]={
   category="nd",
   direction="l",
  },
- [0x0C6D]={
+ [0xC6D]={
   category="nd",
   direction="l",
  },
- [0x0C6E]={
+ [0xC6E]={
   category="nd",
   direction="l",
  },
- [0x0C6F]={
+ [0xC6F]={
   category="nd",
   direction="l",
  },
- [0x0C78]={
+ [0xC78]={
   category="no",
   direction="on",
  },
- [0x0C79]={
+ [0xC79]={
   category="no",
   direction="on",
  },
- [0x0C7A]={
+ [0xC7A]={
   category="no",
   direction="on",
  },
- [0x0C7B]={
+ [0xC7B]={
   category="no",
   direction="on",
  },
- [0x0C7C]={
+ [0xC7C]={
   category="no",
   direction="on",
  },
- [0x0C7D]={
+ [0xC7D]={
   category="no",
   direction="on",
  },
- [0x0C7E]={
+ [0xC7E]={
   category="no",
   direction="on",
  },
- [0x0C7F]={
+ [0xC7F]={
   category="so",
   direction="l",
  },
- [0x0C82]={
-  category="mc",
-  direction="l",
- },
- [0x0C83]={
-  category="mc",
-  direction="l",
- },
- [0x0C85]={
-  category="lo",
-  direction="l",
- },
- [0x0C86]={
-  category="lo",
-  direction="l",
- },
- [0x0C87]={
-  category="lo",
-  direction="l",
- },
- [0x0C88]={
-  category="lo",
-  direction="l",
- },
- [0x0C89]={
-  category="lo",
-  direction="l",
- },
- [0x0C8A]={
-  category="lo",
-  direction="l",
- },
- [0x0C8B]={
-  category="lo",
-  direction="l",
- },
- [0x0C8C]={
-  category="lo",
-  direction="l",
- },
- [0x0C8E]={
-  category="lo",
-  direction="l",
- },
- [0x0C8F]={
-  category="lo",
-  direction="l",
- },
- [0x0C90]={
-  category="lo",
-  direction="l",
- },
- [0x0C92]={
-  category="lo",
-  direction="l",
- },
- [0x0C93]={
-  category="lo",
-  direction="l",
- },
- [0x0C94]={
-  category="lo",
-  direction="l",
- },
- [0x0C95]={
-  category="lo",
-  direction="l",
- },
- [0x0C96]={
-  category="lo",
-  direction="l",
- },
- [0x0C97]={
-  category="lo",
-  direction="l",
- },
- [0x0C98]={
-  category="lo",
-  direction="l",
- },
- [0x0C99]={
-  category="lo",
-  direction="l",
- },
- [0x0C9A]={
-  category="lo",
-  direction="l",
- },
- [0x0C9B]={
-  category="lo",
-  direction="l",
- },
- [0x0C9C]={
-  category="lo",
-  direction="l",
- },
- [0x0C9D]={
-  category="lo",
-  direction="l",
- },
- [0x0C9E]={
-  category="lo",
-  direction="l",
- },
- [0x0C9F]={
-  category="lo",
-  direction="l",
- },
- [0x0CA0]={
-  category="lo",
-  direction="l",
- },
- [0x0CA1]={
-  category="lo",
-  direction="l",
- },
- [0x0CA2]={
-  category="lo",
-  direction="l",
- },
- [0x0CA3]={
-  category="lo",
-  direction="l",
- },
- [0x0CA4]={
-  category="lo",
-  direction="l",
- },
- [0x0CA5]={
-  category="lo",
-  direction="l",
- },
- [0x0CA6]={
-  category="lo",
-  direction="l",
- },
- [0x0CA7]={
-  category="lo",
-  direction="l",
- },
- [0x0CA8]={
-  category="lo",
-  direction="l",
- },
- [0x0CAA]={
-  category="lo",
-  direction="l",
- },
- [0x0CAB]={
-  category="lo",
-  direction="l",
- },
- [0x0CAC]={
-  category="lo",
-  direction="l",
- },
- [0x0CAD]={
-  category="lo",
-  direction="l",
- },
- [0x0CAE]={
-  category="lo",
-  direction="l",
- },
- [0x0CAF]={
-  category="lo",
-  direction="l",
- },
- [0x0CB0]={
-  category="lo",
-  direction="l",
- },
- [0x0CB1]={
-  category="lo",
-  direction="l",
- },
- [0x0CB2]={
-  category="lo",
-  direction="l",
- },
- [0x0CB3]={
-  category="lo",
-  direction="l",
- },
- [0x0CB5]={
-  category="lo",
-  direction="l",
- },
- [0x0CB6]={
-  category="lo",
-  direction="l",
- },
- [0x0CB7]={
-  category="lo",
-  direction="l",
- },
- [0x0CB8]={
-  category="lo",
-  direction="l",
- },
- [0x0CB9]={
-  category="lo",
-  direction="l",
- },
- [0x0CBC]={
+ [0xC81]={
   category="mn",
   direction="nsm",
  },
- [0x0CBD]={
+ [0xC82]={
+  category="mc",
+  direction="l",
+ },
+ [0xC83]={
+  category="mc",
+  direction="l",
+ },
+ [0xC85]={
   category="lo",
   direction="l",
  },
- [0x0CBE]={
-  category="mc",
-  direction="l",
- },
- [0x0CBF]={
-  category="mn",
-  direction="l",
- },
- [0x0CC0]={
-  category="mc",
-  direction="l",
- },
- [0x0CC1]={
-  category="mc",
-  direction="l",
- },
- [0x0CC2]={
-  category="mc",
-  direction="l",
- },
- [0x0CC3]={
-  category="mc",
-  direction="l",
- },
- [0x0CC4]={
-  category="mc",
-  direction="l",
- },
- [0x0CC6]={
-  category="mn",
-  direction="l",
- },
- [0x0CC7]={
-  category="mc",
-  direction="l",
- },
- [0x0CC8]={
-  category="mc",
-  direction="l",
- },
- [0x0CCA]={
-  category="mc",
-  direction="l",
- },
- [0x0CCB]={
-  category="mc",
-  direction="l",
- },
- [0x0CCC]={
-  category="mn",
-  direction="nsm",
- },
- [0x0CCD]={
-  category="mn",
-  direction="nsm",
- },
- [0x0CD5]={
-  category="mc",
-  direction="l",
- },
- [0x0CD6]={
-  category="mc",
-  direction="l",
- },
- [0x0CDE]={
+ [0xC86]={
   category="lo",
   direction="l",
  },
- [0x0CE0]={
+ [0xC87]={
   category="lo",
   direction="l",
  },
- [0x0CE1]={
+ [0xC88]={
   category="lo",
   direction="l",
  },
- [0x0CE2]={
+ [0xC89]={
+  category="lo",
+  direction="l",
+ },
+ [0xC8A]={
+  category="lo",
+  direction="l",
+ },
+ [0xC8B]={
+  category="lo",
+  direction="l",
+ },
+ [0xC8C]={
+  category="lo",
+  direction="l",
+ },
+ [0xC8E]={
+  category="lo",
+  direction="l",
+ },
+ [0xC8F]={
+  category="lo",
+  direction="l",
+ },
+ [0xC90]={
+  category="lo",
+  direction="l",
+ },
+ [0xC92]={
+  category="lo",
+  direction="l",
+ },
+ [0xC93]={
+  category="lo",
+  direction="l",
+ },
+ [0xC94]={
+  category="lo",
+  direction="l",
+ },
+ [0xC95]={
+  category="lo",
+  direction="l",
+ },
+ [0xC96]={
+  category="lo",
+  direction="l",
+ },
+ [0xC97]={
+  category="lo",
+  direction="l",
+ },
+ [0xC98]={
+  category="lo",
+  direction="l",
+ },
+ [0xC99]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9A]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9B]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9C]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9D]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9E]={
+  category="lo",
+  direction="l",
+ },
+ [0xC9F]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA0]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA1]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA2]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA3]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA4]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA5]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA6]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA7]={
+  category="lo",
+  direction="l",
+ },
+ [0xCA8]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAA]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAB]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAC]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAD]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAE]={
+  category="lo",
+  direction="l",
+ },
+ [0xCAF]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB0]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB1]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB2]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB3]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB5]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB6]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB7]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB8]={
+  category="lo",
+  direction="l",
+ },
+ [0xCB9]={
+  category="lo",
+  direction="l",
+ },
+ [0xCBC]={
   category="mn",
   direction="nsm",
  },
- [0x0CE3]={
+ [0xCBD]={
+  category="lo",
+  direction="l",
+ },
+ [0xCBE]={
+  category="mc",
+  direction="l",
+ },
+ [0xCBF]={
+  category="mn",
+  direction="l",
+ },
+ [0xCC0]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC1]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC2]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC3]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC4]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC6]={
+  category="mn",
+  direction="l",
+ },
+ [0xCC7]={
+  category="mc",
+  direction="l",
+ },
+ [0xCC8]={
+  category="mc",
+  direction="l",
+ },
+ [0xCCA]={
+  category="mc",
+  direction="l",
+ },
+ [0xCCB]={
+  category="mc",
+  direction="l",
+ },
+ [0xCCC]={
   category="mn",
   direction="nsm",
  },
- [0x0CE6]={
+ [0xCCD]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xCD5]={
+  category="mc",
+  direction="l",
+ },
+ [0xCD6]={
+  category="mc",
+  direction="l",
+ },
+ [0xCDE]={
+  category="lo",
+  direction="l",
+ },
+ [0xCE0]={
+  category="lo",
+  direction="l",
+ },
+ [0xCE1]={
+  category="lo",
+  direction="l",
+ },
+ [0xCE2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xCE3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xCE6]={
   category="nd",
   direction="l",
  },
- [0x0CE7]={
+ [0xCE7]={
   category="nd",
   direction="l",
  },
- [0x0CE8]={
+ [0xCE8]={
   category="nd",
   direction="l",
  },
- [0x0CE9]={
+ [0xCE9]={
   category="nd",
   direction="l",
  },
- [0x0CEA]={
+ [0xCEA]={
   category="nd",
   direction="l",
  },
- [0x0CEB]={
+ [0xCEB]={
   category="nd",
   direction="l",
  },
- [0x0CEC]={
+ [0xCEC]={
   category="nd",
   direction="l",
  },
- [0x0CED]={
+ [0xCED]={
   category="nd",
   direction="l",
  },
- [0x0CEE]={
+ [0xCEE]={
   category="nd",
   direction="l",
  },
- [0x0CEF]={
+ [0xCEF]={
   category="nd",
   direction="l",
  },
- [0x0CF1]={
+ [0xCF1]={
   category="so",
   direction="l",
  },
- [0x0CF2]={
+ [0xCF2]={
   category="so",
   direction="l",
  },
- [0x0D02]={
-  category="mc",
-  direction="l",
- },
- [0x0D03]={
-  category="mc",
-  direction="l",
- },
- [0x0D05]={
-  category="lo",
-  direction="l",
- },
- [0x0D06]={
-  category="lo",
-  direction="l",
- },
- [0x0D07]={
-  category="lo",
-  direction="l",
- },
- [0x0D08]={
-  category="lo",
-  direction="l",
- },
- [0x0D09]={
-  category="lo",
-  direction="l",
- },
- [0x0D0A]={
-  category="lo",
-  direction="l",
- },
- [0x0D0B]={
-  category="lo",
-  direction="l",
- },
- [0x0D0C]={
-  category="lo",
-  direction="l",
- },
- [0x0D0E]={
-  category="lo",
-  direction="l",
- },
- [0x0D0F]={
-  category="lo",
-  direction="l",
- },
- [0x0D10]={
-  category="lo",
-  direction="l",
- },
- [0x0D12]={
-  category="lo",
-  direction="l",
- },
- [0x0D13]={
-  category="lo",
-  direction="l",
- },
- [0x0D14]={
-  category="lo",
-  direction="l",
- },
- [0x0D15]={
-  category="lo",
-  direction="l",
- },
- [0x0D16]={
-  category="lo",
-  direction="l",
- },
- [0x0D17]={
-  category="lo",
-  direction="l",
- },
- [0x0D18]={
-  category="lo",
-  direction="l",
- },
- [0x0D19]={
-  category="lo",
-  direction="l",
- },
- [0x0D1A]={
-  category="lo",
-  direction="l",
- },
- [0x0D1B]={
-  category="lo",
-  direction="l",
- },
- [0x0D1C]={
-  category="lo",
-  direction="l",
- },
- [0x0D1D]={
-  category="lo",
-  direction="l",
- },
- [0x0D1E]={
-  category="lo",
-  direction="l",
- },
- [0x0D1F]={
-  category="lo",
-  direction="l",
- },
- [0x0D20]={
-  category="lo",
-  direction="l",
- },
- [0x0D21]={
-  category="lo",
-  direction="l",
- },
- [0x0D22]={
-  category="lo",
-  direction="l",
- },
- [0x0D23]={
-  category="lo",
-  direction="l",
- },
- [0x0D24]={
-  category="lo",
-  direction="l",
- },
- [0x0D25]={
-  category="lo",
-  direction="l",
- },
- [0x0D26]={
-  category="lo",
-  direction="l",
- },
- [0x0D27]={
-  category="lo",
-  direction="l",
- },
- [0x0D28]={
-  category="lo",
-  direction="l",
- },
- [0x0D29]={
-  category="lo",
-  direction="l",
- },
- [0x0D2A]={
-  category="lo",
-  direction="l",
- },
- [0x0D2B]={
-  category="lo",
-  direction="l",
- },
- [0x0D2C]={
-  category="lo",
-  direction="l",
- },
- [0x0D2D]={
-  category="lo",
-  direction="l",
- },
- [0x0D2E]={
-  category="lo",
-  direction="l",
- },
- [0x0D2F]={
-  category="lo",
-  direction="l",
- },
- [0x0D30]={
-  category="lo",
-  direction="l",
- },
- [0x0D31]={
-  category="lo",
-  direction="l",
- },
- [0x0D32]={
-  category="lo",
-  direction="l",
- },
- [0x0D33]={
-  category="lo",
-  direction="l",
- },
- [0x0D34]={
-  category="lo",
-  direction="l",
- },
- [0x0D35]={
-  category="lo",
-  direction="l",
- },
- [0x0D36]={
-  category="lo",
-  direction="l",
- },
- [0x0D37]={
-  category="lo",
-  direction="l",
- },
- [0x0D38]={
-  category="lo",
-  direction="l",
- },
- [0x0D39]={
-  category="lo",
-  direction="l",
- },
- [0x0D3A]={
-  category="lo",
-  direction="l",
- },
- [0x0D3D]={
-  category="lo",
-  direction="l",
- },
- [0x0D3E]={
-  category="mc",
-  direction="l",
- },
- [0x0D3F]={
-  category="mc",
-  direction="l",
- },
- [0x0D40]={
-  category="mc",
-  direction="l",
- },
- [0x0D41]={
+ [0xD01]={
   category="mn",
   direction="nsm",
  },
- [0x0D42]={
-  category="mn",
-  direction="nsm",
- },
- [0x0D43]={
-  category="mn",
-  direction="nsm",
- },
- [0x0D44]={
-  category="mn",
-  direction="nsm",
- },
- [0x0D46]={
+ [0xD02]={
   category="mc",
   direction="l",
  },
- [0x0D47]={
+ [0xD03]={
   category="mc",
   direction="l",
  },
- [0x0D48]={
-  category="mc",
-  direction="l",
- },
- [0x0D4A]={
-  category="mc",
-  direction="l",
- },
- [0x0D4B]={
-  category="mc",
-  direction="l",
- },
- [0x0D4C]={
-  category="mc",
-  direction="l",
- },
- [0x0D4D]={
-  category="mn",
-  direction="nsm",
- },
- [0x0D4E]={
+ [0xD05]={
   category="lo",
   direction="l",
  },
- [0x0D57]={
+ [0xD06]={
+  category="lo",
+  direction="l",
+ },
+ [0xD07]={
+  category="lo",
+  direction="l",
+ },
+ [0xD08]={
+  category="lo",
+  direction="l",
+ },
+ [0xD09]={
+  category="lo",
+  direction="l",
+ },
+ [0xD0A]={
+  category="lo",
+  direction="l",
+ },
+ [0xD0B]={
+  category="lo",
+  direction="l",
+ },
+ [0xD0C]={
+  category="lo",
+  direction="l",
+ },
+ [0xD0E]={
+  category="lo",
+  direction="l",
+ },
+ [0xD0F]={
+  category="lo",
+  direction="l",
+ },
+ [0xD10]={
+  category="lo",
+  direction="l",
+ },
+ [0xD12]={
+  category="lo",
+  direction="l",
+ },
+ [0xD13]={
+  category="lo",
+  direction="l",
+ },
+ [0xD14]={
+  category="lo",
+  direction="l",
+ },
+ [0xD15]={
+  category="lo",
+  direction="l",
+ },
+ [0xD16]={
+  category="lo",
+  direction="l",
+ },
+ [0xD17]={
+  category="lo",
+  direction="l",
+ },
+ [0xD18]={
+  category="lo",
+  direction="l",
+ },
+ [0xD19]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1A]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1B]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1C]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1D]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1E]={
+  category="lo",
+  direction="l",
+ },
+ [0xD1F]={
+  category="lo",
+  direction="l",
+ },
+ [0xD20]={
+  category="lo",
+  direction="l",
+ },
+ [0xD21]={
+  category="lo",
+  direction="l",
+ },
+ [0xD22]={
+  category="lo",
+  direction="l",
+ },
+ [0xD23]={
+  category="lo",
+  direction="l",
+ },
+ [0xD24]={
+  category="lo",
+  direction="l",
+ },
+ [0xD25]={
+  category="lo",
+  direction="l",
+ },
+ [0xD26]={
+  category="lo",
+  direction="l",
+ },
+ [0xD27]={
+  category="lo",
+  direction="l",
+ },
+ [0xD28]={
+  category="lo",
+  direction="l",
+ },
+ [0xD29]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2A]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2B]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2C]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2D]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2E]={
+  category="lo",
+  direction="l",
+ },
+ [0xD2F]={
+  category="lo",
+  direction="l",
+ },
+ [0xD30]={
+  category="lo",
+  direction="l",
+ },
+ [0xD31]={
+  category="lo",
+  direction="l",
+ },
+ [0xD32]={
+  category="lo",
+  direction="l",
+ },
+ [0xD33]={
+  category="lo",
+  direction="l",
+ },
+ [0xD34]={
+  category="lo",
+  direction="l",
+ },
+ [0xD35]={
+  category="lo",
+  direction="l",
+ },
+ [0xD36]={
+  category="lo",
+  direction="l",
+ },
+ [0xD37]={
+  category="lo",
+  direction="l",
+ },
+ [0xD38]={
+  category="lo",
+  direction="l",
+ },
+ [0xD39]={
+  category="lo",
+  direction="l",
+ },
+ [0xD3A]={
+  category="lo",
+  direction="l",
+ },
+ [0xD3D]={
+  category="lo",
+  direction="l",
+ },
+ [0xD3E]={
   category="mc",
   direction="l",
  },
- [0x0D60]={
-  category="lo",
+ [0xD3F]={
+  category="mc",
   direction="l",
  },
- [0x0D61]={
-  category="lo",
+ [0xD40]={
+  category="mc",
   direction="l",
  },
- [0x0D62]={
+ [0xD41]={
   category="mn",
   direction="nsm",
  },
- [0x0D63]={
+ [0xD42]={
   category="mn",
   direction="nsm",
  },
- [0x0D66]={
+ [0xD43]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xD44]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xD46]={
+  category="mc",
+  direction="l",
+ },
+ [0xD47]={
+  category="mc",
+  direction="l",
+ },
+ [0xD48]={
+  category="mc",
+  direction="l",
+ },
+ [0xD4A]={
+  category="mc",
+  direction="l",
+ },
+ [0xD4B]={
+  category="mc",
+  direction="l",
+ },
+ [0xD4C]={
+  category="mc",
+  direction="l",
+ },
+ [0xD4D]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xD4E]={
+  category="lo",
+  direction="l",
+ },
+ [0xD57]={
+  category="mc",
+  direction="l",
+ },
+ [0xD60]={
+  category="lo",
+  direction="l",
+ },
+ [0xD61]={
+  category="lo",
+  direction="l",
+ },
+ [0xD62]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xD63]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xD66]={
   category="nd",
   direction="l",
  },
- [0x0D67]={
+ [0xD67]={
   category="nd",
   direction="l",
  },
- [0x0D68]={
+ [0xD68]={
   category="nd",
   direction="l",
  },
- [0x0D69]={
+ [0xD69]={
   category="nd",
   direction="l",
  },
- [0x0D6A]={
+ [0xD6A]={
   category="nd",
   direction="l",
  },
- [0x0D6B]={
+ [0xD6B]={
   category="nd",
   direction="l",
  },
- [0x0D6C]={
+ [0xD6C]={
   category="nd",
   direction="l",
  },
- [0x0D6D]={
+ [0xD6D]={
   category="nd",
   direction="l",
  },
- [0x0D6E]={
+ [0xD6E]={
   category="nd",
   direction="l",
  },
- [0x0D6F]={
+ [0xD6F]={
   category="nd",
   direction="l",
  },
- [0x0D70]={
+ [0xD70]={
   category="no",
   direction="l",
  },
- [0x0D71]={
+ [0xD71]={
   category="no",
   direction="l",
  },
- [0x0D72]={
+ [0xD72]={
   category="no",
   direction="l",
  },
- [0x0D73]={
+ [0xD73]={
   category="no",
   direction="l",
  },
- [0x0D74]={
+ [0xD74]={
   category="no",
   direction="l",
  },
- [0x0D75]={
+ [0xD75]={
   category="no",
   direction="l",
  },
- [0x0D79]={
+ [0xD79]={
   category="so",
   direction="l",
  },
- [0x0D7A]={
+ [0xD7A]={
   category="lo",
   direction="l",
  },
- [0x0D7B]={
+ [0xD7B]={
   category="lo",
   direction="l",
  },
- [0x0D7C]={
+ [0xD7C]={
   category="lo",
   direction="l",
  },
- [0x0D7D]={
+ [0xD7D]={
   category="lo",
   direction="l",
  },
- [0x0D7E]={
+ [0xD7E]={
   category="lo",
   direction="l",
  },
- [0x0D7F]={
+ [0xD7F]={
   category="lo",
   direction="l",
  },
- [0x0D82]={
+ [0xD82]={
   category="mc",
   direction="l",
  },
- [0x0D83]={
+ [0xD83]={
   category="mc",
   direction="l",
  },
- [0x0D85]={
+ [0xD85]={
   category="lo",
   direction="l",
  },
- [0x0D86]={
+ [0xD86]={
   category="lo",
   direction="l",
  },
- [0x0D87]={
+ [0xD87]={
   category="lo",
   direction="l",
  },
- [0x0D88]={
+ [0xD88]={
   category="lo",
   direction="l",
  },
- [0x0D89]={
+ [0xD89]={
   category="lo",
   direction="l",
  },
- [0x0D8A]={
+ [0xD8A]={
   category="lo",
   direction="l",
  },
- [0x0D8B]={
+ [0xD8B]={
   category="lo",
   direction="l",
  },
- [0x0D8C]={
+ [0xD8C]={
   category="lo",
   direction="l",
  },
- [0x0D8D]={
+ [0xD8D]={
   category="lo",
   direction="l",
  },
- [0x0D8E]={
+ [0xD8E]={
   category="lo",
   direction="l",
  },
- [0x0D8F]={
+ [0xD8F]={
   category="lo",
   direction="l",
  },
- [0x0D90]={
+ [0xD90]={
   category="lo",
   direction="l",
  },
- [0x0D91]={
+ [0xD91]={
   category="lo",
   direction="l",
  },
- [0x0D92]={
+ [0xD92]={
   category="lo",
   direction="l",
  },
- [0x0D93]={
+ [0xD93]={
   category="lo",
   direction="l",
  },
- [0x0D94]={
+ [0xD94]={
   category="lo",
   direction="l",
  },
- [0x0D95]={
+ [0xD95]={
   category="lo",
   direction="l",
  },
- [0x0D96]={
+ [0xD96]={
   category="lo",
   direction="l",
  },
- [0x0D9A]={
+ [0xD9A]={
   category="lo",
   direction="l",
  },
- [0x0D9B]={
+ [0xD9B]={
   category="lo",
   direction="l",
  },
- [0x0D9C]={
+ [0xD9C]={
   category="lo",
   direction="l",
  },
- [0x0D9D]={
+ [0xD9D]={
   category="lo",
   direction="l",
  },
- [0x0D9E]={
+ [0xD9E]={
   category="lo",
   direction="l",
  },
- [0x0D9F]={
+ [0xD9F]={
   category="lo",
   direction="l",
  },
- [0x0DA0]={
+ [0xDA0]={
   category="lo",
   direction="l",
  },
- [0x0DA1]={
+ [0xDA1]={
   category="lo",
   direction="l",
  },
- [0x0DA2]={
+ [0xDA2]={
   category="lo",
   direction="l",
  },
- [0x0DA3]={
+ [0xDA3]={
   category="lo",
   direction="l",
  },
- [0x0DA4]={
+ [0xDA4]={
   category="lo",
   direction="l",
  },
- [0x0DA5]={
+ [0xDA5]={
   category="lo",
   direction="l",
  },
- [0x0DA6]={
+ [0xDA6]={
   category="lo",
   direction="l",
  },
- [0x0DA7]={
+ [0xDA7]={
   category="lo",
   direction="l",
  },
- [0x0DA8]={
+ [0xDA8]={
   category="lo",
   direction="l",
  },
- [0x0DA9]={
+ [0xDA9]={
   category="lo",
   direction="l",
  },
- [0x0DAA]={
+ [0xDAA]={
   category="lo",
   direction="l",
  },
- [0x0DAB]={
+ [0xDAB]={
   category="lo",
   direction="l",
  },
- [0x0DAC]={
+ [0xDAC]={
   category="lo",
   direction="l",
  },
- [0x0DAD]={
+ [0xDAD]={
   category="lo",
   direction="l",
  },
- [0x0DAE]={
+ [0xDAE]={
   category="lo",
   direction="l",
  },
- [0x0DAF]={
+ [0xDAF]={
   category="lo",
   direction="l",
  },
- [0x0DB0]={
+ [0xDB0]={
   category="lo",
   direction="l",
  },
- [0x0DB1]={
+ [0xDB1]={
   category="lo",
   direction="l",
  },
- [0x0DB3]={
+ [0xDB3]={
   category="lo",
   direction="l",
  },
- [0x0DB4]={
+ [0xDB4]={
   category="lo",
   direction="l",
  },
- [0x0DB5]={
+ [0xDB5]={
   category="lo",
   direction="l",
  },
- [0x0DB6]={
+ [0xDB6]={
   category="lo",
   direction="l",
  },
- [0x0DB7]={
+ [0xDB7]={
   category="lo",
   direction="l",
  },
- [0x0DB8]={
+ [0xDB8]={
   category="lo",
   direction="l",
  },
- [0x0DB9]={
+ [0xDB9]={
   category="lo",
   direction="l",
  },
- [0x0DBA]={
+ [0xDBA]={
   category="lo",
   direction="l",
  },
- [0x0DBB]={
+ [0xDBB]={
   category="lo",
   direction="l",
  },
- [0x0DBD]={
+ [0xDBD]={
   category="lo",
   direction="l",
  },
- [0x0DC0]={
+ [0xDC0]={
   category="lo",
   direction="l",
  },
- [0x0DC1]={
+ [0xDC1]={
   category="lo",
   direction="l",
  },
- [0x0DC2]={
+ [0xDC2]={
   category="lo",
   direction="l",
  },
- [0x0DC3]={
+ [0xDC3]={
   category="lo",
   direction="l",
  },
- [0x0DC4]={
+ [0xDC4]={
   category="lo",
   direction="l",
  },
- [0x0DC5]={
+ [0xDC5]={
   category="lo",
   direction="l",
  },
- [0x0DC6]={
+ [0xDC6]={
   category="lo",
   direction="l",
  },
- [0x0DCA]={
+ [0xDCA]={
   category="mn",
   direction="nsm",
  },
- [0x0DCF]={
+ [0xDCF]={
   category="mc",
   direction="l",
  },
- [0x0DD0]={
+ [0xDD0]={
   category="mc",
   direction="l",
  },
- [0x0DD1]={
+ [0xDD1]={
   category="mc",
   direction="l",
  },
- [0x0DD2]={
+ [0xDD2]={
   category="mn",
   direction="nsm",
  },
- [0x0DD3]={
+ [0xDD3]={
   category="mn",
   direction="nsm",
  },
- [0x0DD4]={
+ [0xDD4]={
   category="mn",
   direction="nsm",
  },
- [0x0DD6]={
+ [0xDD6]={
   category="mn",
   direction="nsm",
  },
- [0x0DD8]={
+ [0xDD8]={
   category="mc",
   direction="l",
  },
- [0x0DD9]={
+ [0xDD9]={
   category="mc",
   direction="l",
  },
- [0x0DDA]={
+ [0xDDA]={
   category="mc",
   direction="l",
  },
- [0x0DDB]={
+ [0xDDB]={
   category="mc",
   direction="l",
  },
- [0x0DDC]={
+ [0xDDC]={
   category="mc",
   direction="l",
  },
- [0x0DDD]={
+ [0xDDD]={
   category="mc",
   direction="l",
  },
- [0x0DDE]={
+ [0xDDE]={
   category="mc",
   direction="l",
  },
- [0x0DDF]={
+ [0xDDF]={
   category="mc",
   direction="l",
  },
- [0x0DF2]={
+ [0xDE6]={
+  category="nd",
+  direction="l",
+ },
+ [0xDE7]={
+  category="nd",
+  direction="l",
+ },
+ [0xDE8]={
+  category="nd",
+  direction="l",
+ },
+ [0xDE9]={
+  category="nd",
+  direction="l",
+ },
+ [0xDEA]={
+  category="nd",
+  direction="l",
+ },
+ [0xDEB]={
+  category="nd",
+  direction="l",
+ },
+ [0xDEC]={
+  category="nd",
+  direction="l",
+ },
+ [0xDED]={
+  category="nd",
+  direction="l",
+ },
+ [0xDEE]={
+  category="nd",
+  direction="l",
+ },
+ [0xDEF]={
+  category="nd",
+  direction="l",
+ },
+ [0xDF2]={
   category="mc",
   direction="l",
  },
- [0x0DF3]={
+ [0xDF3]={
   category="mc",
   direction="l",
  },
- [0x0DF4]={
+ [0xDF4]={
   category="po",
   direction="l",
  },
- [0x0E01]={
+ [0xE01]={
   category="lo",
   direction="l",
  },
- [0x0E02]={
+ [0xE02]={
   category="lo",
   direction="l",
  },
- [0x0E03]={
+ [0xE03]={
   category="lo",
   direction="l",
  },
- [0x0E04]={
+ [0xE04]={
   category="lo",
   direction="l",
  },
- [0x0E05]={
+ [0xE05]={
   category="lo",
   direction="l",
  },
- [0x0E06]={
+ [0xE06]={
   category="lo",
   direction="l",
  },
- [0x0E07]={
+ [0xE07]={
   category="lo",
   direction="l",
  },
- [0x0E08]={
+ [0xE08]={
   category="lo",
   direction="l",
  },
- [0x0E09]={
+ [0xE09]={
   category="lo",
   direction="l",
  },
- [0x0E0A]={
+ [0xE0A]={
   category="lo",
   direction="l",
  },
- [0x0E0B]={
+ [0xE0B]={
   category="lo",
   direction="l",
  },
- [0x0E0C]={
+ [0xE0C]={
   category="lo",
   direction="l",
  },
- [0x0E0D]={
+ [0xE0D]={
   category="lo",
   direction="l",
  },
- [0x0E0E]={
+ [0xE0E]={
   category="lo",
   direction="l",
  },
- [0x0E0F]={
+ [0xE0F]={
   category="lo",
   direction="l",
  },
- [0x0E10]={
+ [0xE10]={
   category="lo",
   direction="l",
  },
- [0x0E11]={
+ [0xE11]={
   category="lo",
   direction="l",
  },
- [0x0E12]={
+ [0xE12]={
   category="lo",
   direction="l",
  },
- [0x0E13]={
+ [0xE13]={
   category="lo",
   direction="l",
  },
- [0x0E14]={
+ [0xE14]={
   category="lo",
   direction="l",
  },
- [0x0E15]={
+ [0xE15]={
   category="lo",
   direction="l",
  },
- [0x0E16]={
+ [0xE16]={
   category="lo",
   direction="l",
  },
- [0x0E17]={
+ [0xE17]={
   category="lo",
   direction="l",
  },
- [0x0E18]={
+ [0xE18]={
   category="lo",
   direction="l",
  },
- [0x0E19]={
+ [0xE19]={
   category="lo",
   direction="l",
  },
- [0x0E1A]={
+ [0xE1A]={
   category="lo",
   direction="l",
  },
- [0x0E1B]={
+ [0xE1B]={
   category="lo",
   direction="l",
  },
- [0x0E1C]={
+ [0xE1C]={
   category="lo",
   direction="l",
  },
- [0x0E1D]={
+ [0xE1D]={
   category="lo",
   direction="l",
  },
- [0x0E1E]={
+ [0xE1E]={
   category="lo",
   direction="l",
  },
- [0x0E1F]={
+ [0xE1F]={
   category="lo",
   direction="l",
  },
- [0x0E20]={
+ [0xE20]={
   category="lo",
   direction="l",
  },
- [0x0E21]={
+ [0xE21]={
   category="lo",
   direction="l",
  },
- [0x0E22]={
+ [0xE22]={
   category="lo",
   direction="l",
  },
- [0x0E23]={
+ [0xE23]={
   category="lo",
   direction="l",
  },
- [0x0E24]={
+ [0xE24]={
   category="lo",
   direction="l",
  },
- [0x0E25]={
+ [0xE25]={
   category="lo",
   direction="l",
  },
- [0x0E26]={
+ [0xE26]={
   category="lo",
   direction="l",
  },
- [0x0E27]={
+ [0xE27]={
   category="lo",
   direction="l",
  },
- [0x0E28]={
+ [0xE28]={
   category="lo",
   direction="l",
  },
- [0x0E29]={
+ [0xE29]={
   category="lo",
   direction="l",
  },
- [0x0E2A]={
+ [0xE2A]={
   category="lo",
   direction="l",
  },
- [0x0E2B]={
+ [0xE2B]={
   category="lo",
   direction="l",
  },
- [0x0E2C]={
+ [0xE2C]={
   category="lo",
   direction="l",
  },
- [0x0E2D]={
+ [0xE2D]={
   category="lo",
   direction="l",
  },
- [0x0E2E]={
+ [0xE2E]={
   category="lo",
   direction="l",
  },
- [0x0E2F]={
+ [0xE2F]={
   category="lo",
   direction="l",
  },
- [0x0E30]={
+ [0xE30]={
   category="lo",
   direction="l",
  },
- [0x0E31]={
+ [0xE31]={
   category="mn",
   direction="nsm",
  },
- [0x0E32]={
+ [0xE32]={
   category="lo",
   direction="l",
  },
- [0x0E33]={
+ [0xE33]={
   category="lo",
   direction="l",
  },
- [0x0E34]={
+ [0xE34]={
   category="mn",
   direction="nsm",
  },
- [0x0E35]={
+ [0xE35]={
   category="mn",
   direction="nsm",
  },
- [0x0E36]={
+ [0xE36]={
   category="mn",
   direction="nsm",
  },
- [0x0E37]={
+ [0xE37]={
   category="mn",
   direction="nsm",
  },
- [0x0E38]={
+ [0xE38]={
   category="mn",
   direction="nsm",
  },
- [0x0E39]={
+ [0xE39]={
   category="mn",
   direction="nsm",
  },
- [0x0E3A]={
+ [0xE3A]={
   category="mn",
   direction="nsm",
  },
- [0x0E3F]={
+ [0xE3F]={
   category="sc",
   direction="et",
  },
- [0x0E40]={
+ [0xE40]={
   category="lo",
   direction="l",
  },
- [0x0E41]={
+ [0xE41]={
   category="lo",
   direction="l",
  },
- [0x0E42]={
+ [0xE42]={
   category="lo",
   direction="l",
  },
- [0x0E43]={
+ [0xE43]={
   category="lo",
   direction="l",
  },
- [0x0E44]={
+ [0xE44]={
   category="lo",
   direction="l",
  },
- [0x0E45]={
+ [0xE45]={
   category="lo",
   direction="l",
  },
- [0x0E46]={
+ [0xE46]={
   category="lm",
   direction="l",
  },
- [0x0E47]={
+ [0xE47]={
   category="mn",
   direction="nsm",
  },
- [0x0E48]={
+ [0xE48]={
   category="mn",
   direction="nsm",
  },
- [0x0E49]={
+ [0xE49]={
   category="mn",
   direction="nsm",
  },
- [0x0E4A]={
+ [0xE4A]={
   category="mn",
   direction="nsm",
  },
- [0x0E4B]={
+ [0xE4B]={
   category="mn",
   direction="nsm",
  },
- [0x0E4C]={
+ [0xE4C]={
   category="mn",
   direction="nsm",
  },
- [0x0E4D]={
+ [0xE4D]={
   category="mn",
   direction="nsm",
  },
- [0x0E4E]={
+ [0xE4E]={
   category="mn",
   direction="nsm",
  },
- [0x0E4F]={
+ [0xE4F]={
   category="po",
   direction="l",
  },
- [0x0E50]={
+ [0xE50]={
   category="nd",
   direction="l",
  },
- [0x0E51]={
+ [0xE51]={
   category="nd",
   direction="l",
  },
- [0x0E52]={
+ [0xE52]={
   category="nd",
   direction="l",
  },
- [0x0E53]={
+ [0xE53]={
   category="nd",
   direction="l",
  },
- [0x0E54]={
+ [0xE54]={
   category="nd",
   direction="l",
  },
- [0x0E55]={
+ [0xE55]={
   category="nd",
   direction="l",
  },
- [0x0E56]={
+ [0xE56]={
   category="nd",
   direction="l",
  },
- [0x0E57]={
+ [0xE57]={
   category="nd",
   direction="l",
  },
- [0x0E58]={
+ [0xE58]={
   category="nd",
   direction="l",
  },
- [0x0E59]={
+ [0xE59]={
   category="nd",
   direction="l",
  },
- [0x0E5A]={
+ [0xE5A]={
   category="po",
   direction="l",
  },
- [0x0E5B]={
+ [0xE5B]={
   category="po",
   direction="l",
  },
- [0x0E81]={
+ [0xE81]={
   category="lo",
   direction="l",
  },
- [0x0E82]={
+ [0xE82]={
   category="lo",
   direction="l",
  },
- [0x0E84]={
+ [0xE84]={
   category="lo",
   direction="l",
  },
- [0x0E87]={
+ [0xE87]={
   category="lo",
   direction="l",
  },
- [0x0E88]={
+ [0xE88]={
   category="lo",
   direction="l",
  },
- [0x0E8A]={
+ [0xE8A]={
   category="lo",
   direction="l",
  },
- [0x0E8D]={
+ [0xE8D]={
   category="lo",
   direction="l",
  },
- [0x0E94]={
+ [0xE94]={
   category="lo",
   direction="l",
  },
- [0x0E95]={
+ [0xE95]={
   category="lo",
   direction="l",
  },
- [0x0E96]={
+ [0xE96]={
   category="lo",
   direction="l",
  },
- [0x0E97]={
+ [0xE97]={
   category="lo",
   direction="l",
  },
- [0x0E99]={
+ [0xE99]={
   category="lo",
   direction="l",
  },
- [0x0E9A]={
+ [0xE9A]={
   category="lo",
   direction="l",
  },
- [0x0E9B]={
+ [0xE9B]={
   category="lo",
   direction="l",
  },
- [0x0E9C]={
+ [0xE9C]={
   category="lo",
   direction="l",
  },
- [0x0E9D]={
+ [0xE9D]={
   category="lo",
   direction="l",
  },
- [0x0E9E]={
+ [0xE9E]={
   category="lo",
   direction="l",
  },
- [0x0E9F]={
+ [0xE9F]={
   category="lo",
   direction="l",
  },
- [0x0EA1]={
+ [0xEA1]={
   category="lo",
   direction="l",
  },
- [0x0EA2]={
+ [0xEA2]={
   category="lo",
   direction="l",
  },
- [0x0EA3]={
+ [0xEA3]={
   category="lo",
   direction="l",
  },
- [0x0EA5]={
+ [0xEA5]={
   category="lo",
   direction="l",
  },
- [0x0EA7]={
+ [0xEA7]={
   category="lo",
   direction="l",
  },
- [0x0EAA]={
+ [0xEAA]={
   category="lo",
   direction="l",
  },
- [0x0EAB]={
+ [0xEAB]={
   category="lo",
   direction="l",
  },
- [0x0EAD]={
+ [0xEAD]={
   category="lo",
   direction="l",
  },
- [0x0EAE]={
+ [0xEAE]={
   category="lo",
   direction="l",
  },
- [0x0EAF]={
+ [0xEAF]={
   category="lo",
   direction="l",
  },
- [0x0EB0]={
+ [0xEB0]={
   category="lo",
   direction="l",
  },
- [0x0EB1]={
+ [0xEB1]={
   category="mn",
   direction="nsm",
  },
- [0x0EB2]={
+ [0xEB2]={
   category="lo",
   direction="l",
  },
- [0x0EB3]={
+ [0xEB3]={
   category="lo",
   direction="l",
  },
- [0x0EB4]={
+ [0xEB4]={
   category="mn",
   direction="nsm",
  },
- [0x0EB5]={
+ [0xEB5]={
   category="mn",
   direction="nsm",
  },
- [0x0EB6]={
+ [0xEB6]={
   category="mn",
   direction="nsm",
  },
- [0x0EB7]={
+ [0xEB7]={
   category="mn",
   direction="nsm",
  },
- [0x0EB8]={
+ [0xEB8]={
   category="mn",
   direction="nsm",
  },
- [0x0EB9]={
+ [0xEB9]={
   category="mn",
   direction="nsm",
  },
- [0x0EBB]={
+ [0xEBB]={
   category="mn",
   direction="nsm",
  },
- [0x0EBC]={
+ [0xEBC]={
   category="mn",
   direction="nsm",
  },
- [0x0EBD]={
+ [0xEBD]={
   category="lo",
   direction="l",
  },
- [0x0EC0]={
+ [0xEC0]={
   category="lo",
   direction="l",
  },
- [0x0EC1]={
+ [0xEC1]={
   category="lo",
   direction="l",
  },
- [0x0EC2]={
+ [0xEC2]={
   category="lo",
   direction="l",
  },
- [0x0EC3]={
+ [0xEC3]={
   category="lo",
   direction="l",
  },
- [0x0EC4]={
+ [0xEC4]={
   category="lo",
   direction="l",
  },
- [0x0EC6]={
+ [0xEC6]={
   category="lm",
   direction="l",
  },
- [0x0EC8]={
+ [0xEC8]={
   category="mn",
   direction="nsm",
  },
- [0x0EC9]={
+ [0xEC9]={
   category="mn",
   direction="nsm",
  },
- [0x0ECA]={
+ [0xECA]={
   category="mn",
   direction="nsm",
  },
- [0x0ECB]={
+ [0xECB]={
   category="mn",
   direction="nsm",
  },
- [0x0ECC]={
+ [0xECC]={
   category="mn",
   direction="nsm",
  },
- [0x0ECD]={
+ [0xECD]={
   category="mn",
   direction="nsm",
  },
- [0x0ED0]={
+ [0xED0]={
   category="nd",
   direction="l",
  },
- [0x0ED1]={
+ [0xED1]={
   category="nd",
   direction="l",
  },
- [0x0ED2]={
+ [0xED2]={
   category="nd",
   direction="l",
  },
- [0x0ED3]={
+ [0xED3]={
   category="nd",
   direction="l",
  },
- [0x0ED4]={
+ [0xED4]={
   category="nd",
   direction="l",
  },
- [0x0ED5]={
+ [0xED5]={
   category="nd",
   direction="l",
  },
- [0x0ED6]={
+ [0xED6]={
   category="nd",
   direction="l",
  },
- [0x0ED7]={
+ [0xED7]={
   category="nd",
   direction="l",
  },
- [0x0ED8]={
+ [0xED8]={
   category="nd",
   direction="l",
  },
- [0x0ED9]={
+ [0xED9]={
   category="nd",
   direction="l",
  },
- [0x0EDC]={
+ [0xEDC]={
   category="lo",
   direction="l",
  },
- [0x0EDD]={
+ [0xEDD]={
   category="lo",
   direction="l",
  },
- [0x0EDE]={
+ [0xEDE]={
   category="lo",
   direction="l",
  },
- [0x0EDF]={
+ [0xEDF]={
   category="lo",
   direction="l",
  },
- [0x0F00]={
+ [0xF00]={
   category="lo",
   direction="l",
  },
- [0x0F01]={
+ [0xF01]={
   category="so",
   direction="l",
  },
- [0x0F02]={
+ [0xF02]={
   category="so",
   direction="l",
  },
- [0x0F03]={
+ [0xF03]={
   category="so",
   direction="l",
  },
- [0x0F04]={
+ [0xF04]={
   category="po",
   direction="l",
  },
- [0x0F05]={
+ [0xF05]={
   category="po",
   direction="l",
  },
- [0x0F06]={
+ [0xF06]={
   category="po",
   direction="l",
  },
- [0x0F07]={
+ [0xF07]={
   category="po",
   direction="l",
  },
- [0x0F08]={
+ [0xF08]={
   category="po",
   direction="l",
  },
- [0x0F09]={
+ [0xF09]={
   category="po",
   direction="l",
  },
- [0x0F0A]={
+ [0xF0A]={
   category="po",
   direction="l",
  },
- [0x0F0B]={
+ [0xF0B]={
   category="po",
   direction="l",
  },
- [0x0F0C]={
+ [0xF0C]={
   category="po",
   direction="l",
  },
- [0x0F0D]={
+ [0xF0D]={
   category="po",
   direction="l",
  },
- [0x0F0E]={
+ [0xF0E]={
   category="po",
   direction="l",
  },
- [0x0F0F]={
+ [0xF0F]={
   category="po",
   direction="l",
  },
- [0x0F10]={
+ [0xF10]={
   category="po",
   direction="l",
  },
- [0x0F11]={
+ [0xF11]={
   category="po",
   direction="l",
  },
- [0x0F12]={
+ [0xF12]={
   category="po",
   direction="l",
  },
- [0x0F13]={
+ [0xF13]={
   category="so",
   direction="l",
  },
- [0x0F14]={
+ [0xF14]={
   category="so",
   direction="l",
  },
- [0x0F15]={
+ [0xF15]={
   category="so",
   direction="l",
  },
- [0x0F16]={
+ [0xF16]={
   category="so",
   direction="l",
  },
- [0x0F17]={
+ [0xF17]={
   category="so",
   direction="l",
  },
- [0x0F18]={
+ [0xF18]={
   category="mn",
   direction="nsm",
  },
- [0x0F19]={
+ [0xF19]={
   category="mn",
   direction="nsm",
  },
- [0x0F1A]={
+ [0xF1A]={
   category="so",
   direction="l",
  },
- [0x0F1B]={
+ [0xF1B]={
   category="so",
   direction="l",
  },
- [0x0F1C]={
+ [0xF1C]={
   category="so",
   direction="l",
  },
- [0x0F1D]={
+ [0xF1D]={
   category="so",
   direction="l",
  },
- [0x0F1E]={
+ [0xF1E]={
   category="so",
   direction="l",
  },
- [0x0F1F]={
+ [0xF1F]={
   category="so",
   direction="l",
  },
- [0x0F20]={
+ [0xF20]={
   category="nd",
   direction="l",
  },
- [0x0F21]={
+ [0xF21]={
   category="nd",
   direction="l",
  },
- [0x0F22]={
+ [0xF22]={
   category="nd",
   direction="l",
  },
- [0x0F23]={
+ [0xF23]={
   category="nd",
   direction="l",
  },
- [0x0F24]={
+ [0xF24]={
   category="nd",
   direction="l",
  },
- [0x0F25]={
+ [0xF25]={
   category="nd",
   direction="l",
  },
- [0x0F26]={
+ [0xF26]={
   category="nd",
   direction="l",
  },
- [0x0F27]={
+ [0xF27]={
   category="nd",
   direction="l",
  },
- [0x0F28]={
+ [0xF28]={
   category="nd",
   direction="l",
  },
- [0x0F29]={
+ [0xF29]={
   category="nd",
   direction="l",
  },
- [0x0F2A]={
+ [0xF2A]={
   category="no",
   direction="l",
  },
- [0x0F2B]={
+ [0xF2B]={
   category="no",
   direction="l",
  },
- [0x0F2C]={
+ [0xF2C]={
   category="no",
   direction="l",
  },
- [0x0F2D]={
+ [0xF2D]={
   category="no",
   direction="l",
  },
- [0x0F2E]={
+ [0xF2E]={
   category="no",
   direction="l",
  },
- [0x0F2F]={
+ [0xF2F]={
   category="no",
   direction="l",
  },
- [0x0F30]={
+ [0xF30]={
   category="no",
   direction="l",
  },
- [0x0F31]={
+ [0xF31]={
   category="no",
   direction="l",
  },
- [0x0F32]={
+ [0xF32]={
   category="no",
   direction="l",
  },
- [0x0F33]={
+ [0xF33]={
   category="no",
   direction="l",
  },
- [0x0F34]={
+ [0xF34]={
   category="so",
   direction="l",
  },
- [0x0F35]={
+ [0xF35]={
   category="mn",
   direction="nsm",
  },
- [0x0F36]={
+ [0xF36]={
   category="so",
   direction="l",
  },
- [0x0F37]={
+ [0xF37]={
   category="mn",
   direction="nsm",
  },
- [0x0F38]={
+ [0xF38]={
   category="so",
   direction="l",
  },
- [0x0F39]={
+ [0xF39]={
   category="mn",
   direction="nsm",
  },
- [0x0F3A]={
+ [0xF3A]={
   category="ps",
   direction="on",
-  mirror=0x0F3B,
+  mirror=0xF3B,
  },
- [0x0F3B]={
+ [0xF3B]={
   category="pe",
   direction="on",
-  mirror=0x0F3A,
+  mirror=0xF3A,
  },
- [0x0F3C]={
+ [0xF3C]={
   category="ps",
   direction="on",
-  mirror=0x0F3D,
+  mirror=0xF3D,
  },
- [0x0F3D]={
+ [0xF3D]={
   category="pe",
   direction="on",
-  mirror=0x0F3C,
+  mirror=0xF3C,
  },
- [0x0F3E]={
+ [0xF3E]={
   category="mc",
   direction="l",
  },
- [0x0F3F]={
+ [0xF3F]={
   category="mc",
   direction="l",
  },
- [0x0F40]={
+ [0xF40]={
   category="lo",
   direction="l",
  },
- [0x0F41]={
+ [0xF41]={
   category="lo",
   direction="l",
  },
- [0x0F42]={
+ [0xF42]={
   category="lo",
   direction="l",
  },
- [0x0F43]={
+ [0xF43]={
   category="lo",
   direction="l",
  },
- [0x0F44]={
+ [0xF44]={
   category="lo",
   direction="l",
  },
- [0x0F45]={
+ [0xF45]={
   category="lo",
   direction="l",
  },
- [0x0F46]={
+ [0xF46]={
   category="lo",
   direction="l",
  },
- [0x0F47]={
+ [0xF47]={
   category="lo",
   direction="l",
  },
- [0x0F49]={
+ [0xF49]={
   category="lo",
   direction="l",
  },
- [0x0F4A]={
+ [0xF4A]={
   category="lo",
   direction="l",
  },
- [0x0F4B]={
+ [0xF4B]={
   category="lo",
   direction="l",
  },
- [0x0F4C]={
+ [0xF4C]={
   category="lo",
   direction="l",
  },
- [0x0F4D]={
+ [0xF4D]={
   category="lo",
   direction="l",
  },
- [0x0F4E]={
+ [0xF4E]={
   category="lo",
   direction="l",
  },
- [0x0F4F]={
+ [0xF4F]={
   category="lo",
   direction="l",
  },
- [0x0F50]={
+ [0xF50]={
   category="lo",
   direction="l",
  },
- [0x0F51]={
+ [0xF51]={
   category="lo",
   direction="l",
  },
- [0x0F52]={
+ [0xF52]={
   category="lo",
   direction="l",
  },
- [0x0F53]={
+ [0xF53]={
   category="lo",
   direction="l",
  },
- [0x0F54]={
+ [0xF54]={
   category="lo",
   direction="l",
  },
- [0x0F55]={
+ [0xF55]={
   category="lo",
   direction="l",
  },
- [0x0F56]={
+ [0xF56]={
   category="lo",
   direction="l",
  },
- [0x0F57]={
+ [0xF57]={
   category="lo",
   direction="l",
  },
- [0x0F58]={
+ [0xF58]={
   category="lo",
   direction="l",
  },
- [0x0F59]={
+ [0xF59]={
   category="lo",
   direction="l",
  },
- [0x0F5A]={
+ [0xF5A]={
   category="lo",
   direction="l",
  },
- [0x0F5B]={
+ [0xF5B]={
   category="lo",
   direction="l",
  },
- [0x0F5C]={
+ [0xF5C]={
   category="lo",
   direction="l",
  },
- [0x0F5D]={
+ [0xF5D]={
   category="lo",
   direction="l",
  },
- [0x0F5E]={
+ [0xF5E]={
   category="lo",
   direction="l",
  },
- [0x0F5F]={
+ [0xF5F]={
   category="lo",
   direction="l",
  },
- [0x0F60]={
+ [0xF60]={
   category="lo",
   direction="l",
  },
- [0x0F61]={
+ [0xF61]={
   category="lo",
   direction="l",
  },
- [0x0F62]={
+ [0xF62]={
   category="lo",
   direction="l",
  },
- [0x0F63]={
+ [0xF63]={
   category="lo",
   direction="l",
  },
- [0x0F64]={
+ [0xF64]={
   category="lo",
   direction="l",
  },
- [0x0F65]={
+ [0xF65]={
   category="lo",
   direction="l",
  },
- [0x0F66]={
+ [0xF66]={
   category="lo",
   direction="l",
  },
- [0x0F67]={
+ [0xF67]={
   category="lo",
   direction="l",
  },
- [0x0F68]={
+ [0xF68]={
   category="lo",
   direction="l",
  },
- [0x0F69]={
+ [0xF69]={
   category="lo",
   direction="l",
  },
- [0x0F6A]={
+ [0xF6A]={
   category="lo",
   direction="l",
  },
- [0x0F6B]={
+ [0xF6B]={
   category="lo",
   direction="l",
  },
- [0x0F6C]={
+ [0xF6C]={
   category="lo",
   direction="l",
  },
- [0x0F71]={
+ [0xF71]={
   category="mn",
   direction="nsm",
  },
- [0x0F72]={
+ [0xF72]={
   category="mn",
   direction="nsm",
  },
- [0x0F73]={
+ [0xF73]={
   category="mn",
   direction="nsm",
  },
- [0x0F74]={
+ [0xF74]={
   category="mn",
   direction="nsm",
  },
- [0x0F75]={
+ [0xF75]={
   category="mn",
   direction="nsm",
  },
- [0x0F76]={
+ [0xF76]={
   category="mn",
   direction="nsm",
  },
- [0x0F77]={
+ [0xF77]={
   category="mn",
   direction="nsm",
  },
- [0x0F78]={
+ [0xF78]={
   category="mn",
   direction="nsm",
  },
- [0x0F79]={
+ [0xF79]={
   category="mn",
   direction="nsm",
  },
- [0x0F7A]={
+ [0xF7A]={
   category="mn",
   direction="nsm",
  },
- [0x0F7B]={
+ [0xF7B]={
   category="mn",
   direction="nsm",
  },
- [0x0F7C]={
+ [0xF7C]={
   category="mn",
   direction="nsm",
  },
- [0x0F7D]={
+ [0xF7D]={
   category="mn",
   direction="nsm",
  },
- [0x0F7E]={
+ [0xF7E]={
   category="mn",
   direction="nsm",
  },
- [0x0F7F]={
+ [0xF7F]={
   category="mc",
   direction="l",
  },
- [0x0F80]={
+ [0xF80]={
   category="mn",
   direction="nsm",
  },
- [0x0F81]={
+ [0xF81]={
   category="mn",
   direction="nsm",
  },
- [0x0F82]={
+ [0xF82]={
   category="mn",
   direction="nsm",
  },
- [0x0F83]={
+ [0xF83]={
   category="mn",
   direction="nsm",
  },
- [0x0F84]={
+ [0xF84]={
   category="mn",
   direction="nsm",
  },
- [0x0F85]={
+ [0xF85]={
   category="po",
   direction="l",
  },
- [0x0F86]={
+ [0xF86]={
   category="mn",
   direction="nsm",
  },
- [0x0F87]={
+ [0xF87]={
   category="mn",
   direction="nsm",
  },
- [0x0F88]={
+ [0xF88]={
   category="lo",
   direction="l",
  },
- [0x0F89]={
+ [0xF89]={
   category="lo",
   direction="l",
  },
- [0x0F8A]={
+ [0xF8A]={
   category="lo",
   direction="l",
  },
- [0x0F8B]={
+ [0xF8B]={
   category="lo",
   direction="l",
  },
- [0x0F8C]={
+ [0xF8C]={
   category="lo",
   direction="l",
  },
- [0x0F8D]={
+ [0xF8D]={
   category="mn",
   direction="nsm",
  },
- [0x0F8E]={
+ [0xF8E]={
   category="mn",
   direction="nsm",
  },
- [0x0F8F]={
+ [0xF8F]={
   category="mn",
   direction="nsm",
  },
- [0x0F90]={
+ [0xF90]={
   category="mn",
   direction="nsm",
  },
- [0x0F91]={
+ [0xF91]={
   category="mn",
   direction="nsm",
  },
- [0x0F92]={
+ [0xF92]={
   category="mn",
   direction="nsm",
  },
- [0x0F93]={
+ [0xF93]={
   category="mn",
   direction="nsm",
  },
- [0x0F94]={
+ [0xF94]={
   category="mn",
   direction="nsm",
  },
- [0x0F95]={
+ [0xF95]={
   category="mn",
   direction="nsm",
  },
- [0x0F96]={
+ [0xF96]={
   category="mn",
   direction="nsm",
  },
- [0x0F97]={
+ [0xF97]={
   category="mn",
   direction="nsm",
  },
- [0x0F99]={
+ [0xF99]={
   category="mn",
   direction="nsm",
  },
- [0x0F9A]={
+ [0xF9A]={
   category="mn",
   direction="nsm",
  },
- [0x0F9B]={
+ [0xF9B]={
   category="mn",
   direction="nsm",
  },
- [0x0F9C]={
+ [0xF9C]={
   category="mn",
   direction="nsm",
  },
- [0x0F9D]={
+ [0xF9D]={
   category="mn",
   direction="nsm",
  },
- [0x0F9E]={
+ [0xF9E]={
   category="mn",
   direction="nsm",
  },
- [0x0F9F]={
+ [0xF9F]={
   category="mn",
   direction="nsm",
  },
- [0x0FA0]={
+ [0xFA0]={
   category="mn",
   direction="nsm",
  },
- [0x0FA1]={
+ [0xFA1]={
   category="mn",
   direction="nsm",
  },
- [0x0FA2]={
+ [0xFA2]={
   category="mn",
   direction="nsm",
  },
- [0x0FA3]={
+ [0xFA3]={
   category="mn",
   direction="nsm",
  },
- [0x0FA4]={
+ [0xFA4]={
   category="mn",
   direction="nsm",
  },
- [0x0FA5]={
+ [0xFA5]={
   category="mn",
   direction="nsm",
  },
- [0x0FA6]={
+ [0xFA6]={
   category="mn",
   direction="nsm",
  },
- [0x0FA7]={
+ [0xFA7]={
   category="mn",
   direction="nsm",
  },
- [0x0FA8]={
+ [0xFA8]={
   category="mn",
   direction="nsm",
  },
- [0x0FA9]={
+ [0xFA9]={
   category="mn",
   direction="nsm",
  },
- [0x0FAA]={
+ [0xFAA]={
   category="mn",
   direction="nsm",
  },
- [0x0FAB]={
+ [0xFAB]={
   category="mn",
   direction="nsm",
  },
- [0x0FAC]={
+ [0xFAC]={
   category="mn",
   direction="nsm",
  },
- [0x0FAD]={
+ [0xFAD]={
   category="mn",
   direction="nsm",
  },
- [0x0FAE]={
+ [0xFAE]={
   category="mn",
   direction="nsm",
  },
- [0x0FAF]={
+ [0xFAF]={
   category="mn",
   direction="nsm",
  },
- [0x0FB0]={
+ [0xFB0]={
   category="mn",
   direction="nsm",
  },
- [0x0FB1]={
+ [0xFB1]={
   category="mn",
   direction="nsm",
  },
- [0x0FB2]={
+ [0xFB2]={
   category="mn",
   direction="nsm",
  },
- [0x0FB3]={
+ [0xFB3]={
   category="mn",
   direction="nsm",
  },
- [0x0FB4]={
+ [0xFB4]={
   category="mn",
   direction="nsm",
  },
- [0x0FB5]={
+ [0xFB5]={
   category="mn",
   direction="nsm",
  },
- [0x0FB6]={
+ [0xFB6]={
   category="mn",
   direction="nsm",
  },
- [0x0FB7]={
+ [0xFB7]={
   category="mn",
   direction="nsm",
  },
- [0x0FB8]={
+ [0xFB8]={
   category="mn",
   direction="nsm",
  },
- [0x0FB9]={
+ [0xFB9]={
   category="mn",
   direction="nsm",
  },
- [0x0FBA]={
+ [0xFBA]={
   category="mn",
   direction="nsm",
  },
- [0x0FBB]={
+ [0xFBB]={
   category="mn",
   direction="nsm",
  },
- [0x0FBC]={
+ [0xFBC]={
   category="mn",
   direction="nsm",
  },
- [0x0FBE]={
+ [0xFBE]={
   category="so",
   direction="l",
  },
- [0x0FBF]={
+ [0xFBF]={
   category="so",
   direction="l",
  },
- [0x0FC0]={
+ [0xFC0]={
   category="so",
   direction="l",
  },
- [0x0FC1]={
+ [0xFC1]={
   category="so",
   direction="l",
  },
- [0x0FC2]={
+ [0xFC2]={
   category="so",
   direction="l",
  },
- [0x0FC3]={
+ [0xFC3]={
   category="so",
   direction="l",
  },
- [0x0FC4]={
+ [0xFC4]={
   category="so",
   direction="l",
  },
- [0x0FC5]={
+ [0xFC5]={
   category="so",
   direction="l",
  },
- [0x0FC6]={
+ [0xFC6]={
   category="mn",
   direction="nsm",
  },
- [0x0FC7]={
+ [0xFC7]={
   category="so",
   direction="l",
  },
- [0x0FC8]={
+ [0xFC8]={
   category="so",
   direction="l",
  },
- [0x0FC9]={
+ [0xFC9]={
   category="so",
   direction="l",
  },
- [0x0FCA]={
+ [0xFCA]={
   category="so",
   direction="l",
  },
- [0x0FCB]={
+ [0xFCB]={
   category="so",
   direction="l",
  },
- [0x0FCC]={
+ [0xFCC]={
   category="so",
   direction="l",
  },
- [0x0FCE]={
+ [0xFCE]={
   category="so",
   direction="l",
  },
- [0x0FCF]={
+ [0xFCF]={
   category="so",
   direction="l",
  },
- [0x0FD0]={
+ [0xFD0]={
   category="po",
   direction="l",
  },
- [0x0FD1]={
+ [0xFD1]={
   category="po",
   direction="l",
  },
- [0x0FD2]={
+ [0xFD2]={
   category="po",
   direction="l",
  },
- [0x0FD3]={
+ [0xFD3]={
   category="po",
   direction="l",
  },
- [0x0FD4]={
+ [0xFD4]={
   category="po",
   direction="l",
  },
- [0x0FD5]={
+ [0xFD5]={
   category="so",
   direction="l",
  },
- [0x0FD6]={
+ [0xFD6]={
   category="so",
   direction="l",
  },
- [0x0FD7]={
+ [0xFD7]={
   category="so",
   direction="l",
  },
- [0x0FD8]={
+ [0xFD8]={
   category="so",
   direction="l",
  },
- [0x0FD9]={
+ [0xFD9]={
   category="po",
   direction="l",
  },
- [0x0FDA]={
+ [0xFDA]={
   category="po",
   direction="l",
  },
@@ -20371,6 +20529,38 @@ return {
   category="nl",
   direction="l",
  },
+ [0x16F1]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F2]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F3]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F4]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F5]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F6]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F7]={
+  category="lo",
+  direction="l",
+ },
+ [0x16F8]={
+  category="lo",
+  direction="l",
+ },
  [0x1700]={
   category="lo",
   direction="l",
@@ -21209,7 +21399,7 @@ return {
  },
  [0x180E]={
   category="zs",
-  direction="ws",
+  direction="bn",
  },
  [0x1810]={
   category="nd",
@@ -22171,6 +22361,14 @@ return {
   category="lo",
   direction="l",
  },
+ [0x191D]={
+  category="lo",
+  direction="l",
+ },
+ [0x191E]={
+  category="lo",
+  direction="l",
+ },
  [0x1920]={
   category="mn",
   direction="nsm",
@@ -23029,7 +23227,7 @@ return {
  },
  [0x1A1B]={
   category="mc",
-  direction="l",
+  direction="nsm",
  },
  [0x1A1E]={
   category="po",
@@ -23546,6 +23744,66 @@ return {
  [0x1AAD]={
   category="po",
   direction="l",
+ },
+ [0x1AB0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB1]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB6]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB7]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB8]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1AB9]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1ABA]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1ABB]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1ABC]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1ABD]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1ABE]={
+  category="me",
+  direction="nsm",
  },
  [0x1B00]={
   category="mn",
@@ -24209,11 +24467,11 @@ return {
  },
  [0x1BAC]={
   category="mc",
-  direction="l",
+  direction="nsm",
  },
  [0x1BAD]={
   category="mc",
-  direction="l",
+  direction="nsm",
  },
  [0x1BAE]={
   category="lo",
@@ -25187,6 +25445,14 @@ return {
   category="lo",
   direction="l",
  },
+ [0x1CF8]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1CF9]={
+  category="mn",
+  direction="nsm",
+ },
  [0x1D00]={
   category="ll",
   direction="l",
@@ -26108,6 +26374,66 @@ return {
   direction="nsm",
  },
  [0x1DE6]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DE7]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DE8]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DE9]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DEA]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DEB]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DEC]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DED]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DEE]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DEF]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF1]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1DF5]={
   category="mn",
   direction="nsm",
  },
@@ -28315,11 +28641,13 @@ return {
   category="pi",
   direction="on",
   mirror=0x203A,
+  textclass="open",
  },
  [0x203A]={
   category="pf",
   direction="on",
   mirror=0x2039,
+  textclass="close",
  },
  [0x203B]={
   category="po",
@@ -28491,6 +28819,22 @@ return {
   category="cf",
   direction="bn",
  },
+ [0x2066]={
+  category="cf",
+  direction="lri",
+ },
+ [0x2067]={
+  category="cf",
+  direction="rli",
+ },
+ [0x2068]={
+  category="cf",
+  direction="fsi",
+ },
+ [0x2069]={
+  category="cf",
+  direction="pdi",
+ },
  [0x206A]={
   category="cf",
   direction="bn",
@@ -28563,11 +28907,13 @@ return {
   category="ps",
   direction="on",
   mirror=0x207E,
+  textclass="open",
  },
  [0x207E]={
   category="pe",
   direction="on",
   mirror=0x207D,
+  textclass="close",
  },
  [0x207F]={
   category="ll",
@@ -28629,11 +28975,13 @@ return {
   category="ps",
   direction="on",
   mirror=0x208E,
+  textclass="open",
  },
  [0x208E]={
   category="pe",
   direction="on",
   mirror=0x208D,
+  textclass="close",
  },
  [0x2090]={
   category="lm",
@@ -28792,6 +29140,18 @@ return {
   direction="et",
  },
  [0x20BA]={
+  category="sc",
+  direction="et",
+ },
+ [0x20BB]={
+  category="sc",
+  direction="et",
+ },
+ [0x20BC]={
+  category="sc",
+  direction="et",
+ },
+ [0x20BD]={
   category="sc",
   direction="et",
  },
@@ -32047,6 +32407,34 @@ return {
   category="so",
   direction="on",
  },
+ [0x23F4]={
+  category="so",
+  direction="on",
+ },
+ [0x23F5]={
+  category="so",
+  direction="on",
+ },
+ [0x23F6]={
+  category="so",
+  direction="on",
+ },
+ [0x23F7]={
+  category="so",
+  direction="on",
+ },
+ [0x23F8]={
+  category="so",
+  direction="on",
+ },
+ [0x23F9]={
+  category="so",
+  direction="on",
+ },
+ [0x23FA]={
+  category="so",
+  direction="on",
+ },
  [0x2400]={
   category="so",
   direction="on",
@@ -34932,6 +35320,10 @@ return {
   direction="on",
  },
  [0x26FF]={
+  category="so",
+  direction="on",
+ },
+ [0x2700]={
   category="so",
   direction="on",
  },
@@ -39497,6 +39889,18 @@ return {
   category="sm",
   direction="on",
  },
+ [0x2B4D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B4E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B4F]={
+  category="so",
+  direction="on",
+ },
  [0x2B50]={
   category="so",
   direction="on",
@@ -39534,6 +39938,454 @@ return {
   direction="on",
  },
  [0x2B59]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5A]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5B]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5C]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B5F]={
+  category="so",
+  direction="on",
+ },
+ [0x2B60]={
+  category="so",
+  direction="on",
+ },
+ [0x2B61]={
+  category="so",
+  direction="on",
+ },
+ [0x2B62]={
+  category="so",
+  direction="on",
+ },
+ [0x2B63]={
+  category="so",
+  direction="on",
+ },
+ [0x2B64]={
+  category="so",
+  direction="on",
+ },
+ [0x2B65]={
+  category="so",
+  direction="on",
+ },
+ [0x2B66]={
+  category="so",
+  direction="on",
+ },
+ [0x2B67]={
+  category="so",
+  direction="on",
+ },
+ [0x2B68]={
+  category="so",
+  direction="on",
+ },
+ [0x2B69]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6A]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6B]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6C]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B6F]={
+  category="so",
+  direction="on",
+ },
+ [0x2B70]={
+  category="so",
+  direction="on",
+ },
+ [0x2B71]={
+  category="so",
+  direction="on",
+ },
+ [0x2B72]={
+  category="so",
+  direction="on",
+ },
+ [0x2B73]={
+  category="so",
+  direction="on",
+ },
+ [0x2B76]={
+  category="so",
+  direction="on",
+ },
+ [0x2B77]={
+  category="so",
+  direction="on",
+ },
+ [0x2B78]={
+  category="so",
+  direction="on",
+ },
+ [0x2B79]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7A]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7B]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7C]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B7F]={
+  category="so",
+  direction="on",
+ },
+ [0x2B80]={
+  category="so",
+  direction="on",
+ },
+ [0x2B81]={
+  category="so",
+  direction="on",
+ },
+ [0x2B82]={
+  category="so",
+  direction="on",
+ },
+ [0x2B83]={
+  category="so",
+  direction="on",
+ },
+ [0x2B84]={
+  category="so",
+  direction="on",
+ },
+ [0x2B85]={
+  category="so",
+  direction="on",
+ },
+ [0x2B86]={
+  category="so",
+  direction="on",
+ },
+ [0x2B87]={
+  category="so",
+  direction="on",
+ },
+ [0x2B88]={
+  category="so",
+  direction="on",
+ },
+ [0x2B89]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8A]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8B]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8C]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B8F]={
+  category="so",
+  direction="on",
+ },
+ [0x2B90]={
+  category="so",
+  direction="on",
+ },
+ [0x2B91]={
+  category="so",
+  direction="on",
+ },
+ [0x2B92]={
+  category="so",
+  direction="on",
+ },
+ [0x2B93]={
+  category="so",
+  direction="on",
+ },
+ [0x2B94]={
+  category="so",
+  direction="on",
+ },
+ [0x2B95]={
+  category="so",
+  direction="on",
+ },
+ [0x2B98]={
+  category="so",
+  direction="on",
+ },
+ [0x2B99]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9A]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9B]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9C]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9D]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9E]={
+  category="so",
+  direction="on",
+ },
+ [0x2B9F]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA0]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA1]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA2]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA3]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA4]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA5]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA6]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA7]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA8]={
+  category="so",
+  direction="on",
+ },
+ [0x2BA9]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAA]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAB]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAC]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAD]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAE]={
+  category="so",
+  direction="on",
+ },
+ [0x2BAF]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB0]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB1]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB2]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB3]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB4]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB5]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB6]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB7]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB8]={
+  category="so",
+  direction="on",
+ },
+ [0x2BB9]={
+  category="so",
+  direction="on",
+ },
+ [0x2BBD]={
+  category="so",
+  direction="on",
+ },
+ [0x2BBE]={
+  category="so",
+  direction="on",
+ },
+ [0x2BBF]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC0]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC1]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC2]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC3]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC4]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC5]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC6]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC7]={
+  category="so",
+  direction="on",
+ },
+ [0x2BC8]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCA]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCB]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCC]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCD]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCE]={
+  category="so",
+  direction="on",
+ },
+ [0x2BCF]={
+  category="so",
+  direction="on",
+ },
+ [0x2BD0]={
+  category="so",
+  direction="on",
+ },
+ [0x2BD1]={
   category="so",
   direction="on",
  },
@@ -41631,6 +42483,34 @@ return {
  },
  [0x2E3B]={
   category="pd",
+  direction="on",
+ },
+ [0x2E3C]={
+  category="po",
+  direction="on",
+ },
+ [0x2E3D]={
+  category="po",
+  direction="on",
+ },
+ [0x2E3E]={
+  category="po",
+  direction="on",
+ },
+ [0x2E3F]={
+  category="po",
+  direction="on",
+ },
+ [0x2E40]={
+  category="pd",
+  direction="on",
+ },
+ [0x2E41]={
+  category="po",
+  direction="on",
+ },
+ [0x2E42]={
+  category="ps",
   direction="on",
  },
  [0x2E80]={
@@ -53867,6 +54747,30 @@ return {
   category="ll",
   direction="l",
  },
+ [0xA698]={
+  category="lu",
+  direction="l",
+ },
+ [0xA699]={
+  category="ll",
+  direction="l",
+ },
+ [0xA69A]={
+  category="lu",
+  direction="l",
+ },
+ [0xA69B]={
+  category="ll",
+  direction="l",
+ },
+ [0xA69C]={
+  category="lm",
+  direction="l",
+ },
+ [0xA69D]={
+  category="lm",
+  direction="l",
+ },
  [0xA69F]={
   category="mn",
   direction="nsm",
@@ -54811,6 +55715,54 @@ return {
   category="ll",
   direction="l",
  },
+ [0xA794]={
+  category="ll",
+  direction="l",
+ },
+ [0xA795]={
+  category="ll",
+  direction="l",
+ },
+ [0xA796]={
+  category="lu",
+  direction="l",
+ },
+ [0xA797]={
+  category="ll",
+  direction="l",
+ },
+ [0xA798]={
+  category="lu",
+  direction="l",
+ },
+ [0xA799]={
+  category="ll",
+  direction="l",
+ },
+ [0xA79A]={
+  category="lu",
+  direction="l",
+ },
+ [0xA79B]={
+  category="ll",
+  direction="l",
+ },
+ [0xA79C]={
+  category="lu",
+  direction="l",
+ },
+ [0xA79D]={
+  category="ll",
+  direction="l",
+ },
+ [0xA79E]={
+  category="lu",
+  direction="l",
+ },
+ [0xA79F]={
+  category="ll",
+  direction="l",
+ },
  [0xA7A0]={
   category="lu",
   direction="l",
@@ -54853,6 +55805,30 @@ return {
  },
  [0xA7AA]={
   category="lu",
+  direction="l",
+ },
+ [0xA7AB]={
+  category="lu",
+  direction="l",
+ },
+ [0xA7AC]={
+  category="lu",
+  direction="l",
+ },
+ [0xA7AD]={
+  category="lu",
+  direction="l",
+ },
+ [0xA7B0]={
+  category="lu",
+  direction="l",
+ },
+ [0xA7B1]={
+  category="lu",
+  direction="l",
+ },
+ [0xA7F7]={
+  category="lo",
   direction="l",
  },
  [0xA7F8]={
@@ -56583,6 +57559,130 @@ return {
   category="po",
   direction="l",
  },
+ [0xA9E0]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E1]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E2]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E3]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E4]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xA9E6]={
+  category="lm",
+  direction="l",
+ },
+ [0xA9E7]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E8]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9E9]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9EA]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9EB]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9EC]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9ED]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9EE]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9EF]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9F0]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F1]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F2]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F3]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F4]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F5]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F6]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F7]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F8]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9F9]={
+  category="nd",
+  direction="l",
+ },
+ [0xA9FA]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9FB]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9FC]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9FD]={
+  category="lo",
+  direction="l",
+ },
+ [0xA9FE]={
+  category="lo",
+  direction="l",
+ },
  [0xAA00]={
   category="lo",
   direction="l",
@@ -57025,6 +58125,22 @@ return {
  },
  [0xAA7B]={
   category="mc",
+  direction="l",
+ },
+ [0xAA7C]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xAA7D]={
+  category="mc",
+  direction="l",
+ },
+ [0xAA7E]={
+  category="lo",
+  direction="l",
+ },
+ [0xAA7F]={
+  category="lo",
   direction="l",
  },
  [0xAA80]={
@@ -57533,6 +58649,206 @@ return {
  },
  [0xAB2E]={
   category="lo",
+  direction="l",
+ },
+ [0xAB30]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB31]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB32]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB33]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB34]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB35]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB36]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB37]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB38]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB39]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3A]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3B]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3C]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3D]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3E]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB3F]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB40]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB41]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB42]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB43]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB44]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB45]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB46]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB47]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB48]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB49]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4A]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4B]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4C]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4D]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4E]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB4F]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB50]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB51]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB52]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB53]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB54]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB55]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB56]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB57]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB58]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB59]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB5A]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB5B]={
+  category="sk",
+  direction="l",
+ },
+ [0xAB5C]={
+  category="lm",
+  direction="l",
+ },
+ [0xAB5D]={
+  category="lm",
+  direction="l",
+ },
+ [0xAB5E]={
+  category="lm",
+  direction="l",
+ },
+ [0xAB5F]={
+  category="lm",
+  direction="l",
+ },
+ [0xAB64]={
+  category="ll",
+  direction="l",
+ },
+ [0xAB65]={
+  category="ll",
   direction="l",
  },
  [0xABC0]={
@@ -62775,6 +64091,34 @@ return {
   category="mn",
   direction="nsm",
  },
+ [0xFE27]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE28]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE29]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE2A]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE2B]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE2C]={
+  category="mn",
+  direction="nsm",
+ },
+ [0xFE2D]={
+  category="mn",
+  direction="nsm",
+ },
  [0xFE30]={
   category="po",
   direction="on",
@@ -62939,31 +64283,37 @@ return {
   category="ps",
   direction="on",
   mirror=0xFE5A,
+  textclass="open",
  },
  [0xFE5A]={
   category="pe",
   direction="on",
   mirror=0xFE59,
+  textclass="close",
  },
  [0xFE5B]={
   category="ps",
   direction="on",
   mirror=0xFE5C,
+  textclass="open",
  },
  [0xFE5C]={
   category="pe",
   direction="on",
   mirror=0xFE5B,
+  textclass="close",
  },
  [0xFE5D]={
   category="ps",
   direction="on",
   mirror=0xFE5E,
+  textclass="open",
  },
  [0xFE5E]={
   category="pe",
   direction="on",
   mirror=0xFE5D,
+  textclass="close",
  },
  [0xFE5F]={
   category="po",
@@ -62989,11 +64339,13 @@ return {
   category="sm",
   direction="on",
   mirror=0xFE65,
+  textclass="open",
  },
  [0xFE65]={
   category="sm",
   direction="on",
   mirror=0xFE64,
+  textclass="close",
  },
  [0xFE66]={
   category="sm",
@@ -63611,11 +64963,13 @@ return {
   category="ps",
   direction="on",
   mirror=0xFF09,
+  textclass="open",
  },
  [0xFF09]={
   category="pe",
   direction="on",
   mirror=0xFF08,
+  textclass="close",
  },
  [0xFF0A]={
   category="po",
@@ -63693,6 +65047,7 @@ return {
   category="sm",
   direction="on",
   mirror=0xFF1E,
+  textclass="open",
  },
  [0xFF1D]={
   category="sm",
@@ -63702,6 +65057,7 @@ return {
   category="sm",
   direction="on",
   mirror=0xFF1C,
+  textclass="close",
  },
  [0xFF1F]={
   category="po",
@@ -63819,6 +65175,7 @@ return {
   category="ps",
   direction="on",
   mirror=0xFF3D,
+  textclass="open",
  },
  [0xFF3C]={
   category="po",
@@ -63828,6 +65185,7 @@ return {
   category="pe",
   direction="on",
   mirror=0xFF3B,
+  textclass="close",
  },
  [0xFF3E]={
   category="sk",
@@ -63949,6 +65307,7 @@ return {
   category="ps",
   direction="on",
   mirror=0xFF5D,
+  textclass="open",
  },
  [0xFF5C]={
   category="sm",
@@ -63958,6 +65317,7 @@ return {
   category="pe",
   direction="on",
   mirror=0xFF5B,
+  textclass="close",
  },
  [0xFF5E]={
   category="sm",
@@ -63967,11 +65327,13 @@ return {
   category="ps",
   direction="on",
   mirror=0xFF60,
+  textclass="open",
  },
  [0xFF60]={
   category="pe",
   direction="on",
   mirror=0xFF5F,
+  textclass="close",
  },
  [0xFF61]={
   category="po",
@@ -63981,11 +65343,13 @@ return {
   category="ps",
   direction="on",
   mirror=0xFF63,
+  textclass="open",
  },
  [0xFF63]={
   category="pe",
   direction="on",
   mirror=0xFF62,
+  textclass="close",
  },
  [0xFF64]={
   category="po",
@@ -65883,6 +67247,14 @@ return {
   category="no",
   direction="on",
  },
+ [0x1018B]={
+  category="no",
+  direction="on",
+ },
+ [0x1018C]={
+  category="so",
+  direction="on",
+ },
  [0x10190]={
   category="so",
   direction="on",
@@ -65928,6 +67300,10 @@ return {
   direction="on",
  },
  [0x1019B]={
+  category="so",
+  direction="on",
+ },
+ [0x101A0]={
   category="so",
   direction="on",
  },
@@ -66427,6 +67803,118 @@ return {
   category="lo",
   direction="l",
  },
+ [0x102E0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x102E1]={
+  category="no",
+  direction="en",
+ },
+ [0x102E2]={
+  category="no",
+  direction="en",
+ },
+ [0x102E3]={
+  category="no",
+  direction="en",
+ },
+ [0x102E4]={
+  category="no",
+  direction="en",
+ },
+ [0x102E5]={
+  category="no",
+  direction="en",
+ },
+ [0x102E6]={
+  category="no",
+  direction="en",
+ },
+ [0x102E7]={
+  category="no",
+  direction="en",
+ },
+ [0x102E8]={
+  category="no",
+  direction="en",
+ },
+ [0x102E9]={
+  category="no",
+  direction="en",
+ },
+ [0x102EA]={
+  category="no",
+  direction="en",
+ },
+ [0x102EB]={
+  category="no",
+  direction="en",
+ },
+ [0x102EC]={
+  category="no",
+  direction="en",
+ },
+ [0x102ED]={
+  category="no",
+  direction="en",
+ },
+ [0x102EE]={
+  category="no",
+  direction="en",
+ },
+ [0x102EF]={
+  category="no",
+  direction="en",
+ },
+ [0x102F0]={
+  category="no",
+  direction="en",
+ },
+ [0x102F1]={
+  category="no",
+  direction="en",
+ },
+ [0x102F2]={
+  category="no",
+  direction="en",
+ },
+ [0x102F3]={
+  category="no",
+  direction="en",
+ },
+ [0x102F4]={
+  category="no",
+  direction="en",
+ },
+ [0x102F5]={
+  category="no",
+  direction="en",
+ },
+ [0x102F6]={
+  category="no",
+  direction="en",
+ },
+ [0x102F7]={
+  category="no",
+  direction="en",
+ },
+ [0x102F8]={
+  category="no",
+  direction="en",
+ },
+ [0x102F9]={
+  category="no",
+  direction="en",
+ },
+ [0x102FA]={
+  category="no",
+  direction="en",
+ },
+ [0x102FB]={
+  category="no",
+  direction="en",
+ },
  [0x10300]={
   category="lo",
   direction="l",
@@ -66548,6 +68036,10 @@ return {
   direction="l",
  },
  [0x1031E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1031F]={
   category="lo",
   direction="l",
  },
@@ -66674,6 +68166,178 @@ return {
  [0x1034A]={
   category="nl",
   direction="l",
+ },
+ [0x10350]={
+  category="lo",
+  direction="l",
+ },
+ [0x10351]={
+  category="lo",
+  direction="l",
+ },
+ [0x10352]={
+  category="lo",
+  direction="l",
+ },
+ [0x10353]={
+  category="lo",
+  direction="l",
+ },
+ [0x10354]={
+  category="lo",
+  direction="l",
+ },
+ [0x10355]={
+  category="lo",
+  direction="l",
+ },
+ [0x10356]={
+  category="lo",
+  direction="l",
+ },
+ [0x10357]={
+  category="lo",
+  direction="l",
+ },
+ [0x10358]={
+  category="lo",
+  direction="l",
+ },
+ [0x10359]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1035F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10360]={
+  category="lo",
+  direction="l",
+ },
+ [0x10361]={
+  category="lo",
+  direction="l",
+ },
+ [0x10362]={
+  category="lo",
+  direction="l",
+ },
+ [0x10363]={
+  category="lo",
+  direction="l",
+ },
+ [0x10364]={
+  category="lo",
+  direction="l",
+ },
+ [0x10365]={
+  category="lo",
+  direction="l",
+ },
+ [0x10366]={
+  category="lo",
+  direction="l",
+ },
+ [0x10367]={
+  category="lo",
+  direction="l",
+ },
+ [0x10368]={
+  category="lo",
+  direction="l",
+ },
+ [0x10369]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1036F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10370]={
+  category="lo",
+  direction="l",
+ },
+ [0x10371]={
+  category="lo",
+  direction="l",
+ },
+ [0x10372]={
+  category="lo",
+  direction="l",
+ },
+ [0x10373]={
+  category="lo",
+  direction="l",
+ },
+ [0x10374]={
+  category="lo",
+  direction="l",
+ },
+ [0x10375]={
+  category="lo",
+  direction="l",
+ },
+ [0x10376]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x10377]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x10378]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x10379]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1037A]={
+  category="mn",
+  direction="nsm",
  },
  [0x10380]={
   category="lo",
@@ -67671,6 +69335,1742 @@ return {
   category="nd",
   direction="l",
  },
+ [0x10500]={
+  category="lo",
+  direction="l",
+ },
+ [0x10501]={
+  category="lo",
+  direction="l",
+ },
+ [0x10502]={
+  category="lo",
+  direction="l",
+ },
+ [0x10503]={
+  category="lo",
+  direction="l",
+ },
+ [0x10504]={
+  category="lo",
+  direction="l",
+ },
+ [0x10505]={
+  category="lo",
+  direction="l",
+ },
+ [0x10506]={
+  category="lo",
+  direction="l",
+ },
+ [0x10507]={
+  category="lo",
+  direction="l",
+ },
+ [0x10508]={
+  category="lo",
+  direction="l",
+ },
+ [0x10509]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1050F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10510]={
+  category="lo",
+  direction="l",
+ },
+ [0x10511]={
+  category="lo",
+  direction="l",
+ },
+ [0x10512]={
+  category="lo",
+  direction="l",
+ },
+ [0x10513]={
+  category="lo",
+  direction="l",
+ },
+ [0x10514]={
+  category="lo",
+  direction="l",
+ },
+ [0x10515]={
+  category="lo",
+  direction="l",
+ },
+ [0x10516]={
+  category="lo",
+  direction="l",
+ },
+ [0x10517]={
+  category="lo",
+  direction="l",
+ },
+ [0x10518]={
+  category="lo",
+  direction="l",
+ },
+ [0x10519]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1051F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10520]={
+  category="lo",
+  direction="l",
+ },
+ [0x10521]={
+  category="lo",
+  direction="l",
+ },
+ [0x10522]={
+  category="lo",
+  direction="l",
+ },
+ [0x10523]={
+  category="lo",
+  direction="l",
+ },
+ [0x10524]={
+  category="lo",
+  direction="l",
+ },
+ [0x10525]={
+  category="lo",
+  direction="l",
+ },
+ [0x10526]={
+  category="lo",
+  direction="l",
+ },
+ [0x10527]={
+  category="lo",
+  direction="l",
+ },
+ [0x10530]={
+  category="lo",
+  direction="l",
+ },
+ [0x10531]={
+  category="lo",
+  direction="l",
+ },
+ [0x10532]={
+  category="lo",
+  direction="l",
+ },
+ [0x10533]={
+  category="lo",
+  direction="l",
+ },
+ [0x10534]={
+  category="lo",
+  direction="l",
+ },
+ [0x10535]={
+  category="lo",
+  direction="l",
+ },
+ [0x10536]={
+  category="lo",
+  direction="l",
+ },
+ [0x10537]={
+  category="lo",
+  direction="l",
+ },
+ [0x10538]={
+  category="lo",
+  direction="l",
+ },
+ [0x10539]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1053F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10540]={
+  category="lo",
+  direction="l",
+ },
+ [0x10541]={
+  category="lo",
+  direction="l",
+ },
+ [0x10542]={
+  category="lo",
+  direction="l",
+ },
+ [0x10543]={
+  category="lo",
+  direction="l",
+ },
+ [0x10544]={
+  category="lo",
+  direction="l",
+ },
+ [0x10545]={
+  category="lo",
+  direction="l",
+ },
+ [0x10546]={
+  category="lo",
+  direction="l",
+ },
+ [0x10547]={
+  category="lo",
+  direction="l",
+ },
+ [0x10548]={
+  category="lo",
+  direction="l",
+ },
+ [0x10549]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1054F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10550]={
+  category="lo",
+  direction="l",
+ },
+ [0x10551]={
+  category="lo",
+  direction="l",
+ },
+ [0x10552]={
+  category="lo",
+  direction="l",
+ },
+ [0x10553]={
+  category="lo",
+  direction="l",
+ },
+ [0x10554]={
+  category="lo",
+  direction="l",
+ },
+ [0x10555]={
+  category="lo",
+  direction="l",
+ },
+ [0x10556]={
+  category="lo",
+  direction="l",
+ },
+ [0x10557]={
+  category="lo",
+  direction="l",
+ },
+ [0x10558]={
+  category="lo",
+  direction="l",
+ },
+ [0x10559]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1055F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10560]={
+  category="lo",
+  direction="l",
+ },
+ [0x10561]={
+  category="lo",
+  direction="l",
+ },
+ [0x10562]={
+  category="lo",
+  direction="l",
+ },
+ [0x10563]={
+  category="lo",
+  direction="l",
+ },
+ [0x1056F]={
+  category="po",
+  direction="l",
+ },
+ [0x10600]={
+  category="lo",
+  direction="l",
+ },
+ [0x10601]={
+  category="lo",
+  direction="l",
+ },
+ [0x10602]={
+  category="lo",
+  direction="l",
+ },
+ [0x10603]={
+  category="lo",
+  direction="l",
+ },
+ [0x10604]={
+  category="lo",
+  direction="l",
+ },
+ [0x10605]={
+  category="lo",
+  direction="l",
+ },
+ [0x10606]={
+  category="lo",
+  direction="l",
+ },
+ [0x10607]={
+  category="lo",
+  direction="l",
+ },
+ [0x10608]={
+  category="lo",
+  direction="l",
+ },
+ [0x10609]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1060F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10610]={
+  category="lo",
+  direction="l",
+ },
+ [0x10611]={
+  category="lo",
+  direction="l",
+ },
+ [0x10612]={
+  category="lo",
+  direction="l",
+ },
+ [0x10613]={
+  category="lo",
+  direction="l",
+ },
+ [0x10614]={
+  category="lo",
+  direction="l",
+ },
+ [0x10615]={
+  category="lo",
+  direction="l",
+ },
+ [0x10616]={
+  category="lo",
+  direction="l",
+ },
+ [0x10617]={
+  category="lo",
+  direction="l",
+ },
+ [0x10618]={
+  category="lo",
+  direction="l",
+ },
+ [0x10619]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1061F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10620]={
+  category="lo",
+  direction="l",
+ },
+ [0x10621]={
+  category="lo",
+  direction="l",
+ },
+ [0x10622]={
+  category="lo",
+  direction="l",
+ },
+ [0x10623]={
+  category="lo",
+  direction="l",
+ },
+ [0x10624]={
+  category="lo",
+  direction="l",
+ },
+ [0x10625]={
+  category="lo",
+  direction="l",
+ },
+ [0x10626]={
+  category="lo",
+  direction="l",
+ },
+ [0x10627]={
+  category="lo",
+  direction="l",
+ },
+ [0x10628]={
+  category="lo",
+  direction="l",
+ },
+ [0x10629]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1062F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10630]={
+  category="lo",
+  direction="l",
+ },
+ [0x10631]={
+  category="lo",
+  direction="l",
+ },
+ [0x10632]={
+  category="lo",
+  direction="l",
+ },
+ [0x10633]={
+  category="lo",
+  direction="l",
+ },
+ [0x10634]={
+  category="lo",
+  direction="l",
+ },
+ [0x10635]={
+  category="lo",
+  direction="l",
+ },
+ [0x10636]={
+  category="lo",
+  direction="l",
+ },
+ [0x10637]={
+  category="lo",
+  direction="l",
+ },
+ [0x10638]={
+  category="lo",
+  direction="l",
+ },
+ [0x10639]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1063F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10640]={
+  category="lo",
+  direction="l",
+ },
+ [0x10641]={
+  category="lo",
+  direction="l",
+ },
+ [0x10642]={
+  category="lo",
+  direction="l",
+ },
+ [0x10643]={
+  category="lo",
+  direction="l",
+ },
+ [0x10644]={
+  category="lo",
+  direction="l",
+ },
+ [0x10645]={
+  category="lo",
+  direction="l",
+ },
+ [0x10646]={
+  category="lo",
+  direction="l",
+ },
+ [0x10647]={
+  category="lo",
+  direction="l",
+ },
+ [0x10648]={
+  category="lo",
+  direction="l",
+ },
+ [0x10649]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1064F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10650]={
+  category="lo",
+  direction="l",
+ },
+ [0x10651]={
+  category="lo",
+  direction="l",
+ },
+ [0x10652]={
+  category="lo",
+  direction="l",
+ },
+ [0x10653]={
+  category="lo",
+  direction="l",
+ },
+ [0x10654]={
+  category="lo",
+  direction="l",
+ },
+ [0x10655]={
+  category="lo",
+  direction="l",
+ },
+ [0x10656]={
+  category="lo",
+  direction="l",
+ },
+ [0x10657]={
+  category="lo",
+  direction="l",
+ },
+ [0x10658]={
+  category="lo",
+  direction="l",
+ },
+ [0x10659]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1065F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10660]={
+  category="lo",
+  direction="l",
+ },
+ [0x10661]={
+  category="lo",
+  direction="l",
+ },
+ [0x10662]={
+  category="lo",
+  direction="l",
+ },
+ [0x10663]={
+  category="lo",
+  direction="l",
+ },
+ [0x10664]={
+  category="lo",
+  direction="l",
+ },
+ [0x10665]={
+  category="lo",
+  direction="l",
+ },
+ [0x10666]={
+  category="lo",
+  direction="l",
+ },
+ [0x10667]={
+  category="lo",
+  direction="l",
+ },
+ [0x10668]={
+  category="lo",
+  direction="l",
+ },
+ [0x10669]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1066F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10670]={
+  category="lo",
+  direction="l",
+ },
+ [0x10671]={
+  category="lo",
+  direction="l",
+ },
+ [0x10672]={
+  category="lo",
+  direction="l",
+ },
+ [0x10673]={
+  category="lo",
+  direction="l",
+ },
+ [0x10674]={
+  category="lo",
+  direction="l",
+ },
+ [0x10675]={
+  category="lo",
+  direction="l",
+ },
+ [0x10676]={
+  category="lo",
+  direction="l",
+ },
+ [0x10677]={
+  category="lo",
+  direction="l",
+ },
+ [0x10678]={
+  category="lo",
+  direction="l",
+ },
+ [0x10679]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1067F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10680]={
+  category="lo",
+  direction="l",
+ },
+ [0x10681]={
+  category="lo",
+  direction="l",
+ },
+ [0x10682]={
+  category="lo",
+  direction="l",
+ },
+ [0x10683]={
+  category="lo",
+  direction="l",
+ },
+ [0x10684]={
+  category="lo",
+  direction="l",
+ },
+ [0x10685]={
+  category="lo",
+  direction="l",
+ },
+ [0x10686]={
+  category="lo",
+  direction="l",
+ },
+ [0x10687]={
+  category="lo",
+  direction="l",
+ },
+ [0x10688]={
+  category="lo",
+  direction="l",
+ },
+ [0x10689]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1068F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10690]={
+  category="lo",
+  direction="l",
+ },
+ [0x10691]={
+  category="lo",
+  direction="l",
+ },
+ [0x10692]={
+  category="lo",
+  direction="l",
+ },
+ [0x10693]={
+  category="lo",
+  direction="l",
+ },
+ [0x10694]={
+  category="lo",
+  direction="l",
+ },
+ [0x10695]={
+  category="lo",
+  direction="l",
+ },
+ [0x10696]={
+  category="lo",
+  direction="l",
+ },
+ [0x10697]={
+  category="lo",
+  direction="l",
+ },
+ [0x10698]={
+  category="lo",
+  direction="l",
+ },
+ [0x10699]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1069F]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106A9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AD]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106AF]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106B9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BD]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106BF]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106C9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CD]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106CF]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106D9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DD]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106DF]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106E9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106EA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106EB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106EC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106ED]={
+  category="lo",
+  direction="l",
+ },
+ [0x106EE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106EF]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F0]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F1]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F2]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F3]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F4]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F5]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F6]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F7]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F8]={
+  category="lo",
+  direction="l",
+ },
+ [0x106F9]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FA]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FB]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FC]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FD]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FE]={
+  category="lo",
+  direction="l",
+ },
+ [0x106FF]={
+  category="lo",
+  direction="l",
+ },
+ [0x10700]={
+  category="lo",
+  direction="l",
+ },
+ [0x10701]={
+  category="lo",
+  direction="l",
+ },
+ [0x10702]={
+  category="lo",
+  direction="l",
+ },
+ [0x10703]={
+  category="lo",
+  direction="l",
+ },
+ [0x10704]={
+  category="lo",
+  direction="l",
+ },
+ [0x10705]={
+  category="lo",
+  direction="l",
+ },
+ [0x10706]={
+  category="lo",
+  direction="l",
+ },
+ [0x10707]={
+  category="lo",
+  direction="l",
+ },
+ [0x10708]={
+  category="lo",
+  direction="l",
+ },
+ [0x10709]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1070F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10710]={
+  category="lo",
+  direction="l",
+ },
+ [0x10711]={
+  category="lo",
+  direction="l",
+ },
+ [0x10712]={
+  category="lo",
+  direction="l",
+ },
+ [0x10713]={
+  category="lo",
+  direction="l",
+ },
+ [0x10714]={
+  category="lo",
+  direction="l",
+ },
+ [0x10715]={
+  category="lo",
+  direction="l",
+ },
+ [0x10716]={
+  category="lo",
+  direction="l",
+ },
+ [0x10717]={
+  category="lo",
+  direction="l",
+ },
+ [0x10718]={
+  category="lo",
+  direction="l",
+ },
+ [0x10719]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1071F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10720]={
+  category="lo",
+  direction="l",
+ },
+ [0x10721]={
+  category="lo",
+  direction="l",
+ },
+ [0x10722]={
+  category="lo",
+  direction="l",
+ },
+ [0x10723]={
+  category="lo",
+  direction="l",
+ },
+ [0x10724]={
+  category="lo",
+  direction="l",
+ },
+ [0x10725]={
+  category="lo",
+  direction="l",
+ },
+ [0x10726]={
+  category="lo",
+  direction="l",
+ },
+ [0x10727]={
+  category="lo",
+  direction="l",
+ },
+ [0x10728]={
+  category="lo",
+  direction="l",
+ },
+ [0x10729]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1072F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10730]={
+  category="lo",
+  direction="l",
+ },
+ [0x10731]={
+  category="lo",
+  direction="l",
+ },
+ [0x10732]={
+  category="lo",
+  direction="l",
+ },
+ [0x10733]={
+  category="lo",
+  direction="l",
+ },
+ [0x10734]={
+  category="lo",
+  direction="l",
+ },
+ [0x10735]={
+  category="lo",
+  direction="l",
+ },
+ [0x10736]={
+  category="lo",
+  direction="l",
+ },
+ [0x10740]={
+  category="lo",
+  direction="l",
+ },
+ [0x10741]={
+  category="lo",
+  direction="l",
+ },
+ [0x10742]={
+  category="lo",
+  direction="l",
+ },
+ [0x10743]={
+  category="lo",
+  direction="l",
+ },
+ [0x10744]={
+  category="lo",
+  direction="l",
+ },
+ [0x10745]={
+  category="lo",
+  direction="l",
+ },
+ [0x10746]={
+  category="lo",
+  direction="l",
+ },
+ [0x10747]={
+  category="lo",
+  direction="l",
+ },
+ [0x10748]={
+  category="lo",
+  direction="l",
+ },
+ [0x10749]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1074F]={
+  category="lo",
+  direction="l",
+ },
+ [0x10750]={
+  category="lo",
+  direction="l",
+ },
+ [0x10751]={
+  category="lo",
+  direction="l",
+ },
+ [0x10752]={
+  category="lo",
+  direction="l",
+ },
+ [0x10753]={
+  category="lo",
+  direction="l",
+ },
+ [0x10754]={
+  category="lo",
+  direction="l",
+ },
+ [0x10755]={
+  category="lo",
+  direction="l",
+ },
+ [0x10760]={
+  category="lo",
+  direction="l",
+ },
+ [0x10761]={
+  category="lo",
+  direction="l",
+ },
+ [0x10762]={
+  category="lo",
+  direction="l",
+ },
+ [0x10763]={
+  category="lo",
+  direction="l",
+ },
+ [0x10764]={
+  category="lo",
+  direction="l",
+ },
+ [0x10765]={
+  category="lo",
+  direction="l",
+ },
+ [0x10766]={
+  category="lo",
+  direction="l",
+ },
+ [0x10767]={
+  category="lo",
+  direction="l",
+ },
  [0x10800]={
   category="lo",
   direction="r",
@@ -68012,6 +71412,294 @@ return {
   direction="r",
  },
  [0x1085F]={
+  category="no",
+  direction="r",
+ },
+ [0x10860]={
+  category="lo",
+  direction="r",
+ },
+ [0x10861]={
+  category="lo",
+  direction="r",
+ },
+ [0x10862]={
+  category="lo",
+  direction="r",
+ },
+ [0x10863]={
+  category="lo",
+  direction="r",
+ },
+ [0x10864]={
+  category="lo",
+  direction="r",
+ },
+ [0x10865]={
+  category="lo",
+  direction="r",
+ },
+ [0x10866]={
+  category="lo",
+  direction="r",
+ },
+ [0x10867]={
+  category="lo",
+  direction="r",
+ },
+ [0x10868]={
+  category="lo",
+  direction="r",
+ },
+ [0x10869]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1086F]={
+  category="lo",
+  direction="r",
+ },
+ [0x10870]={
+  category="lo",
+  direction="r",
+ },
+ [0x10871]={
+  category="lo",
+  direction="r",
+ },
+ [0x10872]={
+  category="lo",
+  direction="r",
+ },
+ [0x10873]={
+  category="lo",
+  direction="r",
+ },
+ [0x10874]={
+  category="lo",
+  direction="r",
+ },
+ [0x10875]={
+  category="lo",
+  direction="r",
+ },
+ [0x10876]={
+  category="lo",
+  direction="r",
+ },
+ [0x10877]={
+  category="so",
+  direction="r",
+ },
+ [0x10878]={
+  category="so",
+  direction="r",
+ },
+ [0x10879]={
+  category="no",
+  direction="r",
+ },
+ [0x1087A]={
+  category="no",
+  direction="r",
+ },
+ [0x1087B]={
+  category="no",
+  direction="r",
+ },
+ [0x1087C]={
+  category="no",
+  direction="r",
+ },
+ [0x1087D]={
+  category="no",
+  direction="r",
+ },
+ [0x1087E]={
+  category="no",
+  direction="r",
+ },
+ [0x1087F]={
+  category="no",
+  direction="r",
+ },
+ [0x10880]={
+  category="lo",
+  direction="r",
+ },
+ [0x10881]={
+  category="lo",
+  direction="r",
+ },
+ [0x10882]={
+  category="lo",
+  direction="r",
+ },
+ [0x10883]={
+  category="lo",
+  direction="r",
+ },
+ [0x10884]={
+  category="lo",
+  direction="r",
+ },
+ [0x10885]={
+  category="lo",
+  direction="r",
+ },
+ [0x10886]={
+  category="lo",
+  direction="r",
+ },
+ [0x10887]={
+  category="lo",
+  direction="r",
+ },
+ [0x10888]={
+  category="lo",
+  direction="r",
+ },
+ [0x10889]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1088F]={
+  category="lo",
+  direction="r",
+ },
+ [0x10890]={
+  category="lo",
+  direction="r",
+ },
+ [0x10891]={
+  category="lo",
+  direction="r",
+ },
+ [0x10892]={
+  category="lo",
+  direction="r",
+ },
+ [0x10893]={
+  category="lo",
+  direction="r",
+ },
+ [0x10894]={
+  category="lo",
+  direction="r",
+ },
+ [0x10895]={
+  category="lo",
+  direction="r",
+ },
+ [0x10896]={
+  category="lo",
+  direction="r",
+ },
+ [0x10897]={
+  category="lo",
+  direction="r",
+ },
+ [0x10898]={
+  category="lo",
+  direction="r",
+ },
+ [0x10899]={
+  category="lo",
+  direction="r",
+ },
+ [0x1089A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1089B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1089C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1089D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1089E]={
+  category="lo",
+  direction="r",
+ },
+ [0x108A7]={
+  category="no",
+  direction="r",
+ },
+ [0x108A8]={
+  category="no",
+  direction="r",
+ },
+ [0x108A9]={
+  category="no",
+  direction="r",
+ },
+ [0x108AA]={
+  category="no",
+  direction="r",
+ },
+ [0x108AB]={
+  category="no",
+  direction="r",
+ },
+ [0x108AC]={
+  category="no",
+  direction="r",
+ },
+ [0x108AD]={
+  category="no",
+  direction="r",
+ },
+ [0x108AE]={
+  category="no",
+  direction="r",
+ },
+ [0x108AF]={
   category="no",
   direction="r",
  },
@@ -68859,6 +72547,338 @@ return {
   category="po",
   direction="r",
  },
+ [0x10A80]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A81]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A82]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A83]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A84]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A85]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A86]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A87]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A88]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A89]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8A]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8B]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8C]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8D]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8E]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A8F]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A90]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A91]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A92]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A93]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A94]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A95]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A96]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A97]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A98]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A99]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A9A]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A9B]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A9C]={
+  category="lo",
+  direction="r",
+ },
+ [0x10A9D]={
+  category="no",
+  direction="r",
+ },
+ [0x10A9E]={
+  category="no",
+  direction="r",
+ },
+ [0x10A9F]={
+  category="no",
+  direction="r",
+ },
+ [0x10AC0]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC1]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC2]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC3]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC4]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC5]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC6]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC7]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AC8]={
+  category="so",
+  direction="r",
+ },
+ [0x10AC9]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACA]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACB]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACC]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACD]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACE]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ACF]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD0]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD1]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD2]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD3]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD4]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD5]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD6]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD7]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD8]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AD9]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADA]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADB]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADC]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADD]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADE]={
+  category="lo",
+  direction="r",
+ },
+ [0x10ADF]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE0]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE1]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE2]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE3]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE4]={
+  category="lo",
+  direction="r",
+ },
+ [0x10AE5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x10AE6]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x10AEB]={
+  category="no",
+  direction="r",
+ },
+ [0x10AEC]={
+  category="no",
+  direction="r",
+ },
+ [0x10AED]={
+  category="no",
+  direction="r",
+ },
+ [0x10AEE]={
+  category="no",
+  direction="r",
+ },
+ [0x10AEF]={
+  category="no",
+  direction="r",
+ },
+ [0x10AF0]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF1]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF2]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF3]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF4]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF5]={
+  category="po",
+  direction="r",
+ },
+ [0x10AF6]={
+  category="po",
+  direction="r",
+ },
  [0x10B00]={
   category="lo",
   direction="r",
@@ -69328,6 +73348,122 @@ return {
   direction="r",
  },
  [0x10B7F]={
+  category="no",
+  direction="r",
+ },
+ [0x10B80]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B81]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B82]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B83]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B84]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B85]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B86]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B87]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B88]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B89]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8A]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8B]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8C]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8D]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8E]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B8F]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B90]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B91]={
+  category="lo",
+  direction="r",
+ },
+ [0x10B99]={
+  category="po",
+  direction="r",
+ },
+ [0x10B9A]={
+  category="po",
+  direction="r",
+ },
+ [0x10B9B]={
+  category="po",
+  direction="r",
+ },
+ [0x10B9C]={
+  category="po",
+  direction="r",
+ },
+ [0x10BA9]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAA]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAB]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAC]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAD]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAE]={
+  category="no",
+  direction="r",
+ },
+ [0x10BAF]={
   category="no",
   direction="r",
  },
@@ -70179,6 +74315,10 @@ return {
   category="nd",
   direction="l",
  },
+ [0x1107F]={
+  category="mn",
+  direction="nsm",
+ },
  [0x11080]={
   category="mn",
   direction="nsm",
@@ -70851,6 +74991,162 @@ return {
   category="po",
   direction="l",
  },
+ [0x11150]={
+  category="lo",
+  direction="l",
+ },
+ [0x11151]={
+  category="lo",
+  direction="l",
+ },
+ [0x11152]={
+  category="lo",
+  direction="l",
+ },
+ [0x11153]={
+  category="lo",
+  direction="l",
+ },
+ [0x11154]={
+  category="lo",
+  direction="l",
+ },
+ [0x11155]={
+  category="lo",
+  direction="l",
+ },
+ [0x11156]={
+  category="lo",
+  direction="l",
+ },
+ [0x11157]={
+  category="lo",
+  direction="l",
+ },
+ [0x11158]={
+  category="lo",
+  direction="l",
+ },
+ [0x11159]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1115F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11160]={
+  category="lo",
+  direction="l",
+ },
+ [0x11161]={
+  category="lo",
+  direction="l",
+ },
+ [0x11162]={
+  category="lo",
+  direction="l",
+ },
+ [0x11163]={
+  category="lo",
+  direction="l",
+ },
+ [0x11164]={
+  category="lo",
+  direction="l",
+ },
+ [0x11165]={
+  category="lo",
+  direction="l",
+ },
+ [0x11166]={
+  category="lo",
+  direction="l",
+ },
+ [0x11167]={
+  category="lo",
+  direction="l",
+ },
+ [0x11168]={
+  category="lo",
+  direction="l",
+ },
+ [0x11169]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1116F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11170]={
+  category="lo",
+  direction="l",
+ },
+ [0x11171]={
+  category="lo",
+  direction="l",
+ },
+ [0x11172]={
+  category="lo",
+  direction="l",
+ },
+ [0x11173]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11174]={
+  category="po",
+  direction="l",
+ },
+ [0x11175]={
+  category="po",
+  direction="l",
+ },
+ [0x11176]={
+  category="lo",
+  direction="l",
+ },
  [0x11180]={
   category="mn",
   direction="nsm",
@@ -71143,6 +75439,10 @@ return {
   category="po",
   direction="l",
  },
+ [0x111CD]={
+  category="po",
+  direction="l",
+ },
  [0x111D0]={
   category="nd",
   direction="l",
@@ -71180,6 +75480,1874 @@ return {
   direction="l",
  },
  [0x111D9]={
+  category="nd",
+  direction="l",
+ },
+ [0x111DA]={
+  category="lo",
+  direction="l",
+ },
+ [0x111E1]={
+  category="no",
+  direction="l",
+ },
+ [0x111E2]={
+  category="no",
+  direction="l",
+ },
+ [0x111E3]={
+  category="no",
+  direction="l",
+ },
+ [0x111E4]={
+  category="no",
+  direction="l",
+ },
+ [0x111E5]={
+  category="no",
+  direction="l",
+ },
+ [0x111E6]={
+  category="no",
+  direction="l",
+ },
+ [0x111E7]={
+  category="no",
+  direction="l",
+ },
+ [0x111E8]={
+  category="no",
+  direction="l",
+ },
+ [0x111E9]={
+  category="no",
+  direction="l",
+ },
+ [0x111EA]={
+  category="no",
+  direction="l",
+ },
+ [0x111EB]={
+  category="no",
+  direction="l",
+ },
+ [0x111EC]={
+  category="no",
+  direction="l",
+ },
+ [0x111ED]={
+  category="no",
+  direction="l",
+ },
+ [0x111EE]={
+  category="no",
+  direction="l",
+ },
+ [0x111EF]={
+  category="no",
+  direction="l",
+ },
+ [0x111F0]={
+  category="no",
+  direction="l",
+ },
+ [0x111F1]={
+  category="no",
+  direction="l",
+ },
+ [0x111F2]={
+  category="no",
+  direction="l",
+ },
+ [0x111F3]={
+  category="no",
+  direction="l",
+ },
+ [0x111F4]={
+  category="no",
+  direction="l",
+ },
+ [0x11200]={
+  category="lo",
+  direction="l",
+ },
+ [0x11201]={
+  category="lo",
+  direction="l",
+ },
+ [0x11202]={
+  category="lo",
+  direction="l",
+ },
+ [0x11203]={
+  category="lo",
+  direction="l",
+ },
+ [0x11204]={
+  category="lo",
+  direction="l",
+ },
+ [0x11205]={
+  category="lo",
+  direction="l",
+ },
+ [0x11206]={
+  category="lo",
+  direction="l",
+ },
+ [0x11207]={
+  category="lo",
+  direction="l",
+ },
+ [0x11208]={
+  category="lo",
+  direction="l",
+ },
+ [0x11209]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1120F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11210]={
+  category="lo",
+  direction="l",
+ },
+ [0x11211]={
+  category="lo",
+  direction="l",
+ },
+ [0x11213]={
+  category="lo",
+  direction="l",
+ },
+ [0x11214]={
+  category="lo",
+  direction="l",
+ },
+ [0x11215]={
+  category="lo",
+  direction="l",
+ },
+ [0x11216]={
+  category="lo",
+  direction="l",
+ },
+ [0x11217]={
+  category="lo",
+  direction="l",
+ },
+ [0x11218]={
+  category="lo",
+  direction="l",
+ },
+ [0x11219]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1121F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11220]={
+  category="lo",
+  direction="l",
+ },
+ [0x11221]={
+  category="lo",
+  direction="l",
+ },
+ [0x11222]={
+  category="lo",
+  direction="l",
+ },
+ [0x11223]={
+  category="lo",
+  direction="l",
+ },
+ [0x11224]={
+  category="lo",
+  direction="l",
+ },
+ [0x11225]={
+  category="lo",
+  direction="l",
+ },
+ [0x11226]={
+  category="lo",
+  direction="l",
+ },
+ [0x11227]={
+  category="lo",
+  direction="l",
+ },
+ [0x11228]={
+  category="lo",
+  direction="l",
+ },
+ [0x11229]={
+  category="lo",
+  direction="l",
+ },
+ [0x1122A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1122B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1122C]={
+  category="mc",
+  direction="l",
+ },
+ [0x1122D]={
+  category="mc",
+  direction="l",
+ },
+ [0x1122E]={
+  category="mc",
+  direction="l",
+ },
+ [0x1122F]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11230]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11231]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11232]={
+  category="mc",
+  direction="l",
+ },
+ [0x11233]={
+  category="mc",
+  direction="l",
+ },
+ [0x11234]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11235]={
+  category="mc",
+  direction="l",
+ },
+ [0x11236]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11237]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11238]={
+  category="po",
+  direction="l",
+ },
+ [0x11239]={
+  category="po",
+  direction="l",
+ },
+ [0x1123A]={
+  category="po",
+  direction="l",
+ },
+ [0x1123B]={
+  category="po",
+  direction="l",
+ },
+ [0x1123C]={
+  category="po",
+  direction="l",
+ },
+ [0x1123D]={
+  category="po",
+  direction="l",
+ },
+ [0x112B0]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B1]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B2]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B3]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B4]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B5]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B6]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B7]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B8]={
+  category="lo",
+  direction="l",
+ },
+ [0x112B9]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BA]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BB]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BC]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BD]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BE]={
+  category="lo",
+  direction="l",
+ },
+ [0x112BF]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C0]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C1]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C2]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C3]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C4]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C5]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C6]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C7]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C8]={
+  category="lo",
+  direction="l",
+ },
+ [0x112C9]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CA]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CB]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CC]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CD]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CE]={
+  category="lo",
+  direction="l",
+ },
+ [0x112CF]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D0]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D1]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D2]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D3]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D4]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D5]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D6]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D7]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D8]={
+  category="lo",
+  direction="l",
+ },
+ [0x112D9]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DA]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DB]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DC]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DD]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DE]={
+  category="lo",
+  direction="l",
+ },
+ [0x112DF]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E0]={
+  category="mc",
+  direction="l",
+ },
+ [0x112E1]={
+  category="mc",
+  direction="l",
+ },
+ [0x112E2]={
+  category="mc",
+  direction="l",
+ },
+ [0x112E3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E6]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E7]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E8]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112E9]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112EA]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x112F0]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F1]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F2]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F3]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F4]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F5]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F6]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F7]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F8]={
+  category="nd",
+  direction="l",
+ },
+ [0x112F9]={
+  category="nd",
+  direction="l",
+ },
+ [0x11301]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11302]={
+  category="mc",
+  direction="l",
+ },
+ [0x11303]={
+  category="mc",
+  direction="l",
+ },
+ [0x11305]={
+  category="lo",
+  direction="l",
+ },
+ [0x11306]={
+  category="lo",
+  direction="l",
+ },
+ [0x11307]={
+  category="lo",
+  direction="l",
+ },
+ [0x11308]={
+  category="lo",
+  direction="l",
+ },
+ [0x11309]={
+  category="lo",
+  direction="l",
+ },
+ [0x1130A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1130B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1130C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1130F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11310]={
+  category="lo",
+  direction="l",
+ },
+ [0x11313]={
+  category="lo",
+  direction="l",
+ },
+ [0x11314]={
+  category="lo",
+  direction="l",
+ },
+ [0x11315]={
+  category="lo",
+  direction="l",
+ },
+ [0x11316]={
+  category="lo",
+  direction="l",
+ },
+ [0x11317]={
+  category="lo",
+  direction="l",
+ },
+ [0x11318]={
+  category="lo",
+  direction="l",
+ },
+ [0x11319]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1131F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11320]={
+  category="lo",
+  direction="l",
+ },
+ [0x11321]={
+  category="lo",
+  direction="l",
+ },
+ [0x11322]={
+  category="lo",
+  direction="l",
+ },
+ [0x11323]={
+  category="lo",
+  direction="l",
+ },
+ [0x11324]={
+  category="lo",
+  direction="l",
+ },
+ [0x11325]={
+  category="lo",
+  direction="l",
+ },
+ [0x11326]={
+  category="lo",
+  direction="l",
+ },
+ [0x11327]={
+  category="lo",
+  direction="l",
+ },
+ [0x11328]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1132F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11330]={
+  category="lo",
+  direction="l",
+ },
+ [0x11332]={
+  category="lo",
+  direction="l",
+ },
+ [0x11333]={
+  category="lo",
+  direction="l",
+ },
+ [0x11335]={
+  category="lo",
+  direction="l",
+ },
+ [0x11336]={
+  category="lo",
+  direction="l",
+ },
+ [0x11337]={
+  category="lo",
+  direction="l",
+ },
+ [0x11338]={
+  category="lo",
+  direction="l",
+ },
+ [0x11339]={
+  category="lo",
+  direction="l",
+ },
+ [0x1133C]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1133D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1133E]={
+  category="mc",
+  direction="l",
+ },
+ [0x1133F]={
+  category="mc",
+  direction="l",
+ },
+ [0x11340]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11341]={
+  category="mc",
+  direction="l",
+ },
+ [0x11342]={
+  category="mc",
+  direction="l",
+ },
+ [0x11343]={
+  category="mc",
+  direction="l",
+ },
+ [0x11344]={
+  category="mc",
+  direction="l",
+ },
+ [0x11347]={
+  category="mc",
+  direction="l",
+ },
+ [0x11348]={
+  category="mc",
+  direction="l",
+ },
+ [0x1134B]={
+  category="mc",
+  direction="l",
+ },
+ [0x1134C]={
+  category="mc",
+  direction="l",
+ },
+ [0x1134D]={
+  category="mc",
+  direction="l",
+ },
+ [0x11357]={
+  category="mc",
+  direction="l",
+ },
+ [0x1135D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1135E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1135F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11360]={
+  category="lo",
+  direction="l",
+ },
+ [0x11361]={
+  category="lo",
+  direction="l",
+ },
+ [0x11362]={
+  category="mc",
+  direction="l",
+ },
+ [0x11363]={
+  category="mc",
+  direction="l",
+ },
+ [0x11366]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11367]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11368]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11369]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1136A]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1136B]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1136C]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11370]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11371]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11372]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11373]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11374]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11480]={
+  category="lo",
+  direction="l",
+ },
+ [0x11481]={
+  category="lo",
+  direction="l",
+ },
+ [0x11482]={
+  category="lo",
+  direction="l",
+ },
+ [0x11483]={
+  category="lo",
+  direction="l",
+ },
+ [0x11484]={
+  category="lo",
+  direction="l",
+ },
+ [0x11485]={
+  category="lo",
+  direction="l",
+ },
+ [0x11486]={
+  category="lo",
+  direction="l",
+ },
+ [0x11487]={
+  category="lo",
+  direction="l",
+ },
+ [0x11488]={
+  category="lo",
+  direction="l",
+ },
+ [0x11489]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1148F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11490]={
+  category="lo",
+  direction="l",
+ },
+ [0x11491]={
+  category="lo",
+  direction="l",
+ },
+ [0x11492]={
+  category="lo",
+  direction="l",
+ },
+ [0x11493]={
+  category="lo",
+  direction="l",
+ },
+ [0x11494]={
+  category="lo",
+  direction="l",
+ },
+ [0x11495]={
+  category="lo",
+  direction="l",
+ },
+ [0x11496]={
+  category="lo",
+  direction="l",
+ },
+ [0x11497]={
+  category="lo",
+  direction="l",
+ },
+ [0x11498]={
+  category="lo",
+  direction="l",
+ },
+ [0x11499]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1149F]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A0]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A1]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A2]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A3]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A4]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A5]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A6]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A7]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A8]={
+  category="lo",
+  direction="l",
+ },
+ [0x114A9]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AA]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AB]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AC]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AD]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AE]={
+  category="lo",
+  direction="l",
+ },
+ [0x114AF]={
+  category="lo",
+  direction="l",
+ },
+ [0x114B0]={
+  category="mc",
+  direction="l",
+ },
+ [0x114B1]={
+  category="mc",
+  direction="l",
+ },
+ [0x114B2]={
+  category="mc",
+  direction="l",
+ },
+ [0x114B3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B6]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B7]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B8]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114B9]={
+  category="mc",
+  direction="l",
+ },
+ [0x114BA]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114BB]={
+  category="mc",
+  direction="l",
+ },
+ [0x114BC]={
+  category="mc",
+  direction="l",
+ },
+ [0x114BD]={
+  category="mc",
+  direction="l",
+ },
+ [0x114BE]={
+  category="mc",
+  direction="l",
+ },
+ [0x114BF]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114C0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114C1]={
+  category="mc",
+  direction="l",
+ },
+ [0x114C2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114C3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x114C4]={
+  category="lo",
+  direction="l",
+ },
+ [0x114C5]={
+  category="lo",
+  direction="l",
+ },
+ [0x114C6]={
+  category="po",
+  direction="l",
+ },
+ [0x114C7]={
+  category="lo",
+  direction="l",
+ },
+ [0x114D0]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D1]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D2]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D3]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D4]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D5]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D6]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D7]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D8]={
+  category="nd",
+  direction="l",
+ },
+ [0x114D9]={
+  category="nd",
+  direction="l",
+ },
+ [0x11580]={
+  category="lo",
+  direction="l",
+ },
+ [0x11581]={
+  category="lo",
+  direction="l",
+ },
+ [0x11582]={
+  category="lo",
+  direction="l",
+ },
+ [0x11583]={
+  category="lo",
+  direction="l",
+ },
+ [0x11584]={
+  category="lo",
+  direction="l",
+ },
+ [0x11585]={
+  category="lo",
+  direction="l",
+ },
+ [0x11586]={
+  category="lo",
+  direction="l",
+ },
+ [0x11587]={
+  category="lo",
+  direction="l",
+ },
+ [0x11588]={
+  category="lo",
+  direction="l",
+ },
+ [0x11589]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1158F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11590]={
+  category="lo",
+  direction="l",
+ },
+ [0x11591]={
+  category="lo",
+  direction="l",
+ },
+ [0x11592]={
+  category="lo",
+  direction="l",
+ },
+ [0x11593]={
+  category="lo",
+  direction="l",
+ },
+ [0x11594]={
+  category="lo",
+  direction="l",
+ },
+ [0x11595]={
+  category="lo",
+  direction="l",
+ },
+ [0x11596]={
+  category="lo",
+  direction="l",
+ },
+ [0x11597]={
+  category="lo",
+  direction="l",
+ },
+ [0x11598]={
+  category="lo",
+  direction="l",
+ },
+ [0x11599]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1159F]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A0]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A1]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A2]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A3]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A4]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A5]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A6]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A7]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A8]={
+  category="lo",
+  direction="l",
+ },
+ [0x115A9]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AA]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AB]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AC]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AD]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AE]={
+  category="lo",
+  direction="l",
+ },
+ [0x115AF]={
+  category="mc",
+  direction="l",
+ },
+ [0x115B0]={
+  category="mc",
+  direction="l",
+ },
+ [0x115B1]={
+  category="mc",
+  direction="l",
+ },
+ [0x115B2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115B3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115B4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115B5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115B8]={
+  category="mc",
+  direction="l",
+ },
+ [0x115B9]={
+  category="mc",
+  direction="l",
+ },
+ [0x115BA]={
+  category="mc",
+  direction="l",
+ },
+ [0x115BB]={
+  category="mc",
+  direction="l",
+ },
+ [0x115BC]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115BD]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115BE]={
+  category="mc",
+  direction="l",
+ },
+ [0x115BF]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115C0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x115C1]={
+  category="po",
+  direction="l",
+ },
+ [0x115C2]={
+  category="po",
+  direction="l",
+ },
+ [0x115C3]={
+  category="po",
+  direction="l",
+ },
+ [0x115C4]={
+  category="po",
+  direction="l",
+ },
+ [0x115C5]={
+  category="po",
+  direction="l",
+ },
+ [0x115C6]={
+  category="po",
+  direction="l",
+ },
+ [0x115C7]={
+  category="po",
+  direction="l",
+ },
+ [0x115C8]={
+  category="po",
+  direction="l",
+ },
+ [0x115C9]={
+  category="po",
+  direction="l",
+ },
+ [0x11600]={
+  category="lo",
+  direction="l",
+ },
+ [0x11601]={
+  category="lo",
+  direction="l",
+ },
+ [0x11602]={
+  category="lo",
+  direction="l",
+ },
+ [0x11603]={
+  category="lo",
+  direction="l",
+ },
+ [0x11604]={
+  category="lo",
+  direction="l",
+ },
+ [0x11605]={
+  category="lo",
+  direction="l",
+ },
+ [0x11606]={
+  category="lo",
+  direction="l",
+ },
+ [0x11607]={
+  category="lo",
+  direction="l",
+ },
+ [0x11608]={
+  category="lo",
+  direction="l",
+ },
+ [0x11609]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1160F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11610]={
+  category="lo",
+  direction="l",
+ },
+ [0x11611]={
+  category="lo",
+  direction="l",
+ },
+ [0x11612]={
+  category="lo",
+  direction="l",
+ },
+ [0x11613]={
+  category="lo",
+  direction="l",
+ },
+ [0x11614]={
+  category="lo",
+  direction="l",
+ },
+ [0x11615]={
+  category="lo",
+  direction="l",
+ },
+ [0x11616]={
+  category="lo",
+  direction="l",
+ },
+ [0x11617]={
+  category="lo",
+  direction="l",
+ },
+ [0x11618]={
+  category="lo",
+  direction="l",
+ },
+ [0x11619]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1161F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11620]={
+  category="lo",
+  direction="l",
+ },
+ [0x11621]={
+  category="lo",
+  direction="l",
+ },
+ [0x11622]={
+  category="lo",
+  direction="l",
+ },
+ [0x11623]={
+  category="lo",
+  direction="l",
+ },
+ [0x11624]={
+  category="lo",
+  direction="l",
+ },
+ [0x11625]={
+  category="lo",
+  direction="l",
+ },
+ [0x11626]={
+  category="lo",
+  direction="l",
+ },
+ [0x11627]={
+  category="lo",
+  direction="l",
+ },
+ [0x11628]={
+  category="lo",
+  direction="l",
+ },
+ [0x11629]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1162F]={
+  category="lo",
+  direction="l",
+ },
+ [0x11630]={
+  category="mc",
+  direction="l",
+ },
+ [0x11631]={
+  category="mc",
+  direction="l",
+ },
+ [0x11632]={
+  category="mc",
+  direction="l",
+ },
+ [0x11633]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11634]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11635]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11636]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11637]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11638]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11639]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1163A]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1163B]={
+  category="mc",
+  direction="l",
+ },
+ [0x1163C]={
+  category="mc",
+  direction="l",
+ },
+ [0x1163D]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1163E]={
+  category="mc",
+  direction="l",
+ },
+ [0x1163F]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11640]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x11641]={
+  category="po",
+  direction="l",
+ },
+ [0x11642]={
+  category="po",
+  direction="l",
+ },
+ [0x11643]={
+  category="po",
+  direction="l",
+ },
+ [0x11644]={
+  category="lo",
+  direction="l",
+ },
+ [0x11650]={
+  category="nd",
+  direction="l",
+ },
+ [0x11651]={
+  category="nd",
+  direction="l",
+ },
+ [0x11652]={
+  category="nd",
+  direction="l",
+ },
+ [0x11653]={
+  category="nd",
+  direction="l",
+ },
+ [0x11654]={
+  category="nd",
+  direction="l",
+ },
+ [0x11655]={
+  category="nd",
+  direction="l",
+ },
+ [0x11656]={
+  category="nd",
+  direction="l",
+ },
+ [0x11657]={
+  category="nd",
+  direction="l",
+ },
+ [0x11658]={
+  category="nd",
+  direction="l",
+ },
+ [0x11659]={
   category="nd",
   direction="l",
  },
@@ -71445,6 +77613,570 @@ return {
  },
  [0x116C9]={
   category="nd",
+  direction="l",
+ },
+ [0x118A0]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A1]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A2]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A3]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A4]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A5]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A6]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A7]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A8]={
+  category="lu",
+  direction="l",
+ },
+ [0x118A9]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AA]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AB]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AC]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AD]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AE]={
+  category="lu",
+  direction="l",
+ },
+ [0x118AF]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B0]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B1]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B2]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B3]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B4]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B5]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B6]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B7]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B8]={
+  category="lu",
+  direction="l",
+ },
+ [0x118B9]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BA]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BB]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BC]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BD]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BE]={
+  category="lu",
+  direction="l",
+ },
+ [0x118BF]={
+  category="lu",
+  direction="l",
+ },
+ [0x118C0]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C1]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C2]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C3]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C4]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C5]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C6]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C7]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C8]={
+  category="ll",
+  direction="l",
+ },
+ [0x118C9]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CA]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CB]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CC]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CD]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CE]={
+  category="ll",
+  direction="l",
+ },
+ [0x118CF]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D0]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D1]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D2]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D3]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D4]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D5]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D6]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D7]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D8]={
+  category="ll",
+  direction="l",
+ },
+ [0x118D9]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DA]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DB]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DC]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DD]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DE]={
+  category="ll",
+  direction="l",
+ },
+ [0x118DF]={
+  category="ll",
+  direction="l",
+ },
+ [0x118E0]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E1]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E2]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E3]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E4]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E5]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E6]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E7]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E8]={
+  category="nd",
+  direction="l",
+ },
+ [0x118E9]={
+  category="nd",
+  direction="l",
+ },
+ [0x118EA]={
+  category="no",
+  direction="l",
+ },
+ [0x118EB]={
+  category="no",
+  direction="l",
+ },
+ [0x118EC]={
+  category="no",
+  direction="l",
+ },
+ [0x118ED]={
+  category="no",
+  direction="l",
+ },
+ [0x118EE]={
+  category="no",
+  direction="l",
+ },
+ [0x118EF]={
+  category="no",
+  direction="l",
+ },
+ [0x118F0]={
+  category="no",
+  direction="l",
+ },
+ [0x118F1]={
+  category="no",
+  direction="l",
+ },
+ [0x118F2]={
+  category="no",
+  direction="l",
+ },
+ [0x118FF]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC0]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC1]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC2]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC3]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC4]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC5]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC6]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC7]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC8]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AC9]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACA]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACB]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACC]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACD]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACE]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ACF]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD0]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD1]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD2]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD3]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD4]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD5]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD6]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD7]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD8]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AD9]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADA]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADB]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADC]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADD]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADE]={
+  category="lo",
+  direction="l",
+ },
+ [0x11ADF]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE0]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE1]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE2]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE3]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE4]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE5]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE6]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE7]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE8]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AE9]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AEA]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AEB]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AEC]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AED]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AEE]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AEF]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF0]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF1]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF2]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF3]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF4]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF5]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF6]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF7]={
+  category="lo",
+  direction="l",
+ },
+ [0x11AF8]={
+  category="lo",
   direction="l",
  },
  [0x12000]={
@@ -74963,6 +81695,174 @@ return {
   category="lo",
   direction="l",
  },
+ [0x1236F]={
+  category="lo",
+  direction="l",
+ },
+ [0x12370]={
+  category="lo",
+  direction="l",
+ },
+ [0x12371]={
+  category="lo",
+  direction="l",
+ },
+ [0x12372]={
+  category="lo",
+  direction="l",
+ },
+ [0x12373]={
+  category="lo",
+  direction="l",
+ },
+ [0x12374]={
+  category="lo",
+  direction="l",
+ },
+ [0x12375]={
+  category="lo",
+  direction="l",
+ },
+ [0x12376]={
+  category="lo",
+  direction="l",
+ },
+ [0x12377]={
+  category="lo",
+  direction="l",
+ },
+ [0x12378]={
+  category="lo",
+  direction="l",
+ },
+ [0x12379]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1237F]={
+  category="lo",
+  direction="l",
+ },
+ [0x12380]={
+  category="lo",
+  direction="l",
+ },
+ [0x12381]={
+  category="lo",
+  direction="l",
+ },
+ [0x12382]={
+  category="lo",
+  direction="l",
+ },
+ [0x12383]={
+  category="lo",
+  direction="l",
+ },
+ [0x12384]={
+  category="lo",
+  direction="l",
+ },
+ [0x12385]={
+  category="lo",
+  direction="l",
+ },
+ [0x12386]={
+  category="lo",
+  direction="l",
+ },
+ [0x12387]={
+  category="lo",
+  direction="l",
+ },
+ [0x12388]={
+  category="lo",
+  direction="l",
+ },
+ [0x12389]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1238F]={
+  category="lo",
+  direction="l",
+ },
+ [0x12390]={
+  category="lo",
+  direction="l",
+ },
+ [0x12391]={
+  category="lo",
+  direction="l",
+ },
+ [0x12392]={
+  category="lo",
+  direction="l",
+ },
+ [0x12393]={
+  category="lo",
+  direction="l",
+ },
+ [0x12394]={
+  category="lo",
+  direction="l",
+ },
+ [0x12395]={
+  category="lo",
+  direction="l",
+ },
+ [0x12396]={
+  category="lo",
+  direction="l",
+ },
+ [0x12397]={
+  category="lo",
+  direction="l",
+ },
+ [0x12398]={
+  category="lo",
+  direction="l",
+ },
  [0x12400]={
   category="nl",
   direction="l",
@@ -75359,6 +82259,54 @@ return {
   category="nl",
   direction="l",
  },
+ [0x12463]={
+  category="nl",
+  direction="l",
+ },
+ [0x12464]={
+  category="nl",
+  direction="l",
+ },
+ [0x12465]={
+  category="nl",
+  direction="l",
+ },
+ [0x12466]={
+  category="nl",
+  direction="l",
+ },
+ [0x12467]={
+  category="nl",
+  direction="l",
+ },
+ [0x12468]={
+  category="nl",
+  direction="l",
+ },
+ [0x12469]={
+  category="nl",
+  direction="l",
+ },
+ [0x1246A]={
+  category="nl",
+  direction="l",
+ },
+ [0x1246B]={
+  category="nl",
+  direction="l",
+ },
+ [0x1246C]={
+  category="nl",
+  direction="l",
+ },
+ [0x1246D]={
+  category="nl",
+  direction="l",
+ },
+ [0x1246E]={
+  category="nl",
+  direction="l",
+ },
  [0x12470]={
   category="po",
   direction="l",
@@ -75372,6 +82320,10 @@ return {
   direction="l",
  },
  [0x12473]={
+  category="po",
+  direction="l",
+ },
+ [0x12474]={
   category="po",
   direction="l",
  },
@@ -81935,6 +88887,830 @@ return {
   category="lo",
   direction="l",
  },
+ [0x16A40]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A41]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A42]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A43]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A44]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A45]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A46]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A47]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A48]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A49]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A4F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A50]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A51]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A52]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A53]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A54]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A55]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A56]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A57]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A58]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A59]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A5A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A5B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A5C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A5D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A5E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16A60]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A61]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A62]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A63]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A64]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A65]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A66]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A67]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A68]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A69]={
+  category="nd",
+  direction="l",
+ },
+ [0x16A6E]={
+  category="po",
+  direction="l",
+ },
+ [0x16A6F]={
+  category="po",
+  direction="l",
+ },
+ [0x16AD0]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD1]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD2]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD3]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD4]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD5]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD6]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD7]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD8]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AD9]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADA]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADB]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADC]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADD]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADE]={
+  category="lo",
+  direction="l",
+ },
+ [0x16ADF]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE0]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE1]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE2]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE3]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE4]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE5]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE6]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE7]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE8]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AE9]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AEA]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AEB]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AEC]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AED]={
+  category="lo",
+  direction="l",
+ },
+ [0x16AF0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16AF1]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16AF2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16AF3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16AF4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16AF5]={
+  category="po",
+  direction="l",
+ },
+ [0x16B00]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B01]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B02]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B03]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B04]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B05]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B06]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B07]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B08]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B09]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B0F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B10]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B11]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B12]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B13]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B14]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B15]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B16]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B17]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B18]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B19]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B1F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B20]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B21]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B22]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B23]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B24]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B25]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B26]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B27]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B28]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B29]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B2F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B30]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B31]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B32]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B33]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B34]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B35]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B36]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x16B37]={
+  category="po",
+  direction="l",
+ },
+ [0x16B38]={
+  category="po",
+  direction="l",
+ },
+ [0x16B39]={
+  category="po",
+  direction="l",
+ },
+ [0x16B3A]={
+  category="po",
+  direction="l",
+ },
+ [0x16B3B]={
+  category="po",
+  direction="l",
+ },
+ [0x16B3C]={
+  category="so",
+  direction="l",
+ },
+ [0x16B3D]={
+  category="so",
+  direction="l",
+ },
+ [0x16B3E]={
+  category="so",
+  direction="l",
+ },
+ [0x16B3F]={
+  category="so",
+  direction="l",
+ },
+ [0x16B40]={
+  category="lm",
+  direction="l",
+ },
+ [0x16B41]={
+  category="lm",
+  direction="l",
+ },
+ [0x16B42]={
+  category="lm",
+  direction="l",
+ },
+ [0x16B43]={
+  category="lm",
+  direction="l",
+ },
+ [0x16B44]={
+  category="po",
+  direction="l",
+ },
+ [0x16B45]={
+  category="so",
+  direction="l",
+ },
+ [0x16B50]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B51]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B52]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B53]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B54]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B55]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B56]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B57]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B58]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B59]={
+  category="nd",
+  direction="l",
+ },
+ [0x16B5B]={
+  category="no",
+  direction="l",
+ },
+ [0x16B5C]={
+  category="no",
+  direction="l",
+ },
+ [0x16B5D]={
+  category="no",
+  direction="l",
+ },
+ [0x16B5E]={
+  category="no",
+  direction="l",
+ },
+ [0x16B5F]={
+  category="no",
+  direction="l",
+ },
+ [0x16B60]={
+  category="no",
+  direction="l",
+ },
+ [0x16B61]={
+  category="no",
+  direction="l",
+ },
+ [0x16B63]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B64]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B65]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B66]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B67]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B68]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B69]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B6F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B70]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B71]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B72]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B73]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B74]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B75]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B76]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B77]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B7D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B7E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B7F]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B80]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B81]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B82]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B83]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B84]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B85]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B86]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B87]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B88]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B89]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8A]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8B]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8C]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8D]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8E]={
+  category="lo",
+  direction="l",
+ },
+ [0x16B8F]={
+  category="lo",
+  direction="l",
+ },
  [0x16F00]={
   category="lo",
   direction="l",
@@ -82474,6 +90250,594 @@ return {
  [0x1B001]={
   category="lo",
   direction="l",
+ },
+ [0x1BC00]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC01]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC02]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC03]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC04]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC05]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC06]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC07]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC08]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC09]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC0F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC10]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC11]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC12]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC13]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC14]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC15]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC16]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC17]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC18]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC19]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC1F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC20]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC21]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC22]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC23]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC24]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC25]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC26]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC27]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC28]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC29]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC2F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC30]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC31]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC32]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC33]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC34]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC35]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC36]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC37]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC38]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC39]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC3F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC40]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC41]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC42]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC43]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC44]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC45]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC46]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC47]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC48]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC49]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC4F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC50]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC51]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC52]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC53]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC54]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC55]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC56]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC57]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC58]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC59]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5D]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5E]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC5F]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC60]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC61]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC62]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC63]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC64]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC65]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC66]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC67]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC68]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC69]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC6A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC70]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC71]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC72]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC73]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC74]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC75]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC76]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC77]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC78]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC79]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC7A]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC7B]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC7C]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC80]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC81]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC82]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC83]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC84]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC85]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC86]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC87]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC88]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC90]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC91]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC92]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC93]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC94]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC95]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC96]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC97]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC98]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC99]={
+  category="lo",
+  direction="l",
+ },
+ [0x1BC9C]={
+  category="so",
+  direction="l",
+ },
+ [0x1BC9D]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1BC9E]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1BC9F]={
+  category="po",
+  direction="l",
+ },
+ [0x1BCA0]={
+  category="cf",
+  direction="bn",
+ },
+ [0x1BCA1]={
+  category="cf",
+  direction="bn",
+ },
+ [0x1BCA2]={
+  category="cf",
+  direction="bn",
+ },
+ [0x1BCA3]={
+  category="cf",
+  direction="bn",
  },
  [0x1D000]={
   category="so",
@@ -89023,6 +97387,858 @@ return {
   category="nd",
   direction="en",
  },
+ [0x1E800]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E801]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E802]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E803]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E804]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E805]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E806]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E807]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E808]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E809]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E80F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E810]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E811]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E812]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E813]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E814]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E815]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E816]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E817]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E818]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E819]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E81F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E820]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E821]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E822]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E823]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E824]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E825]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E826]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E827]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E828]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E829]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E82F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E830]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E831]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E832]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E833]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E834]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E835]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E836]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E837]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E838]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E839]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E83F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E840]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E841]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E842]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E843]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E844]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E845]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E846]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E847]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E848]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E849]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E84F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E850]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E851]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E852]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E853]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E854]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E855]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E856]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E857]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E858]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E859]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E85F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E860]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E861]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E862]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E863]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E864]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E865]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E866]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E867]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E868]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E869]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E86F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E870]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E871]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E872]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E873]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E874]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E875]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E876]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E877]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E878]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E879]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E87F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E880]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E881]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E882]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E883]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E884]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E885]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E886]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E887]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E888]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E889]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E88F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E890]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E891]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E892]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E893]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E894]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E895]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E896]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E897]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E898]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E899]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89A]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89B]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89C]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89D]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89E]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E89F]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A0]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A1]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A2]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A3]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A4]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A5]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A6]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A7]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A8]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8A9]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AA]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AB]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AC]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AD]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AE]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8AF]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B0]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B1]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B2]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B3]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B4]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B5]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B6]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B7]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B8]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8B9]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BA]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BB]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BC]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BD]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BE]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8BF]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C0]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C1]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C2]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C3]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C4]={
+  category="lo",
+  direction="r",
+ },
+ [0x1E8C7]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8C8]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8C9]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CA]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CB]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CC]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CD]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CE]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8CF]={
+  category="no",
+  direction="r",
+ },
+ [0x1E8D0]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D1]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D2]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D3]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D4]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D5]={
+  category="mn",
+  direction="nsm",
+ },
+ [0x1E8D6]={
+  category="mn",
+  direction="nsm",
+ },
  [0x1EE00]={
   category="lo",
   direction="al",
@@ -90287,6 +99503,10 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F0BF]={
+  category="so",
+  direction="on",
+ },
  [0x1F0C1]={
   category="so",
   direction="on",
@@ -90407,6 +99627,94 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F0E0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0E9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0EA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0EB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0EC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0ED]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0EE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0EF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F0F5]={
+  category="so",
+  direction="on",
+ },
  [0x1F100]={
   category="no",
   direction="en",
@@ -90450,6 +99758,14 @@ return {
  [0x1F10A]={
   category="no",
   direction="en",
+ },
+ [0x1F10B]={
+  category="no",
+  direction="on",
+ },
+ [0x1F10C]={
+  category="no",
+  direction="on",
  },
  [0x1F110]={
   category="so",
@@ -91451,6 +100767,54 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F321]={
+  category="so",
+  direction="on",
+ },
+ [0x1F322]={
+  category="so",
+  direction="on",
+ },
+ [0x1F323]={
+  category="so",
+  direction="on",
+ },
+ [0x1F324]={
+  category="so",
+  direction="on",
+ },
+ [0x1F325]={
+  category="so",
+  direction="on",
+ },
+ [0x1F326]={
+  category="so",
+  direction="on",
+ },
+ [0x1F327]={
+  category="so",
+  direction="on",
+ },
+ [0x1F328]={
+  category="so",
+  direction="on",
+ },
+ [0x1F329]={
+  category="so",
+  direction="on",
+ },
+ [0x1F32A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F32B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F32C]={
+  category="so",
+  direction="on",
+ },
  [0x1F330]={
   category="so",
   direction="on",
@@ -91472,6 +100836,10 @@ return {
   direction="on",
  },
  [0x1F335]={
+  category="so",
+  direction="on",
+ },
+ [0x1F336]={
   category="so",
   direction="on",
  },
@@ -91755,6 +101123,10 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F37D]={
+  category="so",
+  direction="on",
+ },
  [0x1F380]={
   category="so",
   direction="on",
@@ -91832,6 +101204,54 @@ return {
   direction="on",
  },
  [0x1F393]={
+  category="so",
+  direction="on",
+ },
+ [0x1F394]={
+  category="so",
+  direction="on",
+ },
+ [0x1F395]={
+  category="so",
+  direction="on",
+ },
+ [0x1F396]={
+  category="so",
+  direction="on",
+ },
+ [0x1F397]={
+  category="so",
+  direction="on",
+ },
+ [0x1F398]={
+  category="so",
+  direction="on",
+ },
+ [0x1F399]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F39F]={
   category="so",
   direction="on",
  },
@@ -91983,6 +101403,10 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F3C5]={
+  category="so",
+  direction="on",
+ },
  [0x1F3C6]={
   category="so",
   direction="on",
@@ -92000,6 +101424,70 @@ return {
   direction="on",
  },
  [0x1F3CA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3CB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3CC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3CD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3CE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3D9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3DF]={
   category="so",
   direction="on",
  },
@@ -92068,6 +101556,34 @@ return {
   direction="on",
  },
  [0x1F3F0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F3F7]={
   category="so",
   direction="on",
  },
@@ -92323,7 +101839,15 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F43F]={
+  category="so",
+  direction="on",
+ },
  [0x1F440]={
+  category="so",
+  direction="on",
+ },
+ [0x1F441]={
   category="so",
   direction="on",
  },
@@ -93055,6 +102579,10 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F4F8]={
+  category="so",
+  direction="on",
+ },
  [0x1F4F9]={
   category="so",
   direction="on",
@@ -93068,6 +102596,14 @@ return {
   direction="on",
  },
  [0x1F4FC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F4FD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F4FE]={
   category="so",
   direction="on",
  },
@@ -93319,6 +102855,14 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F53E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F53F]={
+  category="so",
+  direction="on",
+ },
  [0x1F540]={
   category="so",
   direction="on",
@@ -93332,6 +102876,34 @@ return {
   direction="on",
  },
  [0x1F543]={
+  category="so",
+  direction="on",
+ },
+ [0x1F544]={
+  category="so",
+  direction="on",
+ },
+ [0x1F545]={
+  category="so",
+  direction="on",
+ },
+ [0x1F546]={
+  category="so",
+  direction="on",
+ },
+ [0x1F547]={
+  category="so",
+  direction="on",
+ },
+ [0x1F548]={
+  category="so",
+  direction="on",
+ },
+ [0x1F549]={
+  category="so",
+  direction="on",
+ },
+ [0x1F54A]={
   category="so",
   direction="on",
  },
@@ -93428,6 +103000,586 @@ return {
   direction="on",
  },
  [0x1F567]={
+  category="so",
+  direction="on",
+ },
+ [0x1F568]={
+  category="so",
+  direction="on",
+ },
+ [0x1F569]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F56F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F570]={
+  category="so",
+  direction="on",
+ },
+ [0x1F571]={
+  category="so",
+  direction="on",
+ },
+ [0x1F572]={
+  category="so",
+  direction="on",
+ },
+ [0x1F573]={
+  category="so",
+  direction="on",
+ },
+ [0x1F574]={
+  category="so",
+  direction="on",
+ },
+ [0x1F575]={
+  category="so",
+  direction="on",
+ },
+ [0x1F576]={
+  category="so",
+  direction="on",
+ },
+ [0x1F577]={
+  category="so",
+  direction="on",
+ },
+ [0x1F578]={
+  category="so",
+  direction="on",
+ },
+ [0x1F579]={
+  category="so",
+  direction="on",
+ },
+ [0x1F57B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F57C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F57D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F57E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F57F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F580]={
+  category="so",
+  direction="on",
+ },
+ [0x1F581]={
+  category="so",
+  direction="on",
+ },
+ [0x1F582]={
+  category="so",
+  direction="on",
+ },
+ [0x1F583]={
+  category="so",
+  direction="on",
+ },
+ [0x1F584]={
+  category="so",
+  direction="on",
+ },
+ [0x1F585]={
+  category="so",
+  direction="on",
+ },
+ [0x1F586]={
+  category="so",
+  direction="on",
+ },
+ [0x1F587]={
+  category="so",
+  direction="on",
+ },
+ [0x1F588]={
+  category="so",
+  direction="on",
+ },
+ [0x1F589]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F58F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F590]={
+  category="so",
+  direction="on",
+ },
+ [0x1F591]={
+  category="so",
+  direction="on",
+ },
+ [0x1F592]={
+  category="so",
+  direction="on",
+ },
+ [0x1F593]={
+  category="so",
+  direction="on",
+ },
+ [0x1F594]={
+  category="so",
+  direction="on",
+ },
+ [0x1F595]={
+  category="so",
+  direction="on",
+ },
+ [0x1F596]={
+  category="so",
+  direction="on",
+ },
+ [0x1F597]={
+  category="so",
+  direction="on",
+ },
+ [0x1F598]={
+  category="so",
+  direction="on",
+ },
+ [0x1F599]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F59F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5A9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5AF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5B9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5BF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5C9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5CF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5D9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5DF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5E9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5EA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5EB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5EC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5ED]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5EE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5EF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5F9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F5FA]={
   category="so",
   direction="on",
  },
@@ -93711,6 +103863,14 @@ return {
   category="so",
   direction="on",
  },
+ [0x1F641]={
+  category="so",
+  direction="on",
+ },
+ [0x1F642]={
+  category="so",
+  direction="on",
+ },
  [0x1F645]={
   category="so",
   direction="on",
@@ -93752,6 +103912,198 @@ return {
   direction="on",
  },
  [0x1F64F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F650]={
+  category="so",
+  direction="on",
+ },
+ [0x1F651]={
+  category="so",
+  direction="on",
+ },
+ [0x1F652]={
+  category="so",
+  direction="on",
+ },
+ [0x1F653]={
+  category="so",
+  direction="on",
+ },
+ [0x1F654]={
+  category="so",
+  direction="on",
+ },
+ [0x1F655]={
+  category="so",
+  direction="on",
+ },
+ [0x1F656]={
+  category="so",
+  direction="on",
+ },
+ [0x1F657]={
+  category="so",
+  direction="on",
+ },
+ [0x1F658]={
+  category="so",
+  direction="on",
+ },
+ [0x1F659]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F65F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F660]={
+  category="so",
+  direction="on",
+ },
+ [0x1F661]={
+  category="so",
+  direction="on",
+ },
+ [0x1F662]={
+  category="so",
+  direction="on",
+ },
+ [0x1F663]={
+  category="so",
+  direction="on",
+ },
+ [0x1F664]={
+  category="so",
+  direction="on",
+ },
+ [0x1F665]={
+  category="so",
+  direction="on",
+ },
+ [0x1F666]={
+  category="so",
+  direction="on",
+ },
+ [0x1F667]={
+  category="so",
+  direction="on",
+ },
+ [0x1F668]={
+  category="so",
+  direction="on",
+ },
+ [0x1F669]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F66F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F670]={
+  category="so",
+  direction="on",
+ },
+ [0x1F671]={
+  category="so",
+  direction="on",
+ },
+ [0x1F672]={
+  category="so",
+  direction="on",
+ },
+ [0x1F673]={
+  category="so",
+  direction="on",
+ },
+ [0x1F674]={
+  category="so",
+  direction="on",
+ },
+ [0x1F675]={
+  category="so",
+  direction="on",
+ },
+ [0x1F676]={
+  category="so",
+  direction="on",
+ },
+ [0x1F677]={
+  category="so",
+  direction="on",
+ },
+ [0x1F678]={
+  category="so",
+  direction="on",
+ },
+ [0x1F679]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F67F]={
   category="so",
   direction="on",
  },
@@ -94032,6 +104384,114 @@ return {
   direction="on",
  },
  [0x1F6C5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6C6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6C7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6C8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6C9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6CF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6E9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6EA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6EB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6EC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6F0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6F1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6F2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F6F3]={
   category="so",
   direction="on",
  },
@@ -94496,6 +104956,938 @@ return {
   direction="on",
  },
  [0x1F773]={
+  category="so",
+  direction="on",
+ },
+ [0x1F780]={
+  category="so",
+  direction="on",
+ },
+ [0x1F781]={
+  category="so",
+  direction="on",
+ },
+ [0x1F782]={
+  category="so",
+  direction="on",
+ },
+ [0x1F783]={
+  category="so",
+  direction="on",
+ },
+ [0x1F784]={
+  category="so",
+  direction="on",
+ },
+ [0x1F785]={
+  category="so",
+  direction="on",
+ },
+ [0x1F786]={
+  category="so",
+  direction="on",
+ },
+ [0x1F787]={
+  category="so",
+  direction="on",
+ },
+ [0x1F788]={
+  category="so",
+  direction="on",
+ },
+ [0x1F789]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F78F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F790]={
+  category="so",
+  direction="on",
+ },
+ [0x1F791]={
+  category="so",
+  direction="on",
+ },
+ [0x1F792]={
+  category="so",
+  direction="on",
+ },
+ [0x1F793]={
+  category="so",
+  direction="on",
+ },
+ [0x1F794]={
+  category="so",
+  direction="on",
+ },
+ [0x1F795]={
+  category="so",
+  direction="on",
+ },
+ [0x1F796]={
+  category="so",
+  direction="on",
+ },
+ [0x1F797]={
+  category="so",
+  direction="on",
+ },
+ [0x1F798]={
+  category="so",
+  direction="on",
+ },
+ [0x1F799]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F79F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7A9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7AF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7B9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7BF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7C9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CD]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CE]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7CF]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7D0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7D1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7D2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7D3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F7D4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F800]={
+  category="so",
+  direction="on",
+ },
+ [0x1F801]={
+  category="so",
+  direction="on",
+ },
+ [0x1F802]={
+  category="so",
+  direction="on",
+ },
+ [0x1F803]={
+  category="so",
+  direction="on",
+ },
+ [0x1F804]={
+  category="so",
+  direction="on",
+ },
+ [0x1F805]={
+  category="so",
+  direction="on",
+ },
+ [0x1F806]={
+  category="so",
+  direction="on",
+ },
+ [0x1F807]={
+  category="so",
+  direction="on",
+ },
+ [0x1F808]={
+  category="so",
+  direction="on",
+ },
+ [0x1F809]={
+  category="so",
+  direction="on",
+ },
+ [0x1F80A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F80B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F810]={
+  category="so",
+  direction="on",
+ },
+ [0x1F811]={
+  category="so",
+  direction="on",
+ },
+ [0x1F812]={
+  category="so",
+  direction="on",
+ },
+ [0x1F813]={
+  category="so",
+  direction="on",
+ },
+ [0x1F814]={
+  category="so",
+  direction="on",
+ },
+ [0x1F815]={
+  category="so",
+  direction="on",
+ },
+ [0x1F816]={
+  category="so",
+  direction="on",
+ },
+ [0x1F817]={
+  category="so",
+  direction="on",
+ },
+ [0x1F818]={
+  category="so",
+  direction="on",
+ },
+ [0x1F819]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F81F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F820]={
+  category="so",
+  direction="on",
+ },
+ [0x1F821]={
+  category="so",
+  direction="on",
+ },
+ [0x1F822]={
+  category="so",
+  direction="on",
+ },
+ [0x1F823]={
+  category="so",
+  direction="on",
+ },
+ [0x1F824]={
+  category="so",
+  direction="on",
+ },
+ [0x1F825]={
+  category="so",
+  direction="on",
+ },
+ [0x1F826]={
+  category="so",
+  direction="on",
+ },
+ [0x1F827]={
+  category="so",
+  direction="on",
+ },
+ [0x1F828]={
+  category="so",
+  direction="on",
+ },
+ [0x1F829]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F82F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F830]={
+  category="so",
+  direction="on",
+ },
+ [0x1F831]={
+  category="so",
+  direction="on",
+ },
+ [0x1F832]={
+  category="so",
+  direction="on",
+ },
+ [0x1F833]={
+  category="so",
+  direction="on",
+ },
+ [0x1F834]={
+  category="so",
+  direction="on",
+ },
+ [0x1F835]={
+  category="so",
+  direction="on",
+ },
+ [0x1F836]={
+  category="so",
+  direction="on",
+ },
+ [0x1F837]={
+  category="so",
+  direction="on",
+ },
+ [0x1F838]={
+  category="so",
+  direction="on",
+ },
+ [0x1F839]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F83F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F840]={
+  category="so",
+  direction="on",
+ },
+ [0x1F841]={
+  category="so",
+  direction="on",
+ },
+ [0x1F842]={
+  category="so",
+  direction="on",
+ },
+ [0x1F843]={
+  category="so",
+  direction="on",
+ },
+ [0x1F844]={
+  category="so",
+  direction="on",
+ },
+ [0x1F845]={
+  category="so",
+  direction="on",
+ },
+ [0x1F846]={
+  category="so",
+  direction="on",
+ },
+ [0x1F847]={
+  category="so",
+  direction="on",
+ },
+ [0x1F850]={
+  category="so",
+  direction="on",
+ },
+ [0x1F851]={
+  category="so",
+  direction="on",
+ },
+ [0x1F852]={
+  category="so",
+  direction="on",
+ },
+ [0x1F853]={
+  category="so",
+  direction="on",
+ },
+ [0x1F854]={
+  category="so",
+  direction="on",
+ },
+ [0x1F855]={
+  category="so",
+  direction="on",
+ },
+ [0x1F856]={
+  category="so",
+  direction="on",
+ },
+ [0x1F857]={
+  category="so",
+  direction="on",
+ },
+ [0x1F858]={
+  category="so",
+  direction="on",
+ },
+ [0x1F859]={
+  category="so",
+  direction="on",
+ },
+ [0x1F860]={
+  category="so",
+  direction="on",
+ },
+ [0x1F861]={
+  category="so",
+  direction="on",
+ },
+ [0x1F862]={
+  category="so",
+  direction="on",
+ },
+ [0x1F863]={
+  category="so",
+  direction="on",
+ },
+ [0x1F864]={
+  category="so",
+  direction="on",
+ },
+ [0x1F865]={
+  category="so",
+  direction="on",
+ },
+ [0x1F866]={
+  category="so",
+  direction="on",
+ },
+ [0x1F867]={
+  category="so",
+  direction="on",
+ },
+ [0x1F868]={
+  category="so",
+  direction="on",
+ },
+ [0x1F869]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F86F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F870]={
+  category="so",
+  direction="on",
+ },
+ [0x1F871]={
+  category="so",
+  direction="on",
+ },
+ [0x1F872]={
+  category="so",
+  direction="on",
+ },
+ [0x1F873]={
+  category="so",
+  direction="on",
+ },
+ [0x1F874]={
+  category="so",
+  direction="on",
+ },
+ [0x1F875]={
+  category="so",
+  direction="on",
+ },
+ [0x1F876]={
+  category="so",
+  direction="on",
+ },
+ [0x1F877]={
+  category="so",
+  direction="on",
+ },
+ [0x1F878]={
+  category="so",
+  direction="on",
+ },
+ [0x1F879]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F87F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F880]={
+  category="so",
+  direction="on",
+ },
+ [0x1F881]={
+  category="so",
+  direction="on",
+ },
+ [0x1F882]={
+  category="so",
+  direction="on",
+ },
+ [0x1F883]={
+  category="so",
+  direction="on",
+ },
+ [0x1F884]={
+  category="so",
+  direction="on",
+ },
+ [0x1F885]={
+  category="so",
+  direction="on",
+ },
+ [0x1F886]={
+  category="so",
+  direction="on",
+ },
+ [0x1F887]={
+  category="so",
+  direction="on",
+ },
+ [0x1F890]={
+  category="so",
+  direction="on",
+ },
+ [0x1F891]={
+  category="so",
+  direction="on",
+ },
+ [0x1F892]={
+  category="so",
+  direction="on",
+ },
+ [0x1F893]={
+  category="so",
+  direction="on",
+ },
+ [0x1F894]={
+  category="so",
+  direction="on",
+ },
+ [0x1F895]={
+  category="so",
+  direction="on",
+ },
+ [0x1F896]={
+  category="so",
+  direction="on",
+ },
+ [0x1F897]={
+  category="so",
+  direction="on",
+ },
+ [0x1F898]={
+  category="so",
+  direction="on",
+ },
+ [0x1F899]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89A]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89B]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89C]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89D]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89E]={
+  category="so",
+  direction="on",
+ },
+ [0x1F89F]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A0]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A1]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A2]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A3]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A4]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A5]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A6]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A7]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A8]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8A9]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8AA]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8AB]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8AC]={
+  category="so",
+  direction="on",
+ },
+ [0x1F8AD]={
   category="so",
   direction="on",
  },

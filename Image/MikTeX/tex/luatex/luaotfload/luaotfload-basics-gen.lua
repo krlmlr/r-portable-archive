@@ -89,6 +89,7 @@ local remapper = {
     fea    = "font feature files",
     pfa    = "type1 fonts", -- this is for Khaled, in ConTeXt we don't use this!
     pfb    = "type1 fonts", -- this is for Khaled, in ConTeXt we don't use this!
+    afm    = "afm",
 }
 
 function resolvers.findfile(name,fileformat)
@@ -116,6 +117,11 @@ end
 -- end
 
 resolvers.findbinfile = resolvers.findfile
+
+function resolvers.loadbinfile(filename,filetype)
+    local data = io.loaddata(filename)
+    return true, data, #data
+end
 
 function resolvers.resolve(s)
     return s
@@ -248,6 +254,18 @@ function caches.loaddata(paths,name)
     for i=1,#paths do
         local data = false
         local luaname, lucname = makefullname(paths[i],name)
+        if lucname and not lfs.isfile(lucname) and type(caches.compile) == "function" then
+            -- in case we used luatex and luajittex mixed ... lub or luc file
+            texio.write(string.format("(compiling luc: %s)",lucname))
+            data = loadfile(luaname)
+            if data then
+                data = data()
+            end
+            if data then
+                caches.compile(data,luaname,lucname)
+                return data
+            end
+        end
         if lucname and lfs.isfile(lucname) then -- maybe also check for size
             texio.write(string.format("(load luc: %s)",lucname))
             data = loadfile(lucname)
@@ -334,4 +352,17 @@ end
 
 function table.setmetatableindex(t,f)
     setmetatable(t,{ __index = f })
+end
+
+-- helper for plain:
+
+arguments = { }
+
+if arg then
+    for i=1,#arg do
+        local k, v = string.match(arg[i],"^%-%-([^=]+)=?(.-)$")
+        if k and v then
+            arguments[k] = v
+        end
+    end
 end

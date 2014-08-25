@@ -1,5 +1,5 @@
 if not modules then modules = { } end modules ["font-age"] = {
-  version     = 2.300,
+  version     = 2.400,
   comment     = "part of the luaotfload package",
   author      = "luaotfload team / mkglyphlist",
   copyright   = "derived from http://partners.adobe.com/public/developer/en/opentype/glyphlist.txt",

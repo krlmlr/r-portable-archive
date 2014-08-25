@@ -1,13 +1,15 @@
-% $Id: pst-algparser.pro 801 2013-07-09 18:10:41Z herbert $
+% $Id: pst-algparser.pro 919 2014-05-19 18:42:47Z herbert $
 %%
 %% PostScript prologue for PSTricks algorithm parser
-%% Version 0.04, 2011/10/21
+%% Version 0.06, 2014/05/19
 %%
 %% This program can be redistributed and/or modified under the terms
 %% of the LaTeX Project Public License Distributed from CTAN archives
 %% in directory macros/latex/base/lppl.txt.
 %%
 %%-----------------------------------------------------------------------------%
+%
+%currentdict /Pi known not { /Pi 3.14159265359 def } if
 %
 /AlgParser { tx@AlgToPs begin AlgToPs end } def  % Dominique Rodriguez
 %
@@ -304,7 +306,7 @@ end
 %% (name) ->
 /TrigoFunc {
   dup (cos) eq 1 index (sin) eq or exch (tan) eq or
-  { /ExpressionVector ExpressionVector aload length Pi /div cvx 180 /mul cvx 5 -1 roll 4 add
+  { /ExpressionVector ExpressionVector aload length 3.1415926 /div cvx 180 /mul cvx 5 -1 roll 4 add
     array astore def
   } if
 } def
@@ -351,7 +353,7 @@ end   %tx@CoreAnalyzerDict
 %%increase ^^ for each function added
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% algExpr variable -> PSVector
-/Derive {%
+/Derive {
   10240 string 3 1 roll 0 3 1 roll
   /Variable exch def
   tx@CoreAnalyzerDict begin InitParser AnalyzeListOfE end
@@ -567,6 +569,10 @@ end   %tx@CoreAnalyzerDict
 /EvalFunc_atg {%
   PreCommonFunc
   { (1/\(1+\() StrConcat 5 index StrConcat (\)^2\)\)) StrConcat } if
+  PostCommonFunc } def
+/EvalFunc_floor {%
+  PreCommonFunc
+  {  dup 0 eq { (1) StrConcat } { 1 sub } ifelse (/\() StrConcat 5 index StrConcat AddClPar } if
   PostCommonFunc } def
 /EvalFunc_ln {%
   PreCommonFunc

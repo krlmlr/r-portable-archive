@@ -1,24 +1,49 @@
 if not modules then modules = { } end modules ["features"] = {
-    version   = "2.3a",
-    comment   = "companion to luaotfload.lua",
+    version   = "2.5",
+    comment   = "companion to luaotfload-main.lua",
     author    = "Hans Hagen, Khaled Hosny, Elie Roux, Philipp Gesang",
     copyright = "PRAGMA ADE / ConTeXt Development Team",
     license   = "see context related readme files"
 }
 
-local type, next        = type, next
+local type              = type
+local next              = next
 local tonumber          = tonumber
 local tostring          = tostring
+
+local lpeg              = require "lpeg"
 local lpegmatch         = lpeg.match
+local P                 = lpeg.P
+local R                 = lpeg.R
+local C                 = lpeg.C
+
+local table             = table
+local tabletohash       = table.tohash
+local setmetatableindex = table.setmetatableindex
+local insert            = table.insert
 
 ---[[ begin included font-ltx.lua ]]
 --- this appears to be based in part on luatex-fonts-def.lua
 
-local fonts = fonts
+local fonts             = fonts
+local definers          = fonts.definers
+local handlers          = fonts.handlers
+
+local as_script, normalize
+
+if handlers then
+    normalize = handlers.otf.features.normalize
+else
+    normalize = function () end
+    as_script = true
+end
+
 
 --HH A bit of tuning for definitions.
 
-fonts.constructors.namemode = "specification" -- somehow latex needs this (changed name!) => will change into an overload
+if fonts.constructors then
+    fonts.constructors.namemode = "specification" -- somehow latex needs this (changed name!) => will change into an overload
+end
 
 --[[HH--
     tricky: we sort of bypass the parser and directly feed all into
@@ -29,7 +54,8 @@ function fonts.definers.getspecification(str)
     return "", str, "", ":", str
 end
 
-local report = logs.names_report
+local log              = luaotfload.log
+local report           = log.report
 
 local stringfind       = string.find
 local stringlower      = string.lower
@@ -39,61 +65,6 @@ local stringformat     = string.format
 local stringis_empty   = string.is_empty
 local mathceil         = math.ceil
 
---- TODO an option to dump the default features for a script would make
----      a nice addition to luaotfload-tool
-
-local defaults = {
-    dflt = {
-        "ccmp", "locl", "rlig", "liga", "clig",
-        "kern", "mark", "mkmk", 'itlc',
-    },
-    arab = {
-        "ccmp", "locl", "isol", "fina", "fin2",
-        "fin3", "medi", "med2", "init", "rlig",
-        "calt", "liga", "cswh", "mset", "curs",
-        "kern", "mark", "mkmk",
-    },
-    deva = {
-        "ccmp", "locl", "init", "nukt", "akhn",
-        "rphf", "blwf", "half", "pstf", "vatu",
-        "pres", "blws", "abvs", "psts", "haln",
-        "calt", "blwm", "abvm", "dist", "kern",
-        "mark", "mkmk",
-    },
-    khmr = {
-        "ccmp", "locl", "pref", "blwf", "abvf",
-        "pstf", "pres", "blws", "abvs", "psts",
-        "clig", "calt", "blwm", "abvm", "dist",
-        "kern", "mark", "mkmk",
-    },
-    thai = {
-        "ccmp", "locl", "liga", "kern", "mark",
-        "mkmk",
-    },
-    hang = {
-        "ccmp", "ljmo", "vjmo", "tjmo",
-    },
-}
-
-local global_defaults = { mode = "node" }
-
-defaults.beng = defaults.deva
-defaults.guru = defaults.deva
-defaults.gujr = defaults.deva
-defaults.orya = defaults.deva
-defaults.taml = defaults.deva
-defaults.telu = defaults.deva
-defaults.knda = defaults.deva
-defaults.mlym = defaults.deva
-defaults.sinh = defaults.deva
-
-defaults.syrc = defaults.arab
-defaults.mong = defaults.arab
-defaults.nko  = defaults.arab
-
-defaults.tibt = defaults.khmr
-
-defaults.lao  = defaults.thai
 
 ---[[ begin excerpt from font-ott.lua ]]
 
@@ -738,7 +709,7 @@ local verbosebaselines = swapped(baselines)
 
 --doc]]--
 
-local support_incomplete = table.tohash({
+local support_incomplete = tabletohash({
     "deva", "beng", "guru", "gujr",
     "orya", "taml", "telu", "knda",
     "mlym", "sinh",
@@ -752,7 +723,9 @@ local support_incomplete = table.tohash({
 --doc]]--
 
 --- (string, string) dict -> (string, string) dict
-local set_default_features = function (speclist)
+local apply_default_features = function (speclist)
+    local default_features = luaotfload.features
+
     speclist = speclist or { }
     speclist[""] = nil --- invalid options stub
 
@@ -777,292 +750,38 @@ local set_default_features = function (speclist)
               or "dflt"
         if support_incomplete[script] then
             report("log", 0, "load",
-                "support for the requested script: "
-                .. "%q may be incomplete", script)
+                "Support for the requested script: "
+                .. "%q may be incomplete.", script)
         end
     else
         script = "dflt"
     end
     speclist.script = script
 
-    report("log", 0, "load",
-        "auto-selecting default features for script: %s",
+    report("log", 1, "load",
+        "Auto-selecting default features for script: %s.",
         script)
 
-    local requested = defaults[script]
+    local requested = default_features.defaults[script]
     if not requested then
-        report("log", 0, "load",
-            "no defaults for script %q, falling back to \"dflt\"",
+        report("log", 1, "load",
+            "No default features for script %q, falling back to \"dflt\".",
             script)
-        requested = defaults.dflt
+        requested = default_features.defaults.dflt
     end
 
-    for i=1, #requested do
-        local feat = requested[i]
-        if speclist[feat] ~= false then speclist[feat] = true end
+    for feat, state in next, requested do
+        if speclist[feat] == nil then speclist[feat] = state end
     end
 
-    for feat, state in next, global_defaults do
+    for feat, state in next, default_features.global do
         --- This is primarily intended for setting node
         --- mode unless “base” is requested, as stated
         --- in the manual.
-        if not speclist[feat] then speclist[feat] = state end
+        if speclist[feat] == nil then speclist[feat] = state end
     end
     return speclist
 end
-
------------------------------------------------------------------------
----                    request syntax parser 2.2
------------------------------------------------------------------------
---- the luaotfload font request syntax (see manual)
---- has a canonical form:
----
----     \font<csname>=<prefix>:<identifier>:<features>
----
---- where
----   <csname> is the control sequence that activates the font
----   <prefix> is either “file” or “name”, determining the lookup
----   <identifer> is either a file name (no path) or a font
----               name, depending on the lookup
----   <features> is a list of switches or options, separated by
----              semicolons or commas; a switch is of the form “+” foo
----              or “-” foo, options are of the form lhs “=” rhs
----
---- however, to ensure backward compatibility we also have
---- support for Xetex-style requests.
----
---- for the Xetex emulation see:
---- · The XeTeX Reference Guide by Will Robertson, 2011
---- · The XeTeX Companion by Michel Goosens, 2010
---- · About XeTeX by Jonathan Kew, 2005
----
----
---- caueat emptor.
----     the request is parsed into one of **four** different
----     lookup categories: the regular ones, file and name,
----     as well as the Xetex compatibility ones, path and anon.
----     (maybe a better choice of identifier would be “ambig”.)
----
----     according to my reconstruction, the correct chaining
----     of the lookups for each category is as follows:
----
----     | File -> ( db/filename lookup )
----
----     | Name -> ( db/name lookup,
----                 db/filename lookup )
----
----     | Path -> ( db/filename lookup,
----                 fullpath lookup )
----
----     | Anon -> ( kpse.find_file(),     // <- for tfm, ofm
----                 db/name lookup,
----                 db/filename lookup,
----                 fullpath lookup )
----
----     caching of successful lookups is essential. we now
----     as of v2.2 have an experimental lookup cache that is
----     stored in a separate file. it pertains only to name:
----     lookups, and is described in more detail in
----     luaotfload-database.lua.
----
------------------------------------------------------------------------
-
---[[doc--
-
-    One further incompatibility between Xetex and Luatex-Fonts consists
-    in their option list syntax: apparently, Xetex requires key-value
-    options to be prefixed by a "+" (ascii “plus”) character. We
-    silently accept this as well, dropping the first byte if it is a
-    plus or minus character.
-
-    Reference: https://github.com/lualatex/luaotfload/issues/79#issuecomment-18104483
-
---doc]]--
-
-local handle_normal_option = function (key, val)
-    val = stringlower(val)
-    --- the former “toboolean()” handler
-    if val == "true"  then
-        val = true
-    elseif val == "false" then
-        val = false
-    end
-    return key, val
-end
-
---[[doc--
-
-    Xetex style indexing begins at zero which we just increment before
-    passing it along to the font loader.  Ymmv.
-
---doc]]--
-
-local handle_xetex_option = function (key, val)
-    val = stringlower(val)
-    local numeric = tonumber(val) --- decimal only; keeps colors intact
-    if numeric then --- ugh
-        if  mathceil(numeric) == numeric then -- integer, possible index
-            val = tostring(numeric + 1)
-        end
-    elseif val == "true"  then
-        val = true
-    elseif val == "false" then
-        val = false
-    end
-    return key, val
-end
-
---[[doc--
-
-    Instead of silently ignoring invalid options we emit a warning to
-    the log.
-
-    Note that we have to return a pair to please rawset(). This creates
-    an entry on the resulting features hash which will later be removed
-    during set_default_features().
-
---doc]]--
-
-local handle_invalid_option = function (opt)
-    report("log", 0, "load", "font option %q unknown.", opt)
-    return "", false
-end
-
---[[doc--
-
-    Dirty test if a file: request is actually a path: lookup; don’t
-    ask! Note this fails on Windows-style absolute paths. These will
-    *really* have to use the correct request.
-
---doc]]--
-
-local check_garbage = function (_,i, garbage)
-    if stringfind(garbage, "/") then
-        report("log", 0, "load",  --- ffs use path!
-            "warning: path in file: lookups is deprecated; ")
-        report("log", 0, "load", "use bracket syntax instead!")
-        report("log", 0, "load",
-            "position: %d; full match: %q",
-            i, garbage)
-        return true
-    end
-    return false
-end
-
-local lpegmatch = lpeg.match
-local P, S, R   = lpeg.P, lpeg.S, lpeg.R
-local C, Cc, Cf, Cg, Cmt, Cs, Ct
-    = lpeg.C, lpeg.Cc, lpeg.Cf, lpeg.Cg, lpeg.Cmt, lpeg.Cs, lpeg.Ct
-
---- terminals and low-level classes -----------------------------------
---- note we could use the predefined ones from lpeg.patterns
-local dot         = P"."
-local colon       = P":"
-local featuresep  = S",;"
-local slash       = P"/"
-local equals      = P"="
-local lbrk, rbrk  = P"[", P"]"
-
-local spacing     = S" \t\v"
-local ws          = spacing^0
-
-local digit       = R"09"
-local alpha       = R("az", "AZ")
-local anum        = alpha + digit
-local decimal     = digit^1 * (dot * digit^0)^-1
-
---- modifiers ---------------------------------------------------------
---[[doc--
-    The slash notation: called “modifiers” (Kew) or “font options”
-    (Robertson, Goosens)
-    we only support the shorthands for italic / bold / bold italic
-    shapes, as well as setting optical size, the rest is ignored.
---doc]]--
-local style_modifier    = (P"BI" + P"IB" + P"bi" + P"ib" + S"biBI")
-                        / stringlower
-local size_modifier     = S"Ss" * P"="    --- optical size
-                        * Cc"optsize" * C(decimal)
-local other_modifier    = P"AAT" + P"aat" --- apple stuff;  unsupported
-                        + P"ICU" + P"icu" --- not applicable
-                        + P"GR"  + P"gr"  --- sil stuff;    unsupported
-local garbage_modifier  = ((1 - colon - slash)^0 * Cc(false))
-local modifier          = slash * (other_modifier      --> ignore
-                                 + Cs(style_modifier)  --> collect
-                                 + Ct(size_modifier)   --> collect
-                                 + garbage_modifier)   --> warn
-local modifier_list     = Cg(Ct(modifier^0), "modifiers")
-
---- lookups -----------------------------------------------------------
-local fontname          = C((1-S":(/")^1)  --- like luatex-fonts
-local unsupported       = Cmt((1-S":(")^1, check_garbage)
-local prefixed          = P"name:" * ws * Cg(fontname, "name")
---- initially we intended file: to emulate the behavior of
---- luatex-fonts, i.e. no paths allowed. after all, we do have XeTeX
---- emulation with the path lookup and it interferes with db lookups.
---- turns out fontspec and other widely used packages rely on file:
---- with paths already, so we’ll add a less strict rule here.  anyways,
---- we’ll emit a warning.
-                        + P"file:" * ws * Cg(unsupported, "path")
-                        + P"file:" * ws * Cg(fontname, "file")
---- EXPERIMENTAL: kpse lookup
-                        + P"kpse:" * ws * Cg(fontname, "kpse")
---- EXPERIMENTAL: custom lookup
-                        + P"my:" * ws * Cg(fontname, "my")
-local unprefixed        = Cg(fontname, "anon")
-local path_lookup       = lbrk * Cg(C((1-rbrk)^1), "path") * rbrk
-
---- features ----------------------------------------------------------
-local field_char        = anum + S"+-." --- sic!
-local field             = field_char^1
---- assignments are “lhs=rhs”
----              or “+lhs=rhs” (Xetex-style)
---- switches    are “+key” | “-key”
-local normal_option     = C(field) * ws * equals * ws * C(field) * ws
-local xetex_option      = P"+" * ws * normal_option
-local ignore_option     = (1 - equals - featuresep)^1
-                        * equals
-                        * (1 - featuresep)^1
-local assignment        = xetex_option  / handle_xetex_option
-                        + normal_option / handle_normal_option
-                        + ignore_option / handle_invalid_option
-local switch            = P"+" * ws * C(field) * Cc(true)
-                        + P"-" * ws * C(field) * Cc(false)
-                        +             C(field) * Cc(true)   --- default
-local feature_expr      = ws * Cg(assignment + switch) * ws
-local option            = feature_expr
-local feature_list      = Cf(Ct""
-                           * option
-                           * (featuresep * option^-1)^0
-                           , rawset)
-                        * featuresep^-1
-
---- other -------------------------------------------------------------
---- This rule is present in the original parser. It sets the “sub”
---- field of the specification which allows addressing a specific
---- font inside a TTC container. Neither in Luatex-Fonts nor in
---- Luaotfload is this documented, so we might as well silently drop
---- it. However, as backward compatibility is one of our prime goals we
---- just insert it here and leave it undocumented until someone cares
---- to ask. (Note: afair subfonts are numbered, but this rule matches a
---- string; I won’t mess with it though until someone reports a
---- problem.)
---- local subvalue   = P("(") * (C(P(1-S("()"))^1)/issub) * P(")") -- for Kim
---- Note to self: subfonts apparently start at index 0. Tested with
---- Cambria.ttc that includes “Cambria Math” at 0 and “Cambria” at 1.
---- Other values cause luatex to segfault.
-local subfont           = P"(" * Cg((1 - S"()")^1, "sub") * P")"
---- top-level rules ---------------------------------------------------
---- \font\foo=<specification>:<features>
-local features          = Cg(feature_list, "features")
-local specification     = (prefixed + unprefixed)
-                        * subfont^-1
-                        * modifier_list^-1
-local font_request      = Ct(path_lookup   * (colon^-1 * features)^-1
-                           + specification * (colon    * features)^-1)
-
---  lpeg.print(font_request)
---- new parser: 657 rules
---- old parser: 230 rules
 
 local import_values = {
     --- That’s what the 1.x parser did, not quite as graciously,
@@ -1086,9 +805,9 @@ local select_lookup = function (request)
 end
 
 local supported = {
-    b    = "bold",
-    i    = "italic",
-    bi   = "bolditalic",
+    b    = "b",
+    i    = "i",
+    bi   = "bi",
     aat  = false,
     icu  = false,
     gr   = false,
@@ -1127,7 +846,7 @@ end
 
 --- spec -> spec
 local handle_request = function (specification)
-    local request = lpegmatch(font_request,
+    local request = lpegmatch(luaotfload.parsers.font_request,
                               specification.specification)
     if not request then
         --- happens when called with an absolute path
@@ -1158,7 +877,7 @@ local handle_request = function (specification)
         return specification
     end
     local lookup, name  = select_lookup(request)
-    request.features    = set_default_features(request.features)
+    request.features    = apply_default_features(request.features)
 
     if name then
         specification.name    = name
@@ -1185,19 +904,20 @@ local handle_request = function (specification)
     --- The next line sets the “rand” feature to “random”; I haven’t
     --- investigated it any further (luatex-fonts-ext), so it will
     --- just stay here.
-    specification.features.normal
-        = fonts.handlers.otf.features.normalize(request.features)
+    specification.features.normal = normalize (request.features)
     return specification
 end
 
-local compare_requests = function (spec)
-    local old = old_behavior(spec)
-    local new = handle_request(spec)
-    return new
+if as_script == true then --- skip the remainder of the file
+    fonts.names.handle_request = handle_request
+    report ("log", 5, "load",
+            "Exiting early from luaotfload-features.lua.")
+    return
+else
+    local registersplit = definers.registersplit
+    registersplit (":", handle_request, "cryptic")
+    registersplit ("",  handle_request, "more cryptic") -- catches \font\text=[names]
 end
-
-fonts.definers.registersplit(":", handle_request, "cryptic")
-fonts.definers.registersplit("",  handle_request, "more cryptic") -- catches \font\text=[names]
 
 ---[[ end included font-ltx.lua ]]
 
@@ -1218,7 +938,6 @@ local report_otf          = logs.reporter("fonts","otf loading")
 
 local otf                 = fonts.handlers.otf
 local registerotffeature  = otf.features.register
-local setmetatableindex   = table.setmetatableindex
 
 --[[HH--
 
@@ -1274,6 +993,7 @@ local function addfeature(data,feature,specifications)
                 local subtables     = specification.subtables or { specification.data } or { }
                 local featuretype   = types[specification.type or "substitution"]
                 local featureflags  = specification.flags or noflags
+                local featureorder  = specification.order or { feature }
                 local added         = false
                 local featurename   = stringformat("ctx_%s_%s",feature,s)
                 local st = { }
@@ -1334,17 +1054,23 @@ local function addfeature(data,feature,specifications)
                     -- script = { lang1, lang2, lang3 } or script = { lang1 = true, ... }
                     for k, v in next, askedfeatures do
                         if v[1] then
-                            askedfeatures[k] = table.tohash(v)
+                            askedfeatures[k] = tabletohash(v)
                         end
                     end
-                    sequences[#sequences+1] = {
+                    local sequence = {
                         chain     = 0,
                         features  = { [feature] = askedfeatures },
                         flags     = featureflags,
                         name      = featurename,
+                        order     = featureorder,
                         subtables = st,
                         type      = featuretype,
                     }
+                    if specification.prepend then
+                        insert(sequences,1,sequence)
+                    else
+                        insert(sequences,sequence)
+                    end
                     -- register in metadata (merge as there can be a few)
                     if not gsubfeatures then
                         gsubfeatures  = { }
@@ -1374,6 +1100,7 @@ local function addfeature(data,feature,specifications)
     end
 end
 
+
 otf.enhancers.addfeature = addfeature
 
 local extrafeatures = { }
@@ -1402,6 +1129,8 @@ local tlig = {
             [0x0060] = 0x2018,                   -- quoteright
         },
         flags     = { },
+        order     = { "tlig" },
+        prepend   = true,
     },
     {
         type     = "ligature",
@@ -1411,11 +1140,17 @@ local tlig = {
             [0x2014] = {0x002D, 0x002D, 0x002D}, -- emdash
             [0x201C] = {0x2018, 0x2018},         -- quotedblleft
             [0x201D] = {0x2019, 0x2019},         -- quotedblright
-            [0x201E] = {0x002C, 0x002C},         -- quotedblbase
             [0x00A1] = {0x0021, 0x2018},         -- exclamdown
             [0x00BF] = {0x003F, 0x2018},         -- questiondown
+            --- next three originate in T1 encoding; Xetex applies
+            --- them too
+            [0x201E] = {0x002C, 0x002C},         -- quotedblbase
+            [0x00AB] = {0x003C, 0x003C},         -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+            [0x00BB] = {0x003E, 0x003E},         -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
         },
         flags    = { },
+        order    = { "tlig" },
+        prepend  = true,
     },
     {
         type     = "ligature",
@@ -1427,11 +1162,13 @@ local tlig = {
             [0x00BF] = {0x003F, 0x0060},         -- questiondown
         },
         flags    = { },
+        order    = { "tlig" },
+        prepend  = true,
     },
 }
 
-otf.addfeature("tlig", tlig)
-otf.addfeature("trep", { }) -- empty, all in tlig now
+otf.addfeature ("tlig", tlig)
+otf.addfeature ("trep", { })
 
 local anum_arabic = { --- these are the same as in font-otc
     [0x0030] = 0x0660,
@@ -1478,6 +1215,7 @@ local anum_specification = {
         features = { arab = { far = true, urd = true, snd = true } },
         data     = anum_persian,
         flags    = { },
+        order    = { "anum" },
         valid    = valid,
     },
     {
@@ -1485,23 +1223,16 @@ local anum_specification = {
         features = { arab = { ["*"] = true } },
         data     = anum_arabic,
         flags    = { },
+        order    = { "anum" },
         valid    = valid,
     },
 }
 
---[[doc--
-
-    Below the specifications as given in the removed font-otc.lua.
-    The rest was identical to what this file had from the beginning.
-    Both make the “anum.tex” test pass anyways.
-
---doc]]--
-
-otf.addfeature("anum",anum_specification)
+otf.addfeature ("anum", anum_specification)
 
 registerotffeature {
-    name        = 'anum',
-    description = 'arabic digits',
+    name        = "anum",
+    description = "arabic digits",
 }
 
 -- vim:tw=71:sw=4:ts=4:expandtab

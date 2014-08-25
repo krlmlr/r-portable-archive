@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009
+%% Copyright 1993-2014
 %% The LaTeX3 Project and any individual authors listed elsewhere
 %% in this file.
 %% 
@@ -38,7 +38,7 @@
 %% extension .ins) which are part of the distribution.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{fixltx2e}
-          [2006/09/13 v1.1m fixes to LaTeX]
+          [2014/06/10 v1.1r fixes to LaTeX]
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -61,7 +61,8 @@
     \global\setbox\@leftcolumn\copy\@outputbox
     \splitmaxdepth\maxdimen
     \vbadness\maxdimen
-    \setbox\@outputbox\vsplit\@outputbox to\maxdimen
+     \setbox\@outputbox\vbox{\unvbox\@outputbox\unskip}%
+     \setbox\@outputbox\vsplit\@outputbox to\maxdimen
     \toks@\expandafter{\topmark}%
     \xdef\@firstcoltopmark{\the\toks@}%
     \toks@\expandafter{\splitfirstmark}%
@@ -92,16 +93,25 @@
     \endgroup
   \fi}
 \def\end@dblfloat{%
-\if@twocolumn
-  \@endfloatbox
-  \ifnum\@floatpenalty <\z@
-    \@largefloatcheck
-    \global\dp\@currbox1sp %
-     \expandafter\@gobble\end@float
+  \if@twocolumn
+    \@endfloatbox
+    \ifnum\@floatpenalty <\z@
+      \@largefloatcheck
+      \global\dp\@currbox1sp %
+      \@cons\@currlist\@currbox
+      \ifnum\@floatpenalty <-\@Mii
+        \penalty -\@Miv
+        \@tempdima\prevdepth
+        \vbox{}%
+        \prevdepth\@tempdima
+        \penalty\@floatpenalty
+      \else
+        \vadjust{\penalty -\@Miv \vbox{}\penalty\@floatpenalty}\@Esphack
+      \fi
+    \fi
+  \else
+    \end@float
   \fi
-\else
-  \end@float
-\fi
 }
 \def\@testwrongwidth #1{%
   \ifdim\dp#1=\f@depth
@@ -476,6 +486,71 @@
 \MakeRobust\parbox
 \MakeRobust\rule
 \MakeRobust\raisebox
+\def\@xfloat #1[#2]{%
+  \@nodocument
+  \def \@captype {#1}%
+   \def \@fps {#2}%
+   \@onelevel@sanitize \@fps
+   \def \reserved@b {!}%
+   \ifx \reserved@b \@fps
+     \@fpsadddefault
+   \else
+     \ifx \@fps \@empty
+       \@fpsadddefault
+     \fi
+   \fi
+   \ifhmode
+     \@bsphack
+     \@floatpenalty -\@Mii
+   \else
+     \@floatpenalty-\@Miii
+   \fi
+  \ifinner
+     \@parmoderr\@floatpenalty\z@
+  \else
+    \@next\@currbox\@freelist
+      {%
+       \@tempcnta \sixt@@n
+       \expandafter \@tfor \expandafter \reserved@a
+         \expandafter :\expandafter =\@fps
+         \do
+          {%
+           \if \reserved@a h%
+             \ifodd \@tempcnta
+             \else
+               \advance \@tempcnta \@ne
+             \fi
+           \else\if \reserved@a t%
+             \@setfpsbit \tw@
+           \else\if \reserved@a b%
+             \@setfpsbit 4%
+           \else\if \reserved@a p%
+             \@setfpsbit 8%
+           \else\if \reserved@a !%
+             \ifnum \@tempcnta>15
+               \advance\@tempcnta -\sixt@@n\relax
+             \fi
+           \else
+             \@latex@error{Unknown float option `\reserved@a'}%
+             {Option `\reserved@a' ignored and `p' used.}%
+             \@setfpsbit 8%
+           \fi\fi\fi\fi\fi
+           }%
+       \@tempcntb \csname ftype@\@captype \endcsname
+       \multiply \@tempcntb \@xxxii
+       \advance \@tempcnta \@tempcntb
+       \global \count\@currbox \@tempcnta
+       }%
+    \@fltovf
+  \fi
+  \global \setbox\@currbox
+    \color@vbox
+      \normalcolor
+      \vbox \bgroup
+        \hsize\columnwidth
+        \@parboxrestore
+        \@floatboxreset
+}
 \endinput
 %%
 %% End of file `fixltx2e.sty'.

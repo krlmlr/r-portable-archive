@@ -15,7 +15,7 @@
 %% Either version 1.3 or, at your option, any later version.
 %%
 \ProvidesFile{dvipsnam.def}
-        [1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)]
+        [2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)]
 \DefineNamedColor{named}{GreenYellow}   {cmyk}{0.15,0,0.69,0}
 \DefineNamedColor{named}{Yellow}        {cmyk}{0,0,1,0}
 \DefineNamedColor{named}{Goldenrod}     {cmyk}{0,0.10,0.84,0}
