@@ -42,8 +42,8 @@ Function Unpack {
     [CmdletBinding()]
     Param()
 
-    rm -Recurse -Force .\Image
-    md .\Image
+    rm -Recurse -Force .\Image\R
+    rm -Recurse -Force .\Image\Rtools
 
     # R
     Progress "Extracting R"
