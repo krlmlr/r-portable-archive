@@ -1,7 +1,7 @@
 
-r-portable 
+r-portable (branch: 2-miktex)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/2-miktex)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/2-miktex)
 
 ISO images that contain everything necessary to build R packages.
 
@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.3 MB, MD5 hash: `e44757c3a6330864c9ce648432638d89`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `a44f3f7db1545592b6ae96caa2c0cdba`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso) (713.7 MB, MD5 hash: `9610071d45bbc30e65163d7cf482697f`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso.gz) (254 MB, MD5 hash: `c49ff6d1143914893d59203b52f511e2`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -20,7 +20,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-08-24 r66465)
+R Under development (unstable) (2014-08-25 r66471)
 
 ### Package versions
 
@@ -60,7 +60,7 @@ R Under development (unstable) (2014-08-24 r66465)
 [`devtools`](http://cran.r-project.org/package=devtools) (1.5),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.4),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
-[`formatR`](http://cran.r-project.org/package=formatR) (0.10),
+[`formatR`](http://cran.r-project.org/package=formatR) (1.0),
 [`highr`](http://cran.r-project.org/package=highr) (0.3),
 [`httr`](http://cran.r-project.org/package=httr) (0.4),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.10),
