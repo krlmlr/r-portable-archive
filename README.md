@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso) (713.7 MB, MD5 hash: `9610071d45bbc30e65163d7cf482697f`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso.gz) (254 MB, MD5 hash: `c49ff6d1143914893d59203b52f511e2`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso) (759.6 MB, MD5 hash: `be906d21c13f552bae07907adb073b40`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/2-miktex/R.iso.gz) (255.2 MB, MD5 hash: `e193cdf763f1830b9d1c6fc0bd912642`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
