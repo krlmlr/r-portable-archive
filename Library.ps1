@@ -90,7 +90,7 @@ Function CreateImage {
     }
 
     Progress "Creating ISO file."
-    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
+    Exec { .\Tools\cdrtools\mkisofs -udf -o R.iso -V R-portable -R -J Image }
 
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
