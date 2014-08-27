@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-09-22).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-23).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -289,7 +289,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-09-22).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-23).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4699,8 +4699,9 @@ with <code>.libPaths()</code> containing just a temporary library directory
 and <code>.Library</code>.  The temporary library is populated by symbolic
 links<a name="DOCF23" href="#FOOT23"><sup>23</sup></a> to the installed copies of
 all the Depends/Imports and (for the second only) Suggests packages
-which are not in <code>.Library</code>.  Default: false (but
-<code>_R_CHECK_SUGGESTS_ONLY_</code> is true for CRAN checks).
+which are not in <code>.Library</code>.  (As an exception, packages in a
+&lsquo;<samp>VignetteBuilder</samp>&rsquo; field are always made available.)
+Default: false (but <code>_R_CHECK_SUGGESTS_ONLY_</code> is true for CRAN checks).
 </p>
 </dd>
 <dt><code>_R_CHECK_NO_RECOMMENDED_</code>
@@ -5150,8 +5151,7 @@ to 2^48 on unserialization.
 </li><li> The type <code>R_xlen_t</code> is made available to packages in C header
 <samp>Rinternals.h</samp>: this should be fine in C code since C99 is
 required.  People do try to use R internals in C++, but C++98
-compilers are not required to support these types (and there are
-currently no C++11 compilers).
+compilers are not required to support these types.
 
 </li><li> Indexing can be done via the use of doubles.  The internal indexing code
 used to work with positive integer indices (and negative, logical and
@@ -5234,9 +5234,9 @@ Previous: <a href="#g_t64_002dbit-types" accesskey="p" rel="prev">64-bit types</
 <h3 class="section">12.3 Large matrices</h3>
 
 <p>Matrices are stored as vectors and so were also limited to 2^31-1
-elements.  Now longer vectors are allowed, matrices with more elements
-are supported provided that each of the dimensions is no more than
-2^31-1.  However, not all applications can be supported.
+elements.  Now longer vectors are allowed on 64-bit platforms, matrices
+with more elements are supported provided that each of the dimensions is
+no more than 2^31-1.  However, not all applications can be supported.
 </p>
 <p>The main problem is linear algebra done by FORTRAN code compiled
 with 32-bit <code>INTEGER</code>.  Although not guaranteed, it seems that all

@@ -271,6 +271,10 @@ matching by name in <code>log()</code>.
 </li>
 <li> <p><code>identical()</code> now also looks at the S4 bit.
 </p>
+</li>
+<li><p> objects like <code>getClass("refClass")@prototype</code> now
+<code>print()</code> and <code>str()</code> without error.
+</p>
 </li></ul>
 
 
@@ -359,6 +363,21 @@ use of <span class="pkg">inconsolata</span>.
 installed, the &lsquo;<span class="file">bin/R.exe</span>&rsquo; and &lsquo;<span class="file">bin/Rscript.exe</span>&rsquo; executables
 now run 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  (To run 32 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, overwrite these files
 with copies of &lsquo;<span class="file">bin/i386/Rfe.exe</span>&rsquo;.)
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li><p> Running <code>R CMD check</code> when run with
+<span class="env">_R_CHECK_DEPENDS_ONLY_</span> true now makes the
+<span class="samp">VignetteBuilder</span> packages available even if they are
+listed in <span class="samp">Suggests</span>, since they are needed to recognise and
+process non-Sweave vignettes. 
 </p>
 </li></ul>
 
