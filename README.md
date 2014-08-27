@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `b2bada1c95caa3891d1b6917d3e8170b`, uncompressed 378 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `c400fd9e122b7db16f5900ec945e8787`, uncompressed 385.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `d34b2ee8689a779beb121704d354309a`, uncompressed 414.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `ca1d2eb930387bfef766522fb3f6f0c9`, uncompressed 378 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `7ee8822a06546a07d918bb0c2582b764`, uncompressed 385.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `caf81d2b94e0f380f156abf71e096e44`, uncompressed 414.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-10-05 r66720)
+R Under development (unstable) (2014-10-07 r66723)
 
 ### Package versions
 
@@ -51,14 +51,14 @@ R Under development (unstable) (2014-10-05 r66720)
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-35),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.1-4),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-3),
-[`nlme`](http://cran.r-project.org/package=nlme) (3.1-117),
+[`nlme`](http://cran.r-project.org/package=nlme) (3.1-118),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-8),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-8),
 [`spatial`](http://cran.r-project.org/package=spatial) (7.3-8),
 [`survival`](http://cran.r-project.org/package=survival) (2.37-7) 
 ####  other 
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
-[`devtools`](http://cran.r-project.org/package=devtools) (1.6),
+[`devtools`](http://cran.r-project.org/package=devtools) (1.6.1),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.4),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.0),

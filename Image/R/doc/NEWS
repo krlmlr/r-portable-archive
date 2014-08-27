@@ -126,6 +126,9 @@ CHANGES IN R-devel:
       can result in significant performance improvements in scalar
       numerical code.
 
+    * apply(m, 2, identity) is now the same as the matrix m, also when
+      it has _named_ row names.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
