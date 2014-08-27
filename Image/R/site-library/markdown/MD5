@@ -1,11 +1,11 @@
 603dd5a44125bb3c7f2595c87c048d93 *COPYING
-88d173c9756d5753987cff5b776fc4dc *DESCRIPTION
+cbc46f2f90d2571ca4bbd218f3f67f55 *DESCRIPTION
 046aa296db1647e17a42912cfcf61fae *INDEX
 04176a81765ab34a401a1d96fa6c1805 *Meta/Rd.rds
 10dcc0793e1fdace85f36f0f3af17bac *Meta/hsearch.rds
 19ee83775e096e72b78f10d1523e3f89 *Meta/links.rds
 3943511ce4906b42a54db557b9b7cee0 *Meta/nsInfo.rds
-8756876feea3dd9ab4ed3f62185c61bd *Meta/package.rds
+dd7e3ca6e2daacd1bd40d3e053d52c7a *Meta/package.rds
 31538f247e8f6bdff88b2f2ccc605241 *Meta/vignette.rds
 87a89086a2d7d36513a827338f2168bb *NAMESPACE
 81d7f00272539f38316f5d51021654a0 *NEWS
@@ -24,9 +24,9 @@ edd3cf78cb3a64fa0d33e9b2640255a6 *doc/markdown-output.html
 2c5fc44b771406c4fb7e658e14e63fd7 *examples/markdownExtensions.R
 e02d4686188a585b6afa1e8af37e2675 *help/AnIndex
 394afd1c79b880642c1bf336b283882a *help/aliases.rds
-d5d652613f8c657e2b5559a55ab2dd92 *help/markdown.rdb
-77b17c1b10032b99e37c28483c4f1c0e *help/markdown.rdx
-8a30f3d3f478d9ad9d4ed74a5c99cfb4 *help/paths.rds
+f957b44f8c7b6c97e238addb1af40c9d *help/markdown.rdb
+da438c8d53454cf024c86e4658efff4a *help/markdown.rdx
+539f301a45f8f7864e0b0edcc61f7d89 *help/paths.rds
 c04da0a79326410dcccd54feacb175c3 *html/00Index.html
 444535b9cb76ddff1bab1e1865a3fb14 *html/R.css
 4ba2610d0919031a909bf50306bfc533 *include/autolink.h
@@ -34,7 +34,7 @@ c04da0a79326410dcccd54feacb175c3 *html/00Index.html
 23ed959ea9845e0877d824fdd081b11a *include/markdown.h
 9f130bbcd1a33d16d655c5b3bc10917c *include/markdown_rstubs.c
 8edae02d2442e7abc13b9118a16c70c7 *include/markdown_rstubs.h
-224abcc962a9ecff64edff82d798a463 *libs/i386/markdown.dll
+fc434c853b10f97be62d3bde5f55bb53 *libs/i386/markdown.dll
 e3956b946cfce32cf5f739a6ba083622 *libs/i386/symbols.rds
 3202892a9bde86183d267215b4aa1dc6 *libs/x64/markdown.dll
 7d61672247ce0b217cfbf8d5eb77d6c6 *libs/x64/symbols.rds
