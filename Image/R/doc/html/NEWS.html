@@ -268,13 +268,6 @@ matching by name in <code>log()</code>.
 <li> <p><code>all.equal()</code> gets a method for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
-</li>
-<li> <p><code>identical()</code> now also looks at the S4 bit.
-</p>
-</li>
-<li><p> objects like <code>getClass("refClass")@prototype</code> now
-<code>print()</code> and <code>str()</code> without error.
-</p>
 </li></ul>
 
 
@@ -331,6 +324,9 @@ collation locale in use (if any).
 <li> <p><code>utils::URLencode()</code> was updated to use unreserved and
 reserved characters from RFC 3986,
 <a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
+</p>
+</li>
+<li> <p><code>unique(warnings())</code> now works, as does <code>c()</code>.
 </p>
 </li></ul>
 
@@ -485,6 +481,13 @@ and missed memory protection added. (<a href="https://bugs.R-project.org/bugzill
 </li>
 <li> <p><code>Rscript</code> no longer passes <code>--args</code> to
 <code>R</code> when there are no extra (&ldquo;user&rdquo;) arguments.
+</p>
+</li>
+<li><p> objects like <code>getClass("refClass")@prototype</code> now
+<code>print()</code> and <code>str()</code> without error.
+</p>
+</li>
+<li> <p><code>identical()</code> now also looks at the S4 bit.
 </p>
 </li></ul>
 

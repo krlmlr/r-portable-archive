@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.2 MB, MD5 hash: `b420ff33344a4aeeaf4b40ccecfca04f`, uncompressed 378.9 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.4 MB, MD5 hash: `ca955000df543c7bc06361dfd52adec1`, uncompressed 386.7 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.9 MB, MD5 hash: `be20fdea0342b4b744215624843719cc`, uncompressed 416.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.2 MB, MD5 hash: `9a6404637cf3204cbc88ec031240eb52`, uncompressed 379 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.4 MB, MD5 hash: `f893ef1f0de682bcef97fef9bb09dff6`, uncompressed 386.7 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.9 MB, MD5 hash: `0b9a3174e9437040ac6102f6614c248b`, uncompressed 416.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-09-25 r66681)
+R Under development (unstable) (2014-09-26 r66690)
 
 ### Package versions
 
@@ -68,7 +68,7 @@ R Under development (unstable) (2014-09-25 r66681)
 [`knitr`](http://cran.r-project.org/package=knitr) (1.6),
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.4),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
-[`mime`](http://cran.r-project.org/package=mime) (0.1.2),
+[`mime`](http://cran.r-project.org/package=mime) (0.2),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.2),
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.3),

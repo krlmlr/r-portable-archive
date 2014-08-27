@@ -406,6 +406,7 @@ c.noquote	noquote
 c.numeric_version	numeric_version
 c.POSIXct	DateTimeClasses
 c.POSIXlt	DateTimeClasses
+c.warnings	warnings
 call	call
 callCC	callCC
 capabilities	capabilities
@@ -1458,6 +1459,7 @@ unique.default	unique
 unique.matrix	unique
 unique.numeric_version	numeric_version
 unique.POSIXlt	DateTimeClasses
+unique.warnings	warnings
 units	difftime
 units.difftime	difftime
 units<-	difftime

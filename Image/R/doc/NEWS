@@ -172,11 +172,6 @@ CHANGES IN R-devel:
 
     * all.equal() gets a method for environments and refClasses.
 
-    * identical() now also looks at the S4 bit.
-
-    * objects like getClass("refClass")@prototype now print() and str()
-      without error.
-
 CHANGES IN R 3.1.1 patched:
 
   NEW FEATURES:
@@ -214,6 +209,8 @@ CHANGES IN R 3.1.1 patched:
     * utils::URLencode() was updated to use unreserved and reserved
       characters from RFC 3986, <URL:
       http://tools.ietf.org/html/rfc3986>, instead of RFC 1738.
+
+    * unique(warnings()) now works, as does c().
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -315,6 +312,11 @@ CHANGES IN R 3.1.1 patched:
 
     * Rscript no longer passes --args to R when there are no extra
       ("user") arguments.
+
+    * objects like getClass("refClass")@prototype now print() and str()
+      without error.
+
+    * identical() now also looks at the S4 bit.
 
 CHANGES IN R 3.1.1:
 
