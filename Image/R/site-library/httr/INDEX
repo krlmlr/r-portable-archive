@@ -7,6 +7,7 @@ POST                    POST file to a server.
 PUT                     Send PUT request to server.
 add_headers             Add additional headers to a request.
 authenticate            Use http authentication.
+cache_info              Compute caching information for a response.
 config                  Set curl options.
 content                 Extract content from a request.
 content_type            Set content-type and accept headers.
@@ -25,6 +26,7 @@ oauth2.0_token          Generate an oauth2.0 token.
 oauth_app               Create an OAuth application.
 oauth_endpoint          Describe an OAuth endpoint.
 oauth_endpoints         Popular oauth endpoints.
+parse_http_date         Parse and print http dates.
 parse_url               Parse and build urls according to RFC1808.
 progress                Add a progress bar.
 response                The response object.
@@ -39,3 +41,4 @@ use_proxy               Use a proxy to connect to the internet.
 user_agent              Set user agent.
 verbose                 Give verbose output.
 with_config             Execute code with configuration set.
+write_disk              Control where the response body is written.

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-09-01).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-02).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -429,7 +429,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-09-01).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-02).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -1391,7 +1391,7 @@ provided that the objects created do not depend on those packages except
 <p>Two exceptions are allowed: if the <samp>R</samp> subdirectory contains a file
 <samp>sysdata.rda</samp> (a saved image of one or more R objects: please
 use suitable compression as suggested by <code>tools::resaveRdaFiles</code>,
-an see also &lsquo;<samp>SysDataCompression</samp>&rsquo; <samp>DESCRIPTION</samp> field.)  this
+and see also &lsquo;<samp>SysDataCompression</samp>&rsquo; <samp>DESCRIPTION</samp> field.)  this
 will be lazy-loaded into the namespace environment &ndash; this is intended
 for system datasets that are not intended to be user-accessible
 <em>via</em> <code>data</code>.  Also, files ending in &lsquo;<samp>.in</samp>&rsquo; will be
@@ -4549,9 +4549,10 @@ various standards.
 floating-point arguments.  It is legitimate in C++ to overload these
 with versions for types <code>float</code>, <code>double</code>, <code>long double</code>
 and possibly more.  This means that calling <code>sqrt</code> on an integer
-type may have &lsquo;overloading ambiguity&rsquo; as it could be promoted to any of the
-supported floating-point types: this is commonly seen on Solaris.
-(C++11 requires additional overloads for integer types.)
+type may have &lsquo;overloading ambiguity&rsquo; as it could be promoted to any of
+the supported floating-point types: this is commonly seen on Solaris,
+but for <code>pow</code> also seen on OS X.  (C++11 requires additional
+overloads for integer types.)
 
 <p>A not-uncommonly-seen problem is to mistakenly call <code>floor(x/y)</code> or
 <code>ceil(x/y)</code> for <code>int</code> arguments <code>x</code> and <code>y</code>.  Since
