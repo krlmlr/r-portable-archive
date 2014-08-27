@@ -254,6 +254,9 @@ CHANGES IN R 3.1.1 patched:
       specified parameter limits despite using an algorithm other than
       "port".  (PR#15960)
 
+    * Subclassing an S4 class failed if the class required arguments to
+      the generator, through its initialize() method.
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:
