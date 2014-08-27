@@ -341,6 +341,9 @@ CHANGES IN R 3.1.1 patched:
     * matrices and arrays with last dimension zero did not print at all
       or incompletely.  (PR#16012)
 
+    * plot.histogram() and hence hist() now respect the xaxs, yaxs and
+      lab graphics parameters.  (PR#16021)
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:
