@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-09-04).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-05).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -289,7 +289,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-09-04).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-05).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -2415,7 +2415,7 @@ indicating if the serialized objects were compressed: compression is
 always used nowadays. We later added the values <code>compressed = 2</code>
 and <code>3</code> for <code>bzip2</code> and <code>xz</code> compression (with the
 possibility of future expansion to other methods): these formats add a
-fifth byte to the header for the type of compression, and stores
+fifth byte to the header for the type of compression, and store
 serialized objects uncompressed if compression expands them.
 </p>
 <p>The loader for a lazy-load database of code or data is function
@@ -2432,6 +2432,16 @@ entries is done by calls to <code>.Call(&quot;R_lazyLoadDBinsertValue&quot;,
 <p>Lazy-load databases of less than 10MB are cached in memory at first use:
 this was found necessary when using file systems with high latency
 (removable devices and network-mounted file systems on Windows).
+</p>
+<p>Lazy-load databases are loaded into the exports for a package, but not
+into the namespace environment itself.  Thus they are visible when the
+package is <em>attached</em>, and also <em>via</em> the <code>::</code> operator.
+This was a deliberate design decision, as packages mostly make datasets
+available for use by the end user (or other packages), and they should
+not be found preferentially from functions in the package, surprising
+users who expected the normal search path to be used.  (There is an
+alternative mechanism, <samp>sysdata.rda</samp>, for &lsquo;system datasets&rsquo; that
+are intended primarily to be used within the package.)
 </p>
 <p>The same database mechanism is used to store parsed <samp>Rd</samp> files.
 One or all of the parsed objects is fetched by a call to
