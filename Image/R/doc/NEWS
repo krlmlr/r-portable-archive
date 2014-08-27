@@ -276,6 +276,8 @@ CHANGES IN R 3.1.1 patched:
     * Several tcltk functions failed when run in unusual environments.
       (PR#15970)
 
+    * options(list()) now works (trivially). (PR#15979)
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:
