@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-09-06).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-07).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-09-06).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-07).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4341,8 +4341,8 @@ work as intended.  For alternatives, see <a href="#Suggested-packages">Suggested
 <code>with</code>.
 </li></ul>
 
-<p>Do be careful in what your tests actually test.  Bad practice seen in
-distributed packages include:
+<p>Do be careful in what your tests (and examples) actually test.  Bad
+practice seen in distributed packages include:
 </p>
 <ul>
 <li> It is not reasonable to test the time taken by a command: you cannot
@@ -4350,8 +4350,18 @@ know how fast or how heavily loaded an R platform might be.  At best
 you can test a ratio of times, and even that is fraught with
 difficulties.
 
-</li><li> Do not test the exact format of R error messages: they change, and
+</li><li> Do not test the exact format of R error messages: They change, and
 they can be translated.
+
+<p>Worse, packages have tested the exact format of system error messages,
+which are platform-dependent and perhaps locale-dependent.
+</p>
+</li><li> If you use functions such as <code>View</code>, remember that in testing there
+is no one to look at the output.  It is better to use something like one of
+<div class="example">
+<pre class="example">if(interactive()) View(obj) else print(head(obj))
+if(interactive()) View(obj) else str(obj)
+</pre></div>
 
 </li><li> Only test the accuracy of results if you have done a formal error
 analysis.  Things such as checking that probabilities numerically sum to
