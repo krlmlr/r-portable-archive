@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-16).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-17).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -299,10 +299,11 @@ p {
       <li><a name="toc-Lion-1" href="#Lion">C.3.2 Lion</a></li>
       <li><a name="toc-Mountain-Lion-1" href="#Mountain-Lion">C.3.3 Mountain Lion</a></li>
       <li><a name="toc-Mavericks-1" href="#Mavericks">C.3.4 Mavericks</a></li>
-      <li><a name="toc-Tcl_002fTk-headers-and-libraries-1" href="#Tcl_002fTk-headers-and-libraries">C.3.5 Tcl/Tk headers and libraries</a></li>
-      <li><a name="toc-Java" href="#Java-_0028OS-X_0029">C.3.6 Java</a></li>
-      <li><a name="toc-Frameworks-1" href="#Frameworks">C.3.7 Frameworks</a></li>
-      <li><a name="toc-Building-R_002eapp-1" href="#Building-R_002eapp">C.3.8 Building R.app</a></li>
+      <li><a name="toc-Yosemite-1" href="#Yosemite">C.3.5 Yosemite</a></li>
+      <li><a name="toc-Tcl_002fTk-headers-and-libraries-1" href="#Tcl_002fTk-headers-and-libraries">C.3.6 Tcl/Tk headers and libraries</a></li>
+      <li><a name="toc-Java" href="#Java-_0028OS-X_0029">C.3.7 Java</a></li>
+      <li><a name="toc-Frameworks-1" href="#Frameworks">C.3.8 Frameworks</a></li>
+      <li><a name="toc-Building-R_002eapp-1" href="#Building-R_002eapp">C.3.9 Building R.app</a></li>
     </ul></li>
     <li><a name="toc-Solaris-1" href="#Solaris">C.4 Solaris</a>
     <ul class="no-bullet">
@@ -338,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-16).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-17).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -2031,15 +2032,15 @@ Next: <a href="#Running-R" accesskey="n" rel="next">Running R</a>, Previous: <a 
 X&rsquo;. Click on that, then download the file
 <samp>R-3.2.0-snowleopard.pkg</samp> and install it.  This runs on
 OS X 10.6 and later (Snow Leopard, Lion, Mountain Lion, Mavericks,
-&hellip;); it is a 64-bit (&lsquo;<samp>x86_64</samp>&rsquo;) build which should run on
-all Macs from mid-2008 on.  For older Intel Macs and some older versions
-of the OS you can install R from the sources.
+Yosemite, &hellip;); it is a 64-bit (&lsquo;<samp>x86_64</samp>&rsquo;) build which should
+run on all Macs from mid-2008 on.  For older Intel Macs and some older
+versions of the OS you can install R from the sources.
 </p>
 <p>There is a separate installer package,
-<samp>R-3.2.0-mavericks.pkg</samp>, for use on Mavericks only: the
-&lsquo;Snow Leopard&rsquo; installer package also works there and may have more
-binary packages available (but there are a few packages using C++11 and
-only available for the Mavericks build).
+<samp>R-3.2.0-mavericks.pkg</samp>, for use on Mavericks and
+Yosemite: the &lsquo;Snow Leopard&rsquo; installer package also works there and may
+have more binary packages available (but there are a few packages using
+C++11 and only available for the Mavericks build).
 </p>
 <p>It is important that if you use a binary installer package that your OS
 is fully updated: run &lsquo;Software Update&rsquo; from the Apple menu to be sure.
@@ -2100,8 +2101,8 @@ location of the personal library directory (under <samp>~/Library/R</samp>,
 e.g. <samp>~/Library/R/3.1/library</samp>), and that warnings, messages and
 other output to <samp>stderr</samp> are highlighted in bold.
 </p>
-<p>Users of <small>R.APP</small> under Mavericks need to be aware of its &lsquo;App Nap&rsquo;
-feature
+<p>Users of <small>R.APP</small> under Mavericks and later need to be aware of the &lsquo;App
+Nap&rsquo; feature
 (<a href="https://developer.apple.com/library/mac/releasenotes/MacOSX/WhatsNewInOSX/Articles/MacOSX10_9.html">https://developer.apple.com/library/mac/releasenotes/MacOSX/WhatsNewInOSX/Articles/MacOSX10_9.html</a>)
 which can cause R tasks to appear to run very slowly when not
 producing output in the console.  Here are three ways to avoid it:
@@ -2565,7 +2566,7 @@ Next: <a href="#Customizing-package-compilation" accesskey="n" rel="next">Custom
 <p>On OS X <code>install.packages</code> works as it does on other Unix-alike
 systems, but there is an additional type <code>mac.binary</code> (the default
 in the <acronym>CRAN</acronym> distribution but not when compiling from source:
-<code>mac.binary.mavericks</code> for a Mavericks-only build) which can be
+<code>mac.binary.mavericks</code> for a Mavericks build) which can be
 passed to <code>install.packages</code> in order to download and install
 binary packages from a suitable repository.  These OS X binary package
 files have the extension &lsquo;<samp>.tgz</samp>&rsquo;.  The <small>R.APP</small> GUI provides menus
@@ -2584,7 +2585,7 @@ R.)
 </p>
 <p>Package <a href="http://CRAN.R-project.org/package=rJava"><strong>rJava</strong></a> and those which depend on it need a Java runtime
 installed and several packages need X11 installed, including those using
-Tk.  For Mountain Lion and Mavericks see <a href="#OS-X">OS X</a> and <a href="#Java-_0028OS-X_0029">Java (OS X)</a>.
+Tk.  For Mountain Lion and later see <a href="#OS-X">OS X</a> and <a href="#Java-_0028OS-X_0029">Java (OS X)</a>.
 </p>
 <p>Tcl/Tk extensions <code>BWidget</code> and <code>Tktable</code> are part of the
 Tcl/Tk contained in the R installer.  These are required by a number
@@ -2845,7 +2846,7 @@ R versions <var>x.y.z</var> and containing <samp>.zip</samp> files for Windows.
 
 </li><li> <code>&quot;mac.binary.mavericks&quot;</code>: located at
 <samp>bin/macosx/mavericks/contrib/<var>3.y</var></samp> for R versions
-<var>3.1.z</var> to be run under OS X 10.9 (Mavericks) and containing
+<var>3.1.z</var> to be run under OS X 10.9 (Mavericks) and later, containing
 <samp>.tgz</samp> files.
 
 </li><li> <code>&quot;mac.binary.leopard&quot;</code>: located at
@@ -5324,8 +5325,8 @@ will need to register there: that allows you to download older versions
 available for your OS) or some versions of Xcode (from the App Store or
 from <a href="http://developer.apple.com/devcenter/mac/">http://developer.apple.com/devcenter/mac/</a>) you can install
 the command-line tools from within Xcode, from the &lsquo;<samp>Downloads</samp>&rsquo; pane
-in the &lsquo;<samp>Preferences</samp>&rsquo;.  For Mavericks, see the specific sub-section
-below.
+in the &lsquo;<samp>Preferences</samp>&rsquo;.  For Mavericks and later, see the specific
+sub-section below.
 </p>
 <p>Various compilers can be used.  The current <acronym>CRAN</acronym> &lsquo;Snow
 Leopard&rsquo; distribution of R is built using
@@ -5437,13 +5438,15 @@ TeX packages.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Mavericks" accesskey="4">Mavericks</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Tcl_002fTk-headers-and-libraries" accesskey="5">Tcl/Tk headers and libraries</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Yosemite" accesskey="5">Yosemite</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Java-_0028OS-X_0029" accesskey="6">Java (OS X)</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Tcl_002fTk-headers-and-libraries" accesskey="6">Tcl/Tk headers and libraries</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Frameworks" accesskey="7">Frameworks</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Java-_0028OS-X_0029" accesskey="7">Java (OS X)</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-R_002eapp" accesskey="8">Building R.app</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Frameworks" accesskey="8">Frameworks</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Building-R_002eapp" accesskey="9">Building R.app</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
@@ -5517,7 +5520,7 @@ be installed afterwards.
 <a name="Mavericks"></a>
 <div class="header">
 <p>
-Next: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="n" rel="next">Tcl/Tk headers and libraries</a>, Previous: <a href="#Mountain-Lion" accesskey="p" rel="prev">Mountain Lion</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Yosemite" accesskey="n" rel="next">Yosemite</a>, Previous: <a href="#Mountain-Lion" accesskey="p" rel="prev">Mountain Lion</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Mavericks-1"></a>
 <h4 class="subsection">C.3.4 Mavericks</h4>
@@ -5534,8 +5537,9 @@ command-line tools, or perhaps use the versions from Xcode.  However,
 after an update to Mavericks, you are advised to re-install them.)  They
 are not available under the &lsquo;<samp>Downloads</samp>&rsquo; preference pane in Xcode.
 </p>
-<p>To use the compilers from the command-line tools for Xcode 5 with the
-recommended Fortran compiler, have in <samp>config.site</samp> something like
+<p>To use the compilers from the command-line tools for Xcode 5 or 6 with
+the recommended Fortran compiler, have in <samp>config.site</samp> something
+like
 </p>
 <div class="example">
 <pre class="example">CC=clang
@@ -5560,13 +5564,25 @@ OBJCXX = g++ -arch x86_64
 <p>See the comments under Mountain Lion about X11 and GTK.
 </p>
 <hr>
+<a name="Yosemite"></a>
+<div class="header">
+<p>
+Next: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="n" rel="next">Tcl/Tk headers and libraries</a>, Previous: <a href="#Mavericks" accesskey="p" rel="prev">Mavericks</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Yosemite-1"></a>
+<h4 class="subsection">C.3.5 Yosemite</h4>
+
+<p>See the comments under &lsquo;Mavericks&rsquo;.
+</p>
+
+<hr>
 <a name="Tcl_002fTk-headers-and-libraries"></a>
 <div class="header">
 <p>
-Next: <a href="#Java-_0028OS-X_0029" accesskey="n" rel="next">Java (OS X)</a>, Previous: <a href="#Mavericks" accesskey="p" rel="prev">Mavericks</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Java-_0028OS-X_0029" accesskey="n" rel="next">Java (OS X)</a>, Previous: <a href="#Yosemite" accesskey="p" rel="prev">Yosemite</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Tcl_002fTk-headers-and-libraries-1"></a>
-<h4 class="subsection">C.3.5 Tcl/Tk headers and libraries</h4>
+<h4 class="subsection">C.3.6 Tcl/Tk headers and libraries</h4>
 
 <p>If you plan to use the <code>tcltk</code> package for R, you need to
 install a distribution of Tcl/Tk.  There are two alternatives.  If you
@@ -5615,21 +5631,21 @@ tclvalue(.Tcl(&quot;tk windowingsystem&quot;))  # &quot;x11&quot; or &quot;aqua&
 Next: <a href="#Frameworks" accesskey="n" rel="next">Frameworks</a>, Previous: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="p" rel="prev">Tcl/Tk headers and libraries</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Java"></a>
-<h4 class="subsection">C.3.6 Java</h4>
+<h4 class="subsection">C.3.7 Java</h4>
 
 <p>The situation with Java support on OS X is messy, with Apple essentially
 no longer supporting Java (and what it does support is Java 6, which has
 reached end-of-life).  Snow Leopard and Lion shipped with a Java 6
 runtime (JRE).
 </p>
-<p>Mountain Lion and Mavericks do not come with an installed JRE, and an
+<p>Mountain Lion and later do not come with an installed JRE, and an
 upgrade to either removes one if already installed: it is intended to be
 installed at first use. Check if a JRE is installed by running
 <code>java -version</code> in a <code>Terminal</code> window: if Java is not
 installed this should prompt you to install it.
 </p>
 <p>However, you may want/need to install the latest Java from Oracle
-(currently Java 7 or 8 from
+(currently Java 8 from
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>);
 this is for Lion and later.
 </p>
@@ -5659,7 +5675,7 @@ JAVA_LIBS=&quot;-framework JavaVM&quot;
 </pre></div>
 <p>The Oracle JDK can be specified explicitly by something like
 </p><div class="example">
-<pre class="example">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
+<pre class="example">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 JAVA_CPPFLAGS=&quot;-I/${JAVA_HOME}/include -I/${JAVA_HOME}/include/darwin&quot;
 JAVA_LD_LIBRARY_PATH=&quot;${JAVA_HOME}/jre/lib/server&quot;
 JAVA_LIBS=&quot;-L/${JAVA_HOME}/jre/lib/server -ljvm&quot; 
@@ -5677,7 +5693,7 @@ to <code>1</code> to install many of the Java-using packages.
 Next: <a href="#Building-R_002eapp" accesskey="n" rel="next">Building R.app</a>, Previous: <a href="#Java-_0028OS-X_0029" accesskey="p" rel="prev">Java (OS X)</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Frameworks-1"></a>
-<h4 class="subsection">C.3.7 Frameworks</h4>
+<h4 class="subsection">C.3.8 Frameworks</h4>
 
 <p>The <acronym>CRAN</acronym> build of R is installed as a framework, which is
 selected by the default option
@@ -5713,7 +5729,7 @@ to <code>pkg-config</code>).
 Previous: <a href="#Frameworks" accesskey="p" rel="prev">Frameworks</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-R_002eapp-1"></a>
-<h4 class="subsection">C.3.8 Building R.app</h4>
+<h4 class="subsection">C.3.9 Building R.app</h4>
 
 <p>Note that building the <small>R.APP</small> GUI console is a separate project, using
 Xcode.  Before compiling <small>R.APP</small> make sure the current version of R
