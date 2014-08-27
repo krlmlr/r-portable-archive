@@ -347,6 +347,9 @@ CHANGES IN R 3.1.1 patched:
     * plot.histogram() and hence hist() now respect the xaxs, yaxs and
       lab graphics parameters.  (PR#16021)
 
+    * bw.SJ(x) and other bw.*() no longer segfault when x contains
+      non-finite values. (PR#16024)
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:
