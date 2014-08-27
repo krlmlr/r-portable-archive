@@ -238,10 +238,10 @@ CHANGES IN R 3.1.1 patched:
 
   UTILITIES:
 
-    * Running R CMD check when run with _R_CHECK_DEPENDS_ONLY_ true now
-      makes the VignetteBuilder packages available even if they are
-      listed in Suggests, since they are needed to recognise and
-      process non-Sweave vignettes.
+    * Running R CMD check with _R_CHECK_DEPENDS_ONLY_ true now makes
+      the VignetteBuilder packages available even if they are listed in
+      Suggests, since they are needed to recognise and process
+      non-Sweave vignettes.
 
   BUG FIXES:
 
@@ -309,6 +309,12 @@ CHANGES IN R 3.1.1 patched:
     * (Windows only) If a user chose to install 64 bit R but not 32 bit
       R, the bin/R and bin/Rscript executables failed to run.
       (PR#15981)
+
+    * Various possible buffer overruns have been prevented, and missed
+      memory protection added. (PR#15990)
+
+    * Rscript no longer passes --args to R when there are no extra
+      ("user") arguments.
 
 CHANGES IN R 3.1.1:
 

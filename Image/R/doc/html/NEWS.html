@@ -373,11 +373,11 @@ with copies of &lsquo;<span class="file">bin/i386/Rfe.exe</span>&rsquo;.)
 
 
 <ul>
-<li><p> Running <code>R CMD check</code> when run with
+<li><p> Running <code>R CMD check</code> with
 <span class="env">_R_CHECK_DEPENDS_ONLY_</span> true now makes the
 <span class="samp">VignetteBuilder</span> packages available even if they are
 listed in <span class="samp">Suggests</span>, since they are needed to recognise and
-process non-Sweave vignettes. 
+process non-Sweave vignettes.
 </p>
 </li></ul>
 
@@ -477,6 +477,14 @@ default, it checks more carefully for valid input.
 <li><p> (Windows only) If a user chose to install 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> but not
 32 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, the &lsquo;<span class="file">bin/R</span>&rsquo; and &lsquo;<span class="file">bin/Rscript</span>&rsquo; executables
 failed to run.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15981">PR#15981</a>)
+</p>
+</li>
+<li><p> Various possible buffer overruns have been prevented,
+and missed memory protection added. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15990">PR#15990</a>)
+</p>
+</li>
+<li> <p><code>Rscript</code> no longer passes <code>--args</code> to
+<code>R</code> when there are no extra (&ldquo;user&rdquo;) arguments.
 </p>
 </li></ul>
 
