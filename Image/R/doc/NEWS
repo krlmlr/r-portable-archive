@@ -248,8 +248,6 @@ CHANGES IN R 3.1.1 patched:
 
     * getAnywhere("C_pbinom") now works correctly.
 
-    * all.equal() gets a method for environment's.
-
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:

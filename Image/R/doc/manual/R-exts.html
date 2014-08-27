@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-08-30).
+<!-- This manual is for R, version 3.2.0 Under development (2014-08-31).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -429,7 +429,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-08-30).
+<p>This manual is for R, version 3.2.0 Under development (2014-08-31).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -8029,9 +8029,9 @@ With <code>gcc</code> additional control is available <em>via</em> the
 <samp>--params</samp> flag: see its <code>man</code> page.  For some builds on
 <code>x86_64</code> Linux this includes enabling the leak sanitizer
 (<a href="https://code.google.com/p/address-sanitizer/wiki/LeakSanitizer">https://code.google.com/p/address-sanitizer/wiki/LeakSanitizer</a>),
-which might even be enabled by default<a name="DOCF75" href="#FOOT75"><sup>75</sup></a> when any leaks give the process a failure error
-status (by default <code>23</code>).  To disable both this and some strict
-checking use
+which might even be enabled by default<a name="DOCF75" href="#FOOT75"><sup>75</sup></a> when any
+leaks give the process a failure error status (by default <code>23</code>).
+To disable both this and some strict checking use
 </p>
 <div class="example">
 <pre class="example">setenv ASAN_OPTIONS ‘alloc_dealloc_mismatch=0:detect_leaks=0’
@@ -8122,8 +8122,10 @@ signed-integer-overflow,unreachable,vla-bound
 <pre class="example">-fsanitize=float-divide-by-zero
 </pre></div>
 
-<p>as a separate option not enabled by <code>-fsanitize=undefined</code>.  See 
-<a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a>
+<p>as a separate option not enabled by <code>-fsanitize=undefined</code>.  See
+<a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or the
+manual for your version of GCC).  GCC 5.0.0 (under development) can
+detect alignment errors.
 </p>
 <p>Other useful flags include
 </p><div class="example">
@@ -15364,8 +15366,8 @@ distributions such as MacPorts or Homebrew.</p>
 <a href="https://llvm.org/svn/llvm-project/compiler-rt/trunk/lib/asan/scripts/asan_symbolize.py">https://llvm.org/svn/llvm-project/compiler-rt/trunk/lib/asan/scripts/asan_symbolize.py</a>:
 it makes use of <code>llvm-symbolizer</code> if available.</p>
 <h3><a name="FOOT75" href="#DOCF75">(75)</a></h3>
-<p>it was the <code>gcc</code>
-trunk in mid-2014.</p>
+<p>it was in the <code>gcc</code>
+trunk in mid-2014, and for <code>clang</code> 3.5.</p>
 <h3><a name="FOOT76" href="#DOCF76">(76)</a></h3>
 <p>but
 works better if inlining and frame pointer optimizations are disabled.</p>
