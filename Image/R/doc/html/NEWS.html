@@ -286,7 +286,8 @@ matching by name in <code>log()</code>.
 <li> <p><code>embedFonts()</code> now defaults to
 <code>format = "ps2write"</code> for &lsquo;<span class="file">.ps</span>&rsquo; and &lsquo;<span class="file">.eps</span>&rsquo; files.
 This is available in Ghostscript 9.x (since 2010) whereas the
-previous default, <code>format = "pswrite"</code>, was removed in 9.10.
+previous default, <code>format = "pswrite"</code>, was removed in
+Ghostscript 9.10.
 </p>
 </li>
 <li><p> For consistency with <code>[dpqr]norm()</code>,
@@ -328,8 +329,14 @@ reserved characters from RFC 3986,
 <a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
 </p>
 </li>
-<li> <p><code>unique(warnings())</code> now works, as does
-<code>c(warnings())</code>.
+<li> <p><code>unique(warnings())</code> and <code>c(warnings())</code> are now
+supported.
+</p>
+</li>
+<li><p> The Bioconductor &lsquo;version&rsquo; used by
+<code>setRepositories()</code> now defaults to <code>3.0</code>. (It can be
+set at runtime <em>via</em> environment variable
+<span class="env">R_BIOC_VERSION</span>.)
 </p>
 </li></ul>
 
@@ -341,17 +348,17 @@ reserved characters from RFC 3986,
 
 <ul>
 <li><p> The <code>configure</code> script reports on the more important
-capabilities/options which are not compiled in.
+capabilities/options which will not be compiled in.
 </p>
 </li>
 <li><p> When building <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> as a shared library, the
 <span class="option">-L${R_HOME}/lib${R_ARCH}</span> flag is placed earlier in the
 link commands used during installation and when packages are
-installed: this helps ensure that the current build has priority if
-an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> shared library has already been installed by e.g.
-<code>install-libR</code> in a library mentioned in <span class="env">LDFLAGS</span>
-(and not in &lsquo;your system's library directory&rsquo; as
-documented). (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15790">PR#15790</a>.)
+installed: this helps ensure that the current build has priority
+if an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> shared library has already been installed by
+e.g. <code>install-libR</code> in a library mentioned in
+<span class="env">LDFLAGS</span> (and not in &lsquo;your system's library directory&rsquo;
+as documented). (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15790">PR#15790</a>.)
 </p>
 </li>
 <li><p> LaTeX package <span class="pkg">upquote</span> is no longer required for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s

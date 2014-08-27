@@ -182,7 +182,8 @@ CHANGES IN R 3.1.1 patched:
 
     * embedFonts() now defaults to format = "ps2write" for .ps and .eps
       files.  This is available in Ghostscript 9.x (since 2010) whereas
-      the previous default, format = "pswrite", was removed in 9.10.
+      the previous default, format = "pswrite", was removed in
+      Ghostscript 9.10.
 
     * For consistency with [dpqr]norm(), [dp]lnorm(sdlog = 0) model a
       point mass at exp(mulog) rather than return NaN (for an error).
@@ -214,18 +215,22 @@ CHANGES IN R 3.1.1 patched:
       characters from RFC 3986, <URL:
       http://tools.ietf.org/html/rfc3986>, instead of RFC 1738.
 
-    * unique(warnings()) now works, as does c(warnings()).
+    * unique(warnings()) and c(warnings()) are now supported.
+
+    * The Bioconductor 'version' used by setRepositories() now defaults
+      to 3.0. (It can be set at runtime _via_ environment variable
+      R_BIOC_VERSION.)
 
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The configure script reports on the more important
-      capabilities/options which are not compiled in.
+      capabilities/options which will not be compiled in.
 
     * When building R as a shared library, the -L${R_HOME}/lib${R_ARCH}
       flag is placed earlier in the link commands used during
       installation and when packages are installed: this helps ensure
       that the current build has priority if an R shared library has
-      already been installed by e.g.  install-libR in a library
+      already been installed by e.g. install-libR in a library
       mentioned in LDFLAGS (and not in 'your system's library
       directory' as documented). (Wish of PR#15790.)
 
