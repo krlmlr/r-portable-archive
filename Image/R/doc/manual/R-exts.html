@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-22).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-23).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-22).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-23).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4602,7 +4602,7 @@ currently in use on R platforms: use R&rsquo;s versions such as
 <p>It is an error (and make little sense, although has been seen) to call
 these functions for integer arguments.
 </p>
-</li><li> Including C headers in C++ code is not portable.  Including the C99
+</li><li> Including C headers in C++ code is not portable.  Including the C
 header <samp>math.h</samp> in C++ code often causes conflicts with
 <samp>cmath</samp> which may be included by other headers.  This is
 particularly problematic with C++11 compilers, as functions like
@@ -4612,6 +4612,21 @@ particularly problematic with C++11 compilers, as functions like
 
 </li><li> Variable-length arrays are C99, not supported by C++98 nor by the C++
 compilers in use with R on some platforms.
+
+</li><li> Be careful to include the headers which define the functions you use.
+Some compilers (notably the GCC family) include other system headers in
+their headers which are not required by the standards, and so code may
+compile on such compilers and not on others.  (A prominent example is
+the C++11 header <code>&lt;random&gt;</code> which is indirectly included by
+<code>&lt;algorithm&gt;</code> by <code>g++</code>.)
+
+</li><li> For C++ code, be careful to specify namespaces where needed.  Many
+functions are defined by the standards to be in the <code>std</code>
+namespace, but <code>g++</code> puts many such also in the C++ main
+namespace.  One way to do so is to use declarations such as
+<div class="example">
+<pre class="example">using std::floor;
+</pre></div>
 
 </li><li> Macros defined by the compiler/OS can cause problems.  Macros starting
 with an underscore followed by an upper-case letter or another

@@ -1,4 +1,4 @@
-608032d45e4e5e71ac51111f2aef339e *DESCRIPTION
+d2055d0ae68e7120df7d71ffbd54bec3 *DESCRIPTION
 52be5f6003affdf1f77285dff16a4ddf *INDEX
 d8d2f9bd4836cd6c839888295d3b1da5 *LICENSE
 321b9d2446c31ea92b2de40b6408ed01 *Meta/Rd.rds
@@ -6,7 +6,7 @@ d8d2f9bd4836cd6c839888295d3b1da5 *LICENSE
 3cc14dd112135a589c1427e1c4ca0bc9 *Meta/hsearch.rds
 bba771c77611987c165a6361f46f06b9 *Meta/links.rds
 07368fc584416ce3087970878375259b *Meta/nsInfo.rds
-fd70114fc47bae92b76222bf89848e2c *Meta/package.rds
+cf029517314b323943a3fce847076161 *Meta/package.rds
 3befa77e32a8fc363536a1e09f4c05ad *Meta/vignette.rds
 42b52719bca059685e9433b2d1b39367 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/httr
@@ -32,12 +32,12 @@ b732836c6502a97f740f94717ba2f7fa *doc/quickstart.R
 6f23cce0c5251c71e459449e85af7120 *doc/quickstart.html
 51e8dc250b6f18b7aa1e63ec51a980be *help/AnIndex
 5c83a32f297cd63e92fae233c9c6c364 *help/aliases.rds
-62f23714a5010cd3d80998bbfb4b7ed9 *help/httr.rdb
-0872be335fbb786a99028f2f421c0338 *help/httr.rdx
-94fb9d20b8e1fbea0e610f4eb76d94cb *help/paths.rds
+d6d876ff52cb2515c29ce0f1d3972c6b *help/httr.rdb
+e8649ab64bed8f4d36dc566becb48083 *help/httr.rdx
+60e7615a0e4a4367cab9c5ce1e0a8a7d *help/paths.rds
 1aff0fbaf0a081160601829654ee1484 *html/00Index.html
 444535b9cb76ddff1bab1e1865a3fb14 *html/R.css
-855c07c2829ef1af208c301b636359f5 *libs/i386/httr.dll
+b12620bd7cc8440cabb15ea7a58d72dc *libs/i386/httr.dll
 179afd5bc2a00405dc774134d67dccdc *libs/i386/symbols.rds
-ae337e1a37422a9756e6ee96f7d10385 *libs/x64/httr.dll
+344044d9143a8c65ecba35224d3c5fd1 *libs/x64/httr.dll
 45440b4730baaca232c3f1ce85a5d88d *libs/x64/symbols.rds

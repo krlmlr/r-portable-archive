@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `355e75aa25fc7cf1d1bc40d46675f011`, uncompressed 377.5 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `509938ca0af59a049855ea3778fcc11f`, uncompressed 385.2 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.7 MB, MD5 hash: `059c2cc945c9b5a27310db6b8a2cb30f`, uncompressed 414.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `d5b8418f31de932516f3ca4ba017f771`, uncompressed 377.5 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `07f8f8ccaf3c6910e826651513d267fc`, uncompressed 385.2 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.7 MB, MD5 hash: `0edb62b7f272644a3637fbbeac9d4632`, uncompressed 414.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-10-22 r66852)
+R Under development (unstable) (2014-10-23 r66859)
 
 ### Package versions
 
@@ -62,7 +62,7 @@ R Under development (unstable) (2014-10-22 r66852)
 [`digest`](http://cran.r-project.org/package=digest) (0.6.4),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.0),
-[`highr`](http://cran.r-project.org/package=highr) (0.3),
+[`highr`](http://cran.r-project.org/package=highr) (0.4),
 [`httr`](http://cran.r-project.org/package=httr) (0.5),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.13),
 [`knitr`](http://cran.r-project.org/package=knitr) (1.7),
