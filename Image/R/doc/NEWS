@@ -151,6 +151,10 @@ CHANGES IN R-devel:
     * Entry points rbinom_mu, rnbinom_mu and rmultinom are remapped (by
       default).  This requires packages using them to be re-installed.
 
+    * .C(DUP = FALSE) and .Fortran(DUP = FALSE) are now ignored, so
+      arguments are duplicated if DUP = TRUE would do so.  As their
+      help has long said, .Call() is much preferred.
+
   BUG FIXES:
 
     * Fixed two obscure bugs in pairlist subassignment, reported by
