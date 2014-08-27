@@ -32,7 +32,7 @@ can be used instead.
 </p>
 </li>
 <li><p> Some unusual arguments to <code>embedFonts()</code> can now be
-specified as character vectors, and the defaults have changed
+specified as character vectors, and the defaults have been changed
 accordingly.
 </p>
 </li>
@@ -43,7 +43,7 @@ accordingly.
 <li><p> (Unix-alikes.) <code>system(cmd, input = )</code> now uses
 &lsquo;shell-execution-environment&rsquo; redirection, which will be
 more natural if <code>cmd</code> is not a single command (but requires a
-POSIX-compliant shell). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15508">PR#15508</a>)
+POSIX-compliant shell). (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15508">PR#15508</a>)
 </p>
 </li>
 <li> <p><code>read.fwf()</code> and <code>read.DIF()</code> gain a
@@ -83,7 +83,7 @@ significant digits.
 </li>
 <li> <p><code>save()</code>, <code>saveRDS()</code> and <code>serialize()</code> now
 support <code>ascii = NA</code> which writes ASCII files using
-<code>sprintf("%a")</code>) for double/complex quantities.  This is
+<code>sprintf("%a")</code> for double/complex quantities.  This is
 read-compatible with <code>ascii = TRUE</code> but avoids
 binary-&gt;decimal-&gt;binary conversions with potential loss of
 precision.  Unfortunately the Windows C runtime's lack of C99
@@ -180,7 +180,7 @@ numerical code.
 </p>
 </li>
 <li> <p><code>apply(m, 2, identity)</code> is now the same as the matrix
-<code>m</code>, also when it has <em>named</em> row names.
+<code>m</code> when it has <em>named</em> row names.
 </p>
 </li></ul>
 
@@ -232,10 +232,10 @@ packages in the <span class="samp">Suggests</span> field, see §1.1.3.1 of
 &lsquo;<acronym><span class="acronym">XHTML</span></acronym> 1.0 Strict&rsquo;.
 </p>
 </li>
-<li><p> The compiler utility function <code>setCompilerOptions</code> now
-returns the old values invisibly. The initial optimization level
-can also be set with the environment variable
-<span class="env">R_COMPILER_OPTIMIZE</span>
+<li><p> The compiler utility function <code>setCompilerOptions()</code>
+now returns the old values invisibly. The initial optimization
+level can also be set with the environment variable
+<span class="env">R_COMPILER_OPTIMIZE</span>.
 </p>
 </li></ul>
 
@@ -276,7 +276,7 @@ Radford Neal as part of pqR issue 16.
 matching by name in <code>log()</code>.
 </p>
 </li>
-<li> <p><code>all.equal()</code> gets a method for <code>environment</code>s and
+<li> <p><code>all.equal()</code> gains a method for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
 </li></ul>
@@ -445,9 +445,9 @@ process (seen most often on Solaris).
 <li> <p><code>getAnywhere("C_pbinom")</code> now works correctly.
 </p>
 </li>
-<li><p> The <code>confint()</code> function failed on results of
-<code>nls()</code> fits that specified parameter limits despite using
-an algorithm other than <code>"port"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15960">PR#15960</a>)
+<li><p> The <code>confint()</code> method for <code>nls()</code> fits failed it
+these has specified parameter limits despite using an algorithm
+other than <code>"port"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15960">PR#15960</a>)
 </p>
 </li>
 <li><p> Subclassing an S4 class failed if the class required
@@ -502,15 +502,22 @@ and missed memory protection added. (<a href="https://bugs.R-project.org/bugzill
 <li> <p><code>identical()</code> now also looks at the S4 bit.
 </p>
 </li>
-<li> <p><code>hist(x, breaks)</code> is more robust in adding small
-fuzz to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15899">PR#15899</a>)
+<li> <p><code>hist(x, breaks)</code> is more robust in adding a small fuzz
+to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15899">PR#15899</a>)
 </p>
 </li>
 <li> <p><code>sub()</code> and <code>gsub()</code> did not handle regular
 expressions like <code>"\s{2,}"</code> properly if the text
-contained <code>NA</code> elements.  (This is a partial fix:
-our regexp library still doesn't handle that regexp if the
-text contains UTF-8 characters.) (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
+contained <code>NA</code> or non-ascii elements in a UTF-8
+locale.  Part of this was due to a bug in the TRE library.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
+</p>
+</li>
+<li> <p><code>RShowDoc("NEWS")</code> now displays the pdf version.
+</p>
+</li>
+<li><p> matrices and arrays with last dimension zero did not print
+at all or incompletely.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16012">PR#16012</a>)
 </p>
 </li></ul>
 
