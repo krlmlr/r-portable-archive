@@ -492,6 +492,7 @@ date-time	DateTimeClasses
 Dates	Dates
 DateTimeClasses	DateTimeClasses
 debug	debug
+debuggingState	debug
 debugonce	debug
 default.stringsAsFactors	data.frame
 Defunct	Defunct

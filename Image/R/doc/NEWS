@@ -130,6 +130,9 @@ CHANGES IN R-devel:
     * apply(m, 2, identity) is now the same as the matrix m when it has
       _named_ row names.
 
+    * A new somewhat experimental function debuggingState() has been
+      added, allowing to temporarily turn off debugging.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by

@@ -61,6 +61,7 @@ set_parent              Specify the parent document of child documents
 spin                    Spin goat's hair into wool
 stitch                  Automatically create a report based on an R
                         script and a template
+vignette_engines        Package vignette engines
 wrap_rmd                Wrap long lines in Rmd files
 write_bib               Generate BibTeX bibliography databases for R
                         packages
