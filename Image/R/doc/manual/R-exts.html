@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-08-31).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-01).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -429,7 +429,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-08-31).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-01).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -7868,21 +7868,22 @@ maximal information use a build with debugging symbols.  We know there
 will be some small memory leaks from <code>readline</code> and R itself &mdash;
 these are memory areas that are in use right up to the end of the R
 session.  Expect this to run around 20x slower than without
-<code>valgrind</code>, and in some cases even slower than that.  Several
+<code>valgrind</code>, and in some cases much slower than that.  Several
 versions of <code>valgrind</code> were not happy with some optimized BLASes
 that use <acronym>CPU</acronym>-specific instructions so you may need to build a
 version of R specifically to use with <code>valgrind</code>.
 </p>
-<p>On platforms supported by <code>valgrind</code> you can build a version of
-R with extra instrumentation to help <code>valgrind</code> detect errors in
-the use of memory allocated from the R heap.  The <code>configure</code>
-option is <samp>--with-valgrind-instrumentation=<var>level</var></samp>, where
-<var>level</var> is 0, 1, 2 or 3.  Level 0 is the default and does not add
-any anything.  Level 1 will detect use of uninitialised memory and has
-little impact on speed. Levels 2 and 3<a name="DOCF70" href="#FOOT70"><sup>70</sup></a> will detect many
-other memory-use bugs but make R much slower when running under
-<code>valgrind</code>.  Using this in conjunction with <code>gctorture</code> can be
-even more effective (and even slower).
+<p>On platforms where <code>valgrind</code> is installed you can build a version
+of R with extra instrumentation to help <code>valgrind</code> detect errors
+in the use of memory allocated from the R heap.  The
+<code>configure</code> option is
+<samp>--with-valgrind-instrumentation=<var>level</var></samp>, where <var>level</var>
+is 0, 1, 2 or 3.  Level 0 is the default and does not add any anything.
+Level 1 will detect some uses of uninitialised memory and has little
+impact on speed (compared to level 0). Levels 2 and 3<a name="DOCF70" href="#FOOT70"><sup>70</sup></a>
+will detect many other memory-use bugs but make R much slower when
+running under <code>valgrind</code>.  Using this in conjunction with
+<code>gctorture</code> can be even more effective (and even slower).
 </p>
 <p>An example of <code>valgrind</code> output is
 </p><div class="smallexample">
@@ -8074,7 +8075,7 @@ DLL, so it is less often needed to be included in <code>MAIN_LDFLAGS</code>.
 </p>
 <p>Some versions have greatly increased compilation times on a few files
 (e.g. <samp>src/extra/bzip2/decompress.c</samp> in the R sources with
-<code>clang</code> 3.5rc1).
+<code>clang</code> 3.5).
 </p>
 <p>This sanitizer can be combined with the Address Sanitizer by
 <samp>-fsanitize=undefined,address</samp>.
@@ -8086,7 +8087,8 @@ The current set for <code>clang</code> is (on a single line):
 </p><div class="example">
 <pre class="example">-fsanitize=alignment,bounds,bool,enum,float-cast-overflow,
 float-divide-by-zero,function,integer-divide-by-zero,null,object-size,
-return,shift,signed-integer-overflow,unreachable,vla-bound,vptr
+return,returns-nonnull-attribute,shift,signed-integer-overflow,
+unreachable,vla-bound,vptr
 </pre></div>
 
 <p>a subset of which could be combined with <code>address</code>, or use something
@@ -8111,7 +8113,7 @@ like
 
 <p>for C++ code (in <code>CXX</code> and <code>CXX1X</code>).
 </p>
-<p>A smaller selection is available for GCC, currently defaulting to
+<p>A smaller selection is available for GCC, for 4.9.x defaulting to
 </p><div class="example">
 <pre class="example">-fsanitize=bounds,float-cast-overflow,integer-divide-by-zero,null,return,shift,
 signed-integer-overflow,unreachable,vla-bound
@@ -8122,7 +8124,8 @@ signed-integer-overflow,unreachable,vla-bound
 <pre class="example">-fsanitize=float-divide-by-zero
 </pre></div>
 
-<p>as a separate option not enabled by <code>-fsanitize=undefined</code>.  See
+<p>as a separate option not enabled by <code>-fsanitize=undefined</code> (and not
+desirable for R uses).  See
 <a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or the
 manual for your version of GCC).  GCC 5.0.0 (under development) can
 detect alignment errors.
@@ -8145,7 +8148,7 @@ and <samp>-ftrapv</samp>, said to be more reliable in <code>clang</code> than
 <a href="http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html">http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html</a>
 (which has 3 parts).
 </p>
-<p>This option does not currently compile OpenMP code.
+<p>This option may not compile OpenMP code.
 </p>
 <hr>
 <a name="Other-analyses-with-_0060clang_0027"></a>
@@ -8157,8 +8160,8 @@ Next: <a href="#Using-_0060Dr_002e-Memory_0027" accesskey="n" rel="next">Using â
 <h4 class="subsection">4.3.5 Other analyses with &lsquo;clang&rsquo;</h4>
 
 
-<p><code>clang</code> has a &lsquo;Static Analyser&rsquo; run on the source files during
-compilation: see <a href="http://clang-analyzer.llvm.org/">http://clang-analyzer.llvm.org/</a>.
+<p><code>clang</code> has a &lsquo;Static Analyser&rsquo; which can be run on the source
+files during compilation: see <a href="http://clang-analyzer.llvm.org/">http://clang-analyzer.llvm.org/</a>.
 </p>
 <p>Some versions of <code>clang</code> have a (currently experimental) memory
 sanitizer invoked by <samp>-fsanitize=memory</samp> which detects uses of
@@ -8173,7 +8176,8 @@ variable
 <div class="example">
 <pre class="example">ASAN_OPTIONS='detect_leaks=1'
 </pre></div>
-
+<p>(which may be the default on some builds).
+</p>
 <hr>
 <a name="Using-_0060Dr_002e-Memory_0027"></a>
 <div class="header">
@@ -8184,7 +8188,7 @@ Next: <a href="#Fortran-array-bounds-checking" accesskey="n" rel="next">Fortran 
 <h4 class="subsection">4.3.6 Using &lsquo;Dr. Memory&rsquo;</h4>
 
 <p>&lsquo;Dr. Memory&rsquo; from <a href="http://www.drmemory.org/">http://www.drmemory.org/</a> is a memory checker
-for (currently) 32-bit Windows and Linux with similar aims to
+for (currently) 32-bit Windows, Linux and OS X with similar aims to
 <code>valgrind</code>.  It works with unmodified executables<a name="DOCF76" href="#FOOT76"><sup>76</sup></a>
 and detects memory access errors, uninitialized reads and memory leaks.
 </p>
@@ -15345,8 +15349,8 @@ explicit call to <code>print</code>.</p>
 <p>at the time of writing mainly for 10.7 with some
 support for 10.8, none for the current 10.9.</p>
 <h3><a name="FOOT70" href="#DOCF70">(70)</a></h3>
-<p>see the R source file
-<samp>src/main/memory.c</samp> for precisely what these do.</p>
+<p>see the
+R source file <samp>src/main/memory.c</samp> for precisely what these do.</p>
 <h3><a name="FOOT71" href="#DOCF71">(71)</a></h3>
 <p>small
 fixed-size arrays by default in <code>gfortran</code>, for example.</p>
