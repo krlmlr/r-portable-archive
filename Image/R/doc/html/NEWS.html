@@ -255,6 +255,17 @@ preferred.
 
 
 
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li> <p><code>download.file(method = "lynx")</code> is defunct.
+</p>
+</li></ul>
+
+
+
+
 <h4>BUG FIXES</h4>
 
 
@@ -267,7 +278,7 @@ Radford Neal as part of pqR issue 16.
 matching by name in <code>log()</code>.
 </p>
 </li>
-<li> <p><code>all.equal()</code> gains a method for <code>environment</code>s and
+<li> <p><code>all.equal()</code> gains methods for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
 </li></ul>
@@ -275,7 +286,7 @@ matching by name in <code>log()</code>.
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.1 patched</h3>
+<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.2</h3>
 
 
 
@@ -349,6 +360,8 @@ set at runtime <em>via</em> environment variable
 <ul>
 <li><p> The <code>configure</code> script reports on the more important
 capabilities/options which will not be compiled in.
+</p>
+<p>More types of external BLAS are recognized by name in that report.
 </p>
 </li>
 <li><p> When building <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> as a shared library, the
@@ -542,6 +555,12 @@ the <code>xaxs</code>, <code>yaxs</code> and <code>lab</code> graphics parameter
 </li>
 <li> <p><code>R CMD Rd2pdf</code> unintentionally ignored its
 <span class="option">--os</span> option.
+</p>
+</li>
+<li><p> The internal method of <code>download.file()</code> was not
+reporting file sizes and progress correctly on files larger than
+2GB (inherited from <code>libxml2</code>).  This is corrected for 64-bit
+builds (32-bit platforms may not support such files).
 </p>
 </li></ul>
 

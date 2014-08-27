@@ -166,6 +166,10 @@ CHANGES IN R-devel:
       arguments are duplicated if DUP = TRUE would do so.  As their
       help has long said, .Call() is much preferred.
 
+  DEPRECATED AND DEFUNCT:
+
+    * download.file(method = "lynx") is defunct.
+
   BUG FIXES:
 
     * Fixed two obscure bugs in pairlist subassignment, reported by
@@ -174,9 +178,9 @@ CHANGES IN R-devel:
     * Fixes for bugs in handling empty arguments and argument matching
       by name in log().
 
-    * all.equal() gains a method for environments and refClasses.
+    * all.equal() gains methods for environments and refClasses.
 
-CHANGES IN R 3.1.1 patched:
+CHANGES IN R 3.1.2:
 
   NEW FEATURES:
 
@@ -225,6 +229,9 @@ CHANGES IN R 3.1.1 patched:
 
     * The configure script reports on the more important
       capabilities/options which will not be compiled in.
+
+      More types of external BLAS are recognized by name in that
+      report.
 
     * When building R as a shared library, the -L${R_HOME}/lib${R_ARCH}
       flag is placed earlier in the link commands used during
@@ -356,6 +363,11 @@ CHANGES IN R 3.1.1 patched:
       non-finite values. (PR#16024)
 
     * R CMD Rd2pdf unintentionally ignored its --os option.
+
+    * The internal method of download.file() was not reporting file
+      sizes and progress correctly on files larger than 2GB (inherited
+      from libxml2).  This is corrected for 64-bit builds (32-bit
+      platforms may not support such files).
 
 CHANGES IN R 3.1.1:
 
