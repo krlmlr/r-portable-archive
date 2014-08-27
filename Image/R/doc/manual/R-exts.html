@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-09-05).
+<!-- This manual is for R, version 3.2.0 Under development (2014-09-06).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-09-05).
+<p>This manual is for R, version 3.2.0 Under development (2014-09-06).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -830,9 +830,10 @@ description of what the package does.  One can use several (complete)
 sentences, but only one paragraph.
 </p>
 <p>The mandatory &lsquo;<samp>Title</samp>&rsquo; field should give a short description of the
-package. Some package listings may truncate the title to 65 characters.
-It should be capitalized, not use any markup, not have any continuation
-lines, and not end in a period.
+package.  Some package listings may truncate the title to 65 characters.
+It should use <em>title case</em> (that is, use capitals for the principal
+words), not use any markup, not have any continuation lines, and not end
+in a period.
 </p>
 <p>The mandatory &lsquo;<samp>Author</samp>&rsquo; field describes who wrote <em>the
 package</em>.  It is a plain text field intended for human readers, but not
@@ -7964,6 +7965,11 @@ as the <samp>R.framework</samp>) and can be slow.  Installing packages with
 also be done by setting environment variable <code>PKG_MAKE_DSYM</code> to a
 non-empty value before the <code>INSTALL</code>.)
 </p>
+<p>This section has described the use of <code>memtest</code>, the default
+(and most useful) of <code>valgrind</code>&rsquo;s tools.  There are others
+described in its documentation: <code>helgrind</code> can be useful for
+threaded programs.
+</p>
 <hr>
 <a name="Using-Address-Sanitizer"></a>
 <div class="header">
@@ -8081,7 +8087,7 @@ variable
 <p>When LSan is enabled, leaks give the process a failure error status (by
 default <code>23</code>).  For an R package this means the R process,
 and as the parser retains some memory to the end of the process, if R
-itself was built against ASAN, all runs will have a failure error status
+itself was built against ASan, all runs will have a failure error status
 (and that includes running R as part of building R itself).
 </p>
 <p>To disable both this and some strict checking use
@@ -8151,7 +8157,7 @@ like
 <p>is available as a separate option in some versions of <code>clang</code>
 (not enabled by <samp>-fsanitize=undefined</samp>).
 </p>
-<p>Pre-release versions of <code>clang</code> 3.5 need
+<p><code>clang</code> 3.5 needs
 </p>
 <div class="example">
 <pre class="example">-fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr
@@ -8214,10 +8220,11 @@ Next: <a href="#Using-_0060Dr_002e-Memory_0027" accesskey="n" rel="next">Using â
 <a name="Other-analyses-with-_0060clang_0027-1"></a>
 <h4 class="subsection">4.3.5 Other analyses with &lsquo;clang&rsquo;</h4>
 
-<p>Recent versions of <code>clang</code> on some platforms have
+<p>Recent versions of <code>clang</code> on &lsquo;<samp>x86_64</samp>&rsquo; Linux have
 &lsquo;ThreadSanitizer&rsquo; (<a href="https://code.google.com/p/thread-sanitizer/">https://code.google.com/p/thread-sanitizer/</a>),
 a &lsquo;data race detector for C/C++ programs&rsquo;, and &lsquo;MemorySanitizer&rsquo;
-(<a href="https://code.google.com/p/memory-sanitizer/wiki/MemorySanitizer">https://code.google.com/p/memory-sanitizer/wiki/MemorySanitizer</a>)
+(<a href="http://clang.llvm.org/docs/MemorySanitizer.html">http://clang.llvm.org/docs/MemorySanitizer.html</a>,
+<a href="https://code.google.com/p/memory-sanitizer/wiki/MemorySanitizer">https://code.google.com/p/memory-sanitizer/wiki/MemorySanitizer</a>)
 for the detection of uninitialized memory.  Both are based on and
 provide similar functionality to tools in <code>valgrind</code>.
 </p>
@@ -15406,9 +15413,9 @@ R source file <samp>src/main/memory.c</samp> for precisely what these do.</p>
 <p>small
 fixed-size arrays by default in <code>gfortran</code>, for example.</p>
 <h3><a name="FOOT73" href="#DOCF73">(73)</a></h3>
-<p>not including the versions distributed by Apple in
-<code>Xcode</code> 4.6 or 5, nor of <code>clang</code> in Fedora prior to an
-update in Fedora 19. On some platforms, e.g. Fedora, the runtime
+<p>currently only on &lsquo;<samp>ix86</samp>&rsquo;/&lsquo;<samp>x86_64</samp>&rsquo; Linux
+and OS X, not including the versions distributed by Apple in
+<code>Xcode</code> 4.6 or 5. On some platforms, e.g. Fedora, the runtime
 library, <strong>libasan</strong>, needs to be installed separately. OS X users can
 install a suitable <code>clang</code> from the sources or possibly
 distributions such as MacPorts or Homebrew.</p>
