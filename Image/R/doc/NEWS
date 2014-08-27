@@ -250,6 +250,10 @@ CHANGES IN R 3.1.1 patched:
 
     * getAnywhere("C_pbinom") now works correctly.
 
+    * The confint() function failed on results of nls() fits that
+      specified parameter limits despite using an algorithm other than
+      "port".  (PR#15960)
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:
