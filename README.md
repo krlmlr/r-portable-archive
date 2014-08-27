@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `a2016b5b3111216482769c7329600949`, uncompressed 378.8 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `380cae45494b02259ea4e2d71dd4bcd4`, uncompressed 386.5 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `9ccaa5bcc21d25f80aa7c37d5ac6cecf`, uncompressed 416.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `3043e8167de3b157d40e0c40dae2f4a8`, uncompressed 378.9 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `463c208a7932e35f7aac89d0ca699485`, uncompressed 386.6 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `3a569dffb7d1f525e0588c69c8e45f91`, uncompressed 416.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-09-21 r66653)
+R Under development (unstable) (2014-09-22 r66656)
 
 ### Package versions
 
@@ -73,6 +73,6 @@ R Under development (unstable) (2014-09-21 r66653)
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.2),
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.3),
 [`stringr`](http://cran.r-project.org/package=stringr) (0.6.2),
-[`testthat`](http://cran.r-project.org/package=testthat) (0.8.1),
+[`testthat`](http://cran.r-project.org/package=testthat) (0.9),
 [`translations`](http://cran.r-project.org/package=translations) (3.2.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2) 

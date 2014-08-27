@@ -1,17 +1,21 @@
+testthat-package	testthat
 auto_test	auto_test
 auto_test_package	auto_test_package
 colourise	colourise
 compare_state	compare_state
 context	context
+describe	describe
 dir_state	dir_state
 equals	equals
+equals_reference	equals_reference
 evaluate_promise	evaluate_promise
 expect-compare	expect-compare
 expectation	expectation
 expect_equal	equals
+expect_equal_to_reference	equals_reference
 expect_equivalent	is_equivalent_to
 expect_error	throws_error
-expect_false	is_false
+expect_false	is_true
 expect_identical	is_identical_to
 expect_is	is_a
 expect_less_than	expect-compare
@@ -33,7 +37,7 @@ has_names	has_names
 is.expectation	expectation
 is_a	is_a
 is_equivalent_to	is_equivalent_to
-is_false	is_false
+is_false	is_true
 is_identical_to	is_identical_to
 is_less_than	expect-compare
 is_more_than	expect-compare
@@ -59,6 +63,8 @@ set_reporter	reporter-accessors
 shows_message	shows_message
 SilentReporter	SilentReporter-class
 SilentReporter-class	SilentReporter-class
+skip	skip
+skip_on_cran	skip
 source_dir	source_dir
 StopReporter	StopReporter-class
 StopReporter-class	StopReporter-class
@@ -69,6 +75,7 @@ TapReporter	TapReporter-class
 TapReporter-class	TapReporter-class
 TeamcityReporter	TeamcityReporter-class
 TeamcityReporter-class	TeamcityReporter-class
+testthat	testthat
 test_check	test_package
 test_dir	test_dir
 test_env	test_env
@@ -77,4 +84,5 @@ test_package	test_package
 test_that	test_that
 throws_error	throws_error
 watch	watch
+with_mock	with_mock
 with_reporter	reporter-accessors

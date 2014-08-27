@@ -16,8 +16,11 @@ auto_test_package       Watches a package for changes, rerunning tests
                         as appropriate.
 colourise               Colourise text for display in the terminal.
 context                 Describe the context of a set of tests.
+describe                describe: a BDD testing language
 equals                  Expectation: is the object equal (with
                         numerical tolerance) to a value?
+equals_reference        Expectation: is the object equal to a reference
+                        value stored in a file?
 evaluate_promise        Evaluate a promise, capturing all types of
                         output.
 expect-compare          Expectation: is returned value less or greater
@@ -32,11 +35,10 @@ is_equivalent_to        Expectation: is the object equivalent to a
                         value? This expectation tests for equivalency:
                         are two objects equal once their attributes
                         have been removed.
-is_false                Expectation: is the object false?
 is_identical_to         Expectation: is the object identical to
                         another?
 is_null                 Expectation: is the object NULL?
-is_true                 Expectation: is the object true?
+is_true                 Expectation: is the object true/false?
 library_if_available    Load package, if available.
 make_expectation        Make an equality test.
 matches                 Expectation: does string match regular
@@ -45,12 +47,15 @@ not                     Negate an expectation
 prints_text             Expectation: does printed output match a
                         regular expression?
 shows_message           Expectation: does expression show a message?
+skip                    Skip a test.
 takes_less_than         Expectation: does expression take less than a
                         fixed amount of time to run?
 test_dir                Run all of the tests in a directory.
 test_file               Run all tests in specified file.
 test_package            Run all tests in an installed package
 test_that               Create a test.
+testthat                R package to make testing fun!
 throws_error            Expectation: does expression throw an error?
 watch                   Watch a directory for changes (additions,
                         deletions & modifications).
+with_mock               Mock functions in a package.
