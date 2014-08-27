@@ -546,6 +546,7 @@ duplicated.numeric_version	numeric_version
 duplicated.POSIXlt	DateTimeClasses
 dyn.load	dynload
 dyn.unload	dynload
+dynGet	get
 eapply	eapply
 eigen	eigen
 else	Control

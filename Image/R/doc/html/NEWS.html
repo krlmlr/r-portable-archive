@@ -167,6 +167,10 @@ value for debugging purposes.
 Similarly, <code>tcrossprod(x,y)</code> and <code>%*%</code> work in more
 cases with vector arguments.
 </p>
+</li>
+<li><p> An experimental utility <code>dynGet()</code> useful for detecting
+cycles, aka infinite recursions.
+</p>
 </li></ul>
 
 
@@ -432,6 +436,10 @@ environments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 </p>
 </li>
 <li> <p><code>options(list())</code> now works (trivially). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15979">PR#15979</a>)
+</p>
+</li>
+<li> <p><code>merge(&lt;dendrogram&gt;, ..)</code> now works correctly.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>)
 </p>
 </li></ul>
 

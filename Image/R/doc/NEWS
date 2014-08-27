@@ -117,6 +117,9 @@ CHANGES IN R-devel:
       by Radford Neal).  Similarly, tcrossprod(x,y) and %*% work in
       more cases with vector arguments.
 
+    * An experimental utility dynGet() useful for detecting cycles, aka
+      infinite recursions.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
@@ -279,6 +282,8 @@ CHANGES IN R 3.1.1 patched:
       (PR#15970)
 
     * options(list()) now works (trivially). (PR#15979)
+
+    * merge(<dendrogram>, ..) now works correctly.  (PR#15648)
 
 CHANGES IN R 3.1.1:
 

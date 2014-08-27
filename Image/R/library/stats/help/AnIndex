@@ -403,6 +403,7 @@ NLSstRtAsymptote	NLSstRtAsymptote
 NLSstRtAsymptote.sortedXyData	NLSstRtAsymptote
 nobs	nobs
 nobs.default	nobs
+nobs.dendrogram	dendrogram
 Normal	Normal
 numericDeriv	numericDeriv
 offset	offset
