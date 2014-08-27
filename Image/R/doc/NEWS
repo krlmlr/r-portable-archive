@@ -288,7 +288,13 @@ CHANGES IN R 3.1.1 patched:
 
     * options(list()) now works (trivially). (PR#15979)
 
-    * merge(<dendrogram>, ..) now works correctly.  (PR#15648)
+    * merge(<dendrogram>, ..) now works correctly for two `independent'
+      dendrograms (PR#15648), and still compatibly via adjust = "auto"
+      e.g. for two branches of an existing dendrogram.
+
+    * The plot method for "hclust" objects gets an optional argument
+      check; When that is true, as per default, it checks more
+      carefully for valid input.
 
     * (Windows only) If a user chose to install 64 bit R but not 32 bit
       R, the bin/R and bin/Rscript executables failed to run.

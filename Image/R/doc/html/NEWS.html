@@ -444,8 +444,15 @@ environments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 <li> <p><code>options(list())</code> now works (trivially). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15979">PR#15979</a>)
 </p>
 </li>
-<li> <p><code>merge(&lt;dendrogram&gt;, ..)</code> now works correctly.
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>)
+<li> <p><code>merge(&lt;dendrogram&gt;, ..)</code> now works correctly for two
+&lsquo;independent&rsquo; dendrograms (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>), and still compatibly via
+<code>adjust = "auto"</code> e.g. for two branches of an existing
+dendrogram.
+</p>
+</li>
+<li><p> The <code>plot</code> method for <code>"hclust"</code> objects gets an
+optional argument <code>check</code>;  When that is true, as per
+default, it checks more carefully for valid input.
 </p>
 </li>
 <li><p> (Windows only) If a user chose to install 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> but not
