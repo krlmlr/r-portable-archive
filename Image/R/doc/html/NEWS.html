@@ -354,6 +354,12 @@ documented). (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi
 <li><p> LaTeX package <span class="pkg">upquote</span> is no longer required for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s
 use of <span class="pkg">inconsolata</span>.
 </p>
+</li>
+<li><p> (Windows only) If both 32 and 64 bit versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> are
+installed, the &lsquo;<span class="file">bin/R.exe</span>&rsquo; and &lsquo;<span class="file">bin/Rscript.exe</span>&rsquo; executables
+now run 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  (To run 32 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, overwrite these files
+with copies of &lsquo;<span class="file">bin/i386/Rfe.exe</span>&rsquo;.)
+</p>
 </li></ul>
 
 
@@ -440,6 +446,11 @@ environments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 </li>
 <li> <p><code>merge(&lt;dendrogram&gt;, ..)</code> now works correctly.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15648">PR#15648</a>)
+</p>
+</li>
+<li><p> (Windows only) If a user chose to install 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> but not
+32 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, the &lsquo;<span class="file">bin/R</span>&rsquo; and &lsquo;<span class="file">bin/Rscript</span>&rsquo; executables
+failed to run.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15981">PR#15981</a>)
 </p>
 </li></ul>
 

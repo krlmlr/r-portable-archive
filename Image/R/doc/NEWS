@@ -228,6 +228,11 @@ CHANGES IN R 3.1.1 patched:
     * LaTeX package upquote is no longer required for R's use of
       inconsolata.
 
+    * (Windows only) If both 32 and 64 bit versions of R are installed,
+      the bin/R.exe and bin/Rscript.exe executables now run 64 bit R.
+      (To run 32 bit R, overwrite these files with copies of
+      bin/i386/Rfe.exe.)
+
   BUG FIXES:
 
     * dmultinom() did not handle non-finite probabilities correctly.
@@ -284,6 +289,10 @@ CHANGES IN R 3.1.1 patched:
     * options(list()) now works (trivially). (PR#15979)
 
     * merge(<dendrogram>, ..) now works correctly.  (PR#15648)
+
+    * (Windows only) If a user chose to install 64 bit R but not 32 bit
+      R, the bin/R and bin/Rscript executables failed to run.
+      (PR#15981)
 
 CHANGES IN R 3.1.1:
 
