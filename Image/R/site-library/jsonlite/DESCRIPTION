@@ -25,5 +25,5 @@ Suggests: testthat, knitr, reshape2, httr (>= 0.4), rjson, plyr
 Packaged: 2014-09-26 17:27:54 UTC; jeroen
 Repository: CRAN
 Date/Publication: 2014-09-27 07:25:29
-Built: R 3.1.1; x86_64-w64-mingw32; 2014-10-18 22:29:45 UTC; windows
+Built: R 3.1.1; x86_64-w64-mingw32; 2014-10-19 22:30:41 UTC; windows
 Archs: i386, x64

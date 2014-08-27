@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-19).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-20).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-19).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-20).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -4077,7 +4077,14 @@ way to use it.
 <p>Our understanding is that this project is now frozen and so will not be
 updated for CPUs released since mid-2010.  However, OpenBLAS
 (<a href="http://xianyi.github.com/OpenBLAS/">http://xianyi.github.com/OpenBLAS/</a>) is a descendant project with
-support for some current CPUs (e.g. Intel Sandy Bridge and AMD Bulldozer).
+support for some current CPUs (e.g. Intel Sandy Bridge).  Once
+installed it can be used by something like
+</p>
+<div class="example">
+<pre class="example">--with-blas=&quot;-lopenblas&quot;
+</pre></div>
+
+<p>or as a shared BLAS.
 </p>
 <hr>
 <a name="MKL"></a>
