@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-13).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-14).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -191,15 +191,13 @@ p {
       <li><a name="toc-Getting-the-source-files-1" href="#Getting-the-source-files">3.1.2 Getting the source files</a></li>
       <li><a name="toc-Building-the-core-files-1" href="#Building-the-core-files">3.1.3 Building the core files</a></li>
       <li><a name="toc-Building-the-bitmap-files-1" href="#Building-the-bitmap-files">3.1.4 Building the bitmap files</a></li>
-      <li><a name="toc-Building-the-cairo-devices" href="#Building-the-cairo-devices-files">3.1.5 Building the cairo devices</a>
-      <ul class="no-bullet">
-        <li><a name="toc-Using-ICU-for-collation-1" href="#Using-ICU-for-collation">3.1.5.1 Using ICU for collation</a></li>
-      </ul></li>
-      <li><a name="toc-Checking-the-build-1" href="#Checking-the-build">3.1.6 Checking the build</a></li>
-      <li><a name="toc-Building-the-manuals-1" href="#Building-the-manuals">3.1.7 Building the manuals</a></li>
-      <li><a name="toc-Building-the-Inno-Setup-installer-1" href="#Building-the-Inno-Setup-installer">3.1.8 Building the Inno Setup installer</a></li>
-      <li><a name="toc-Building-the-MSI-installer-1" href="#Building-the-MSI-installer">3.1.9 Building the MSI installer</a></li>
-      <li><a name="toc-64_002dbit-Windows-builds-1" href="#g_t64_002dbit-Windows-builds">3.1.10 64-bit Windows builds</a></li>
+      <li><a name="toc-Building-the-cairo-devices" href="#Building-the-cairo-devices-files">3.1.5 Building the cairo devices</a></li>
+      <li><a name="toc-Using-ICU-for-collation-1" href="#Using-ICU-for-collation">3.1.6 Using ICU for collation</a></li>
+      <li><a name="toc-Checking-the-build-1" href="#Checking-the-build">3.1.7 Checking the build</a></li>
+      <li><a name="toc-Building-the-manuals-1" href="#Building-the-manuals">3.1.8 Building the manuals</a></li>
+      <li><a name="toc-Building-the-Inno-Setup-installer-1" href="#Building-the-Inno-Setup-installer">3.1.9 Building the Inno Setup installer</a></li>
+      <li><a name="toc-Building-the-MSI-installer-1" href="#Building-the-MSI-installer">3.1.10 Building the MSI installer</a></li>
+      <li><a name="toc-64_002dbit-Windows-builds-1" href="#g_t64_002dbit-Windows-builds">3.1.11 64-bit Windows builds</a></li>
     </ul></li>
     <li><a name="toc-Testing-an-Installation-1" href="#Testing-a-Windows-Installation">3.2 Testing an Installation</a></li>
   </ul></li>
@@ -340,7 +338,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-13).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-14).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1457,13 +1455,15 @@ try to select a &lsquo;<samp>C</samp>&rsquo; locale; Windows may not honour this
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Building-the-cairo-devices-files" accesskey="5">Building the cairo devices files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Checking-the-build" accesskey="6">Checking the build</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Using-ICU-for-collation" accesskey="6">Using ICU for collation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-manuals" accesskey="7">Building the manuals</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Checking-the-build" accesskey="7">Checking the build</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-Inno-Setup-installer" accesskey="8">Building the Inno Setup installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-manuals" accesskey="8">Building the manuals</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-MSI-installer" accesskey="9">Building the MSI installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-Inno-Setup-installer" accesskey="9">Building the Inno Setup installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-MSI-installer">Building the MSI installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#g_t64_002dbit-Windows-builds">64-bit Windows builds</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -1665,7 +1665,7 @@ not built automatically.
 <a name="Building-the-cairo-devices-files"></a>
 <div class="header">
 <p>
-Next: <a href="#Checking-the-build" accesskey="n" rel="next">Checking the build</a>, Previous: <a href="#Building-the-bitmap-files" accesskey="p" rel="prev">Building the bitmap files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Using-ICU-for-collation" accesskey="n" rel="next">Using ICU for collation</a>, Previous: <a href="#Building-the-bitmap-files" accesskey="p" rel="prev">Building the bitmap files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-cairo-devices"></a>
 <h4 class="subsection">3.1.5 Building the cairo devices</h4>
@@ -1685,19 +1685,14 @@ the macro &lsquo;<samp>CAIRO_HOME</samp>&rsquo; in <samp>MkRules.local</samp>.  
 tarball unpacks with a top-level directory <samp>src/</samp>:
 &lsquo;<samp>CAIRO_HOME</samp>&rsquo; needs to include that directory in its path.)
 </p>
-<table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Using-ICU-for-collation" accesskey="1">Using ICU for collation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-</table>
-
 <hr>
 <a name="Using-ICU-for-collation"></a>
 <div class="header">
 <p>
-Previous: <a href="#Building-the-cairo-devices-files" accesskey="p" rel="prev">Building the cairo devices files</a>, Up: <a href="#Building-the-cairo-devices-files" accesskey="u" rel="up">Building the cairo devices files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Checking-the-build" accesskey="n" rel="next">Checking the build</a>, Previous: <a href="#Building-the-cairo-devices-files" accesskey="p" rel="prev">Building the cairo devices files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Using-ICU-for-collation-1"></a>
-<h4 class="subsubsection">3.1.5.1 Using ICU for collation</h4>
+<h4 class="subsection">3.1.6 Using ICU for collation</h4>
 
 <p>It is possible (and even recommended) to build R to use ICU
 (International Components for Unicode,
@@ -1726,10 +1721,10 @@ collation.
 <a name="Checking-the-build"></a>
 <div class="header">
 <p>
-Next: <a href="#Building-the-manuals" accesskey="n" rel="next">Building the manuals</a>, Previous: <a href="#Building-the-cairo-devices-files" accesskey="p" rel="prev">Building the cairo devices files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Building-the-manuals" accesskey="n" rel="next">Building the manuals</a>, Previous: <a href="#Using-ICU-for-collation" accesskey="p" rel="prev">Using ICU for collation</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Checking-the-build-1"></a>
-<h4 class="subsection">3.1.6 Checking the build</h4>
+<h4 class="subsection">3.1.7 Checking the build</h4>
 
 <p>You can test a build by running
 </p>
@@ -1774,7 +1769,7 @@ run in parallel.
 Next: <a href="#Building-the-Inno-Setup-installer" accesskey="n" rel="next">Building the Inno Setup installer</a>, Previous: <a href="#Checking-the-build" accesskey="p" rel="prev">Checking the build</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-manuals-1"></a>
-<h4 class="subsection">3.1.7 Building the manuals</h4>
+<h4 class="subsection">3.1.8 Building the manuals</h4>
 
 <p>The PDF manuals can be made by
 </p>
@@ -1812,7 +1807,7 @@ install <code>Perl</code>.)
 Next: <a href="#Building-the-MSI-installer" accesskey="n" rel="next">Building the MSI installer</a>, Previous: <a href="#Building-the-manuals" accesskey="p" rel="prev">Building the manuals</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-Inno-Setup-installer-1"></a>
-<h4 class="subsection">3.1.8 Building the Inno Setup installer</h4>
+<h4 class="subsection">3.1.9 Building the Inno Setup installer</h4>
 
 <p>You need to have the files for a complete R build, including bitmap and
 Tcl/Tk support and the manuals, as well as the recommended packages and
@@ -1915,7 +1910,7 @@ installer image.
 Next: <a href="#g_t64_002dbit-Windows-builds" accesskey="n" rel="next">64-bit Windows builds</a>, Previous: <a href="#Building-the-Inno-Setup-installer" accesskey="p" rel="prev">Building the Inno Setup installer</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-MSI-installer-1"></a>
-<h4 class="subsection">3.1.9 Building the MSI installer</h4>
+<h4 class="subsection">3.1.10 Building the MSI installer</h4>
 
 <p>It is also possible to build an installer for use with Microsoft
 Installer.  This is intended for use by sysadmins doing automated
@@ -1966,7 +1961,7 @@ for suggesting WiX and building a prototype installer.
 Previous: <a href="#Building-the-MSI-installer" accesskey="p" rel="prev">Building the MSI installer</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="g_t64_002dbit-Windows-builds-1"></a>
-<h4 class="subsection">3.1.10 64-bit Windows builds</h4>
+<h4 class="subsection">3.1.11 64-bit Windows builds</h4>
 
 <p>To build a 64-bit version of R you need a 64-bit toolchain: the only one
 discussed here is based on the work of the MinGW-w64 project

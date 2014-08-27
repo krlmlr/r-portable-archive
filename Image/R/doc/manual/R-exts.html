@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-13).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-14).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-13).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-14).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -1341,6 +1341,10 @@ visible (and if it is, it need not be the one from that namespace:
 <code>plot3d</code> occurs in several other packages).  If the intention is to
 give an error if the suggested package is not available, simply use
 e.g. <code>rgl::plot3d</code>.
+</p>
+<p>As noted above, packages in &lsquo;<samp>Enhances</samp>&rsquo; <em>must</em> be used
+conditionally and hence objects within them should always be accessed
+<em>via</em> <code>::</code>.
 </p>
 <hr>
 <a name="The-INDEX-file"></a>
