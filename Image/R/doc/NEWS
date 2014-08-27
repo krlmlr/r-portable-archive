@@ -163,6 +163,8 @@ CHANGES IN R-devel:
     * Fixes for bugs in handling empty arguments and argument matching
       by name in log().
 
+    * all.equal() gets a method for environments and refClasses.
+
 CHANGES IN R 3.1.1 patched:
 
   NEW FEATURES:
@@ -260,6 +262,15 @@ CHANGES IN R 3.1.1 patched:
 
     * Subclassing an S4 class failed if the class required arguments to
       the generator, through its initialize() method.
+
+    * removeSource() did not properly handle expressions containing
+      arguments that were supplied as missing, e.g.  x[i,]. (PR#15957)
+
+    * as.environment(list()) now works, and as.list() of such an
+      environment is now the same as list().
+
+    * Several tcltk functions failed when run in unusual environments.
+      (PR#15970)
 
 CHANGES IN R 3.1.1:
 

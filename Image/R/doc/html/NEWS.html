@@ -254,6 +254,10 @@ Radford Neal as part of pqR issue 16.
 <li><p> Fixes for bugs in handling empty arguments and argument
 matching by name in <code>log()</code>.
 </p>
+</li>
+<li> <p><code>all.equal()</code> gets a method for <code>environment</code>s and
+<code>refClass</code>es.
+</p>
 </li></ul>
 
 
@@ -395,13 +399,27 @@ process (seen most often on Solaris).
 <li> <p><code>getAnywhere("C_pbinom")</code> now works correctly.
 </p>
 </li>
-<li><p> The <code>confint()</code> function failed on results of 
-<code>nls()</code> fits that specified parameter limits despite using 
+<li><p> The <code>confint()</code> function failed on results of
+<code>nls()</code> fits that specified parameter limits despite using
 an algorithm other than <code>"port"</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15960">PR#15960</a>)
 </p>
 </li>
 <li><p> Subclassing an S4 class failed if the class required
 arguments to the generator, through its <code>initialize()</code> method.
+</p>
+</li>
+<li> <p><code>removeSource()</code> did not properly handle expressions
+containing arguments that were supplied as missing, e.g.
+<code>x[i,]</code>. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15957">PR#15957</a>)
+</p>
+</li>
+<li> <p><code>as.environment(list())</code> now works, and
+<code>as.list()</code> of such an environment is now the same as
+<code>list()</code>.
+</p>
+</li>
+<li><p> Several <span class="pkg">tcltk</span> functions failed when run in unusual
+environments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15970">PR#15970</a>)
 </p>
 </li></ul>
 
