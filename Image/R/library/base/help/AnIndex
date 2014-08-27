@@ -883,6 +883,7 @@ matmult	matmult
 matrix	matrix
 max	Extremes
 max.col	maxCol
+MC_CORES	options
 mean	mean
 mean.Date	Dates
 mean.default	mean
@@ -1106,6 +1107,7 @@ rbind	cbind
 rbind.data.frame	cbind
 rcond	kappa
 Rd2pdf	RdUtils
+RD2PDF_INPUTENC	RdUtils
 Rdconv	RdUtils
 Re	complex
 read.dcf	dcf
@@ -1184,6 +1186,8 @@ Rprofile.site	Startup
 R_BATCH	EnvVar
 R_BROWSER	EnvVar
 R_COMPLETION	EnvVar
+R_C_BOUNDS_CHECK	options
+R_DEFAULT_DEVICE	options
 R_DEFAULT_PACKAGES	Startup
 R_DOC_DIR	EnvVar
 R_ENVIRON	Startup
@@ -1197,6 +1201,8 @@ R_HISTSIZE	EnvVar
 R_HOME	Rhome
 R_ICU_LOCALE	icuSetCollate
 R_INCLUDE_DIR	EnvVar
+R_INTERACTIVE_DEVICE	options
+R_KEEP_PKG_SOURCE	options
 R_LIBS	libPaths
 R_LIBS_SITE	libPaths
 R_LIBS_USER	libPaths

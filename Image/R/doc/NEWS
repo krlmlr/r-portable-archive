@@ -355,6 +355,8 @@ CHANGES IN R 3.1.1 patched:
     * bw.SJ(x) and other bw.*() no longer segfault when x contains
       non-finite values. (PR#16024)
 
+    * R CMD Rd2pdf unintentionally ignored its --os option.
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-18).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-19).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-18).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-19).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -4099,14 +4099,14 @@ standard compilers used for R on those platforms.
 following notes apply exactly only to version 10.3 but have been used
 with version 11.1.
 </p>
-<p>Versions 10 and later of MKL support two linking models: only the
-layered model is described here: it gives the user fine-grained control
-over four different library layers: interface, threading, computation,
-and run-time library support.  The choice of interface layer is
-important on &lsquo;<samp>x86_64</samp>&rsquo; since the Intel Fortran compiler returns
-complex values in different registers from the <acronym>GNU</acronym> Fortran
-compiler: you must therefore use the interface layer that matches your
-compiler (<code>mkl_intel*</code> or <code>mkl_gf*</code>).
+<p>Versions 10 and later of MKL support two linking models.  Only the
+layered model is described here as it gives the user fine-grained
+control over four different library layers: interface, threading,
+computation, and run-time library support.  The choice of interface
+layer is important on &lsquo;<samp>x86_64</samp>&rsquo; since the Intel Fortran compiler
+returns complex values in different registers from the <acronym>GNU</acronym>
+Fortran compiler: you must therefore use the interface layer that
+matches your compiler (<code>mkl_intel*</code> or <code>mkl_gf*</code>).
 </p>
 <p>These examples are for GCC compilers on &lsquo;<samp>x86_64</samp>&rsquo;.
 </p>
