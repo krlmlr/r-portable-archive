@@ -1,5 +1,5 @@
 
-R version 3.1.1 Patched (2014-08-20 r66449) -- "Sock it to Me"
+R Under development (unstable) (2014-09-27 r66695) -- "Unsuffered Consequences"
 Copyright (C) 2014 The R Foundation for Statistical Computing
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -84,15 +84,15 @@ Pearson          48.62933 54 0.6809086
 > function(M)
 + {
 +     tmp <- qr(M)
-+     set <- if(tmp$rank == 0) 1:ncol(M) else  - (1:tmp$rank)
++     set <- if(tmp$rank == 0L) seq_len(ncol(M)) else  -seq_len(tmp$rank)
 +     qr.Q(tmp, complete = TRUE)[, set, drop = FALSE]
 + }
 function (M) 
 {
     tmp <- qr(M)
-    set <- if (tmp$rank == 0) 
-        1:ncol(M)
-    else -(1:tmp$rank)
+    set <- if (tmp$rank == 0L) 
+        seq_len(ncol(M))
+    else -seq_len(tmp$rank)
     qr.Q(tmp, complete = TRUE)[, set, drop = FALSE]
 }
 > 
@@ -3538,6 +3538,9 @@ Residual Deviance: 172 	AIC: 1095
 > 
 > ### ** Examples
 > 
+> ## Don't show: 
+> op <- options(digits=5)
+> ## End Don't show
 > nl1 <- within(nlschools, {
 + IQave <- tapply(IQ, class, mean)[as.character(class)]
 + IQ <- IQ - IQave
@@ -3550,25 +3553,25 @@ Residual Deviance: 172 	AIC: 1095
 > summary(nl.lme)
 Linear mixed-effects model fit by REML
  Data: nl1 
-       AIC      BIC    logLik
-  15120.45 15177.78 -7550.226
+    AIC   BIC  logLik
+  15120 15178 -7550.2
 
 Random effects:
  Formula: ~IQ | class
  Structure: General positive-definite, Log-Cholesky parametrization
-            StdDev    Corr  
-(Intercept) 2.7870651 (Intr)
-IQ          0.4842392 -0.516
-Residual    6.2483879       
+            StdDev  Corr  
+(Intercept) 2.78707 (Intr)
+IQ          0.48424 -0.516
+Residual    6.24839       
 
 Fixed effects: lang ~ IQ * COMB + IQave + SES 
-               Value Std.Error   DF   t-value p-value
-(Intercept) 41.37017 0.3536372 2151 116.98478  0.0000
-IQ           2.12355 0.1007018 2151  21.08752  0.0000
-COMB1       -1.67177 0.5871924  130  -2.84706  0.0051
-IQave        3.24779 0.3002118  130  10.81833  0.0000
-SES          0.15674 0.0146534 2151  10.69673  0.0000
-IQ:COMB1     0.43074 0.1859429 2151   2.31652  0.0206
+             Value Std.Error   DF t-value p-value
+(Intercept) 41.370   0.35364 2151 116.985  0.0000
+IQ           2.124   0.10070 2151  21.088  0.0000
+COMB1       -1.672   0.58719  130  -2.847  0.0051
+IQave        3.248   0.30021  130  10.818  0.0000
+SES          0.157   0.01465 2151  10.697  0.0000
+IQ:COMB1     0.431   0.18594 2151   2.317  0.0206
  Correlation: 
          (Intr) IQ     COMB1  IQave  SES   
 IQ       -0.257                            
@@ -3578,11 +3581,14 @@ SES       0.010 -0.190 -0.001 -0.168
 IQ:COMB1  0.139 -0.522 -0.206 -0.016 -0.003
 
 Standardized Within-Group Residuals:
-        Min          Q1         Med          Q3         Max 
--4.05938661 -0.63108408  0.06551865  0.71786438  2.79454034 
+      Min        Q1       Med        Q3       Max 
+-4.059387 -0.631084  0.065519  0.717864  2.794540 
 
 Number of Observations: 2287
 Number of Groups: 133 
+> ## Don't show: 
+> options(op)
+> ## End Don't show
 > 
 > 
 > 
@@ -5168,7 +5174,7 @@ Achieved convergence tolerance: 4.324e-06
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  9.882 0.154 10.099 0 0 
+Time elapsed:  6.705 0.13 6.858 0 0 
 > grDevices::dev.off()
 null device 
           1 

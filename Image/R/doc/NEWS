@@ -318,6 +318,9 @@ CHANGES IN R 3.1.1 patched:
 
     * identical() now also looks at the S4 bit.
 
+    * hist(x, breaks) is more robust in adding small fuzz to few breaks
+      when some are very large. (PR#15899)
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:

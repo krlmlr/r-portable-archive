@@ -326,7 +326,7 @@ reserved characters from RFC 3986,
 <a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
 </p>
 </li>
-<li> <p><code>unique(warnings())</code> now works, as does 
+<li> <p><code>unique(warnings())</code> now works, as does
 <code>c(warnings())</code>.
 </p>
 </li></ul>
@@ -489,6 +489,10 @@ and missed memory protection added. (<a href="https://bugs.R-project.org/bugzill
 </p>
 </li>
 <li> <p><code>identical()</code> now also looks at the S4 bit.
+</p>
+</li>
+<li> <p><code>hist(x, breaks)</code> is more robust in adding small
+fuzz to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15899">PR#15899</a>)
 </p>
 </li></ul>
 
