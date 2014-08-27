@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `8e67bb179c908f58e10371a64b7cb108`, uncompressed 378.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `eabf557a1af67ffcbc37b339b2696ec2`, uncompressed 386.4 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.7 MB, MD5 hash: `4257219e649f17ea65606c41a02ec267`, uncompressed 416.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `86f3539aa899fabfb97c5394be34b7da`, uncompressed 378.7 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `1824335d8b94fb420e7e8065a76eff5f`, uncompressed 386.4 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.7 MB, MD5 hash: `5919fd9af6885b02677d55603be2d5a8`, uncompressed 416.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-08-28 r66490)
+R Under development (unstable) (2014-08-29 r66496)
 
 ### Package versions
 
@@ -50,7 +50,7 @@ R Under development (unstable) (2014-08-28 r66490)
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-29),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-34),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.1-4),
-[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-2),
+[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-3),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-117),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-8),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-8),
