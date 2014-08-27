@@ -171,6 +171,13 @@ cases with vector arguments.
 <li><p> An experimental utility <code>dynGet()</code> useful for detecting
 cycles, aka infinite recursions.
 </p>
+</li>
+<li><p> The byte code compiler and interpreter now include new
+instructions that allow many scalar subsetting and assignment and
+scalar arithmetic operations to be handled more efficiently. This
+can result in significant performance improvements in scalar
+numerical code.
+</p>
 </li></ul>
 
 
@@ -493,6 +500,13 @@ and missed memory protection added. (<a href="https://bugs.R-project.org/bugzill
 </li>
 <li> <p><code>hist(x, breaks)</code> is more robust in adding small
 fuzz to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15899">PR#15899</a>)
+</p>
+</li>
+<li> <p><code>sub()</code> and <code>gsub()</code> did not handle regular
+expressions like <code>"\s{2,}"</code> properly if the text
+contained <code>NA</code> elements.  (This is a partial fix:
+our regexp library still doesn't handle that regexp if the
+text contains UTF-8 characters.) (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
 </p>
 </li></ul>
 

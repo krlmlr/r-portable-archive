@@ -120,6 +120,12 @@ CHANGES IN R-devel:
     * An experimental utility dynGet() useful for detecting cycles, aka
       infinite recursions.
 
+    * The byte code compiler and interpreter now include new
+      instructions that allow many scalar subsetting and assignment and
+      scalar arithmetic operations to be handled more efficiently. This
+      can result in significant performance improvements in scalar
+      numerical code.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
@@ -320,6 +326,11 @@ CHANGES IN R 3.1.1 patched:
 
     * hist(x, breaks) is more robust in adding small fuzz to few breaks
       when some are very large. (PR#15899)
+
+    * sub() and gsub() did not handle regular expressions like "\s{2,}"
+      properly if the text contained NA elements.  (This is a partial
+      fix: our regexp library still doesn't handle that regexp if the
+      text contains UTF-8 characters.) (PR#16009)
 
 CHANGES IN R 3.1.1:
 
