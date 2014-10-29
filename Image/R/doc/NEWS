@@ -340,6 +340,9 @@ CHANGES IN R 3.1.2 patched:
 
     * The included version of PCRE has been updated to 8.36.
 
+    * configure accepts MAKEINFO=texi2any as another way to ensure
+      texinfo 5.x is used when both 5.x and 4.x are installed.
+
   UTILITIES:
 
     * R CMD check now checks the packages used in \donttest sections of
@@ -348,6 +351,9 @@ CHANGES IN R 3.1.2 patched:
 
     * R CMD check checks for the undeclared use of GNU extensions in
       makefiles, and for makefiles with a missing final linefeed.
+
+      R CMD build will correct line endings in all Makefiles, not just
+      those in the src directory.
 
   DEPRECATED AND DEFUNCT:
 

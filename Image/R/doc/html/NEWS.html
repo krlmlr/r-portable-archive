@@ -515,6 +515,11 @@ from factors.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 <ul>
 <li><p> The included version of PCRE has been updated to 8.36.
 </p>
+</li>
+<li> <p><code>configure</code> accepts <span class="samp">MAKEINFO=texi2any</span> as
+another way to ensure <span class="pkg">texinfo</span> 5.x is used when both 5.x and
+4.x are installed.
+</p>
 </li></ul>
 
 
@@ -533,6 +538,9 @@ from factors.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 <li> <p><code>R CMD check</code> checks for the undeclared use of GNU
 extensions in makefiles, and for makefiles with a missing final
 linefeed.
+</p>
+<p><code>R CMD build</code> will correct line endings in all Makefiles,
+not just those in the &lsquo;<span class="file">src</span>&rsquo; directory.
 </p>
 </li></ul>
 
