@@ -193,6 +193,10 @@ CHANGES IN R-devel:
     * drop.terms() dropped some of the attributes of the object it was
       working with.  (PR#16029)
 
+    * nlm() no longer modifies the callback argument in place (a new
+      vector is allocated for each invocation, which mimics the
+      implicit duplication that occurred in R < 3.1.0). (PR#15958)
+
 CHANGES IN R 3.1.2 patched:
 
   NEW FEATURES:
@@ -232,6 +236,10 @@ CHANGES IN R 3.1.2 patched:
 
     * Extremely large exponents on zero expressed in scientific
       notation (e.g. 0.0e50000) could give NaN.  (PR#15976)
+
+    * nlm() no longer modifies the callback argument in place (a new
+      vector is allocated for each invocation, which mimics the
+      implicit duplication that occurred in R < 3.1.0). (PR#15958)
 
 CHANGES IN R 3.1.2:
 

@@ -299,6 +299,11 @@ to work it will be kept, otherwise it will be removed. (<a href="https://bugs.R-
 <li> <p><code>drop.terms()</code> dropped some of the attributes of the
 object it was working with.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16029">PR#16029</a>)
 </p>
+</li>
+<li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
+new vector is allocated for each invocation, which mimics the
+implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
+</p>
 </li></ul>
 
 
@@ -364,6 +369,11 @@ incorrectly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 </li>
 <li><p> Extremely large exponents on zero expressed in scientific
 notation (e.g. <code>0.0e50000</code>) could give <code>NaN</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15976">PR#15976</a>)
+</p>
+</li>
+<li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
+new vector is allocated for each invocation, which mimics the
+implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
 </p>
 </li></ul>
 
