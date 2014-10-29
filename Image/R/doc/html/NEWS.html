@@ -205,8 +205,13 @@ Currently reports versions of <code>zlib</code>, <code>bzlib</code>, the
 <p>A similar function <code>grSoftVersion()</code> in package <span class="pkg">grDevices</span>
 reports on third-party graphics software.
 </p>
-<p>Calling <code>callGeneric()</code> without arguments now works with
-primitive generics to some extent.
+</li>
+<li><p> Calling <code>callGeneric()</code> without arguments now works
+with primitive generics to some extent.
+</p>
+</li>
+<li> <p><code>vapply(x, FUN, FUN.VALUE)</code> is more efficient notably
+for large <code>length(FUN.VALUE)</code>; as extension of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16061">PR#16061</a>.
 </p>
 </li></ul>
 
@@ -226,7 +231,7 @@ tested by<br />
 <code>valgrind</code> headers <em>via</em> <code>configure</code> option
 <span class="option">--with-system-valgrind-headers</span>: note the possible
 incompatibility of such headers discussed in the 'R Installation
-and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16808">PR#16808</a>.)
+and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16068">PR#16068</a>.)
 </p>
 </li>
 <li><p> The included version of <code>liblzma</code> has been updated to
@@ -467,14 +472,14 @@ automatically generated usage section of help files.
 </p>
 </li>
 <li> <p><code>drop.terms()</code> dropped some of the attributes of the
-object it was working with.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16029">PR#16029</a>)      
+object it was working with.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16029">PR#16029</a>)
 </p>
 </li>
 <li><p> (Windows.) The command completion in <code>Rgui.exe</code>
 messed up the console.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15791">PR#15791</a>)
 </p>
 </li>
-<li><p> (Windows.) The <code>choose.files()</code> command returned a 
+<li><p> (Windows.) The <code>choose.files()</code> command returned a
 blank string when the user asked for a single file but cancelled
 the request.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16074">PR#16074</a>)
 </p>

@@ -148,8 +148,11 @@ CHANGES IN R-devel:
       A similar function grSoftVersion() in package grDevices reports
       on third-party graphics software.
 
-      Calling callGeneric() without arguments now works with primitive
+    * Calling callGeneric() without arguments now works with primitive
       generics to some extent.
+
+    * vapply(x, FUN, FUN.VALUE) is more efficient notably for large
+      length(FUN.VALUE); as extension of PR#16061.
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -159,7 +162,7 @@ CHANGES IN R-devel:
     * It is possible to request the use of system valgrind headers
       _via_ configure option --with-system-valgrind-headers: note the
       possible incompatibility of such headers discussed in the 'R
-      Installation and Administration' manual. (Wish of PR#16808.)
+      Installation and Administration' manual. (Wish of PR#16068.)
 
     * The included version of liblzma has been updated to xz-utils
       5.0.7 (minor bug fixes from 5.0.5).
