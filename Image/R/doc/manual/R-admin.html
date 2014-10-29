@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-29).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-30).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-29).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-30).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1445,6 +1445,13 @@ configuration files in the <samp>etc</samp> directory.
 used for CJK languages) is unsupported and may not work (the scripts do
 try to select a &lsquo;<samp>C</samp>&rsquo; locale; Windows may not honour this).
 </p>
+<p><strong>NB:</strong> The build process is currently being changed to support
+using external binary distributions.  Their location can be set using
+macro <code>EXT_LIBS</code> in <samp>src/gnuwin32/MkRules.local</samp>: a suitable
+distribution can be obtained from
+<a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.  The rest
+of this section has not yet been updated to reflect that.
+</p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Getting-the-tools" accesskey="1">Getting the tools</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -1657,9 +1664,8 @@ Next: <a href="#Building-the-cairo-devices-files" accesskey="n" rel="next">Build
 <samp><var>R_HOME</var>/library/grDevices/libs/{i386,x64}Rbitmap.dll</samp> is
 not built automatically.
 </p>
-<p>Running <code>make</code> in <samp><var>R_HOME</var>/src/gnuwin32/bitmap</samp> or
-<code>make bitmapdll</code> in <samp><var>R_HOME</var>/src/gnuwin32</samp> should build
-<samp>Rbitmap.dll</samp> and install it under
+<p>Running <code>make bitmapdll</code> in <samp><var>R_HOME</var>/src/gnuwin32</samp>
+should build <samp>Rbitmap.dll</samp> and install it under
 <samp><var>R_HOME</var>/library/grDevices/libs</samp>.
 </p>
 <hr>

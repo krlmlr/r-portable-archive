@@ -173,6 +173,11 @@ CHANGES IN R-devel:
       packages zlib, bzip2/libbz2 and pcre (or similar names) are
       installed.
 
+    * (Windows.) Installation using external binary distributions of
+      zlib, bzip, liblzma, pcre, libpng, jpeglib and libtiff is now
+      supported and likely to be the preferred or only way before
+      release.
+
   UTILITIES:
 
     * There is support for testing the \dontrun and \donttest parts of
@@ -258,6 +263,10 @@ CHANGES IN R 3.1.2 patched:
       implicit duplication that occurred in R < 3.1.0); note that this
       is a change from the previously documented behavior. (PR#15958)
 
+    * icuSetCollate() now accepts locale = "ASCII" which uses the basic
+      C function strcmp and so collates strings byte-by-byte in
+      numerical order.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The included version of PCRE has been updated to 8.36.
@@ -310,6 +319,13 @@ CHANGES IN R 3.1.2 patched:
 
     * loadNamespace() imposed undocumented restrictions on the
       versionCheck parameter.  (Reported by Geoff Lee.)
+
+    * Rare over-runs detected by AddressSanitizer in substr() and its
+      replacement version have been avoided.
+
+    * Loading packages incorrectly defining an S4 generic followed by a
+      function of the same name caused an erroneous cyclic namespace
+      dependency error.
 
 CHANGES IN R 3.1.2:
 

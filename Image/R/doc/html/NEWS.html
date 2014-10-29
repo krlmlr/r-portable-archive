@@ -243,6 +243,12 @@ found or (unlikely) if they are too old.
 versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</span>/<span class="pkg">libbz2</span> and
 <code>pcre</code> (or similar names) are installed.
 </p>
+</li>
+<li><p> (Windows.) Installation using external binary distributions
+of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
+<span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now supported
+and likely to be the preferred or only way before release.
+</p>
 </li></ul>
 
 
@@ -394,6 +400,11 @@ the implicit duplication that occurred in R &lt; 3.1.0); note that
 this is a change from the previously documented
 behavior. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
 </p>
+</li>
+<li> <p><code>icuSetCollate()</code> now accepts <code>locale = "ASCII"</code>
+which uses the basic C function <code>strcmp</code> and so collates
+strings byte-by-byte in numerical order.
+</p>
 </li></ul>
 
 
@@ -474,6 +485,15 @@ the request.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=160
 </li>
 <li> <p><code>loadNamespace()</code> imposed undocumented restrictions
 on the <code>versionCheck</code> parameter.  (Reported by Geoff Lee.)
+</p>
+</li>
+<li><p> Rare over-runs detected by AddressSanitizer in
+<code>substr()</code> and its replacement version have been avoided.
+</p>
+</li>
+<li><p> Loading packages incorrectly defining an S4 generic followed
+by a function of the same name caused an erroneous cyclic
+namespace dependency error.
 </p>
 </li></ul>
 
