@@ -224,6 +224,12 @@ CHANGES IN R 3.1.2 patched:
     * "noquote" objects may now be used as columns in dataframes.
       (PR#15997)
 
+    * Some values with extremely long names were printed incorrectly.
+      (PR#15999)
+
+    * Extremely large exponents on zero expressed in scientific
+      notation (e.g. 0.0e50000) could give NaN.  (PR#15976)
+
 CHANGES IN R 3.1.2:
 
   NEW FEATURES:
