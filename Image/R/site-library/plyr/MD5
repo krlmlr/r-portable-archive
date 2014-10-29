@@ -1,5 +1,5 @@
 c064ec8464bce62b7862acec50e8475b *CITATION
-65639a755d9376eceb28484c9f0de025 *DESCRIPTION
+76d107b9f6f88e1818500d0e3c7c00f4 *DESCRIPTION
 33a93f34ca840773d05271ce955df67e *INDEX
 7bb6b2019939096672a443d7b6e80d5b *LICENSE
 edeabda064fbd3b1b6138f2860e4f400 *Meta/Rd.rds
@@ -7,7 +7,7 @@ c293748304becab7be7f9ba55fead379 *Meta/data.rds
 5191afb485ab22bcd244ba68d3de1d99 *Meta/hsearch.rds
 147b024825c5de96a0622c9eec346037 *Meta/links.rds
 38f2bd3c6e41edea8e7de46ad7d942e9 *Meta/nsInfo.rds
-002fa1fcf1c5505c8136c642ea9d9f1b *Meta/package.rds
+289c8048151587afbe529d5d7d803091 *Meta/package.rds
 e6adf1c94f4dd5bf55de1474a328ce1c *NAMESPACE
 a72fcf3e7dee2c4d1338093ad79c984e *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/plyr
@@ -18,14 +18,14 @@ c2f5143078f7eadebeb3babae7855bbc *data/Rdata.rdb
 4fd75497c124f0deaffe0dbbcf4b3986 *data/Rdata.rdx
 d78a2fd1570d883d9e2d647fc3a66f3e *help/AnIndex
 f22378ed9463e7e3fd06c909f2951c8d *help/aliases.rds
-e20415597f19917258b13af068daa018 *help/paths.rds
-a9830f93014a227328c2b149cbcfd9b1 *help/plyr.rdb
-924301ceeb1dfe635ddfff0fbb9e853b *help/plyr.rdx
+e3c4c6017f4a32eb0b6e17f573c9d8c6 *help/paths.rds
+d4f8eb3eb5b6c0e629f16ec40a82ad34 *help/plyr.rdb
+e116dd3eb931301cd324098904fe30fa *help/plyr.rdx
 e30e9d168480ffa4fa14ceec4de1d812 *html/00Index.html
 444535b9cb76ddff1bab1e1865a3fb14 *html/R.css
-759ff4ebbc258e7c5d263b0fa7739287 *libs/i386/plyr.dll
+18f9fb0f201465501e55cba12bdea90f *libs/i386/plyr.dll
 fd7f5768a093ebfda14afa2d5efd0b2e *libs/i386/symbols.rds
-70b5fee1361845d33726029fdec6a326 *libs/x64/plyr.dll
+e41e51f59ae34e7244a47bd82a41ec80 *libs/x64/plyr.dll
 25eb01e34319535b105f6eaf33825849 *libs/x64/symbols.rds
 d564b7820ed6c9598ef0e9f39913a4dc *tests/quickdf.r
 44840e515539c5a48d5dd6fc74b14d38 *tests/test-array.r
