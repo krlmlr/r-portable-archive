@@ -7,4 +7,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: Interface and language bindings to Tcl/Tk GUI elements
 License: Part of R 3.2.0
 Imports: utils
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-12-26 03:20:26 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-12-27 03:16:42 UTC; windows

@@ -596,6 +596,11 @@ vignette engine.
 use of the <code>extendInt</code> option of <code>uniroot()</code> and hence
 work in more extreme cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15792">PR#15792</a>)
 </p>
+</li>
+<li><p> If a package was updated and attached while already loaded,
+it could end up with parts from one version and parts from the
+other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16120">PR#16120</a>)
+</p>
 </li></ul>
 
 
