@@ -423,7 +423,7 @@ CHANGES IN R 3.1.2 patched:
       parts from the other.  (PR#16120)
 
     * tools:::.Rdconv() didn't accept --encoding= due to miscalculated
-      string length (PR#16121).
+      string length.  (PR#16121)
 
 CHANGES IN R 3.1.2:
 
@@ -463,14 +463,19 @@ CHANGES IN R 3.1.2:
       locale in use (if any).
 
     * utils::URLencode() was updated to use unreserved and reserved
-      characters from RFC 3986, <URL:
-      http://tools.ietf.org/html/rfc3986>, instead of RFC 1738.
+      characters from RFC 3986 (<URL:
+      http://tools.ietf.org/html/rfc3986>) instead of RFC 1738.
 
     * unique(warnings()) and c(warnings()) are now supported.
 
     * The Bioconductor 'version' used by setRepositories() now defaults
       to 3.0. (It can be set at runtime _via_ environment variable
       R_BIOC_VERSION.)
+
+    * Omegahat is no longer listed as providing Windows binary
+      packages, e.g. by setRepositories().  It has no binary packages
+      available for R 3.1.x and those for earlier versions were 32-bit
+      only.
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -491,9 +496,9 @@ CHANGES IN R 3.1.2:
     * LaTeX package upquote is no longer required for R's use of
       inconsolata.
 
-    * (Windows only) If both 32 and 64 bit versions of R are installed,
-      the bin/R.exe and bin/Rscript.exe executables now run 64 bit R.
-      (To run 32 bit R, overwrite these files with copies of
+    * (Windows only) If both 32- and 64-bit versions of R are
+      installed, the bin/R.exe and bin/Rscript.exe executables now run
+      64-bit R.  (To run 32-bit R, overwrite these files with copies of
       bin/i386/Rfe.exe.)
 
   UTILITIES:

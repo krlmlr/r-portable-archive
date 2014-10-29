@@ -641,7 +641,7 @@ parts from the other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 </p>
 </li>
 <li> <p><code>tools:::.Rdconv()</code> didn't accept <code>--encoding=</code> due
-to miscalculated string length (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>). 
+to miscalculated string length.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>) 
 </p>
 </li></ul>
 
@@ -699,8 +699,8 @@ collation locale in use (if any).
 </p>
 </li>
 <li> <p><code>utils::URLencode()</code> was updated to use unreserved and
-reserved characters from RFC 3986,
-<a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
+reserved characters from RFC 3986
+(<a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>) instead of RFC 1738.
 </p>
 </li>
 <li> <p><code>unique(warnings())</code> and <code>c(warnings())</code> are now
@@ -711,6 +711,12 @@ supported.
 <code>setRepositories()</code> now defaults to <code>3.0</code>. (It can be
 set at runtime <em>via</em> environment variable
 <span class="env">R_BIOC_VERSION</span>.)
+</p>
+</li>
+<li><p> Omegahat is no longer listed as providing Windows binary
+packages, e.g. by <code>setRepositories()</code>.  It has no binary
+packages available for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.x and those for earlier versions
+were 32-bit only.
 </p>
 </li></ul>
 
@@ -741,9 +747,9 @@ as documented). (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.
 use of <span class="pkg">inconsolata</span>.
 </p>
 </li>
-<li><p> (Windows only) If both 32 and 64 bit versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> are
+<li><p> (Windows only) If both 32- and 64-bit versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> are
 installed, the &lsquo;<span class="file">bin/R.exe</span>&rsquo; and &lsquo;<span class="file">bin/Rscript.exe</span>&rsquo; executables
-now run 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  (To run 32 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, overwrite these files
+now run 64-bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>.  (To run 32-bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>, overwrite these files
 with copies of &lsquo;<span class="file">bin/i386/Rfe.exe</span>&rsquo;.)
 </p>
 </li></ul>
