@@ -576,6 +576,7 @@ expand.grid	expand.grid
 expm1	Log
 expression	expression
 Extract	Extract
+extSoftVersion	extSoftVersion
 F	logical
 factor	factor
 factorial	Special

@@ -141,6 +141,10 @@ CHANGES IN R-devel:
     * rbind.data.frame() gains an optional argument make.row.names, for
       potential speedup.
 
+    * New function extSoftVersion() to report on the versions of
+      third-party software in use in this session.  Currently reports
+      versions of zlib, bzlib, the liblzma from xz, PCRE, ICU and tre.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by

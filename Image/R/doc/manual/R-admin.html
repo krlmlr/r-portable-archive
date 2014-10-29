@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-21).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-22).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-21).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-22).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -3708,7 +3708,7 @@ the resulting build will not pass its checks.).
 </p>
 <p><code>liblzma</code> from <code>xz-utils</code> version 5.0.3 or later will be used
 if installed: the version in the R sources can be selected instead by
-configuring with <samp>--with-system-xz=no</samp>.  Systems differ in what
+configuring with <samp>--without-system-xz</samp>.  Systems differ in what
 they call the package including this: e.g. on Fedora the library is in
 &lsquo;<samp>xz-libs</samp>&rsquo; and the headers in &lsquo;<samp>xz-devel</samp>&rsquo;.
 </p>
@@ -5419,6 +5419,10 @@ most likely want at least <code>jpeg</code>, <code>libpng</code> and <code>readl
 and useful for many packages: it will also be used if present when
 configuring the <code>X11()</code> device.
 </p>
+<p>Recent versions of OS X ship with <code>zlib</code> version 1.2.8 and
+<code>bzlib</code> version 1.0.6, sufficient for <code>configure</code> options
+<samp>--with-system-zlib --with-system-bzlib</samp>).
+</p>
 <a name="index-BLAS-library-1"></a>
 <a name="index-LAPACK-library-1"></a>
 <p>The <code>Accelerate</code> library can be used <em>via</em> the configuration options
@@ -5820,7 +5824,9 @@ installed) in <samp>/usr/sfw/bin</samp>, as sometimes are tools like
 </p>
 <p>A large selection of Open Source software can be installed from
 <a href="http://www.opencsw.org">http://www.opencsw.org</a>, by default installed under
-<samp>/opt/csw</samp>.
+<samp>/opt/csw</samp>.  Solaris 10 ships with <code>bzlib</code> version 1.0.6
+(sufficient for <samp>--with-system-bzlib</samp>) but <code>zlib</code> version
+1.2.3 (too old for <samp>--with-system-zlib</samp>): OpenCSW has 1.2.8.
 </p>
 <p>You will need <acronym>GNU</acronym> <code>libiconv</code> and <code>readline</code>: the
 Solaris version of <code>iconv</code> is not sufficiently powerful.
