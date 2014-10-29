@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-18).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-19).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-18).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-19).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -1598,17 +1598,16 @@ Test code can either be provided directly in a <samp>.R</samp> file, or
 corresponding <samp>.R</samp> file (e.g., by collecting all function objects
 in the package and then calling them with the strangest arguments).  The
 results of running a <samp>.R</samp> file are written to a <samp>.Rout</samp> file.
-If there is a corresponding<a name="DOCF18" href="#FOOT18"><sup>18</sup></a> <samp>.Rout.save</samp>
-file, these two are compared, with differences being reported but not
-causing an error.  The directory <samp>tests</samp> is copied to the check
-area, and the tests are run with the copy as the working directory and
-with <code>R_LIBS</code> set to ensure that the copy of the package installed
-during testing will be found by <code>library(<var>pkg_name</var>)</code>.  Note
-that the package-specific tests are run in a vanilla R session
-without setting the random-number seed, so tests which use random
-numbers will need to set the seed to obtain reproducible results (and it
-can be helpful to do so in all cases, to avoid occasional failures when
-tests are run).
+If there is a corresponding<a name="DOCF18" href="#FOOT18"><sup>18</sup></a> <samp>.Rout.save</samp> file, these two are compared, with differences
+being reported but not causing an error.  The directory <samp>tests</samp> is
+copied to the check area, and the tests are run with the copy as the
+working directory and with <code>R_LIBS</code> set to ensure that the copy of
+the package installed during testing will be found by
+<code>library(<var>pkg_name</var>)</code>.  Note that the package-specific tests
+are run in a vanilla R session without setting the random-number
+seed, so tests which use random numbers will need to set the seed to
+obtain reproducible results (and it can be helpful to do so in all
+cases, to avoid occasional failures when tests are run).
 </p>
 <p>If directory <samp>tests</samp> has a subdirectory <samp>Examples</samp> containing
 a file <code><var>pkg</var>-Ex.Rout.save</code>, this is compared to the output
@@ -15284,7 +15283,9 @@ terminology, called &lsquo;make variables&rsquo; by GNU make.</p>
 file is to copy the <samp>.Rout</samp> from a successful run of <code>R CMD
 check</code>.  If you want to generate it separately, do run R with options
 <samp>--vanilla --slave</samp> and with environment variable
-<code>LANGUAGE=en</code> set to get messages in English.</p>
+<code>LANGUAGE=en</code> set to get messages in English.  Be careful not to use
+the option <samp>--timings</samp> (and note that <samp>--as-cran</samp> sets
+it).</p>
 <h3><a name="FOOT19" href="#DOCF19">(19)</a></h3>
 <p>e.g.
 <a href="http://tools.ietf.org/html/rfc4180">http://tools.ietf.org/html/rfc4180</a>.</p>
