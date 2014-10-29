@@ -143,7 +143,7 @@ CHANGES IN R-devel:
 
     * New function extSoftVersion() to report on the versions of
       third-party software in use in this session.  Currently reports
-      versions of zlib, bzlib, the liblzma from xz, PCRE, ICU and tre.
+      versions of zlib, bzlib, the liblzma from xz, PCRE, ICU and TRE.
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -155,8 +155,17 @@ CHANGES IN R-devel:
       possible incompatibility of such headers discussed in the 'R
       Installation and Administration' manual. (Wish of PR#16808.)
 
-    * The included version of lzmautils has been updated to xz-utils
+    * The included version of liblzma has been updated to xz-utils
       5.0.7 (minor bug fixes from 5.0.5).
+
+    * configure options --with-system-zlib, --with-system-bzlib and
+      --with-system-pcre are now the default.  For the time being there
+      is fallback to the versions included in the R sources if no
+      system versions are found or (unlikely) if they are too old.
+
+      Linux users should check that the -devel or -dev versions of
+      packages zlib, bzip2/libbz2 and pcre (or similar names) are
+      installed.
 
   UTILITIES:
 
@@ -197,6 +206,9 @@ CHANGES IN R-devel:
   DEPRECATED AND DEFUNCT:
 
     * download.file(method = "lynx") is defunct.
+
+    * Use of the included versions of zlib, bzlib, xz and PCRE is
+      deprecated: these are frozen and will eventually be removed.
 
   BUG FIXES:
 

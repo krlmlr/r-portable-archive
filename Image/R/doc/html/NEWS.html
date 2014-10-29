@@ -200,7 +200,7 @@ run <code>\dontcheck</code> code only if used interactively.
 <li><p> New function <code>extSoftVersion()</code> to report on the
 versions of third-party software in use in this session.
 Currently reports versions of <code>zlib</code>, <code>bzlib</code>, the
-<code>liblzma</code> from <code>xz</code>, PCRE, ICU and <code>tre</code>.
+<code>liblzma</code> from <code>xz</code>, PCRE, ICU and TRE.
 </p>
 </li></ul>
 
@@ -223,8 +223,19 @@ incompatibility of such headers discussed in the 'R Installation
 and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16808">PR#16808</a>.)
 </p>
 </li>
-<li><p> The included version of <code>lzmautils</code> has been updated to
+<li><p> The included version of <code>liblzma</code> has been updated to
 <code>xz-utils</code> 5.0.7 (minor bug fixes from 5.0.5).
+</p>
+</li>
+<li> <p><code>configure</code> options <span class="option">--with-system-zlib</span>,
+<span class="option">--with-system-bzlib</span> and <span class="option">--with-system-pcre</span> are
+now the default.  For the time being there is fallback to the
+versions included in the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> sources if no system versions are
+found or (unlikely) if they are too old.
+</p>
+<p>Linux users should check that the <code>-devel</code> or <code>-dev</code>
+versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</span>/<span class="pkg">libbz2</span> and
+<code>pcre</code> (or similar names) are installed.
 </p>
 </li></ul>
 
@@ -296,6 +307,11 @@ pointers.
 
 <ul>
 <li> <p><code>download.file(method = "lynx")</code> is defunct.
+</p>
+</li>
+<li><p> Use of the included versions of <code>zlib</code>, <code>bzlib</code>,
+<code>xz</code> and PCRE is deprecated: these are frozen and will
+eventually be removed.
 </p>
 </li></ul>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-22).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-23).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-22).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-23).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -3693,13 +3693,14 @@ into <code>libtiff</code> such as <code>lzma</code>, <code>jbig</code> and <code
 and these may need also to be present.
 </p>
 <p>If you have them installed (including the appropriate headers and of
-suitable versions), system versions of <code>zlib</code>, <code>libbz2</code> and
-PCRE will be used if specified by <samp>--with-system-zlib</samp> (version
-1.2.5 or later), <samp>--with-system-bzlib</samp> or
-<samp>--with-system-pcre</samp> (version 8.10 or later, preferably
-8.34<a name="DOCF37" href="#FOOT37"><sup>37</sup></a>): otherwise versions in
-the R sources will be compiled in.  As the latter suffice and are
-tested with R you should not need to change this.
+suitable versions), system versions of <code>zlib</code> (version 1.2.5 or
+later),, <code>libbz2</code> (version 1.0.6 or later: called
+<strong>bzip2-libs</strong>/<strong>bzip2-devel</strong> or <strong>libbz2-1.0</strong>/<strong>libbz2-dev</strong>
+by some Linux distributions) and PCRE (version 8.10 or later, preferably
+8.32 or later<a name="DOCF37" href="#FOOT37"><sup>37</sup></a>): will be used, otherwise versions in the R sources will
+be compiled in.  The external versions can be avoided by configure
+options <samp>--without-system-zlib</samp>, <samp>--without-system-bzlib</samp>
+and or <samp>--without-system-pcre</samp>.
 </p>
 <p>Option <samp>--with-system-tre</samp> is also available: it needs a recent
 version of TRE. (The current sources are in the <code>git</code> repository
@@ -5108,8 +5109,15 @@ installed.  So please check the <code>configure</code> output to see if the
 expected features are detected: if for example &lsquo;<samp>readline</samp>&rsquo; is
 missing add the developer package.  (On most systems you will also need
 &lsquo;<samp>ncurses</samp>&rsquo; and its developer package, although these should be
-dependencies of the &lsquo;<samp>readline</samp>&rsquo; package(s).)
+dependencies of the &lsquo;<samp>readline</samp>&rsquo; package(s).)  You should expect to
+see in the <code>configure</code> summary
 </p>
+<div class="example">
+<pre class="example">  Interfaces supported:      X11, tcltk
+  External libraries:        readline, zlib, bzlib, lzma, PCRE
+  Additional capabilities:   PNG, JPEG, TIFF, NLS, cairo, ICU
+</pre></div>
+
 <p>When R has been installed from a binary distribution there are
 sometimes problems with missing components such as the FORTRAN
 compiler.  Searching the &lsquo;<samp>R-help</samp>&rsquo; archives will normally reveal
@@ -5420,8 +5428,8 @@ and useful for many packages: it will also be used if present when
 configuring the <code>X11()</code> device.
 </p>
 <p>Recent versions of OS X ship with <code>zlib</code> version 1.2.8 and
-<code>bzlib</code> version 1.0.6, sufficient for <code>configure</code> options
-<samp>--with-system-zlib --with-system-bzlib</samp>).
+<code>bzlib</code> version 1.0.6, sufficient for the default
+<code>configure</code> checks.
 </p>
 <a name="index-BLAS-library-1"></a>
 <a name="index-LAPACK-library-1"></a>
@@ -5441,7 +5449,7 @@ without.)<a name="DOCF47" href="#FOOT47"><sup>47</sup></a>
 will show the compilers and configuration options used for the
 <acronym>CRAN</acronym> binary package for R: at the time of writing
 </p><div class="example">
-<pre class="example">--with-system-zlib --enable-memory-profiling --disable-openmp
+<pre class="example">--enable-memory-profiling --disable-openmp
 </pre></div>
 <p>was used for &lsquo;Snow Leopard&rsquo; and the first two for &lsquo;Mavericks&rsquo;.
 </p>
@@ -5825,8 +5833,9 @@ installed) in <samp>/usr/sfw/bin</samp>, as sometimes are tools like
 <p>A large selection of Open Source software can be installed from
 <a href="http://www.opencsw.org">http://www.opencsw.org</a>, by default installed under
 <samp>/opt/csw</samp>.  Solaris 10 ships with <code>bzlib</code> version 1.0.6
-(sufficient for <samp>--with-system-bzlib</samp>) but <code>zlib</code> version
-1.2.3 (too old for <samp>--with-system-zlib</samp>): OpenCSW has 1.2.8.
+(sufficient for the default <samp>--with-system-bzlib</samp>) but
+<code>zlib</code> version 1.2.3 (too old for <samp>--with-system-zlib</samp>):
+OpenCSW has 1.2.8.
 </p>
 <p>You will need <acronym>GNU</acronym> <code>libiconv</code> and <code>readline</code>: the
 Solaris version of <code>iconv</code> is not sufficiently powerful.
@@ -7088,10 +7097,10 @@ Debian/Ubuntu world: see also
 <p><code>ttf-liberation</code>
 in Debian/Ubuntu.</p>
 <h3><a name="FOOT37" href="#DOCF37">(37)</a></h3>
-<p>which is what is supplied with R: PCRE must be built
-with UTF-8 support (not the default) and support for Unicode properties
-is assumed by some R packages. Neither are tested by
-<code>configure</code>. JIT support is desirable.</p>
+<p>PCRE must be built with UTF-8 support (not the
+default) and support for Unicode properties is assumed by some R
+packages.  Neither are tested by <code>configure</code>. JIT support is
+desirable.</p>
 <h3><a name="FOOT38" href="#DOCF38">(38)</a></h3>
 <p>Using the Oracle Solaris Studio
 <code>cc</code> and <code>f95</code> compilers</p>
