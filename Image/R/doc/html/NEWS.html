@@ -186,6 +186,12 @@ numerical code.
 <li><p> A new somewhat experimental function <code>debuggingState()</code>
 has been added, allowing to temporarily turn off debugging.
 </p>
+</li>
+<li> <p><code>example()</code> gets new optional argument <code>run.dontcheck</code>
+and <code>tools::Rd2ex()</code> a corresponding <code>commentDonttest</code>,
+with a default such that <code>example(..)</code> in help examples will
+run <code>\dontcheck</code> code only if used interactively.
+</p>
 </li></ul>
 
 
@@ -229,7 +235,7 @@ level can also be set with the environment variable
 <span class="env">R_COMPILER_OPTIMIZE</span>.
 </p>
 </li>
-<li> <p><code>R CMD check</code> gains option <span class="option">--test-dir=</span> to 
+<li> <p><code>R CMD check</code> gains option <span class="option">--test-dir=</span> to
 specify an alternative set of tests to run.
 </p>
 </li></ul>
@@ -351,19 +357,19 @@ the HTML help system produced an empty index page.
 in a string using Unicode escapes. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16046">PR#16046</a>)
 </p>
 </li>
-<li> <p><code>qr.Q()</code> failed on complex arguments due to 
-pre-3.0(!) typo. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16054">PR#16054</a>) 
+<li> <p><code>qr.Q()</code> failed on complex arguments due to
+pre-3.0(!) typo. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16054">PR#16054</a>)
 </p>
 </li>
 <li> <p><code>abs()</code> failed with named arguments when the argument
 was complex.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16047">PR#16047</a>)
 </p>
 </li>
-<li> <p><code>"noquote"</code> objects may now be used as columns in 
+<li> <p><code>"noquote"</code> objects may now be used as columns in
 dataframes.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15997">PR#15997</a>)
 </p>
 </li>
-<li><p> Some values with extremely long names were printed 
+<li><p> Some values with extremely long names were printed
 incorrectly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15999">PR#15999</a>)
 </p>
 </li>

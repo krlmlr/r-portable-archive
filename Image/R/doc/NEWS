@@ -133,6 +133,11 @@ CHANGES IN R-devel:
     * A new somewhat experimental function debuggingState() has been
       added, allowing to temporarily turn off debugging.
 
+    * example() gets new optional argument run.dontcheck and
+      tools::Rd2ex() a corresponding commentDonttest, with a default
+      such that example(..) in help examples will run \dontcheck code
+      only if used interactively.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
