@@ -180,9 +180,6 @@ CHANGES IN R-devel:
 
     * all.equal() gains methods for environments and refClasses.
 
-    * The as.dendrogram method for "hclust" objects gets check argument
-      protecting against memory explosion for invalid inputs.
-
 CHANGES IN R 3.1.2 patched:
 
   NEW FEATURES:
@@ -190,6 +187,20 @@ CHANGES IN R 3.1.2 patched:
     * The internal method of download.file() can now handle files
       larger than 2GB on 32-bit builds which support such files (tested
       on 32-bit R running on 64-bit Windows).
+
+    * kruskal.test() warns on more types of suspicious input.
+
+    * The as.dendrogram method for "hclust" objects gets a check
+      argument protecting against memory explosion for invalid inputs.
+
+  BUG FIXES:
+
+    * (Windows.) Rscript.exe was missing a manifest specifying the
+      modern style for common controls (e.g., the download progress
+      bar).
+
+    * If a package had extra documentation files but no vignette, the
+      HTML help system produced an empty index page.
 
 CHANGES IN R 3.1.2:
 
@@ -338,10 +349,6 @@ CHANGES IN R 3.1.2:
     * The plot method for "hclust" objects gets an optional argument
       check; When that is true, as per default, it checks more
       carefully for valid input.
-
-    * The as.dendrogram method for "hclust" objects gets a similar
-      check argument which there protects against memory explosion for
-      invalid inputs.
 
     * (Windows only) If a user chose to install 64 bit R but not 32 bit
       R, the bin/R and bin/Rscript executables failed to run.
