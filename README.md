@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `63cb8d8ea02c03c74102942e35f98fee`, uncompressed 377.6 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `f90e18a87076a7688fd7c70d7a2a4b43`, uncompressed 385.3 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `2936f3d37c042a8f0ccdc843a240d427`, uncompressed 414.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.1 MB, MD5 hash: `7c912b7b23687a61b3b4210676155172`, uncompressed 377.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.3 MB, MD5 hash: `45842b110695a3c89800e22bb502223c`, uncompressed 385.3 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.8 MB, MD5 hash: `1d4b553c70e0e86cd24747bda7538c0c`, uncompressed 414.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-11-27 r67070)
+R Under development (unstable) (2014-11-29 r67076)
 
 ### Package versions
 
@@ -71,7 +71,7 @@ R Under development (unstable) (2014-11-27 r67070)
 [`mime`](http://cran.r-project.org/package=mime) (0.2),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.3),
-[`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.3),
+[`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.4),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.1),
 [`stringr`](http://cran.r-project.org/package=stringr) (0.6.2),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.9.1),
