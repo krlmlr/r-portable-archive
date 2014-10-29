@@ -209,6 +209,13 @@ CHANGES IN R-devel:
     * New entry point R_allocLD, like R_alloc but guaranteed to have
       sufficient alignment for long double pointers.
 
+  PACKAGE INSTALLATION:
+
+    * (Windows) The use of macro ZLIB_LIBS (which has not been
+      documented for a long time) now requires an external libz.a to be
+      available (it is part of the 'goodies' used to compile Windows
+      binary packages).  It would be simplest to use -lz directly.
+
   DEPRECATED AND DEFUNCT:
 
     * download.file(method = "lynx") is defunct.
@@ -297,6 +304,12 @@ CHANGES IN R 3.1.2 patched:
     * (Windows.) The choose.files() command returned a blank string
       when the user asked for a single file but cancelled the request.
       (PR#16074)
+
+    * Math2 group generics failed to correctly dispatch "structure" and
+      "nonStructure"-derived classes.
+
+    * loadNamespace() imposed undocumented restrictions on the
+      versionCheck parameter.  (Reported by Geoff Lee.)
 
 CHANGES IN R 3.1.2:
 

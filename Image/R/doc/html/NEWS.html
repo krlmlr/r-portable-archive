@@ -308,6 +308,21 @@ pointers.
 
 
 
+<h4>PACKAGE INSTALLATION</h4>
+
+
+<ul>
+<li><p>  (Windows) The use of macro <code>ZLIB_LIBS</code> (which has not
+been documented for a long time) now requires an external
+&lsquo;<span class="file">libz.a</span>&rsquo; to be available (it is part of the &lsquo;goodies&rsquo; used
+to compile Windows binary packages).  It would be simplest to use
+<code>-lz</code> directly.
+</p>
+</li></ul>
+
+
+
+
 <h4>DEPRECATED AND DEFUNCT</h4>
 
 
@@ -451,6 +466,14 @@ messed up the console.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.
 <li><p> (Windows.) The <code>choose.files()</code> command returned a 
 blank string when the user asked for a single file but cancelled
 the request.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16074">PR#16074</a>)
+</p>
+</li>
+<li> <p><code>Math2</code> group generics failed to correctly dispatch
+<code>"structure"</code> and <code>"nonStructure"</code>-derived classes.
+</p>
+</li>
+<li> <p><code>loadNamespace()</code> imposed undocumented restrictions
+on the <code>versionCheck</code> parameter.  (Reported by Geoff Lee.)
 </p>
 </li></ul>
 
