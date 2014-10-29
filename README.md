@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.4 MB, MD5 hash: `cfd7b5d833f7374c152070e4b5c43c0f`, uncompressed 378.1 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.6 MB, MD5 hash: `a976e84007a447511ccc94032818e731`, uncompressed 385.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (131.1 MB, MD5 hash: `e51f91d126294e4aca7d1de96fc4595e`, uncompressed 414.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.2 MB, MD5 hash: `13a64215126f1e8905dfd3e5589b20c5`, uncompressed 377.7 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.4 MB, MD5 hash: `e636ef4c13f5bd078a5c4fc49cbfc582`, uncompressed 385.5 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (131 MB, MD5 hash: `65554249d85902fab3d57d798b8912c3`, uncompressed 414.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-12-09 r67142)
+R Under development (unstable) (2014-12-10 r67152)
 
 ### Package versions
 
@@ -59,7 +59,7 @@ R Under development (unstable) (2014-12-09 r67142)
 ####  other 
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.6.1),
-[`digest`](http://cran.r-project.org/package=digest) (0.6.5),
+[`digest`](http://cran.r-project.org/package=digest) (0.6.6),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.0),
 [`highr`](http://cran.r-project.org/package=highr) (0.4),

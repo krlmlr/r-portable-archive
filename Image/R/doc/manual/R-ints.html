@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-09).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-10).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -289,7 +289,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-09).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-10).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -2239,12 +2239,9 @@ Next: <a href="#Visibility" accesskey="n" rel="next">Visibility</a>, Previous: <
 chosen to be loaded &lsquo;on demand&rsquo; rather than linked as dynamic libraries
 or incorporated into the main executable/dynamic library.
 </p>
-<p>For a few of these (e.g. <code>vfonts</code>) the issue is size: the
-database for the Hershey fonts is included in the C code of the module
-and was at one time an appreciable part of the codebase for a rarely
-used feature.  However, for most of the modules the motivation has been
-the amount of (often optional) code they will bring in via libraries to
-which they are linked.
+<p>For the remaining modules the motivation has been the amount of (often
+optional) code they will bring in via libraries to which they are
+linked.
 </p>
 <dl compact="compact">
 <dt><code>internet</code></dt>

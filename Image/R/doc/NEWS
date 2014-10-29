@@ -178,7 +178,7 @@ CHANGES IN R-devel:
 
     * (Windows.) Installation using external binary distributions of
       zlib, bzip, liblzma, pcre, libpng, jpeglib and libtiff is now
-      preferred and likely to become the only way before release.
+      required, and the build instructions have been revised.
 
   UTILITIES:
 

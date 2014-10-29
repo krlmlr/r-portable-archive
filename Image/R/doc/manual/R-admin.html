@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-09).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-10).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -338,7 +338,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-09).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-10).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1446,11 +1446,10 @@ try to select a &lsquo;<samp>C</samp>&rsquo; locale; Windows may not honour this
 </p>
 <p><strong>NB:</strong> The build process is currently being changed to require
 external binary distributions of third-party software.  Their location
-can be set using macro <code>EXT_LIBS</code> in
+must be set using macro <code>EXT_LIBS</code> in
 <samp>src/gnuwin32/MkRules.local</samp>: a suitable distribution can be
 obtained from
-<a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.  This is
-not yet obligatory, but the instructions here assume it has been set.
+<a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Getting-the-tools" accesskey="1">Getting the tools</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1607,7 +1606,7 @@ lower case) did not work.
 <p>Open a command window at <samp><var>R_HOME</var>/src/gnuwin32</samp>, then run
 </p>
 <div class="example">
-<pre class="example">make all recommended bitmapdll vignettes
+<pre class="example">make all recommended vignettes
 </pre></div>
 
 <p>and sit back and wait while the basic compile takes place.
@@ -1624,7 +1623,7 @@ the build down several-fold.
 <div class="example">
 <pre class="example">make -j4 all
 make -j4 recommended
-make bitmapdll vignettes
+make vignettes
 </pre></div>
 
 <p>but this is only likely to be worthwhile on a multi-core machine with
@@ -1652,7 +1651,7 @@ Next: <a href="#Using-ICU-for-collation" accesskey="n" rel="next">Using ICU for 
 <code>jpeg</code>, <code>tiff</code> and <code>bmp</code>) are implemented in a separate
 DLL <samp>winCairo.dll</samp> which is loaded when one of these devices is
 first used.  It is not built by default, and needs to be built (after
-<code>make bitmapdll</code>) by <code>make cairodevices</code>.
+<code>make all</code>) by <code>make cairodevices</code>.
 </p>
 <p>To enable the building of these devices you need to install the static
 cairographics libraries built by Simon Urbanek at
@@ -1803,7 +1802,6 @@ building all the parts in the sequence:
 <pre class="example">rbuild <span class="roman">(the executables, the <acronym>FAQ</acronym> docs etc.)</span>
 rpackages <span class="roman">(the base packages)</span>
 htmldocs <span class="roman">(the HTML documentation)</span>
-bitmapdll <span class="roman">(the bitmap support files)</span>
 cairodevices <span class="roman">(the cairo-based graphics devices)</span>
 recommended <span class="roman">(the recommended packages)</span>
 vignettes <span class="roman">(the vignettes in base packages:</span>
@@ -1951,7 +1949,7 @@ acknowledged, as well as help from Kai Tietz, the lead developer of the
 MinGW-w64 project.
 </p>
 <p>Windows 64-bit is now completely integrated into the R and package
-build systems.
+build systems: a 64-bit build is selected in file <samp>MkRules.local</samp>.
 </p>
 <hr>
 <a name="Testing-a-Windows-Installation"></a>

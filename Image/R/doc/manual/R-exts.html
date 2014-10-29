@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-09).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-10).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-09).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-10).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4386,6 +4386,12 @@ before distribution.
 <code>library</code>, <code>require</code> or <code>attach</code> and this often does not
 work as intended.  For alternatives, see <a href="#Suggested-packages">Suggested packages</a> and
 <code>with</code>.
+
+</li><li> Examples can be run interactively <em>via</em> example as well as in batch
+mode when checking.  So they should behave appropriately in both
+scenarios, conditioning by <code>interactive()</code> the parts which need an
+operator or observer.  For instance, progress bars are only appropriate
+in interactive use, as is displaying help pages or calling <code>View()</code>.
 </li></ul>
 
 <p>Do be careful in what your tests (and examples) actually test.  Bad
