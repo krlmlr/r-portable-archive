@@ -65,13 +65,13 @@ Function DownloadAndUnpack {
 
     # R site library
     Progress "Creating site library"
-    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
+    Exec { .\Image\R\bin\x64\Rscript.exe -e ".libPaths()" }
     md .\Image\R\site-library
-    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
+    Exec { .\Image\R\bin\x64\Rscript.exe -e ".libPaths()" }
 
     # Additional R packages
     Progress "Installing additional packages"
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
+    Exec { .\Image\R\bin\x64\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
 
     # Rtools
     Progress "Extracting Rtools"
@@ -125,7 +125,7 @@ Function CreateImage {
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."
-        Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
+        Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
         SetupGit
 
