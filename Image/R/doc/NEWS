@@ -145,6 +145,9 @@ CHANGES IN R-devel:
       third-party software in use in this session.  Currently reports
       versions of zlib, bzlib, the liblzma from xz, PCRE, ICU and TRE.
 
+      A similar function grSoftVersion() in package grDevices reports
+      on third-party graphics software.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
@@ -207,8 +210,9 @@ CHANGES IN R-devel:
 
     * download.file(method = "lynx") is defunct.
 
-    * Use of the included versions of zlib, bzlib, xz and PCRE is
-      deprecated: these are frozen and will eventually be removed.
+    * Use of the included versions of zlib, bzip2, xz and PCRE is
+      deprecated: these are essentially frozen and will eventually be
+      removed.
 
   BUG FIXES:
 
