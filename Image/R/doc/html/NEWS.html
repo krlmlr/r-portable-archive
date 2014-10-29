@@ -290,6 +290,11 @@ matching by name in <code>log()</code>.
 <li> <p><code>all.equal()</code> gains methods for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
+</li>
+<li><p> (Windows.) The command completion in <code>Rgui.exe</code>
+messed up the console.  This is an experimental fix; if it is reported
+to work it will be kept, otherwise it will be removed. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15791">PR#15791</a>)
+</p>
 </li></ul>
 
 
@@ -343,6 +348,10 @@ pre-3.0(!) typo. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=
 </li>
 <li> <p><code>abs()</code> failed with named arguments when the argument
 was complex.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16047">PR#16047</a>)
+</p>
+</li>
+<li> <p><code>"noquote"</code> objects may now be used as columns in 
+dataframes.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15997">PR#15997</a>)
 </p>
 </li></ul>
 

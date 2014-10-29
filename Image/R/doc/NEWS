@@ -186,6 +186,10 @@ CHANGES IN R-devel:
 
     * all.equal() gains methods for environments and refClasses.
 
+    * (Windows.) The command completion in Rgui.exe messed up the
+      console.  This is an experimental fix; if it is reported to work
+      it will be kept, otherwise it will be removed. (PR#15791)
+
 CHANGES IN R 3.1.2 patched:
 
   NEW FEATURES:
@@ -216,6 +220,9 @@ CHANGES IN R 3.1.2 patched:
 
     * abs() failed with named arguments when the argument was complex.
       (PR#16047)
+
+    * "noquote" objects may now be used as columns in dataframes.
+      (PR#15997)
 
 CHANGES IN R 3.1.2:
 
