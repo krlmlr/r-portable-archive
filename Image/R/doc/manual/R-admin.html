@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-10).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-11).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-10).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-11).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -4441,6 +4441,19 @@ such packages cannot be used from an R system built in the default
 way.  Also, because packages are linked against R they are on some
 OSes also linked against the dynamic libraries R itself is linked
 against, and this can lead to symbol conflicts.
+</p>
+<p>For maximally effective use of <code>valgrind</code>, R should be
+compiled with valgrind instrumentation. The <code>configure</code> option
+is <samp>--with-valgrind-instrumentation=<var>level</var></samp>, where
+<var>level</var> is 0, 1, 2 or 3.  (Level 0 is the default and does not add
+any anything.)  The system headers for <code>valgrind</code> can be
+requested by option <samp>--with-system-valgrind-headers</samp>: they will
+be used if present (on Linux they may be in a separate package such as
+<strong>valgrind-devel</strong>).  Note though that there is no guarantee that the
+code in R will be compatible with future <code>valgrind</code> headers.
+(An incompatible change was made in a version not later than 3.8.0, not
+even mentioned in the release notes, and currently level 3 does not work
+with recent headers.)
 </p>
 <p>If you need to re-configure R with different options you may need to run
 <code>make clean</code> or even <code>make distclean</code> before doing so.

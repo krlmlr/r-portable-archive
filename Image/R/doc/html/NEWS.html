@@ -199,11 +199,18 @@ run <code>\dontcheck</code> code only if used interactively.
 
 <h4>INSTALLATION and INCLUDED SOFTWARE</h4>
 
-
+      
 <ul>
 <li><p> The <code>\donttest</code> sections of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s help files can be
 tested by<br />
 <code>make check TEST_DONTTEST=TRUE</code>.
+</p>
+</li>
+<li><p> It is possible to request the use of system
+<code>valgrind</code> headers <em>via</em> option
+<span class="option">--with-system-valgrind-headers</span>: note the possible
+incompatibility of such headers discussed in the 'R Installation
+and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16808">PR#16808</a>.)
 </p>
 </li></ul>
 
@@ -340,6 +347,17 @@ invalid inputs.
 
 
 
+<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
+
+
+<ul>
+<li><p> The included version of PCRE has been updated to 8.36.
+</p>
+</li></ul>
+
+
+
+
 <h4>BUG FIXES</h4>
 
 
@@ -380,6 +398,10 @@ notation (e.g. <code>0.0e50000</code>) could give <code>NaN</code>.  (<a href="h
 <li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
 new vector is allocated for each invocation, which mimics the
 implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
+</p>
+</li>
+<li> <p><code>download.file()</code> reported downloaded sizes as 0KB if
+less than 1MB, only for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.2 and only on big-endian platforms.
 </p>
 </li></ul>
 
