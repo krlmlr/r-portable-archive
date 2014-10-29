@@ -1,10 +1,10 @@
-a41cc71cd71f3072766570ac6b2028ec *DESCRIPTION
+7f9bfb85de8094813f2b7a1f483ea543 *DESCRIPTION
 61c3b013819cbbd81cee97a1bf820081 *INDEX
 d984f7a3568129886ae5623d7adc8708 *Meta/Rd.rds
 a000977348075a1f78a4b95c59316fbf *Meta/hsearch.rds
 cf5e019d132e8bb40770d0ea95091ddb *Meta/links.rds
 dd7312f02812996a041111d4bbca4564 *Meta/nsInfo.rds
-f3ee5cf7600a1aa137b8e42215e34559 *Meta/package.rds
+dea80260344b41387181c55dc79a2e7d *Meta/package.rds
 39b9c69320f4740c7287bb70bec6cb52 *Meta/vignette.rds
 a1e0b57a5f7221e95882a17b1fcb36ef *NAMESPACE
 41eb91dea70267e46de5af55eaa6597b *NEWS
@@ -18,9 +18,9 @@ b4c8ac3a57dbe7f68e082c8ad942e8df *doc/formatR.Rmd
 4cc1fd6c70617c2386287e60a8839fd9 *format/messy.R
 c835979fd50f1a8c181dba340457b03e *help/AnIndex
 4c5ed099a33519d218b3928fdd662093 *help/aliases.rds
-a7785e7dcf6d7939888185952ae5be09 *help/formatR.rdb
-8604571d039ae69149b5bb9ddfb07eaf *help/formatR.rdx
-b3c637dbc3da446f8c1cb924a90b1f51 *help/paths.rds
+74327fb099b7ce99dae6f07047187f3b *help/formatR.rdb
+bd1acdc5fdd5e71e87973be12a957238 *help/formatR.rdx
+5b181befb4d4cc00edc457093d0468fa *help/paths.rds
 e55d86a638a37052809dd82eecbae92d *html/00Index.html
 444535b9cb76ddff1bab1e1865a3fb14 *html/R.css
 50c29d050db9b30d8f60aecdbe782aad *shiny/DESCRIPTION
