@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-05).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-08).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-05).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-08).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -3921,13 +3921,17 @@ R variables for these symbols.  For example, suppose we have the
 following registration information for a DLL named <code>myDLL</code>:
 </p>
 <div class="example">
-<pre class="example">R_CMethodDef cMethods[] = {
-   {&quot;foo&quot;, (DL_FUNC) &amp;foo, 4, {REALSXP, INTSXP, STRSXP, LGLSXP}},
+<pre class="example">static R_NativePrimitiveArgType foo_t[] = {
+    REALSXP, INTSXP, STRSXP, LGLSXP
+};
+
+static R_CMethodDef cMethods[] = {
+   {&quot;foo&quot;, (DL_FUNC) &amp;foo, 4, foo_t},
    {&quot;bar_sym&quot;, (DL_FUNC) &amp;bar, 0},
    {NULL, NULL, 0}
 };
 
-R_CallMethodDef callMethods[] = {
+static R_CallMethodDef callMethods[] = {
    {&quot;R_call_sym&quot;, (DL_FUNC) &amp;R_call, 4},
    {&quot;R_version_sym&quot;, (DL_FUNC) &amp;R_version, 0},
    {NULL, NULL, 0}
@@ -9065,7 +9069,7 @@ routine named <code>myCall</code> defined as
 <p>we would describe this as
 </p>
 <div class="example">
-<pre class="example">R_CallMethodDef callMethods[]  = {
+<pre class="example">static R_CallMethodDef callMethods[]  = {
   {&quot;myCall&quot;, (DL_FUNC) &amp;myCall, 3},
   {NULL, NULL, 0}
 };
@@ -9109,8 +9113,12 @@ identifiers are provided in the following table:
 <p>We would register it as
 </p>
 <div class="example">
-<pre class="example">R_CMethodDef cMethods[] = {
-   {&quot;myC&quot;, (DL_FUNC) &amp;myC, 4, {REALSXP, INTSXP, STRSXP, LGLSXP}},
+<pre class="example">static R_NativePrimitiveArgType myC_t[] = {
+    REALSXP, INTSXP, STRSXP, LGLSXP
+};
+
+static R_CMethodDef cMethods[] = {
+   {&quot;myC&quot;, (DL_FUNC) &amp;myC, 4, myC_t}
    {NULL, NULL, 0}
 };
 </pre></div>

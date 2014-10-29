@@ -190,6 +190,9 @@ CHANGES IN R-devel:
       console.  This is an experimental fix; if it is reported to work
       it will be kept, otherwise it will be removed. (PR#15791)
 
+    * drop.terms() dropped some of the attributes of the object it was
+      working with.  (PR#16029)
+
 CHANGES IN R 3.1.2 patched:
 
   NEW FEATURES:
