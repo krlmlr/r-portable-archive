@@ -205,6 +205,9 @@ Currently reports versions of <code>zlib</code>, <code>bzlib</code>, the
 <p>A similar function <code>grSoftVersion()</code> in package <span class="pkg">grDevices</span>
 reports on third-party graphics software.
 </p>
+<p>Calling <code>callGeneric()</code> without arguments now works with
+primitive generics to some extent.
+</p>
 </li></ul>
 
 
@@ -335,6 +338,9 @@ matching by name in <code>log()</code>.
 </li>
 <li> <p><code>all.equal()</code> gains methods for <code>environment</code>s and
 <code>refClass</code>es.
+</p>
+<p><code>[&lt;-</code> and <code>[[&lt;-</code> gain S4 <code>data.frame</code> methods to
+avoid corruption of S4 class information by the S3 methods.
 </p>
 </li></ul>
 
