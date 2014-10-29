@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-01).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-03).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-01).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-03).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -2981,7 +2981,14 @@ specified in that directory are run.  (Typically they will consist of a
 set of <samp>.R</samp> source files and target output files
 <samp>.Rout.save</samp>.)  Please note that the comparison will be done in the
 end user&rsquo;s locale, so the target output files should be <acronym>ASCII</acronym>
-if at all possible.
+if at all possible.  (The command line option <code>--test-dir=foo</code> may
+be used to specify tests in a non-standard location.  For example, 
+unusually slow tests could be placed in <samp>inst/slowTests</samp> and then
+<code>R CMD check --test-dir=inst/slowTests</code> would be used to run them.
+Other names that have been suggested are, for example, 
+<samp>inst/testWithOracle</samp> for tests that require Oracle to be installed,
+<samp>inst/randomTests</samp> for tests which use random values and may
+occasionally fail by chance, etc.)
 
 </li><li> The code in package vignettes (see <a href="#Writing-package-vignettes">Writing package vignettes</a>) is
 executed, and the vignette PDFs re-made from their sources as a check of

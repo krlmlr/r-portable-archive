@@ -155,6 +155,9 @@ CHANGES IN R-devel:
       the old values invisibly. The initial optimization level can also
       be set with the environment variable R_COMPILER_OPTIMIZE.
 
+    * R CMD check gains option --test-dir= to specify an alternative
+      set of tests to run.
+
   C-LEVEL FACILITIES:
 
     * New C API utility logspace_sum(logx[], n).
@@ -205,8 +208,14 @@ CHANGES IN R 3.1.2 patched:
     * If a package had extra documentation files but no vignette, the
       HTML help system produced an empty index page.
 
-    * qr.Q() failed on complex arguments due to pre-3.0(!) typo
+    * The parser now gives an error if a null character is included in
+      a string using Unicode escapes. (PR#16046)
+
+    * qr.Q() failed on complex arguments due to pre-3.0(!) typo.
       (PR#16054)
+
+    * abs() failed with named arguments when the argument was complex.
+      (PR#16047)
 
 CHANGES IN R 3.1.2:
 

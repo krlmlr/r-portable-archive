@@ -228,6 +228,10 @@ now returns the old values invisibly. The initial optimization
 level can also be set with the environment variable
 <span class="env">R_COMPILER_OPTIMIZE</span>.
 </p>
+</li>
+<li> <p><code>R CMD check</code> gains option <span class="option">--test-dir=</span> to 
+specify an alternative set of tests to run.
+</p>
 </li></ul>
 
 
@@ -329,8 +333,16 @@ the download progress bar).
 the HTML help system produced an empty index page.
 </p>
 </li>
+<li><p> The parser now gives an error if a null character is included
+in a string using Unicode escapes. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16046">PR#16046</a>)
+</p>
+</li>
 <li> <p><code>qr.Q()</code> failed on complex arguments due to 
-pre-3.0(!) typo (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16054">PR#16054</a>) 
+pre-3.0(!) typo. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16054">PR#16054</a>) 
+</p>
+</li>
+<li> <p><code>abs()</code> failed with named arguments when the argument
+was complex.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16047">PR#16047</a>)
 </p>
 </li></ul>
 
