@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2015-01-01).
+<!-- This manual is for R, version 3.2.0 Under development (2015-01-02).
 
-Copyright (C) 1999-2014 R Core Team
+Copyright (C) 1999-2015 R Core Team
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -430,9 +430,9 @@ p {
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2015-01-01).
+<p>This manual is for R, version 3.2.0 Under development (2015-01-02).
 </p>
-<p>Copyright &copy; 1999&ndash;2014 R Core Team
+<p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
 <blockquote>
 <p>Permission is granted to make and distribute verbatim copies of this
@@ -862,15 +862,16 @@ standard, RFC 5322, allows periods but RFC 2822 did not.)
 suitable &lsquo;<samp>Authors@R</samp>&rsquo; field is given.  This field can be used to
 provide a refined and machine-readable description of the package
 &ldquo;authors&rdquo; (in particular specifying their precise <em>roles</em>), via
-suitable R code. It should be either a call to <code>person</code> or a
-series of calls (one per &ldquo;author&rdquo;) concatenated by <code>c()</code>): see the
-example <samp>DESCRIPTION</samp> file above.  The roles can include
-&lsquo;<samp>&quot;aut&quot;</samp>&rsquo; (author) for full authors, &lsquo;<samp>&quot;cre&quot;</samp>&rsquo; (creator) for the
-package maintainer, and &lsquo;<samp>&quot;ctb&quot;</samp>&rsquo; (contributor) for other
-contributors, &lsquo;<samp>&quot;cph&quot;</samp>&rsquo; (copyright holder), among others.  See
-<code>?person</code> for more information.  Note that no role is assumed by
-default.  Auto-generated package citation information takes advantage of
-this specification. The &lsquo;<samp>Author</samp>&rsquo; and &lsquo;<samp>Maintainer</samp>&rsquo; fields are
+suitable R code. It should create an object of class <code>&quot;person'</code>,
+by either a call to <code>person</code> or a series of calls (one per
+&ldquo;author&rdquo;) concatenated by <code>c()</code>): see the example
+<samp>DESCRIPTION</samp> file above.  The roles can include &lsquo;<samp>&quot;aut&quot;</samp>&rsquo;
+(author) for full authors, &lsquo;<samp>&quot;cre&quot;</samp>&rsquo; (creator) for the package
+maintainer, and &lsquo;<samp>&quot;ctb&quot;</samp>&rsquo; (contributor) for other contributors,
+&lsquo;<samp>&quot;cph&quot;</samp>&rsquo; (copyright holder), among others.  See <code>?person</code> for
+more information.  Note that no role is assumed by default.
+Auto-generated package citation information takes advantage of this
+specification. The &lsquo;<samp>Author</samp>&rsquo; and &lsquo;<samp>Maintainer</samp>&rsquo; fields are
 auto-generated from it if needed when building<a name="DOCF5" href="#FOOT5"><sup>5</sup></a> or installing.
 </p>
 <a name="index-COPYRIGHTS"></a>

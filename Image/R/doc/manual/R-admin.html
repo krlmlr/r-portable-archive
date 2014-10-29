@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2015-01-01).
+<!-- This manual is for R, version 3.2.0 Under development (2015-01-02).
 
-Copyright (C) 2001-2014 R Core Team
+Copyright (C) 2001-2015 R Core Team
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -336,9 +336,9 @@ p {
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2015-01-01).
+<p>This manual is for R, version 3.2.0 Under development (2015-01-02).
 </p>
-<p>Copyright &copy; 2001&ndash;2014 R Core Team
+<p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
 <blockquote>
 <p>Permission is granted to make and distribute verbatim copies of this
@@ -883,7 +883,7 @@ to examine the logs carefully.
 <a name="index-R_005fRD4PDF"></a>
 <code>R_RD4PDF</code>.  (On Unix-alikes, this will be picked up at install time
 and stored in <samp>etc/Renviron</samp>, but can still be overridden when the
-manuals are built, using <code>make -e</code>.)  The usual <a name="DOCF7" href="#FOOT7"><sup>7</sup></a>  default value for <code>R_RD4PDF</code> is
+manuals are built, using <code>make -e</code>.)  The usual<a name="DOCF7" href="#FOOT7"><sup>7</sup></a>  default value for <code>R_RD4PDF</code> is
 &lsquo;<samp>times,inconsolata,hyper</samp>&rsquo;: omit &lsquo;<samp>hyper</samp>&rsquo; if you do not want
 hyperlinks (e.g. for printing the manual) or do not have LaTeX
 package <strong>hyperref</strong>, and omit &lsquo;<samp>inconsolata</samp>&rsquo; if you do not have
@@ -1068,8 +1068,8 @@ make install-pdf
 
 <p>Once again, it is optional to specify <code>prefix</code>, <code>libdir</code> or
 <code>rhome</code> (the PDF manuals are installed under the R home
-directory).  (<code>make install-info</code> needs Perl installed if there
-is no command <code>install-info</code> on the system.)
+directory).  (<code>make install-info</code> needs <code>Perl</code> installed
+if there is no command <code>install-info</code> on the system.)
 </p>
 <p>More precise control is possible.  For info, the setting used is that of
 <code>infodir</code> (default <samp><var>prefix</var>/info</samp>, set by configure
@@ -2076,8 +2076,7 @@ location of the personal library directory (under <samp>~/Library/R</samp>,
 e.g. <samp>~/Library/R/3.1/library</samp>), and that warnings, messages and
 other output to <samp>stderr</samp> are highlighted in bold.
 </p>
-<p>%% https://stat.ethz.ch/pipermail/r-sig-mac/2014-October/011131.html
-It has been reported that running <small>R.APP</small> under Yosemite may fail if no
+<p>It has been reported that running <small>R.APP</small> under Yosemite may fail if no
 preferences are stored, so if it fails when launched for the very first
 time, try it again (the first attempt will store some preferences).
 </p>
@@ -2711,7 +2710,7 @@ Previous: <a href="#Multiple-sub_002darchitectures" accesskey="p" rel="prev">Mul
 
 <p>The base and recommended packages are byte-compiled by default.  Other
 packages can be byte-compiled on installation by using <code>R CMD
-INSTALL</code>with option <samp>--byte-compile</samp> or by
+INSTALL</code> with option <samp>--byte-compile</samp> or by
 <code>install.packages(type = &quot;source&quot;, INSTALL_opts =
 &quot;--byte-compile&quot;)</code>.
 </p>
@@ -2831,7 +2830,7 @@ R versions <var>x.y.z</var> and containing <samp>.zip</samp> files for Windows.
 
 </li><li> <code>&quot;mac.binary.mavericks&quot;</code>: located at
 <samp>bin/macosx/mavericks/contrib/<var>3.y</var></samp> for R versions
-<var>3.1.z</var> to be run under OS X 10.9 (Mavericks) and later, containing
+<var>3.y.z</var> to be run under OS X 10.9 (Mavericks) and later, containing
 <samp>.tgz</samp> files.
 
 </li><li> <code>&quot;mac.binary.leopard&quot;</code>: located at
@@ -3213,8 +3212,8 @@ issue with objects more than 10% of the size of the address space
 third (around 1Gb).
 </p>
 </li><li> Only 64-bit builds support &lsquo;long vectors&rsquo;, those with <em>2^{31}</em> or
-more elements (each of which needs at least 8GB of storage, 16GB for a
-numeric vector).
+more elements (each of which needs 16GB of storage for a numeric
+vector).
 
 </li><li> Most 32-bit OSes by default limit file sizes to 2GB (and this may also
 apply to 32-bit builds on 64-bit OSes).  This can often be worked
@@ -3559,16 +3558,26 @@ looking in <samp>/usr/xpg4/bin</samp> which is used on some commercial
 Unixes).
 </p>
 <p>You will not be able to build most of the manuals unless you have
-<code>makeinfo</code> version 4.7 or later installed, and if not some of
-the <acronym>HTML</acronym> manuals will be linked to <acronym>CRAN</acronym>. To make PDF
-versions of the manuals you will also need file <samp>texinfo.tex</samp>
-installed (which is part of the <acronym>GNU</acronym> <strong>texinfo</strong> distribution
-but is often made part of the TeX package in re-distributions) as
-well as <code>texi2dvi</code>.<a name="DOCF34" href="#FOOT34"><sup>34</sup></a>  Further, the versions of <code>texi2dvi</code> and
+<code>makeinfo</code> version 4.7 or later installed, and if not most of
+the <acronym>HTML</acronym> manuals will be linked to a version on <acronym>CRAN</acronym>. To
+make PDF versions of the manuals you will also need file
+<samp>texinfo.tex</samp> installed (which is part of the <acronym>GNU</acronym>
+<strong>texinfo</strong> distribution but is often made part of the TeX package
+in re-distributions) as well as
+<code>texi2dvi</code>.<a name="DOCF34" href="#FOOT34"><sup>34</sup></a>  Further, the versions of <code>texi2dvi</code> and
 <samp>texinfo.tex</samp> need to be compatible: we have seen problems with
 older TeX distributions (TeXLive 2007 and MiKTeX 2.8) used with
-<strong>texinfo</strong> 4.13.  It is possible to use <strong>texinfo</strong> version 5.x,
-preferably 5.2 or later.
+<strong>texinfo</strong> 4.13.  It is recommended to use <strong>texinfo</strong> version 5.x,
+preferably 5.2 or later (these versions require <code>Perl</code>).
+</p>
+<p><em>Note to OS X users:</em> The system version of <code>makeinfo</code> is
+4.8 from 2004.  Using 5.2 is recommended and can be installed from the
+<strong>texinfo</strong> sources, into <samp>/usr/local/bin</samp>.  To ensure that
+version is used, set
+</p><div class="example">
+<pre class="example">MAKEINFO=/usr/local/bin/makeinfo
+</pre></div>
+<p>in <samp>config.site</samp> when configuring R.
 </p>
 <a name="index-Vignettes"></a>
 <p>The PDF documentation (including <samp>doc/NEWS.pdf</samp>) and building
@@ -3592,8 +3601,9 @@ Debian/Ubuntu like <strong>texlive-fonts-extra</strong>.
 </p>
 
 <a name="index-Subversion-1"></a>
-<p>If you want to build from the R Subversion repository you need both
-<code>makeinfo</code> and <code>pdflatex</code>.
+<p>If you want to build from the R Subversion repository then
+<code>makeinfo</code> is highly recommended as it is used to create files
+in the tarball but not under Subversion.
 </p>
 <a name="index-PATH"></a>
 <p>The essential programs should be in your <code>PATH</code> at the time
@@ -4066,7 +4076,7 @@ Once it is built and installed, it can be used by configuring R with
 way to use it.
 </p>
 <p>OpenBLAS (<a href="http://xianyi.github.com/OpenBLAS/">http://xianyi.github.com/OpenBLAS/</a>) is a descendant
-project with support for some current CPUs (e.g. Intel Sandy Bridge).
+project with support for some later CPUs (e.g. Intel Sandy Bridge).
 Once installed it can be used by something like
 </p>
 <div class="example">
@@ -5444,6 +5454,13 @@ take this up to about 1GB).  &lsquo;<samp>TeX Live Utility</samp>&rsquo; (availa
 <em>via</em> the MacTeX front page) provides a graphical means to manage
 TeX packages.
 </p>
+<p>One OS X quirk is that the default path has <samp>/usr/local/bin</samp> after
+<samp>/usr/bin</samp>, contrary to common practice on Unix-alikes.  This means
+that if you install tools from the sources they will by default be
+installed under <samp>/usr/local</samp> and not supersede the system
+versions.  This applies particularly to <code>makeinfo</code> where the
+system version dates from 2004 and a modern version is preferred.
+</p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Snow-Leopard" accesskey="1">Snow Leopard</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -6145,7 +6162,7 @@ acknowledged).
 </p>
 <p>It helps to describe the WU build environment first.  A small part of
 the software needed to build R and/or install packages is available
-directly from the AIX Installation DVDs, e.g., Java 6, X11, and Perl.
+directly from the AIX Installation DVDs, e.g., Java 6 and  X11.
 Additional open source software (OSS) is packaged for AIX in <samp>.rpm</samp>
 files and available from both IBM&rsquo;s &ldquo;AIX Toolbox for Linux
 Applications&rdquo;
@@ -6398,8 +6415,7 @@ See the subsections below for detailed descriptions.
 </li><li> The MinGW-w64 32/64-bit toolchain to compile C, Fortran and C++.
 </li></ul>
 <p>For installing simple source packages containing data or R source but
-no compiled code, none of these are needed.  Perl is no longer needed to
-build R nor to install nor develop source packages.
+no compiled code, none of these are needed.
 </p>
 <p>A complete build of R including PDF manuals, and producing the
 installer will also need the following:
@@ -7067,10 +7083,10 @@ functionality of headers <samp>wchar.h</samp> and <samp>wctype.h</samp>, types
 10.6 and later) or <code>tar</code> from the Heirloom Toolchest
 (<a href="http://heirloom.sourceforge.net/tools.html">http://heirloom.sourceforge.net/tools.html</a>).</p>
 <h3><a name="FOOT34" href="#DOCF34">(34)</a></h3>
-<p><code>texi2dvi</code> is normally a
-shell script.  Some versions, e.g. that from <strong>texinfo</strong> 4.13a and
-5.2, need to be run under <code>bash</code> rather than a Bourne shell as
-on, say, Solaris.</p>
+<p><code>texi2dvi</code> is normally a shell
+script.  Some versions (e.g. those from <strong>texinfo</strong> 4.13a and 5.2)
+need to be run under <code>bash</code> rather than a Bourne shell as on,
+say, Solaris.</p>
 <h3><a name="FOOT35" href="#DOCF35">(35)</a></h3>
 <p>also known as <code>ttf-mscorefonts-installer</code> in the
 Debian/Ubuntu world: see also

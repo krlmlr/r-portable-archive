@@ -366,12 +366,12 @@ of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pk
 and the build instructions have been revised.      
 </p>
 </li>
-<li><p> The &lsquo;<span class="file">MkRules.local</span>&rsquo; file is now optional, with defaults
-described in &lsquo;<span class="file">MkRules.dist</span>&rsquo;.
-</p>
-</li>
 <li><p> A new <code>make</code> target <code>rsync-extsoft</code> has been
 added to obtain copies of the external libraries from <acronym><span class="acronym">CRAN</span></acronym>.
+</p>
+</li>
+<li><p> It is possible to build without <code>makeinfo</code>: see the
+comments in file &lsquo;<span class="file">MkRules.dist</span>&rsquo;.
 </p>
 </li></ul>
 
@@ -642,6 +642,10 @@ parts from the other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 </li>
 <li> <p><code>tools:::.Rdconv()</code> didn't accept <code>--encoding=</code> due
 to miscalculated string length.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>) 
+</p>
+</li>
+<li><p> Unix-alike builds without a suitable <code>makeinfo</code> were
+documented to link the missing HTML manuals to CRAN, but did not.
 </p>
 </li></ul>
 
