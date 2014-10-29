@@ -263,6 +263,10 @@ CHANGES IN R 3.1.2 patched:
     * (Windows.) The command completion in Rgui.exe messed up the
       console.  (PR#15791)
 
+    * (Windows.) The choose.files() command returned a blank string
+      when the user asked for a single file but cancelled the request.
+      (PR#16074)
+
 CHANGES IN R 3.1.2:
 
   NEW FEATURES:
