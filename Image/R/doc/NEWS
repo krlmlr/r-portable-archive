@@ -205,6 +205,9 @@ CHANGES IN R 3.1.2 patched:
     * If a package had extra documentation files but no vignette, the
       HTML help system produced an empty index page.
 
+    * qr.Q() failed on complex arguments due to pre-3.0(!) typo
+      (PR#16054)
+
 CHANGES IN R 3.1.2:
 
   NEW FEATURES:
