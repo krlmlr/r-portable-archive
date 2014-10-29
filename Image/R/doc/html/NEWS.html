@@ -200,10 +200,13 @@ run <code>\dontcheck</code> code only if used interactively.
 <li><p> New function <code>extSoftVersion()</code> to report on the
 versions of third-party software in use in this session.
 Currently reports versions of <code>zlib</code>, <code>bzlib</code>, the
-<code>liblzma</code> from <code>xz</code>, PCRE, ICU and TRE.
+<code>liblzma</code> from <code>xz</code>, PCRE, ICU, TRE and the <code>iconv</code>
+implementation.
 </p>
 <p>A similar function <code>grSoftVersion()</code> in package <span class="pkg">grDevices</span>
 reports on third-party graphics software.
+</p>
+<p>Function <code>tcltk::tclVersion()</code> reports the Tcl/Tk version.
 </p>
 </li>
 <li><p> Calling <code>callGeneric()</code> without arguments now works
@@ -212,6 +215,19 @@ with primitive generics to some extent.
 </li>
 <li> <p><code>vapply(x, FUN, FUN.VALUE)</code> is more efficient notably
 for large <code>length(FUN.VALUE)</code>; as extension of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16061">PR#16061</a>.
+</p>
+</li>
+<li> <p><code>as.table()</code> now allows tables with one or more
+dimensions of length 0 (such as <code>as.table(integer())</code>).
+</p>
+</li>
+<li> <p><code>names(x) &lt;- NULL</code> now clears the names of call
+and <code>...</code> objects.
+</p>
+</li>
+<li> <p><code>library()</code> will report a warning when an insufficient
+dependency version is masking a sufficient one later on the
+library search path.
 </p>
 </li></ul>
 
@@ -287,6 +303,15 @@ environment variable <span class="env">R_COMPILER_OPTIMIZE</span>.
 <li> <p><code>R CMD check</code> gains option <span class="option">--test-dir</span> to
 specify an alternative set of tests to run.
 </p>
+</li>
+<li> <p><code>R CMD check</code> will now by default continue with
+testing after many types of errors, and will output a summary
+count of errors at the end if any have occurred.      
+</p>
+</li>
+<li> <p><code>R CMD check --as-cran</code> checks a &lsquo;<span class="file">README.md</span>&rsquo;
+file can be processed: this needs <code>pandoc</code> installed.
+</p>
 </li></ul>
 
 
@@ -313,6 +338,9 @@ preferred.
 <li><p> New entry point <code>R_allocLD</code>, like <code>R_alloc</code> but
 guaranteed to have sufficient alignment for <code>long double</code>
 pointers.
+</p>
+</li>
+<li> <p><code>isPairList</code> now returns <code>TRUE</code> for DOTSXP.
 </p>
 </li></ul>
 
@@ -371,8 +399,21 @@ matching by name in <code>log()</code>.
 <li> <p><code>all.equal()</code> gains methods for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
-<p><code>[&lt;-</code> and <code>[[&lt;-</code> gain S4 <code>data.frame</code> methods to
+</li>
+<li> <p><code>[&lt;-</code> and <code>[[&lt;-</code> gain S4 <code>data.frame</code> methods to
 avoid corruption of S4 class information by the S3 methods.
+</p>
+</li>
+<li> <p><code>callNextMethod()</code> should now work within a <code>.local</code>
+call when <code>...</code> is absent from <code>formals(.local)</code>.
+</p>
+</li>
+<li> <p><code>dput(pairlist(x))</code> generates a call to the <code>pairlist</code>
+constructor, instead of the <code>list</code> constructor.
+</p>
+</li>
+<li><p> Fix <code>missing()</code> when arguments are propagated through
+<code>...</code>; see <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15707">PR#15707</a>.
 </p>
 </li></ul>
 
@@ -395,9 +436,9 @@ files larger than 2GB on 32-bit builds which support such files
 <li> <p><code>kruskal.test()</code> warns on more types of suspicious input.
 </p>
 </li>
-<li><p> The <code>as.dendrogram</code> method for <code>"hclust"</code> objects
-gets a <code>check</code> argument protecting against memory explosion for
-invalid inputs.
+<li><p> The <code>as.dendrogram()</code> method for <code>"hclust"</code>
+objects gains a <code>check</code> argument protecting against memory
+explosion for invalid inputs.
 </p>
 </li>
 <li> <p><code>capabilities()</code> has a new item <code>long.double</code>
@@ -517,8 +558,8 @@ blank string when the user asked for a single file but cancelled
 the request.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16074">PR#16074</a>)
 </p>
 </li>
-<li> <p><code>Math2</code> group generics failed to correctly dispatch
-<code>"structure"</code> and <code>"nonStructure"</code>-derived classes.
+<li> <p><code>Math2</code> S4 group generics failed to correctly dispatch
+<code>"structure"</code>- and <code>"nonStructure"</code>-derived classes.
 </p>
 </li>
 <li> <p><code>loadNamespace()</code> imposed undocumented restrictions
@@ -532,6 +573,10 @@ on the <code>versionCheck</code> parameter.  (Reported by Geoff Lee.)
 <li><p> Loading packages incorrectly defining an S4 generic followed
 by a function of the same name caused an erroneous cyclic
 namespace dependency error.
+</p>
+</li>
+<li><p> Declared vignette encodings are now always passed to the
+vignette engine.
 </p>
 </li></ul>
 

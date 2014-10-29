@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-10).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-19).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -289,7 +289,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-10).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-19).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4843,6 +4843,13 @@ Default: unset (but &lsquo;<samp>TRUE</samp>&rsquo; for CRAN submission checks).
 package namespace without loading and attaching the package and its
 suggests and enhances.
 Default: true (and true for CRAN submission checks).
+</p>
+</dd>
+<dt><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code>
+<a name="index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"></a>
+</dt>
+<dd><p>If set to a true value, the check will exit on the first error.
+Default:  false.
 </p></dd>
 </dl>
 
@@ -5341,6 +5348,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fDOT_005fINTERNAL_005f"><code>_R_CHECK_DOT_INTERNAL_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXECUTABLES_005f"><code>_R_CHECK_EXECUTABLES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXECUTABLES_005fEXCLUSIONS_005f"><code>_R_CHECK_EXECUTABLES_EXCLUSIONS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFF_005fCALLS_005f"><code>_R_CHECK_FF_CALLS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFF_005fDUP_005f"><code>_R_CHECK_FF_DUP_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFORCE_005fSUGGESTS_005f"><code>_R_CHECK_FORCE_SUGGESTS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>

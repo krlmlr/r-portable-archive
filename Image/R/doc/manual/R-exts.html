@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-10).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-19).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-10).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-19).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -664,10 +664,10 @@ files <samp>DESCRIPTION</samp> and <samp>NAMESPACE</samp>, and the subdirectorie
 empty).  The package subdirectory may also contain files <samp>INDEX</samp>,
 <samp>configure</samp>, <samp>cleanup</samp>, <samp>LICENSE</samp>, <samp>LICENCE</samp> and
 <samp>NEWS</samp>.  Other files such as <samp>INSTALL</samp> (for non-standard
-installation instructions), <samp>README</samp>/<samp>README.md</samp><a name="DOCF2" href="#FOOT2"><sup>2</sup></a>, or <samp>ChangeLog</samp> will be ignored by
-R, but may be useful to end users.  The utility <code>R CMD build</code>
-may add files in a <samp>build</samp> directory (but this should not be used
-for other purposes).
+installation instructions), <samp>README</samp>/<samp>README.md</samp><a name="DOCF2" href="#FOOT2"><sup>2</sup></a>, or <samp>ChangeLog</samp> will be ignored by R, but may
+be useful to end users.  The utility <code>R CMD build</code> may add files
+in a <samp>build</samp> directory (but this should not be used for other
+purposes).
 </p>
 <p>Except where specifically mentioned,<a name="DOCF3" href="#FOOT3"><sup>3</sup></a> packages should not contain
 Unix-style &lsquo;hidden&rsquo; files/directories (that is, those whose name starts
@@ -3055,6 +3055,10 @@ give false positives, most commonly because of non-standard evaluation
 for formulae and because the intention is to return objects in the
 environment of a function for later use.
 </p>
+<p>Complete checking of a package which contains a file <samp>README.md</samp>
+needs <code>pandoc</code> installed: see
+<a href="http://johnmacfarlane.net/pandoc/installing.html">http://johnmacfarlane.net/pandoc/installing.html</a>.
+</p>
 <p>You do need to ensure that the package is checked in a suitable locale
 if it contains non-<acronym>ASCII</acronym> characters.  Such packages are likely
 to fail some of the checks in a <code>C</code> locale, and <code>R CMD
@@ -3464,14 +3468,24 @@ need to be declared to LaTeX via a line like
 <pre class="example">\usepackage[utf8]{inputenc}
 </pre></div>
 <p>(It is also possible to use the more recent &lsquo;<samp>inputenx</samp>&rsquo; LaTeX
-package.)  If the encoding is UTF-8, this can also be declared using
+package.) For files where this line is not needed (e.g. chapters
+included within the body of a larger document, or non-Sweave 
+vignettes), the encoding may be declared using a comment like
+</p><div class="example">
+<pre class="example">%!\VignetteEncoding{UTF-8}
+</pre></div>
+<p>If the encoding is UTF-8, this can also be declared using
 the declaration
 </p><div class="example">
 <pre class="example">%!\SweaveUTF8
 </pre></div>
-<p>but be aware that LaTeX may require the &lsquo;<samp>usepackage</samp>&rsquo; declaration.
-<code>R CMD check</code> will warn about any non-<acronym>ASCII</acronym>
-vignettes it finds which do not have one of these declarations.
+<p>If no declaration is given in the vignette, it will be assumed to be
+in the encoding declared for the package.  If there is no encoding
+declared in either place, then it is an error to use non-<acronym>ASCII</acronym>
+characters in the vignette.
+</p>
+<p>In any case, be aware that LaTeX may require the &lsquo;<samp>usepackage</samp>&rsquo; 
+declaration.
 </p>
 <p><code>Sweave()</code> will also parse and evaluate the R code in each
 chunk.  The R output will also be in the current locale (or <acronym>UTF-8</acronym>
@@ -4387,11 +4401,13 @@ before distribution.
 work as intended.  For alternatives, see <a href="#Suggested-packages">Suggested packages</a> and
 <code>with</code>.
 
-</li><li> Examples can be run interactively <em>via</em> example as well as in batch
-mode when checking.  So they should behave appropriately in both
-scenarios, conditioning by <code>interactive()</code> the parts which need an
-operator or observer.  For instance, progress bars are only appropriate
-in interactive use, as is displaying help pages or calling <code>View()</code>.
+</li><li> Examples can be run interactively <em>via</em> <code>example</code> as well as
+in batch mode when checking.  So they should behave appropriately in
+both scenarios, conditioning by <code>interactive()</code> the parts which
+need an operator or observer.  For instance, progress bars are only
+appropriate in interactive use, as is displaying help pages or calling
+<code>View()</code> (see below).
+
 </li></ul>
 
 <p>Do be careful in what your tests (and examples) actually test.  Bad
@@ -10873,7 +10889,7 @@ code.  In this example the special values are no problem, as
 implementation this is also true of <code>NA</code> as it is a type of
 <code>NaN</code>, but it is unwise to rely on such details.  Thus we will
 re-write the code to handle <code>NA</code>s using macros defined in
-<samp>R_exts/Arith.h</samp> included by <samp>R.h</samp>.
+<samp>R_ext/Arith.h</samp> included by <samp>R.h</samp>.
 </p>
 <p>The code changes are the same in any of the versions of <code>convolve2</code>
 or <code>convolveE</code>:
@@ -15244,8 +15260,9 @@ were officially known as <em>library sections</em> and later as
 seems to be commonly used for a file in &lsquo;markdown&rsquo; format.  Be aware
 that most users of R will not know that, nor know how to view such a
 file: platforms such as OS X and Windows do not have a default viewer
-set in their file associations. The <acronym>CRAN</acronym> package web pages
-render such files in <acronym>HTML</acronym>.</p>
+set in their file associations.  The <acronym>CRAN</acronym> package web pages
+render such files in <acronym>HTML</acronym>: the converter used expects the file to be
+encoded in UTF-8.</p>
 <h3><a name="FOOT3" href="#DOCF3">(3)</a></h3>
 <p>currently, top-level files
 <samp>.Rbuildignore</samp> and <samp>.Rinstignore</samp>, and
