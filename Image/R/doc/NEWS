@@ -156,6 +156,9 @@ CHANGES IN R-devel:
 
   INSTALLATION and INCLUDED SOFTWARE:
 
+    * The \donttest sections of R's help files can be tested by
+      make check TEST_DONTTEST=TRUE .
+
     * It is possible to request the use of system valgrind headers
       _via_ configure option --with-system-valgrind-headers: note the
       possible incompatibility of such headers discussed in the 'R
@@ -175,8 +178,7 @@ CHANGES IN R-devel:
 
     * (Windows.) Installation using external binary distributions of
       zlib, bzip, liblzma, pcre, libpng, jpeglib and libtiff is now
-      supported and likely to be the preferred or only way before
-      release.
+      preferred and likely to become the only way before release.
 
   UTILITIES:
 
@@ -198,6 +200,10 @@ CHANGES IN R-devel:
 
     * R CMD check gains option --test-dir to specify an alternative set
       of tests to run.
+
+    * R CMD check now checks the packages used in \donttest sections of
+      the examples.  (These will be needed to run the examples
+      interactively.)
 
   C-LEVEL FACILITIES:
 
@@ -228,6 +234,10 @@ CHANGES IN R-devel:
     * Use of the included versions of zlib, bzip2, xz and PCRE is
       deprecated: these are essentially frozen and will eventually be
       removed.
+
+    * The configure option --with-valgrind-instrumentation=3 has been
+      withdrawn, as it did not work with recent valgrind headers: it is
+      now treated as level 2.
 
   BUG FIXES:
 
@@ -270,6 +280,11 @@ CHANGES IN R 3.1.2 patched:
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The included version of PCRE has been updated to 8.36.
+
+  DEPRECATED AND DEFUNCT:
+
+    * The configure option --with-valgrind-instrumentation=3 is
+      deprecated and will be removed in R 3.2.0.
 
   BUG FIXES:
 

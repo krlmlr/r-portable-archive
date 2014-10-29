@@ -222,6 +222,11 @@ for large <code>length(FUN.VALUE)</code>; as extension of <a href="https://bugs.
 
 
 <ul>
+<li><p> The <code>\donttest</code> sections of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s help files can be
+tested by<br />
+<code>make check TEST_DONTTEST=TRUE</code> .
+</p>
+</li>
 <li><p> It is possible to request the use of system
 <code>valgrind</code> headers <em>via</em> <code>configure</code> option
 <span class="option">--with-system-valgrind-headers</span>: note the possible
@@ -246,8 +251,8 @@ versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</spa
 </li>
 <li><p> (Windows.) Installation using external binary distributions
 of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
-<span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now supported
-and likely to be the preferred or only way before release.
+<span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now preferred
+and likely to become the only way before release.
 </p>
 </li></ul>
 
@@ -281,6 +286,11 @@ environment variable <span class="env">R_COMPILER_OPTIMIZE</span>.
 </li>
 <li> <p><code>R CMD check</code> gains option <span class="option">--test-dir</span> to
 specify an alternative set of tests to run.
+</p>
+</li>
+<li> <p><code>R CMD check</code> now checks the packages used in
+<code>\donttest</code> sections of the examples.  (These will be needed
+to run the examples interactively.)
 </p>
 </li></ul>
 
@@ -339,6 +349,12 @@ to compile Windows binary packages).  It would be simplest to use
 <li><p> Use of the included versions of <code>zlib</code>, <code>bzip2</code>,
 <code>xz</code> and PCRE is deprecated: these are essentially frozen and
 will eventually be removed.
+</p>
+</li>
+<li><p> The <code>configure</code> option
+<span class="option">--with-valgrind-instrumentation=3</span> has been withdrawn, as
+it did not work with recent <code>valgrind</code> headers: it is now
+treated as level <code>2</code>.
 </p>
 </li></ul>
 
@@ -415,6 +431,19 @@ strings byte-by-byte in numerical order.
 
 <ul>
 <li><p> The included version of PCRE has been updated to 8.36.
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> The <code>configure</code> option
+<span class="option">--with-valgrind-instrumentation=3</span> is deprecated and will
+be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0.
 </p>
 </li></ul>
 

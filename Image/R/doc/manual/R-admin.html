@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-06).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-07).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -190,14 +190,13 @@ p {
       <li><a name="toc-Getting-the-tools-1" href="#Getting-the-tools">3.1.1 Getting the tools</a></li>
       <li><a name="toc-Getting-the-source-files-1" href="#Getting-the-source-files">3.1.2 Getting the source files</a></li>
       <li><a name="toc-Building-the-core-files-1" href="#Building-the-core-files">3.1.3 Building the core files</a></li>
-      <li><a name="toc-Building-the-bitmap-files-1" href="#Building-the-bitmap-files">3.1.4 Building the bitmap files</a></li>
-      <li><a name="toc-Building-the-cairo-devices" href="#Building-the-cairo-devices-files">3.1.5 Building the cairo devices</a></li>
-      <li><a name="toc-Using-ICU-for-collation-1" href="#Using-ICU-for-collation">3.1.6 Using ICU for collation</a></li>
-      <li><a name="toc-Checking-the-build-1" href="#Checking-the-build">3.1.7 Checking the build</a></li>
-      <li><a name="toc-Building-the-manuals-1" href="#Building-the-manuals">3.1.8 Building the manuals</a></li>
-      <li><a name="toc-Building-the-Inno-Setup-installer-1" href="#Building-the-Inno-Setup-installer">3.1.9 Building the Inno Setup installer</a></li>
-      <li><a name="toc-Building-the-MSI-installer-1" href="#Building-the-MSI-installer">3.1.10 Building the MSI installer</a></li>
-      <li><a name="toc-64_002dbit-Windows-builds-1" href="#g_t64_002dbit-Windows-builds">3.1.11 64-bit Windows builds</a></li>
+      <li><a name="toc-Building-the-cairo-devices" href="#Building-the-cairo-devices-files">3.1.4 Building the cairo devices</a></li>
+      <li><a name="toc-Using-ICU-for-collation-1" href="#Using-ICU-for-collation">3.1.5 Using ICU for collation</a></li>
+      <li><a name="toc-Checking-the-build-1" href="#Checking-the-build">3.1.6 Checking the build</a></li>
+      <li><a name="toc-Building-the-manuals-1" href="#Building-the-manuals">3.1.7 Building the manuals</a></li>
+      <li><a name="toc-Building-the-Inno-Setup-installer-1" href="#Building-the-Inno-Setup-installer">3.1.8 Building the Inno Setup installer</a></li>
+      <li><a name="toc-Building-the-MSI-installer-1" href="#Building-the-MSI-installer">3.1.9 Building the MSI installer</a></li>
+      <li><a name="toc-64_002dbit-Windows-builds-1" href="#g_t64_002dbit-Windows-builds">3.1.10 64-bit Windows builds</a></li>
     </ul></li>
     <li><a name="toc-Testing-an-Installation-1" href="#Testing-a-Windows-Installation">3.2 Testing an Installation</a></li>
   </ul></li>
@@ -339,7 +338,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-06).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-07).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1397,8 +1396,8 @@ Next: <a href="#Installing-R-under-OS-X" accesskey="n" rel="next">Installing R u
 
 <p>The <samp>bin/windows</samp> directory of a <acronym>CRAN</acronym> site contains
 binaries for a base distribution and a large number of add-on packages
-from <acronym>CRAN</acronym> to run on Windows XP or later on ix86 <acronym>CPU</acronym>s
-(including AMD64/Intel64 cpus and Windows x64).
+from <acronym>CRAN</acronym> to run on 32- or 64-bit Windows (XP or later) on
+&lsquo;<samp>ix86</samp>&rsquo; and &lsquo;<samp>x86_64</samp>&rsquo; <acronym>CPU</acronym>s.
 </p>
 <p>Your file system must allow long file names (as is likely except
 perhaps for some network-mounted systems).
@@ -1445,12 +1444,13 @@ configuration files in the <samp>etc</samp> directory.
 used for CJK languages) is unsupported and may not work (the scripts do
 try to select a &lsquo;<samp>C</samp>&rsquo; locale; Windows may not honour this).
 </p>
-<p><strong>NB:</strong> The build process is currently being changed to support
-using external binary distributions.  Their location can be set using
-macro <code>EXT_LIBS</code> in <samp>src/gnuwin32/MkRules.local</samp>: a suitable
-distribution can be obtained from
-<a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.  The rest
-of this section has not yet been updated to reflect that.
+<p><strong>NB:</strong> The build process is currently being changed to require
+external binary distributions of third-party software.  Their location
+can be set using macro <code>EXT_LIBS</code> in
+<samp>src/gnuwin32/MkRules.local</samp>: a suitable distribution can be
+obtained from
+<a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.  This is
+not yet obligatory, but the instructions here assume it has been set.
 </p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Getting-the-tools" accesskey="1">Getting the tools</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1459,19 +1459,17 @@ of this section has not yet been updated to reflect that.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Building-the-core-files" accesskey="3">Building the core files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-bitmap-files" accesskey="4">Building the bitmap files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-cairo-devices-files" accesskey="4">Building the cairo devices files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-cairo-devices-files" accesskey="5">Building the cairo devices files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Using-ICU-for-collation" accesskey="5">Using ICU for collation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Using-ICU-for-collation" accesskey="6">Using ICU for collation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Checking-the-build" accesskey="6">Checking the build</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Checking-the-build" accesskey="7">Checking the build</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-manuals" accesskey="7">Building the manuals</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-manuals" accesskey="8">Building the manuals</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-Inno-Setup-installer" accesskey="8">Building the Inno Setup installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-Inno-Setup-installer" accesskey="9">Building the Inno Setup installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Building-the-MSI-installer">Building the MSI installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Building-the-MSI-installer" accesskey="9">Building the MSI installer</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#g_t64_002dbit-Windows-builds">64-bit Windows builds</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -1543,9 +1541,35 @@ automatically by running in <samp><var>R_HOME</var>/src/gnuwin32</samp>
 <pre class="example">make rsync-recommended
 </pre></div>
 
+</li><li> The binary distributions of external software.  Download
+
+<div class="example">
+<pre class="example">http://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/local320.zip
+</pre></div>
+
+<p>create an empty directory, say <samp>c:/R/extsoft</samp>, and unpack it in
+that directory by e.g.
+</p>
+<div class="example">
+<pre class="example">unzip local320.zip -d c:/R/extsoft
+</pre></div>
+
+</li><li> Make a local copy of the configuration rules by
+
+<div class="example">
+<pre class="example">cd <var>R_HOME</var>/src/gnuwin32
+cp MkRules.dist MkRules.local
+</pre></div>
+
+<p>and edit <samp>MkRules.local</samp>, uncommenting <code>EXT_LIBS</code> and setting
+it to the appropriate path (in our example <samp>c:/R/extsoft</samp>).
+</p>
+<p>Look through the file <samp>MkRules.local</samp> and make any other changes
+needed: in particular, this is where a 64-bit build is selected.
+</p>
 </li></ul>
 
-<p>The following additional items are normally installed by
+<p>The following additional item is normally installed by
 <samp>Rtools31.exe</samp>.  If instead you choose to do a completely manual
 build you will also need
 </p>
@@ -1557,43 +1581,13 @@ install the right version: there is a 32-bit version and a 64-bit
 version.  They should be installed to <samp><var>R_HOME</var></samp>, creating
 directory <samp>Tcl</samp> there.
 
-</li><li> You need <code>libpng</code>, <code>jpeg</code> and <code>libtiff</code> sources
-(available, e.g., from <a href="http://www.libpng.org/">http://www.libpng.org/</a>,
-<a href="http://www.ijg.org">http://www.ijg.org</a> and
-<a href="http://download.osgeo.org/libtiff/">http://download.osgeo.org/libtiff/</a>); current versions are
-recommended and <code>jpeg</code> 7 or later is required.  It is also possible
-to use &lsquo;<samp>libjpeg-turbo</samp>&rsquo; from
-<a href="http://sourceforge.net/projects/libjpeg-turbo/files/">http://sourceforge.net/projects/libjpeg-turbo/files/</a>.
-
-<p>Working in the directory <samp><var>R_HOME</var>/src/gnuwin32/bitmap</samp>,
-install the <code>libpng</code> and <code>jpeg</code> sources in sub-directories.
-The <code>jpeg</code> sub-directory for version 9 is named <samp>jpeg-9</samp>; if
-you use a different version (e.g. <samp>jpeg-9a</samp> or
-<samp>libjpeg-turbo</samp>), copy file <samp>src/gnuwin32/MkRules.dist</samp> to
-<samp>src/gnuwin32/MkRules.local</samp> and edit the definition of
-<code>JPEGDIR</code>: the names of the <samp>libpng</samp> and <samp>libtiff</samp>
-directories can also be set there.
-</p>
-<p>Example:
-</p>
-<div class="example">
-<pre class="example">&gt; tar -zxf libpng-1.6.10.tar.gz
-&gt; mv libpng-1.6.10 libpng
-&gt; tar -zxf jpegsrc.v9a.tar.gz
-&gt; tar -zxf tiff-4.0.3.tar.gz
-&gt; mv tiff-4.0.3/libtiff .
-&gt; rm -rf tiff-4.0.3
-</pre></div>
-
-<p>(and see the comment above about <samp>--no-same-owner</samp>).
-</p>
 </li></ul>
 
 <hr>
 <a name="Building-the-core-files"></a>
 <div class="header">
 <p>
-Next: <a href="#Building-the-bitmap-files" accesskey="n" rel="next">Building the bitmap files</a>, Previous: <a href="#Getting-the-source-files" accesskey="p" rel="prev">Getting the source files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Building-the-cairo-devices-files" accesskey="n" rel="next">Building the cairo devices files</a>, Previous: <a href="#Getting-the-source-files" accesskey="p" rel="prev">Getting the source files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-core-files-1"></a>
 <h4 class="subsection">3.1.3 Building the core files</h4>
@@ -1608,13 +1602,10 @@ Windows.)
 that a <code>samba</code>-mounted file system (which maps all file names to
 lower case) did not work.
 </p>
-<p>Open a command window at <samp><var>R_HOME</var>/src/gnuwin32</samp>.  Look at
-<samp>MkRules.dist</samp> and if settings need to be altered, copy it to
-<samp>MkRules.local</samp> and edit the settings there.  In particular, this
-is where a 64-bit build is selected.  Then run
+<p>Open a command window at <samp><var>R_HOME</var>/src/gnuwin32</samp>, then run
 </p>
 <div class="example">
-<pre class="example">make all recommended
+<pre class="example">make all recommended bitmapdll
 </pre></div>
 
 <p>and sit back and wait while the basic compile takes place.
@@ -1626,18 +1617,12 @@ up the machine, but not for several years.  However, aggressive
 anti-virus checking such as the on-access scanning of Sophos can slow
 the build down several-fold.
 
-</li><li> By default Doug Lea&rsquo;s <code>malloc</code> in the file
-<samp><var>R_HOME</var>/src/gnuwin32/malloc.c</samp> is used for R&rsquo;s internal
-memory allocations.  You can opt out of this by setting
-<code>LEA_MALLOC=NO</code> in <samp>MkRules.dist</samp>, in which case the <code>malloc</code>
-in <samp>msvcrt.dll</samp> is used.  This does impose a considerable
-performance penalty and has not been tested recently.
-
 </li><li> You can run a parallel make by e.g.
 
 <div class="example">
 <pre class="example">make -j4 all
 make -j4 recommended
+make -j4 bitmapdll
 </pre></div>
 
 <p>but this is only likely to be worthwhile on a multi-core machine with
@@ -1651,39 +1636,21 @@ packages.
 </li></ul>
 
 <hr>
-<a name="Building-the-bitmap-files"></a>
-<div class="header">
-<p>
-Next: <a href="#Building-the-cairo-devices-files" accesskey="n" rel="next">Building the cairo devices files</a>, Previous: <a href="#Building-the-core-files" accesskey="p" rel="prev">Building the core files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
-</div>
-<a name="Building-the-bitmap-files-1"></a>
-<h4 class="subsection">3.1.4 Building the bitmap files</h4>
-<a name="index-Rbitmap_002edll"></a>
-
-<p>The file
-<samp><var>R_HOME</var>/library/grDevices/libs/{i386,x64}Rbitmap.dll</samp> is
-not built automatically.
-</p>
-<p>Running <code>make bitmapdll</code> in <samp><var>R_HOME</var>/src/gnuwin32</samp>
-should build <samp>Rbitmap.dll</samp> and install it under
-<samp><var>R_HOME</var>/library/grDevices/libs</samp>.
-</p>
-<hr>
 <a name="Building-the-cairo-devices-files"></a>
 <div class="header">
 <p>
-Next: <a href="#Using-ICU-for-collation" accesskey="n" rel="next">Using ICU for collation</a>, Previous: <a href="#Building-the-bitmap-files" accesskey="p" rel="prev">Building the bitmap files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Using-ICU-for-collation" accesskey="n" rel="next">Using ICU for collation</a>, Previous: <a href="#Building-the-core-files" accesskey="p" rel="prev">Building the core files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-cairo-devices"></a>
-<h4 class="subsection">3.1.5 Building the cairo devices</h4>
+<h4 class="subsection">3.1.4 Building the cairo devices</h4>
 <a name="index-winCairo_002edll"></a>
 
 <p>The devices based on cairographics (<code>svg</code>, <code>cairo_pdf</code>,
 <code>cairo_ps</code> and the <code>type = &quot;cairo&quot;</code> versions of <code>png</code>,
 <code>jpeg</code>, <code>tiff</code> and <code>bmp</code>) are implemented in a separate
 DLL <samp>winCairo.dll</samp> which is loaded when one of these devices is
-first used.  It is not built by default, and needs to be built after
-<samp>Rbitmap.dll</samp>, by <code>make cairodevices</code>.
+first used.  It is not built by default, and needs to be built (after
+<code>make bitmapdll</code>) by <code>make cairodevices</code>.
 </p>
 <p>To enable the building of these devices you need to install the static
 cairographics libraries built by Simon Urbanek at
@@ -1699,12 +1666,11 @@ tarball unpacks with a top-level directory <samp>src/</samp>:
 Next: <a href="#Checking-the-build" accesskey="n" rel="next">Checking the build</a>, Previous: <a href="#Building-the-cairo-devices-files" accesskey="p" rel="prev">Building the cairo devices files</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Using-ICU-for-collation-1"></a>
-<h4 class="subsection">3.1.6 Using ICU for collation</h4>
+<h4 class="subsection">3.1.5 Using ICU for collation</h4>
 
-<p>It is possible (and even recommended) to build R to use ICU
-(International Components for Unicode,
-<a href="http://site.icu-project.org/">http://site.icu-project.org/</a>) for collation, as is commonly done
-on Unix-alikes.
+<p>It is and even recommended to build R to support ICU (International
+Components for Unicode, <a href="http://site.icu-project.org/">http://site.icu-project.org/</a>) for
+collation, as is commonly done on Unix-alikes.
 </p>
 <p>Two settings are needed in <samp>MkRules.local</samp>, 
 </p><div class="example">
@@ -1720,9 +1686,9 @@ at <a href="http://www.stats.ox.ac.uk/pub/Rtools/goodies/ICU_531.zip">http://www
 Depending on the build, it may be necessary to edit the macro
 <code>ICU_LIBS</code>.
 </p>
-<p>Unlike on a Unix-alike, it is currently necessary to call
+<p>Unlike on a Unix-alike, it is normally necessary to call
 <code>icuSetCollate</code> to set a locale before ICU is actually used for
-collation.
+collation, or set the environment variable <code>R_ICU_LOCALE</code>.
 </p>
 <hr>
 <a name="Checking-the-build"></a>
@@ -1731,7 +1697,7 @@ collation.
 Next: <a href="#Building-the-manuals" accesskey="n" rel="next">Building the manuals</a>, Previous: <a href="#Using-ICU-for-collation" accesskey="p" rel="prev">Using ICU for collation</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Checking-the-build-1"></a>
-<h4 class="subsection">3.1.7 Checking the build</h4>
+<h4 class="subsection">3.1.6 Checking the build</h4>
 
 <p>You can test a build by running
 </p>
@@ -1757,7 +1723,7 @@ Next: <a href="#Building-the-manuals" accesskey="n" rel="next">Building the manu
 <pre class="example">make check-all
 </pre></div>
 
-<p>for <code>check-devel</code> and <code>check-recommended</code>.
+<p>for both <code>check-devel</code> and <code>check-recommended</code>.
 </p>
 <p>If a test fails, there will almost always be a <samp>.Rout.fail</samp> file in
 the directory being checked (often <samp>tests/Examples</samp> or
@@ -1776,7 +1742,7 @@ run in parallel.
 Next: <a href="#Building-the-Inno-Setup-installer" accesskey="n" rel="next">Building the Inno Setup installer</a>, Previous: <a href="#Checking-the-build" accesskey="p" rel="prev">Checking the build</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-manuals-1"></a>
-<h4 class="subsection">3.1.8 Building the manuals</h4>
+<h4 class="subsection">3.1.7 Building the manuals</h4>
 
 <p>The PDF manuals can be made by
 </p>
@@ -1802,8 +1768,8 @@ options such as the paper size and the fonts used.
 you have version 5.x of <strong>texinfo</strong>, <code>makeinfo</code> has been
 replaced by a <code>Perl</code> script <code>texi2any</code>: file
 <samp>MkRules.dist</samp> contains alternative macros to allow that to be used
-(copy it to <samp>MkRules.local</samp> before editing).  (A package of
-<strong>texinfo</strong> 5.x for use on Windows is available at
+(edit the copy <samp>MkRules.local</samp>).  (A package of <strong>texinfo</strong> 5.x
+for use on Windows is available at
 <a href="http://www.stats.ox.ac.uk/pub/Rtools/">http://www.stats.ox.ac.uk/pub/Rtools/</a>: you will also need to
 install <code>Perl</code>.)
 </p>
@@ -1814,7 +1780,7 @@ install <code>Perl</code>.)
 Next: <a href="#Building-the-MSI-installer" accesskey="n" rel="next">Building the MSI installer</a>, Previous: <a href="#Building-the-manuals" accesskey="p" rel="prev">Building the manuals</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-Inno-Setup-installer-1"></a>
-<h4 class="subsection">3.1.9 Building the Inno Setup installer</h4>
+<h4 class="subsection">3.1.8 Building the Inno Setup installer</h4>
 
 <p>You need to have the files for a complete R build, including bitmap and
 Tcl/Tk support and the manuals, as well as the recommended packages and
@@ -1839,7 +1805,7 @@ bitmapdll <span class="roman">(the bitmap support files)</span>
 cairodevices <span class="roman">(the cairo-based graphics devices)</span>
 recommended <span class="roman">(the recommended packages)</span>
 vignettes <span class="roman">(the vignettes in base packages:</span>
-	  <span class="roman"> only needed if building from an svn checkout)</span>
+	  <span class="roman"> only needed if building from an <code>svn</code> checkout)</span>
 manuals <span class="roman">(the PDF manuals)</span>
 rinstaller <span class="roman">(the install program)</span>
 crandir <span class="roman">(the <acronym>CRAN</acronym> distribution directory, only for 64-bit builds)</span>
@@ -1880,7 +1846,7 @@ installation (in double quotes if it contains spaces or backslashes).
 <samp>R-devel-win.exe</samp>, so please rename it to indicate that
 it is customized.  If you intend to <em>distribute</em> a customized
 installer please do check that license requirements are met &ndash; note that
-the installer will state that the contents are distributed under GPL-2
+the installer will state that the contents are distributed under GPL
 and this has a requirement for <em>you</em> to supply the complete sources
 (including the R sources even if you started with a binary distribution
 of R, and also the sources of any extra packages (including their
@@ -1904,11 +1870,11 @@ made by first building 32-bit R (just
 <pre class="example">make 32-bit
 </pre></div>
 
-<p>is needed), and then building 64-bit R with the macro <code>HOME32</code> set
-in file <samp>MkRules.local</samp> to the top-level directory of the 32-bit
-build.  Then the <code>make rinstaller</code> step copies the files that
-differ between architectures from the 32-bit build as it builds the
-installer image.
+<p>is needed), and then (in a separate directory) building 64-bit R with
+the macro <code>HOME32</code> set in file <samp>MkRules.local</samp> to the
+top-level directory of the 32-bit build.  Then the <code>make
+rinstaller</code> step copies the files that differ between architectures from
+the 32-bit build as it builds the installer image.
 </p>
 <hr>
 <a name="Building-the-MSI-installer"></a>
@@ -1917,7 +1883,7 @@ installer image.
 Next: <a href="#g_t64_002dbit-Windows-builds" accesskey="n" rel="next">64-bit Windows builds</a>, Previous: <a href="#Building-the-Inno-Setup-installer" accesskey="p" rel="prev">Building the Inno Setup installer</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Building-the-MSI-installer-1"></a>
-<h4 class="subsection">3.1.10 Building the MSI installer</h4>
+<h4 class="subsection">3.1.9 Building the MSI installer</h4>
 
 <p>It is also possible to build an installer for use with Microsoft
 Installer.  This is intended for use by sysadmins doing automated
@@ -1968,7 +1934,7 @@ for suggesting WiX and building a prototype installer.
 Previous: <a href="#Building-the-MSI-installer" accesskey="p" rel="prev">Building the MSI installer</a>, Up: <a href="#Building-from-source" accesskey="u" rel="up">Building from source</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="g_t64_002dbit-Windows-builds-1"></a>
-<h4 class="subsection">3.1.11 64-bit Windows builds</h4>
+<h4 class="subsection">3.1.10 64-bit Windows builds</h4>
 
 <p>To build a 64-bit version of R you need a 64-bit toolchain: the only one
 discussed here is based on the work of the MinGW-w64 project
@@ -4453,14 +4419,12 @@ against, and this can lead to symbol conflicts.
 <p>For maximally effective use of <code>valgrind</code>, R should be
 compiled with valgrind instrumentation. The <code>configure</code> option
 is <samp>--with-valgrind-instrumentation=<var>level</var></samp>, where
-<var>level</var> is 0, 1, 2 or 3.  (Level 0 is the default and does not add
+<var>level</var> is 0, 1 or 2.  (Level 0 is the default and does not add
 any anything.)  The system headers for <code>valgrind</code> can be
 requested by option <samp>--with-system-valgrind-headers</samp>: they will
 be used if present (on Linux they may be in a separate package such as
 <strong>valgrind-devel</strong>).  Note though that there is no guarantee that the
 code in R will be compatible with future <code>valgrind</code> headers.
-(An incompatible change was made in a version 3.3.0 and currently level
-3 does not work with recent headers.)
 </p>
 <p>If you need to re-configure R with different options you may need to run
 <code>make clean</code> or even <code>make distclean</code> before doing so.
@@ -6590,9 +6554,9 @@ Next: <a href="#Useful-additional-programs" accesskey="n" rel="next">Useful addi
 <p>Technically you need more than just a compiler so the set of tools is
 referred to as a &lsquo;toolchain&rsquo;.
 </p>
-<p>The preferred toolchain since R 2.14.2 is part of
-<code>Rtools30.exe</code>: this uses a beta version of <code>gcc 4.6.3</code>
-and version 2.0.1 of the MinGW-w64 project&rsquo;s runtime.
+<p>The preferred toolchain is part of <code>Rtools31.exe</code>: this uses a beta
+version of <code>gcc 4.6.3</code> and version 2.0.1 of the MinGW-w64
+project&rsquo;s runtime.
 </p>
 <p>This toolchain uses <em>multilib</em>: that is there is a single front-end
 such as <code>gcc.exe</code> for each of the compilers and 32-bit (the
@@ -6637,7 +6601,7 @@ to the <code>qpdf</code> installation in file <samp>MkRules.local</samp>.
 </p>
 <p>There is a version of the <code>file</code> command that identifies the
 type of files, and is used by <code>Rcmd check</code> if available.  The
-binary distribution is included in <samp>Rtools30.exe</samp>.
+binary distribution is included in <samp>Rtools31.exe</samp>.
 </p>
 <p>The file <samp>xzutils.zip</samp> contains the program <code>xz</code> which can
 be used to (de)compress files with that form of compression.
@@ -6788,7 +6752,6 @@ Next: <a href="#Environment-variable-index" accesskey="n" rel="next">Environment
 <tr><td></td><td valign="top"><a href="#index-Packages_002c-updating">Packages, updating</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Updating-packages">Updating packages</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-index_cp_letter-R">R</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Rbitmap_002edll">Rbitmap.dll</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Building-the-bitmap-files">Building the bitmap files</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Repositories">Repositories</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Setting-up-a-package-repository">Setting up a package repository</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-index_cp_letter-S">S</a></th><td></td><td></td></tr>
