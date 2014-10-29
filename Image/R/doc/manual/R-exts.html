@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-05).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-06).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-05).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-06).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4227,7 +4227,7 @@ GNU extensions.  Commonly misused GNU extensions are conditional
 inclusions (<code>ifeq</code> and the like), <code>${shell ...}</code> and
 <code>${wildcard ...}</code>, and the use of <code>+=</code> and <code>:=</code>.  Also,
 the use of <code>$&lt;</code> other than in implicit rules is a GNU extension, as
-is the <code>$^</code> macro  Unfortunately makefiles which use GNU
+is the <code>$^</code> macro.  Unfortunately makefiles which use GNU
 extensions often run on other platforms but do not have the intended
 results.
 
@@ -4250,14 +4250,13 @@ file by
 <p>Since the only viable make for Windows is GNU make, it is permissible to
 use GNU extensions in files <samp>Makevars.win</samp> or <samp>Makefile.win</samp>.
 </p>
-</li><li> Bash extensions also to be avoided in shell scripts, including
+</li><li> Bash extensions also need to be avoided in shell scripts, including
 expressions in Makefiles (which are passed to the shell for processing).
-Some R platforms use strict<a name="DOCF53" href="#FOOT53"><sup>53</sup></a> Bourne shells,
-and Windows and some Unix-alike OSes use <code>ash</code>
-(<a href="http://en.wikipedia.org/wiki/Almquist_shell">http://en.wikipedia.org/wiki/Almquist_shell</a>), a rather minimal
-shell with few builtins.  Beware of assuming that all the POSIX
-command-line utilities are available, especially on Windows where only a
-minimal set is provided for use with R.
+Some R platforms use strict<a name="DOCF53" href="#FOOT53"><sup>53</sup></a> Bourne shells, and Windows and some Unix-alike OSes use
+<code>ash</code> (<a href="http://en.wikipedia.org/wiki/Almquist_shell">http://en.wikipedia.org/wiki/Almquist_shell</a>), a
+rather minimal shell with few builtins.  Beware of assuming that all the
+POSIX command-line utilities are available, especially on Windows where
+only a minimal set is provided for use with R.
 (See <a href="R-admin.html#The-command-line-tools">The command line tools</a> in <cite>R Installation and Administration</cite>.)
 One particular issue is the use of <code>echo</code>, for which two
 behaviours are allowed
@@ -4283,6 +4282,13 @@ to follow the 1998 standard (and not use features from C99).  See also
 <p>If you use FORTRAN 77, <code>ftnchek</code>
 (<a href="http://www.dsm.fordham.edu/~ftnchek/">http://www.dsm.fordham.edu/~ftnchek/</a>) provides thorough testing
 of conformance to the standard.
+</p>
+<p>Not all common R platforms conform to the expected standards, e.g.
+C99 for C code.  One common area of problems is the <code>*printf</code>
+functions where Windows does not support <code>%lld</code>, <code>%Lf</code> and
+similar formats (and has its own formats such as <code>%I64d</code> for 64-bit
+integers).  It is very rare to need to output such types, and 64-bit
+integers can usually be converted to doubles for output.
 </p>
 </li><li> Do be very careful with passing arguments between R, C and
 <acronym>FORTRAN</acronym> code.  In particular, <code>long</code> in C will be 32-bit
@@ -4345,6 +4351,16 @@ will crash the application (here R) if they are ever used.  Some
 <p>and checking if any of the symbols marked <code>U</code> is unexpected is a
 good way to avoid this.
 </p>
+</li><li> Linkers have a lot of freedom in how to resolve entry points in
+dynamically-loaded code, so the results may differ by platform.  One
+area that has caused grief is packages including copies of standard
+system software such as <code>libz</code> (especially those already linked
+into R).  In the case in point, entry point <code>gzgets</code> was
+sometimes resolved against the old version compiled into the package,
+sometimes against the copy compiled into R and sometimes against the
+system dynamic library.  The only safe solution is to rename the entry
+points in the copy in the package.
+
 </li><li> Conflicts between symbols in DLLs are handled in very platform-specific
 ways.  Good ways to avoid trouble are to make as many symbols as
 possible static (check with <code>nm -pg</code>), and to use names which are
@@ -15415,7 +15431,9 @@ device at a particular size: that is not portable but using
 BSD make as in FreeBSD, AT&amp;T make as implemented on Solaris.</p>
 <h3><a name="FOOT53" href="#DOCF53">(53)</a></h3>
 <p>For example, <code>test</code>
-options <samp>-a</samp> and <samp>-e</samp> are not portable.</p>
+options <samp>-a</samp> and <samp>-e</samp> are not portable, and not supported
+in the AT&amp;T Bourne shell used on Solaris. Even though they are in the
+POSIX standard.</p>
 <h3><a name="FOOT54" href="#DOCF54">(54)</a></h3>
 <p>but
 note that <code>long long</code> is not a standard C++ type, and C++ compilers

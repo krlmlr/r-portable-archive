@@ -156,9 +156,6 @@ CHANGES IN R-devel:
 
   INSTALLATION and INCLUDED SOFTWARE:
 
-    * The \donttest sections of R's help files can be tested by
-      make check TEST_DONTTEST=TRUE.
-
     * It is possible to request the use of system valgrind headers
       _via_ configure option --with-system-valgrind-headers: note the
       possible incompatibility of such headers discussed in the 'R
