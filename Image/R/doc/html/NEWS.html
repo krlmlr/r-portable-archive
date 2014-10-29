@@ -523,6 +523,11 @@ from factors.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 &lsquo;<span class="file">DESCRIPTION</span>&rsquo; file.
 (These are needed to run the examples interactively.)
 </p>
+</li>
+<li> <p><code>R CMD check</code> checks for the undeclared use of GNU
+extensions in Makefiles under &lsquo;<span class="file">src</span>&rsquo;, and for such files with
+a missing final linefeed.
+</p>
 </li></ul>
 
 
@@ -633,6 +638,10 @@ work in more extreme cases.  (<a href="https://bugs.R-project.org/bugzilla3/show
 <li><p> If a package was updated and attached when its namespace was
 already loaded, it could end up with parts from one version and
 parts from the other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16120">PR#16120</a>)
+</p>
+</li>
+<li> <p><code>tools:::.Rdconv()</code> didn't accept <code>--encoding=</code> due
+to miscalculated string length (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>). 
 </p>
 </li></ul>
 

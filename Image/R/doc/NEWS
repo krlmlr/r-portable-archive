@@ -342,6 +342,10 @@ CHANGES IN R 3.1.2 patched:
       the examples are specified in the DESCRIPTION file.  (These are
       needed to run the examples interactively.)
 
+    * R CMD check checks for the undeclared use of GNU extensions in
+      Makefiles under src, and for such files with a missing final
+      linefeed.
+
   DEPRECATED AND DEFUNCT:
 
     * The configure option --with-valgrind-instrumentation=3 is
@@ -417,6 +421,9 @@ CHANGES IN R 3.1.2 patched:
     * If a package was updated and attached when its namespace was
       already loaded, it could end up with parts from one version and
       parts from the other.  (PR#16120)
+
+    * tools:::.Rdconv() didn't accept --encoding= due to miscalculated
+      string length (PR#16121).
 
 CHANGES IN R 3.1.2:
 
