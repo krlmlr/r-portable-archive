@@ -138,6 +138,9 @@ CHANGES IN R-devel:
       such that example(..) in help examples will run \dontcheck code
       only if used interactively.
 
+    * rbind.data.frame() gets optional argument make.row.names, for
+      potential speedup.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
@@ -197,11 +200,7 @@ CHANGES IN R-devel:
     * all.equal() gains methods for environments and refClasses.
 
     * (Windows.) The command completion in Rgui.exe messed up the
-      console.  This is an experimental fix; if it is reported to work
-      it will be kept, otherwise it will be removed. (PR#15791)
-
-    * drop.terms() dropped some of the attributes of the object it was
-      working with.  (PR#16029)
+      console.  (PR#15791)
 
     * nlm() no longer modifies the callback argument in place (a new
       vector is allocated for each invocation, which mimics the
@@ -257,6 +256,12 @@ CHANGES IN R 3.1.2 patched:
 
     * download.file() reported downloaded sizes as 0KB if less than
       1MB, only for R 3.1.2 and only on big-endian platforms.
+
+    * prompt() did not escape percent signs in the automatically
+      generated usage section of help files.
+
+    * drop.terms() dropped some of the attributes of the object it was
+      working with.  (PR#16029)
 
 CHANGES IN R 3.1.2:
 

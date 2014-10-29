@@ -192,6 +192,10 @@ and <code>tools::Rd2ex()</code> a corresponding <code>commentDonttest</code>,
 with a default such that <code>example(..)</code> in help examples will
 run <code>\dontcheck</code> code only if used interactively.
 </p>
+</li>
+<li> <p><code>rbind.data.frame()</code> gets optional argument
+<code>make.row.names</code>, for potential speedup.
+</p>
 </li></ul>
 
 
@@ -199,7 +203,7 @@ run <code>\dontcheck</code> code only if used interactively.
 
 <h4>INSTALLATION and INCLUDED SOFTWARE</h4>
 
-      
+
 <ul>
 <li><p> The <code>\donttest</code> sections of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s help files can be
 tested by<br />
@@ -305,12 +309,7 @@ matching by name in <code>log()</code>.
 </p>
 </li>
 <li><p> (Windows.) The command completion in <code>Rgui.exe</code>
-messed up the console.  This is an experimental fix; if it is reported
-to work it will be kept, otherwise it will be removed. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15791">PR#15791</a>)
-</p>
-</li>
-<li> <p><code>drop.terms()</code> dropped some of the attributes of the
-object it was working with.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16029">PR#16029</a>)
+messed up the console.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15791">PR#15791</a>)
 </p>
 </li>
 <li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
@@ -402,6 +401,14 @@ implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-pr
 </li>
 <li> <p><code>download.file()</code> reported downloaded sizes as 0KB if
 less than 1MB, only for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.2 and only on big-endian platforms.
+</p>
+</li>
+<li> <p><code>prompt()</code> did not escape percent signs in the
+automatically generated usage section of help files.
+</p>
+</li>
+<li> <p><code>drop.terms()</code> dropped some of the attributes of the
+object it was working with.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16029">PR#16029</a>)      
 </p>
 </li></ul>
 
