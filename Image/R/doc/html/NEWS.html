@@ -287,11 +287,6 @@ environment variable <span class="env">R_COMPILER_OPTIMIZE</span>.
 <li> <p><code>R CMD check</code> gains option <span class="option">--test-dir</span> to
 specify an alternative set of tests to run.
 </p>
-</li>
-<li> <p><code>R CMD check</code> now checks the packages used in
-<code>\donttest</code> sections of the examples.  (These will be needed
-to run the examples interactively.)
-</p>
 </li></ul>
 
 
@@ -328,11 +323,11 @@ pointers.
 
 
 <ul>
-<li><p>  (Windows) The use of macro <code>ZLIB_LIBS</code> (which has not
-been documented for a long time) now requires an external
-&lsquo;<span class="file">libz.a</span>&rsquo; to be available (it is part of the &lsquo;goodies&rsquo; used
-to compile Windows binary packages).  It would be simplest to use
-<code>-lz</code> directly.
+<li><p>  (Windows) The use of macro <code>ZLIB_LIBS</code> in file
+&lsquo;<span class="file">src/Makevars.win</span>&rsquo; (which has not been documented for a long
+time) now requires an external &lsquo;<span class="file">libz.a</span>&rsquo; to be available (it is
+part of the &lsquo;goodies&rsquo; used to compile Windows binary
+packages).  It would be simpler to use <code>-lz</code> instead.
 </p>
 </li></ul>
 
@@ -431,6 +426,20 @@ strings byte-by-byte in numerical order.
 
 <ul>
 <li><p> The included version of PCRE has been updated to 8.36.
+</p>
+</li></ul>
+
+
+
+
+<h4>UTILITIES</h4>
+
+
+<ul>
+<li> <p><code>R CMD check</code> now checks the packages used in
+<code>\donttest</code> sections of the examples are specified in the
+&lsquo;<span class="file">DESCRIPTION</span>&rsquo; file.
+(These are needed to run the examples interactively.)
 </p>
 </li></ul>
 

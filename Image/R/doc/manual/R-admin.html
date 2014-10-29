@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-07).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-08).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -338,7 +338,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-07).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-08).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1565,7 +1565,9 @@ cp MkRules.dist MkRules.local
 it to the appropriate path (in our example <samp>c:/R/extsoft</samp>).
 </p>
 <p>Look through the file <samp>MkRules.local</samp> and make any other changes
-needed: in particular, this is where a 64-bit build is selected.
+needed: in particular, this is where a 64-bit build is selected and the
+locations are set of external software for ICU collation and the
+cairo-based devices.
 </p>
 </li></ul>
 
@@ -1605,7 +1607,7 @@ lower case) did not work.
 <p>Open a command window at <samp><var>R_HOME</var>/src/gnuwin32</samp>, then run
 </p>
 <div class="example">
-<pre class="example">make all recommended bitmapdll
+<pre class="example">make all recommended bitmapdll vignettes
 </pre></div>
 
 <p>and sit back and wait while the basic compile takes place.
@@ -1622,7 +1624,7 @@ the build down several-fold.
 <div class="example">
 <pre class="example">make -j4 all
 make -j4 recommended
-make -j4 bitmapdll
+make bitmapdll vignettes
 </pre></div>
 
 <p>but this is only likely to be worthwhile on a multi-core machine with
@@ -1668,9 +1670,9 @@ Next: <a href="#Checking-the-build" accesskey="n" rel="next">Checking the build<
 <a name="Using-ICU-for-collation-1"></a>
 <h4 class="subsection">3.1.5 Using ICU for collation</h4>
 
-<p>It is and even recommended to build R to support ICU (International
-Components for Unicode, <a href="http://site.icu-project.org/">http://site.icu-project.org/</a>) for
-collation, as is commonly done on Unix-alikes.
+<p>It is recommended to build R to support ICU (International Components
+for Unicode, <a href="http://site.icu-project.org/">http://site.icu-project.org/</a>) for collation, as is
+commonly done on Unix-alikes.
 </p>
 <p>Two settings are needed in <samp>MkRules.local</samp>, 
 </p><div class="example">

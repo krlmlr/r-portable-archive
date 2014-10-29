@@ -27,7 +27,7 @@ DT_ARCH = -m i386:x86-64 --as-flags --64
 RC_ARCH = -F pe-x86-64
 # Used by packages tcltk and tkrplot
 TCL_HOME = $(R_HOME)/Tcl
-LOCAL_SOFT = d:/RCompile/CRANpkg/extralibs64/local
+LOCAL_SOFT = d:/library-devel/local300
 
 ifneq ($(strip $(LOCAL_SOFT)),)
 LOCAL_CPPFLAGS = -I"$(LOCAL_SOFT)/include"
