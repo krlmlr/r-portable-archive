@@ -166,6 +166,9 @@ CHANGES IN R-devel:
       arguments are duplicated if DUP = TRUE would do so.  As their
       help has long said, .Call() is much preferred.
 
+    * New entry point R_allocLD, like R_alloc but guaranteed to have
+      sufficient alignment for long double pointers.
+
   DEPRECATED AND DEFUNCT:
 
     * download.file(method = "lynx") is defunct.
@@ -371,7 +374,7 @@ CHANGES IN R 3.1.2:
     * identical() now also looks at the S4 bit.
 
     * hist(x, breaks) is more robust in adding a small fuzz to few
-      breaks when some are very large. (PR#15899)
+      breaks when some are very large. (PR#15988)
 
     * sub() and gsub() did not handle regular expressions like "\s{2,}"
       properly if the text contained NA or non-ascii elements in a
@@ -396,6 +399,14 @@ CHANGES IN R 3.1.2:
       from libxml2).  This is corrected for 64-bit builds (32-bit
       platforms may not support such files, but where possible will be
       supported in future versions of R).
+
+    * Work around a bug in OS X Yosemite where key environment
+      variables may be duplicated causing issues in subprocesses. The
+      duplicates are now removed on R startup (via Rprofile).
+      (PR#16042)
+
+    * Adjust X11 auto-launch detection in DISPLAY on OS X to recognize
+      latest XQuartz.
 
 CHANGES IN R 3.1.1:
 

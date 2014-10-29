@@ -250,6 +250,11 @@ now ignored, so arguments are duplicated if <code>DUP = TRUE</code>
 would do so.  As their help has long said, <code>.Call()</code> is much
 preferred.
 </p>
+</li>
+<li><p> New entry point <code>R_allocLD</code>, like <code>R_alloc</code> but
+guaranteed to have sufficient alignment for <code>long double</code>
+pointers.
+</p>
 </li></ul>
 
 
@@ -573,7 +578,7 @@ and missed memory protection added. (<a href="https://bugs.R-project.org/bugzill
 </p>
 </li>
 <li> <p><code>hist(x, breaks)</code> is more robust in adding a small fuzz
-to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15899">PR#15899</a>)
+to few breaks when some are very large. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15988">PR#15988</a>)
 </p>
 </li>
 <li> <p><code>sub()</code> and <code>gsub()</code> did not handle regular
@@ -608,6 +613,15 @@ reporting file sizes and progress correctly on files larger than
 2GB (inherited from <code>libxml2</code>).  This is corrected for 64-bit
 builds (32-bit platforms may not support such files, but where
 possible will be supported in future versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>).
+</p>
+</li>
+<li><p> Work around a bug in OS X Yosemite where key environment
+variables may be duplicated causing issues in subprocesses. The
+duplicates are now removed on R startup (via Rprofile). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16042">PR#16042</a>)
+</p>
+</li>
+<li><p> Adjust X11 auto-launch detection in DISPLAY on OS X to
+recognize latest XQuartz.
 </p>
 </li></ul>
 

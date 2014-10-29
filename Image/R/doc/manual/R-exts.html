@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-10-29).
+<!-- This manual is for R, version 3.2.0 Under development (2014-10-30).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-10-29).
+<p>This manual is for R, version 3.2.0 Under development (2014-10-30).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -11792,6 +11792,7 @@ Next: <a href="#User_002dcontrolled-memory" accesskey="n" rel="next">User-contro
 <a name="Transient-storage-allocation-1"></a>
 <h4 class="subsection">6.1.1 Transient storage allocation</h4>
 <a name="index-R_005falloc"></a>
+<a name="index-R_005fallocLD"></a>
 <a name="index-S_005falloc"></a>
 <a name="index-S_005frealloc"></a>
 <a name="index-vmaxget"></a>
@@ -11862,8 +11863,16 @@ just under 16Gb.
 </p>
 <p>The memory returned is only guaranteed to be aligned as required for
 <code>double</code> pointers: take precautions if casting to a pointer which
-needs more (e.g. <code>(long double *)</code> on some platforms).
+needs more. As from R 3.2.0 there is also
 </p>
+<div class="example">
+<pre class="example">long double *R_allocLD(size_t <var>n</var>)
+</pre></div>
+
+<p>which is guaranteed to have the 16-byte alignment needed for <code>long
+double</code> pointers on some platforms.
+</p>
+
 <p>These functions should only be used in code called by <code>.C</code> etc,
 never from front-ends.  They are not thread-safe.
 </p>
@@ -14771,6 +14780,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-Rvprintf"><code>Rvprintf</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Printing">Printing</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-R_005faddhistory"><code>R_addhistory</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Setting-R-callbacks">Setting R callbacks</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-R_005falloc"><code>R_alloc</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Transient-storage-allocation">Transient storage allocation</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-R_005fallocLD"><code>R_allocLD</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Transient-storage-allocation">Transient storage allocation</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-R_005fBusy"><code>R_Busy</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Setting-R-callbacks">Setting R callbacks</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-R_005fChooseFile"><code>R_ChooseFile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Setting-R-callbacks">Setting R callbacks</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-R_005fCleanUp"><code>R_CleanUp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Setting-R-callbacks">Setting R callbacks</a></td></tr>
