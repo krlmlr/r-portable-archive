@@ -224,6 +224,9 @@ aperm.default	aperm
 aperm.table	aperm
 append	append
 apply	apply
+arccos	Trig
+arcsin	Trig
+arctan	Trig
 Arg	complex
 args	args
 Arithmetic	Arithmetic

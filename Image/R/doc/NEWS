@@ -225,6 +225,10 @@ CHANGES IN R-devel:
     * R CMD build adds a NeedsCompilation field if one is not already
       present in the DESCRIPTION file.
 
+    * R CMD check notes uses of library() and require() in package
+      code: see the section 'Suggested packages' of 'Writing R
+      Extensions' for good practice.
+
   C-LEVEL FACILITIES:
 
     * New C API utility logspace_sum(logx[], n).
