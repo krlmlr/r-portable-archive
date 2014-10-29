@@ -166,6 +166,8 @@ CHANGES IN R-devel:
       version is masking a sufficient one later on the library search
       path.
 
+    * A new plot.raster() method has been added.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by
