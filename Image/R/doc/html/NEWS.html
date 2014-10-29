@@ -356,12 +356,13 @@ is set for collation, and never for a <code>C</code> locale).
 <li><p> (OS X only.) Package <span class="pkg">tcltk</span> checks when loaded if it is
 linked against the CRAN X11-based Tcl/Tk and if so that the Tcl/Tk
 component and the X11 libraries are installed.  This allows more
-informative error messages to be given.
+informative error messages to be given advising the installation
+of the missing component or of XQuartz.
 </p>
 <p>The <code>X11()</code> device and X11-based versions of the data editor
 and viewer (invoked by <code>edit()</code> and <code>View()</code> for data
 frames and matrices from command-line <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>) check that the X11
-libraries are installed.
+libraries are installed and if not advises installing XQuartz.
 </p>
 </li>
 <li> <p><code>icuSetCollate()</code> allows <code>locale = "default"</code>, and
@@ -451,7 +452,8 @@ errors (writing <code>importFrom(<var>Pkg</var>)</code> where
 directly on the package namespace without loading and attaching
 the package and its suggests and enhances.  For good practice with
 packages in the <span class="samp">Suggests</span> field, see §1.1.3.1 of
-&lsquo;Writing R Extensions&rsquo;.
+&lsquo;Writing R Extensions&rsquo;.  For use of lazy-data objects in
+the package's own code, see <code>?data</code>.
 </p>
 </li></ul>
 
@@ -470,13 +472,14 @@ correctly.
 <code>x</code> contains <code>NA</code>s.
 </p>
 </li>
-<li><p> A longstanding bug in <code>nlminb()</code> on Windows was traced
-to a compiler bug in gcc 4.6.3; a workaround has been put in place.
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15244">PR#15244</a> and <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15914">PR#15914</a>).
+<li><p> A longstanding bug exhibited by <code>nlminb()</code> on Windows
+was traced to a compiler bug in gcc 4.6.3; a workaround has been
+put in place.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15244">PR#15244</a> and <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15914">PR#15914</a>).
 </p>
 </li>
-<li><p> Rendering of <code>\command</code> in HTML has been improved:
-this is particularly evident on the help page for <code>INSTALL</code>.
+<li><p> Rendering of <code>\command</code> in HTML versions of help pages
+has been improved: this is particularly evident on the help page
+for <code>INSTALL</code>.
 </p>
 </li>
 <li> <p><code>as.hexmode(x)</code> and <code>as.octmode(x)</code> now behave
@@ -502,13 +505,14 @@ an object had a non-character attribute named <code>"source"</code>
 have been called), and could flush <code>stdin</code> of the main <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
 process (seen most often on Solaris).
 </p>
-<p>For good practice, <code>stdout</code> is flushed before forking a child.
+<p>As good practice, <code>stdout</code> is now flushed before forking a child.
 </p>
 </li>
 <li> <p><span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> objects such as <code>list(`a\b` = 1)</code> now print correctly.
 </p>
 </li>
-<li> <p><code>getAnywhere("C_pbinom")</code> now works correctly.
+<li> <p><code>getAnywhere("C_pbinom")</code> now returns correctly a
+single object (rather than unlisting it).
 </p>
 </li>
 <li><p> The <code>confint()</code> method for <code>nls()</code> fits failed it
@@ -544,8 +548,8 @@ dendrogram.
 </p>
 </li>
 <li><p> The <code>plot</code> method for <code>"hclust"</code> objects gets an
-optional argument <code>check</code>;  When that is true, as per
-default, it checks more carefully for valid input.
+optional argument <code>check</code>; When that is true (the default) it
+checks more carefully for valid input.
 </p>
 </li>
 <li><p> (Windows only) If a user chose to install 64 bit <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> but not
@@ -579,10 +583,10 @@ locale.  Part of this was due to a bug in the TRE library.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
 </p>
 </li>
-<li> <p><code>RShowDoc("NEWS")</code> now displays the pdf version.
+<li> <p><code>RShowDoc("NEWS")</code> now displays the PDF version.
 </p>
 </li>
-<li><p> matrices and arrays with last dimension zero did not print
+<li><p> Matrices and arrays with last dimension zero did not print
 at all or incompletely.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16012">PR#16012</a>)
 </p>
 </li>
@@ -602,7 +606,8 @@ the <code>xaxs</code>, <code>yaxs</code> and <code>lab</code> graphics parameter
 <li><p> The internal method of <code>download.file()</code> was not
 reporting file sizes and progress correctly on files larger than
 2GB (inherited from <code>libxml2</code>).  This is corrected for 64-bit
-builds (32-bit platforms may not support such files).
+builds (32-bit platforms may not support such files, but where
+possible will be supported in future versions of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>).
 </p>
 </li></ul>
 
