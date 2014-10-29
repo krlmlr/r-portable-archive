@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-08).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-09).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-08).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-09).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -5632,14 +5632,19 @@ standard data sets listed by <code>data()</code> (see <code>?data</code> for mor
 info).
 </p>
 <p>Finally, there is <code>\donttest</code>, used (at the beginning of a separate
-line) to mark code that should be run by <code>examples()</code> but not by
-<code>R CMD check</code>.  This should be needed only occasionally but can be
-used for code which might fail in circumstances that are hard to test
-for, for example in some locales.  (Use e.g. <code>capabilities()</code> to
-test for features needed in the examples wherever possible, and you can
-also use <code>try()</code> or <code>tryCatch()</code>.)  Note that code included in
+line) to mark code that should be run by <code>example()</code> but not by
+<code>R CMD check</code> (by default: as from R 3.2.0 the option
+<samp>--run-donttest</samp> can be used).  This should be needed only
+occasionally but can be used for code which might fail in circumstances
+that are hard to test for, for example in some locales.  (Use
+e.g. <code>capabilities()</code> to test for features needed in the examples
+wherever possible, and you can also use <code>try()</code> or
+<code>tryCatch()</code>.  Use <code>interactive()</code> to condition examples which
+need someone to interact with.)  Note that code included in
 <code>\donttest</code> must be correct R code, and any packages used should
-be declared in the <samp>DESCRIPTION</samp> file.
+be declared in the <samp>DESCRIPTION</samp> file.  It is good practice to
+include a comment in the <code>\donttest</code> section explaining why it is
+needed.
 </p>
 <a name="index-_005ckeyword"></a>
 </dd>

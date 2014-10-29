@@ -1,10 +1,10 @@
-d3b87a1cd0b9a051e2a4edfd56879d7e *DESCRIPTION
+2ffc76fefe11cbcbe8582f2cfe81d5ef *DESCRIPTION
 695d733e54be404d5f4944f17ef9b803 *INDEX
 2279471d262e9fa1cc89e09e9fbc6081 *Meta/Rd.rds
 354cfa0c7e05d41edab340f27d87cb69 *Meta/hsearch.rds
 75ec11bf5f5020cf1c19ade66e0dd27c *Meta/links.rds
 a420ac0be7d6806e713ce70683f855b1 *Meta/nsInfo.rds
-4d73ba2024face15c5029057e69ac5e2 *Meta/package.rds
+752916856cf0738e53efb40b9add67ae *Meta/package.rds
 d825a8a78071e98c92a170bd3b0deaa2 *NAMESPACE
 567ec0d7aae3da91192e43033456b292 *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/whisker
@@ -12,9 +12,9 @@ ebf0fc819595d631b8bf280c4b049940 *R/whisker
 32b1482022b4c669cbd85403e56e563b *R/whisker.rdx
 799b2f26310411a63e26c8aaa6cbaf75 *help/AnIndex
 39d22130342d389014edddc218c39140 *help/aliases.rds
-bb58c2358c9f7b1fea3287e08c4c121f *help/paths.rds
-42f57b0b234f56bd85d30a523c823a01 *help/whisker.rdb
-fe5ce00a6721ec8535fa19ce070b5f36 *help/whisker.rdx
+5cc456b5d5eb820df5f693bc0db8f78a *help/paths.rds
+cd007b4768a1c40b57edc87f0e26dfe5 *help/whisker.rdb
+ed55954e0bd18060bc4a2b1b3475ea53 *help/whisker.rdx
 48b209a679f2a1496393afb108c13c02 *html/00Index.html
 444535b9cb76ddff1bab1e1865a3fb14 *html/R.css
 9a86fcc5035602b66aa0bd7396911b13 *specs/comments.json
