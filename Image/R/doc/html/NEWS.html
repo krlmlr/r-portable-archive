@@ -193,7 +193,7 @@ with a default such that <code>example(..)</code> in help examples will
 run <code>\dontcheck</code> code only if used interactively.
 </p>
 </li>
-<li> <p><code>rbind.data.frame()</code> gets optional argument
+<li> <p><code>rbind.data.frame()</code> gains an optional argument
 <code>make.row.names</code>, for potential speedup.
 </p>
 </li></ul>
@@ -211,7 +211,7 @@ tested by<br />
 </p>
 </li>
 <li><p> It is possible to request the use of system
-<code>valgrind</code> headers <em>via</em> option
+<code>valgrind</code> headers <em>via</em> <code>configure</code> option
 <span class="option">--with-system-valgrind-headers</span>: note the possible
 incompatibility of such headers discussed in the 'R Installation
 and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16808">PR#16808</a>.)
@@ -244,13 +244,13 @@ and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzill
 &lsquo;<acronym><span class="acronym">XHTML</span></acronym> 1.0 Strict&rsquo;.
 </p>
 </li>
-<li><p> The compiler utility function <code>setCompilerOptions()</code>
-now returns the old values invisibly. The initial optimization
-level can also be set with the environment variable
-<span class="env">R_COMPILER_OPTIMIZE</span>.
+<li><p> The <span class="pkg">compiler</span> package has a new utility function
+<code>setCompilerOptions()</code> now returns the old values
+invisibly. The initial optimization level can also be set with the
+environment variable <span class="env">R_COMPILER_OPTIMIZE</span>.
 </p>
 </li>
-<li> <p><code>R CMD check</code> gains option <span class="option">--test-dir=</span> to
+<li> <p><code>R CMD check</code> gains option <span class="option">--test-dir</span> to
 specify an alternative set of tests to run.
 </p>
 </li></ul>
@@ -266,8 +266,8 @@ specify an alternative set of tests to run.
 </p>
 </li>
 <li><p> Entry points <code>rbinom_mu</code>, <code>rnbinom_mu</code> and
-<code>rmultinom</code> are remapped (by default).  This requires
-packages using them to be re-installed.
+<code>rmultinom</code> are remapped (by default) to <code>Rf_rbinom_mu</code>
+etc.  This requires packages using them to be re-installed.
 </p>
 </li>
 <li> <p><code>.C(DUP = FALSE)</code> and <code>.Fortran(DUP = FALSE)</code> are
@@ -311,11 +311,6 @@ matching by name in <code>log()</code>.
 <li> <p><code>all.equal()</code> gains methods for <code>environment</code>s and
 <code>refClass</code>es.
 </p>
-</li>
-<li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
-new vector is allocated for each invocation, which mimics the
-implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
-</p>
 </li></ul>
 
 
@@ -340,6 +335,18 @@ files larger than 2GB on 32-bit builds which support such files
 <li><p> The <code>as.dendrogram</code> method for <code>"hclust"</code> objects
 gets a <code>check</code> argument protecting against memory explosion for
 invalid inputs.
+</p>
+</li>
+<li> <p><code>capabilities()</code> has a new item <code>long.double</code>
+which indicates if the build uses a <code>long double</code> type which
+is longer than <code>double</code>.
+</p>
+</li>
+<li> <p><code>nlm()</code> no longer modifies the callback argument in
+place (a new vector is allocated for each invocation, which mimics
+the implicit duplication that occurred in R &lt; 3.1.0); note that
+this is a change from the previously documented
+behavior. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
 </p>
 </li></ul>
 
@@ -392,11 +399,6 @@ incorrectly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=159
 </li>
 <li><p> Extremely large exponents on zero expressed in scientific
 notation (e.g. <code>0.0e50000</code>) could give <code>NaN</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15976">PR#15976</a>)
-</p>
-</li>
-<li> <p><code>nlm()</code> no longer modifies the callback argument in place (a
-new vector is allocated for each invocation, which mimics the
-implicit duplication that occurred in R &lt; 3.1.0). (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">PR#15958</a>)
 </p>
 </li>
 <li> <p><code>download.file()</code> reported downloaded sizes as 0KB if
