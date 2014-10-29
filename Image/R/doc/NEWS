@@ -168,6 +168,10 @@ CHANGES IN R-devel:
 
     * A new plot.raster() method has been added.
 
+    * New check_packages_in_dir_changes() function in package tools for
+      conveniently analyzing how changing sources impacts the check
+      results of their reverse dependencies.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The \donttest sections of R's help files can be tested by

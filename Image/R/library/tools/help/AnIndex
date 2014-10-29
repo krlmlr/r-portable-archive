@@ -24,6 +24,7 @@ checkS3methods	QC
 checkTnF	checkTnF
 checkVignettes	checkVignettes
 check_packages_in_dir	check_packages_in_dir
+check_packages_in_dir_changes	check_packages_in_dir
 codoc	codoc
 codocClasses	codoc
 codocData	codoc
