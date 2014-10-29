@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.4 MB, MD5 hash: `15974035b9eb9c14c8c4717c9833bf74`, uncompressed 378.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.7 MB, MD5 hash: `bc3c76dd89f109dfeaf12eb4593330de`, uncompressed 386.5 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (131.1 MB, MD5 hash: `6bcce30d8b9cdce1800c33b9654257ee`, uncompressed 416.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129.4 MB, MD5 hash: `765dd7e313470aeaedf448a7bfb186da`, uncompressed 378.7 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.7 MB, MD5 hash: `39094f2456d2a42048b98ed478d858c6`, uncompressed 386.5 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (131.2 MB, MD5 hash: `5f44ae8803e09821f837530dc2845cab`, uncompressed 416.8 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-12-01 r67092)
+R Under development (unstable) (2014-12-02 r67096)
 
 ### Package versions
 
