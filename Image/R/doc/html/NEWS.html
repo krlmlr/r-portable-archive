@@ -348,7 +348,7 @@ guaranteed to have sufficient alignment for <code>long double</code>
 pointers.
 </p>
 </li>
-<li> <p><code>isPairList</code> now returns <code>TRUE</code> for DOTSXP.
+<li> <p><code>isPairList()</code> now returns <code>TRUE</code> for DOTSXP.
 </p>
 </li></ul>
 
@@ -464,6 +464,11 @@ behavior. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15958">
 <li> <p><code>icuSetCollate()</code> now accepts <code>locale = "ASCII"</code>
 which uses the basic C function <code>strcmp</code> and so collates
 strings byte-by-byte in numerical order.
+</p>
+</li>
+<li> <p><code>sessionInfo()</code> tries to report the OS version in use
+(not just that compiled under, and including details of Linux
+distributions).
 </p>
 </li></ul>
 

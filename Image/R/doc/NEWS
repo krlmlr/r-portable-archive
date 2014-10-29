@@ -241,7 +241,7 @@ CHANGES IN R-devel:
     * New entry point R_allocLD, like R_alloc but guaranteed to have
       sufficient alignment for long double pointers.
 
-    * isPairList now returns TRUE for DOTSXP.
+    * isPairList() now returns TRUE for DOTSXP.
 
   PACKAGE INSTALLATION:
 
@@ -309,6 +309,10 @@ CHANGES IN R 3.1.2 patched:
     * icuSetCollate() now accepts locale = "ASCII" which uses the basic
       C function strcmp and so collates strings byte-by-byte in
       numerical order.
+
+    * sessionInfo() tries to report the OS version in use (not just
+      that compiled under, and including details of Linux
+      distributions).
 
   INSTALLATION and INCLUDED SOFTWARE:
 
