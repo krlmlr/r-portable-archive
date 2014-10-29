@@ -19,5 +19,5 @@ Author: Jeffrey Horner [ctb],
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-09-26 23:43:41
-Built: R 3.1.1; x86_64-w64-mingw32; 2014-09-26 22:20:22 UTC; windows
+Built: R 3.1.2; x86_64-w64-mingw32; 2014-11-01 02:06:31 UTC; windows
 Archs: i386, x64

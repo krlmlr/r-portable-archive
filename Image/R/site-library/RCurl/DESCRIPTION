@@ -41,5 +41,5 @@ Packaged: 2014-07-29 09:31:41 UTC; ligges
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-07-29 11:53:00
-Built: R 3.1.1; i386-w64-mingw32; 2014-07-30 08:31:14 UTC; windows
+Built: R 3.1.2; i386-w64-mingw32; 2014-11-01 02:46:52 UTC; windows
 Archs: i386, x64
