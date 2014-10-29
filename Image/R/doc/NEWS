@@ -343,8 +343,7 @@ CHANGES IN R 3.1.2 patched:
       needed to run the examples interactively.)
 
     * R CMD check checks for the undeclared use of GNU extensions in
-      Makefiles under src, and for such files with a missing final
-      linefeed.
+      makefiles, and for makefiles with a missing final linefeed.
 
   DEPRECATED AND DEFUNCT:
 
