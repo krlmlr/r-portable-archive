@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-11-15).
+<!-- This manual is for R, version 3.2.0 Under development (2014-11-16).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -339,7 +339,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-11-15).
+<p>This manual is for R, version 3.2.0 Under development (2014-11-16).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -3949,7 +3949,9 @@ problems, and you may want to disable profiling if you use a
 multi-threaded <acronym>BLAS</acronym>.  Note that using a multi-threaded
 <acronym>BLAS</acronym> can result in taking more <acronym>CPU</acronym> time and even
 more elapsed time (occasionally dramatically so) than using a similar
-single-threaded <acronym>BLAS</acronym>.
+single-threaded <acronym>BLAS</acronym>.  On a machine running other tasks, there
+can be contention for CPU caches that reduces the effectiveness of the
+optimization of cache use by a <acronym>BLAS</acronym> implementation.
 </p>
 <p>Note that under Unix (but not under Windows) if R is compiled against
 a non-default <acronym>BLAS</acronym> and <samp>--enable-BLAS-shlib</samp> is
@@ -3960,10 +3962,18 @@ such as <a href="http://CRAN.R-project.org/package=quantreg"><strong>quantreg</s
 <p>R relies on <acronym>ISO</acronym>/<acronym>IEC</acronym>&nbsp;60559 compliance of an
 external <acronym>BLAS</acronym>.  This can be broken if for example the code
 assumes that terms with a zero factor are always zero and do not need to
-be computed&mdash;whereas <code>x*0</code> can be <code>NaN</code>. This is checked in
+be computed&mdash;whereas <code>x*0</code> can be <code>NaN</code>.  This is checked in
 the test suite.
 </p>
-
+<p>External <acronym>BLAS</acronym> implementations often make less use of
+extended-precision floating-point registers and will almost certainly
+re-order computations.  This can result in less accuracy than using the
+internal <acronym>BLAS</acronym>, and may result in different solutions, e.g.
+different signs in SVD and eigendecompositions.
+</p>
+<p>The URIs for several of these BLAS are subject to frequent gratuitous
+changes, so you will need to search for their current locations.
+</p>
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#ATLAS" accesskey="1">ATLAS</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -3988,7 +3998,7 @@ Next: <a href="#ACML" accesskey="n" rel="next">ACML</a>, Previous: <a href="#BLA
 
 <p>ATLAS (<a href="http://math-atlas.sourceforge.net/">http://math-atlas.sourceforge.net/</a>) is a &ldquo;tuned&rdquo;
 <acronym>BLAS</acronym> that runs on a wide range of Unix-alike platforms.
-Unfortunately it is usually built as a static library that on some
+Unfortunately it is built by default as a static library that on some
 platforms cannot be used with shared objects such as are used in R
 packages.  Be careful when using pre-built versions of ATLAS (they seem
 to work on &lsquo;<samp>ix86</samp>&rsquo; platforms, but not always on &lsquo;<samp>x86_64</samp>&rsquo;
@@ -4018,9 +4028,8 @@ multi-threaded version of ATLAS, by specifying
 <pre class="example">--with-blas=&quot;-lptf77blas -lpthread -latlas&quot;
 </pre></div>
 
-<p>Consult its file <samp>INSTALL.txt</samp> for how to build ATLAS with
-position-independent code: that file also describes how to build ATLAS
-as a shared library.
+<p>Consult its installation guide for how to build ATLAS with
+position-independent code, and as a shared library.
 </p>
 <hr>
 <a name="ACML"></a>
@@ -4031,9 +4040,8 @@ Next: <a href="#Goto-and-OpenBLAS" accesskey="n" rel="next">Goto and OpenBLAS</a
 <a name="ACML-1"></a>
 <h4 class="subsubsection">A.3.1.2 ACML</h4>
 
-<p>For &lsquo;<samp>x86_64</samp>&rsquo; and &lsquo;<samp>i686</samp>&rsquo; processors under Linux there is
-the AMD Core Math Library (ACML) <a href="http://www.amd.com/acml">http://www.amd.com/acml</a>.  For
-the <code>gcc</code> version we could use
+<p>For &lsquo;<samp>x86_64</samp>&rsquo; processors<a name="DOCF39" href="#FOOT39"><sup>39</sup></a>  under Linux there is the AMD Core Math Library (ACML).
+For the <code>gcc</code> version we could use
 </p>
 <div class="example">
 <pre class="example">--with-blas=&quot;-lacml&quot;
@@ -4068,13 +4076,10 @@ Next: <a href="#MKL" accesskey="n" rel="next">MKL</a>, Previous: <a href="#ACML"
 <a name="Goto-and-OpenBLAS-1"></a>
 <h4 class="subsubsection">A.3.1.3 Goto and OpenBLAS</h4>
 
-<p>Dr Kazushige Goto wrote another tuned <acronym>BLAS</acronym> which is available
-for several processors and OSes.  The final version is known as
+<p>Dr Kazushige Goto wrote a tuned <acronym>BLAS</acronym> for several processors and
+OSes,  which was  frozen in  mid-2010.  The  final version  is  known as
 GotoBLAS2, and was re-released under a much less restrictive licence.
-Source code can be obtained from
-<a href="http://www.tacc.utexas.edu/tacc-projects/gotoblas2/">http://www.tacc.utexas.edu/tacc-projects/gotoblas2/</a>
-</p>
-<p>Once it is built and installed, it can be used by configuring R with
+Once it is built and installed, it can be used by configuring R with
 </p>
 <div class="example">
 <pre class="example">--with-blas=&quot;-lgoto2&quot;
@@ -4083,11 +4088,9 @@ Source code can be obtained from
 <p>See see <a href="#Shared-BLAS">Shared BLAS</a> for an alternative (and in many ways preferable)
 way to use it.
 </p>
-<p>Our understanding is that this project is now frozen and so will not be
-updated for CPUs released since mid-2010.  However, OpenBLAS
-(<a href="http://xianyi.github.com/OpenBLAS/">http://xianyi.github.com/OpenBLAS/</a>) is a descendant project with
-support for some current CPUs (e.g. Intel Sandy Bridge).  Once
-installed it can be used by something like
+<p>OpenBLAS (<a href="http://xianyi.github.com/OpenBLAS/">http://xianyi.github.com/OpenBLAS/</a>) is a descendant
+project with support for some current CPUs (e.g. Intel Sandy Bridge).
+Once installed it can be used by something like
 </p>
 <div class="example">
 <pre class="example">--with-blas=&quot;-lopenblas&quot;
@@ -4104,12 +4107,11 @@ Next: <a href="#Shared-BLAS" accesskey="n" rel="next">Shared BLAS</a>, Previous:
 <a name="Intel-MKL"></a>
 <h4 class="subsubsection">A.3.1.4 Intel MKL</h4>
 <p>For Intel processors, and perhaps others, and some distributions of
-Linux, there is Intel&rsquo;s Math Kernel Library
-(<a href="http://www.intel.com/software/products/mkl/">http://www.intel.com/software/products/mkl/</a>).  You are
-strongly encouraged to read the MKL User&rsquo;s Guide, which is installed
-with the library, before attempting to link to MKL.  There are also
-versions of MKL for OS X and Windows, but they did not work with the
-standard compilers used for R on those platforms.
+Linux, there is Intel&rsquo;s Math Kernel Library.  You are strongly
+encouraged to read the MKL User&rsquo;s Guide, which is installed with the
+library, before attempting to link to MKL.  There are also versions of
+MKL for OS X and Windows, but they did not work with the standard
+compilers used for R on those platforms.
 </p>
 <p>The MKL interface has changed several times, and may change again: the
 following notes apply exactly only to version 10.3 but have been used
@@ -4177,8 +4179,7 @@ sensible value for sole use of the machine.
 systems and may not be needed everywhere.)
 </p>
 <p>The MKL documentation includes a &lsquo;link line advisor&rsquo; which will suggest
-appropriate incantations: an on-line version was available at
-<a href="http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/">http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/</a>
+appropriate incantations.
 </p>
 <hr>
 <a name="Shared-BLAS"></a>
@@ -4236,9 +4237,9 @@ dynamic <acronym>BLAS</acronym> library (such as ACML or Goto&rsquo;s) to
 ln -s /opt/acml5.1.0/gfortran64_mp/lib/libacml_mp.so <var>R_HOME</var>/lib/libRblas.so
 </pre></div>
 <p>will change the <acronym>BLAS</acronym> in use to multithreaded ACML.  A similar
-link works for some versions of the Goto <acronym>BLAS</acronym> and perhaps
-for MKL (provided the appropriate <samp>lib</samp> directory is in the
-run-time library path or <code>ld.so</code> cache).
+link works for some versions of Goto <acronym>BLAS</acronym>, OpenBLAS and MKL
+(provided the appropriate <samp>lib</samp> directory is in the run-time
+library path or <code>ld.so</code> cache).
 </p>
 
 <hr>
@@ -4341,7 +4342,7 @@ Previous: <a href="#LAPACK" accesskey="p" rel="prev">LAPACK</a>, Up: <a href="#L
 <p>As with all libraries, you need to ensure that they and R were
 compiled with compatible compilers and flags.  For example, this has
 meant that on Sun Sparc using the native compilers the flag
-<samp>-dalign</samp> is needed so <code>sunperf</code> can be used.
+<samp>-dalign</samp> is needed if <code>sunperf</code> is to be used.
 </p>
 <p>On some systems it is necessary that an external <acronym>BLAS</acronym>/LAPACK
 was built with the same FORTRAN compiler used to build R: known
@@ -4433,7 +4434,7 @@ a dynamic (shared) library, typically called <samp>libR.so</samp>, and link
 the main R executable <samp>R.bin</samp> against that library.  This can
 only be done if all the code (including system libraries) can be
 compiled into a dynamic library, and there may be a
-performance<a name="DOCF39" href="#FOOT39"><sup>39</sup></a> penalty.  So you probably
+performance<a name="DOCF40" href="#FOOT40"><sup>40</sup></a> penalty.  So you probably
 only want this if you will be using an application which embeds R.
 Note that C code in packages installed on an R system linked with
 <samp>--enable-R-shlib</samp> is linked against the dynamic library and so
@@ -4451,9 +4452,8 @@ requested by option <samp>--with-system-valgrind-headers</samp>: they will
 be used if present (on Linux they may be in a separate package such as
 <strong>valgrind-devel</strong>).  Note though that there is no guarantee that the
 code in R will be compatible with future <code>valgrind</code> headers.
-(An incompatible change was made in a version not later than 3.8.0, not
-even mentioned in the release notes, and currently level 3 does not work
-with recent headers.)
+(An incompatible change was made in a version 3.3.0 and currently level
+3 does not work with recent headers.)
 </p>
 <p>If you need to re-configure R with different options you may need to run
 <code>make clean</code> or even <code>make distclean</code> before doing so.
@@ -4705,7 +4705,7 @@ is to search for
 <code>epcf90</code>,
 <code>g77</code>, <code>f77</code>, <code>xlf</code>, <code>frt</code>,
 <code>pgf77</code>, <code>cf77</code>, <code>fort77</code>, <code>fl32</code>,
-<code>af77</code> (in that order)<a name="DOCF40" href="#FOOT40"><sup>40</sup></a>, and use whichever is found first; if none is found,
+<code>af77</code> (in that order)<a name="DOCF41" href="#FOOT41"><sup>41</sup></a>, and use whichever is found first; if none is found,
 R cannot be compiled.
 However, if <code>CC</code> is <code>gcc</code>, the matching FORTRAN compiler
 (<code>g77</code> for <code>gcc</code>&nbsp;3 and <code>gfortran</code> for
@@ -4734,7 +4734,7 @@ pointer.  This is checked during the configuration process.
 </p>
 <p>Some of the FORTRAN code makes use of <code>COMPLEX*16</code> variables, which
 is a Fortran 90 extension.  This is checked for at configure
-time<a name="DOCF41" href="#FOOT41"><sup>41</sup></a>, but you may need to avoid
+time<a name="DOCF42" href="#FOOT42"><sup>42</sup></a>, but you may need to avoid
 compiler flags asserting FORTRAN 77 compliance.
 </p>
 <p>Compiling the version of LAPACK in the R sources also requires some
@@ -5017,7 +5017,7 @@ selection issues, they are more amenable than the issues with
 </p>
 <p>When X11 was designed, most displays were around 75dpi, whereas today
 they are of the order of 100dpi or more.  If you find that X11()
-is reporting<a name="DOCF42" href="#FOOT42"><sup>42</sup></a> missing font sizes, especially larger ones, it is likely
+is reporting<a name="DOCF43" href="#FOOT43"><sup>43</sup></a> missing font sizes, especially larger ones, it is likely
 that you are not using scalable fonts and have not installed the 100dpi
 versions of the X11 fonts.  The names and details differ by system, but
 will likely have something like Fedora&rsquo;s
@@ -5132,7 +5132,7 @@ significant performance improvements on recent CPUs (especially for
 the best possible performance on the machine on which R is being
 installed: if the compilation is for a site-wide installation, it may
 still be desirable to use something like
-<samp>-mtume=core2</samp>.<a name="DOCF43" href="#FOOT43"><sup>43</sup></a> It is also possible to increase the
+<samp>-mtume=core2</samp>.<a name="DOCF44" href="#FOOT44"><sup>44</sup></a> It is also possible to increase the
 optimization levels to <samp>-O3</samp>: however for many versions of the
 compilers this has caused problems in at least one <acronym>CRAN</acronym>
 package.
@@ -5339,7 +5339,7 @@ machines with Core Solo or Core Duo CPUs.  The instructions here are for
 <samp>--with-aqua</samp> (which is the default): <code>quartz()</code> then
 becomes the default device when running R at the console and X11
 would only be used for the data editor/viewer.  (This needs an
-Objective-C compiler<a name="DOCF44" href="#FOOT44"><sup>44</sup></a> which can compile the code for <code>quartz()</code>.)
+Objective-C compiler<a name="DOCF45" href="#FOOT45"><sup>45</sup></a> which can compile the code for <code>quartz()</code>.)
 </p>
 <p>Use <samp>--without-aqua</samp> if you want a standard Unix-alike build:
 apart from disabling <code>quartz()</code> and the ability to use the build
@@ -5409,7 +5409,7 @@ OBJC=clang
 
 <p>with <code>clang</code> and <code>clang++</code> from Xcode 5, and the Fortran
 compiler from
-<a href="http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2">http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2</a>.<a name="DOCF45" href="#FOOT45"><sup>45</sup></a>  Apple&rsquo;s
+<a href="http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2">http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2</a>.<a name="DOCF46" href="#FOOT46"><sup>46</sup></a>  Apple&rsquo;s
 builds of <code>clang</code> currently have little or no OpenMP support.
 </p>
 <p>Pre-compiled versions of many of the <a href="#Useful-libraries-and-programs">Useful libraries and programs</a>
@@ -5430,7 +5430,7 @@ configuring the <code>X11()</code> device.
 <p>to provide potentially higher-performance versions of the <acronym>BLAS</acronym>
 and LAPACK routines.  (Use of <code>Accelerate</code> with
 <samp>--with-lapack</samp> does not work on Snow Leopard: it may work there
-without.)<a name="DOCF46" href="#FOOT46"><sup>46</sup></a>
+without.)<a name="DOCF47" href="#FOOT47"><sup>47</sup></a>
 </p>
 <p>Looking at the top of
 <samp>/Library/Frameworks/R.framework/Resources/etc/Makeconf</samp>
@@ -5847,7 +5847,7 @@ option <samp>--with-internal-tzcode</samp> is recommended, and required if
 you find time-zone abbreviations being given odd values (as has been
 seen on 64-bit builds without it).
 </p>
-<p>When using the Oracle compilers<a name="DOCF47" href="#FOOT47"><sup>47</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
+<p>When using the Oracle compilers<a name="DOCF48" href="#FOOT48"><sup>48</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
 disables <acronym>IEEE</acronym> arithmetic and <code>make check</code> will fail.
 </p>
 <p>It has been reported that some Solaris installations need
@@ -6257,7 +6257,7 @@ in <samp>src/main/complex.c</samp> on that platform.  It has been reported
 that some C99 long double mathematical functions are missing, so
 configuring with <samp>--disable-long-double</samp> was required.
 </p>
-<p>Only building as a shared library can possibly work,<a name="DOCF48" href="#FOOT48"><sup>48</sup></a> so use e.g.
+<p>Only building as a shared library can possibly work,<a name="DOCF49" href="#FOOT49"><sup>49</sup></a> so use e.g.
 </p>
 <div class="example">
 <pre class="example">./configure --disable-nls --enable-R-shlib FLIBS=-lgfortran
@@ -6377,7 +6377,7 @@ will not need to build add-on packages from source; see <a href="#Add_002don-pac
 </p>
 <p>We have found that the build process for R is quite sensitive to
 the choice of tools: please follow our instructions <strong>exactly</strong>,
-even to the choice of particular versions of the tools.<a name="DOCF49" href="#FOOT49"><sup>49</sup></a>  The build process for add-on packages is somewhat more
+even to the choice of particular versions of the tools.<a name="DOCF50" href="#FOOT50"><sup>50</sup></a>  The build process for add-on packages is somewhat more
 forgiving, but we recommend using the exact toolset at first, and only
 substituting other tools once you are familiar with the process.
 </p>
@@ -6387,7 +6387,7 @@ the R mailing lists unless you have followed all the prescriptions.</em>
 </p>
 <p>We have collected most of the necessary tools (unfortunately not all,
 due to license or size limitations) into an executable installer
-named<a name="DOCF50" href="#FOOT50"><sup>50</sup></a>  <samp>Rtools31.exe</samp>,
+named<a name="DOCF51" href="#FOOT51"><sup>51</sup></a>  <samp>Rtools31.exe</samp>,
 available from <a href="http://CRAN.R-project.org/bin/windows/Rtools/">http://CRAN.R-project.org/bin/windows/Rtools/</a>. You
 should download and run it, choosing the default &ldquo;Package authoring
 installation&rdquo; to build add-on packages, or the &ldquo;full installation&rdquo; if
@@ -6431,7 +6431,7 @@ use filepaths containing spaces: you can always use the short forms
 
 <p>It is essential that the directory containing the command line tools
 comes first or second in the path: there are typically like-named
-tools<a name="DOCF51" href="#FOOT51"><sup>51</sup></a> in other directories, and they will <strong>not</strong>
+tools<a name="DOCF52" href="#FOOT52"><sup>52</sup></a> in other directories, and they will <strong>not</strong>
 work. The ordering of the other directories is less important, but if in
 doubt, use the order above.
 </p>
@@ -6566,7 +6566,7 @@ and version 2.0.1 of the MinGW-w64 project&rsquo;s runtime.
 </p>
 <p>This toolchain uses <em>multilib</em>: that is there is a single front-end
 such as <code>gcc.exe</code> for each of the compilers and 32-bit (the
-default) and 64-bit compilation are selected by the flags<a name="DOCF52" href="#FOOT52"><sup>52</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
+default) and 64-bit compilation are selected by the flags<a name="DOCF53" href="#FOOT53"><sup>53</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
 respectively.  The tools are all 32-bit Windows executables and should
 be able to run on any current version of Windows&mdash;however you do need a
 64-bit version of Windows to build 64-bit R as the build process runs
@@ -7090,49 +7090,52 @@ is assumed by some R packages. Neither are tested by
 <p>Using the Oracle Solaris Studio
 <code>cc</code> and <code>f95</code> compilers</p>
 <h3><a name="FOOT39" href="#DOCF39">(39)</a></h3>
+<p>and &lsquo;<samp>i686</samp>&rsquo; for earlier
+versions.</p>
+<h3><a name="FOOT40" href="#DOCF40">(40)</a></h3>
 <p>We have measured 15&ndash;20% on &lsquo;<samp>i686</samp>&rsquo; Linux
 and around 10% on &lsquo;<samp>x86_64</samp>&rsquo; Linux.</p>
-<h3><a name="FOOT40" href="#DOCF40">(40)</a></h3>
+<h3><a name="FOOT41" href="#DOCF41">(41)</a></h3>
 <p>On HP-UX <code>fort77</code> is the
 <acronym>POSIX</acronym> compliant FORTRAN compiler, and comes after
 <code>g77</code>.</p>
-<h3><a name="FOOT41" href="#DOCF41">(41)</a></h3>
+<h3><a name="FOOT42" href="#DOCF42">(42)</a></h3>
 <p>as well as its equivalence to the <code>Rcomplex</code>
 structure defined in <samp>R_ext/Complex.h</samp>.</p>
-<h3><a name="FOOT42" href="#DOCF42">(42)</a></h3>
+<h3><a name="FOOT43" href="#DOCF43">(43)</a></h3>
 <p>for example, <code>X11 font at size 14 could not
 be loaded</code>.</p>
-<h3><a name="FOOT43" href="#DOCF43">(43)</a></h3>
+<h3><a name="FOOT44" href="#DOCF44">(44)</a></h3>
 <p>or <code>-mtune=corei7</code> for Intel Core
 i3/15/17 with <code>gcc &gt;= 4.6.0</code>.</p>
-<h3><a name="FOOT44" href="#DOCF44">(44)</a></h3>
+<h3><a name="FOOT45" href="#DOCF45">(45)</a></h3>
 <p>These days that is defined by Apple&rsquo;s
 implementation of <code>clang</code>, so it is strongly recommended to use
 that.</p>
-<h3><a name="FOOT45" href="#DOCF45">(45)</a></h3>
+<h3><a name="FOOT46" href="#DOCF46">(46)</a></h3>
 <p>This
 is a tarball which needs to be unpacked in the Terminal by e.g.
 <code>sudo tar -zxf gfortran-4.8.2-darwin13.tar.bz2 -C /</code>.</p>
-<h3><a name="FOOT46" href="#DOCF46">(46)</a></h3>
+<h3><a name="FOOT47" href="#DOCF47">(47)</a></h3>
 <p>It is reported that for some non-Apple toolchains
 <code>CPPFLAGS</code> needed to contain <code>-D__ACCELERATE__</code>.</p>
-<h3><a name="FOOT47" href="#DOCF47">(47)</a></h3>
+<h3><a name="FOOT48" href="#DOCF48">(48)</a></h3>
 <p>including <code>gcc</code> for
 Sparc from Oracle.</p>
-<h3><a name="FOOT48" href="#DOCF48">(48)</a></h3>
+<h3><a name="FOOT49" href="#DOCF49">(49)</a></h3>
 <p>Windows
 DLLs need to have all links resolved at build time and so cannot resolve
 against <samp>R.bin</samp>.</p>
-<h3><a name="FOOT49" href="#DOCF49">(49)</a></h3>
+<h3><a name="FOOT50" href="#DOCF50">(50)</a></h3>
 <p>For
 example, the Cygwin version of <code>make 3.81</code> fails to work
 correctly.</p>
-<h3><a name="FOOT50" href="#DOCF50">(50)</a></h3>
-<p>for R 3.0.0 and later.</p>
 <h3><a name="FOOT51" href="#DOCF51">(51)</a></h3>
+<p>for R 3.0.0 and later.</p>
+<h3><a name="FOOT52" href="#DOCF52">(52)</a></h3>
 <p>such as <code>sort</code>, <code>find</code> and perhaps
 <code>make</code>.</p>
-<h3><a name="FOOT52" href="#DOCF52">(52)</a></h3>
+<h3><a name="FOOT53" href="#DOCF53">(53)</a></h3>
 <p>these
 flags apply to the compilers: some of the tools use different flags.
 32-bit builds are the default.</p>
