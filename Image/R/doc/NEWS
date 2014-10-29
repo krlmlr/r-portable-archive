@@ -380,6 +380,10 @@ CHANGES IN R 3.1.2 patched:
     * Declared vignette encodings are now always passed to the vignette
       engine.
 
+    * power.t.test() and power.prop.test() now make use of the
+      extendInt option of uniroot() and hence work in more extreme
+      cases.  (PR#15792)
+
 CHANGES IN R 3.1.2:
 
   NEW FEATURES:

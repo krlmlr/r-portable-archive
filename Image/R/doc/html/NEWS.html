@@ -309,7 +309,7 @@ specify an alternative set of tests to run.
 </li>
 <li> <p><code>R CMD check</code> will now by default continue with
 testing after many types of errors, and will output a summary
-count of errors at the end if any have occurred.      
+count of errors at the end if any have occurred.
 </p>
 </li>
 <li> <p><code>R CMD check --as-cran</code> checks a &lsquo;<span class="file">README.md</span>&rsquo;
@@ -580,6 +580,11 @@ namespace dependency error.
 </li>
 <li><p> Declared vignette encodings are now always passed to the
 vignette engine.
+</p>
+</li>
+<li> <p><code>power.t.test()</code> and <code>power.prop.test()</code> now make
+use of the <code>extendInt</code> option of <code>uniroot()</code> and hence
+work in more extreme cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15792">PR#15792</a>)
 </p>
 </li></ul>
 
@@ -1901,7 +1906,7 @@ the control characters.  (Reported by Hadley Wickham.)
 </p>
 </li>
 <li> <p><code>getGraphicsEvent()</code> caused 100% usage of one CPU in
-Windows. (PR#15500)
+Windows. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15500">PR#15500</a>)
 </p>
 </li>
 <li> <p><code>nls()</code> with no <code>start</code> argument may now work

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-22).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-23).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-22).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-23).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4669,6 +4669,17 @@ currently in use on R platforms: use R&rsquo;s versions such as
 
 <p>It is an error (and make little sense, although has been seen) to call
 these functions for integer arguments.
+</p>
+</li><li> The GNU compilers have a large number of non-portable extensions.  For
+example, <code>INFINITY</code> (which is in C99 but not C++98), for which R
+provides the portable <code>R_PosInf</code> (and <code>R_NegInf</code> for
+<code>-INFINITY</code>).  And <code>NAN</code> is just one NaN value: in R code
+<code>NA_REAL</code> is usually what is intended, but <code>R_NaN</code> is also
+available.
+
+<p>Some (but not all) extensions are listed at
+<a href="https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html">https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html</a> and
+<a href="https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Extensions.html">https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Extensions.html</a>.
 </p>
 </li><li> Including C headers in C++ code is not portable.  Including the C
 header <samp>math.h</samp> in C++ code often causes conflicts with
