@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-26).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-27).
 
 Copyright (C) 2001-2014 R Core Team
 
@@ -338,7 +338,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a>, Previous:
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-26).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-27).
 </p>
 <p>Copyright &copy; 2001&ndash;2014 R Core Team
 </p>
@@ -1446,9 +1446,14 @@ try to select a &lsquo;<samp>C</samp>&rsquo; locale; Windows may not honour this
 </p>
 <p><strong>NB:</strong> The build process is currently being changed to require
 external binary distributions of third-party software.  Their location
-must be set using macro <code>EXT_LIBS</code> in
-<samp>src/gnuwin32/MkRules.local</samp>: a suitable distribution can be
-obtained from
+is set using macro <code>EXT_LIBS</code> with default setting
+<samp>$(LOCAL_SOFT)</samp>; the $(LOCAL_SOFT) macro defaults to
+<samp>$(R_HOME)/extsoft</samp>.  This directory can be populated using
+<code>make rsync-extsoft</code>. The location can be overridden by
+setting <code>EXT_LIBS</code> to a different path in
+<samp>src/gnuwin32/MkRules.local</samp>. A suitable collection of files can
+also be obtained from 
+<a href="http://CRAN.R-project.org/bin/windows/extsoft">http://CRAN.R-project.org/bin/windows/extsoft</a> or
 <a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.
 </p>
 <table class="menu" border="0" cellspacing="0">
@@ -2529,8 +2534,9 @@ Unix-alike.  This can be set in <samp>src/gnuwin/MkRules.local</samp> when
 R is built from sources (see the comments in
 <samp>src/gnuwin/MkRules.dist</samp>), or in file<a name="DOCF17" href="#FOOT17"><sup>17</sup></a>  <samp>etc/i386/Makeconf</samp> or <samp>etc/x64/Makeconf</samp> for an
 installed version of R.  The version used by <acronym>CRAN</acronym> can be
-downloaded from <a href="http://www.stats.ox.ac.uk/pub/Rtools/libs.html">http://www.stats.ox.ac.uk/pub/Rtools/libs.html</a>.
+installed as described in See <a href="#Building-from-source">Building from source</a>.
 </p>
+
 <hr>
 <a name="OS-X-packages"></a>
 <div class="header">

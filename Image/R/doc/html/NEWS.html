@@ -272,12 +272,6 @@ found or (unlikely) if they are too old.
 versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</span>/<span class="pkg">libbz2</span> and
 <code>pcre</code> (or similar names) are installed.
 </p>
-</li>
-<li><p> (Windows.) Installation using external binary distributions
-of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
-<span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now required,
-and the build instructions have been revised.
-</p>
 </li></ul>
 
 
@@ -320,6 +314,10 @@ count of errors at the end if any have occurred.
 <li> <p><code>R CMD check --as-cran</code> checks a &lsquo;<span class="file">README.md</span>&rsquo;
 file can be processed: this needs <code>pandoc</code> installed.
 </p>
+</li>
+<li> <p><code>R CMD build</code> adds a <span class="samp">NeedsCompilation</span> field
+if one is not already present in the DESCRIPTION file.
+</p>
 </li></ul>
 
 
@@ -349,6 +347,31 @@ pointers.
 </p>
 </li>
 <li> <p><code>isPairList()</code> now returns <code>TRUE</code> for DOTSXP.
+</p>
+</li></ul>
+
+
+
+
+<h4>WINDOWS BUILD CHANGES</h4>
+
+<p>A number of changes to the Windows build system are in development.
+The following are currently in place.
+</p>
+
+<ul>
+<li><p> Installation using external binary distributions
+of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
+<span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now required,
+and the build instructions have been revised.      
+</p>
+</li>
+<li><p> The &lsquo;<span class="file">MkRules.local</span>&rsquo; file is now optional, with defaults
+described in &lsquo;<span class="file">MkRules.dist</span>&rsquo;.
+</p>
+</li>
+<li><p> A new <code>make</code> target <code>rsync-extsoft</code> has been
+added to obtain copies of the external libraries from <acronym><span class="acronym">CRAN</span></acronym>.
 </p>
 </li></ul>
 
@@ -469,6 +492,11 @@ strings byte-by-byte in numerical order.
 <li> <p><code>sessionInfo()</code> tries to report the OS version in use
 (not just that compiled under, and including details of Linux
 distributions).
+</p>
+</li>
+<li> <p><code>model.frame()</code> (used by <code>lm()</code> and many other 
+modelling functions) now warns when it drops contrasts
+from factors.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16119">PR#16119</a>)
 </p>
 </li></ul>
 
@@ -592,14 +620,19 @@ namespace dependency error.
 vignette engine.
 </p>
 </li>
+<li><p> Port Tomas Kalibera's fix from R-devel that restores the
+loadMethod fast path, effectively doubling the speed of S4
+dispatch.
+</p>
+</li>
 <li> <p><code>power.t.test()</code> and <code>power.prop.test()</code> now make
 use of the <code>extendInt</code> option of <code>uniroot()</code> and hence
 work in more extreme cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15792">PR#15792</a>)
 </p>
 </li>
-<li><p> If a package was updated and attached while already loaded,
-it could end up with parts from one version and parts from the
-other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16120">PR#16120</a>)
+<li><p> If a package was updated and attached when its namespace was
+already loaded, it could end up with parts from one version and
+parts from the other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16120">PR#16120</a>)
 </p>
 </li></ul>
 

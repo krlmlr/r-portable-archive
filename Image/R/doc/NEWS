@@ -194,10 +194,6 @@ CHANGES IN R-devel:
       packages zlib, bzip2/libbz2 and pcre (or similar names) are
       installed.
 
-    * (Windows.) Installation using external binary distributions of
-      zlib, bzip, liblzma, pcre, libpng, jpeglib and libtiff is now
-      required, and the build instructions have been revised.
-
   UTILITIES:
 
     * There is support for testing the \dontrun and \donttest parts of
@@ -226,6 +222,9 @@ CHANGES IN R-devel:
     * R CMD check --as-cran checks a README.md file can be processed:
       this needs pandoc installed.
 
+    * R CMD build adds a NeedsCompilation field if one is not already
+      present in the DESCRIPTION file.
+
   C-LEVEL FACILITIES:
 
     * New C API utility logspace_sum(logx[], n).
@@ -242,6 +241,21 @@ CHANGES IN R-devel:
       sufficient alignment for long double pointers.
 
     * isPairList() now returns TRUE for DOTSXP.
+
+  WINDOWS BUILD CHANGES:
+
+  A number of changes to the Windows build system are in development.
+  The following are currently in place.
+
+    * Installation using external binary distributions of zlib, bzip,
+      liblzma, pcre, libpng, jpeglib and libtiff is now required, and
+      the build instructions have been revised.
+
+    * The MkRules.local file is now optional, with defaults described
+      in MkRules.dist.
+
+    * A new make target rsync-extsoft has been added to obtain copies
+      of the external libraries from CRAN.
 
   PACKAGE INSTALLATION:
 
@@ -313,6 +327,10 @@ CHANGES IN R 3.1.2 patched:
     * sessionInfo() tries to report the OS version in use (not just
       that compiled under, and including details of Linux
       distributions).
+
+    * model.frame() (used by lm() and many other modelling functions)
+      now warns when it drops contrasts from factors.  (Wish of
+      PR#16119)
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -388,13 +406,17 @@ CHANGES IN R 3.1.2 patched:
     * Declared vignette encodings are now always passed to the vignette
       engine.
 
+    * Port Tomas Kalibera's fix from R-devel that restores the
+      loadMethod fast path, effectively doubling the speed of S4
+      dispatch.
+
     * power.t.test() and power.prop.test() now make use of the
       extendInt option of uniroot() and hence work in more extreme
       cases.  (PR#15792)
 
-    * If a package was updated and attached while already loaded, it
-      could end up with parts from one version and parts from the
-      other.  (PR#16120)
+    * If a package was updated and attached when its namespace was
+      already loaded, it could end up with parts from one version and
+      parts from the other.  (PR#16120)
 
 CHANGES IN R 3.1.2:
 

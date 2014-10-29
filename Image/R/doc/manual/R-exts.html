@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-12-26).
+<!-- This manual is for R, version 3.2.0 Under development (2014-12-27).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-12-26).
+<p>This manual is for R, version 3.2.0 Under development (2014-12-27).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -971,8 +971,9 @@ package contains code which to be compiled, otherwise <code>&quot;no&quot;</code
 the package could be installed from source on any platform without
 additional tools).  This is used by <code>install.packages(type =
 &quot;both&quot;)</code> in R &gt;= 2.15.2 on platforms where binary packages are the
-norm: it is normally set by the repository assuming compilation is
-required if and only if the package has a <samp>src</samp> directory.
+norm: it is normally set by <code>R CMD build</code> or the repository
+assuming compilation is required if and only if the package has a
+<samp>src</samp> directory.
 </p>
 <p>The &lsquo;<samp>OS_type</samp>&rsquo; field specifies the OS(es) for which the
 package is intended.  If present, it should be one of <code>unix</code> or
@@ -8323,9 +8324,6 @@ and <samp>-ftrapv</samp>, said to be more reliable in <code>clang</code> than
 <a href="http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html">http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html</a>
 (which has 3 parts).
 </p>
-<p>This option may not compile OpenMP code.
-</p>
-
 
 <hr>
 <a name="Other-analyses-with-_0060clang_0027"></a>
