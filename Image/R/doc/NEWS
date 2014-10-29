@@ -263,9 +263,6 @@ CHANGES IN R 3.1.2 patched:
     * (Windows.) The command completion in Rgui.exe messed up the
       console.  (PR#15791)
 
-    * The "factors" component of the result of terms() was not computed
-      properly when no intercept was in the model.  (PR#16070)
-
 CHANGES IN R 3.1.2:
 
   NEW FEATURES:
