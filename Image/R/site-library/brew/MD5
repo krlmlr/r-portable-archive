@@ -1,10 +1,10 @@
-24abf36d0b5319b1a16e882c52e3ce80 *DESCRIPTION
+7afb3d4b8c489e99b88c8ed3b251c14b *DESCRIPTION
 8176998dd97a2e2330392f0241b315e6 *INDEX
 1c880071c63c0cf83e96f0ada208ba79 *Meta/Rd.rds
 69f462ff6e5f69408799d60f0836e569 *Meta/hsearch.rds
 fa47e278266ac4b2a511c3eea51b1e6e *Meta/links.rds
 dc9ff7c1dca2a409bd8c63f36a52180e *Meta/nsInfo.rds
-aa91b946fdf763dfee44749e80006058 *Meta/package.rds
+6392313691dda9cbf6c7b82b6c717f82 *Meta/package.rds
 dce7d76efcda26bfa016dfabbcac2bb7 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/brew
 b1a710f437aca0f63a99e66bf9932183 *R/brew.rdb
@@ -41,8 +41,8 @@ d6c5a5a109d67642dd4c5a3a1b47e6ca *broken.brew
 16ba746b58790d623d8a3f33e334ab2e *featurefull.brew
 00f8975e2392a0947e743ec77b331abd *help/AnIndex
 4ba72c7855da6e44b4d383b3e4f65bfb *help/aliases.rds
-106c8f9b85ce47dd6e5bb41ec53cd4dd *help/brew.rdb
-c433163b3681097b19de33fe6d7e24a3 *help/brew.rdx
-fb6275ce091f461c9e365f7d3206f2ab *help/paths.rds
+b1d4dcd011710d1ea6da73b3b405a15b *help/brew.rdb
+dee8909070c44e45c0f28243a2debe23 *help/brew.rdx
+b8ab8f8dfe3a5e75b047122f4d54353a *help/paths.rds
 afb195e427b85a90b4b7e511dd79fe3e *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css
