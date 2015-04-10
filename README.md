@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (152.7 MB, MD5 hash: `d7a1ab79526206bc786caf38ae2e0149`, uncompressed 440.9 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (152.9 MB, MD5 hash: `d87221bec4d6f1b55355ab0aea85d223`, uncompressed 449.1 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (154.5 MB, MD5 hash: `b32a7777eb35774d90396c5d49c698c4`, uncompressed 480.9 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (152.7 MB, MD5 hash: `ff35be48c5135fbb98a148a6295a54ef`, uncompressed 440.9 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (152.9 MB, MD5 hash: `8c039ce8501533411b0408256cae6a88`, uncompressed 449.1 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (154.5 MB, MD5 hash: `c3d8cf3cbb5b490a75003ffdb3946644`, uncompressed 480.9 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-04-10 r68170)
+R Under development (unstable) (2015-04-13 r68171)
 
 ### Package versions
 
@@ -61,7 +61,7 @@ R Under development (unstable) (2015-04-10 r68170)
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.7.0),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
-[`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
+[`evaluate`](http://cran.r-project.org/package=evaluate) (0.6),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.1),
 [`highr`](http://cran.r-project.org/package=highr) (0.4.1),
 [`httr`](http://cran.r-project.org/package=httr) (0.6.1),
