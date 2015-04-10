@@ -92,6 +92,7 @@ $<-.data.frame	Extract.data.frame
 .Generic	UseMethod
 .GenericArgsEnv	base-internal
 .getNamespace	ns-internal
+.getNamespaceInfo	ns-internal
 .getRequiredPackages	base-internal
 .getRequiredPackages2	base-internal
 .GlobalEnv	environment
@@ -483,6 +484,7 @@ cummax	cumsum
 cummin	cumsum
 cumprod	cumsum
 cumsum	cumsum
+curlGetHeaders	curlGetHeaders
 cut	cut
 cut.Date	cut.POSIXt
 cut.default	cut
@@ -616,6 +618,7 @@ flush	connections
 flush.connection	connections
 for	Control
 force	force
+forceAndCall	forceAndCall
 Foreign	Foreign
 formals	formals
 formals<-	formals
@@ -650,6 +653,7 @@ gcinfo	gc
 gctorture	gctorture
 gctorture2	gctorture
 get	get
+get0	exists
 getAllConnections	showConnections
 getCallingDLL	getCallingDLL
 getCallingDLLe	getCallingDLL
@@ -706,6 +710,7 @@ Im	complex
 importIntoEnv	ns-internal
 in	Control
 Inf	is.finite
+infinite	is.finite
 inherits	class
 integer	integer
 interaction	interaction
@@ -777,6 +782,7 @@ isBaseNamespace	ns-internal
 isdebugged	debug
 isIncomplete	connections
 isNamespace	ns-internal
+isNamespaceLoaded	ns-load
 ISOdate	ISOdatetime
 ISOdatetime	ISOdatetime
 isOpen	connections
@@ -823,6 +829,7 @@ length	length
 length.POSIXlt	DateTimeClasses
 length<-	length
 length<-.factor	length
+lengths	lengths
 LETTERS	Constants
 letters	Constants
 levels	levels
@@ -831,6 +838,7 @@ levels<-	levels
 levels<-.factor	levels
 lfactorial	Special
 lgamma	Special
+libcurlVersion	curlVersion
 library	library
 library.dynam	library.dynam
 library.dynam.unload	library.dynam
@@ -1001,6 +1009,7 @@ paste	paste
 paste0	paste
 path.expand	path.expand
 path.package	find.package
+pcre_config	pcre_config
 pentagamma	base-defunct
 pi	Constants
 pipe	connections
@@ -1039,7 +1048,6 @@ print.DLLRegisteredRoutines	getDLLRegisteredRoutines
 print.factor	print
 print.function	print
 print.hexmode	hexmode
-print.htest	print
 print.libraryIQR	library
 print.listof	print
 print.NativeRoutineList	getDLLRegisteredRoutines
@@ -1447,6 +1455,7 @@ transform.data.frame	transform
 transform.default	transform
 Trig	Trig
 trigamma	Special
+trimws	trimws
 TRUE	logical
 trunc	Round
 trunc.Date	round.POSIXt

@@ -15,6 +15,35 @@
 
 
 <ul>
+<li><p> The <code>print</code> method for <code>methods()</code> gains a
+<code>byclass</code> argument.
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> The included versions of <code>zlib</code>, <code>bzip2</code>,
+<code>xz</code> and PCRE have been removed, so system versions are
+required (see the &lsquo;R Installation and Administration&rsquo; manual).
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.0</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
 <li> <p><code>anyNA()</code> gains a <code>recursive</code> argument.
 </p>
 </li>
@@ -75,7 +104,7 @@ directories.
 </p>
 </li>
 <li> <p><code>dput()</code> and friends gain new controls
-<span class="samp">"hexNumeric"</span> and <span class="samp">"digits17"</span> which output double and
+<span class="samp">hexNumeric</span> and <span class="samp">digits17</span> which output double and
 complex quantities as, respectively, binary fractions (exactly,
 see <code>sprintf("%a")</code>) and as decimals with up to 17
 significant digits.
@@ -151,14 +180,14 @@ external pointer, a weak reference or byte code; the first enables
 <code>as.list.environment()</code> gain a new argument <code>sorted</code>.
 </p>
 </li>
-<li><p> The <code>"source"</code> attribute (which has not been added
-to functions by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
-since before <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> version 2.14.0) is no longer treated as special.
+<li><p> The <code>"source"</code> attribute (which has not been added to
+functions by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> since before <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> version 2.14.0) is no longer
+treated as special.
 </p>
 </li>
-<li><p> An experimental function <code>returnValue()</code> has been added
-to give <code>on.exit()</code> code access to a function's return
-value for debugging purposes.
+<li><p> Function <code>returnValue()</code> has been added to give
+<code>on.exit()</code> code access to a function's return value for
+debugging purposes.
 </p>
 </li>
 <li> <p><code>crossprod(x, y)</code> allows more matrix coercions when
@@ -168,11 +197,11 @@ Similarly, <code>tcrossprod(x,y)</code> and <code>%*%</code> work in more
 cases with vector arguments.
 </p>
 </li>
-<li><p> An experimental utility <code>dynGet()</code> useful for detecting
+<li><p> Utility function <code>dynGet()</code> useful for detecting
 cycles, aka infinite recursions.
 </p>
 </li>
-<li><p> The byte code compiler and interpreter now include new
+<li><p> The byte-code compiler and interpreter include new
 instructions that allow many scalar subsetting and assignment and
 scalar arithmetic operations to be handled more efficiently. This
 can result in significant performance improvements in scalar
@@ -183,14 +212,15 @@ numerical code.
 <code>m</code> when it has <em>named</em> row names.
 </p>
 </li>
-<li><p> A new somewhat experimental function <code>debuggingState()</code>
-has been added, allowing to temporarily turn off debugging.
+<li><p> A new function <code>debuggingState()</code> has been added,
+allowing to temporarily turn off debugging.
 </p>
 </li>
-<li> <p><code>example()</code> gets new optional argument <code>run.dontcheck</code>
-and <code>tools::Rd2ex()</code> a corresponding <code>commentDonttest</code>,
-with a default such that <code>example(..)</code> in help examples will
-run <code>\dontcheck</code> code only if used interactively.
+<li> <p><code>example()</code> gets a new optional argument
+<code>run.donttest</code> and <code>tools::Rd2ex()</code> a corresponding
+<code>commentDonttest</code>, with a default such that
+<code>example(..)</code> in help examples will run <code>\donttest</code>
+code only if used interactively (a change in behaviour).
 </p>
 </li>
 <li> <p><code>rbind.data.frame()</code> gains an optional argument
@@ -230,12 +260,214 @@ dependency version is masking a sufficient one later on the
 library search path.
 </p>
 </li>
-<li><p> A new <code>plot.raster()</code> method has been added.
+<li><p> A new <code>plot()</code> method for class <code>"raster"</code> has
+been added.
 </p>
 </li>
 <li><p> New <code>check_packages_in_dir_changes()</code> function in
 package <span class="pkg">tools</span> for conveniently analyzing how changing
 sources impacts the check results of their reverse dependencies.
+</p>
+</li>
+<li><p> Speed-up from Peter Haverty for <code>ls()</code> and
+<code>methods:::.requirePackage()</code> speeding up package loading.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16133">PR#16133</a>)
+</p>
+</li>
+<li><p> New <code>get0()</code> function, combining <code>exists()</code> and
+<code>get()</code> in one call, for efficiency.
+</p>
+</li>
+<li> <p><code>match.call()</code> gains an <code>envir</code> argument for
+specifying the environment from which to retrieve
+the <code>...</code> in the call, if any; this environment was wrong
+(or at least undesirable) when the <code>definition</code> argument was
+a function.
+</p>
+</li>
+<li> <p><code>topenv()</code> has been made <code>.Internal()</code> for
+speedup, based on Peter Haverty's proposal in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16140">PR#16140</a>.
+</p>
+</li>
+<li> <p><code>getOption()</code> no longer calls <code>options()</code> in the main
+case.
+</p>
+</li>
+<li><p> Optional use of <code>libcurl</code> (version 7.28.0 from Oct 2012
+or later) for Internet access:
+</p>
+
+<ul>
+<li> <p><code>capabilities("libcurl")</code> reports if this is
+available.
+</p>
+</li>
+<li> <p><code>libcurlVersion()</code> reports the version in use, and
+other details of the <code>"libcurl"</code> build including which URL
+schemes it supports.
+</p>
+</li>
+<li> <p><code>curlGetHeaders()</code> retrieves the headers for
+<code>http://</code>, <code>https://</code>, <code>ftp://</code> and
+<code>ftps://</code> URLs: analysis of these headers can provide
+insights into the &lsquo;existence&rsquo; of a URL (it might for example be
+permanently redirected) and is so used in <code>R CMD
+	  check --as-cran</code>.
+</p>
+</li>
+<li> <p><code>download.file()</code> has a new optional method
+<code>"libcurl"</code> which will handle more URL schemes, follow
+redirections, and allows simultaneous downloads of multiple
+URLs.
+</p>
+</li>
+<li> <p><code>url()</code> has a new method <code>"libcurl"</code> which
+handles more URL schemes and follows redirections.  The default
+method is controlled by a new option <code>url.method</code>, which
+applies also to the opening of URLs <em>via</em> <code>file()</code>
+(which happens implicitly in functions such as
+<code>read.table</code>.)
+</p>
+</li>
+<li><p> When <code>file()</code> or <code>url()</code> is invoked with a
+<code>https://</code> or <code>ftps://</code> URL which the current method
+cannot handle, it switches to a suitable method if one is
+available.
+</p>
+</li></ul>
+
+</li>
+<li><p> (Windows.) The DLLs &lsquo;<span class="file">internet.dll</span>&rsquo; and
+&lsquo;<span class="file">internet2.dll</span>&rsquo; have been merged.  In this version it is safe
+to switch (repeatedly) between the internal and Windows internet
+functions within an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> session.
+</p>
+<p>The Windows internet functions are still selected by flag
+<span class="option">--internet2</span> or <code>setInternet2()</code>.  This can be
+overridden for an <code>url()</code> connection <em>via</em> its new
+<code>method</code> argument.
+</p>
+<p><code>download.file()</code> has new method <code>"wininet"</code>, selected
+as the default by <span class="option">--internet2</span> or <code>setInternet2()</code>.
+</p>
+</li>
+<li> <p><code>parent.env&lt;-</code> can no longer modify the parent of a
+locked namespace or namespace imports environment.  Contributed by
+Karl Millar.
+</p>
+</li>
+<li><p> New function <code>isLoadedNamespace()</code> for readability and speed.
+</p>
+</li>
+<li> <p><code>names(env)</code> now returns all the object names of an
+<code>environment</code> <code>env</code>, equivalently to
+<code>ls(env, all.names = TRUE, sorted = FALSE)</code> and also to
+the names of the corresponding list,
+<code>names(as.list(env, all.names = TRUE))</code>.
+Note that although <code>names()</code> returns a character vector, the
+names have no particular ordering.
+</p>
+</li>
+<li><p> The memory manager now grows the heap more aggressively. This
+reduces the number of garbage collections, in particular while
+data or code are loaded, at the expense of slightly increasing the
+memory footprint.
+</p>
+</li>
+<li><p> New function <code>trimws()</code> for removing leading/trailing
+whitespace.
+</p>
+</li>
+<li> <p><code>cbind()</code> and <code>rbind()</code> now consider S4 inheritance
+during S3 dispatch and also obey <code>deparse.level</code>.
+</p>
+</li>
+<li> <p><code>cbind()</code> and <code>rbind()</code> will delegate recursively
+to <code>methods::cbind2</code> (<code>methods::rbind2</code>) when at least
+one argument is an S4 object and S3 dispatch fails (due to
+ambiguity).
+</p>
+</li>
+<li><p> (Windows.)  <code>download.file(quiet = FALSE)</code> now uses
+text rather than Windows progress bars in non-interactive use.
+</p>
+</li>
+<li><p> New function <code>hsearch_db()</code> in package <span class="pkg">utils</span> for
+building and retrieving the help search database used by
+<code>help.search()</code>, along with functions for inspecting the
+concepts and keywords in the help search database.
+</p>
+</li>
+<li><p> New function <code>.getNamespaceInfo()</code>, a no-check version
+of <code>getNamespaceInfo()</code> mostly for internal speedups.
+</p>
+</li>
+<li><p> The help search system now takes <span class="samp">\keyword</span> entries in
+Rd files which are not standard keywords (as given in
+&lsquo;<span class="file">KEYWORDS</span>&rsquo; in the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> documentation directory) as concepts.
+For standard keyword entries the corresponding descriptions are
+additionally taken as concepts.
+</p>
+</li>
+<li><p> New <code>lengths()</code> function for getting the lengths of all
+elements in a list.
+</p>
+</li>
+<li><p> New function <code>toTitleCase()</code> in package <span class="pkg">tools</span>,
+tailored to package titles.
+</p>
+</li>
+<li><p> The matrix methods of <code>cbind()</code> and <code>rbind()</code>
+allow matrices as inputs which have <i>2^31</i> or more
+elements.  (For <code>cbind()</code>, wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16198">PR#16198</a>.)
+</p>
+</li>
+<li><p> The default method of <code>image()</code> has an explicit check
+for a numeric or logical matrix (which was always required).
+</p>
+</li>
+<li> <p><code>URLencode()</code> will not by default encode further URLs
+which appear to be already encoded.
+</p>
+</li>
+<li> <p><code>BIC(mod)</code> and <code>BIC(mod, mod2)</code> now give non-NA
+numbers for <code>arima()</code> fitted models, as <code>nobs(mod)</code> now
+gives the number of &ldquo;used&rdquo; observations for such models.
+This fixes <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16198">PR#16198</a>, quite differently than proposed there.
+</p>
+</li>
+<li><p> The <code>print()</code> methods for <code>"htest"</code>,
+<code>"pairwise.htest"</code> and <code>"power.htest"</code> objects now have
+a <code>digits</code> argument defaulting to (a function of)
+<code>getOption("digits")</code>, and influencing all printed numbers
+coherently.  Unavoidably, this changes the display of such test
+results in some cases.
+</p>
+</li>
+<li><p> Code completion for namespaces now recognizes all loaded
+namespaces, rather than only the ones that are also attached.
+</p>
+</li>
+<li><p> The code completion mechanism can now be replaced by a
+user-specified completer function, for (temporary) situations
+where the usual code completion is inappropriate.
+</p>
+</li>
+<li> <p><code>unzip()</code> will now warn if it is able to detect truncation
+when unpacking a file of 4GB or more (related to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16243">PR#16243</a>).
+</p>
+</li>
+<li> <p><code>methods()</code> reports S4 in addition to S3 methods;
+output is simplified when the <code>class</code> argument is
+used.  <code>.S3methods()</code> and <code>methods::.S4methods()</code> report
+S3 and S4 methods separately.
+</p>
+</li>
+<li><p> Higher order functions such as the <code>apply</code> functions
+and <code>Reduce()</code> now force arguments to the functions they apply
+in order to eliminate undesirable interactions between lazy
+evaluation and variable capture in closures.  This resolves
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16093">PR#16093</a>.
 </p>
 </li></ul>
 
@@ -253,7 +485,7 @@ tested by<br />
 </li>
 <li><p> It is possible to request the use of system
 <code>valgrind</code> headers <em>via</em> <code>configure</code> option
-<span class="option">--with-system-valgrind-headers</span>: note the possible
+<span class="option">--with-system-valgrind-headers</span>: note the possible future
 incompatibility of such headers discussed in the 'R Installation
 and Administration' manual. (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16068">PR#16068</a>.)
 </p>
@@ -270,7 +502,19 @@ found or (unlikely) if they are too old.
 </p>
 <p>Linux users should check that the <code>-devel</code> or <code>-dev</code>
 versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</span>/<span class="pkg">libbz2</span> and
-<code>pcre</code> (or similar names) are installed.
+<span class="pkg">pcre</span> as well as <span class="pkg">xz-devel</span>/<span class="pkg">liblzma-dev</span> (or
+similar names) are installed.
+</p>
+</li>
+<li> <p><code>configure</code> by default looks for the
+<code>texi2any</code> script from <span class="pkg">texinfo</span> 5.1 or later, rather
+than the <code>makeinfo</code> program.  (<code>makeinfo</code> is a
+link to the Perl script <code>texi2any</code> in <span class="pkg">texinfo</span> 5.x.)
+</p>
+</li>
+<li> <p><code>R CMD INSTALL</code> gains an  option
+<span class="option">--built-timestamp=STAMP</span> allowing 100% reproducible
+package building, thanks to Dirk Eddelbuettel.
 </p>
 </li></ul>
 
@@ -296,10 +540,14 @@ versions of packages <span class="pkg">zlib</span>, <span class="pkg">bzip2</spa
 &lsquo;<acronym><span class="acronym">XHTML</span></acronym> 1.0 Strict&rsquo;.
 </p>
 </li>
-<li><p> The <span class="pkg">compiler</span> package has a new utility function
+<li><p> The <span class="pkg">compiler</span> package's utility function
 <code>setCompilerOptions()</code> now returns the old values
 invisibly. The initial optimization level can also be set with the
 environment variable <span class="env">R_COMPILER_OPTIMIZE</span>.
+</p>
+</li>
+<li> <p><code>R CMD build</code> adds a <span class="samp">NeedsCompilation</span> field
+if one is not already present in the &lsquo;<span class="file">DESCRIPTION</span>&rsquo; file.
 </p>
 </li>
 <li> <p><code>R CMD check</code> gains option <span class="option">--test-dir</span> to
@@ -311,18 +559,46 @@ testing after many types of errors, and will output a summary
 count of errors at the end if any have occurred.
 </p>
 </li>
-<li> <p><code>R CMD check --as-cran</code> checks a &lsquo;<span class="file">README.md</span>&rsquo;
-file can be processed: this needs <code>pandoc</code> installed.
+<li> <p><code>R CMD check</code> now checks that the <span class="samp">Title</span> and
+<span class="samp">Description</span> fields are correctly terminated.
 </p>
 </li>
-<li> <p><code>R CMD build</code> adds a <span class="samp">NeedsCompilation</span> field
-if one is not already present in the DESCRIPTION file.
+<li> <p><code>R CMD check --as-cran</code> now:
+</p>
+
+<ul>
+<li><p> checks a &lsquo;<span class="file">README.md</span>&rsquo; file can be processed: this
+needs <code>pandoc</code> installed.
 </p>
 </li>
-<li> <p><code>R CMD check</code> notes uses of <code>library()</code> and
-<code>require()</code> in package code: see the section
-&lsquo;Suggested packages&rsquo; of &lsquo;Writing R Extensions&rsquo; for
-good practice.
+<li><p> checks the existence and accessibility of URLs in the
+&lsquo;<span class="file">DESCRIPTION</span>&rsquo;, &lsquo;<span class="file">CITATION</span>&rsquo;, &lsquo;<span class="file">NEWS.Rd</span>&rsquo; and
+&lsquo;<span class="file">README.md</span>&rsquo; files and in the help files (provided the build
+has <code>libcurl</code> support).
+</p>
+</li>
+<li><p> reports non-ASCII characters in R source files when there
+is no package encoding declared in the &lsquo;<span class="file">DESCRIPTION</span>&rsquo; file.
+</p>
+</li>
+<li><p> reports (apparent) S3 methods exported but not registered.
+</p>
+</li>
+<li><p> reports overwriting registered S3 methods from
+base/recommended packages.  (Such methods are replaced in the
+affected package for the rest of the session, even if the
+replacing namespace is unloaded.)
+</p>
+</li>
+<li><p> reports if the <code>Title</code> field does not appear to be in
+title case (see &lsquo;Writing R Extensions&rsquo;: there may be
+false positives, but note that technical words should be
+single-quoted and will then be accepted).
+</p>
+</li></ul>
+
+<p>Most of these checks can also be selected by environment
+variables: see the &lsquo;R Internals&rsquo; manual.
 </p>
 </li></ul>
 
@@ -367,17 +643,29 @@ The following are currently in place.
 
 <ul>
 <li><p> Installation using external binary distributions
-of <span class="pkg">zlib</span>, <span class="pkg">bzip</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
+of <span class="pkg">zlib</span>, <span class="pkg">bzip2</span>, <span class="pkg">liblzma</span>, <span class="pkg">pcre</span>,
 <span class="pkg">libpng</span>, <span class="pkg">jpeglib</span> and <span class="pkg">libtiff</span> is now required,
-and the build instructions have been revised.      
+and the build instructions have been revised.
 </p>
 </li>
 <li><p> A new <code>make</code> target <code>rsync-extsoft</code> has been
-added to obtain copies of the external libraries from <acronym><span class="acronym">CRAN</span></acronym>.
+added to obtain copies of the external libraries from
+<acronym><span class="acronym">CRAN</span></acronym>.
 </p>
 </li>
-<li><p> It is possible to build without <code>makeinfo</code>: see the
-comments in file &lsquo;<span class="file">MkRules.dist</span>&rsquo;.
+<li><p> Building the manuals now requires <code>texi2any</code> from
+<span class="pkg">texinfo</span> 5.1 or later.  <acronym><span class="acronym">CRAN</span></acronym> binary builds include
+the manuals, but by default builds from source will not, and they
+will be accessed from <acronym><span class="acronym">CRAN</span></acronym>.  See the comments in
+&lsquo;<span class="file">src/gnuwin32/MkRules.dist</span>&rsquo; for how to specify the location
+of <code>texi2any</code>.
+</p>
+</li>
+<li><p> (Windows) Changes have been made to support an experimental
+Windows toolchain based on GCC 4.9.2.  The default toolchain
+continues to be based on GCC 4.6.3, as the new toolchain is not
+yet stable enough.  A change to a new toolchain is expected during
+the R 3.2.x lifetime.
 </p>
 </li></ul>
 
@@ -394,6 +682,19 @@ time) now requires an external &lsquo;<span class="file">libz.a</span>&rsquo; to
 part of the &lsquo;goodies&rsquo; used to compile Windows binary
 packages).  It would be simpler to use <code>-lz</code> instead.
 </p>
+</li>
+<li><p> The default for option <code>pkgType</code> on platforms using
+binary packages is now <code>"both"</code>, so source packages will be
+tried if binary versions are not available or not up to date.
+</p>
+<p>There are options for what <code>install.packages(type = "both")</code>
+(possibly called <em>via</em> <code>update.packages()</code>) will do if
+compilation of a source package is desirable: see <code>?options</code>
+(under <span class="pkg">utils</span>).
+</p>
+<p>If you intend not to accept updates as source packages, you should
+use <code>update.packages(type = "binary")</code>.
+</p>
 </li></ul>
 
 
@@ -406,15 +707,21 @@ packages).  It would be simpler to use <code>-lz</code> instead.
 <li> <p><code>download.file(method = "lynx")</code> is defunct.
 </p>
 </li>
-<li><p> Use of the included versions of <code>zlib</code>, <code>bzip2</code>,
-<code>xz</code> and PCRE is deprecated: these are essentially frozen and
-will eventually be removed.
+<li><p> Building <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> using the included versions of <code>zlib</code>,
+<code>bzip2</code>, <code>xz</code> and PCRE is deprecated: these are frozen
+(bar essential bug-fixes) and will be removed for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
 </p>
 </li>
 <li><p> The <code>configure</code> option
 <span class="option">--with-valgrind-instrumentation=3</span> has been withdrawn, as
 it did not work with recent <code>valgrind</code> headers: it is now
 treated as level <code>2</code>.
+</p>
+</li>
+<li><p> The <code>MethodsList</code> class in package <span class="pkg">methods</span> had
+been deprecated in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 2.11.0 and is defunct now.  Functions using
+it are defunct if they had been deprecated in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 2.11.0, and are
+deprecated now, otherwise.
 </p>
 </li></ul>
 
@@ -437,27 +744,72 @@ matching by name in <code>log()</code>.
 <code>refClass</code>es.
 </p>
 </li>
-<li> <p><code>[&lt;-</code> and <code>[[&lt;-</code> gain S4 <code>data.frame</code> methods to
-avoid corruption of S4 class information by the S3 methods.
+<li> <p><code>[&lt;-</code> and <code>[[&lt;-</code> gain S4 <code>data.frame</code> methods
+to avoid corruption of S4 class information by the S3 methods.
 </p>
 </li>
 <li> <p><code>callNextMethod()</code> should now work within a <code>.local</code>
 call when <code>...</code> is absent from <code>formals(.local)</code>.
 </p>
 </li>
-<li> <p><code>dput(pairlist(x))</code> generates a call to the <code>pairlist</code>
-constructor, instead of the <code>list</code> constructor.
+<li> <p><code>dput(pairlist(x))</code> generates a call to the
+<code>pairlist</code> constructor instead of the <code>list</code>
+constructor.
 </p>
 </li>
 <li><p> Fix <code>missing()</code> when arguments are propagated through
-<code>...</code>; see <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15707">PR#15707</a>.
+<code>...</code> . (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15707">PR#15707</a>)
+</p>
+</li>
+<li> <p><code>eigen(m)</code> now defaults to <code>symmetric = TRUE</code> even
+when the dimnames are asymmetric if the matrix is otherwise
+symmetric.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16151">PR#16151</a>)
+</p>
+</li>
+<li><p> Fix issues with forwarding <code>...</code> through
+<code>callGeneric()</code> and <code>callNextMethod()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16141">PR#16141</a>)
+</p>
+</li>
+<li> <p><code>callGeneric()</code> now works after a <code>callNextMethod()</code>.
+</p>
+</li>
+<li><p> Subclass information is kept consistent when replacing an
+ordinary S4 class with an &ldquo;old class&rdquo; <em>via</em> the
+<code>S4Class</code> argument to <code>setOldClass()</code>. Thus, for
+example, a <code>data.frame</code> is valid for a <code>list</code> argument
+in the signature, and a <code>factor</code> is valid for <code>vector</code>
+arguments.
+</p>
+</li>
+<li><p> In <code>qbeta()</code> the inversion of <code>pbeta()</code> is much
+more sophisticated.  This works better in corner cases some of
+which failed completely previously (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15755">PR#15755</a>), or were using
+too many iterations.
+</p>
+</li>
+<li><p> Auto-printing no longer duplicates objects when printing is
+dispatched to a method.
+</p>
+</li>
+<li> <p><code>kmeans(x, k)</code> would fail when <code>nrow(x) &gt;= 42949673</code>.
+(Comment 6 of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15364">PR#15364</a>)
+</p>
+</li>
+<li> <p>&lsquo;Abbreviated&rsquo; locale-specific day and month names
+could have been truncated in those rare locales where there are
+the same as the full names.
+</p>
+</li>
+<li><p> An irrelevant warning message from updating subclass
+information was silenced (the namespace would not be writable
+in this case).
 </p>
 </li></ul>
 
 
 
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.2 patched</h3>
+<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.1.3</h3>
 
 
 
@@ -500,9 +852,33 @@ strings byte-by-byte in numerical order.
 distributions).
 </p>
 </li>
-<li> <p><code>model.frame()</code> (used by <code>lm()</code> and many other 
+<li> <p><code>model.frame()</code> (used by <code>lm()</code> and many other
 modelling functions) now warns when it drops contrasts
 from factors.  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16119">PR#16119</a>)
+</p>
+</li>
+<li> <p><code>install.packages()</code> and friends now accept the value
+<code>type = "binary"</code> as a synonym for the native binary type on
+the platform (if it has one).
+</p>
+</li>
+<li><p> Single source or binary files can be supplied for
+<code>install.packages(type = "both")</code> and the appropriate type
+and <code>repos = NULL</code> will be inferred.
+</p>
+</li>
+<li><p> New function <code>pcre_config()</code> to report on some of the
+configuration options of the version of PCRE in use.  In
+particular, this reports if regular expressions using
+<span class="samp">\p{xx}</span> are supported.
+</p>
+</li>
+<li><p> (Windows.) <code>download.file(cacheOK = FALSE)</code> is now
+supported when &lsquo;<span class="file">internet2.dll</span>&rsquo; is used.
+</p>
+</li>
+<li> <p><code>browseURL()</code> has been updated to work with Firefox
+36.0 which has dropped support for the <span class="option">-remote</span> interface.
 </p>
 </li></ul>
 
@@ -536,11 +912,17 @@ another way to ensure <span class="pkg">texinfo</span> 5.x is used when both 5.x
 </p>
 </li>
 <li> <p><code>R CMD check</code> checks for the undeclared use of GNU
-extensions in makefiles, and for makefiles with a missing final
+extensions in Makefiles, and for Makefiles with a missing final
 linefeed.
 </p>
 <p><code>R CMD build</code> will correct line endings in all Makefiles,
 not just those in the &lsquo;<span class="file">src</span>&rsquo; directory.
+</p>
+</li>
+<li> <p><code>R CMD check</code> notes uses of <code>library()</code> and
+<code>require()</code> in package code: see the section
+&lsquo;Suggested packages&rsquo; of &lsquo;Writing R Extensions&rsquo; for
+good practice.
 </p>
 </li></ul>
 
@@ -629,6 +1011,10 @@ on the <code>versionCheck</code> parameter.  (Reported by Geoff Lee.)
 <li><p> Rare over-runs detected by AddressSanitizer in
 <code>substr()</code> and its replacement version have been avoided.
 </p>
+<p><em>Inter alia</em> that fix gives the documented behaviour for
+<code>substr(x, 1, 2) &lt;- ""</code> (subsequently reported as
+<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16214">PR#16214</a>).
+</p>
 </li>
 <li><p> Loading packages incorrectly defining an S4 generic followed
 by a function of the same name caused an erroneous cyclic
@@ -640,8 +1026,8 @@ vignette engine.
 </p>
 </li>
 <li><p> Port Tomas Kalibera's fix from R-devel that restores the
-loadMethod fast path, effectively doubling the speed of S4
-dispatch.
+<code>loadMethod()</code> fast path, effectively doubling the speed of
+S4 dispatch.
 </p>
 </li>
 <li> <p><code>power.t.test()</code> and <code>power.prop.test()</code> now make
@@ -655,11 +1041,47 @@ parts from the other.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 </p>
 </li>
 <li> <p><code>tools:::.Rdconv()</code> didn't accept <code>--encoding=</code> due
-to miscalculated string length.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>) 
+to a typo.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16121">PR#16121</a>)
 </p>
 </li>
 <li><p> Unix-alike builds without a suitable <code>makeinfo</code> were
 documented to link the missing HTML manuals to CRAN, but did not.
+</p>
+</li>
+<li> <p><code>save(*, ascii=TRUE)</code> and <code>load()</code> now correctly
+deal with <code>NaN</code>'s.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16137">PR#16137</a>)
+</p>
+</li>
+<li> <p><code>split.Date()</code> retains fractional representations while
+avoiding incomplete class propagation.
+</p>
+</li>
+<li> <p>&lsquo;<span class="file">R_ext/Lapack.h</span>&rsquo; had not been updated for changes made
+by LAPACK to the argument lists of its (largely internal)
+functions <code>dlaed2</code> and <code>dlaed3</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16157">PR#16157</a>)
+</p>
+</li>
+<li> <p><code>RShowDoc("NEWS", "txt")</code> had not been updated for the
+layout changes of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.0.
+</p>
+</li>
+<li><p> The <code>xtfrm()</code> method for class <code>"Surv"</code> has been
+corrected and its description expanded.
+</p>
+</li>
+<li> <p><code>mode(x) &lt;- y</code> would incorrectly evaluate <code>x</code> before
+changing its mode. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16215">PR#16215</a>)
+</p>
+</li>
+<li> <p><code>besselJ(1, 2^64)</code> and <code>besselY(..)</code> now signal a
+warning, returning <code>NaN</code> instead of typically
+segfaulting. (Issue 3 of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15554">PR#15554</a>)
+</p>
+</li>
+<li><p> HTML conversion of <span class="samp">\href</span> markup in &lsquo;<span class="file">.Rd</span>&rsquo; files
+did not remove the backslash from <span class="samp">\%</span> and so gave an
+invalid URL.  In a related change, the <span class="samp">\</span> escape is now
+required in such URLs.
 </p>
 </li></ul>
 
@@ -892,7 +1314,7 @@ dendrogram.
 </p>
 </li>
 <li><p> The <code>plot</code> method for <code>"hclust"</code> objects gets an
-optional argument <code>check</code>; When that is true (the default) it
+optional argument <code>check</code>; when that is true (the default) it
 checks more carefully for valid input.
 </p>
 </li>

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2015-01-05).
+<!-- This manual is for R, version 3.3.0 Under development (2015-04-09).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -288,7 +288,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2015-01-05).
+<p>This manual is for R, version 3.3.0 Under development (2015-04-09).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -2239,13 +2239,14 @@ chosen to be loaded &lsquo;on demand&rsquo; rather than linked as dynamic librar
 or incorporated into the main executable/dynamic library.
 </p>
 <p>For the remaining modules the motivation has been the amount of (often
-optional) code they will bring in via libraries to which they are
+optional) code they will bring in <em>via</em> libraries to which they are
 linked.
 </p>
 <dl compact="compact">
 <dt><code>internet</code></dt>
 <dd><p>The internal HTTP and FTP clients and socket support, which link to
-system-specific support libraries.
+system-specific support libraries.  This may load <code>libcurl</code> and on
+Windows will load <samp>wininet.dll</samp> and <samp>ws2_32.dll</samp>.
 </p>
 </dd>
 <dt><code>lapack</code></dt>
@@ -2253,21 +2254,11 @@ system-specific support libraries.
 <samp>libRlapack</samp> or an external LAPACK library.
 </p>
 </dd>
-<dt><code>vfonts</code></dt>
-<dd><p>The Hershey font databases and the code to draw with them.
-</p>
-</dd>
 <dt><code>X11</code></dt>
 <dd><p>(Unix-alikes only.)  The <code>X11()</code>, <code>jpeg()</code>, <code>png()</code> and
 <code>tiff()</code> devices. These are optional, and links to some or all of
 the <code>X11</code>, <code>pango</code>, <code>cairo</code>, <code>jpeg</code>, <code>libpng</code>
 and <code>libtiff</code> libraries.
-</p>
-</dd>
-<dt><samp>internet2.dll</samp></dt>
-<dd><p>(Windows only.)  An alternative version of the internet access routines,
-compiled against Internet Explorer internals (and so loads
-<samp>wininet.dll</samp> and <samp>wsock32.dll</samp>).
 </p></dd>
 </dl>
 
@@ -4428,7 +4419,7 @@ Default: &lsquo;<samp>default</samp>&rsquo; (which checks only tarballs, and che
 <dd><p>If true, make use of the <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a> package, which provides a
 detailed analysis of visibility of objects (but may give false
 positives).
-Default: true.
+Default: true (if recommended packages are installed).
 </p></dd>
 <dt><code>_R_CHECK_USE_INSTALL_LOG_</code>
 <a name="index-_005fR_005fCHECK_005fUSE_005fINSTALL_005fLOG_005f"></a>
@@ -4848,7 +4839,24 @@ Default: true (and true for CRAN submission checks).
 <a name="index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"></a>
 </dt>
 <dd><p>If set to a true value, the check will exit on the first error.
-Default:  false.
+Default: false.
+</p>
+</dd>
+<dt><code>_R_CHECK_S3_METHODS_NOT_REGISTERED_</code>
+<a name="index-_005fR_005fCHECK_005fS3_005fMETHODS_005fNOT_005fREGISTERED_005f"></a>
+</dt>
+<dd><p>If set to a true value, report (apparent) S3 methods exported but not
+registered.
+Default: false (but true for CRAN submission checks).
+</p>
+</dd>
+<dt><code>_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_</code>
+<a name="index-_005fR_005fCHECK_005fOVERWRITE_005fREGISTERED_005fS3_005fMETHODS_005f"></a>
+</dt>
+<dd><p>If set to a true value, report already registered S3 methods in
+base/recommended packages which are overwritten when this package&rsquo;s
+namespace is loaded. 
+Default: false (but true for CRAN submission checks).
 </p></dd>
 </dl>
 
@@ -4872,6 +4880,8 @@ _R_CHECK_DEPRECATED_DEFUNCT_=TRUE
 _R_CHECK_REPLACING_IMPORTS_=TRUE
 _R_CHECK_SCREEN_DEVICE_=stop
 _R_CHECK_TOPLEVEL_FILES_=TRUE
+_R_CHECK_S3_METHODS_NOT_REGISTERED_=TRUE
+_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_=TRUE
 </pre></div>
 
 <p>These are turned on by <code>R CMD check --as-cran</code>: the incoming
@@ -5356,6 +5366,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fLICENSE_005f"><code>_R_CHECK_LICENSE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fLIMIT_005fCORES_005f"><code>_R_CHECK_LIMIT_CORES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fNO_005fRECOMMENDED_005f"><code>_R_CHECK_NO_RECOMMENDED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fOVERWRITE_005fREGISTERED_005fS3_005fMETHODS_005f"><code>_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fPERMISSIONS_005f"><code>_R_CHECK_PERMISSIONS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fPKG_005fSIZES_005f"><code>_R_CHECK_PKG_SIZES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fCHECKRD_005fMINLEVEL_005f"><code>_R_CHECK_RD_CHECKRD_MINLEVEL_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
@@ -5365,6 +5376,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fSTYLE_005f"><code>_R_CHECK_RD_STYLE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fXREFS_005f"><code>_R_CHECK_RD_XREFS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fREPLACING_005fIMPORTS_005f"><code>_R_CHECK_REPLACING_IMPORTS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fS3_005fMETHODS_005fNOT_005fREGISTERED_005f"><code>_R_CHECK_S3_METHODS_NOT_REGISTERED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSCREEN_005fDEVICE_005f"><code>_R_CHECK_SCREEN_DEVICE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSKIP_005fARCH_005f"><code>_R_CHECK_SKIP_ARCH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSKIP_005fEXAMPLES_005fARCH_005f"><code>_R_CHECK_SKIP_EXAMPLES_ARCH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>

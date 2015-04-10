@@ -20,4 +20,4 @@ Maintainer: "Winston Chang" <winston@stdout.org>
 NeedsCompilation: no
 Repository: CRAN
 Date/Publication: 2014-10-29 19:20:28
-Built: R 3.1.2; ; 2015-01-05 23:45:07 UTC; windows
+Built: R 3.2.0; ; 2015-04-09 13:38:08 UTC; windows

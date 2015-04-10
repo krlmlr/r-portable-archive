@@ -247,7 +247,7 @@ that version.  The main R FAQ can be found at
 </pre></div>
 
 <p>The information here applies only to recent versions of R for Windows,
-(&lsquo;<samp>3.0.0</samp>&rsquo; or later).  It is biased towards users of 64-bit Windows.
+(&lsquo;<samp>3.1.0</samp>&rsquo; or later).  It is biased towards users of 64-bit Windows.
 </p>
 
 <hr><hr>
@@ -265,14 +265,14 @@ that version.  The main R FAQ can be found at
 <p>Go to any CRAN site (see <a href="http://cran.r-project.org/mirrors.html">http://cran.r-project.org/mirrors.html</a>
 for a list), navigate to the <samp>bin/windows/base</samp> directory and
 collect the file(s) you need.  The current release is distributed as an
-installer &lsquo;<samp>R-devel-win.exe</samp>&rsquo; of about 60Mb.
+installer &lsquo;<samp>R-devel-win.exe</samp>&rsquo; of about 60MB.
 </p>
 <p>There are also links on that page to the &lsquo;<samp>r-patched</samp>&rsquo; and
 &lsquo;<samp>r-devel</samp>&rsquo; snapshots.  These are frequently updated builds of
 development versions of R.  The &lsquo;<samp>r-patched</samp>&rsquo; build includes bug
 fixes to the current release, and &lsquo;<samp>r-devel</samp>&rsquo; contains these as well
-as changes that will eventually make it into the next &lsquo;<samp>x.y.0</samp>&rsquo;
-release.
+as changes that are planned to eventually make it into the next
+&lsquo;<samp>x.y.0</samp>&rsquo; release.
 </p>
 <hr>
 <a name="How-do-I-install-R-for-Windows_003f"></a>
@@ -281,8 +281,7 @@ release.
 
 <p>Current binary versions of R run on Windows XP or later, including on
 64-bit versions: See <a href="#Can-I-use-R-on-64_002dbit-Windows_003f">Can I use R on 64-bit Windows?</a>. The last version
-known to run on Windows 2000 was 2.12.2 and the last version supporting
-95/98/ME/NT4 was 2.6.1.
+known to run on Windows 2000 was 2.12.2.
 </p>
 
 <p>We only test on versions of Windows currently supported by Microsoft,
@@ -290,8 +289,7 @@ mainly 64-bit Windows 7 and Server 2008.
 </p>
 <p>Your file system must allow case-honouring long file names (as is likely
 except perhaps for some network-mounted systems).  A installation takes
-75&ndash;105Mb of disk space (up to 145Mb if ICU was included in the build,
-which is not currently the default).
+75&ndash;110MB of disk space (up to 150MB if ICU was included in the build)
 </p>
 <p>If you want to be able to build packages from sources, we recommend that
 you choose an installation path not containing spaces.  (Using a path
@@ -315,6 +313,8 @@ will have a shortcut to <samp>Rgui.exe</samp> on your desktop and/or somewhere
 on the Start menu file tree, and perhaps also in the Quick Launch part
 of the taskbar (Vista and earlier).  Right-click each shortcut, select
 Properties... and change the &lsquo;Start in&rsquo; field to your working directory.
+(If your account was not the one used for installation, you may need to
+copy the shortcut before editing it.)
 </p>
 <p>On some systems you will have two shortcuts, one for 32-bit with a label
 starting <code>R i386</code> and one for 64-bit starting <code>R x64</code>
@@ -404,7 +404,10 @@ existing one and change the &lsquo;Start in&rsquo; field of the Properties.
 for example a &lsquo;Command Prompt&rsquo; or a port of a Unix shell such as
 <code>tcsh</code> or <code>bash</code>. (The command line can be anything you
 would put in the Target field of a shortcut, and the starting directory
-will be the current working directory of the shell.)
+will be the current working directory of the shell.  Note that the R
+executables are not by default added to the <code>PATH</code>.)  People running
+from a terminal usually prefer to run <code>Rterm.exe</code> and not
+<code>Rgui.exe</code>.
 </p>
 <hr>
 <a name="Can-I-run-R-from-a-CD-or-USB-drive_003f"></a>
@@ -427,10 +430,10 @@ without creating a shortcut starting in a writable folder.
 <a name="How-do-I-UNinstall-R_003f-1"></a>
 <h3 class="section">2.7 How do I UNinstall R?</h3>
 
-<p>Normally you can do this from the &lsquo;<samp>Programs and Features</samp>&rsquo; group in the
-Control Panel.  If it does not appear there, run <samp>unins000.exe</samp> in
-the top-level installation directory.  On recent versions of Windows you
-may well be asked to confirm that you wish to run a program from an
+<p>Normally you can do this from the &lsquo;<samp>Programs and Features</samp>&rsquo; group in
+the Control Panel.  If it does not appear there, run <samp>unins000.exe</samp>
+in the top-level installation directory.  On recent versions of Windows
+you may be asked to confirm that you wish to run a program from an
 &lsquo;unknown&rsquo; or &lsquo;unidentified&rsquo; publisher.
 </p>
 <p>Uninstalling R only removes files from the initial installation, not
@@ -617,7 +620,7 @@ overridden in a <samp>.Renviron</samp> file or on the command line.)
 <p>See <code>?Startup</code> for more details of environment files.
 </p>
 </li><li> For all applications via Windows.  How you set an environment variable
-is system specific: under recent versions of Windows, go to &lsquo;User
+is system-specific: under recent versions of Windows, go to &lsquo;User
 Accounts&rsquo; in the Control Panel, and select your account and then &lsquo;Change
 my environment variables&rsquo;.
 </li></ol>
@@ -669,9 +672,9 @@ Administrator installs) &lsquo;<samp>Associate R with .RData files</samp>&rsquo;
 Windows registry:
 </p><ul>
 <li> <code>HKEY_LOCAL_MACHINE\Software\R-core\R\Current Version</code>  
-    contains the version number, currently 3.2.0.
+    contains the version number, currently 3.3.0.
 </li><li> <code>HKEY_LOCAL_MACHINE\Software\R-core\R\[version]\InstallPath</code>
-    (where <code>[version]</code> is currently 3.2.0) contains the path to the R 
+    (where <code>[version]</code> is currently 3.3.0) contains the path to the R 
     home directory.
 </li></ul>
 <p>If you do not have administrative privileges on the machine while
@@ -697,11 +700,10 @@ neither sets up nor removes the file associations.
 <a name="Does-R-support-automation-_0028OLE_002c-COM_0029_003f"></a>
 <h3 class="section">2.18 Does R support automation (OLE, COM)?</h3>
 
-<p>Directly, no.  See CRAN packages <code>rscproxy</code> and <code>rcom</code> as well
-as <code>RDCOMServer</code>, <code>RDCOMClient</code>, <code>RDCOMEvents</code> and
-<code>SWinTypeLibs</code> from <a href="http://www.omegahat.org/">http://www.omegahat.org/</a>.
+<p>Directly, no.  See packages such as <code>RDCOMClient</code> from
+<a href="http://www.omegahat.org/">http://www.omegahat.org/</a> and the non-Free project at
+<a href="http://www.statconn.com/">http://www.statconn.com/</a>.
 </p>
-
 <hr>
 <a name="The-Internet-download-functions-fail_002e"></a>
 <a name="The-Internet-download-functions-fail_002e-1"></a>
@@ -712,13 +714,13 @@ as <code>RDCOMServer</code>, <code>RDCOMClient</code>, <code>RDCOMEvents</code> 
 <p>We have had several reports of this, although they do work for us on
 <em>all</em> of our machines.  There are two known possible fixes.
 </p>
-<p>(a) Use the alternative <samp>internet2.dll</samp> by starting R with the flag
-<samp>--internet2</samp> (see <a href="#How-do-I-install-R-for-Windows_003f">How do I install R for Windows?</a>) or
-calling <code>setInternet2(TRUE)</code>, or setting the environment variable
-<code>R_WIN_INTERNET2</code> to a non-empty value.  These cause R to use the
-Internet Explorer internals, which may already be configured for use
-with proxies.  Note that this does <em>not</em> work with proxies that
-need authentication.
+<p>(a) Use the Windows internet functions by starting R with the flag
+<samp>--internet2</samp> (see <a href="#How-do-I-install-R-for-Windows_003f">How do I install R for Windows?</a>)  or
+calling <code>setInternet2(TRUE)</code> or setting the environment variable
+<code>R_WIN_INTERNET2</code> to a non-empty value when starting R.  These cause
+R to use the OS&rsquo;s functions used by Internet Explorer, which may already
+be configured for use with proxies.  Note that this does <em>not</em> work
+with proxies that need authentication.
 </p>
 <p>(b) A proxy needs to be set up: see <code>?download.file</code>.  Here are two
 versions of an example (a real one, but from a machine that is only
@@ -934,11 +936,11 @@ use fonts which render them correctly.
 <p>The font used can affect whether quotes are rendered correctly.  The
 default font in the <code>Rgui</code> console and internal pager is
 <code>Courier New</code>, which has directional quotes on all the systems we
-tried.  <code>Lucida Console</code> has elegant glyphs for directional quotes
-(but seems rather light unless ClearType is in use): <code>Consolas</code> is
-another font which we often select when ClearType is in use.
-Non-TrueType fonts such as <code>Courier</code> and <code>FixedSys</code> lack
-directional double quotes on all the systems we tried.
+tried.  <code>Lucida Console</code> which has elegant glyphs for directional
+quotes (but seems rather light unless ClearType is in use):
+<code>Consolas</code> is another font which we often select when ClearType is
+in use.  Non-TrueType fonts such as <code>Courier</code> and <code>FixedSys</code>
+lack directional double quotes on the systems we tried.
 </p>
 <p>There is a related problem with using <code>Sweave</code> output in
 <code>Rgui</code>, for LaTeX needs to be told about the encoding of
@@ -961,7 +963,7 @@ accessed by pressing AltGr (the right Alt key) plus some other key.
 This is <code>]</code> in Canadian (multilingual), German and Scandinavian
 layouts, <code>1</code> in Eastern Europe, <code>[</code> in Portuguese, <code>4</code> or
 <code>5</code> in Spanish, <code>/</code> in Francophone Belgian, and so on.  For
-some keyboards the uses of AltGr are at
+some keyboards the uses of AltGr are shown at
 <a href="http://office.microsoft.com/en-us/word/HP052590631033.aspx">http://office.microsoft.com/en-us/word/HP052590631033.aspx</a>:
 you can explore those for your keyboard via the &lsquo;On-Screen Keyboard&rsquo;
 (under Ease of access on Windows 7).
@@ -1058,7 +1060,7 @@ edit the <code>PATH</code>.
 <p>The element you want to add to the path is something like
 </p>
 <div class="example">
-<pre class="example">c:\Program Files\R\R-3.0.0\bin\x64
+<pre class="example">c:\Program Files\R\R-3.1.0\bin\x64
 </pre></div>
 
 <p>for 64-bit <code>Rcmd.exe</code>, replacing <code>x64</code> by <code>i386</code> for
@@ -1270,11 +1272,11 @@ packages).
 CRAN or from a local <code>.zip</code> file by using <code>install.packages</code>:
 see its help page.  There are menu items on the <code>Packages</code> menu to
 provide a point-and-click interface to package installation.  The
-packages for each minor (2.x.? or 3.x.?) version will be stored in a separate area,
-so for R 3.0.? the files are in <samp>bin/windows/contrib/3.0</samp>.
+packages for each minor (3.x.?) version will be stored in a separate area,
+so for R 3.1.? the files are in <samp>bin/windows/contrib/3.1</samp>.
 </p>
 <p>Note that the binary versions on CRAN are unsupported: see
-<a href="http://cran.r-project.org/bin/windows/contrib/3.0/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.0/ReadMe</a>,
+<a href="http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a>,
 which also gives the locations of a few other binary packages.
 </p>
 <p>If there is no binary package or that is not up-to-date or you prefer
@@ -1374,12 +1376,12 @@ prepared for R 2.10.0 or later, and packages containing compiled code
 for R 2.12.0 or later.
 </p>
 <p>You can tell the version the package was compiled for by looking at the
-&lsquo;<samp>Built:</samp>&rsquo; line in its <samp>DESCRIPTION</samp> file 
+&lsquo;<samp>Built:</samp>&rsquo; line in its <samp>DESCRIPTION</samp> file.
 </p>
 <p>For a small number of binary packages you need to install additional
 software and have its DLLs in your <code>PATH</code>.  Windows will normally
 give an informative message about a certain DLL not being found.  See
-<a href="http://cran.r-project.org/bin/windows/contrib/3.0/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.0/ReadMe</a> for a
+<a href="http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a> for a
 listing of some of these packages (notably <code>RGtk2</code>,
 <code>cairoDevice</code>, <code>rggobi</code>, <code>rJava</code>, <code>rjags</code> and some
 of the packages connecting to databases).
@@ -1514,16 +1516,15 @@ documented at <a href="http://win-builder.r-project.org">http://win-builder.r-pr
 not yours, please remember to change the maintainer address so the
 results go to you and not the author(s)!
 </p>
-<p>However, if a CRAN package is not available in binary form or only
-available for 32-bit R, this usually means that there is a problem
-with some dependent package or external software (often mentioned in the
-<samp>@ReadMe</samp> file in the binary repository directory).  You can email
-<a href="mailto:R-windows@r-project.org">R-windows@r-project.org</a> expressing a wish for such a package to
-be ported&mdash;the maintainers will take such wishes into account when
-prioritizing work on binary packages.
+<p>However, if a CRAN package is not available in binary form, this usually
+means that there is a problem with some dependent package or external
+software (often mentioned in the <samp>@ReadMe</samp> file in the binary
+repository directory).  You can email <a href="mailto:R-windows@r-project.org">R-windows@r-project.org</a>
+expressing a wish for such a package to be ported&mdash;the maintainers will
+take such wishes into account when prioritizing work on binary packages.
 </p>
 <p>In many cases installing packages from the sources is not at all
-difficult (especially if the package contains no compiled code), so
+difficult (it is simple if the package contains no compiled code), so
 please attempt that for yourself before requesting help from the busy
 volunteers.
 </p>
@@ -1545,10 +1546,10 @@ page at <a href="http://cran.r-project.org/mirrors.html">http://cran.r-project.o
 than the one you are using.  You can check on the package&rsquo;s HTML page on
 CRAN, and update your R if needed.
 </p>
-<p>Your R might be too old.  Binary packages for the 2.x series were built
-(if possible) whilst 2.(x+1) is current, and once 3.0.0 is released,
-binary packages for 2.14.x will be frozen.  You can always try
-installing from the sources.
+<p>Your R might be too old.  Binary packages for the 3.x series are built
+(if possible) whilst 3.(x+1) is current, but building stops once 3.(x+2)
+reaches alpha (pre-release, about a month before release).  You can
+always try installing from the sources.
 </p>
 <hr>
 <a name="No-binary-packages-appear-to-be-available-for-my-version-of-R"></a>
@@ -1588,10 +1589,10 @@ other with option <samp>--merge-multiarch</samp>, but the package source
 must be a tarball (and as before, running on a 64-bit version of Windows
 with both versions of R installed).
 </p>
-<p>Finally, as from R 2.15.0, a package without a <code>src/Makefile.win</code>
-file and no or empty or architecture-independent <code>configure.win</code>
-file can be installed for both architectures from 32-bit Windows if the
-64-bit components were selected when R was installed and option
+<p>Finally, a package without a <code>src/Makefile.win</code> file and no or
+empty or architecture-independent <code>configure.win</code> file can be
+installed for both architectures from 32-bit Windows if the 64-bit
+components were selected when R was installed and option
 <samp>--compile-both</samp> is given.  Obviously, only the 32-bit
 installation can be tested.
 </p>
@@ -1683,6 +1684,9 @@ of the order of 100.)
 width as 300mm in 1280 x 1024 mode and 320mm in 1280 x 960 and 1600 x 1200
 modes.  In fact it was a 21&quot; monitor and 400mm x 300mm!
 </p>
+<p>This is less common with LCD screens but not unknown, particularly if
+they are not running at their native resolution.
+</p>
 <hr>
 <a name="How-do-I-move-focus-to-a-graphics-window-or-the-console_003f"></a>
 <a name="How-do-I-move-focus-to-a-graphics-window-or-the-console_003f-1"></a>
@@ -1772,7 +1776,7 @@ function <code>setwd</code>: see its help page.
 <h3 class="section">6.3 Can I load workspaces saved under Unix/GNU-Linux or Mac OS X?</h3>
 
 <p>Yes.  All ports of R use the same format for saved workspaces, so they
-are interchangeable (for the same 2.x.? version of R, at least).
+are interchangeable (for the same 3.x.? version of R, at least).
 </p>
 <p>Note though that character data in a workspace will be in a particular
 encoding that is not recorded in the workspace, so workspaces containing
@@ -1781,8 +1785,7 @@ the same OS.  Since R marks character data when it knows it to be in
 UTF-8 or Latin-1 (including its Windows superset, CP1252), strings in
 those encodings are likely to be transferred correctly: fortunately this
 covers most of the common cases (OS X normally uses UTF-8, and Linux
-users are likely to use UTF-8 or perhaps Latin-1 (which used to be used
-for English)).
+users are likely to use UTF-8 or perhaps Latin-1).
 </p>
 <p>It is possible to save references to package namespaces when saving the
 workspace: if that happens the package will need to be installed on the
@@ -1975,12 +1978,6 @@ program under a debugger and sending it a signal to interrupt it and
 drop control back to the debugger does not work with a MinGW version of
 <code>gdb</code>.  It does often work with the <code>cygwin</code> version.
 
-</li><li> Other debuggers than <code>gdb</code> can be used.  We have successfully
-used the <code>insight</code> front-end to <code>gdb</code> (see
-<a href="http://sources.redhat.com/insight/">http://sources.redhat.com/insight/</a>: there is a MinGW port on
-their site), and Borland&rsquo;s debugger with a DLL compiled in a Borland
-compiler.
-
 </li></ul>
 
 <p>See
@@ -2014,22 +2011,12 @@ as in the example in <em>&lsquo;Writing R Extensions&rsquo;</em>.  Then build th
 link /dll /out:X.dll /export:X_main X.obj X_main.obj
 </pre></div>
 
-<p>or (Borland C++, which also requires extension <code>.cpp</code>)
-</p>
-<div class="example">
-<pre class="example">bcc32 -u- -WDE X.cpp X_main.cpp
-</pre></div>
-
 <p>and call the entry point(s) in <code>X_R</code>, such as <code>X_main</code>.
 Construction of static variables will occur when the DLL is loaded, and
 destruction when the DLL is unloaded, usually when R terminates.
 </p>
 <p>Note that you will not see the messages from this example in the GUI
 console: see the next section.
-</p>
-<p>This example used to be in package <samp>cxx_0.0-x.tar.gz</samp> in the
-<samp>src/contrib/Devel</samp> section on CRAN, and could be compiled as a
-package in the usual way on Windows.
 </p>
 
 <hr>
@@ -2074,7 +2061,7 @@ If you want output to be updated on the console, call
 </p>
 <hr WIDTH="100%">
 <address>
-Last edited 2012-12-12: comments to
+Last edited 2015-01-27: comments to
 <code><a href="mailto:R-windows@R-project.org">R-windows@r-project.org</a></code>
 </address>
 <div class="footnote">
