@@ -17,6 +17,18 @@ CHANGES IN R-devel:
     * C-level asChar(x) is fixed for when x is not a vector, and it
       returns "TRUE"/"FALSE" instead of "T"/"F" for logical vectors.
 
+    * as.integer("111111111111") now gives NA (with a warning) as it
+      does for the corresponding numeric or negative number coercions.
+      Further, as.integer(M + 0.1) now gives M (instead of NA) when M
+      is the maximal representable integer.
+
+CHANGES IN R 3.2.0 patched:
+
+  BUG FIXES:
+
+    * acf() and ccf() now guarantee values strictly in [-1,1] (instead
+      of sometimes very slightly outside). PR#15832.
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
