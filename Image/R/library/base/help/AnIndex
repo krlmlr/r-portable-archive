@@ -407,6 +407,7 @@ by.default	by
 bzfile	connections
 c	c
 c.Date	Dates
+c.difftime	difftime
 c.noquote	noquote
 c.numeric_version	numeric_version
 c.POSIXct	DateTimeClasses
