@@ -21,4 +21,4 @@ Collate: 'c.r' 'checks.r' 'count.r' 'detect.r' 'dup.r' 'extract.r'
 Packaged: 2012-12-05 21:47:03 UTC; hadley
 Repository: CRAN
 Date/Publication: 2012-12-06 08:39:59
-Built: R 3.2.0; ; 2015-04-18 00:45:03 UTC; windows
+Built: R 3.2.0; ; 2015-04-18 22:28:01 UTC; windows
