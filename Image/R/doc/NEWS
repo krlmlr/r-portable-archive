@@ -12,6 +12,11 @@ CHANGES IN R-devel:
       removed, so system versions are required (see the 'R Installation
       and Administration' manual).
 
+  BUG FIXES:
+
+    * C-level asChar(x) is fixed for when x is not a vector, and it
+      returns "TRUE"/"FALSE" instead of "T"/"F" for logical vectors.
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
@@ -245,7 +250,7 @@ CHANGES IN R 3.2.0:
       namespace or namespace imports environment.  Contributed by Karl
       Millar.
 
-    * New function isLoadedNamespace() for readability and speed.
+    * New function isNamespaceLoaded() for readability and speed.
 
     * names(env) now returns all the object names of an environment
       env, equivalently to ls(env, all.names = TRUE, sorted = FALSE)

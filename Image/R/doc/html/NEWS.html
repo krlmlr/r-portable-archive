@@ -36,6 +36,19 @@ required (see the &lsquo;R Installation and Administration&rsquo; manual).
 
 
 
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> C-level <code>asChar(x)</code> is fixed for when <code>x</code> is not a
+vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
+&ldquo;T&rdquo;/&ldquo;F&rdquo; for logical vectors.
+</p>
+</li></ul>
+
+
+
+
 <h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.0</h3>
 
 
@@ -356,7 +369,7 @@ locked namespace or namespace imports environment.  Contributed by
 Karl Millar.
 </p>
 </li>
-<li><p> New function <code>isLoadedNamespace()</code> for readability and speed.
+<li><p> New function <code>isNamespaceLoaded()</code> for readability and speed.
 </p>
 </li>
 <li> <p><code>names(env)</code> now returns all the object names of an
