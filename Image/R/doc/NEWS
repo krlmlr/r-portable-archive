@@ -6,9 +6,18 @@ CHANGES IN R-devel:
 
     * The print method for methods() gains a byclass argument.
 
+    * New functions validEnc() and validUTF8() to give access to the
+      validity checks for inputs used by grep() and friends.
+
     * Experimental new functionality for S3 method checking, notably
       isS3method().  Also, the R "language element" names are exported
       as tools::langElts.
+
+    * str(x) now displays "Time-Series" also for matrix (multivariate)
+      time-series, i.e. when is.ts(x) is true.
+
+    * nchar(x, *) gains a new argument keepNA which governs how the
+      result for NAs in x is determined.
 
   UTILITIES:
 
@@ -29,6 +38,11 @@ CHANGES IN R-devel:
 
 CHANGES IN R 3.2.0 patched:
 
+  NEW FEATURES:
+
+    * utf8ToInt() now checks that its input is valid UTF-8 and returns
+      NA if it is not.
+
   BUG FIXES:
 
     * acf() and ccf() now guarantee values strictly in [-1,1] (instead
@@ -38,6 +52,11 @@ CHANGES IN R 3.2.0 patched:
       does for the corresponding numeric or negative number coercions.
       Further, as.integer(M + 0.1) now gives M (instead of NA) when M
       is the maximal representable integer.
+
+    * Under some circumstances nchar(x, "c") and nchar(x, "w") would
+      return values (possibly NA) for inputs which were declared to be
+      UTF-8 but were not, or for invalid strings without a marked
+      encoding in a multi-byte locale.
 
 CHANGES IN R 3.2.0:
 

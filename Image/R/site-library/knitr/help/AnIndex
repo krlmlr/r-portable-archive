@@ -43,6 +43,7 @@ knit_filter	knit_filter
 knit_global	knit_global
 knit_hooks	knit_hooks
 knit_meta	knit_meta
+knit_params	knit_params
 knit_patterns	knit_patterns
 knit_print	knit_print
 knit_rd	knit_rd

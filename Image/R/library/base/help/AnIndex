@@ -1502,6 +1502,8 @@ upper.tri	lower.tri
 url	connections
 UseMethod	UseMethod
 utf8ToInt	utf8Conversion
+validEnc	validUTF8
+validUTF8	validUTF8
 vapply	lapply
 vector	vector
 Vectorize	Vectorize

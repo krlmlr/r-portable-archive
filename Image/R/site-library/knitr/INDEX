@@ -39,6 +39,7 @@ knit_global             The global environment in which code chunks are
 knit_hooks              Hooks for R code chunks, inline R code and
                         output
 knit_meta               Metadata about objects to be printed
+knit_params             Extract knit parameters from a document
 knit_patterns           Patterns to match and extract R code in a
                         document
 knit_print              A custom printing function

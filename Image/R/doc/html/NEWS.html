@@ -19,9 +19,23 @@
 <code>byclass</code> argument.
 </p>
 </li>
+<li><p> New functions <code>validEnc()</code> and <code>validUTF8()</code> to
+give access to the validity checks for inputs used by
+<code>grep()</code> and friends.
+</p>
+</li>
 <li><p> Experimental new functionality for S3 method checking, notably
 <code>isS3method()</code>.  Also, the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &ldquo;language element&rdquo; names
 are exported as <code>tools::langElts</code>.
+</p>
+</li>
+<li> <p><code>str(x)</code> now displays <code>"Time-Series"</code> also for
+matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
+</p>
+
+</li>
+<li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
+governs how the result for <code>NA</code>s in <code>x</code> is determined.
 </p>
 </li></ul>
 
@@ -71,6 +85,18 @@ vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
 
 
 
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>utf8ToInt()</code> now checks that its input is valid UTF-8
+and returns <code>NA</code> if it is not.
+</p>
+</li></ul>
+
+
+
+
 <h4>BUG FIXES</h4>
 
 
@@ -83,6 +109,12 @@ in <i>[-1,1]</i> (instead of sometimes very slightly outside). <a href="https://
 it does for the corresponding numeric or negative number
 coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
 (instead of NA) when M is the maximal representable integer.
+</p>
+</li>
+<li><p> Under some circumstances <code>nchar(x, "c")</code> and
+<code>nchar(x, "w")</code> would return values (possibly <code>NA</code>) for
+inputs which were declared to be UTF-8 but were not, or for
+invalid strings without a marked encoding in a multi-byte locale.
 </p>
 </li></ul>
 
