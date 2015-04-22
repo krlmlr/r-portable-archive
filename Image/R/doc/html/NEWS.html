@@ -228,6 +228,12 @@ check the length of their argument, so could segfault. (<a href="https://bugs.R-
 <li><p> Under some circumstances using the internal PCRE would cause
 external libs such as <code>-llzma</code> to omitted from the main link.
 </p>
+</li>
+<li><p> The .Primitive default methods of the logic operators, i.e.,
+<code>!</code>, <code>&amp;</code> and <code>|</code>, now give correct error messages
+when appropriate, e.g., for <code>`&amp;`(TRUE)</code> or <code>`!`()</code>.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16385">PR#16385</a>)
+</p>
 </li></ul>
 
 

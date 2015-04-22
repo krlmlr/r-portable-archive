@@ -139,6 +139,10 @@ CHANGES IN R 3.2.0 patched:
     * Under some circumstances using the internal PCRE would cause
       external libs such as -llzma to omitted from the main link.
 
+    * The .Primitive default methods of the logic operators, i.e., !, &
+      and |, now give correct error messages when appropriate, e.g.,
+      for `&`(TRUE) or `!`().  (PR#16385)
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:

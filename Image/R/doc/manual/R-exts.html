@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-05-14).
+<!-- This manual is for R, version 3.3.0 Under development (2015-05-15).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -431,7 +431,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-05-14).
+<p>This manual is for R, version 3.3.0 Under development (2015-05-15).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4664,9 +4664,10 @@ to specify a suitable locale <em>via</em> environment variable
 <pre class="example">&quot;latin1=en_US:latin2=pl_PL:UTF-8=en_US.UTF-8:latin9=fr_FR.iso885915@euro&quot;
 </pre></div>
 
-<p>(which is appropriate for a system based on <code>glibc</code>) except that if
-the current locale is UTF-8 then the package code is translated to UTF-8
-for syntax checking.
+<p>(which is appropriate for a system based on <code>glibc</code>: OS X requires
+<code>latin9=fr_FR.ISO8859-15</code>) except that if the current locale is
+UTF-8 then the package code is translated to UTF-8 for syntax checking,
+so it is strongly recommended to check in a UTF-8 locale.
 </p>
 <hr>
 <a name="Portable-C-and-C_002b_002b-code"></a>
