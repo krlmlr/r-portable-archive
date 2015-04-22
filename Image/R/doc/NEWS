@@ -36,6 +36,9 @@ CHANGES IN R-devel:
     * D() now signals an error when given invalid input, rather than
       silently returning NA.  (Request of John Nash.)
 
+    * formula objects are slightly more "first class": e.g., formula()
+      or new("formula", y ~ x) are now valid.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
