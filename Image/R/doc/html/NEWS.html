@@ -172,7 +172,19 @@ submit invalid URLs.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cg
 </li>
 <li> <p><code>Rscript</code> and command line <code>R</code> silently
 ignored incomplete statements at the end of a script; now they
-are reported as parse errors.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16350">PR#16350</a>)      
+are reported as parse errors.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16350">PR#16350</a>)    
+</p>
+</li>
+<li><p> Parse data for very long strings was not stored.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16354">PR#16354</a>)
+</p>
+</li>
+<li> <p><code>plotNode()</code>, the workhorse of the <code>plot</code> method
+for <code>"dendrogram"</code>s is no longer recursive, thanks to Suharto
+Anggono, and hence also works for deeply nested dendrograms.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15215">PR#15215</a>)
+</p>
+</li>
+<li><p> The parser could overflow internally when given numbers
+in scientific format with extremely large exponents.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16358">PR#16358</a>)
 </p>
 </li></ul>
 

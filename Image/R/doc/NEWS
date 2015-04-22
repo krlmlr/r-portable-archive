@@ -99,6 +99,15 @@ CHANGES IN R 3.2.0 patched:
       at the end of a script; now they are reported as parse errors.
       (PR#16350)
 
+    * Parse data for very long strings was not stored.  (PR#16354)
+
+    * plotNode(), the workhorse of the plot method for "dendrogram"s is
+      no longer recursive, thanks to Suharto Anggono, and hence also
+      works for deeply nested dendrograms.  (PR#15215)
+
+    * The parser could overflow internally when given numbers in
+      scientific format with extremely large exponents.  (PR#16358)
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
