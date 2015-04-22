@@ -160,6 +160,11 @@ CHANGES IN R 3.2.0 patched:
     * summaryRprof() could fail when the profile contained only two
       records.  (PR#16395)
 
+    * HTML vignettes opened using vignette() did not support links into
+      the rest of the HTML help system.  (Links worked properly when
+      the vignette was opened using browseVignettes() or from within
+      the help system.)
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
