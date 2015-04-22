@@ -21,7 +21,7 @@ CHANGES IN R-devel:
       validity checks for inputs used by grep() and friends.
 
     * Experimental new functionality for S3 method checking, notably
-      isS3method().  Also, the R "language element" names are exported
+      isS3method().  Also, the R 'language element' names are exported
       as tools::langElts.
 
     * str(x) now displays "Time-Series" also for matrix (multivariate)
@@ -31,7 +31,7 @@ CHANGES IN R-devel:
       accepts *.tar.gz files as well as *.zip files (but defaults to
       the latter).
 
-    * new programmeR's utility chkDots.
+    * New programmeR's utility function chkDots().
 
     * D() now signals an error when given invalid input, rather than
       silently returning NA.  (Request of John Nash.)
@@ -56,6 +56,9 @@ CHANGES IN R-devel:
     * .colSums() etc (with an initial dot) first argument name x
       matches colSums() such that error messages are correct.
 
+    * A coef.maov() method has been added to allow vcov() to work with
+      multivariate results. (PR#16380)
+
 CHANGES IN R 3.2.0 patched:
 
   NEW FEATURES:
@@ -77,6 +80,9 @@ CHANGES IN R 3.2.0 patched:
     * lengths(x) now also works (trivially) for atomic x and hence can
       be used more generally as an efficient replacement of sapply(x,
       length) and similar.
+
+    * The included version of PCRE has been updated to 8.37, a bug-fix
+      release.
 
   BUG FIXES:
 
@@ -126,6 +132,9 @@ CHANGES IN R 3.2.0 patched:
 
     * The low-level functions .rowSums() etc. did not check the length
       of their argument, so could segfault. (PR#16367)
+
+    * Under some circumstances using the internal PCRE would cause
+      external libs such as -llzma to omitted from the main link.
 
 CHANGES IN R 3.2.0:
 

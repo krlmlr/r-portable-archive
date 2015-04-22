@@ -44,7 +44,7 @@ give access to the validity checks for inputs used by
 </p>
 </li>
 <li><p> Experimental new functionality for S3 method checking, notably
-<code>isS3method()</code>.  Also, the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &ldquo;language element&rdquo; names
+<code>isS3method()</code>.  Also, the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &lsquo;language element&rsquo; names
 are exported as <code>tools::langElts</code>.
 </p>
 </li>
@@ -57,7 +57,7 @@ now accepts &lsquo;<span class="file">*.tar.gz</span>&rsquo; files as well as &l
 (but defaults to the latter).
 </p>
 </li>
-<li><p> new programmeR's utility <code>chkDots</code>.
+<li><p> New programmeR's utility function <code>chkDots()</code>.
 </p>
 </li>
 <li> <p><code>D()</code> now signals an error when given invalid input,
@@ -107,6 +107,10 @@ vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
 name <code>x</code> matches <code>colSums()</code> such that error messages
 are correct.
 </p>
+</li>
+<li><p> A <code>coef.maov()</code> method has been added to allow 
+<code>vcov()</code> to work with multivariate results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
+</p>
 </li></ul>
 
 
@@ -143,6 +147,10 @@ you are advised to consider this for code portability.
 <li> <p><code>lengths(x)</code> now also works (trivially) for atomic
 <code>x</code> and hence can be used more generally as an efficient
 replacement of <code>sapply(x, length)</code> and similar.
+</p>
+</li>
+<li><p> The included version of PCRE has been updated to 8.37, a
+bug-fix release.
 </p>
 </li></ul>
 
@@ -211,6 +219,10 @@ and related functions could repeatedly query the user for it.
 </li>
 <li><p> The low-level functions <code>.rowSums()</code> etc. did not
 check the length of their argument, so could segfault. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16367">PR#16367</a>)
+</p>
+</li>
+<li><p> Under some circumstances using the internal PCRE would cause
+external libs such as <code>-llzma</code> to omitted from the main link.
 </p>
 </li></ul>
 
