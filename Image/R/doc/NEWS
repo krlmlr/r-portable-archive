@@ -172,6 +172,10 @@ CHANGES IN R 3.2.0 patched:
       the vignette was opened using browseVignettes() or from within
       the help system.)
 
+    * arima(*, xreg = .) (for d >= 1) computes estimated variances
+      based on a the number of effective observations as in R version
+      3.0.1 and earlier.  (PR#16278)
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
