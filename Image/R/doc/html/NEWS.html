@@ -44,13 +44,6 @@ required (see the &lsquo;R Installation and Administration&rsquo; manual).
 vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
 &ldquo;T&rdquo;/&ldquo;F&rdquo; for logical vectors.
 </p>
-
-</li>
-<li> <p><code>as.integer("111111111111")</code> now gives NA (with a warning) as
-it does for the corresponding numeric or negative number
-coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
-(instead of NA) when M is the maximal representable integer.
-</p>
 </li></ul>
 
 
@@ -66,6 +59,12 @@ coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
 <ul>
 <li> <p><code>acf()</code> and <code>ccf()</code> now guarantee values strictly
 in <i>[-1,1]</i> (instead of sometimes very slightly outside). <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15832">PR#15832</a>.
+</p>
+</li>
+<li> <p><code>as.integer("111111111111")</code> now gives NA (with a warning) as
+it does for the corresponding numeric or negative number
+coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
+(instead of NA) when M is the maximal representable integer.
 </p>
 </li></ul>
 
