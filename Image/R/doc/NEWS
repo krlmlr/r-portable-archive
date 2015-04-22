@@ -95,6 +95,13 @@ CHANGES IN R 3.2.0 patched:
     * diag() no longer duplicates a matrix when extracting its
       diagonal.
 
+    * news() now displays R and package news files within the HTML help
+      system if it is available.  If no news file is found, a visible
+      NULL is returned to the console.
+
+    * as.character.srcref() gains an argument to allow characters
+      corresponding to a range of source references to be extracted.
+
   BUG FIXES:
 
     * acf() and ccf() now guarantee values strictly in [-1,1] (instead
