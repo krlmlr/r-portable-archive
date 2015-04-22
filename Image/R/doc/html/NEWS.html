@@ -65,7 +65,12 @@ rather than silently returning <code>NA</code>.  (Request of John Nash.)
 </p>
 </li>
 <li> <p><code>formula</code> objects are slightly more &ldquo;first class&rdquo;:
-e.g., <code>formula()</code> or <code>new("formula", y ~ x)</code> are now valid.
+e.g., <code>formula()</code> or <code>new("formula", y ~ x)</code> are now
+valid.  Similarly, for <code>"table"</code>, <code>"ordered"</code> and
+<code>"summary.table"</code>.  Packages defining S4 classes with the above
+S3/S4 classes as slots should be reinstalled.
+
+
 </p>
 </li></ul>
 
@@ -156,6 +161,10 @@ replacement of <code>sapply(x, length)</code> and similar.
 <li><p> The included version of PCRE has been updated to 8.37, a
 bug-fix release.
 </p>
+</li>
+<li> <p><code>diag()</code> no longer duplicates a matrix when extracting
+its diagonal.
+</p>
 </li></ul>
 
 
@@ -223,6 +232,10 @@ and related functions could repeatedly query the user for it.
 </li>
 <li><p> The low-level functions <code>.rowSums()</code> etc. did not
 check the length of their argument, so could segfault. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16367">PR#16367</a>)
+</p>
+</li>
+<li><p> The <code>quietly</code> argument of <code>library()</code> is correctly
+propagated from <code>.getRequiredPackages2()</code> now.
 </p>
 </li>
 <li><p> Under some circumstances using the internal PCRE would cause

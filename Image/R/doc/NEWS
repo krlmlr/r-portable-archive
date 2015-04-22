@@ -37,7 +37,9 @@ CHANGES IN R-devel:
       silently returning NA.  (Request of John Nash.)
 
     * formula objects are slightly more "first class": e.g., formula()
-      or new("formula", y ~ x) are now valid.
+      or new("formula", y ~ x) are now valid.  Similarly, for "table",
+      "ordered" and "summary.table".  Packages defining S4 classes with
+      the above S3/S4 classes as slots should be reinstalled.
 
   UTILITIES:
 
@@ -87,6 +89,9 @@ CHANGES IN R 3.2.0 patched:
     * The included version of PCRE has been updated to 8.37, a bug-fix
       release.
 
+    * diag() no longer duplicates a matrix when extracting its
+      diagonal.
+
   BUG FIXES:
 
     * acf() and ccf() now guarantee values strictly in [-1,1] (instead
@@ -135,6 +140,9 @@ CHANGES IN R 3.2.0 patched:
 
     * The low-level functions .rowSums() etc. did not check the length
       of their argument, so could segfault. (PR#16367)
+
+    * The quietly argument of library() is correctly propagated from
+      .getRequiredPackages2() now.
 
     * Under some circumstances using the internal PCRE would cause
       external libs such as -llzma to omitted from the main link.
