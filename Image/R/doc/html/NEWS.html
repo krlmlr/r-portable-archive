@@ -247,6 +247,10 @@ external libs such as <code>-llzma</code> to omitted from the main link.
 when appropriate, e.g., for <code>`&amp;`(TRUE)</code> or <code>`!`()</code>.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16385">PR#16385</a>)
 </p>
+</li>
+<li> <p><code>cummax(x)</code> now correctly propagates <code>NA</code>s also
+when <code>x</code> is of type <code>integer</code> and begins with an <code>NA</code>.
+</p>
 </li></ul>
 
 

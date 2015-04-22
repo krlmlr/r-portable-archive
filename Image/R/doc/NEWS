@@ -151,6 +151,9 @@ CHANGES IN R 3.2.0 patched:
       and |, now give correct error messages when appropriate, e.g.,
       for `&`(TRUE) or `!`().  (PR#16385)
 
+    * cummax(x) now correctly propagates NAs also when x is of type
+      integer and begins with an NA.
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:
