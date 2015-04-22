@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (247.8 MB, MD5 hash: `3ab01c181f378bad79ba3cedc6bfa6fb`, uncompressed 624.6 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (248.2 MB, MD5 hash: `1567a6c78011eac0614fc2bc5bf928c3`, uncompressed 636.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (250 MB, MD5 hash: `1bd4554daac736fa09ac5a0cad3b1168`, uncompressed 671.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (247.8 MB, MD5 hash: `dd9f351e5e30df1e354add49c6718c1d`, uncompressed 624.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (248.2 MB, MD5 hash: `a5726a5c1ee649ae3b7614014290c87c`, uncompressed 636.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (250 MB, MD5 hash: `ca35b0d21e12d7cbcb6af76aa576d4f5`, uncompressed 671.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-05-01 r68287)
+R Under development (unstable) (2015-05-01 r68301)
 
 ### Package versions
 
@@ -78,7 +78,7 @@ R Under development (unstable) (2015-05-01 r68287)
 [`mime`](http://cran.r-project.org/package=mime) (0.3),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.2),
 [`R6`](http://cran.r-project.org/package=R6) (2.0.1),
-[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.5),
+[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.6),
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.6),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),

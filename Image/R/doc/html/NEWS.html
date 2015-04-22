@@ -51,6 +51,11 @@ are exported as <code>tools::langElts</code>.
 <li> <p><code>str(x)</code> now displays <code>"Time-Series"</code> also for
 matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
 </p>
+</li>
+<li> <p><code>lengths(x)</code> now also works (trivially) for atomic
+<code>x</code> and hence can be used more generally as an efficient
+replacement of <code>sapply(x, length)</code> and similar.
+</p>
 </li></ul>
 
 
@@ -118,6 +123,10 @@ remains <code>FALSE</code> which is fully back compatible.
 From <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0, the default will change to <code>keepNA = NA</code> and
 you are advised to consider this for code portability.
 </p>
+</li>
+<li> <p><code>news()</code> more flexibly extracts dates from package
+&lsquo;<span class="file">NEWS.Rd</span>&rsquo; files.
+</p>
 </li></ul>
 
 
@@ -137,7 +146,7 @@ coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
 (instead of NA) when M is the maximal representable integer.
 </p>
 </li>
-<li><p> On some plaforms <code>nchar(x, "c")</code> and <code>nchar(x, "w")</code>
+<li><p> On some platforms <code>nchar(x, "c")</code> and <code>nchar(x, "w")</code>
 would return values (possibly <code>NA</code>) for inputs which were
 declared to be UTF-8 but were not, or for invalid strings without a
 marked encoding in a multi-byte locale, rather than give an
@@ -150,6 +159,20 @@ has dimnames containing &quot;X&quot; and &quot;Y&quot; (as in R &lt; 3.2.0).
 </li>
 <li><p> (Windows only) In some cases, the <code>--clean</code> option
 to <code>R CMD INSTALL</code> could fail.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16178">PR#16178</a>)
+</p>
+</li>
+<li><p> (Windows only) <code>choose.files()</code> would occasionally
+include characters from the result of an earlier call in
+the result of a later one.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16270">PR#16270</a>)
+</p>
+</li>
+<li><p> A change in <code>RSiteSearch()</code> in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0 caused it to
+submit invalid URLs.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16329">PR#16329</a>)
+</p>
+</li>
+<li> <p><code>Rscript</code> and command line <code>R</code> silently
+ignored incomplete statements at the end of a script; now they
+are reported as parse errors.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16350">PR#16350</a>)      
 </p>
 </li></ul>
 

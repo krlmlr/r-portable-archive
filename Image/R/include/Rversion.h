@@ -15,8 +15,8 @@ extern "C" {
 #define R_YEAR   "2015"
 #define R_MONTH  "05"
 #define R_DAY    "01"
-#define R_SVN_REVISION 68287
-#define R_FILEVERSION    3,30,68287,0
+#define R_SVN_REVISION 68301
+#define R_FILEVERSION    3,30,68301,0
 
 #ifdef __cplusplus
 }

@@ -247,7 +247,7 @@ l10n_info               Localization Information
 labels                  Find Labels from Object
 lapply                  Apply a Function over a List or Vector
 length                  Length of an Object
-lengths                 Lengths of List Elements
+lengths                 Lengths of List or Vector Elements
 levels                  Levels Attributes
 libcurlVersion          Report Version of libcurl
 library                 Loading/Attaching and Listing of Packages

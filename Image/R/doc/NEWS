@@ -27,6 +27,10 @@ CHANGES IN R-devel:
     * str(x) now displays "Time-Series" also for matrix (multivariate)
       time-series, i.e. when is.ts(x) is true.
 
+    * lengths(x) now also works (trivially) for atomic x and hence can
+      be used more generally as an efficient replacement of sapply(x,
+      length) and similar.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -60,6 +64,8 @@ CHANGES IN R 3.2.0 patched:
       compatible.  From R 3.3.0, the default will change to keepNA = NA
       and you are advised to consider this for code portability.
 
+    * news() more flexibly extracts dates from package NEWS.Rd files.
+
   BUG FIXES:
 
     * acf() and ccf() now guarantee values strictly in [-1,1] (instead
@@ -70,7 +76,7 @@ CHANGES IN R 3.2.0 patched:
       Further, as.integer(M + 0.1) now gives M (instead of NA) when M
       is the maximal representable integer.
 
-    * On some plaforms nchar(x, "c") and nchar(x, "w") would return
+    * On some platforms nchar(x, "c") and nchar(x, "w") would return
       values (possibly NA) for inputs which were declared to be UTF-8
       but were not, or for invalid strings without a marked encoding in
       a multi-byte locale, rather than give an error.  Additional
@@ -81,6 +87,17 @@ CHANGES IN R 3.2.0 patched:
 
     * (Windows only) In some cases, the --clean option to R CMD INSTALL
       could fail.  (PR#16178)
+
+    * (Windows only) choose.files() would occasionally include
+      characters from the result of an earlier call in the result of a
+      later one.  (PR#16270)
+
+    * A change in RSiteSearch() in R 3.2.0 caused it to submit invalid
+      URLs.  (PR#16329)
+
+    * Rscript and command line R silently ignored incomplete statements
+      at the end of a script; now they are reported as parse errors.
+      (PR#16350)
 
 CHANGES IN R 3.2.0:
 
