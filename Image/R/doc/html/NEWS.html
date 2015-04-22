@@ -52,11 +52,6 @@ are exported as <code>tools::langElts</code>.
 matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
 </p>
 </li>
-<li> <p><code>lengths(x)</code> now also works (trivially) for atomic
-<code>x</code> and hence can be used more generally as an efficient
-replacement of <code>sapply(x, length)</code> and similar.
-</p>
-</li>
 <li><p> (Windows only)  The GUI menu item to install local packages
 now accepts &lsquo;<span class="file">*.tar.gz</span>&rsquo; files as well as &lsquo;<span class="file">*.zip</span>&rsquo; files
 (but defaults to the latter).
@@ -135,6 +130,11 @@ you are advised to consider this for code portability.
 <li> <p><code>news()</code> more flexibly extracts dates from package
 &lsquo;<span class="file">NEWS.Rd</span>&rsquo; files.
 </p>
+</li>
+<li> <p><code>lengths(x)</code> now also works (trivially) for atomic
+<code>x</code> and hence can be used more generally as an efficient
+replacement of <code>sapply(x, length)</code> and similar.
+</p>
 </li></ul>
 
 
@@ -196,7 +196,12 @@ in scientific format with extremely large exponents.  (<a href="https://bugs.R-p
 </p>
 </li>
 <li><p> If the CRAN mirror was not set, <code>install.packages(type = "both")</code>
-could repeatedly query the user for it.  (Part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16362">PR#16362</a>)
+and related functions could repeatedly query the user for it.  
+(Part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16362">PR#16362</a>)
+</p>
+</li>
+<li><p> The low-level functions <code>.rowSums()</code> etc. did not 
+check the length of their argument, so could segfault. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16367">PR#16367</a>)
 </p>
 </li></ul>
 
