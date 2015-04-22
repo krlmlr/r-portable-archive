@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-05-20).
+<!-- This manual is for R, version 3.3.0 Under development (2015-05-21).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -431,7 +431,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-05-20).
+<p>This manual is for R, version 3.3.0 Under development (2015-05-21).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4588,13 +4588,12 @@ well as the total.
 seconds elapsed time) for reporting timings.
 </p>
 <p>If you need to look in more detail at the timings for examples, use
-option <samp>--timings</samp> to <code>R CMD check</code> (this is implied by
-<samp>--as-cran</samp> as from R 3.0.2).  This adds a summary to the
-check output for all the examples with CPU or elapsed time of more than
-5 seconds.  It produces a file
-<samp><var>mypkg</var>.Rcheck/<var>mypkg</var>-Ex.timings</samp> containing timings for
-each help file: it is a tab-delimited file which can be read into R
-for further analysis.
+option <samp>--timings</samp> to <code>R CMD check</code> (this is set by
+<samp>--as-cran</samp>).  This adds a summary to the check output for all
+the examples with CPU or elapsed time of more than 5 seconds.  It
+produces a file <samp><var>mypkg</var>.Rcheck/<var>mypkg</var>-Ex.timings</samp>
+containing timings for each help file: it is a tab-delimited file which
+can be read into R for further analysis.
 </p>
 <p>Timings for the tests and vignette runs are given at the bottom of the
 corresponding log file: note that log files for successful vignette runs
@@ -4757,11 +4756,12 @@ namespace.  One way to do so is to use declarations such as
 <pre class="example">using std::floor;
 </pre></div>
 
-</li><li> Macros defined by the compiler/OS can cause problems.  Macros starting
-with an underscore followed by an upper-case letter or another
-underscore are reserved and should not be used in portable code.  Other
-macros, typically upper-case, may be defined by the compiler or system
-headers and can cause problems.
+</li><li> Macros defined by the compiler/OS can cause problems.  Identifiers
+starting with an underscore followed by an upper-case letter or another
+underscore are reserved for system macros and should not be used in
+portable code (including not as guards in C/C++ headers).  Other macros,
+typically upper-case, may be defined by the compiler or system headers
+and can cause problems.
 The most common issue involves the names of the Intel CPU registers such
 as <code>CS</code>, <code>DS</code> and <code>SS</code> defined on i586/x64 Solaris in
 <samp>&lt;sys/regset.h&gt;</samp> and often included indirectly by <samp>&lt;stdlib.h&gt;</samp>
