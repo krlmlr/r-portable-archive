@@ -428,6 +428,7 @@ charmatch	charmatch
 charToRaw	rawConversion
 chartr	chartr
 check_tzones	DateTimeClasses
+chkDots	chkDots
 chol	chol
 chol.default	chol
 chol2inv	chol2inv
@@ -1563,6 +1564,7 @@ zapsmall	zapsmall
 [.POSIXct	DateTimeClasses
 [.POSIXlt	DateTimeClasses
 [.simple.list	Extract
+[.table	table
 [.warnings	warnings
 [<-	Extract
 [<-.data.frame	Extract.data.frame

@@ -31,6 +31,12 @@ CHANGES IN R-devel:
       be used more generally as an efficient replacement of sapply(x,
       length) and similar.
 
+    * (Windows only) The GUI menu item to install local packages now
+      accepts *.tar.gz files as well as *.zip files (but defaults to
+      the latter).
+
+    * new programmeR's utility chkDots.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -107,6 +113,9 @@ CHANGES IN R 3.2.0 patched:
 
     * The parser could overflow internally when given numbers in
       scientific format with extremely large exponents.  (PR#16358)
+
+    * If the CRAN mirror was not set, install.packages(type = "both")
+      could repeatedly query the user for it.  (Part of PR#16362)
 
 CHANGES IN R 3.2.0:
 

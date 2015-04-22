@@ -125,6 +125,8 @@ charToRaw               Convert to or from Raw Vectors
 character               Character Vectors
 charmatch               Partial String Matching
 chartr                  Character Translation and Casefolding
+chkDots                 Warn about extraneous arguments in the "..."
+                        (of its caller).
 chol                    The Choleski Decomposition
 chol2inv                Inverse from Choleski (or QR) Decomposition
 class                   Object Classes
