@@ -51,7 +51,7 @@ Function DownloadAndUnpack {
     $rurl_stable = "http://cran.r-project.org/bin/windows/base/R-3.2.0-win.exe"
 
     Progress "Downloading R (stable)"
-    Invoke-WebRequest $rurl -OutFile .\DL\R-stable-win.exe
+    Invoke-WebRequest $rurl_stable -OutFile .\DL\R-stable-win.exe
 
     Progress "Determining Rtools version"
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
