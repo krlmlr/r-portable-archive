@@ -17,7 +17,7 @@
 <ul>
 <li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
 governs how the result for <code>NA</code>s in <code>x</code> is determined.
-The new default <code>keepNA = TRUE</code> returns <code>NA</code> where
+The new default <code>keepNA = NA</code> returns <code>NA</code> where
 <code>x</code> is <code>NA</code>, unless for <code>type = "width"</code> which still
 returns <code>2</code>, the formatting / printing width of <code>NA</code>.
 </p>
@@ -110,6 +110,14 @@ and returns <code>NA</code> if it is not.
 <li> <p><code>install.packages()</code> now allows <code>type = "both"</code>
 with <code>repos = NULL</code> if it can infer the type of file.
 </p>
+</li>
+<li> <p><code>nchar(x, *)</code> and <code>nzchar(x)</code> gain a new argument
+<code>keepNA</code> which governs how the result for <code>NA</code>s in
+<code>x</code> is determined.  For the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.x series, the default
+remains <code>FALSE</code> which is fully back compatible.
+From <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0, the default will change to <code>keepNA = NA</code> and
+you are advised to consider this for code portability.
+</p>
 </li></ul>
 
 
@@ -129,10 +137,19 @@ coercions.  Further, <code>as.integer(M + 0.1)</code> now gives <code>M</code>
 (instead of NA) when M is the maximal representable integer.
 </p>
 </li>
-<li><p> Under some circumstances <code>nchar(x, "c")</code> and
-<code>nchar(x, "w")</code> would return values (possibly <code>NA</code>) for
-inputs which were declared to be UTF-8 but were not, or for
-invalid strings without a marked encoding in a multi-byte locale.
+<li><p> On some plaforms <code>nchar(x, "c")</code> and <code>nchar(x, "w")</code>
+would return values (possibly <code>NA</code>) for inputs which were
+declared to be UTF-8 but were not, or for invalid strings without a
+marked encoding in a multi-byte locale, rather than give an
+error.  Additional checks have been added to mitigate this.
+</p>
+</li>
+<li> <p><code>apply(a, M, function(u) c(X = ., Y = .))</code> again
+has dimnames containing &quot;X&quot; and &quot;Y&quot; (as in R &lt; 3.2.0).
+</p>
+</li>
+<li><p> (Windows only) In some cases, the <code>--clean</code> option
+to <code>R CMD INSTALL</code> could fail.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16178">PR#16178</a>)
 </p>
 </li></ul>
 

@@ -5,7 +5,7 @@ CHANGES IN R-devel:
   SIGNIFICANT USER-VISIBLE CHANGES:
 
     * nchar(x, *) gains a new argument keepNA which governs how the
-      result for NAs in x is determined.  The new default keepNA = TRUE
+      result for NAs in x is determined.  The new default keepNA = NA
       returns NA where x is NA, unless for type = "width" which still
       returns 2, the formatting / printing width of NA.
 
@@ -54,6 +54,12 @@ CHANGES IN R 3.2.0 patched:
     * install.packages() now allows type = "both" with repos = NULL if
       it can infer the type of file.
 
+    * nchar(x, *) and nzchar(x) gain a new argument keepNA which
+      governs how the result for NAs in x is determined.  For the R
+      3.2.x series, the default remains FALSE which is fully back
+      compatible.  From R 3.3.0, the default will change to keepNA = NA
+      and you are advised to consider this for code portability.
+
   BUG FIXES:
 
     * acf() and ccf() now guarantee values strictly in [-1,1] (instead
@@ -64,10 +70,17 @@ CHANGES IN R 3.2.0 patched:
       Further, as.integer(M + 0.1) now gives M (instead of NA) when M
       is the maximal representable integer.
 
-    * Under some circumstances nchar(x, "c") and nchar(x, "w") would
-      return values (possibly NA) for inputs which were declared to be
-      UTF-8 but were not, or for invalid strings without a marked
-      encoding in a multi-byte locale.
+    * On some plaforms nchar(x, "c") and nchar(x, "w") would return
+      values (possibly NA) for inputs which were declared to be UTF-8
+      but were not, or for invalid strings without a marked encoding in
+      a multi-byte locale, rather than give an error.  Additional
+      checks have been added to mitigate this.
+
+    * apply(a, M, function(u) c(X = ., Y = .)) again has dimnames
+      containing "X" and "Y" (as in R < 3.2.0).
+
+    * (Windows only) In some cases, the --clean option to R CMD INSTALL
+      could fail.  (PR#16178)
 
 CHANGES IN R 3.2.0:
 

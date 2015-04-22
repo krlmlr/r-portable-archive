@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-04-28).
+<!-- This manual is for R, version 3.3.0 Under development (2015-05-01).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -334,7 +334,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-04-28).
+<p>This manual is for R, version 3.3.0 Under development (2015-05-01).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -3200,7 +3200,7 @@ quotes.
 <p>If no suitable translation catalogue is found or a particular message is
 not translated in any suitable catalogue, &lsquo;English&rsquo;<a name="DOCF21" href="#FOOT21"><sup>21</sup></a> is used.
 </p>
-<p>See <a href="http://developer.r-project.org/Translations.html">http://developer.r-project.org/Translations.html</a> for how to
+<p>See <a href="http://developer.r-project.org/Translations30.html">http://developer.r-project.org/Translations30.html</a> for how to
 prepare and install translation catalogues.
 </p>
 <hr>
@@ -3659,25 +3659,24 @@ earliest version we have tested.  (For Fedora users we believe the
 &lsquo;<samp>pangocairo</samp>&rsquo; package is installed (and if not, &lsquo;<samp>cairo</samp>&rsquo;) and if
 additional flags are needed for the &lsquo;<samp>cairo-xlib</samp>&rsquo; package, then if
 suitable code can be compiled.  These tests will fail if
-<code>pkg-config</code> is not installed, and are likely to fail if
-<code>cairo</code> was built statically (unusual).  Most systems with
-<code>Gtk+</code> 2.8 or later installed will have suitable libraries.  OS X
-comes with none of these libraries (but XQuartz, as used for 10.8 and
-later, ships <code>cairo</code>), but <code>cairo</code> support (without
-<code>Pango</code>) has been added to the binary distribution (see
-<a href="http://r.research.att.com/libs/">http://r.research.att.com/libs/</a> you need <code>fontconfig</code>,
-<code>freetype</code> and <code>pixman</code> too): <code>pkg-config</code> is still
-needed when building R from source and can be installed from its
-sources.
+<code>pkg-config</code> is not installed<a name="DOCF36" href="#FOOT36"><sup>36</sup></a>, and are likely to fail if <code>cairo</code> was built
+statically (unusual).  Most systems with <code>Gtk+</code> 2.8 or later
+installed will have suitable libraries.  OS X comes with none of these
+libraries (but XQuartz, as used for 10.8 and later, ships <code>cairo</code>),
+but <code>cairo</code> support (without <code>Pango</code>) has been added to the
+binary distribution (see <a href="http://r.research.att.com/libs/">http://r.research.att.com/libs/</a> you need
+<code>fontconfig</code>, <code>freetype</code> and <code>pixman</code> too):
+<code>pkg-config</code> is still needed when building R from source and can
+be installed from its sources.
 </p>
 <p>For the best font experience with these devices you need suitable fonts
 installed: Linux users will want the <code>urw-fonts</code> package.  On
 platforms which have it available, the <code>msttcorefonts</code>
-package<a name="DOCF36" href="#FOOT36"><sup>36</sup></a> provides
+package<a name="DOCF37" href="#FOOT37"><sup>37</sup></a> provides
 TrueType versions of Monotype fonts such as Arial and Times New Roman.
 Another useful set of fonts is the &lsquo;liberation&rsquo; TrueType fonts available
 at
-<a href="https://fedorahosted.org/liberation-fonts/">https://fedorahosted.org/liberation-fonts/</a>,<a name="DOCF37" href="#FOOT37"><sup>37</sup></a> which cover the Latin, Greek and Cyrillic alphabets
+<a href="https://fedorahosted.org/liberation-fonts/">https://fedorahosted.org/liberation-fonts/</a>,<a name="DOCF38" href="#FOOT38"><sup>38</sup></a> which cover the Latin, Greek and Cyrillic alphabets
 plus a fair range of signs.  These share metrics with Arial, Times New
 Roman and Courier New, and contain fonts rather similar to the first two
 (<a href="http://en.wikipedia.org/wiki/Liberation_fonts">http://en.wikipedia.org/wiki/Liberation_fonts</a>).  Then there
@@ -3748,7 +3747,7 @@ development files), it will be linked in to support
 <code>download.file</code> and <code>url</code>.  This is recommended as it gives
 access to &lsquo;<samp>https://</samp>&rsquo; and &lsquo;<samp>ftps://</samp>&rsquo; URLs.  Information on
 <code>libcurl</code> is found from the <code>curl-config</code> script: if that
-is missing or needs to be overridden<a name="DOCF38" href="#FOOT38"><sup>38</sup></a>
+is missing or needs to be overridden<a name="DOCF39" href="#FOOT39"><sup>39</sup></a>
 there are macros described in file <samp>config.site</samp>.
 </p>
 <p>The <code>bitmap</code> and <code>dev2bitmap</code> devices and function
@@ -3951,7 +3950,7 @@ well as <code>LSAME</code>), and appears to be usable.  However, an external
 position-independent code), and that is not checked.
 </p>
 <p>Some enhanced <acronym>BLAS</acronym>es are compiler-system-specific
-(<code>sunperf</code> on Solaris<a name="DOCF39" href="#FOOT39"><sup>39</sup></a>, <code>libessl</code> on IBM,
+(<code>sunperf</code> on Solaris<a name="DOCF40" href="#FOOT40"><sup>40</sup></a>, <code>libessl</code> on IBM,
 <code>Accelerate</code> on OS X).  The correct incantation for
 these is usually found <em>via</em> <samp>--with-blas</samp> with no value on
 the appropriate platforms.
@@ -4053,7 +4052,7 @@ Next: <a href="#Goto-and-OpenBLAS" accesskey="n" rel="next">Goto and OpenBLAS</a
 <a name="ACML-1"></a>
 <h4 class="subsubsection">A.3.1.2 ACML</h4>
 
-<p>For &lsquo;<samp>x86_64</samp>&rsquo; processors<a name="DOCF40" href="#FOOT40"><sup>40</sup></a>  under Linux there is the AMD Core Math Library (ACML).
+<p>For &lsquo;<samp>x86_64</samp>&rsquo; processors<a name="DOCF41" href="#FOOT41"><sup>41</sup></a>  under Linux there is the AMD Core Math Library (ACML).
 For the <code>gcc</code> version we could use
 </p>
 <div class="example">
@@ -4447,7 +4446,7 @@ a dynamic (shared) library, typically called <samp>libR.so</samp>, and link
 the main R executable <samp>R.bin</samp> against that library.  This can
 only be done if all the code (including system libraries) can be
 compiled into a dynamic library, and there may be a
-performance<a name="DOCF41" href="#FOOT41"><sup>41</sup></a> penalty.  So you probably
+performance<a name="DOCF42" href="#FOOT42"><sup>42</sup></a> penalty.  So you probably
 only want this if you will be using an application which embeds R.
 Note that C code in packages installed on an R system linked with
 <samp>--enable-R-shlib</samp> is linked against the dynamic library and so
@@ -4719,7 +4718,7 @@ is to search for
 <code>epcf90</code>,
 <code>g77</code>, <code>f77</code>, <code>xlf</code>, <code>frt</code>,
 <code>pgf77</code>, <code>cf77</code>, <code>fort77</code>, <code>fl32</code>,
-<code>af77</code> (in that order)<a name="DOCF42" href="#FOOT42"><sup>42</sup></a>, and use whichever is found first; if none is found,
+<code>af77</code> (in that order)<a name="DOCF43" href="#FOOT43"><sup>43</sup></a>, and use whichever is found first; if none is found,
 R cannot be compiled.
 However, if <code>CC</code> is <code>gcc</code>, the matching FORTRAN compiler
 (<code>g77</code> for <code>gcc</code>&nbsp;3 and <code>gfortran</code> for
@@ -4748,7 +4747,7 @@ pointer.  This is checked during the configuration process.
 </p>
 <p>Some of the FORTRAN code makes use of <code>COMPLEX*16</code> variables, which
 is a Fortran 90 extension.  This is checked for at configure
-time<a name="DOCF43" href="#FOOT43"><sup>43</sup></a>, but you may need to avoid
+time<a name="DOCF44" href="#FOOT44"><sup>44</sup></a>, but you may need to avoid
 compiler flags asserting FORTRAN 77 compliance.
 </p>
 <p>Compiling the version of LAPACK in the R sources also requires some
@@ -5031,7 +5030,7 @@ selection issues, they are more amenable than the issues with
 </p>
 <p>When X11 was designed, most displays were around 75dpi, whereas today
 they are of the order of 100dpi or more.  If you find that X11()
-is reporting<a name="DOCF44" href="#FOOT44"><sup>44</sup></a> missing font sizes, especially larger ones, it is likely
+is reporting<a name="DOCF45" href="#FOOT45"><sup>45</sup></a> missing font sizes, especially larger ones, it is likely
 that you are not using scalable fonts and have not installed the 100dpi
 versions of the X11 fonts.  The names and details differ by system, but
 will likely have something like Fedora&rsquo;s
@@ -5153,7 +5152,7 @@ significant performance improvements on recent CPUs (especially for
 the best possible performance on the machine on which R is being
 installed: if the compilation is for a site-wide installation, it may
 still be desirable to use something like
-<samp>-mtume=core2</samp>.<a name="DOCF45" href="#FOOT45"><sup>45</sup></a> It is also possible to increase the
+<samp>-mtume=core2</samp>.<a name="DOCF46" href="#FOOT46"><sup>46</sup></a> It is also possible to increase the
 optimization levels to <samp>-O3</samp>: however for many versions of the
 compilers this has caused problems in at least one <acronym>CRAN</acronym>
 package.
@@ -5359,7 +5358,7 @@ need to be re-installed after an OS upgrade.)
 <samp>--with-aqua</samp> (which is the default): <code>quartz()</code> then
 becomes the default device when running R at the console and X11
 would only be used for the command-line-R data editor/viewer and one
-version of Tcl/Tk.  (This needs an Objective-C compiler<a name="DOCF46" href="#FOOT46"><sup>46</sup></a> which can compile the source code of
+version of Tcl/Tk.  (This needs an Objective-C compiler<a name="DOCF47" href="#FOOT47"><sup>47</sup></a> which can compile the source code of
 <code>quartz()</code>.)
 </p>
 <p>Use <samp>--without-aqua</samp> if you want a standard Unix-alike build:
@@ -5386,7 +5385,7 @@ FCFLAGS=$F77FLAGS
 
 <p>with <code>clang</code> and <code>clang++</code> from Xcode 5, and the Fortran
 compiler from
-<a href="http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2">http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2</a>.<a name="DOCF47" href="#FOOT47"><sup>47</sup></a>  Apple&rsquo;s
+<a href="http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2">http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2</a>.<a name="DOCF48" href="#FOOT48"><sup>48</sup></a>  Apple&rsquo;s
 builds of <code>clang</code> currently have little or no OpenMP support.
 </p>
 <p>Pre-compiled versions of many of the <a href="#Useful-libraries-and-programs">Useful libraries and programs</a>
@@ -5405,7 +5404,7 @@ configuring the <code>X11()</code> device.
 </pre></div>
 
 <p>to provide potentially higher-performance versions of the <acronym>BLAS</acronym>
-and LAPACK routines.<a name="DOCF48" href="#FOOT48"><sup>48</sup></a>
+and LAPACK routines.<a name="DOCF49" href="#FOOT49"><sup>49</sup></a>
 </p>
 <p>Looking at the top of
 <samp>/Library/Frameworks/R.framework/Resources/etc/Makeconf</samp>
@@ -5586,7 +5585,7 @@ you to install it.
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>);
 this is for Lion and later.
 </p>
-<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF49" href="#FOOT49"><sup>49</sup></a> to suppress pop-up messages, at least
+<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF50" href="#FOOT50"><sup>50</sup></a> to suppress pop-up messages, at least
 under Yosemite, even if you have a current version installed.
 </p>
 <p>To see what compatible versions of Java are currently installed, run
@@ -5756,7 +5755,7 @@ option <samp>--with-internal-tzcode</samp> is recommended, and required if
 you find time-zone abbreviations being given odd values (as has been
 seen on 64-bit builds without it).
 </p>
-<p>When using the Oracle compilers<a name="DOCF50" href="#FOOT50"><sup>50</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
+<p>When using the Oracle compilers<a name="DOCF51" href="#FOOT51"><sup>51</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
 disables <acronym>IEEE</acronym> arithmetic and <code>make check</code> will fail.
 </p>
 <p>It has been reported that some Solaris installations need
@@ -6166,7 +6165,7 @@ in <samp>src/main/complex.c</samp> on that platform.  It has been reported
 that some C99 long double mathematical functions are missing, so
 configuring with <samp>--disable-long-double</samp> was required.
 </p>
-<p>Only building as a shared library can possibly work,<a name="DOCF51" href="#FOOT51"><sup>51</sup></a> so use e.g.
+<p>Only building as a shared library can possibly work,<a name="DOCF52" href="#FOOT52"><sup>52</sup></a> so use e.g.
 </p>
 <div class="example">
 <pre class="example">./configure --disable-nls --enable-R-shlib FLIBS=-lgfortran
@@ -6286,7 +6285,7 @@ will not need to build add-on packages from source; see <a href="#Add_002don-pac
 </p>
 <p>We have found that the build process for R is quite sensitive to
 the choice of tools: please follow our instructions <strong>exactly</strong>,
-even to the choice of particular versions of the tools.<a name="DOCF52" href="#FOOT52"><sup>52</sup></a>  The build process for add-on packages is somewhat more
+even to the choice of particular versions of the tools.<a name="DOCF53" href="#FOOT53"><sup>53</sup></a>  The build process for add-on packages is somewhat more
 forgiving, but we recommend using the exact toolset at first, and only
 substituting other tools once you are familiar with the process.
 </p>
@@ -6296,7 +6295,7 @@ the R mailing lists unless you have followed all the prescriptions.</em>
 </p>
 <p>We have collected most of the necessary tools (unfortunately not all,
 due to license or size limitations) into an executable installer
-named<a name="DOCF53" href="#FOOT53"><sup>53</sup></a>  <samp>Rtools31.exe</samp>,
+named<a name="DOCF54" href="#FOOT54"><sup>54</sup></a>  <samp>Rtools31.exe</samp>,
 available from <a href="http://CRAN.R-project.org/bin/windows/Rtools/">http://CRAN.R-project.org/bin/windows/Rtools/</a>. You
 should download and run it, choosing the default &ldquo;Package authoring
 installation&rdquo; to build add-on packages, or the &ldquo;full installation&rdquo; if
@@ -6339,7 +6338,7 @@ use filepaths containing spaces: you can always use the short forms
 
 <p>It is essential that the directory containing the command line tools
 comes first or second in the path: there are typically like-named
-tools<a name="DOCF54" href="#FOOT54"><sup>54</sup></a> in other directories, and they will <strong>not</strong>
+tools<a name="DOCF55" href="#FOOT55"><sup>55</sup></a> in other directories, and they will <strong>not</strong>
 work. The ordering of the other directories is less important, but if in
 doubt, use the order above.
 </p>
@@ -6474,7 +6473,7 @@ project&rsquo;s runtime.
 </p>
 <p>This toolchain uses <em>multilib</em>: that is there is a single front-end
 such as <code>gcc.exe</code> for each of the compilers and 32-bit (the
-default) and 64-bit compilation are selected by the flags<a name="DOCF55" href="#FOOT55"><sup>55</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
+default) and 64-bit compilation are selected by the flags<a name="DOCF56" href="#FOOT56"><sup>56</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
 respectively.  The tools are all 32-bit Windows executables and should
 be able to run on any current version of Windows&mdash;however you do need a
 64-bit version of Windows to build 64-bit R as the build process runs
@@ -6990,68 +6989,73 @@ performance.</p>
 script.  Some versions (including that from from <strong>texinfo</strong> 5.2) need
 to be run under <code>bash</code> rather than a Bourne shell.</p>
 <h3><a name="FOOT36" href="#DOCF36">(36)</a></h3>
+<p>If necessary the path to
+<code>pkg-config</code> can be specified by setting <code>PKGCONF</code> in
+<samp>config.site</samp>, on the <code>configure</code> command line or in the
+environment.</p>
+<h3><a name="FOOT37" href="#DOCF37">(37)</a></h3>
 <p>also known as <code>ttf-mscorefonts-installer</code> in the
 Debian/Ubuntu world: see also
 <a href="http://en.wikipedia.org/wiki/Core_fonts_for_the_Web">http://en.wikipedia.org/wiki/Core_fonts_for_the_Web</a>.</p>
-<h3><a name="FOOT37" href="#DOCF37">(37)</a></h3>
+<h3><a name="FOOT38" href="#DOCF38">(38)</a></h3>
 <p><code>ttf-liberation</code>
 in Debian/Ubuntu.</p>
-<h3><a name="FOOT38" href="#DOCF38">(38)</a></h3>
+<h3><a name="FOOT39" href="#DOCF39">(39)</a></h3>
 <p>for example to specify
 static linking with a build which has both shared and static libraries.</p>
-<h3><a name="FOOT39" href="#DOCF39">(39)</a></h3>
+<h3><a name="FOOT40" href="#DOCF40">(40)</a></h3>
 <p>Using the Oracle Solaris Studio
 <code>cc</code> and <code>f95</code> compilers</p>
-<h3><a name="FOOT40" href="#DOCF40">(40)</a></h3>
+<h3><a name="FOOT41" href="#DOCF41">(41)</a></h3>
 <p>and &lsquo;<samp>i686</samp>&rsquo; for earlier
 versions.</p>
-<h3><a name="FOOT41" href="#DOCF41">(41)</a></h3>
+<h3><a name="FOOT42" href="#DOCF42">(42)</a></h3>
 <p>We have measured 15&ndash;20% on &lsquo;<samp>i686</samp>&rsquo; Linux
 and around 10% on &lsquo;<samp>x86_64</samp>&rsquo; Linux.</p>
-<h3><a name="FOOT42" href="#DOCF42">(42)</a></h3>
+<h3><a name="FOOT43" href="#DOCF43">(43)</a></h3>
 <p>On HP-UX <code>fort77</code> is the
 <acronym>POSIX</acronym> compliant FORTRAN compiler, and comes after
 <code>g77</code>.</p>
-<h3><a name="FOOT43" href="#DOCF43">(43)</a></h3>
+<h3><a name="FOOT44" href="#DOCF44">(44)</a></h3>
 <p>as well as its equivalence to the <code>Rcomplex</code>
 structure defined in <samp>R_ext/Complex.h</samp>.</p>
-<h3><a name="FOOT44" href="#DOCF44">(44)</a></h3>
+<h3><a name="FOOT45" href="#DOCF45">(45)</a></h3>
 <p>for example, <code>X11 font at size 14 could not
 be loaded</code>.</p>
-<h3><a name="FOOT45" href="#DOCF45">(45)</a></h3>
+<h3><a name="FOOT46" href="#DOCF46">(46)</a></h3>
 <p>or <code>-mtune=corei7</code> for Intel Core
 i3/15/17 with <code>gcc &gt;= 4.6.0</code>.</p>
-<h3><a name="FOOT46" href="#DOCF46">(46)</a></h3>
+<h3><a name="FOOT47" href="#DOCF47">(47)</a></h3>
 <p>These
 days that is defined by Apple&rsquo;s implementation of <code>clang</code>, so it is
 strongly recommended to use that.</p>
-<h3><a name="FOOT47" href="#DOCF47">(47)</a></h3>
+<h3><a name="FOOT48" href="#DOCF48">(48)</a></h3>
 <p>This
 is a tarball which needs to be unpacked in the Terminal by e.g.
 <code>sudo tar -zxf gfortran-4.8.2-darwin13.tar.bz2 -C /</code>.</p>
-<h3><a name="FOOT48" href="#DOCF48">(48)</a></h3>
+<h3><a name="FOOT49" href="#DOCF49">(49)</a></h3>
 <p>It is reported that for some non-Apple
 toolchains <code>CPPFLAGS</code> needed to contain <code>-D__ACCELERATE__</code>.</p>
-<h3><a name="FOOT49" href="#DOCF49">(49)</a></h3>
+<h3><a name="FOOT50" href="#DOCF50">(50)</a></h3>
 <p>e.g.
 <code>Java For OS X 2014-001</code>.</p>
-<h3><a name="FOOT50" href="#DOCF50">(50)</a></h3>
+<h3><a name="FOOT51" href="#DOCF51">(51)</a></h3>
 <p>including <code>gcc</code> for
 Sparc from Oracle.</p>
-<h3><a name="FOOT51" href="#DOCF51">(51)</a></h3>
+<h3><a name="FOOT52" href="#DOCF52">(52)</a></h3>
 <p>Windows
 DLLs need to have all links resolved at build time and so cannot resolve
 against <samp>R.bin</samp>.</p>
-<h3><a name="FOOT52" href="#DOCF52">(52)</a></h3>
+<h3><a name="FOOT53" href="#DOCF53">(53)</a></h3>
 <p>For
 example, the Cygwin version of <code>make 3.81</code> fails to work
 correctly.</p>
-<h3><a name="FOOT53" href="#DOCF53">(53)</a></h3>
-<p>for R 3.0.0 and later.</p>
 <h3><a name="FOOT54" href="#DOCF54">(54)</a></h3>
+<p>for R 3.0.0 and later.</p>
+<h3><a name="FOOT55" href="#DOCF55">(55)</a></h3>
 <p>such as <code>sort</code>, <code>find</code> and perhaps
 <code>make</code>.</p>
-<h3><a name="FOOT55" href="#DOCF55">(55)</a></h3>
+<h3><a name="FOOT56" href="#DOCF56">(56)</a></h3>
 <p>these
 flags apply to the compilers: some of the tools use different flags.
 32-bit builds are the default.</p>

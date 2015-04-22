@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (234.8 MB, MD5 hash: `f80a68e98ffe448362f006d608d2d568`, uncompressed 592.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (235.2 MB, MD5 hash: `649d21e3c041d41b00cf0c35d6025aca`, uncompressed 604.9 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (236.9 MB, MD5 hash: `0cf158beb92f7ba52dc70e2099a16e86`, uncompressed 639.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (247.8 MB, MD5 hash: `3ab01c181f378bad79ba3cedc6bfa6fb`, uncompressed 624.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (248.2 MB, MD5 hash: `1567a6c78011eac0614fc2bc5bf928c3`, uncompressed 636.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (250 MB, MD5 hash: `1bd4554daac736fa09ac5a0cad3b1168`, uncompressed 671.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,9 +21,14 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-04-28 r68272)
+R Under development (unstable) (2015-05-01 r68287)
 
 ### Package versions
+
+
+```
+## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
+```
 
 ####  base 
 [`base`](http://cran.r-project.org/package=base) (3.3.0),
@@ -67,6 +72,7 @@ R Under development (unstable) (2015-04-28 r68272)
 [`httr`](http://cran.r-project.org/package=httr) (0.6.1),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.16),
 [`knitr`](http://cran.r-project.org/package=knitr) (1.10),
+[`magrittr`](http://cran.r-project.org/package=magrittr) (1.5),
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
 [`mime`](http://cran.r-project.org/package=mime) (0.3),
@@ -76,7 +82,8 @@ R Under development (unstable) (2015-04-28 r68272)
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.6),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
-[`stringr`](http://cran.r-project.org/package=stringr) (0.6.2),
+[`stringi`](http://cran.r-project.org/package=stringi) (0.4-1),
+[`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.9.1),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),

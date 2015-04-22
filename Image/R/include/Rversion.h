@@ -13,10 +13,10 @@ extern "C" {
 #define R_MINOR  "3.0"
 #define R_STATUS "Under development (unstable)"
 #define R_YEAR   "2015"
-#define R_MONTH  "04"
-#define R_DAY    "28"
-#define R_SVN_REVISION 68272
-#define R_FILEVERSION    3,30,68272,0
+#define R_MONTH  "05"
+#define R_DAY    "01"
+#define R_SVN_REVISION 68287
+#define R_FILEVERSION    3,30,68287,0
 
 #ifdef __cplusplus
 }
