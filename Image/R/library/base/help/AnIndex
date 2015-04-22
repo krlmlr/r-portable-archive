@@ -1331,6 +1331,7 @@ storage.mode<-	mode
 str.POSIXt	DateTimeClasses
 strftime	strptime
 strptime	strptime
+strrep	strrep
 strsplit	strsplit
 strtoi	strtoi
 strtrim	strtrim

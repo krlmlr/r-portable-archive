@@ -41,6 +41,9 @@ CHANGES IN R-devel:
       "ordered" and "summary.table".  Packages defining S4 classes with
       the above S3/S4 classes as slots should be reinstalled.
 
+    * New function strrep() for repeating the elements of a character
+      vector.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

@@ -385,6 +385,7 @@ stop                    Stop Function Execution
 stopifnot               Ensure the Truth of R Expressions
 strptime                Date-time Conversion Functions to and from
                         Character
+strrep                  Repeat the Elements of a Character Vector
 strsplit                Split the Elements of a Character Vector
 strtoi                  Convert Strings to Integers
 strtrim                 Trim Character Strings to Specified Display
