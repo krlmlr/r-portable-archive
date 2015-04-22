@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-05-28).
+<!-- This manual is for R, version 3.3.0 Under development (2015-05-29).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -431,7 +431,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-05-28).
+<p>This manual is for R, version 3.3.0 Under development (2015-05-29).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -9804,8 +9804,8 @@ support it, the path to the directory containing the dynamic library can
 be hardcoded at install time (which assumes that the location of package
 <strong>packB</strong> will not be changed nor the package updated to a changed
 API).  On systems with the <code>gcc</code> or <code>clang</code> and the
-<acronym>GNU</acronym> linker (e.g. Linux) and some others (e.g. OS X) this
-can be done by e.g.
+<acronym>GNU</acronym> linker (e.g. Linux) and some others this can be done by
+e.g.
 </p>
 <div class="example">
 <pre class="example">PKGB_PATH=‘echo ’library(packB);
@@ -9820,9 +9820,7 @@ the compiler as well as the linker).
 </p>
 <p>It may be possible to figure out what is required semi-automatically
 from the result of <code>R CMD libtool --config</code> (look for
-&lsquo;<samp>hardcode</samp>&rsquo;), although that does not currently know the spell for OS
-X (as given in the example above, as <samp>-rpath</samp> is only supported for
-shared objects and not for executables).
+&lsquo;<samp>hardcode</samp>&rsquo;).
 </p>
 <p>Making headers provided by package <strong>packB</strong> available to the code to
 be compiled in package <strong>packA</strong> can be done by the <code>LinkingTo</code>
