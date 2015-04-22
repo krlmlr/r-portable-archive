@@ -11,6 +11,25 @@
 
 
 
+<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
+
+
+<ul>
+<li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
+governs how the result for <code>NA</code>s in <code>x</code> is determined.
+The new default <code>keepNA = TRUE</code> returns <code>NA</code> where
+<code>x</code> is <code>NA</code>, unless for <code>type = "width"</code> which still
+returns <code>2</code>, the formatting / printing width of <code>NA</code>.
+</p>
+<p><code>nzchar(x)</code> gets the same new argument, with default
+<code>keepNA = FALSE</code> however.  Consequently <code>nzchar(x)</code> keeps
+returning a non-<code>NA</code> logical vector, back compatibly.
+</p>
+</li></ul>
+
+
+
+
 <h4>NEW FEATURES</h4>
 
 
@@ -31,11 +50,6 @@ are exported as <code>tools::langElts</code>.
 </li>
 <li> <p><code>str(x)</code> now displays <code>"Time-Series"</code> also for
 matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
-</p>
-
-</li>
-<li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
-governs how the result for <code>NA</code>s in <code>x</code> is determined.
 </p>
 </li></ul>
 
@@ -91,6 +105,10 @@ vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
 <ul>
 <li> <p><code>utf8ToInt()</code> now checks that its input is valid UTF-8
 and returns <code>NA</code> if it is not.
+</p>
+</li>
+<li> <p><code>install.packages()</code> now allows <code>type = "both"</code>
+with <code>repos = NULL</code> if it can infer the type of file.
 </p>
 </li></ul>
 

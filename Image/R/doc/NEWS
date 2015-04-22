@@ -2,6 +2,17 @@ R News
 
 CHANGES IN R-devel:
 
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    * nchar(x, *) gains a new argument keepNA which governs how the
+      result for NAs in x is determined.  The new default keepNA = TRUE
+      returns NA where x is NA, unless for type = "width" which still
+      returns 2, the formatting / printing width of NA.
+
+      nzchar(x) gets the same new argument, with default keepNA = FALSE
+      however.  Consequently nzchar(x) keeps returning a non-NA logical
+      vector, back compatibly.
+
   NEW FEATURES:
 
     * The print method for methods() gains a byclass argument.
@@ -15,9 +26,6 @@ CHANGES IN R-devel:
 
     * str(x) now displays "Time-Series" also for matrix (multivariate)
       time-series, i.e. when is.ts(x) is true.
-
-    * nchar(x, *) gains a new argument keepNA which governs how the
-      result for NAs in x is determined.
 
   UTILITIES:
 
@@ -42,6 +50,9 @@ CHANGES IN R 3.2.0 patched:
 
     * utf8ToInt() now checks that its input is valid UTF-8 and returns
       NA if it is not.
+
+    * install.packages() now allows type = "both" with repos = NULL if
+      it can infer the type of file.
 
   BUG FIXES:
 
