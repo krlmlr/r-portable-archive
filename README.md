@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (234.6 MB, MD5 hash: `066cd995d485114ccfd6590f4dea5cf4`, uncompressed 592.3 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (234.9 MB, MD5 hash: `3f4f4b9081d13ee6249198b82470d728`, uncompressed 604.4 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (236.7 MB, MD5 hash: `f9a29ae8128e6d382d487571e9128579`, uncompressed 639.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (234.6 MB, MD5 hash: `1db9ebb0179b366304d87dcdd893d7d4`, uncompressed 592.3 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (235 MB, MD5 hash: `5fbdf1b3a741f7b59caad3b04176701f`, uncompressed 604.4 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (236.8 MB, MD5 hash: `11bf4d8a5e300974194ee65ad2e56567`, uncompressed 639.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-04-21 r68221)
+R Under development (unstable) (2015-04-22 r68234)
 
 ### Package versions
 
@@ -67,7 +67,7 @@ R Under development (unstable) (2015-04-21 r68221)
 [`httr`](http://cran.r-project.org/package=httr) (0.6.1),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.16),
 [`knitr`](http://cran.r-project.org/package=knitr) (1.9),
-[`markdown`](http://cran.r-project.org/package=markdown) (0.7.4),
+[`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
 [`mime`](http://cran.r-project.org/package=mime) (0.3),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.2),

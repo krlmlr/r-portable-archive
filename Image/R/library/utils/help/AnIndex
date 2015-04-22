@@ -137,6 +137,7 @@ INSTALL	INSTALL
 install.packages	install.packages
 installed.packages	installed.packages
 is.relistable	relist
+isS3method	isS3method
 limitedLabels	recover
 loadhistory	savehistory
 loadRconsole	Rconsole

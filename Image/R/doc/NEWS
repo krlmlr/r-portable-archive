@@ -6,6 +6,16 @@ CHANGES IN R-devel:
 
     * The print method for methods() gains a byclass argument.
 
+    * Experimental new functionality for S3 method checking, notably
+      isS3method().  Also, the R "language element" names are exported
+      as tools::langElts.
+
+  UTILITIES:
+
+    * R CMD check has a new option --ignore-vignettes for use with
+      non-Sweave vignettes whose VignetteBuilder package is not
+      available.
+
   DEPRECATED AND DEFUNCT:
 
     * The included versions of zlib, bzip2, xz and PCRE have been
