@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-04-19).
+<!-- This manual is for R, version 3.3.0 Under development (2015-04-20).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -431,7 +431,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-04-19).
+<p>This manual is for R, version 3.3.0 Under development (2015-04-20).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1026,7 +1026,7 @@ language subtags which in essence are 2-letter ISO 639-1
 639-3 (<a href="http://en.wikipedia.org/wiki/ISO_639-3">http://en.wikipedia.org/wiki/ISO_639-3</a>) language
 codes.
 </p>
-<p>As of R 3.2.0, an &lsquo;<samp>RdMacros</samp>&rsquo; field can be used to hold a 
+<p>As of R 3.2.0, an &lsquo;<samp>RdMacros</samp>&rsquo; field can be used to hold a
 comma-separated list of packages from which the current package will import
 Rd macro definitions.  These will be imported after the system macros,
 in the order listed in the &lsquo;<samp>RdMacros</samp>&rsquo; field, before any macro
@@ -1468,7 +1468,7 @@ they do not need to be documented (see <a href="#Package-namespaces">Package nam
 an installation error.
 </p>
 <p>The <samp>man</samp> subdirectory may contain a subdirectory named <samp>macros</samp>;
-this will contain source for user-defined Rd macros.  
+this will contain source for user-defined Rd macros.
 (See <a href="#User_002ddefined-macros">User-defined macros</a>.)  These use the Rd format, but may
 not contain anything but macro definitions, comments and whitespace.
 </p>
@@ -2723,7 +2723,7 @@ Previous: <a href="#Using-F95-code" accesskey="p" rel="prev">Using F95 code</a>,
 <h4 class="subsection">1.2.4 Using C++11 code</h4>
 
 <p>R can be built without a C++ compiler although one is available
-(but not necessarily installed) on all known R platforms.  
+(but not necessarily installed) on all known R platforms.
 For full portability across platforms, all
 that can be assumed is approximate support for the C++98 standard (the
 widely used <code>g++</code> deviates considerably from the standard).
@@ -3019,10 +3019,10 @@ set of <samp>.R</samp> source files and target output files
 <samp>.Rout.save</samp>.)  Please note that the comparison will be done in the
 end user&rsquo;s locale, so the target output files should be <acronym>ASCII</acronym>
 if at all possible.  (The command line option <code>--test-dir=foo</code> may
-be used to specify tests in a non-standard location.  For example, 
+be used to specify tests in a non-standard location.  For example,
 unusually slow tests could be placed in <samp>inst/slowTests</samp> and then
 <code>R CMD check --test-dir=inst/slowTests</code> would be used to run them.
-Other names that have been suggested are, for example, 
+Other names that have been suggested are, for example,
 <samp>inst/testWithOracle</samp> for tests that require Oracle to be installed,
 <samp>inst/randomTests</samp> for tests which use random values and may
 occasionally fail by chance, etc.)
@@ -3503,7 +3503,7 @@ need to be declared to LaTeX via a line like
 </pre></div>
 <p>(It is also possible to use the more recent &lsquo;<samp>inputenx</samp>&rsquo; LaTeX
 package.) For files where this line is not needed (e.g. chapters
-included within the body of a larger document, or non-Sweave 
+included within the body of a larger document, or non-Sweave
 vignettes), the encoding may be declared using a comment like
 </p><div class="example">
 <pre class="example">%!\VignetteEncoding{UTF-8}
@@ -3518,7 +3518,7 @@ in the encoding declared for the package.  If there is no encoding
 declared in either place, then it is an error to use non-<acronym>ASCII</acronym>
 characters in the vignette.
 </p>
-<p>In any case, be aware that LaTeX may require the &lsquo;<samp>usepackage</samp>&rsquo; 
+<p>In any case, be aware that LaTeX may require the &lsquo;<samp>usepackage</samp>&rsquo;
 declaration.
 </p>
 <p><code>Sweave()</code> will also parse and evaluate the R code in each
@@ -4759,7 +4759,7 @@ namespace.  One way to do so is to use declarations such as
 with an underscore followed by an upper-case letter or another
 underscore are reserved and should not be used in portable code.  Other
 macros, typically upper-case, may be defined by the compiler or system
-headers and can cause problems. 
+headers and can cause problems.
 The most common issue involves the names of the Intel CPU registers such
 as <code>CS</code>, <code>DS</code> and <code>SS</code> defined on i586/x64 Solaris in
 <samp>&lt;sys/regset.h&gt;</samp> and often included indirectly by <samp>&lt;stdlib.h&gt;</samp>
@@ -5389,8 +5389,8 @@ technical discussion of current <samp>Rd</samp> syntax, see
 is LaTeX-like, with the backslash used as a prefix on markup
 (e.g. <code>\alias</code>), and braces used to indicate arguments
 (e.g. <code>{load}</code>).  The least common type of text is &lsquo;verbatim&rsquo;
-text, where no markup other than the comment marker (<code>%</code>) is 
-processed.  There is also a rare variant of &lsquo;verbatim&rsquo; text 
+text, where no markup other than the comment marker (<code>%</code>) is
+processed.  There is also a rare variant of &lsquo;verbatim&rsquo; text
 (used in <code>\eqn</code>, <code>\deqn</code>, <code>\figure</code>,
 and <code>\newcommand</code>) where comment markers need not be escaped.
 The final type is R-like, intended for R code, but allowing some
@@ -5751,7 +5751,7 @@ object being documented falls into more than one category, or none.
 </p>
 <p>Do strongly consider using <code>\concept</code> (see <a href="#Indices">Indices</a>) instead of
 <code>\keyword</code> if you are about to use more than very few non-standard
-keywords. 
+keywords.
 </p>
 <p>The special keyword &lsquo;<samp>internal</samp>&rsquo; marks a page of internal objects
 that are not part of the package&rsquo;s API.  If the help page for object
@@ -6687,14 +6687,14 @@ significance.  All arguments to user-defined macros will be parsed as
 verbatim text, and simple text-substitution will be used to replace
 the place-holders, after which the replacement text will be parsed.
 </p>
-<p>As of R version 3.2.0, a number of macros are defined in the file 
+<p>As of R version 3.2.0, a number of macros are defined in the file
 <samp>share/Rd/macros/system.Rd</samp> of the R source or home
-directory, and these will normally be available in all <samp>.Rd</samp> files.  
+directory, and these will normally be available in all <samp>.Rd</samp> files.
 For example, that file contains the definition
 </p><div class="example">
 <pre class="example">\newcommand{\PR}{\Sexpr[results=rd]{tools:::Rd_expr_PR(#1)}}
 </pre></div>
-<p>which defines <code>\PR</code> to be a single argument macro; then code 
+<p>which defines <code>\PR</code> to be a single argument macro; then code
 (typically used in the <samp>NEWS.Rd</samp> file) like
 </p><div class="example">
 <pre class="example">\PR{1234}
@@ -7324,8 +7324,8 @@ system.time(a &lt;- as.POSIXct(dates, format = &quot;%Y-%m-%d&quot;))
 </pre></div>
 <p>with timings from the final step
 </p><div class="example">
-<pre class="example">   user  system elapsed 
-  0.371   0.237   0.612 
+<pre class="example">   user  system elapsed
+  0.371   0.237   0.612
 </pre></div>
 
 <p>R-level profiling by <code>Rprof</code> shows
@@ -7346,7 +7346,7 @@ opreport
 opreport -l /path/to/R_HOME/bin/exec/R
 opannotate --source /path/to/R_HOME/bin/exec/R
 ## And for the system time
-opreport -l /lib64/libc.so.6 
+opreport -l /lib64/libc.so.6
 </pre></div>
 <p>The first report shows where (which library etc) the time was spent:
 </p><div class="example">
@@ -7404,7 +7404,7 @@ the end of the session.
 <pre class="example">system.time(example(sm.variogram))
 ...
    user  system elapsed
-  5.543   3.202   8.785  
+  5.543   3.202   8.785
 </pre></div>
 
 <p>including a lot of system time.  Profiling just the slow part, the
@@ -11168,7 +11168,7 @@ The C code is
 <pre class="example">SEXP mkans(double x)
 {
     // no need for PROTECT() here, as REAL(.) does not allocate:
-    SEXP ans = allocVector(REALSXP, 1); 
+    SEXP ans = allocVector(REALSXP, 1);
     REAL(ans)[0] = x;
     return ans;
 }
@@ -11595,7 +11595,7 @@ set to the C <code>NULL</code> pointer.
 including the R interpreter, is not re-entrant.  So great care is
 needed in choosing the code to be run in a finalizer. As from R 3.0.3
 finalizers are marked to be run at garbage collection but only run at a
-somewhat safe point thereafter. 
+somewhat safe point thereafter.
 </p>
 <a name="index-weak-reference"></a>
 <p>Weak references are used to allow the programmer to maintain information
@@ -12537,7 +12537,7 @@ similarly for the signed rank functions.
 parametrization is provided as well by functions &lsquo;<samp>[dpqr]nbinom_mu()</samp>&rsquo;,
 see <kbd>?NegBinomial</kbd> in R.
 </p>
-<p>Functions <code>dpois_raw(x, *)</code> and <code>dbinom_raw(x, *)</code> are versions of the 
+<p>Functions <code>dpois_raw(x, *)</code> and <code>dbinom_raw(x, *)</code> are versions of the
 Poisson and binomial probability mass functions which work continuously in
 <code>x</code>, whereas <code>dbinom(x,*)</code> and <code>dpois(x,*)</code> only return non
 zero values for integer <code>x</code>.
@@ -12709,7 +12709,7 @@ in <samp>Rmath.h</samp>, but is in <samp>math.h</samp> which <samp>Rmath.h</samp
 <dt><a name="index-logspace_005fsum"></a>Function: <em>double</em> <strong>logspace_sum</strong> <em>(double* <var>logx</var>, int <var>n</var>)</em></dt>
 <dd><p>Compute the log of a sum or difference from logs of terms, i.e., &ldquo;x +
 y&rdquo; as <code>log (exp(<var>logx</var>) + exp(<var>logy</var>))</code> and &ldquo;x - y&rdquo; as
-<code>log (exp(<var>logx</var>) - exp(<var>logy</var>))</code>, 
+<code>log (exp(<var>logx</var>) - exp(<var>logy</var>))</code>,
 and &ldquo;sum_i x[i]&rdquo; as <code>log (sum[i = 1:<var>n</var> exp(<var>logx</var>[i])] )</code>
 without causing unnecessary overflows or throwing away too much accuracy.
 </p></dd></dl>
@@ -12939,8 +12939,8 @@ passed down from the calling routine, normally used to carry auxiliary
 information.
 </p>
 <p>There are interfaces (defined in header <samp>R_ext/Applic.h</samp>) for
-definite and for indefinite integrals.  &lsquo;Indefinite&rsquo; means that at least
-one of the integration boundaries is not finite.
+integrals over finite and infinite intervals (or &ldquo;ranges&rdquo; or
+&ldquo;integration boundaries&rdquo;).
 </p>
 <ul>
 <li> Finite:
@@ -12953,7 +12953,7 @@ one of the integration boundaries is not finite.
 	    int *iwork, double *work);
 </pre></div>
 
-</li><li> Indefinite:
+</li><li> Infinite:
 <a name="index-Rdqagi"></a>
 <div class="example">
 <pre class="example">void Rdqagi(integr_fn f, void *ex, double *bound, int *inf,
@@ -12966,8 +12966,8 @@ one of the integration boundaries is not finite.
 </li></ul>
 
 <p>Only the 3rd and 4th argument differ for the two integrators; for the
-definite integral, using <code>Rdqags</code>, <code>a</code> and <code>b</code> are the
-integration interval bounds, whereas for an indefinite integral, using
+finite range integral using <code>Rdqags</code>, <code>a</code> and <code>b</code> are the
+integration interval bounds, whereas for an infinite range integral using
 <code>Rdqagi</code>, <code>bound</code> is the finite bound of the integration (if
 the integral is not doubly-infinite) and <code>inf</code> is a code indicating
 the kind of integration range,
