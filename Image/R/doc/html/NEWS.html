@@ -255,6 +255,10 @@ when appropriate, e.g., for <code>`&amp;`(TRUE)</code> or <code>`!`()</code>.
 <li> <p><code>cummax(x)</code> now correctly propagates <code>NA</code>s also
 when <code>x</code> is of type <code>integer</code> and begins with an <code>NA</code>.
 </p>
+</li>
+<li> <p><code>summaryRprof()</code> could fail when the profile contained
+only two records.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16395">PR#16395</a>)
+</p>
 </li></ul>
 
 
