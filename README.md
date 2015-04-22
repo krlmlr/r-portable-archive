@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (247.9 MB, MD5 hash: `c24e74c672b6c7094737057270dc4153`, uncompressed 624.6 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (248.2 MB, MD5 hash: `cf6ed299e3b1242337ea3f07db8c4ad9`, uncompressed 636.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (250 MB, MD5 hash: `cd0aa76effb754ae81a35211aa80436a`, uncompressed 671.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (253.4 MB, MD5 hash: `2aef18052479e400f7836fd12e6aa8f6`, uncompressed 638.1 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (253.8 MB, MD5 hash: `73c8744dbd14f9f649b27eade8063f1f`, uncompressed 650.5 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (255.6 MB, MD5 hash: `15190f5b2a75a813b7fa941bc215caae`, uncompressed 685.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-05-07 r68343)
+R Under development (unstable) (2015-05-08 r68345)
 
 ### Package versions
 
@@ -68,6 +68,7 @@ R Under development (unstable) (2015-05-07 r68343)
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.7),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.2),
+[`git2r`](http://cran.r-project.org/package=git2r) (0.10.1),
 [`highr`](http://cran.r-project.org/package=highr) (0.5),
 [`httr`](http://cran.r-project.org/package=httr) (0.6.1),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.16),
@@ -82,9 +83,11 @@ R Under development (unstable) (2015-05-07 r68343)
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.6),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
+[`rversions`](http://cran.r-project.org/package=rversions) (1.0.0),
 [`stringi`](http://cran.r-project.org/package=stringi) (0.4-1),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.9.1),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),
+[`XML`](http://cran.r-project.org/package=XML) (3.98-1.1),
 [`yaml`](http://cran.r-project.org/package=yaml) (2.1.13) 

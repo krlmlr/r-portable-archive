@@ -33,6 +33,9 @@ CHANGES IN R-devel:
 
     * new programmeR's utility chkDots.
 
+    * D() now signals an error when given invalid input, rather than
+      silently returning NA.  (Request of John Nash.)
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -49,6 +52,9 @@ CHANGES IN R-devel:
 
     * C-level asChar(x) is fixed for when x is not a vector, and it
       returns "TRUE"/"FALSE" instead of "T"/"F" for logical vectors.
+
+    * .colSums() etc (with an initial dot) first argument name x
+      matches colSums() such that error messages are correct.
 
 CHANGES IN R 3.2.0 patched:
 
